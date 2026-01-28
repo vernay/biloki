@@ -71,13 +71,13 @@ export default function PartnersScroll() {
 
         .animate-scroll {
           display: flex;
-          animation: scroll 12s linear infinite;
+          animation: scroll 16s linear infinite;
           will-change: transform;
         }
 
         @media (max-width: 768px) {
           .animate-scroll {
-            animation-duration: 6s;
+            animation-duration: 9s;
           }
         }
       `}</style>
