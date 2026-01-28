@@ -1040,14 +1040,14 @@ export default function ChatBot() {
       {/* Chat Window */}
       <div 
         ref={chatWindowRef}
-        className={`fixed bottom-24 right-4 w-[calc(100vw-2rem)] sm:w-96 h-[70vh] sm:h-[500px] max-h-[600px] bg-white rounded-xl shadow-2xl flex flex-col z-50 transition-all duration-300 transform origin-bottom-right ${
+        className={`fixed inset-0 sm:inset-auto sm:bottom-24 sm:right-4 w-full sm:w-96 h-[100dvh] sm:h-[500px] max-h-[100dvh] sm:max-h-[600px] bg-white sm:rounded-xl rounded-none shadow-2xl flex flex-col z-50 transition-all duration-300 transform origin-bottom-right ${
           isOpen 
             ? 'scale-100 opacity-100 pointer-events-auto' 
             : 'scale-95 opacity-0 pointer-events-none'
         }`}
       >
         {/* Header - Barre bleue Biloki */}
-        <div className="chatbot-header text-white p-4 rounded-t-xl flex items-center justify-between shadow-md">
+        <div className="chatbot-header text-white p-4 sm:rounded-t-xl rounded-none flex items-center justify-between shadow-md sticky top-0 z-10">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md p-1.5">
               <img 
@@ -1089,7 +1089,7 @@ export default function ChatBot() {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="flex-1 min-h-0 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-50 to-white">
           {messages.map((message) => (
             <div 
               key={message.id} 
@@ -1179,7 +1179,7 @@ export default function ChatBot() {
         )}
 
         {/* Input */}
-        <div className="border-t border-gray-100 p-4 bg-white rounded-b-xl">
+        <div className="border-t border-gray-100 p-4 bg-white sm:rounded-b-xl rounded-none">
           <div className="flex gap-2">
             <input
               type="text"
