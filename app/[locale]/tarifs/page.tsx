@@ -112,7 +112,7 @@ export default function TarifsPage() {
         </div>
 
         {/* Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left Side - Pricing Calculator */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             {/* Header */}
@@ -439,7 +439,7 @@ export default function TarifsPage() {
           </div>
 
           {/* Right Side - Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <div className="w-full bg-white rounded-2xl shadow-2xl p-6 md:p-10">
             <h3 className="text-xl font-bold text-gray-900 mb-6">{t('formTitle')}</h3>
             
             {/* Success Message */}
