@@ -1,0 +1,1521 @@
+{
+  "common": {
+    "startFree": "Start for free",
+    "startFreeTrial": "Free trial",
+    "tryFree": "Try for free",
+    "bookDemo": "Book a demo",
+    "bookYourDemo": "Book your demo",
+    "subscribe": "Subscribe",
+    "learnMore": "Learn more",
+    "discoverAll": "Discover all",
+    "discoverFeatures": "Discover features",
+    "discoverBenefits": "Discover all benefits",
+    "discoverAI": "Discover Biloki AI",
+    "seeMarketplace": "View API marketplace",
+    "requestQuote": "Request a quote",
+    "requestCustomQuote": "Request a custom quote",
+    "contactUs": "Contact us",
+    "seeMore": "See more",
+    "seePricing": "View pricing",
+    "calculatePricing": "Calculate my price",
+    "noCardRequired": "No credit card required",
+    "fullAccess14Days": "Full access for {days} days",
+    "trialInfo": "No credit card required • Full access for {days} days",
+    "customQuoteMessage": "For more than 200 properties, our teams will offer you a personalized quote.",
+    "back": "Back",
+    "backToBlog": "Back to blog",
+    "readArticle": "Read the article",
+    "comingSoon": "Coming soon",
+    "sendMessage": "Send message",
+    "sending": "Sending...",
+    "property": "property",
+    "properties": "properties",
+    "perMonth": "per month",
+    "monthly": "Monthly",
+    "annual": "Annual"
+  },
+  "header": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "demo": "Book a demo",
+    "login": "Log in",
+    "trial": "Free trial",
+    "language": "Language",
+    "switcherLabel": "Change language",
+    "featuresMenu": {
+      "pms": "PMS",
+      "channelManager": "Channel Manager",
+      "calendarSync": "Calendar synchronization",
+      "otaConnections": "OTA connections (Airbnb, Booking, etc.)",
+      "pricing": "Pricing",
+      "smartLocks": "Smart locks",
+      "fourInterfaces": "The 4 interfaces",
+      "marketplaceApi": "Marketplace API"
+    }
+  },
+  "cta": {
+    "title": "Ready to simplify your operations?",
+    "description": "Join the hundreds of property managers already using Biloki to automate their workflows and delight guests.",
+    "badges": {
+      "support": "Dedicated support included",
+      "migration": "Guided migration"
+    }
+  },
+  "hero": {
+    "title": "Manage your stays",
+    "titleHighlight": "effortlessly",
+    "description": "5 tools in one, from booking to check-out. A single platform for property managers, owners, service providers and guests.",
+    "check1": "From independent owners to large property managers",
+    "check2": "The most powerful solution on the market",
+    "ctaPrimary": "Start for free →",
+    "ctaSecondary": "Book your demo",
+    "socialProof": "Already trusted by",
+    "socialProofHighlight": "500+ property managers",
+    "socialProofSuffix": "in France"
+  },
+  "team": {
+    "title": "Our team in",
+    "titleHighlight": "action",
+    "description": "Present at the Scale France trade show in November 2026 to showcase the Biloki solution and demonstrate how we're revolutionizing vacation rental management.",
+    "cta": "Book a demo"
+  },
+  "pricing": {
+    "startTrial": "Start free trial",
+    "trialInfo": "No credit card required • Full access for 14 days",
+    "customQuote": "Request a custom quote",
+    "customMessage": "For more than 200 properties, our team will provide you with a personalized offer."
+  },
+  "features": {
+    "title": "Essential",
+    "titleHighlight": "features",
+    "description": "All the tools you need to manage your properties efficiently.",
+    "items": {
+      "channelManager": {
+        "title": "Channel Manager",
+        "description": "Listings and bookings synchronized across 120 rental platforms"
+      },
+      "planification": {
+        "title": "Automated Scheduling",
+        "description": "Automated scheduling for check-in, check-out, cleaning and maintenance"
+      },
+      "guideDigital": {
+        "title": "AI Digital Guide",
+        "description": "AI-powered digital guide per property with video tutorials on tenant interface and 24/7 AI assistant to answer any questions at any time"
+      },
+      "messagerie": {
+        "title": "Unified Messaging",
+        "description": "Unified messaging (Airbnb, Booking, WhatsApp...) with pre-booking and post-booking conversational AI"
+      },
+      "serrure": {
+        "title": "Smart Lock",
+        "description": "Smart lock controlled from the app, random code per stay"
+      },
+      "ventesExtras": {
+        "title": "Extra Sales",
+        "description": "Extra sales space with secure payment"
+      },
+      "dashboard": {
+        "title": "Dashboard",
+        "description": "Online dashboard for each profile: financial report, occupancy rate, invoicing..."
+      },
+      "avis": {
+        "title": "Customer Reviews",
+        "description": "Get customer reviews for your property management services!"
+      }
+    }
+  },
+  "overview": {
+    "title": "Everything you need,",
+    "titleHighlight": "nothing more",
+    "description": "A complete platform that adapts to how you work. Every feature is designed to save you time.",
+    "learnMore": "Learn more",
+    "items": {
+      "channelManager": {
+        "title": "Channel Manager",
+        "desc": "Distribute and synchronize your listings across 120+ booking platforms. Every booking is centralized in real-time, with no risk of double booking."
+      },
+      "pms": {
+        "title": "Property Management System",
+        "desc": "Centralize all your property management activities in one tool. Bookings, stays, guests, properties, revenue, and operations - all managed from a single interface. Unified messaging (OTAs, WhatsApp, emails, SMS) for all your communications."
+      },
+      "serrures": {
+        "title": "Smart Locks",
+        "desc": "Generate unique access codes for each stay. Automatic activation and deactivation based on check-in and check-out dates, for your service providers and tenants. Through our API integrations with the best brands on the market."
+      },
+      "interfaces": {
+        "title": "4 interfaces with built-in AI",
+        "desc": "An interface adapted to each role: manager, owner, service provider, and guest. Each user only accesses the information and actions relevant to them, for smooth and frictionless collaboration."
+      },
+      "guideDigital": {
+        "title": "Digital guide with built-in AI",
+        "desc": "Offer an autonomous and premium experience to your tenants. Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
+      },
+      "comptabilite": {
+        "title": "Accounting and management",
+        "desc": "Automate the management of your invoices, service purchases and sales, as well as the export of your accounting data."
+      },
+      "ventesExtras": {
+        "title": "À la carte extras sales",
+        "desc": "Grow your revenue by offering extra services on the tenant interface (examples: flower delivery, mini bar, extra cleaning). Offer a premium stay to your guests!"
+      },
+      "marketplace": {
+        "title": "Partner Marketplace",
+        "desc": "Connect your external tools to Biloki through our integrations marketplace. Open API to synchronize your data and automate your workflows with your favorite applications."
+      },
+      "multiLangue": {
+        "title": "Multi-language application",
+        "desc": "An interface and AI automatically adapted to each user's language. Ideal for managing an international clientele without friction."
+      }
+    }
+  },
+  "integrations": {
+    "badge": "Integrations",
+    "title": "Connect Biloki to your favorite tools",
+    "description": "Biloki integrates with key market solutions to centralize your operations: booking platforms, dynamic pricing, accounting, CRM, payments and smart locks. Our open API simplifies workflow automation.",
+    "features": {
+      "sync": "Listing and calendar synchronization",
+      "realtime": "Real-time pricing and availability updates",
+      "payments": "Secure payments and invoicing",
+      "locks": "Autonomous access with smart locks"
+    },
+    "cta": "View API marketplace"
+  },
+  "ai": {
+    "badge": "Artificial Intelligence",
+    "title": "An intelligent assistant",
+    "titleHighlight": "available 24/7",
+    "description": "AI is at the heart of Biloki. It doesn't just talk: it acts daily for your teams, guests and property owners.",
+    "features": {
+      "instant": {
+        "title": "Instant responses",
+        "desc": "AI automatically answers common tenant questions: access, Wi-Fi, amenities, rules."
+      },
+      "anomaly": {
+        "title": "Anomaly detection",
+        "desc": "AI automatically detects when a tenant encounters a problem and alerts you instantly"
+      },
+      "synthesis": {
+        "title": "Smart summaries",
+        "desc": "Generation of clear and understandable reports for property owners without technical jargon."
+      },
+      "escalation": {
+        "title": "Automatic escalation",
+        "desc": "If AI cannot answer, the conversation is automatically transferred to a human."
+      }
+    },
+    "chat": {
+      "botName": "Biloki AI",
+      "status": "Always available",
+      "online": "Online",
+      "placeholder": "Ask your question...",
+      "quickDoor": "Door code",
+      "quickCheckout": "Checkout",
+      "quickRestaurants": "Restaurants"
+    },
+    "demo": {
+      "userMessage": "Hello, what's the Wi-Fi code?",
+      "assistant1": "Hello! 👋",
+      "assistant2": "The Wi-Fi code for your property is:",
+      "assistant3": "Bilok12024!Paris",
+      "assistant4": "The network is called \"Appartement_Paris_5e\""
+    },
+    "cta": "Discover Biloki AI"
+  },
+  "appBanner": {
+    "title": "Download the Biloki app",
+    "description": "And join us for a personalized onboarding session",
+    "cta": "Book your demo",
+    "googlePlay": "Download on Google Play",
+    "appStore": "Download on the App Store"
+  },
+  "partners": {
+    "subtitle": "Connected with",
+    "title": "More than",
+    "titleHighlight": "120 OTAs",
+    "titleSuffix": "and partners"
+  },
+  "footer": {
+    "features": "Features",
+    "biloki": "Biloki",
+    "pricing": "Pricing",
+    "referral": "Referral program",
+    "about": "About",
+    "team": "Team",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "support": "Support",
+    "helpCenter": "Help center",
+    "documentation": "Documentation",
+    "status": "Status",
+    "legal": "Legal",
+    "legalNotice": "Legal notice",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "copyright": "All rights reserved."
+  },
+  "roles": {
+    "title": "One application,",
+    "titleHighlight": "4 unique experiences",
+    "description": "Four interfaces designed for each role, built to be clear, efficient and consistent.",
+    "gestionnaire": {
+      "label": "Manager",
+      "description": "Manage all your properties, tenants, service providers and owners from an intuitive dashboard.",
+      "details": [
+        "All your properties under control: Centralized management of all your accommodations",
+        "Unified communication: One thread to communicate with tenants, providers and owners",
+        "Smart planning: Predictive agenda optimizing each intervention and booking",
+        "Simplified operations: Smooth check-in / check-out and maintenance tracking",
+        "Biloki AI copilot that acts: Responds to tenants and automatically triggers actions",
+        "Meaningful statistics: Track your performance and boost your profitability"
+      ]
+    },
+    "locataire": {
+      "label": "Guest",
+      "description": "Offer your guests a better experience.",
+      "details": [
+        "Simplified access: Open door and gate with one gesture, no key required",
+        "Autonomous journey: Video tour and essential info available anytime",
+        "Direct communication: Integrated messaging to easily contact the concierge",
+        "Instant key information: Wi-Fi, arrival and departure procedures in one click",
+        "Biloki AI, the guest assistant: Responds 24/7 to questions and accompanies the stay",
+        "Good deals: Personalized recommendations"
+      ]
+    },
+    "proprietaire": {
+      "label": "Owner",
+      "description": "Give your owners an overview of their property.",
+      "details": [
+        "Property overview: Follow the activity and state of your property in real time",
+        "Key figures & performance: Revenue, occupancy rate and essential indicators",
+        "Centralized guest reviews: Check feedback and satisfaction from guests",
+        "Operations transparency: Access to stay tracking and maintenance",
+        "Simplified relationship with concierge: Clear exchanges and shared information",
+        "Serene investment management: A clear vision to make the right decisions"
+      ]
+    },
+    "prestataire": {
+      "label": "Service Provider",
+      "description": "Give your service providers a simplified overview of their operations.",
+      "details": [
+        "Clear and centralized planning: Access all your upcoming missions in one place",
+        "Real-time notifications: Be instantly informed of new interventions",
+        "Precise instructions per mission: Property details, instructions and checklists",
+        "Task validation: Confirm your visits and report key information",
+        "Simplified communication: Easily exchange with concierge via dedicated messaging"
+      ]
+    }
+  },
+  "benefits": {
+    "title": "Benefits for your",
+    "titleHighlight": "business",
+    "description": "Biloki transforms the way you manage your short-term rentals and lets you focus on what matters most: growing your business.",
+    "items": {
+      "time": {
+        "title": "Save up to 20h/week",
+        "description": "Automate repetitive tasks: calendar synchronization, access code generation, automatic guest responses with AI from booking to check-out."
+      },
+      "revenue": {
+        "title": "Increase your revenue",
+        "description": "Manage more properties with the same team. Our platform lets you scale without multiplying human resources."
+      },
+      "star": {
+        "title": "Improve your customer reviews",
+        "description": "Deliver an exceptional experience to your guests through smooth communication, clear information and autonomous access."
+      },
+      "money": {
+        "title": "Reduce your operational costs",
+        "description": "Eliminate double bookings, optimize cleaning schedules and reduce costly manual interventions."
+      },
+      "target": {
+        "title": "Centralize all your management",
+        "description": "One tool to manage everything: bookings, calendars, rates, guests, service providers, owners and communication."
+      },
+      "chart": {
+        "title": "Monitor your business in real-time on mobile and desktop",
+        "description": "Track your performance, occupancy rate, revenue and quickly identify areas for improvement."
+      }
+    }
+  },
+  "pricingCalculator": {
+    "title": "Flexible Pricing",
+    "subtitle": "Try our configurator",
+    "description": "Configure your subscription according to your needs. No hidden fees.",
+    "billingCycle": "Billing cycle",
+    "saveAnnual": "Save {percent}% with annual billing",
+    "payMonthly": "Pay month by month",
+    "numberOfProperties": "Number of properties",
+    "clientType": "Client type",
+    "professional": "Professional (excl. VAT)",
+    "individual": "Individual (incl. VAT)",
+    "additionalOptions": "Additional options",
+    "accountingModule": "Accounting Module",
+    "accountingDesc": "Automatic pre-invoicing for all your properties",
+    "salesModule": "Additional Sales Module",
+    "salesDesc": "Upsell services and products",
+    "perProperty": "Per property",
+    "customQuote": "Custom quote",
+    "customPricing": "Custom pricing",
+    "monthlyBilling": "Monthly billing",
+    "annualBilling": "Annual billing ({percent}% off)",
+    "totalPerMonth": "Total per month",
+    "annualTotal": "Annual total",
+    "noHiddenFees": "No hidden fees",
+    "clearPricing": "Clear and transparent pricing, easy billing",
+    "flexible": "Flexible",
+    "changePlan": "Change your plan anytime",
+    "responsiveSupport": "Responsive support",
+    "teamAvailable": "Team available 24/7",
+    "excludingVat": "excl. VAT",
+    "includingVat": "incl. VAT"
+  },
+  "contactPage": {
+    "title": "Contact us",
+    "description": "Have a question? Our team is here to help.",
+    "email": "Email",
+    "phone": "Phone",
+    "hours": "Hours",
+    "responseTime": "Response within 24h",
+    "availableDuring": "Available during business hours",
+    "weekDays": "Mon - Fri",
+    "workHours": "9am - 6pm",
+    "timezone": "France Time (UTC+1)",
+    "formTitle": "Send us a message",
+    "formDescription": "We'll get back to you as soon as possible.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phoneLabel": "Phone",
+    "company": "Company",
+    "emailLabel": "Email",
+    "message": "Message",
+    "messageSent": "Message sent successfully!",
+    "faqTitle": "Frequently asked questions",
+    "faqDescription": "Find answers to the most common questions",
+    "faq": {
+      "q1": "What is the response time?",
+      "a1": "We typically respond within 24 hours during business days (Monday to Friday, 9am-6pm).",
+      "q2": "How can I start a free trial?",
+      "a2": "Click on the \"Free trial\" button at the top of the page to access our registration form. No credit card required.",
+      "q3": "Do you offer phone support?",
+      "a3": "Yes, you can call us Monday to Friday from 9am to 6pm. We're happy to chat with you.",
+      "q4": "Can I get a personalized demo?",
+      "a4": "Absolutely! Contact us and we'll arrange a demo tailored to your specific needs."
+    }
+  },
+  "demoPage": {
+    "title": "Book your Biloki demo",
+    "description": "Whether you're a manager or owner, discover how Biloki can simplify your daily operations.",
+    "salesTeam": "Biloki Sales Team",
+    "demoName": "Biloki Demo",
+    "duration": "30 min",
+    "demoDescription": "During our call, we'll walk through the Biloki platform and see together how we can help you centralize and automate your stay management.",
+    "yourInfo": "Your information",
+    "features": {
+      "discover": "Discover all Biloki features",
+      "analysis": "Analysis of your specific needs",
+      "qa": "Personalized Q&A"
+    },
+    "form": {
+      "youAre": "You are",
+      "select": "Select",
+      "manager": "Manager",
+      "owner": "Owner",
+      "other": "Other",
+      "numberOfProperties": "Number of properties",
+      "range1_3": "1 to 3",
+      "range4_10": "4 to 10",
+      "range11_50": "11 to 50",
+      "range51_100": "51 to 100",
+      "range100plus": "100+",
+      "continue": "Continue"
+    }
+  },
+  "trialPage": {
+    "title": "Free trial",
+    "subtitle": "Start for free",
+    "description": "Access Biloki for 1 month, no credit card, no commitment.",
+    "enjoyTitle": "Enjoy",
+    "successMessage": "Thank you! Your free trial is ready.",
+    "features": {
+      "fullAccess": "Full access to all features",
+      "calendarIntegration": "Integration with your calendars",
+      "simplifiedBookings": "Simplified booking management",
+      "dedicatedSupport": "Dedicated customer support",
+      "unlimitedProperties": "Unlimited properties",
+      "assistedMigration": "Assisted migration",
+      "noCard": "No credit card required",
+      "noCommitment": "No commitment"
+    },
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "youAre": "You are",
+      "select": "Select",
+      "manager": "Manager",
+      "owner": "Owner",
+      "other": "Other",
+      "numberOfProperties": "Number of properties",
+      "range1_3": "1 to 3",
+      "range4_10": "4 to 10",
+      "range11_50": "11 to 50",
+      "range51_100": "51 to 100",
+      "range100plus": "100+",
+      "message": "Message (optional)",
+      "messagePlaceholder": "Tell us more about your needs...",
+      "startTrial": "Start my free trial",
+      "starting": "Starting..."
+    }
+  },
+  "teamPage": {
+    "title": "Our team",
+    "description": "A passionate team dedicated to simplifying your stay management.",
+    "whoWeAre": "Who are we?",
+    "whoWeAreText1": "Biloki was born from the desire to simplify and automate stay management for modern concierge services and property owners. Our team combines technical expertise with in-depth knowledge of the vacation rental industry.",
+    "whoWeAreText2": "We believe in artificial intelligence as a co-pilot to optimize your time and improve your guests' experience. Every day, we work to make your management smoother, more intuitive, and more efficient.",
+    "together": "Together, let's reinvent property management.",
+    "meetTeam": "Meet the team"
+  },
+  "blogPage": {
+    "title": "Blog",
+    "description": "Guides, tips and news to optimize your property management",
+    "newsletter": "Receive our latest articles",
+    "subscribeNewsletter": "Subscribe"
+  },
+  "pricingPage": {
+    "title": "Pricing transparency",
+    "subtitle": "Fair and simple pricing",
+    "description": "Choose the plan that fits your business. No surprises, no hidden fees.",
+    "lastUpdate": "Last updated",
+    "whatIsMyPrice": "What's my price?",
+    "priceExclVat": "Price excl. VAT • calculated in real-time",
+    "savedAnnually": "saved annually",
+    "numberOfProperties": "Number of properties",
+    "billingPeriod": "Billing period",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualDiscount": "-20% billed annually",
+    "clientType": "Client type",
+    "professional": "Professional (excl. VAT)",
+    "individual": "Individual (incl. VAT)",
+    "additionalOptions": "Additional options",
+    "accountingModule": "Accounting Module",
+    "accountingDesc": "Automatic pre-invoicing for all your properties",
+    "salesModule": "Additional Sales Module",
+    "salesDesc": "Upsell services / products",
+    "propertiesConcerned": "Properties concerned",
+    "perPropertyPerMonth": "/prop/month",
+    "excl": "excl. VAT",
+    "incl": "incl. VAT",
+    "appliedTo": "Applied to {count} properties",
+    "perProperty": "Per property",
+    "customQuote": "Custom quote",
+    "customPricing": "Custom pricing",
+    "perMonthLabel": "per month",
+    "totalEstimated": "Estimated total",
+    "perMonth": "per month",
+    "annualPayment": "annual, one-time payment",
+    "forProperties": "for {count} property",
+    "forPropertiesPlural": "for {count} properties",
+    "modulesIncluded": "(modules included)",
+    "annualDiscountNote": "Includes 20% annual discount on base plan",
+    "customQuoteMessage": "For more than 200 properties, our team will offer you a personalized quote.",
+    "requestQuote": "Request a quote",
+    "infoVat": "VAT not included (Pro mode) / displayed (Individual mode)",
+    "infoDegressive": "Degressive pricing per property tier",
+    "infoNoCommitment": "No commitment",
+    "infoAnnualPayment": "Annual payment: billed once",
+    "includedFeatures": "Included features",
+    "basePlan": "Base plan",
+    "baseFeatures": {
+      "reservations": "Complete booking and guest management",
+      "interfaces": "Access to 4 interfaces (manager, owner, provider, tenant)",
+      "channelManager": "Integrated Channel Manager (Airbnb, Booking, Vrbo, Expedia, etc.)",
+      "sync": "Real-time multi-channel synchronization",
+      "messaging": "Centralized messaging with guests and providers",
+      "locks": "Smart lock access management",
+      "invoicing": "Automatic invoice generation",
+      "reporting": "Detailed reporting and statistics",
+      "calendars": "Synchronized availability calendars",
+      "api": "API integrations (20+ partners available)",
+      "multiLang": "Multi-language support (EN, FR, ES, DE)",
+      "automations": "Basic automations (recurring tasks)"
+    },
+    "accountingFeatures": {
+      "expenses": "Complete expense and revenue tracking",
+      "reports": "Detailed accounting reports",
+      "taxes": "Tax and VAT management",
+      "export": "Accounting exports (standard format)",
+      "reconciliation": "Payment reconciliation",
+      "alerts": "Alerts for accounting anomalies"
+    },
+    "salesFeatures": {
+      "marketplace": "Service and product marketplace for guests",
+      "upsell": "Automated upsell (services at booking)",
+      "orders": "Order and payment management",
+      "promos": "Configurable discounts and promo codes",
+      "analytics": "Additional sales analytics",
+      "payments": "Secure payment integration"
+    },
+    "supportServices": "Support and Services (included)",
+    "supportFeatures": {
+      "email": "Email and chat support",
+      "training": "User training and onboarding",
+      "updates": "Regular updates and maintenance",
+      "community": "Access to user community",
+      "uptime": "99.9% availability guarantee"
+    },
+    "formTitle": "Let's discuss your project",
+    "formSuccess": "Thank you! We'll get back to you shortly.",
+    "getPricing": "Get pricing",
+    "loading": "Loading...",
+    "transparentPricing": "Transparent pricing",
+    "monthlyBilling": "Monthly billing"
+  },
+  "animatedInterfaces": {
+    "title": "Our 4 Interfaces",
+    "subtitle": "Designed for each role",
+    "description": "A platform adapted to each user's specific needs",
+    "labels": {
+      "concierge": "Property Manager",
+      "owner": "Owner", 
+      "provider": "Service Provider",
+      "tenant": "Guest"
+    }
+  },
+  "subscribePage": {
+    "badge": "Flexible configuration",
+    "title": "Configure your",
+    "titleHighlight": "subscription",
+    "description": "Pay according to your needs. Add the modules that suit you.",
+    "priceConfigurator": "Price configurator",
+    "numberOfProperties": "Number of properties",
+    "enterDirectly": "Or enter the number directly",
+    "billing": "Billing",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualSavings": "-10% savings",
+    "clientType": "Client type",
+    "professional": "Professional (excl. VAT)",
+    "individual": "Individual (incl. VAT)",
+    "includedFeatures": "Included features",
+    "features": {
+      "pms": "Complete PMS with stay management",
+      "channelManager": "Channel Manager (calendar sync)",
+      "pricing": "Rates & availability",
+      "ota": "OTA connections (Airbnb, Booking, etc.)",
+      "messaging": "Smart messaging with AI",
+      "locks": "Smart locks",
+      "reporting": "Reporting & performance",
+      "interfaces": "4 interfaces (owner, property manager, provider, guest)",
+      "api": "API Marketplace",
+      "support": "Email support"
+    },
+    "additionalOptions": "Additional options",
+    "accountingModule": "Accounting Module",
+    "accountingDesc": "Automatic pre-invoicing for all your properties",
+    "salesModule": "Additional Sales Module",
+    "salesDesc": "Offer additional services and products",
+    "propertiesWithModule": "Properties with this module",
+    "of": "of",
+    "applyToAll": "Apply to all your {count} properties",
+    "applyTo": "Apply to {count} property(ies)",
+    "orderSummary": "Order summary",
+    "propertiesCount": "{count} properties",
+    "module": "Module",
+    "accountingLabel": "Accounting",
+    "salesLabel": "Add. sales",
+    "propertiesLabel": "prop.",
+    "total": "Total",
+    "perMonthLabel": "/month",
+    "perYearLabel": "/year",
+    "firstMonthFree": "1st month free",
+    "payFromSecondMonth": "You only pay from the 2nd month.",
+    "payFromSecondMonthAnnual": "You only pay from the 2nd month of the first year.",
+    "noCardRequired": "✓ No credit card required",
+    "securePayment": "Secure payment upon validation",
+    "completeRegistration": "Complete my registration",
+    "ht": "excl. VAT",
+    "ttc": "incl. VAT"
+  },
+  "loginPage": {
+    "title": "Log in",
+    "description": "Access your Biloki account",
+    "successMessage": "✅ Login successful! Redirecting...",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Log in",
+    "loggingIn": "Logging in...",
+    "or": "Or",
+    "noAccount": "Don't have an account yet?",
+    "createAccount": "Create an account",
+    "needHelp": "Need help?"
+  },
+  "referralPage": {
+    "title": "Biloki Referral Program",
+    "description": "Recommend Biloki to your contacts and enjoy exclusive benefits",
+    "howItWorks": "How it works?",
+    "step1Title": "Share your link",
+    "step1Desc": "Receive your unique referral link and share it with your professional contacts",
+    "step2Title": "They sign up",
+    "step2Desc": "Your referrals create their Biloki account and subscribe to a plan",
+    "step3Title": "Enjoy the rewards",
+    "step3Desc": "Receive your benefits as soon as your referral activates their subscription",
+    "yourBenefits": "Your benefits",
+    "benefitsDescription": "Each successful referral gives you access to exclusive benefits",
+    "forYou": "For you",
+    "forReferee": "For your referral",
+    "benefit1You": "1 month free subscription for each referral",
+    "benefit2You": "Unlimited stackable rewards",
+    "benefit3You": "Priority access to new features",
+    "benefit1Referee": "20% discount on the first month",
+    "benefit2Referee": "Personalized onboarding support",
+    "benefit3Referee": "Priority support for 3 months",
+    "readyToRefer": "Ready to refer?",
+    "readyToReferDesc": "Log in to your account to access your referral link",
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "q1": "How many people can I refer?",
+      "a1": "There's no limit! You can refer as many people as you want and stack the rewards.",
+      "q2": "When will I receive my reward?",
+      "a2": "Your reward is activated as soon as your referral subscribes to a paid plan and the first payment is validated.",
+      "q3": "Does my referral need to use my link?",
+      "a3": "Yes, your referral must sign up through your unique referral link for the referral to be validated.",
+      "q4": "Can I refer an existing customer?",
+      "a4": "No, the referral program is reserved for new customers who have never had a Biloki account."
+    },
+    "questionAboutProgram": "Question about the program?",
+    "teamHereToHelp": "Our team is here to help"
+  },
+  "apiPage": {
+    "title": "Request an",
+    "titleHighlight": "API connection",
+    "description": "Integrate your favorite tool with Biloki and sync your data in real-time. Our technical team will guide you through the setup.",
+    "technicalTeam": "Biloki Technical Team",
+    "integrationTitle": "API Integration",
+    "duration": "15-30 min",
+    "integrationDesc": "Let's connect your tool to Biloki together. We'll analyze your integration needs and guide you through each step of the configuration.",
+    "feature1": "Technical compatibility verification",
+    "feature2": "Synchronization configuration",
+    "feature3": "Personalized technical support"
+  },
+  "legalPages": {
+    "cgv": {
+      "badge": "Terms and Conditions",
+      "title": "Terms and Conditions",
+      "version": "Effective as of January 20, 2026",
+      "section1Title": "1. Purpose",
+      "section1Content": "These Terms and Conditions govern the provision of software solutions and associated services offered by Biloki (the \"Company\") to its professional clients (the \"Client\"). Any order or use of our services implies unreserved acceptance of these Terms.",
+      "section2Title": "2. Definitions",
+      "section2Items": {
+        "platform": "\"Platform\": all PMS modules, channel manager, messaging, reporting, etc.",
+        "services": "\"Services\": access to the Platform, updates, support, and optional services.",
+        "contract": "\"Contract\": the quote or subscription taken out by the Client and these Terms."
+      },
+      "section3Title": "3. Services provided",
+      "section3Items": {
+        "access": "Access to the Platform in SaaS mode for the duration of the Contract.",
+        "maintenance": "Reasonable corrective and evolutionary maintenance.",
+        "support": "Support according to the level provided in the chosen offer.",
+        "additional": "Additional services (onboarding, training, support) if included in the quote."
+      },
+      "section4Title": "4. Prices and billing",
+      "section4Items": {
+        "prices": "Prices are indicated excluding taxes and specified in the quote or pricing page.",
+        "billing": "Monthly or annual billing depending on the option chosen; payment at maturity.",
+        "delay": "Any late payment may result in suspension of access and application of legal penalties.",
+        "evolution": "Prices may change annually; any modification is notified at least 30 days before coming into effect."
+      },
+      "section5Title": "5. Client obligations",
+      "section5Items": {
+        "info": "Provide accurate information and keep payment methods up to date.",
+        "compliance": "Ensure compliance of content and data with applicable regulations.",
+        "rights": "Respect third-party rights and authorized use of the Platform.",
+        "security": "Ensure the security of access (identifiers, passwords) and report any incident."
+      },
+      "section6Title": "6. Support and maintenance",
+      "section6Content": "Support is available through the channels and schedules specified in the offer. The Company may schedule planned interruptions for maintenance, notified within a reasonable time when possible.",
+      "section7Title": "7. Availability",
+      "section7Content": "The Company implements reasonable means to ensure continuous availability of the Platform. Performance may be affected by external factors (networks, third-party providers, force majeure).",
+      "section8Title": "8. Intellectual property",
+      "section8Content": "The Platform, its components, and all intellectual property rights remain the exclusive property of the Company. The Client has a non-exclusive, non-transferable right of use limited to the Contract.",
+      "section9Title": "9. Personal data and security",
+      "section9Items": {
+        "compliance": "Each party acts in compliance with applicable regulations (including GDPR).",
+        "processor": "The Company acts as a processor for data processed on behalf of the Client.",
+        "measures": "Reasonable technical and organizational measures are implemented to protect data."
+      },
+      "section10Title": "10. Confidentiality",
+      "section10Content": "Each party undertakes to keep confidential non-public information received from the other party, except for legal obligation or request from a competent authority.",
+      "section11Title": "11. Subcontracting",
+      "section11Content": "The Company may use subcontractors for the execution of the Contract, particularly for hosting, payments, or specific services, in compliance with security and confidentiality obligations.",
+      "section12Title": "12. Duration and termination",
+      "section12Items": {
+        "duration": "The Contract is concluded for the duration provided in the quote or subscription.",
+        "termination": "Each party may terminate in case of serious breach not remedied 30 days after notification.",
+        "consequences": "In case of termination, amounts already invoiced remain due; access may be suspended at maturity."
+      },
+      "section13Title": "13. Liability",
+      "section13Items": {
+        "obligation": "The Company is bound by an obligation of means.",
+        "limit": "Total liability is limited to the amount paid by the Client over the last 12 months.",
+        "exclusion": "Indirect damages are excluded (loss of revenue, data, opportunities)."
+      },
+      "section14Title": "14. Force majeure",
+      "section14Content": "Neither party shall be held liable for a breach due to a force majeure event under French law. Obligations are suspended for the duration of the event.",
+      "section15Title": "15. Notifications",
+      "section15Content": "Any contractual notification must be made in writing, by email or mail to the address indicated by each party, and will be deemed received on the date of sending.",
+      "section16Title": "16. Applicable law and disputes",
+      "section16Content": "These Terms are governed by French law. Any dispute relating to their interpretation or execution shall fall under the exclusive jurisdiction of the Paris courts, unless otherwise required by mandatory law.",
+      "section17Title": "17. Contact",
+      "section17Content": "For any questions about these Terms or to exercise your rights, you can contact us at:"
+    },
+    "legalNotice": {
+      "badge": "Legal Notice",
+      "title": "Legal Notice",
+      "subtitle": "Biloki Platform and Website",
+      "intro": "In accordance with articles 6-III and 19 of law n°2004-575 of June 21, 2004 on Confidence in the Digital Economy (LCEN), here is the identity of the stakeholders of the Biloki website and platform.",
+      "section1Title": "1. Website and platform publisher",
+      "section1Content": "Company name: SAS Biloki\nLegal form: Simplified joint-stock company\nShare capital: €204,911.00\nHeadquarters: 4 rue Voltaire - 44000 Nantes, France\nRegistration: RCS Nantes n° 932 678 493\nIntra-community VAT: FR69932678493",
+      "section2Title": "2. Publication director",
+      "section2Content": "Name: Sébastien Vernay\nPosition: President of SAS Biloki",
+      "section3Title": "3. Contact",
+      "section3Content": "Name: Sébastien Vernay\nPosition: President of SAS Biloki",
+      "section4Title": "4. Hosting",
+      "section4Content": "Host: IONOS SARL\nAddress: 7 place de la gare - BP 70109 / 57201 Sarreguemines, France\nEmail: confidentialite@ionos.fr",
+      "section5Title": "5. Intellectual property",
+      "section5Content": "The entire website, platform, applications, content, software, algorithms, databases, trademarks, logos, and graphic elements are the exclusive property of Biloki, unless otherwise stated. Any unauthorized reproduction, representation, extraction, or exploitation is strictly prohibited.",
+      "section6Title": "6. Personal data",
+      "section6Content": "Personal data collected is processed in accordance with applicable regulations, including GDPR. For more information, consult the Privacy Policy available on the website.",
+      "section7Title": "7. Hyperlinks",
+      "section7Content": "The website may contain links to third-party sites. Biloki has no control over these sites and disclaims all responsibility for their content or operation.",
+      "section8Title": "8. Applicable law",
+      "section8Content": "These legal notices are governed by French law. Any dispute falls under the exclusive jurisdiction of the courts within the jurisdiction of Biloki's headquarters."
+    },
+    "cookies": {
+      "badge": "Cookie Policy",
+      "title": "Cookie Policy",
+      "version": "Effective as of January 20, 2026",
+      "section1Title": "1. Why we use cookies",
+      "section1Content": "We use cookies and trackers to ensure the proper functioning of the Biloki website and platform, measure audience, improve user experience, and, when you accept, personalize certain content.",
+      "section2Title": "2. Types of cookies",
+      "section2Items": {
+        "technical": "Technical cookies: essential for operation (authentication, security, basic preferences).",
+        "analytics": "Audience measurement: traffic and performance statistics.",
+        "personalization": "Personalization: remembering certain display or navigation preferences."
+      },
+      "section3Title": "3. Legal basis",
+      "section3Content": "Strictly necessary cookies are based on our legitimate interest in providing a secure and functional service. Audience and personalization cookies are placed based on your consent, which you can withdraw at any time.",
+      "section4Title": "4. Retention periods",
+      "section4Content": "Durations vary depending on the purpose:\n- Technical cookies: session duration or a few months maximum\n- Audience measurement: generally 13 months\n- Personalization: up to 13 months",
+      "section5Title": "5. Your choices",
+      "section5Content": "You can manage your preferences via the cookie banner (when present) or from your browser settings (blocking, deleting, alert before deposit). Refusing technical cookies may degrade certain essential features.",
+      "section6Title": "6. Third parties",
+      "section6Content": "Some cookies may come from third-party providers (e.g., analytics tools). We strive to limit these deposits and choose partners offering adequate data protection guarantees.",
+      "section7Title": "7. Contact",
+      "section7Content": "For any questions regarding cookies or data protection, you can write to us at:"
+    }
+  },
+  "smartLocksPage": {
+    "title": "Smart",
+    "titleHighlight": "Locks",
+    "description": "Secure your properties and automate guest access. Our team will help you find the best solution.",
+    "team": "Biloki Partnership Team",
+    "pageTitle": "Smart Locks",
+    "duration": "20-30 min",
+    "intro": "Explore how to secure your properties with the best smart lock solutions. We will check the compatibility of your doors and offer you the best options.",
+    "feature1": "Door compatibility audit",
+    "feature2": "Presentation of compatible brands",
+    "feature3": "Support for Biloki integration"
+  },
+  "landingPage": {
+    "badge": "For property managers",
+    "heroTitle": "Reduce your administrative hours",
+    "heroHighlight": "by 70%",
+    "heroDescription": "Automate the management of your properties, tenants, and service providers in one platform. Run your business without administrative overload.",
+    "bookFreeDemo": "Book a free demo",
+    "noCommitment": "No commitment",
+    "demoIn15min": "15 min demo",
+    "noTrainingRequired": "No training required",
+    "problemsTitle": "You're wasting time on tasks that can be automated",
+    "problems": {
+      "messaging": {
+        "title": "Fragmented messaging",
+        "desc": "Airbnb, Booking, WhatsApp... messages scattered everywhere"
+      },
+      "calendars": {
+        "title": "Unsynced calendars",
+        "desc": "Risk of double-booking, manual updates"
+      },
+      "providers": {
+        "title": "Provider management",
+        "desc": "Manual assignment of cleaning and maintenance"
+      },
+      "billing": {
+        "title": "Manual invoicing",
+        "desc": "No real-time financial visibility"
+      },
+      "access": {
+        "title": "Property access",
+        "desc": "Complicated key and code management"
+      },
+      "reporting": {
+        "title": "No reporting",
+        "desc": "Impossible to quickly monitor your business"
+      }
+    },
+    "solutionTitle": "Biloki solves all of this in",
+    "solutionHighlight": "one single platform",
+    "solutions": {
+      "messaging": {
+        "title": "Unified messaging",
+        "desc": "All messages centralized. AI that responds 24/7."
+      },
+      "ota": {
+        "title": "120+ OTAs synchronized",
+        "desc": "One calendar for Airbnb, Booking, Vrbo, etc."
+      },
+      "automation": {
+        "title": "Smart automation",
+        "desc": "Cleaning scheduling, reminders, notifications"
+      },
+      "billing": {
+        "title": "Automatic invoicing",
+        "desc": "Invoices generated, revenue tracked in real-time"
+      },
+      "locks": {
+        "title": "Smart locks",
+        "desc": "Automatic codes per stay, no keys"
+      },
+      "dashboard": {
+        "title": "Complete dashboard",
+        "desc": "360° view of your business, occupancy rate, revenue"
+      }
+    },
+    "manageStaysTitle": "Manage your stays",
+    "manageStaysHighlight": "effortlessly",
+    "managerInterface": "Manager Interface",
+    "tenantInterface": "Guest Interface",
+    "trustTitle": "Join the managers who trust Biloki",
+    "stats": {
+      "concierges": "Property managers using Biloki",
+      "properties": "Properties managed daily",
+      "timeSaved": "Administrative time saved"
+    },
+    "testimonial": {
+      "quote": "Before Biloki, I spent 20h/week on admin. Now it's 6h. I've recovered time to grow my business and clients are happier.",
+      "name": "Lucas M.",
+      "role": "Manager, 35 properties"
+    },
+    "demoTitle": "See Biloki in action",
+    "demoDescription": "Book a personalized demo. 15 minutes to discover how to save 70% of your administrative time.",
+    "formSuccess": "Thank you! We'll get back to you shortly.",
+    "fullName": "Full name",
+    "yourName": "Your name",
+    "phone": "Phone",
+    "loading": "Loading...",
+    "bookMyFreeDemo": "Book my free demo",
+    "formNote": "We'll process your request within 2 hours. No commitment required.",
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "q1": "How long does integration take?",
+      "a1": "Less than an hour. Our teams install Biloki and connect your OTAs. You start using it immediately.",
+      "q2": "Do you have a free trial?",
+      "a2": "{days} free. No credit card required. Or book a demo to see Biloki in action.",
+      "q3": "Does Biloki work with my current OTAs?",
+      "a3": "Yes, Biloki is compatible with 120+ platforms: Airbnb, Booking, Vrbo, Expedia, etc.",
+      "q4": "Is my data secure?",
+      "a4": "Absolutely. End-to-end encryption, daily backup, GDPR and ISO27001 compliance."
+    },
+    "readyTitle": "Ready to reduce your administrative burden?",
+    "readyDescription": "Join 2000+ managers who trust Biloki to optimize their business.",
+    "copyright": "© 2026 Biloki. All rights reserved."
+  },
+  "featuresPages": {
+    "fourInterfaces": {
+      "title": "One application,",
+      "titleHighlight": "4 unique experiences",
+      "description": "Four interfaces designed for each role: manager, owner, provider and guest. Each person accesses only the information and actions relevant to them.",
+      "manager": {
+        "badge": "Manager Interface",
+        "title": "Control your entire business",
+        "description": "Manage all your properties, tenants, providers and owners from an intuitive dashboard. Everything is centralized for a 360° view of your business.",
+        "features": ["All your properties under control from a single dashboard", "Unified communication: messages, emails, SMS synchronized", "Smart planning that anticipates and optimizes your resources", "Simplified operations with advanced automations", "Biloki AI: a copilot that acts for you", "Real-time statistics to drive your performance"]
+      },
+      "owner": {
+        "badge": "Owner Interface",
+        "title": "Complete transparency for your owners",
+        "description": "Give your owners a clear overview of their property with real-time access to performance, revenue and operations.",
+        "features": ["Property overview with booking calendar", "Key figures & performance: occupancy rate, net revenue", "Guest reviews centralized from all platforms", "Complete transparency on all operations", "Simplified relationship with the concierge via dedicated messaging", "Peace of mind investment tracking with detailed reports"]
+      },
+      "provider": {
+        "badge": "Provider Interface",
+        "title": "Simplify the work of your internal or external providers",
+        "description": "Give your providers a simple and efficient mobile-first interface. Available as mobile app and web app (no need to download the application). Each provider receives the right information at the right time, without manual intervention.",
+        "features": ["Clear and centralized planning accessible on mobile", "Real-time notifications for each new mission", "Precise instructions per mission: address, access, guidelines", "Task validation with photos for traceability", "Direct communication with the concierge", "Complete history of completed interventions"]
+      },
+      "guest": {
+        "badge": "Guest Interface",
+        "title": "A premium guest experience",
+        "description": "Offer your guests an autonomous and premium experience. Personalized guide per property with AI assistant available 24/7.",
+        "features": ["Simplified access: codes, wifi, parking in one click", "Autonomous journey with personalized digital guide", "Direct communication with the host via messaging", "Instant key information: check-in, check-out, rules", "Biloki AI: intelligent assistant available 24/7", "Local tips: personalized local recommendations", "Additional sales: order services and products (champagne, breakfast...)"]
+      },
+      "ctaTitle": "Ready to discover these 4 interfaces?",
+      "ctaDescription": "Book a personalized demo and see how each interface transforms the user experience."
+    },
+    "iaAutomation": {
+      "title": "AI & automation",
+      "description": "An assistant available 24/7 for your guests and an operational copilot for your team.",
+      "content": "Biloki's AI automatically answers common questions, triggers actions and helps you optimize your daily operations."
+    },
+    "messaging": {
+      "title": "Centralized messaging",
+      "description": "All your exchanges gathered in one place.",
+      "content": "Guest messages, internal notifications, emails and SMS automatically synchronized. Communicate effectively with all your stakeholders from a unified interface."
+    },
+    "channelManager": {
+      "title": "Channel Manager",
+      "description": "Distribute and synchronize your listings on more than 120 booking platforms.",
+      "content": "Each booking is centralized in real-time, with no risk of double booking. Manage all your distribution channels from a single interface."
+    },
+    "multiLanguage": {
+      "title": "Multi-language",
+      "description": "An interface and AI automatically adapted to each user's language.",
+      "content": "Ideal for managing an international clientele without friction. Complete multi-language support for the interface, notifications and AI assistant."
+    },
+    "providers": {
+      "title": "Provider management",
+      "description": "Automatic scheduling of cleaning, maintenance and check-in missions.",
+      "content": "Each provider receives the right information on their interface, at the right time, without manual intervention. They validate their missions by sending photos."
+    },
+    "reporting": {
+      "title": "Reporting & Analytics",
+      "description": "Complete dashboards to drive performance.",
+      "content": "Occupancy rate, revenue, profitability per property and provider tracking. Owners can see real-time performance tracking, reviews and their key indicators."
+    },
+    "overview": {
+      "title": "Overview",
+      "description": "Discover all Biloki features at a glance.",
+      "content": "Biloki offers you a complete vision of your concierge activity. Centralize all your tools and data in one place to efficiently manage your operations."
+    },
+    "pms": {
+      "title": "A complete PMS to manage your business",
+      "titleHighlight": "with these 4 interfaces",
+      "description": "Centralize, automate and manage all your concierge activity in one powerful tool.",
+      "withBiloki": "With Biloki, you can:",
+      "sections": {
+        "reservations": {
+          "title": "Booking & calendar management",
+          "description": "Centralize all your bookings (Airbnb, Booking, direct site, etc.) in a single synchronized calendar.",
+          "features": ["Automatic multi-platform calendar synchronization", "Avoid double bookings", "Clear view by property, by day and by channel", "Real-time arrivals and departures management"]
+        },
+        "channelManager": {
+          "title": "Integrated Channel Manager",
+          "description": "Publish your listings and manage your rates on 120+ platforms from a single dashboard.",
+          "features": ["Multi-platform publishing from a single tool", "Automatic price and availability updates", "One-click date opening/closing", "Restriction management (minimum nights, check-in/out)"]
+        },
+        "operations": {
+          "title": "Concierge operations automation",
+          "description": "Automatically create cleaning missions, schedule interventions and assign providers.",
+          "features": ["Automatic cleaning mission creation", "Missions sent directly to provider interface in real-time", "Linen scheduling, inventory, maintenance", "Automatic provider assignment", "Cleaning checklists per property"]
+        },
+        "communication": {
+          "title": "Guest communication (guest experience)",
+          "description": "Centralize and automate all your exchanges with guests in one place.",
+          "features": ["Automatic messages before arrival (codes, info)", "Personalized check-in / check-out instructions", "Airbnb, Booking, WhatsApp, SMS centralization", "24/7 AI support for guest questions"]
+        },
+        "access": {
+          "title": "Access & connected device management",
+          "description": "Generate temporary codes and automatically manage access to smart locks.",
+          "features": ["Automatic temporary access code generation", "Access activation/deactivation based on booking dates", "Integration with smart locks and thermostats", "Complete access history"]
+        },
+        "billing": {
+          "title": "Billing, commissions & owners",
+          "description": "Automate billing, commission calculation and revenue management by owner. (Optional paid module: +€2/property/month)",
+          "features": ["Automatic commission calculation", "Owner invoicing and pre-invoicing", "Revenue, fees, cleaning breakdown", "Detailed dashboards per owner or per property"]
+        },
+        "reporting": {
+          "title": "Reporting & performance management",
+          "description": "Get a clear view of your performance to make the right decisions.",
+          "features": ["Real-time occupancy rate", "Revenue per property and per platform", "Operational cost tracking", "Performance analysis to justify added value"]
+        }
+      },
+      "ctaTitle": "Ready to transform your concierge business?",
+      "ctaDescription": "Discover how Biloki can centralize and automate your entire business to save time and improve profitability.",
+      "bookDemo": "Book a demo",
+      "freeTrial": "Free trial (1 month)"
+    },
+    "marketplace": {
+      "title": "Integrations",
+      "titleHighlight": "Biloki",
+      "description": "Connect Biloki to all the tools you need to manage your vacation rental business.",
+      "categories": {
+        "all": "All",
+        "ota": "OTA's",
+        "payments": "Payments",
+        "accounting": "Accounting",
+        "locks": "Locks",
+        "cleaning": "Cleaning",
+        "communication": "Communication",
+        "pricing": "Pricing"
+      },
+      "apiSection": {
+        "title": "Open API and complete documentation",
+        "description": "Integrate Biloki with your own systems through our complete RESTful API. Detailed documentation, real-time webhooks and dedicated technical support.",
+        "viewDocs": "View documentation",
+        "requestIntegration": "Request an integration"
+      },
+      "ctaTitle": "Ready to connect your tools?",
+      "ctaDescription": "Request the integration of your favorite tool or start with our available integrations.",
+      "tryFree": "Try for free"
+    },
+    "smartLocks": {
+      "title": "Smart",
+      "titleHighlight": "locks",
+      "description": "Automate access to your properties with temporary codes automatically generated for each stay.",
+      "benefits": {
+        "automaticCodes": {
+          "title": "Automatic codes",
+          "description": "Generation and sending of unique access codes for each booking"
+        },
+        "scheduledActivation": {
+          "title": "Scheduled activation",
+          "description": "Codes automatically activate and deactivate based on stay dates"
+        },
+        "fullHistory": {
+          "title": "Complete history",
+          "description": "Track all access: guests, service providers, and management teams"
+        }
+      },
+      "configurator": {
+        "title": "Check your door compatibility",
+        "subtitle": "Answer a few questions to find out if your installation is compatible",
+        "step": "Step",
+        "of": "of",
+        "questions": {
+          "doorType": "What type of door do you have?",
+          "lockType": "What type of lock do you currently have?",
+          "cylinderType": "Is your cylinder visible and accessible?",
+          "doorThickness": "What is your door thickness?",
+          "usage": "How do you use your property?"
+        },
+        "options": {
+          "doorEntry": "Entry door",
+          "doorApartment": "Apartment door",
+          "doorInterior": "Interior door",
+          "doorOffice": "Office / building door",
+          "lockCylinder": "European cylinder lock",
+          "lockMultipoint": "Multipoint lock",
+          "lockMortise": "Mortise lock",
+          "lockSurface": "Surface-mounted lock",
+          "dontKnow": "I don't know",
+          "cylinderStandard": "Yes, standard European cylinder",
+          "cylinderThumbTurn": "Yes, thumb turn cylinder",
+          "cylinderNo": "No",
+          "thicknessLess40": "Less than 40 mm",
+          "thickness40to60": "40–60 mm",
+          "thicknessMore60": "More than 60 mm",
+          "usageShortTerm": "Short-term rental",
+          "usagePrimary": "Primary residence",
+          "usageSecondary": "Secondary residence",
+          "usageProfessional": "Professional use"
+        },
+        "results": {
+          "compatible": {
+            "title": "✅ Compatible with Biloki",
+            "message": "Perfect! Your configuration is compatible with our smart locks. You can automate your access and manage all your codes from Biloki."
+          },
+          "conditions": {
+            "title": "⚠️ Compatible with conditions",
+            "message": "Your installation is compatible but requires a technical check or a specific adapter. Our experts can help you with the configuration."
+          },
+          "incompatible": {
+            "title": "❌ Non-compatible configuration",
+            "message": "Unfortunately, this type of lock or door thickness is not compatible with our current solutions. Contact us to explore alternatives."
+          },
+          "assistance": {
+            "title": "🤝 We'll guide you",
+            "message": "We need more information to advise you properly. A Biloki expert can help you identify the best solution for your property."
+          }
+        },
+        "cta": {
+          "bookDemo": "Book a demo",
+          "bookTechnicalDemo": "Book a technical demo",
+          "contactTeam": "Contact Biloki team",
+          "getHelp": "Get expert guidance"
+        },
+        "restart": "Restart the test",
+        "previous": "Previous",
+        "yourAnswers": "Your answers:",
+        "answerLabels": {
+          "doorType": "Door type",
+          "lockType": "Lock type",
+          "cylinder": "Cylinder",
+          "thickness": "Thickness",
+          "usage": "Usage"
+        }
+      },
+      "howItWorks": {
+        "title": "How does it work?",
+        "steps": {
+          "step1": {
+            "title": "New booking",
+            "description": "A booking comes in via Airbnb, Booking or directly"
+          },
+          "step2": {
+            "title": "Automatic generation",
+            "description": "Biloki generates a unique code for this stay"
+          },
+          "step3": {
+            "title": "Scheduled activation",
+            "description": "The code activates 2h before arrival and deactivates at checkout"
+          },
+          "step4": {
+            "title": "Sent to guest",
+            "description": "The code is automatically sent by email, SMS and on the guest interface"
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready to automate your access?",
+        "description": "Integrate your smart locks with Biloki and manage all your access codes automatically.",
+        "button": "Try for free"
+      }
+    },
+    "calendars": {
+      "title": "Sync all your calendars with the",
+      "titleHighlight": "Biloki Channel Manager",
+      "description": "Easily connect Biloki with major booking platforms to automatically sync your calendars and avoid double bookings.",
+      "sections": {
+        "platforms": {
+          "title": "Connect with the biggest booking platforms",
+          "description1": "The Channel Manager is a tool that allows you to connect all your listings on booking platforms like Airbnb, Booking.com, Vrbo, and Expedia.",
+          "description2": "It automatically syncs your availability, reservations, calendars and rates across major channels, without having to manually update each calendar. All centralized from your vacation rental software."
+        },
+        "centralized": {
+          "title": "All your bookings in one place",
+          "description1": "Biloki imports all reservations you receive from external booking channels into your centralized platform. With the Channel Manager, you can manage all your bookings from a single place.",
+          "description2": "Our software automatically updates availability and rates across all sites. This way you avoid the risk of double bookings that could compromise your short-term rental business.",
+          "visual": "All your bookings centralized"
+        },
+        "visibility": {
+          "title": "More visibility for more bookings",
+          "description1": "Add your listings to more portals via iCal integration to gain visibility and receive more bookings. You can export your listings, reservations and rates in minutes.",
+          "description2": "Publish your accommodations on all major platforms and maximize your occupancy rate.",
+          "visual": "Maximize your visibility"
+        }
+      },
+      "benefits": {
+        "title": "Benefits of Biloki's Channel Manager",
+        "subtitle": "Automate your management and save precious time",
+        "items": {
+          "sync": {
+            "title": "Instant synchronization",
+            "description": "No more double bookings! One reservation updates all your platforms automatically."
+          },
+          "time": {
+            "title": "Save up to 20h/week",
+            "description": "The Channel Manager automates repetitive tasks like updating availability and calendars."
+          },
+          "centralize": {
+            "title": "Centralize your bookings",
+            "description": "No need to switch between platforms. Bidirectional API integrations sync everything automatically."
+          },
+          "commission": {
+            "title": "Offset commissions",
+            "description": "Adjust your rates on certain platforms to cover fees charged on each booking."
+          },
+          "visibility": {
+            "title": "Boost your visibility",
+            "description": "Publish your properties on more platforms, easily export your data and optimize your listings."
+          },
+          "calendar": {
+            "title": "Centralized calendar",
+            "description": "View and manage all your bookings from a single calendar, modify rates and availability in one click."
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently asked questions about Channel Manager",
+        "items": {
+          "what": {
+            "question": "What is a Channel Manager?",
+            "answer": "A Channel Manager is a software tool that allows you to manage all your listings across multiple booking platforms from one place. It automatically syncs your availability, rates and reservations to avoid double bookings."
+          },
+          "syncTime": {
+            "question": "How long does it take to sync my reservations?",
+            "answer": "Your reservations are automatically synced on Biloki's Channel Manager and all your external listings within minutes, or instantly for direct API connections."
+          },
+          "platforms": {
+            "question": "Which platforms can I connect?",
+            "answer": "Biloki connects with major platforms: Airbnb, Booking.com, Vrbo, Expedia and more than 120 other OTAs via iCal. You can manage all your listings from a single interface."
+          },
+          "doubleBooking": {
+            "question": "Does the Channel Manager really prevent double bookings?",
+            "answer": "Yes! Real-time synchronization automatically blocks dates on all your platforms as soon as a booking is confirmed, eliminating the risk of double booking."
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready to accept more bookings?",
+        "description": "No setup fees or credit card required. No commitment. Try Biloki free for 1 month."
+      }
+    },
+    "ota": {
+      "title": "OTA",
+      "titleHighlight": "Connections",
+      "description": "Connect to more than {count} major booking platforms: {platforms} and many others.",
+      "cards": {
+        "platforms": {
+          "title": "{count}+ connected platforms",
+          "description": "Distribute your listings on {platforms} and more than {otherCount} other international platforms. Maximize your visibility."
+        },
+        "oneClick": {
+          "title": "One-click connection",
+          "description": "Connect your OTA accounts in seconds. Our system automatically retrieves your existing listings and syncs all information."
+        },
+        "performance": {
+          "title": "Performance by channel",
+          "description": "Analyze each platform's performance: number of bookings, revenue generated, conversion rate. Identify your most profitable channels."
+        },
+        "sync": {
+          "title": "Automatic synchronization",
+          "description": "All bookings, modifications and cancellations are synced in real-time. Guest data is automatically retrieved."
+        }
+      },
+      "mainPlatforms": "Main platforms",
+      "otherPlatforms": "+ {count} other platforms available",
+      "cta": {
+        "title": "Multiply your visibility",
+        "description": "Connect all your platforms and manage them from a single interface."
+      }
+    }
+  },
+  "chatbot": {
+    "title": "Biloki Assistant",
+    "online": "Online",
+    "placeholder": "Your question...",
+    "trialCta": "Free trial {days} days 🚀",
+    "trialCtaRocket": "🚀 Free trial {days} days",
+    "initialGreeting": "Hello! 👋 I'm the Biloki assistant.\n\nHow can I help you?\n• Discover our features\n• Understand pricing\n• Answer your questions",
+    "profileDetection": {
+      "keywords": {
+        "owner": ["owner", "my property", "my apartment", "my house", "my properties", "landlord"],
+        "concierge": ["concierge", "agency", "rental management", "manager", "company", "business", "property management company"],
+        "manager": ["manager", "property manager", "manage", "management"]
+      },
+      "responses": {
+        "owner": "Perfect! As a property owner, Biloki can help you:\n\n✅ Sync your calendars across all platforms\n✅ Automate communication with your guests\n✅ Manage smart lock access codes\n✅ Track your revenue in real-time\n\nHow many properties do you manage?",
+        "concierge": "Excellent! For a property management company, Biloki offers:\n\n✅ A complete PMS with multi-owner management\n✅ A channel manager connected to +{integrations} OTAs\n✅ A dedicated interface for your service providers\n✅ Advanced reporting for your owners\n✅ AI automation\n\nHow many properties do you currently manage?",
+        "manager": "Great! As a property manager, Biloki offers you:\n\n✅ Centralized management of all your properties\n✅ A dedicated interface for your teams\n✅ Automation of repetitive tasks\n✅ Real-time activity tracking\n\nHow many properties do you manage?"
+      }
+    },
+    "logementResponses": {
+      "manyProperties": "{count} properties, that's a great business! 🏠\n\nAt this scale, you probably lack time to manage all your bookings, calendars and communications. That's exactly what Biloki automates! ✨",
+      "someProperties": "{count} propert{plural}, that's serious! 😊\n\nYou certainly need to centralize your management. Biloki can really simplify your life!",
+      "fewProperties": "{count} property, good start! 👍\n\nEven when starting out, having the right tools is essential. Biloki grows with you!",
+      "askForDemo": "\n\nWould you like to see how Biloki works by booking a personalized demo?",
+      "askNumber": "Could you give me an approximate number of properties you manage?"
+    },
+    "actions": {
+      "bookDemo": "📅 Book a demo (15-20 min)",
+      "bookDemoShort": "📅 Book a demo",
+      "tryFree": "Try for free",
+      "seePricing": "See pricing",
+      "calculatePricing": "Calculate my price",
+      "seeDetailedPricing": "See detailed pricing",
+      "bookPersonalDemo": "Book a personalized demo",
+      "startFreeTrial": "Start free trial",
+      "twoOptions": "🎯 Two options to discover Biloki:",
+      "personalDemo": "Personalized demo (15-20 min)",
+      "discoverFeatures": "Discover features",
+      "contactPage": "📞 Contact Page",
+      "contactUs": "Contact us"
+    },
+    "demoStep": {
+      "wantPrice": "price|pricing|cost|how much",
+      "wantFeatures": "features|what does it do|offers",
+      "agree": "yes|ok|agree|sure",
+      "later": "later|think about it",
+      "agreeResponse": "🎯 Great! Click below to book your slot. It takes 1 minute!",
+      "laterResponse": "No problem! 😊\n\nYou can start exploring Biloki with no commitment:",
+      "defaultResponse": "Can I help you with something else?\n\n• See pricing\n• Discover features\n• Technical questions\n\nOr start your free trial directly!"
+    },
+    "contextual": {
+      "priceKeywords": "price|pricing|cost|how much",
+      "featuresKeywords": "features|what does it do|offers",
+      "otaKeywords": "ota|airbnb|booking",
+      "aiKeywords": "ai|artificial intelligence|automation",
+      "demoKeywords": "demo|trial|test",
+      "migrationKeywords": "migration|switch|import",
+      "supportKeywords": "support|help|assistance",
+      "thanksKeywords": "thank|thanks",
+      "apiConnectionsLabel": "API Connections",
+      "smartLocksLabel": "Smart Locks",
+      "providersLabel": "Provider Management",
+      "partners": "Partners",
+      "contactUs": "Contact us",
+      "phone": "Phone",
+      "hours": "Hours",
+      "responseTime": "Response time",
+      "contactFormInfo": "You can also contact us through our contact page form!",
+      "faqTitle": "Frequently asked questions",
+      "faqMore": "Do you have a specific question? Don't hesitate to ask!",
+      "blogTitle": "Our guides and articles",
+      "viewBlog": "View blog",
+      "optionalModules": "Optional modules",
+      "includedTitle": "Everything included in your plan",
+      "andMore": "And much more!",
+      "benefitsTitle": "Concrete benefits of Biloki",
+      "timeSaved": "Time saved",
+      "adminReduction": "Admin reduction",
+      "doubleBookings": "Double booking",
+      "connectedPlatforms": "Connected platforms",
+      "comparisonTitle": "Biloki vs other solutions",
+      "comparisonText": "Biloki stands out for its simplicity, competitive pricing and responsive support. We offer all the essential features to manage your rentals.",
+      "comparisonCta": "Want to know more about what makes us different?",
+      "aiResponse": "Our Biloki AI acts as a real copilot:\n\n🤖 For your guests:\n• Answers 24/7 to their questions\n• Provides practical information\n• Handles common requests\n\n🧠 For your team:\n• Suggests actions\n• Automatically triggers cleaning\n• Optimizes your schedule\n\nIt's like having an assistant that never sleeps! 😊",
+      "migrationResponse": "Migration to Biloki is 100% supported! 🚀\n\n✅ Automatic data import\n✅ OTA connection setup\n✅ Team training\n✅ Dedicated support during transition\n\nOur clients are operational in less than 48 hours.",
+      "supportResponse": "💪 Our support is included in all our plans:\n\n• Live chat\n• Email (response < 2h)\n• Comprehensive knowledge base\n• Video tutorials\n• Personalized onboarding\n\nAnd we speak English! 🇬🇧",
+      "thanksResponse": "You're welcome! 😊\n\nDon't hesitate if you have other questions. I'm here to help!",
+      "defaultResponse": "I want to make sure I understand your needs correctly.\n\nCould you rephrase your question? Or can I help you with:\n• Features\n• Pricing\n• A demonstration\n• Compatibility with your current tools"
+    },
+    "pricing": {
+      "intro": "Our prices are tiered based on the number of properties:",
+      "tierLabel": "{min}-{max} properties",
+      "tierLabelPlus": "{min}+ properties",
+      "tierPrice": "€{price}/month",
+      "trialInfo": "Free trial {days} days, no commitment or credit card required!"
+    },
+    "features": {
+      "intro": "Biloki is an all-in-one platform that includes:",
+      "pms": "Complete PMS (properties, stays, guests, revenue)",
+      "channelManager": "Channel Manager ({count}+ OTAs)",
+      "messaging": "Centralized messaging (Email, SMS, WhatsApp)",
+      "providers": "Service provider management",
+      "locks": "Smart locks (automatic codes)",
+      "ai": "Built-in AI",
+      "reporting": "Reporting & analytics",
+      "multiLanguage": "Multi-language",
+      "outro": "Would you like a demo to see all this in action?"
+    },
+    "integrations": {
+      "intro": "Biloki connects with over {count} platforms:",
+      "directApi": "🔗 Direct API connections:",
+      "othersViaIcal": "and {count} others via iCal",
+      "syncInfo": "Everything is synced in real-time: calendars, rates, bookings. Zero double bookings! ⚡"
+    },
+    "about": {
+      "title": "👥 **About Biloki**",
+      "president": "President",
+      "mission": "*\"Biloki was born from the desire to simplify and automate stay management for concierge services and short-term rental managers.\"*",
+      "ourTeam": "👥 Our team"
+    },
+    "legal": {
+      "title": "⚖️ **Legal information**",
+      "moreDetails": "For more details, please visit our dedicated pages.",
+      "legalNotice": "Legal notice",
+      "termsOfService": "Terms of Service"
+    },
+    "referral": {
+      "title": "🎁 **Biloki Referral Program**",
+      "intro": "We reward your recommendations:",
+      "bonusPerReferral": "Bonus per validated referral",
+      "howItWorks": "How it works",
+      "step1": "Share your referral link",
+      "step2": "Your contact signs up",
+      "step3": "Bonus credited after 3 months of subscription",
+      "details": "Referral details"
+    },
+    "whatIsBiloki": {
+      "title": "🏠 **What is Biloki?**",
+      "intro": "Biloki is an all-in-one platform for short-term rental property management.",
+      "description": "We help concierge services, rental agencies, and property owners to:",
+      "benefit1": "✅ Manage all their properties from a single interface",
+      "benefit2": "✅ Sync calendars across 120+ platforms (Airbnb, Booking, etc.)",
+      "benefit3": "✅ Automate guest communication",
+      "benefit4": "✅ Manage service providers and cleaning schedules",
+      "benefit5": "✅ Generate smart access codes for smart locks",
+      "benefit6": "✅ Track revenue and performance in real-time",
+      "callToAction": "Would you like a demo to see how Biloki can help you?"
+    }
+  },
+  "smartLockWizard": {
+    "validate": "Validate",
+    "back": "Back",
+    "restart": "Start over",
+    "step1": {
+      "title": "What type of property do you have?",
+      "description": "",
+      "maison": "House",
+      "immeuble": "Apartment building"
+    },
+    "step2Maison": {
+      "title": "How do you access your property?",
+      "description": "",
+      "portail": "Gate",
+      "acces_direct": "Direct access",
+      "autre": "Other"
+    },
+    "step2Immeuble": {
+      "title": "How do you access the building?",
+      "description": "Choose one or more access methods",
+      "digicode": "Keypad code",
+      "badge": "Badge",
+      "cle": "Key"
+    },
+    "step3": {
+      "title": "How do you open your gate?",
+      "description": "Choose one or more opening methods",
+      "digicode": "By keypad code",
+      "telecommande": "By remote control",
+      "badge": "By badge",
+      "cle": "By key"
+    },
+    "step4": {
+      "title": "What type of lock do you have?",
+      "description": "",
+      "cylindre_europeen": "European cylinder",
+      "cylindre_rond": "Round cylinder",
+      "autre": "Other",
+      "inconnu": "I don't know"
+    },
+    "stepDistance": {
+      "title": "What is the distance between A and B?",
+      "description": "Measure the thickness of your door at the lock",
+      "doorThickness": "Door thickness",
+      "unknown": "I don't know"
+    },
+    "stepDistanceBC": {
+      "title": "What is the distance between B and C?",
+      "description": "-> BC = exterior side of the door <-",
+      "unknown": "I don't know"
+    },
+    "step5": {
+      "title": "What is the opening direction of your door?",
+      "description": "",
+      "interieur": "Inward",
+      "exterieur": "Outward"
+    },
+    "result": {
+      "title": "Configuration complete!",
+      "description": "We have analyzed your configuration. Book a demo to discover the solutions adapted to your property.",
+      "summary": "Summary of your configuration",
+      "property": "Property type",
+      "access": "Access method",
+      "portalOpening": "Gate opening",
+      "lockType": "Lock type",
+      "distanceAB": "Distance A-B",
+      "distanceBC": "Distance B-C",
+      "doorOpening": "Door opening direction",
+      "bookDemo": "Book a free demo"
+    }
+  }
+}
