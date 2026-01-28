@@ -1213,7 +1213,7 @@ export default function ChatBot() {
           }}
           className={`fixed bottom-4 right-4 w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50 group ${
             isOverFooter 
-              ? 'bg-white text-primary border-2 border-primary' 
+              ? 'bg-white border-2 border-white' 
               : 'bg-primary text-white'
           } hover:scale-110`}
         >
@@ -1225,9 +1225,9 @@ export default function ChatBot() {
           )}
           
           {/* Pulse animation when closed */}
-          <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20"></span>
+          <span className={`absolute inset-0 rounded-full animate-ping opacity-20 ${isOverFooter ? 'bg-white' : 'bg-primary'}`}></span>
           
-          <svg className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className={`w-6 h-6 transition-transform duration-300 group-hover:scale-110 ${isOverFooter ? 'text-white' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
         </button>
