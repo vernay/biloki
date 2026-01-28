@@ -138,11 +138,11 @@
       },
       "pms": {
         "title": "Property Management System",
-        "desc": "Centralisez toute l'activité de votre conciergerie dans un seul outil. Réservations, séjours, voyageurs, logements, revenus et opérations, tout est piloté depuis une interface unique. Messagerie unifiée (OTA's, WhatsApp, emails, SMS) pour tous vos échanges."
+        "desc": "Centralisez toute l'activité de votre conciergerie dans un seul outil. Réservations, séjours, voyageurs, logements, revenus et opérations, tout est piloté depuis une interface unique."
       },
       "serrures": {
         "title": "Serrures connectées",
-        "desc": "Générez des codes d'accès uniques pour chaque séjour. Activation et désactivation automatiques selon les dates d'arrivée et de départ, pour vos prestataires et vos locataires. Grâce à nos intégrations API avec les meilleures marques du marché."
+        "desc": "Générez des codes d'accès uniques pour chaque séjour. Activation et désactivation automatiques selon les dates d'arrivée et de départ, pour vos prestataires et vos locataires."
       },
       "interfaces": {
         "title": "4 interfaces avec IA intégrée",
