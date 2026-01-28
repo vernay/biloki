@@ -146,11 +146,11 @@
       },
       "interfaces": {
         "title": "4 interfaces with built-in AI",
-        "desc": "An interface adapted to each role: manager, owner, service provider, and guest. Each user only accesses the information and actions relevant to them, for smooth and frictionless collaboration."
+        "desc": "An interface adapted to each role: manager, owner, service provider, and guest."
       },
       "guideDigital": {
-        "title": "Digital guide with built-in AI",
-        "desc": "Offer an autonomous and premium experience to your tenants. Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
+        "title": "Digital guide with built-in AI 24/7",
+        "desc": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
       },
       "comptabilite": {
         "title": "Accounting and management",
@@ -158,7 +158,7 @@
       },
       "ventesExtras": {
         "title": "À la carte extras sales",
-        "desc": "Grow your revenue by offering extra services on the tenant interface (examples: flower delivery, mini bar, extra cleaning). Offer a premium stay to your guests!"
+        "desc": "Grow your revenue by offering extra services on the tenant interface (examples: flower delivery, mini bar, extra cleaning)."
       },
       "marketplace": {
         "title": "Partner Marketplace",

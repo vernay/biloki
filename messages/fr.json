@@ -146,11 +146,11 @@
       },
       "interfaces": {
         "title": "4 interfaces avec IA intégrée",
-        "desc": "Une interface adaptée à chaque rôle : gestionnaire, propriétaire, prestataire et voyageur. Chacun accède uniquement aux informations et actions qui le concernent, pour une collaboration fluide et sans friction."
+        "desc": "Une interface adaptée à chaque rôle : gestionnaire, propriétaire, prestataire et voyageur."
       },
       "guideDigital": {
-        "title": "Guide digital avec IA intégrée",
-        "desc": "Offrez une expérience autonome et premium à vos locataires. Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs."
+        "title": "Guide digital avec IA intégrée 24/7",
+        "desc": "Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs."
       },
       "comptabilite": {
         "title": "Comptabilité et gestion",
@@ -158,7 +158,7 @@
       },
       "ventesExtras": {
         "title": "Ventes d'extras à la carte",
-        "desc": "Développez votre chiffre d'affaires en proposant des services extras sur l'interface locataire (exemples : livraison de fleurs, mini bar, ménage supplémentaire). Offrez un séjour premium à vos voyageurs !"
+        "desc": "Développez votre chiffre d'affaires en proposant des services extras sur l'interface locataire (exemples : livraison de fleurs, mini bar, ménage supplémentaire)."
       },
       "marketplace": {
         "title": "Marketplace partenaires",

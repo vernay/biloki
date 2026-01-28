@@ -146,11 +146,11 @@
       },
       "interfaces": {
         "title": "4 interfaces com IA integrada",
-        "desc": "Uma interface adaptada a cada função: gestor, proprietário, prestador de serviços e hóspede. Cada usuário acessa apenas as informações e ações relevantes para ele, para uma colaboração fluida e sem atritos."
+        "desc": "Uma interface adaptada a cada função: gestor, proprietário, prestador de serviços e hóspede."
       },
       "guideDigital": {
-        "title": "Guia digital com IA integrada",
-        "desc": "Ofereça uma experiência autônoma e premium aos seus hóspedes. Guia personalizado por propriedade: acesso, regras, recomendações locais, contatos úteis. Assistente IA disponível 24/7 para responder às perguntas dos hóspedes."
+        "title": "Guia digital com IA integrada 24/7",
+        "desc": "Guia personalizado por propriedade: acesso, regras, recomendações locais, contatos úteis. Assistente IA disponível 24/7 para responder às perguntas dos hóspedes."
       },
       "comptabilite": {
         "title": "Contabilidade e gestão",
@@ -158,7 +158,7 @@
       },
       "ventesExtras": {
         "title": "Vendas de extras à la carte",
-        "desc": "Aumente sua receita oferecendo serviços adicionais na interface do hóspede (exemplos: entrega de flores, minibar, limpeza extra). Ofereça uma estadia premium aos seus hóspedes!"
+        "desc": "Aumente sua receita oferecendo serviços adicionais na interface do hóspede (exemplos: entrega de flores, minibar, limpeza extra)."
       },
       "marketplace": {
         "title": "Marketplace de parceiros",
