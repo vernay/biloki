@@ -107,15 +107,6 @@ export default function FeaturesSection() {
   const firstHalf = FEATURES.slice(0, Math.ceil(FEATURES.length / 2));
   const secondHalf = FEATURES.slice(Math.ceil(FEATURES.length / 2));
 
-  // Scroll vers la vidéo quand on change de feature sur mobile
-  useEffect(() => {
-    if (window.innerWidth < 768 && videoRef.current) {
-      setTimeout(() => {
-        videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    }
-  }, [selectedFeature]);
-
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
