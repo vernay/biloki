@@ -1204,40 +1204,34 @@ export default function ChatBot() {
       </div>
 
       {/* Floating Button */}
-      <button
-        ref={chatButtonRef}
-        onClick={() => {
-          setIsOpen(!isOpen);
-          if (!isOpen) setHasUnreadMessages(false);
-        }}
-        className={`fixed bottom-4 right-4 w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50 group ${
-          isOverFooter 
-            ? 'bg-white text-primary border-2 border-primary' 
-            : 'bg-primary text-white'
-        } ${!isOpen ? 'hover:scale-110' : ''}`}
-      >
-        {/* Notification badge */}
-        {hasUnreadMessages && !isOpen && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-            <span className="text-white text-[10px] font-bold">!</span>
-          </span>
-        )}
-        
-        {/* Pulse animation when closed */}
-        {!isOpen && (
+      {!isOpen && (
+        <button
+          ref={chatButtonRef}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            if (!isOpen) setHasUnreadMessages(false);
+          }}
+          className={`fixed bottom-4 right-4 w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center z-50 group ${
+            isOverFooter 
+              ? 'bg-white text-primary border-2 border-primary' 
+              : 'bg-primary text-white'
+          } hover:scale-110`}
+        >
+          {/* Notification badge */}
+          {hasUnreadMessages && (
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+              <span className="text-white text-[10px] font-bold">!</span>
+            </span>
+          )}
+          
+          {/* Pulse animation when closed */}
           <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20"></span>
-        )}
-        
-        {isOpen ? (
-          <svg className="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
+          
           <svg className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
-        )}
-      </button>
+        </button>
+      )}
       
       {/* Tooltip on hover (desktop only) */}
       {!isOpen && (
