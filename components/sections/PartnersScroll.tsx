@@ -62,16 +62,18 @@ export default function PartnersScroll() {
       <style jsx>{`
         @keyframes scroll {
           0% {
-            transform: translateX(0);
+            transform: translateX(0) translateZ(0);
           }
           100% {
-            transform: translateX(calc(-100% / 3));
+            transform: translateX(calc(-100% / 3)) translateZ(0);
           }
         }
 
         .animate-scroll {
           animation: scroll 4s linear infinite;
           will-change: transform;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
         }
       `}</style>
     </section>
