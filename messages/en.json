@@ -173,7 +173,7 @@
   "integrations": {
     "badge": "Integrations",
     "title": "Connect Biloki to your favorite tools",
-    "description": "Biloki integrates with key market solutions to centralize your operations: booking platforms, dynamic pricing, accounting, CRM, payments and smart locks. Our open API simplifies workflow automation.",
+    "description": "Biloki integrates with key market solutions to centralize your operations: booking platforms, dynamic pricing, accounting, CRM, payments and smart locks.",
     "features": {
       "sync": "Listing and calendar synchronization",
       "realtime": "Real-time pricing and availability updates",

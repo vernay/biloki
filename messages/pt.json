@@ -173,7 +173,7 @@
   "integrations": {
     "badge": "Integrações",
     "title": "Conecte Biloki às suas ferramentas favoritas",
-    "description": "Biloki se integra com as principais soluções do mercado para centralizar suas operações: plataformas de reserva, preços dinâmicos, contabilidade, CRM, pagamentos e fechaduras conectadas. Nossa API aberta simplifica a automação de fluxos de trabalho.",
+    "description": "Biloki se integra com as principais soluções do mercado para centralizar suas operações: plataformas de reserva, preços dinâmicos, contabilidade, CRM, pagamentos e fechaduras conectadas.",
     "features": {
       "sync": "Sincronização de anúncios e calendários",
       "realtime": "Atualização de tarifas e disponibilidades em tempo real",
