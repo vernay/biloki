@@ -1179,7 +1179,7 @@ export default function ChatBot() {
         )}
 
         {/* Input */}
-        <div className="border-t border-gray-100 p-4 bg-white sm:rounded-b-xl rounded-none">
+        <div className="border-t border-gray-100 p-3 sm:p-4 bg-white sm:rounded-b-xl rounded-none">
           <div className="flex gap-2">
             <input
               type="text"
@@ -1187,13 +1187,13 @@ export default function ChatBot() {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder={getT('placeholder')}
-              className="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm bg-gray-50 transition-all"
+              className="flex-1 border border-gray-300 rounded-lg sm:rounded-xl px-3 sm:px-4 py-3 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-base sm:text-sm bg-white transition-all shadow-sm"
               disabled={isLoading}
             />
             <button
               onClick={() => handleSendMessage()}
               disabled={isLoading || !inputValue.trim()}
-              className="bg-primary text-white rounded-xl px-4 py-2.5 hover:bg-[#0391dd] hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 disabled:hover:scale-100"
+              className="bg-primary text-white rounded-lg sm:rounded-xl px-3 sm:px-4 py-3 sm:py-2.5 hover:bg-[#0391dd] hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 disabled:hover:scale-100 flex-shrink-0 font-medium text-base sm:text-sm"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
