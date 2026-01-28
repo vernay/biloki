@@ -943,21 +943,11 @@ export default function ChatBot() {
       
       const buttonRect = button.getBoundingClientRect();
       
-      // Vérifier le footer
+      // Vérifier uniquement le footer
       const footer = document.querySelector('footer');
       if (footer) {
         const footerRect = footer.getBoundingClientRect();
         if (buttonRect.bottom > footerRect.top && buttonRect.top < footerRect.bottom) {
-          setIsOverFooter(true);
-          return;
-        }
-      }
-      
-      // Vérifier les sections avec fond bleu (bg-primary, etc.)
-      const blueSections = document.querySelectorAll('.bg-primary, [class*="bg-blue"], [class*="bg-["]');
-      for (const section of blueSections) {
-        const sectionRect = section.getBoundingClientRect();
-        if (buttonRect.bottom > sectionRect.top && buttonRect.top < sectionRect.bottom) {
           setIsOverFooter(true);
           return;
         }
