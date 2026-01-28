@@ -70,7 +70,7 @@ export default function PartnersScroll() {
         }
 
         .animate-scroll {
-          animation: scroll 8s linear infinite;
+          animation: scroll 4s linear infinite;
           will-change: transform;
         }
       `}</style>
