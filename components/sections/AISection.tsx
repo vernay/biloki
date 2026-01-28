@@ -116,7 +116,7 @@ export default function AISection() {
 
             {/* Features List */}
             <div className="space-y-6 mb-8">
-              {(['instant', 'anomaly', 'synthesis', 'escalation'] as const).map((key) => (
+              {(['instant', 'anomaly'] as const).map((key) => (
                 <div key={key} className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-[var(--biloki-blue)] mt-2 flex-shrink-0"></div>
                   <div>
