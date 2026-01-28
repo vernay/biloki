@@ -20,8 +20,8 @@ export default function PartnersScroll() {
     { name: "HubSpot", logo: "/images/logo-partenaires/HubSpot.png" },
   ];
 
-  // Dupliquer les logos plusieurs fois pour créer un effet de boucle infinie vraiment fluide
-  const duplicatedPartners = [...partners, ...partners, ...partners];
+  // Dupliquer les logos pour créer un effet de boucle infinie fluide
+  const duplicatedPartners = [...partners, ...partners];
 
   return (
     <section className="w-full bg-white py-12 overflow-hidden border-t border-b border-gray-100">
@@ -38,7 +38,7 @@ export default function PartnersScroll() {
 
       {/* Container pour le défilement */}
       <div className="relative">
-        <div className="flex animate-scroll">
+        <div className="flex w-max animate-scroll">
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
@@ -65,14 +65,20 @@ export default function PartnersScroll() {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-33.333%);
+            transform: translateX(-50%);
           }
         }
 
         .animate-scroll {
           display: flex;
-          animation: scroll 5s linear infinite;
+          animation: scroll 12s linear infinite;
           will-change: transform;
+        }
+
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation-duration: 6s;
+          }
         }
       `}</style>
     </section>
