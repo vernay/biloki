@@ -107,7 +107,7 @@ export default function QuatreInterfacesPage() {
                   <img 
                     src={iface.image} 
                     alt={t(`${iface.key}.badge`)}
-                    className="rounded-2xl shadow-2xl w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto object-contain"
+                    className="rounded-2xl shadow-2xl w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto object-contain"
                   />
                 </div>
               </div>
