@@ -937,7 +937,7 @@ export default function ChatBot() {
 
   useEffect(() => {
     const checkBlueBackgroundOverlap = () => {
-      const button = buttonRef.current;
+      const button = chatButtonRef.current;
       
       if (!button) return;
       
