@@ -1180,7 +1180,7 @@ export default function ChatBot() {
 
         {/* Input */}
         <div className="border-t border-gray-100 p-3 sm:p-4 bg-white sm:rounded-b-xl rounded-none">
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-end">
             <input
               type="text"
               value={inputValue}
@@ -1193,7 +1193,7 @@ export default function ChatBot() {
             <button
               onClick={() => handleSendMessage()}
               disabled={isLoading || !inputValue.trim()}
-              className="bg-primary text-white rounded-lg sm:rounded-xl px-3 sm:px-4 py-3 sm:py-2.5 hover:bg-[#0391dd] hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 disabled:hover:scale-100 flex-shrink-0 font-medium text-base sm:text-sm"
+              className="bg-primary text-white rounded-lg sm:rounded-xl px-4 sm:px-5 py-3 sm:py-2.5 hover:bg-[#0391dd] hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 disabled:hover:scale-100 flex-shrink-0 font-medium text-base sm:text-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
