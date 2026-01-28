@@ -195,14 +195,6 @@
       "anomaly": {
         "title": "Anomaly detection",
         "desc": "AI automatically detects when a tenant encounters a problem and alerts you instantly"
-      },
-      "synthesis": {
-        "title": "Smart summaries",
-        "desc": "Generation of clear and understandable reports for property owners without technical jargon."
-      },
-      "escalation": {
-        "title": "Automatic escalation",
-        "desc": "If AI cannot answer, the conversation is automatically transferred to a human."
       }
     },
     "chat": {

@@ -195,14 +195,6 @@
       "anomaly": {
         "title": "Detecção de anomalias",
         "desc": "A IA detecta automaticamente quando um hóspede tem um problema e alerta você instantaneamente"
-      },
-      "synthesis": {
-        "title": "Resumos inteligentes",
-        "desc": "Geração de relatórios claros e compreensíveis para os proprietários, sem jargão técnico."
-      },
-      "escalation": {
-        "title": "Escalonamento automático",
-        "desc": "Se a IA não puder responder, a conversa é automaticamente transferida para um humano."
       }
     },
     "chat": {

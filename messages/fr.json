@@ -195,14 +195,6 @@
       "anomaly": {
         "title": "Détection d'anomalies",
         "desc": "L'IA détecte automatiquement lorsque le locataire rencontre un problème et vous avertit instantanément"
-      },
-      "synthesis": {
-        "title": "Synthèses intelligentes",
-        "desc": "Génération de rapports clairs et compréhensibles pour les propriétaires sans jargon technique."
-      },
-      "escalation": {
-        "title": "Escalade automatique",
-        "desc": "Si l'IA ne peut pas répondre, la conversation est automatiquement transférée à un humain."
       }
     },
     "chat": {
