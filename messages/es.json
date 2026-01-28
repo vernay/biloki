@@ -306,28 +306,28 @@
     "description": "Biloki transforma la forma en que gestionas tus alquileres a corto plazo y te permite centrarte en lo más importante: hacer crecer tu negocio.",
     "items": {
       "time": {
-        "title": "Ahorra hasta 20h/semana",
-        "description": "Automatiza tareas repetitivas: sincronización de calendarios, generación de códigos de acceso, respuestas automáticas a huéspedes con IA desde la reserva hasta el check-out."
+        "title": "Ahorra hasta 20h / semana",
+        "description": "Automatiza lo esencial.\nConcéntrate en lo esencial."
       },
       "revenue": {
         "title": "Aumenta tus ingresos",
-        "description": "Gestiona más propiedades con el mismo equipo. Nuestra plataforma te permite escalar sin multiplicar los recursos humanos."
+        "description": "Gestiona más propiedades,\nsin agrandar tu equipo."
       },
       "star": {
         "title": "Mejora tus reseñas de clientes",
-        "description": "Ofrece una experiencia excepcional a tus huéspedes a través de una comunicación fluida, información clara y acceso autónomo."
+        "description": "Una comunicación fluida,\nhuéspedes más satisfechos."
       },
       "money": {
         "title": "Reduce tus costes operativos",
-        "description": "Elimina las dobles reservas, optimiza los horarios de limpieza y reduce las intervenciones manuales costosas."
+        "description": "Menos errores,\nmenos intervenciones manuales."
       },
       "target": {
         "title": "Centraliza toda tu gestión",
-        "description": "Una herramienta para gestionar todo: reservas, calendarios, tarifas, huéspedes, proveedores, propietarios y comunicación."
+        "description": "Todo tu negocio,\nen una sola herramienta."
       },
       "chart": {
-        "title": "Monitoriza tu negocio en tiempo real en móvil y escritorio",
-        "description": "Sigue tu rendimiento, tasa de ocupación, ingresos e identifica rápidamente áreas de mejora."
+        "title": "Monitoriza tu negocio en tiempo real",
+        "description": "Tu rendimiento,\nclaro y accesible en todas partes."
       }
     }
   },

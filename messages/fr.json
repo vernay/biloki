@@ -306,28 +306,28 @@
     "description": "Biloki transforme votre manière de gérer vos locations courte durée et vous permet de vous concentrer sur l'essentiel : développer votre activité.",
     "items": {
       "time": {
-        "title": "Gagnez jusqu'à 20h/semaine",
-        "description": "Automatisez les tâches répétitives : synchronisation des calendriers, génération des codes d'accès, réponse automatique aux voyageurs grâce à l'IA depuis la réservation jusqu'au check-out."
+        "title": "Gagnez jusqu'à 20h / semaine",
+        "description": "Automatisez l'essentiel.\nConcentrez-vous sur l'essentiel."
       },
       "revenue": {
         "title": "Augmentez votre chiffre d'affaires",
-        "description": "Gérez plus de logements avec la même équipe. Notre plateforme vous permet de scaler sans multiplier les ressources humaines."
+        "description": "Gérez plus de logements,\nsans agrandir votre équipe."
       },
       "star": {
         "title": "Améliorez vos avis clients",
-        "description": "Offrez une expérience exceptionnelle à vos voyageurs grâce à une communication fluide, des informations claires et un accès autonome."
+        "description": "Une communication fluide,\ndes voyageurs plus satisfaits."
       },
       "money": {
         "title": "Réduisez vos coûts opérationnels",
-        "description": "Éliminez les doubles réservations, optimisez la planification des ménages et réduisez les interventions manuelles coûteuses."
+        "description": "Moins d'erreurs,\nmoins d'interventions manuelles."
       },
       "target": {
         "title": "Centralisez toute votre gestion",
-        "description": "Un seul outil pour tout gérer : réservations, calendriers, tarifs, voyageurs, prestataires, propriétaires et communication."
+        "description": "Tout votre business,\ndans un seul outil."
       },
       "chart": {
-        "title": "Pilotez votre activité en temps réel sur mobile et ordinateur",
-        "description": "Suivez vos performances, votre taux d'occupation, vos revenus et identifiez rapidement les axes d'amélioration."
+        "title": "Pilotez votre activité en temps réel",
+        "description": "Vos performances,\nclaires et accessibles partout."
       }
     }
   },

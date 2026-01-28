@@ -306,28 +306,28 @@
     "description": "Biloki transforma a forma como você gerencia seus aluguéis de curta duração e permite que você se concentre no mais importante: fazer crescer seu negócio.",
     "items": {
       "time": {
-        "title": "Economize até 20h/semana",
-        "description": "Automatize tarefas repetitivas: sincronização de calendários, geração de códigos de acesso, respostas automáticas aos hóspedes com IA da reserva ao check-out."
+        "title": "Economize até 20h / semana",
+        "description": "Automatize o essencial.\nFoco no que importa."
       },
       "revenue": {
         "title": "Aumente sua receita",
-        "description": "Gerencie mais propriedades com a mesma equipe. Nossa plataforma permite que você escale sem multiplicar os recursos humanos."
+        "description": "Gerencie mais propriedades,\nsem expandir sua equipe."
       },
       "star": {
         "title": "Melhore suas avaliações de clientes",
-        "description": "Ofereça uma experiência excepcional aos seus hóspedes através de uma comunicação fluida, informações claras e acesso autônomo."
+        "description": "Uma comunicação fluida,\nhóspedes mais satisfeitos."
       },
       "money": {
         "title": "Reduza seus custos operacionais",
-        "description": "Elimine reservas duplas, otimize os horários de limpeza e reduza as intervenções manuais custosas."
+        "description": "Menos erros,\nmenos intervenções manuais."
       },
       "target": {
         "title": "Centralize toda sua gestão",
-        "description": "Uma ferramenta para gerenciar tudo: reservas, calendários, tarifas, hóspedes, prestadores, proprietários e comunicação."
+        "description": "Todo seu negócio,\nem uma única ferramenta."
       },
       "chart": {
-        "title": "Monitore seu negócio em tempo real no celular e desktop",
-        "description": "Acompanhe seu desempenho, taxa de ocupação, receitas e identifique rapidamente áreas de melhoria."
+        "title": "Monitore seu negócio em tempo real",
+        "description": "Seu desempenho,\nclaro e acessível em qualquer lugar."
       }
     }
   },

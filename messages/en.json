@@ -306,28 +306,28 @@
     "description": "Biloki transforms the way you manage your short-term rentals and lets you focus on what matters most: growing your business.",
     "items": {
       "time": {
-        "title": "Save up to 20h/week",
-        "description": "Automate repetitive tasks: calendar synchronization, access code generation, automatic guest responses with AI from booking to check-out."
+        "title": "Save up to 20h / week",
+        "description": "Automate the essentials.\nFocus on what matters."
       },
       "revenue": {
         "title": "Increase your revenue",
-        "description": "Manage more properties with the same team. Our platform lets you scale without multiplying human resources."
+        "description": "Manage more properties,\nwithout expanding your team."
       },
       "star": {
         "title": "Improve your customer reviews",
-        "description": "Deliver an exceptional experience to your guests through smooth communication, clear information and autonomous access."
+        "description": "Smooth communication,\nmore satisfied guests."
       },
       "money": {
         "title": "Reduce your operational costs",
-        "description": "Eliminate double bookings, optimize cleaning schedules and reduce costly manual interventions."
+        "description": "Fewer errors,\nfewer manual interventions."
       },
       "target": {
         "title": "Centralize all your management",
-        "description": "One tool to manage everything: bookings, calendars, rates, guests, service providers, owners and communication."
+        "description": "Your entire business,\nin one tool."
       },
       "chart": {
-        "title": "Monitor your business in real-time on mobile and desktop",
-        "description": "Track your performance, occupancy rate, revenue and quickly identify areas for improvement."
+        "title": "Monitor your business in real-time",
+        "description": "Your performance,\nclear and accessible everywhere."
       }
     }
   },
