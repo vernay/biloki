@@ -401,17 +401,17 @@ export default function TarifsPage() {
           </div>
 
           {/* Right Side - CTA */}
-          <div className="w-full bg-gradient-to-br from-primary-dark to-blue-700 rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white sticky top-8">
+          <div className="w-full bg-biloki-blue rounded-2xl shadow-2xl p-8 md:p-12 text-center sticky top-8">
             <div className="mb-8">
               <div className="inline-block p-4 bg-white/20 rounded-full mb-6">
-                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold mb-4">
+              <h3 className="text-3xl font-bold mb-4 text-white">
                 {t('readyToStart') || 'Prêt à commencer ?'}
               </h3>
-              <p className="text-lg text-white/90 mb-8">
+              <p className="text-lg text-white/95 mb-8">
                 {t('startFreeToday') || 'Démarrez gratuitement aujourd\'hui et découvrez toutes les fonctionnalités de Biloki pendant 14 jours.'}
               </p>
             </div>
@@ -419,12 +419,12 @@ export default function TarifsPage() {
             <div className="space-y-4">
               <WebappLink
                 type="register"
-                className="block w-full bg-white text-primary font-bold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
+                className="block w-full bg-white text-biloki-blue font-bold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
               >
                 🚀 {common('startFreeTrial')}
               </WebappLink>
               
-              <div className="flex items-center justify-center gap-6 text-sm text-white/80 pt-4">
+              <div className="flex items-center justify-center gap-6 text-sm text-white/90 pt-4">
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -441,7 +441,7 @@ export default function TarifsPage() {
             </div>
 
             <div className="mt-8 pt-8 border-t border-white/20">
-              <p className="text-sm text-white/70 mb-4">
+              <p className="text-sm text-white/80 mb-4">
                 {t('needHelp') || 'Besoin d\'aide pour choisir ?'}
               </p>
               <a
