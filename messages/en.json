@@ -475,6 +475,23 @@
     "together": "Together, let's reinvent property management.",
     "meetTeam": "Meet the team"
   },
+  "careersPage": {
+    "title": "Join our team",
+    "description": "We're looking for talented individuals passionate about revolutionizing property management.",
+    "whyJoinUs": "Why join us?",
+    "whyJoinUsText": "At Biloki, we're creating a solution that truly transforms the vacation rental industry. Our team members are at the heart of this mission. We offer an environment where innovation is encouraged, where everyone can grow, and where their impact is measurable.",
+    "benefit1Title": "Impact the industry",
+    "benefit1Description": "Work on a solution used by hundreds of concierges. Your work makes a real difference.",
+    "benefit2Title": "Growth and learning",
+    "benefit2Description": "We invest in our team's development with training, mentoring, and career advancement opportunities.",
+    "benefit3Title": "Collaborative team",
+    "benefit3Description": "Join a passionate and supportive team where collaboration and mutual support are core values.",
+    "benefit4Title": "Flexible work environment",
+    "benefit4Description": "Hybrid work, flexible hours, and a genuine focus on employee well-being.",
+    "ctaTitle": "Interested?",
+    "ctaDescription": "Send us your application with your CV and cover letter. We'd love to discuss your ambitions!",
+    "ctaButton": "Contact us"
+  },
   "blogPage": {
     "title": "Blog",
     "description": "Guides, tips and news to optimize your property management",

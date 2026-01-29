@@ -475,6 +475,23 @@
     "together": "Juntos, vamos reinventar a gestão de propriedades.",
     "meetTeam": "Conheça a equipe"
   },
+  "careersPage": {
+    "title": "Junte-se ao nosso time",
+    "description": "Procuramos talentos apaixonados por revolucionar o gerenciamento imobiliário.",
+    "whyJoinUs": "Por que se juntar a nós?",
+    "whyJoinUsText": "Na Biloki, estamos criando uma solução que transforma verdadeiramente a indústria de aluguel de temporada. Nossos colaboradores estão no coração desta missão. Oferecemos um ambiente onde a inovação é encorajada, onde todos podem crescer e onde seu impacto é mensurável.",
+    "benefit1Title": "Impacte a indústria",
+    "benefit1Description": "Trabalhe em uma solução utilizada por centenas de concierges. Seu trabalho faz uma diferença real.",
+    "benefit2Title": "Crescimento e aprendizado",
+    "benefit2Description": "Investimos no desenvolvimento de nossos colaboradores com treinamento, mentoria e oportunidades de avanço.",
+    "benefit3Title": "Time colaborativo",
+    "benefit3Description": "Junte-se a um time apaixonado e solidário onde a colaboração e o apoio mútuo são valores fundamentais.",
+    "benefit4Title": "Ambiente de trabalho flexível",
+    "benefit4Description": "Trabalho híbrido, horários flexíveis e uma verdadeira cultura de bem-estar no trabalho.",
+    "ctaTitle": "Interessado?",
+    "ctaDescription": "Envie-nos sua inscrição com seu CV e carta de apresentação. Adoraríamos discutir suas ambições!",
+    "ctaButton": "Entre em contato"
+  },
   "blogPage": {
     "title": "Blog",
     "description": "Guias, dicas e novidades para otimizar sua gestão de propriedades",

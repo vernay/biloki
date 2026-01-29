@@ -475,6 +475,23 @@
     "together": "Juntos, reinventemos la gestión de propiedades.",
     "meetTeam": "Conoce al equipo"
   },
+  "careersPage": {
+    "title": "Únete a nuestro equipo",
+    "description": "Buscamos talentos apasionados por revolucionar la gestión inmobiliaria.",
+    "whyJoinUs": "¿Por qué unirte a nosotros?",
+    "whyJoinUsText": "En Biloki, estamos creando una solución que transforma verdaderamente la industria de alquileres vacacionales. Nuestros colaboradores están en el corazón de esta misión. Ofrecemos un entorno donde la innovación es fomentada, donde cada uno puede crecer y donde su impacto es medible.",
+    "benefit1Title": "Impacta la industria",
+    "benefit1Description": "Trabaja en una solución utilizada por cientos de conserjes. Tu trabajo hace una diferencia real.",
+    "benefit2Title": "Crecimiento y aprendizaje",
+    "benefit2Description": "Invertimos en el desarrollo de nuestros colaboradores con capacitación, mentoría y oportunidades de avance.",
+    "benefit3Title": "Equipo colaborativo",
+    "benefit3Description": "Únete a un equipo apasionado y solidario donde la colaboración y la ayuda mutua son valores fundamentales.",
+    "benefit4Title": "Entorno de trabajo flexible",
+    "benefit4Description": "Trabajo híbrido, horarios flexibles y una verdadera cultura del bienestar laboral.",
+    "ctaTitle": "¿Te interesa?",
+    "ctaDescription": "Envíanos tu solicitud con tu CV y carta de presentación. ¡Nos encantaría discutir tus ambiciones!",
+    "ctaButton": "Contáctanos"
+  },
   "blogPage": {
     "title": "Blog",
     "description": "Guías, consejos y novedades para optimizar tu gestión de propiedades",

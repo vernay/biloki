@@ -121,9 +121,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link href="/carriere" className="hover:text-white transition-colors">
                   {t('careers')}
-                </a>
+                </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
