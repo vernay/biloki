@@ -34,52 +34,81 @@ export default function CarrierePage() {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">
               {t('filtersTitle')}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <label className="block">
-                <span className="text-sm font-medium text-gray-700">{t('departments')}</span>
-                <div className="mt-2 relative">
-                  <select
-                    disabled
-                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
-                  >
-                    <option>{t('allOption')}</option>
-                  </select>
-                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
-                    ▼
-                  </span>
-                </div>
-              </label>
+            {(() => {
+              const departmentOptions = [
+                t('deptMarketing'),
+                t('deptProduct'),
+                t('deptDevelopment'),
+                t('deptSales'),
+              ];
+              const locationOptions = [t('locationNantes'), t('locationParis')];
+              const workTypeOptions = [
+                t('workTypeInternship'),
+                t('workTypeApprenticeship'),
+                t('workTypePermanent'),
+                t('workTypeFixedTerm'),
+                t('workTypeFreelance'),
+                t('workTypeOther'),
+              ];
 
-              <label className="block">
-                <span className="text-sm font-medium text-gray-700">{t('locations')}</span>
-                <div className="mt-2 relative">
-                  <select
-                    disabled
-                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
-                  >
-                    <option>{t('allOption')}</option>
-                  </select>
-                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
-                    ▼
-                  </span>
-                </div>
-              </label>
+              return (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <label className="block">
+                    <span className="text-sm font-medium text-gray-700">{t('departments')}</span>
+                    <div className="mt-2 relative">
+                      <select
+                        disabled
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                      >
+                        <option>{t('allOption')}</option>
+                        {departmentOptions.map((option) => (
+                          <option key={option}>{option}</option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                        ▼
+                      </span>
+                    </div>
+                  </label>
 
-              <label className="block">
-                <span className="text-sm font-medium text-gray-700">{t('workType')}</span>
-                <div className="mt-2 relative">
-                  <select
-                    disabled
-                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
-                  >
-                    <option>{t('allOption')}</option>
-                  </select>
-                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
-                    ▼
-                  </span>
+                  <label className="block">
+                    <span className="text-sm font-medium text-gray-700">{t('locations')}</span>
+                    <div className="mt-2 relative">
+                      <select
+                        disabled
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                      >
+                        <option>{t('allOption')}</option>
+                        {locationOptions.map((option) => (
+                          <option key={option}>{option}</option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                        ▼
+                      </span>
+                    </div>
+                  </label>
+
+                  <label className="block">
+                    <span className="text-sm font-medium text-gray-700">{t('workType')}</span>
+                    <div className="mt-2 relative">
+                      <select
+                        disabled
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                      >
+                        <option>{t('allOption')}</option>
+                        {workTypeOptions.map((option) => (
+                          <option key={option}>{option}</option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                        ▼
+                      </span>
+                    </div>
+                  </label>
                 </div>
-              </label>
-            </div>
+              );
+            })()}
 
             <div className="mt-6 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-6 py-8 text-center text-gray-600">
               <p className="text-base font-medium">{t('emptyTitle')}</p>
