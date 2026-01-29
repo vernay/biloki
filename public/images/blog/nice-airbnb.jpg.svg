@@ -1,6 +1,0 @@
-<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="450" fill="#3B82F6"/>
-  <text x="400" y="200" font-family="Arial" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Nice - Quotas Airbnb</text>
-  <text x="400" y="250" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Réglementation 2026</text>
-  <circle cx="400" cy="300" r="30" fill="white" opacity="0.2"/>
-</svg>
