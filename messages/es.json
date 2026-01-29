@@ -94,35 +94,39 @@
     "items": {
       "channelManager": {
         "title": "Channel Manager",
-        "description": "Anuncios y reservas sincronizados en 120 plataformas de alquiler"
+        "description": "Distribuye y sincroniza tus anuncios en más de 120 plataformas de reserva. Cada reserva se centraliza en tiempo real, sin riesgo de doble reserva."
       },
-      "planification": {
-        "title": "Planificación automatizada",
-        "description": "Planificación automática de check-in, check-out, limpieza y mantenimiento"
+      "pms": {
+        "title": "Sistema de gestión de propiedades",
+        "description": "Centraliza toda tu actividad de gestión de propiedades en una herramienta. Reservas, estancias, huéspedes, propiedades, ingresos y operaciones, todo gestionado desde una única interfaz."
+      },
+      "serrures": {
+        "title": "Cerraduras conectadas",
+        "description": "Genera códigos de acceso únicos para cada estancia. Activación y desactivación automática según las fechas de check-in y check-out, para tus proveedores de servicios y huéspedes."
+      },
+      "interfaces": {
+        "title": "4 interfaces con IA integrada",
+        "description": "Una interfaz adaptada a cada rol: gestor, propietario, proveedor de servicios y huésped."
       },
       "guideDigital": {
-        "title": "Guía digital con IA",
-        "description": "Guía digital con IA por propiedad con tutoriales en video en la interfaz del huésped y asistente IA 24/7 para responder cualquier pregunta"
+        "title": "Guía digital con IA integrada 24/7",
+        "description": "Guía personalizada por propiedad: acceso, normas, recomendaciones locales, contactos útiles. Asistente IA disponible 24/7 para responder preguntas de los huéspedes."
       },
-      "messagerie": {
-        "title": "Mensajería unificada",
-        "description": "Mensajería unificada (Airbnb, Booking, WhatsApp...) con IA conversacional pre y post reserva"
-      },
-      "serrure": {
-        "title": "Cerradura conectada",
-        "description": "Cerradura inteligente controlada desde la app, código aleatorio por estancia"
+      "comptabilite": {
+        "title": "Contabilidad y gestión",
+        "description": "Automatiza la gestión de tus facturas, compras de servicios y ventas, así como la exportación de tus datos contables."
       },
       "ventesExtras": {
-        "title": "Ventas adicionales",
-        "description": "Espacio de ventas adicionales con pago seguro"
+        "title": "Ventas adicionales a la carta",
+        "description": "Aumenta tus ingresos ofreciendo servicios adicionales en la interfaz del huésped (ejemplos: entrega de flores, minibar, limpieza adicional)."
       },
-      "dashboard": {
-        "title": "Panel de control",
-        "description": "Panel online para cada perfil: informe financiero, tasa de ocupación, facturación..."
+      "marketplace": {
+        "title": "Marketplace de socios",
+        "description": "Conecta tus herramientas externas a Biloki a través de nuestro marketplace de integraciones. API abierta para sincronizar tus datos y automatizar tus flujos de trabajo con tus aplicaciones favoritas."
       },
-      "avis": {
-        "title": "Reseñas de clientes",
-        "description": "¡Obtén reseñas de clientes para tus servicios de gestión de propiedades!"
+      "multiLangue": {
+        "title": "Aplicación multilingüe",
+        "description": "Una interfaz e IA adaptadas automáticamente al idioma de cada usuario. Ideal para gestionar una clientela internacional sin fricciones."
       }
     }
   },

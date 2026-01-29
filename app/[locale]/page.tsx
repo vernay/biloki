@@ -1,7 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import PartnersScroll from "@/components/sections/PartnersScroll";
 import FeaturesSection from "@/components/sections/FeaturesSection";
-import OverviewSection from "@/components/sections/OverviewSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import AISection from "@/components/sections/AISection";
 import TeamSection from "@/components/sections/TeamSection";
@@ -15,7 +14,6 @@ export default function HomePage() {
     <main>
       <Hero />
       <PartnersScroll />
-      <OverviewSection />
       <FeaturesSection />
       <IntegrationsSection />
       <AISection />

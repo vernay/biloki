@@ -94,35 +94,39 @@
     "items": {
       "channelManager": {
         "title": "Channel Manager",
-        "description": "Annonces et réservations synchronisées sur 120 plateformes de locations"
+        "description": "Diffusez et synchronisez vos annonces sur plus de 120 plateformes de réservation. Chaque réservation est centralisée en temps réel, sans risque de double booking."
       },
-      "planification": {
-        "title": "Planification Automatisée",
-        "description": "Planification automatisée des check-in, check-out, ménages et maintenance"
+      "pms": {
+        "title": "Property Management System",
+        "description": "Centralisez toute l'activité de votre conciergerie dans un seul outil. Réservations, séjours, voyageurs, logements, revenus et opérations, tout est piloté depuis une interface unique."
+      },
+      "serrures": {
+        "title": "Serrures connectées",
+        "description": "Générez des codes d'accès uniques pour chaque séjour. Activation et désactivation automatiques selon les dates d'arrivée et de départ, pour vos prestataires et vos locataires."
+      },
+      "interfaces": {
+        "title": "4 interfaces avec IA intégrée",
+        "description": "Une interface adaptée à chaque rôle : gestionnaire, propriétaire, prestataire et voyageur."
       },
       "guideDigital": {
-        "title": "Guide Digital IA",
-        "description": "Guide digital avec IA intégrée pour répondre aux questions du locataire"
+        "title": "Guide digital avec IA intégrée 24/7",
+        "description": "Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs."
       },
-      "messagerie": {
-        "title": "Messagerie Unifiée",
-        "description": "Messagerie unifiée (Airbnb, Booking, WhatsApp…) avec IA conversationnelle pré-réservation et post-réservation"
-      },
-      "serrure": {
-        "title": "Serrure Intelligente",
-        "description": "Serrure intelligente pilotée depuis l'app, code aléatoire par séjour"
+      "comptabilite": {
+        "title": "Comptabilité et gestion",
+        "description": "Automatisez la gestion de vos factures, d'achat de prestation et ventes de service ainsi que l'export de vos données comptables."
       },
       "ventesExtras": {
-        "title": "Ventes d'Extras",
-        "description": "Espace de ventes d'extras avec paiement sécurisé"
+        "title": "Ventes d'extras à la carte",
+        "description": "Développez votre chiffre d'affaires en proposant des services extras sur l'interface locataire (exemples : livraison de fleurs, mini bar, ménage supplémentaire)."
       },
-      "dashboard": {
-        "title": "Dashboard",
-        "description": "Dashboard en ligne sur chaque profil : rapport financier, taux d'occupation, facturation…"
+      "marketplace": {
+        "title": "Marketplace partenaires",
+        "description": "Connectez vos outils externes à Biloki grâce à notre marketplace d'intégrations. API ouverte pour synchroniser vos données et automatiser vos workflows avec vos applications préférées."
       },
-      "avis": {
-        "title": "Avis Clients",
-        "description": "Obtenez des avis client des services de votre conciergerie !"
+      "multiLangue": {
+        "title": "Application multi langue",
+        "description": "Une interface et une IA adaptées automatiquement à la langue de chaque utilisateur. Idéal pour gérer une clientèle internationale sans friction."
       }
     }
   },
