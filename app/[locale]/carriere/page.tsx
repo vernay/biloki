@@ -28,21 +28,21 @@ export default function CarrierePage() {
         {/* Offres d'emploi */}
         <section className="max-w-5xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            Offres d'emploi
+            {t('jobsTitle')}
           </h2>
           <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
             <h3 className="text-lg font-semibold text-gray-800 mb-4">
-              Filtrer par :
+              {t('filtersTitle')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <label className="block">
-                <span className="text-sm font-medium text-gray-700">Départements</span>
+                <span className="text-sm font-medium text-gray-700">{t('departments')}</span>
                 <div className="mt-2 relative">
                   <select
                     disabled
                     className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
                   >
-                    <option>Tous</option>
+                    <option>{t('allOption')}</option>
                   </select>
                   <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▼
@@ -51,13 +51,13 @@ export default function CarrierePage() {
               </label>
 
               <label className="block">
-                <span className="text-sm font-medium text-gray-700">Lieux</span>
+                <span className="text-sm font-medium text-gray-700">{t('locations')}</span>
                 <div className="mt-2 relative">
                   <select
                     disabled
                     className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
                   >
-                    <option>Tous</option>
+                    <option>{t('allOption')}</option>
                   </select>
                   <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▼
@@ -66,13 +66,13 @@ export default function CarrierePage() {
               </label>
 
               <label className="block">
-                <span className="text-sm font-medium text-gray-700">Type de travail</span>
+                <span className="text-sm font-medium text-gray-700">{t('workType')}</span>
                 <div className="mt-2 relative">
                   <select
                     disabled
                     className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
                   >
-                    <option>Tous</option>
+                    <option>{t('allOption')}</option>
                   </select>
                   <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
                     ▼
@@ -82,8 +82,8 @@ export default function CarrierePage() {
             </div>
 
             <div className="mt-6 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-6 py-8 text-center text-gray-600">
-              <p className="text-base font-medium">Aucune offre d'emploi disponible pour le moment.</p>
-              <p className="text-sm mt-1">Revenez bientôt ou envoyez une candidature spontanée.</p>
+              <p className="text-base font-medium">{t('emptyTitle')}</p>
+              <p className="text-sm mt-1">{t('emptySubtitle')}</p>
             </div>
           </div>
         </section>

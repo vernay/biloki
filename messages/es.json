@@ -490,7 +490,15 @@
     "benefit4Description": "Trabajo híbrido, horarios flexibles y una verdadera cultura del bienestar laboral.",
     "ctaTitle": "¿Te interesa?",
     "ctaDescription": "Envíanos tu solicitud con tu CV y carta de presentación. ¡Nos encantaría discutir tus ambiciones!",
-    "ctaButton": "Contáctanos"
+    "ctaButton": "Contáctanos",
+    "jobsTitle": "Ofertas de empleo",
+    "filtersTitle": "Filtrar por:",
+    "departments": "Departamentos",
+    "locations": "Ubicaciones",
+    "workType": "Tipo de trabajo",
+    "allOption": "Todos",
+    "emptyTitle": "No hay ofertas de empleo disponibles en este momento.",
+    "emptySubtitle": "Vuelve pronto o envía una candidatura espontánea."
   },
   "blogPage": {
     "title": "Blog",

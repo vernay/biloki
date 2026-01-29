@@ -490,7 +490,15 @@
     "benefit4Description": "Hybrid work, flexible hours, and a genuine focus on employee well-being.",
     "ctaTitle": "Interested?",
     "ctaDescription": "Send us your application with your CV and cover letter. We'd love to discuss your ambitions!",
-    "ctaButton": "Contact us"
+    "ctaButton": "Contact us",
+    "jobsTitle": "Job openings",
+    "filtersTitle": "Filter by:",
+    "departments": "Departments",
+    "locations": "Locations",
+    "workType": "Work type",
+    "allOption": "All",
+    "emptyTitle": "No job openings available at the moment.",
+    "emptySubtitle": "Please check back soon or send a spontaneous application."
   },
   "blogPage": {
     "title": "Blog",

@@ -490,7 +490,15 @@
     "benefit4Description": "Travail hybride, horaires flexibles et une vraie culture du bien-être au travail.",
     "ctaTitle": "Vous êtes intéressé ?",
     "ctaDescription": "Envoyez-nous votre candidature avec votre CV et lettre de motivation. Nous serions ravis de discuter de vos ambitions !",
-    "ctaButton": "Contactez-nous"
+    "ctaButton": "Contactez-nous",
+    "jobsTitle": "Offres d'emploi",
+    "filtersTitle": "Filtrer par :",
+    "departments": "Départements",
+    "locations": "Lieux",
+    "workType": "Type de travail",
+    "allOption": "Tous",
+    "emptyTitle": "Aucune offre d'emploi disponible pour le moment.",
+    "emptySubtitle": "Revenez bientôt ou envoyez une candidature spontanée."
   },
   "blogPage": {
     "title": "Blog",

@@ -490,7 +490,15 @@
     "benefit4Description": "Trabalho híbrido, horários flexíveis e uma verdadeira cultura de bem-estar no trabalho.",
     "ctaTitle": "Interessado?",
     "ctaDescription": "Envie-nos sua inscrição com seu CV e carta de apresentação. Adoraríamos discutir suas ambições!",
-    "ctaButton": "Entre em contato"
+    "ctaButton": "Entre em contato",
+    "jobsTitle": "Vagas de emprego",
+    "filtersTitle": "Filtrar por:",
+    "departments": "Departamentos",
+    "locations": "Locais",
+    "workType": "Tipo de trabalho",
+    "allOption": "Todos",
+    "emptyTitle": "Nenhuma vaga disponível no momento.",
+    "emptySubtitle": "Volte em breve ou envie uma candidatura espontânea."
   },
   "blogPage": {
     "title": "Blog",
