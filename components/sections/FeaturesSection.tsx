@@ -113,9 +113,12 @@ export default function FeaturesSection() {
   const t = useTranslations('features');
   const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
   
-  // Diviser les features en deux groupes pour mobile
-  const firstHalf = FEATURES.slice(0, Math.ceil(FEATURES.length / 2));
-  const secondHalf = FEATURES.slice(Math.ceil(FEATURES.length / 2));
+  // Auto-scroll vers la vidéo quand on clique sur un onglet sur mobile
+  useEffect(() => {
+    if (videoRef.current && window.innerWidth < 768) {
+      videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedFeature]);
 
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
@@ -173,38 +176,9 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-        {/* Mobile Layout: Cards - Video - Cards */}
+        {/* Mobile Layout: Video - ALL Cards */}
         <div className="md:hidden grid gap-6">
-          {/* First half of cards */}
-          <div className="space-y-2">
-            {firstHalf.map((feature) => (
-              <button
-                key={feature.id}
-                onClick={() => setSelectedFeature(feature.id)}
-                className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
-                  selectedFeature === feature.id
-                    ? 'border-primary bg-blue-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-primary hover:shadow-md'
-                }`}
-              >
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    selectedFeature === feature.id
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
-                  }`}>
-                    {iconMap[feature.id]}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900">{t(`items.${feature.translationKey}.title`)}</h3>
-                    <p className="text-gray-600 text-xs">{t(`items.${feature.translationKey}.description`)}</p>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Video in the middle on mobile */}
+          {/* Video at the top on mobile */}
           <div ref={videoRef} className="w-full h-auto max-h-96">
             <VideoPlayer
               src={activeFeature.videoSrc}
@@ -213,9 +187,9 @@ export default function FeaturesSection() {
             />
           </div>
 
-          {/* Second half of cards */}
+          {/* All cards below video */}
           <div className="space-y-2">
-            {secondHalf.map((feature) => (
+            {FEATURES.map((feature) => (
               <button
                 key={feature.id}
                 onClick={() => setSelectedFeature(feature.id)}
