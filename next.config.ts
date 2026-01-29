@@ -14,6 +14,16 @@ const nextConfig: NextConfig = {
         destination: `${WEBAPP_REGISTER_URL}?lang=:locale`,
         permanent: false,
       },
+      {
+        source: '/:locale/s-abonner',
+        destination: `${WEBAPP_REGISTER_URL}?lang=:locale`,
+        permanent: false,
+      },
+      {
+        source: '/:locale/s-abonner/completer',
+        destination: `${WEBAPP_REGISTER_URL}?lang=:locale`,
+        permanent: false,
+      },
     ];
   },
 };

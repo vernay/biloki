@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import WebappLink from "@/components/ui/WebappLink";
 
@@ -60,15 +59,15 @@ export default function CTASection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center flex-wrap">
-            <Link
-              href="/s-abonner"
+            <WebappLink
+              type="register"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg text-sm md:text-base"
             >
               {tCommon("subscribe")}
               <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-            </Link>
+            </WebappLink>
             <WebappLink
               type="register"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 text-sm md:text-base"
