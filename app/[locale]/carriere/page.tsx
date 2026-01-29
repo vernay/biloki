@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function CarrierePage() {
   const t = useTranslations('careersPage');
   const common = useTranslations('common');
+  const [selectedDepartment, setSelectedDepartment] = useState('all');
+  const [selectedLocation, setSelectedLocation] = useState('all');
+  const [selectedWorkType, setSelectedWorkType] = useState('all');
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -60,12 +64,15 @@ export default function CarrierePage() {
                     <span className="text-sm font-medium text-gray-700">{t('departments')}</span>
                     <div className="mt-2 relative">
                       <select
-                        disabled
-                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                        value={selectedDepartment}
+                        onChange={(event) => setSelectedDepartment(event.target.value)}
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
-                        <option>{t('allOption')}</option>
+                        <option value="all">{t('allOption')}</option>
                         {departmentOptions.map((option) => (
-                          <option key={option}>{option}</option>
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
                         ))}
                       </select>
                       <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
@@ -78,12 +85,15 @@ export default function CarrierePage() {
                     <span className="text-sm font-medium text-gray-700">{t('locations')}</span>
                     <div className="mt-2 relative">
                       <select
-                        disabled
-                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                        value={selectedLocation}
+                        onChange={(event) => setSelectedLocation(event.target.value)}
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
-                        <option>{t('allOption')}</option>
+                        <option value="all">{t('allOption')}</option>
                         {locationOptions.map((option) => (
-                          <option key={option}>{option}</option>
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
                         ))}
                       </select>
                       <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
@@ -96,12 +106,15 @@ export default function CarrierePage() {
                     <span className="text-sm font-medium text-gray-700">{t('workType')}</span>
                     <div className="mt-2 relative">
                       <select
-                        disabled
-                        className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                        value={selectedWorkType}
+                        onChange={(event) => setSelectedWorkType(event.target.value)}
+                        className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
-                        <option>{t('allOption')}</option>
+                        <option value="all">{t('allOption')}</option>
                         {workTypeOptions.map((option) => (
-                          <option key={option}>{option}</option>
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
                         ))}
                       </select>
                       <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
