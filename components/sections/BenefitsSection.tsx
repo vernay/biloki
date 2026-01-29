@@ -1,11 +1,17 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { locales, type Locale } from "@/lib/i18n/config";
+import { WEBAPP_REGISTER_URL } from "@/lib/config";
 
 export default function BenefitsSection() {
   const t = useTranslations("common");
   const tBenefits = useTranslations("benefits");
+  const pathname = usePathname();
+  const pathLocale = pathname.split('/')[1] as Locale;
+  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
   
   const iconMap: { [key: string]: React.ReactNode } = {
     time: (
@@ -85,15 +91,15 @@ export default function BenefitsSection() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Link
-            href="/commencer-gratuitement"
+          <a
+            href={`${WEBAPP_REGISTER_URL}?lang=${locale}`}
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:opacity-90 transition"
           >
             {t("discoverBenefits")}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
