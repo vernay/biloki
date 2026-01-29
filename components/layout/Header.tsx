@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Logo from "@/components/ui/Logo";
 import { FEATURES } from "@/lib/features-config";
 import { locales, type Locale } from "@/lib/i18n/config";
+import { WEBAPP_LOGIN_URL, WEBAPP_REGISTER_URL } from "@/lib/config";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -248,10 +249,10 @@ export default function Header() {
           <Link href="/reserver-demo" className="text-white hover:opacity-80 font-semibold text-sm">
             {t("demo")}
           </Link>
-          <a href={`https://beta.biloki.fr/login?lang=${locale}`} className="text-white hover:opacity-80 font-semibold text-sm">
+          <a href={`${WEBAPP_LOGIN_URL}?lang=${locale}`} className="text-white hover:opacity-80 font-semibold text-sm">
             {t("login")}
           </a>
-          <a href={`https://beta.biloki.fr/register?lang=${locale}`} className="bg-white text-primary hover:bg-gray-100 font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm">
+          <a href={`${WEBAPP_REGISTER_URL}?lang=${locale}`} className="bg-white text-primary hover:bg-gray-100 font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm">
             {t("trial")}
           </a>
         </div>
@@ -405,10 +406,10 @@ export default function Header() {
           <Link href="/reserver-demo" onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
             {t("demo")}
           </Link>
-          <a href={`https://beta.biloki.fr/login?lang=${locale}`} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
+          <a href={`${WEBAPP_LOGIN_URL}?lang=${locale}`} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
             {t("login")}
           </a>
-          <a href={`https://beta.biloki.fr/register?lang=${locale}`} onClick={() => setIsOpen(false)} className="block w-full text-center bg-white text-primary hover:bg-gray-100 font-semibold py-3 rounded-full transition-all">
+          <a href={`${WEBAPP_REGISTER_URL}?lang=${locale}`} onClick={() => setIsOpen(false)} className="block w-full text-center bg-white text-primary hover:bg-gray-100 font-semibold py-3 rounded-full transition-all">
             {t("trial")}
           </a>
         </div>

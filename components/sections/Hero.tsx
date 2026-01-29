@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
 import { locales, type Locale } from "@/lib/i18n/config";
+import { WEBAPP_REGISTER_URL } from "@/lib/config";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -74,7 +75,7 @@ export default function Hero() {
             >
               <motion.div variants={itemVariants}>
                 <a
-                  href={`https://beta.biloki.fr/register?lang=${locale}`}
+                  href={`${WEBAPP_REGISTER_URL}?lang=${locale}`}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold bg-primary hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   {tCommon("startFree")} →

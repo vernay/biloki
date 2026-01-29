@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
+import { WEBAPP_LOGIN_URL } from '@/lib/config';
 
 export default function ProgrammeParrainage() {
   const t = useTranslations('referralPage');
@@ -134,7 +135,7 @@ export default function ProgrammeParrainage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={`https://beta.biloki.fr/login?lang=${locale}`}
+              href={`${WEBAPP_LOGIN_URL}?lang=${locale}`}
               className="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               {header('login')}
