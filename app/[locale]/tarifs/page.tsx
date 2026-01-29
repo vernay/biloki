@@ -401,7 +401,7 @@ export default function TarifsPage() {
           </div>
 
           {/* Right Side - CTA */}
-          <div className="w-full bg-gradient-to-br from-primary to-blue-600 rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white sticky top-8">
+          <div className="w-full bg-gradient-to-br from-biloki-blue to-primary-dark rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white sticky top-8">
             <div className="mb-8">
               <div className="inline-block p-4 bg-white/20 rounded-full mb-6">
                 <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
