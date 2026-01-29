@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { calculatePrice, getTierRange, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, MODULES } from '@/lib/pricing-config';
 import { COLORS } from '@/lib/design-config';
+import WebappLink from '@/components/ui/WebappLink';
 
 export default function TarifsPage() {
   const t = useTranslations('pricingPage');
@@ -17,17 +18,6 @@ export default function TarifsPage() {
   const [addComptabilite, setAddComptabilite] = useState(false);
   const [addVentesAdditionnelles, setAddVentesAdditionnelles] = useState(false);
   const [logementsVentesAdditionnelles, setLogementsVentesAdditionnelles] = useState(1);
-  const [formData, setFormData] = useState({
-    prenom: '',
-    nom: '',
-    email: '',
-    telephone: '',
-    role: '',
-    logements: '',
-    message: ''
-  });
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const priceData = calculatePrice(logements, billingPeriod, {
     addComptabilite,
@@ -54,34 +44,6 @@ export default function TarifsPage() {
   }).format(new Date());
 
   const vatLabel = isParticulier ? t('incl') : t('excl');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({
-        prenom: '',
-        nom: '',
-        email: '',
-        telephone: '',
-        role: '',
-        logements: '',
-        message: ''
-      });
-      setTimeout(() => setSubmitted(false), 3000);
-    }, 1000);
-  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -438,173 +400,60 @@ export default function TarifsPage() {
             </div>
           </div>
 
-          {/* Right Side - Form */}
-          <div className="w-full bg-white rounded-2xl shadow-2xl p-6 md:p-10">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">{t('formTitle')}</h3>
-            
-            {/* Success Message */}
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <p className="text-green-800 font-semibold text-center text-sm">
-                  ✅ {t('formSuccess')}
-                </p>
+          {/* Right Side - CTA */}
+          <div className="w-full bg-gradient-to-br from-primary to-blue-600 rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white sticky top-8">
+            <div className="mb-8">
+              <div className="inline-block p-4 bg-white/20 rounded-full mb-6">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-            )}
+              <h3 className="text-3xl font-bold mb-4">
+                {t('readyToStart') || 'Prêt à commencer ?'}
+              </h3>
+              <p className="text-lg text-white/90 mb-8">
+                {t('startFreeToday') || 'Démarrez gratuitement aujourd\'hui et découvrez toutes les fonctionnalités de Biloki pendant 14 jours.'}
+              </p>
+            </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Row 1: Prénom & Nom */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="prenom" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {trialT('form.firstName')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="prenom"
-                    name="prenom"
-                    value={formData.prenom}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="nom" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {trialT('form.lastName')} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="nom"
-                    name="nom"
-                    value={formData.nom}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
-                  />
-                </div>
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  {trialT('form.email')} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="name@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
-                />
-              </div>
-
-              {/* Téléphone */}
-              <div>
-                <label htmlFor="telephone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  {trialT('form.phone')}
-                </label>
-                <input
-                  type="tel"
-                  id="telephone"
-                  name="telephone"
-                  value={formData.telephone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"
-                />
-              </div>
-
-              {/* Role & Logements */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="role" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {trialT('form.youAre')} <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="role"
-                    name="role"
-                    value={formData.role}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
-                  >
-                    <option value="">{trialT('form.select')}</option>
-                    <option value="gestionnaire">{trialT('form.manager')}</option>
-                    <option value="proprietaire">{trialT('form.owner')}</option>
-                    <option value="autre">{trialT('form.other')}</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="logements" className="block text-sm font-semibold text-gray-700 mb-2">
-                    {trialT('form.numberOfProperties')} <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="logements"
-                    name="logements"
-                    value={formData.logements}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
-                  >
-                    <option value="">{trialT('form.select')}</option>
-                    <option value="1-3">{trialT('form.range1_3')}</option>
-                    <option value="4-10">{trialT('form.range4_10')}</option>
-                    <option value="11-50">{trialT('form.range11_50')}</option>
-                    <option value="51-100">{trialT('form.range51_100')}</option>
-                    <option value="100+">{trialT('form.range100plus')}</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  {trialT('form.message')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder={trialT('form.messagePlaceholder')}
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={3}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none text-sm"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
+            <div className="space-y-4">
+              <WebappLink
+                type="register"
+                className="block w-full bg-white text-primary font-bold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
               >
-                {loading ? t('loading') : t('getPricing')}
-              </button>
-
-              {/* Reassurance Text */}
-              <div className="flex items-center justify-center gap-6 text-xs text-gray-600 pt-2">
+                🚀 {common('startFreeTrial')}
+              </WebappLink>
+              
+              <div className="flex items-center justify-center gap-6 text-sm text-white/80 pt-4">
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  {t('transparentPricing')}
+                  {t('noCreditCard') || 'Sans carte bancaire'}
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
-                  {t('monthlyBilling')}
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {t('infoNoCommitment')}
+                  {t('cancelAnytime') || 'Annulation libre'}
                 </div>
               </div>
-            </form>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-white/20">
+              <p className="text-sm text-white/70 mb-4">
+                {t('needHelp') || 'Besoin d\'aide pour choisir ?'}
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm font-semibold"
+              >
+                💬 {common('contactUs')}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
