@@ -109,18 +109,24 @@ const iconMap: { [key: string]: React.ReactNode } = {
 
 export default function FeaturesSection() {
   const [selectedFeature, setSelectedFeature] = useState('channel-manager');
+  const [hasUserClicked, setHasUserClicked] = useState(false);
   const videoRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('features');
   const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
   
-  // Auto-scroll vers la vidéo quand on clique sur un onglet sur mobile
+  // Auto-scroll vers la vidéo SEULEMENT si l'utilisateur a cliqué
   useEffect(() => {
-    if (videoRef.current && window.innerWidth < 768) {
+    if (hasUserClicked && videoRef.current && window.innerWidth < 768) {
       setTimeout(() => {
         videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 0);
     }
-  }, [selectedFeature]);
+  }, [selectedFeature, hasUserClicked]);
+
+  const handleFeatureClick = (featureId: string) => {
+    setSelectedFeature(featureId);
+    setHasUserClicked(true);
+  };
 
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
@@ -184,7 +190,7 @@ export default function FeaturesSection() {
             <div key={feature.id}>
               {/* Card */}
               <button
-                onClick={() => setSelectedFeature(feature.id)}
+                onClick={() => handleFeatureClick(feature.id)}
                 className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
                   selectedFeature === feature.id
                     ? 'border-primary bg-blue-50 shadow-lg'
