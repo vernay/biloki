@@ -116,7 +116,9 @@ export default function FeaturesSection() {
   // Auto-scroll vers la vidéo quand on clique sur un onglet sur mobile
   useEffect(() => {
     if (videoRef.current && window.innerWidth < 768) {
-      videoRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 0);
     }
   }, [selectedFeature]);
 
@@ -176,22 +178,12 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-        {/* Mobile Layout: Video - ALL Cards */}
-        <div className="md:hidden grid gap-6">
-          {/* Video at the top on mobile */}
-          <div ref={videoRef} className="w-full h-auto max-h-96">
-            <VideoPlayer
-              src={activeFeature.videoSrc}
-              poster={activeFeature.videoPoster}
-              className="w-full h-full rounded-xl overflow-hidden shadow-xl"
-            />
-          </div>
-
-          {/* All cards below video */}
-          <div className="space-y-2">
-            {FEATURES.map((feature) => (
+        {/* Mobile Layout: Accordion style with video below each card */}
+        <div className="md:hidden space-y-2">
+          {FEATURES.map((feature) => (
+            <div key={feature.id}>
+              {/* Card */}
               <button
-                key={feature.id}
                 onClick={() => setSelectedFeature(feature.id)}
                 className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
                   selectedFeature === feature.id
@@ -213,8 +205,19 @@ export default function FeaturesSection() {
                   </div>
                 </div>
               </button>
-            ))}
-          </div>
+
+              {/* Video shown when this card is selected */}
+              {selectedFeature === feature.id && (
+                <div ref={videoRef} className="w-full h-auto max-h-96 mt-2">
+                  <VideoPlayer
+                    src={feature.videoSrc}
+                    poster={feature.videoPoster}
+                    className="w-full h-full rounded-xl overflow-hidden shadow-xl"
+                  />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
