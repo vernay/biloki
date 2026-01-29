@@ -188,7 +188,7 @@ export default function FeaturesSection() {
                 className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
                   selectedFeature === feature.id
                     ? 'border-primary bg-blue-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-primary hover:shadow-md'
+                    : 'border-gray-200 bg-white hover:border-primary hover:shadow-md hover:bg-gray-50'
                 }`}
               >
                 <div className="flex items-start gap-2 md:gap-3">
@@ -202,6 +202,16 @@ export default function FeaturesSection() {
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-gray-900">{t(`items.${feature.translationKey}.title`)}</h3>
                     <p className="text-gray-600 text-xs">{t(`items.${feature.translationKey}.description`)}</p>
+                  </div>
+                  {/* Play icon on the right */}
+                  <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
+                    selectedFeature === feature.id
+                      ? 'bg-primary text-white rotate-90'
+                      : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
+                  }`}>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 3v18l14-9L5 3z"/>
+                    </svg>
                   </div>
                 </div>
               </button>
