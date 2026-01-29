@@ -25,6 +25,69 @@ export default function CarrierePage() {
           </p>
         </div>
 
+        {/* Offres d'emploi */}
+        <section className="max-w-5xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+            Offres d'emploi
+          </h2>
+          <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">
+              Filtrer par :
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Départements</span>
+                <div className="mt-2 relative">
+                  <select
+                    disabled
+                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                  >
+                    <option>Tous</option>
+                  </select>
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                    ▼
+                  </span>
+                </div>
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Lieux</span>
+                <div className="mt-2 relative">
+                  <select
+                    disabled
+                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                  >
+                    <option>Tous</option>
+                  </select>
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                    ▼
+                  </span>
+                </div>
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Type de travail</span>
+                <div className="mt-2 relative">
+                  <select
+                    disabled
+                    className="w-full appearance-none rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-gray-500 shadow-sm focus:outline-none"
+                  >
+                    <option>Tous</option>
+                  </select>
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                    ▼
+                  </span>
+                </div>
+              </label>
+            </div>
+
+            <div className="mt-6 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-6 py-8 text-center text-gray-600">
+              <p className="text-base font-medium">Aucune offre d'emploi disponible pour le moment.</p>
+              <p className="text-sm mt-1">Revenez bientôt ou envoyez une candidature spontanée.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Main Content */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-8">
@@ -82,7 +145,7 @@ export default function CarrierePage() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary to-blue-700 rounded-2xl shadow-lg p-8 md:p-12 text-white text-center">
+          <div className="bg-primary rounded-2xl shadow-lg p-8 md:p-12 text-white text-center">
             <h2 className="text-3xl font-bold mb-4">
               {t('ctaTitle')}
             </h2>
