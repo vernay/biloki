@@ -85,7 +85,7 @@ export default function Hero() {
                 </Link>
               </motion.div>
             </motion.div>
-
+          </motion.div>
 
           {/* Colonne droite - Maquettes de téléphones */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
