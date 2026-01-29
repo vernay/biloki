@@ -2,10 +2,10 @@
 
 import { usePathname } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { WEBAPP_LOGIN_URL, WEBAPP_REGISTER_URL } from '@/lib/config';
+import { WEBAPP_LOGIN_URL, WEBAPP_REGISTER_URL, WEBAPP_SUBSCRIPTION_URL } from '@/lib/config';
 
 interface WebappLinkProps {
-  type?: 'login' | 'register';
+  type?: 'login' | 'register' | 'subscription';
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;

@@ -60,7 +60,7 @@ export default function CTASection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center flex-wrap">
             <WebappLink
-              type="register"
+              type="subscription"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg text-sm md:text-base"
             >
               {tCommon("subscribe")}
