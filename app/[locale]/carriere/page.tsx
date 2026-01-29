@@ -200,7 +200,7 @@ export default function CarrierePage() {
               {t('ctaDescription')}
             </p>
             <a
-              href="mailto:careers@biloki.com"
+              href="mailto:contact@biloki.fr"
               className="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-all"
             >
               {t('ctaButton')}
