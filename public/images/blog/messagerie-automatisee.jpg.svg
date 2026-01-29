@@ -1,0 +1,6 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#F59E0B"/>
+  <text x="400" y="200" font-family="Arial" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Messagerie Automatisée</text>
+  <text x="400" y="250" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Scripts & Workflows</text>
+  <rect x="330" y="280" width="140" height="60" fill="white" opacity="0.2" rx="8"/>
+</svg>
