@@ -86,14 +86,6 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* Social Proof */}
-            <motion.p 
-              className="text-sm text-gray-600"
-              variants={itemVariants}
-            >
-              {t("socialProof")} <span className="font-bold text-gray-900">{t("socialProofHighlight")}</span> {t("socialProofSuffix")}
-            </motion.p>
-          </motion.div>
 
           {/* Colonne droite - Maquettes de téléphones */}
           <div className="relative lg:h-[600px] flex items-center justify-center">

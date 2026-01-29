@@ -26,7 +26,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: getPrimaryColor() }} className="text-white">
       {/* Contenu principal */}
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 items-start">
           {/* Logo et présentation à gauche */}
           <div className="lg:col-span-1">
