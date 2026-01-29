@@ -2,11 +2,16 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { locales, type Locale } from '@/lib/i18n/config';
 
 export default function ProgrammeParrainage() {
   const t = useTranslations('referralPage');
   const common = useTranslations('common');
   const header = useTranslations('header');
+  const pathname = usePathname();
+  const pathLocale = pathname.split('/')[1] as Locale;
+  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -128,12 +133,12 @@ export default function ProgrammeParrainage() {
             {t('readyToReferDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/connexion"
+            <a
+              href={`https://beta.biloki.fr/login?lang=${locale}`}
               className="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
             >
               {header('login')}
-            </Link>
+            </a>
             <Link
               href="/commencer-gratuitement"
               className="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors"
