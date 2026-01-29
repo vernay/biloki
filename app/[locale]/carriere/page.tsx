@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function CarrierePage() {
@@ -9,6 +9,18 @@ export default function CarrierePage() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [selectedWorkType, setSelectedWorkType] = useState('all');
+
+  const handleDepartmentChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDepartment(e.target.value);
+  }, []);
+
+  const handleLocationChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedLocation(e.target.value);
+  }, []);
+
+  const handleWorkTypeChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedWorkType(e.target.value);
+  }, []);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -40,7 +52,7 @@ export default function CarrierePage() {
             <h3 className="text-lg font-semibold text-gray-800 mb-4">
               {t('filtersTitle')}
             </h3>
-            {(() => {
+            {useMemo(() => {
               const departmentOptions = [
                 t('deptMarketing'),
                 t('deptProduct'),
@@ -67,7 +79,7 @@ export default function CarrierePage() {
                     <div className="mt-2 relative">
                       <select
                         value={selectedDepartment}
-                        onChange={(event) => setSelectedDepartment(event.target.value)}
+                        onChange={handleDepartmentChange}
                         className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
                         <option value="all">{t('allOption')}</option>
@@ -88,7 +100,7 @@ export default function CarrierePage() {
                     <div className="mt-2 relative">
                       <select
                         value={selectedLocation}
-                        onChange={(event) => setSelectedLocation(event.target.value)}
+                        onChange={handleLocationChange}
                         className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
                         <option value="all">{t('allOption')}</option>
@@ -109,7 +121,7 @@ export default function CarrierePage() {
                     <div className="mt-2 relative">
                       <select
                         value={selectedWorkType}
-                        onChange={(event) => setSelectedWorkType(event.target.value)}
+                        onChange={handleWorkTypeChange}
                         className="w-full appearance-none rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 shadow-sm focus:outline-none"
                       >
                         <option value="all">{t('allOption')}</option>
@@ -126,7 +138,7 @@ export default function CarrierePage() {
                   </label>
                 </div>
               );
-            })()}
+            }, [t, selectedDepartment, selectedLocation, selectedWorkType, handleDepartmentChange, handleLocationChange, handleWorkTypeChange])}
 
             <div className="mt-6 rounded-xl border border-dashed border-gray-200 bg-gray-50 px-6 py-8 text-center text-gray-600">
               <p className="text-base font-medium">{t('emptyTitle')}</p>
