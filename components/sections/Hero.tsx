@@ -1,14 +1,19 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
+import { locales, type Locale } from "@/lib/i18n/config";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
   const tInterfaces = useTranslations("animatedInterfaces");
+  const pathname = usePathname();
+  const pathLocale = pathname.split('/')[1] as Locale;
+  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
   
   return (
     <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -68,12 +73,12 @@ export default function Hero() {
               variants={containerVariants}
             >
               <motion.div variants={itemVariants}>
-                <Link
-                  href="/commencer-gratuitement"
+                <a
+                  href={`https://beta.biloki.fr/register?lang=${locale}`}
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold bg-primary hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   {tCommon("startFree")} →
-                </Link>
+                </a>
               </motion.div>
 
               <motion.div variants={itemVariants}>

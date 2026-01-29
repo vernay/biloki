@@ -251,9 +251,9 @@ export default function Header() {
           <a href={`https://beta.biloki.fr/login?lang=${locale}`} className="text-white hover:opacity-80 font-semibold text-sm">
             {t("login")}
           </a>
-          <Link href="/commencer-gratuitement" className="bg-white text-primary hover:bg-gray-100 font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm">
+          <a href={`https://beta.biloki.fr/register?lang=${locale}`} className="bg-white text-primary hover:bg-gray-100 font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm">
             {t("trial")}
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -408,9 +408,9 @@ export default function Header() {
           <a href={`https://beta.biloki.fr/login?lang=${locale}`} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
             {t("login")}
           </a>
-          <Link href="/commencer-gratuitement" onClick={() => setIsOpen(false)} className="block w-full text-center bg-white text-primary hover:bg-gray-100 font-semibold py-3 rounded-full transition-all">
+          <a href={`https://beta.biloki.fr/register?lang=${locale}`} onClick={() => setIsOpen(false)} className="block w-full text-center bg-white text-primary hover:bg-gray-100 font-semibold py-3 rounded-full transition-all">
             {t("trial")}
-          </Link>
+          </a>
         </div>
       )}
     </header>
