@@ -9,6 +9,7 @@ import useAgentData, {
   getUserSizeFromCount,
   type AgentDataResponse 
 } from '@/lib/hooks/useAgentData';
+import { WEBAPP_REGISTER_URL } from '@/lib/config';
 
 // Types
 type UserProfileType = 'owner' | 'concierge' | 'manager' | 'unknown';
@@ -302,7 +303,7 @@ export default function ChatBot() {
     if (!currentAgentData?.ctas) {
       return {
         primary: { label: 'Réserver une démo', url: `/${lang}/reserver-demo` },
-        secondary: { label: 'Essai gratuit', url: `/${lang}/commencer-gratuitement` },
+        secondary: { label: 'Essai gratuit', url: `${WEBAPP_REGISTER_URL}?lang=${lang}` },
       };
     }
     
@@ -516,7 +517,7 @@ export default function ChatBot() {
         
         return createResponse(whatIsBilokiText, [
           { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
       
@@ -524,14 +525,14 @@ export default function ChatBot() {
         setConversationStep('conversion');
         return createResponse(getPricingText(), [
           { label: t('actions.seeDetailedPricing'), url: `/${lang}/tarifs`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
 
       case 'features': {
         return createResponse(getFeaturesText(), [
           { label: t('actions.discoverFeatures'), url: `/${lang}/fonctionnalites/vue-ensemble`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
 
@@ -549,7 +550,7 @@ export default function ChatBot() {
             `${pmsInfo.description}\n\n✅ ${pmsInfo.benefits.join('\n✅ ')}`,
             [
               { label: 'PMS', url: `/${lang}${pmsInfo.url}`, type: 'primary' },
-              { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+              { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
             ]
           );
         }
@@ -591,7 +592,7 @@ export default function ChatBot() {
             `${repInfo.description}\n\n✅ ${repInfo.benefits.join('\n✅ ')}`,
             [
               { label: 'Reporting', url: `/${lang}/fonctionnalites/reporting`, type: 'primary' },
-              { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+              { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
             ]
           );
         }
@@ -622,7 +623,7 @@ export default function ChatBot() {
       case 'ai': {
         return createResponse(t('contextual.aiResponse'), [
           { label: 'IA & Automatisation', url: `/${lang}/fonctionnalites/ia-automatisation`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
 
@@ -630,14 +631,14 @@ export default function ChatBot() {
         setConversationStep('conversion');
         return createResponse(t('actions.twoOptions'), [
           { label: t('actions.personalDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: trialCta, url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: trialCta, url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
 
       case 'migration': {
         return createResponse(t('contextual.migrationResponse'), [
           { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
 
@@ -673,7 +674,7 @@ export default function ChatBot() {
           
           return createResponse(referralText, [
             { label: t('referral.details'), url: `/${lang}/programme-parrainage`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
           ]);
         }
         break;
@@ -688,7 +689,7 @@ export default function ChatBot() {
           
           return createResponse(faqText, [
             { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
           ]);
         }
         break;
@@ -741,7 +742,7 @@ export default function ChatBot() {
           
           return createResponse(blogText, [
             { label: `📚 ${t('contextual.viewBlog') || 'Voir le blog'}`, url: `/${lang}/blog`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
           ]);
         }
         break;
@@ -772,7 +773,7 @@ export default function ChatBot() {
             `\n\n${t('contextual.andMore') || 'Et bien plus encore !'} 🚀`;
           
           return createResponse(includedText, [
-            { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'primary' },
+            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'primary' },
             { label: t('actions.seePricing'), url: `/${lang}/tarifs`, type: 'secondary' }
           ]);
         }
@@ -792,7 +793,7 @@ export default function ChatBot() {
           
           return createResponse(benefitsText, [
             { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
           ]);
         }
         break;
@@ -813,7 +814,7 @@ export default function ChatBot() {
         
         return createResponse(comparisonText, [
           { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `/${lang}/commencer-gratuitement`, type: 'secondary' }
+          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
         ]);
       }
     }
@@ -849,7 +850,7 @@ export default function ChatBot() {
     const laterKeywords = laterKeywordsStr !== 'demoStep.later' ? laterKeywordsStr.split('|') : ['plus tard', 'later', 'réfléchir', 'pas maintenant'];
     if (laterKeywords.some(kw => lowerMessage.includes(kw))) {
       return createResponse(t('demoStep.laterResponse'), [
-        { label: trialCtaRocket, url: `/${lang}/commencer-gratuitement`, type: 'primary' },
+        { label: trialCtaRocket, url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'primary' },
         { label: t('actions.seePricing'), url: `/${lang}/tarifs`, type: 'secondary' }
       ]);
     }

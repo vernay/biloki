@@ -2,19 +2,14 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { calculatePrice, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, MODULES, FREE_TRIAL_DAYS, ANNUAL_DISCOUNT } from "@/lib/pricing-config";
 import { COLORS } from "@/lib/design-config";
-import { locales, type Locale } from "@/lib/i18n/config";
-import { WEBAPP_REGISTER_URL } from "@/lib/config";
+import WebappLink from "@/components/ui/WebappLink";
 
 export default function PricingCalculator() {
   const tCommon = useTranslations("common");
   const t = useTranslations("pricingCalculator");
-  const pathname = usePathname();
-  const pathLocale = pathname.split('/')[1] as Locale;
-  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
   const [dwellings, setDwellings] = useState(5);
   const [billingCycle, setBillingCycle] = useState<BillingPeriod>("monthly");
   const [isParticulier, setIsParticulier] = useState(false);
@@ -360,9 +355,9 @@ export default function PricingCalculator() {
             {/* CTA */}
               {!isCustomPricing && dwellings <= 200 && (
               <div className="mt-12 text-center">
-                <a href={`${WEBAPP_REGISTER_URL}?lang=${locale}`} className="inline-block bg-primary text-white font-semibold py-4 px-12 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg">
+                <WebappLink type="register" className="inline-block bg-primary text-white font-semibold py-4 px-12 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg">
                   {tCommon("tryFree")}
-                </a>
+                </WebappLink>
                 <p className="text-sm text-gray-600 mt-4">
                   {tCommon("noCardRequired", { days: FREE_TRIAL_DAYS })} • {tCommon("fullAccess14Days", { days: FREE_TRIAL_DAYS })}
                 </p>

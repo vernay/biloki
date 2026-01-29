@@ -432,17 +432,19 @@ export function getUserSize(propertyCount: number): UserSize {
   return 'enterprise';
 }
 
+import { WEBAPP_REGISTER_URL } from './config';
+
 // CTA dynamiques selon le profil
 export const DYNAMIC_CTAS = {
   // Petits gestionnaires (1-5 logements)
   small: {
-    primary: { label: 'startFreeTrial', url: '/commencer-gratuitement' },
+    primary: { label: 'startFreeTrial', url: WEBAPP_REGISTER_URL },
     secondary: { label: 'seePricing', url: '/tarifs' },
   },
   // Moyens (6-20 logements)
   medium: {
     primary: { label: 'bookDemo', url: '/reserver-demo' },
-    secondary: { label: 'startFreeTrial', url: '/commencer-gratuitement' },
+    secondary: { label: 'startFreeTrial', url: WEBAPP_REGISTER_URL },
   },
   // Grands (21-100 logements)
   large: {
@@ -457,7 +459,7 @@ export const DYNAMIC_CTAS = {
   // Par défaut
   unknown: {
     primary: { label: 'bookDemo', url: '/reserver-demo' },
-    secondary: { label: 'startFreeTrial', url: '/commencer-gratuitement' },
+    secondary: { label: 'startFreeTrial', url: WEBAPP_REGISTER_URL },
   },
 };
 
@@ -552,7 +554,7 @@ export const FALLBACK_RESPONSES = {
 // ============================================================================
 
 export const IMPORTANT_URLS = {
-  signup: '/commencer-gratuitement',
+  signup: WEBAPP_REGISTER_URL,
   demo: '/reserver-demo',
   pricing: '/tarifs',
   contact: '/contact',

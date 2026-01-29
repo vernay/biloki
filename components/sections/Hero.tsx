@@ -1,20 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
-import { locales, type Locale } from "@/lib/i18n/config";
-import { WEBAPP_REGISTER_URL } from "@/lib/config";
+import WebappLink from "@/components/ui/WebappLink";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
   const tInterfaces = useTranslations("animatedInterfaces");
-  const pathname = usePathname();
-  const pathLocale = pathname.split('/')[1] as Locale;
-  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
   
   return (
     <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -74,12 +69,12 @@ export default function Hero() {
               variants={containerVariants}
             >
               <motion.div variants={itemVariants}>
-                <a
-                  href={`${WEBAPP_REGISTER_URL}?lang=${locale}`}
+                <WebappLink
+                  type="register"
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold bg-primary hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   {tCommon("startFree")} →
-                </a>
+                </WebappLink>
               </motion.div>
 
               <motion.div variants={itemVariants}>
