@@ -40,8 +40,11 @@ export default function CarrierePage() {
                 t('deptProduct'),
                 t('deptDevelopment'),
                 t('deptSales'),
+                t('deptHR'),
+                t('deptDesign'),
+                t('deptSupport'),
               ];
-              const locationOptions = [t('locationNantes'), t('locationParis')];
+              const locationOptions = [t('locationNantes'), t('locationParis'), t('locationRemote')];
               const workTypeOptions = [
                 t('workTypeInternship'),
                 t('workTypeApprenticeship'),
