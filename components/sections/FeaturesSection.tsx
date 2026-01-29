@@ -117,7 +117,7 @@ export default function FeaturesSection() {
   useEffect(() => {
     if (videoRef.current && window.innerWidth < 768) {
       setTimeout(() => {
-        videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 0);
     }
   }, [selectedFeature]);
