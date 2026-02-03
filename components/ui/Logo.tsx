@@ -9,7 +9,7 @@ export default function Logo({ className = "h-[120px]", alt = "Biloki" }: LogoPr
   return (
     <Link href="/">
       <img
-        src="/logos/logo biloki.png"
+        src="/logos/logo-biloki.png"
         alt={alt}
         className={className}
       />
