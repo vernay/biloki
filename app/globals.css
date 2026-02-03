@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  /* Variable héritée pour les composants qui utilisent encore var(--biloki-blue) */
+  --biloki-blue: #04a4ff;
+  --biloki-blue-dark: #0391dd;
+}
+
+/* Chatbot header - utilise les variables de couleur Biloki */
+.chatbot-header {
+  background: linear-gradient(to right, var(--biloki-blue), var(--biloki-blue-dark)) !important;
+}
+
+/* Classes de secours pour garantir le bleu principal même si Tailwind ne régénère pas */
+.text-primary { color: var(--biloki-blue); }
+.bg-primary { background-color: var(--biloki-blue); }
+.border-primary { border-color: var(--biloki-blue); }
+.hover\:text-primary:hover { color: var(--biloki-blue); }
+.hover\:bg-primary:hover { background-color: var(--biloki-blue); }
+.hover\:border-primary:hover { border-color: var(--biloki-blue); }
+.from-primary { --tw-gradient-from: var(--biloki-blue) var(--tw-gradient-from-position); --tw-gradient-to: rgb(4 164 255 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+.to-primary { --tw-gradient-to: var(--biloki-blue) var(--tw-gradient-to-position); }
+.accent-primary { accent-color: var(--biloki-blue); }
+.ring-primary { --tw-ring-color: var(--biloki-blue); }
+.shadow-primary { --tw-shadow-color: var(--biloki-blue); --tw-shadow: var(--tw-shadow-colored); }
+
+/* Slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(4, 164, 255); /* primary color */
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(4, 164, 255, 0.3);
+  transition: all 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(4, 164, 255, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(4, 164, 255); /* primary color */
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(4, 164, 255, 0.3);
+  transition: all 0.2s;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(4, 164, 255, 0.4);
+}
+
+input[type="range"]::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+/* ============================================================================
+   CHATBOT ANIMATIONS
+   ============================================================================ */
+
+/* Fade in animation for chat messages */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+/* Pulse animation for notification badge */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Smooth bounce for typing indicator */
+@keyframes smooth-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Chat window slide in */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
