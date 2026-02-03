@@ -1061,7 +1061,7 @@ export default function ChatBot() {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md p-1.5">
               <img 
-                src="/logos/logo.svg" 
+                src="/logos/logo biloki.png" 
                 alt="Biloki" 
                 className="w-full h-full object-contain" 
                 style={{ filter: 'brightness(0) saturate(100%) invert(52%) sepia(98%) saturate(1752%) hue-rotate(175deg) brightness(101%) contrast(101%)' }}

@@ -13,7 +13,7 @@ export default function CTASection() {
         <div className="bg-primary rounded-3xl md:rounded-[32px] p-6 md:p-8 text-center text-white shadow-xl">
           {/* Logo */}
           <div className="mb-4 md:mb-6 flex justify-center">
-            <img src="/logos/logo.svg" alt="Biloki" className="h-20 md:h-24" />
+            <img src="/logos/logo biloki.png" alt="Biloki" className="h-20 md:h-24" />
           </div>
 
           {/* Title */}
