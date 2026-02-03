@@ -36,6 +36,14 @@ export default function TarifsPage() {
   const total = billingPeriod === 'annual' ? totalMonthly * 12 : totalMonthly;
   const moduleComptabiliteUnit = MODULES.comptabilite.pricePerUnit * factor;
   const moduleVentesUnit = MODULES.ventesAdditionnelles.pricePerUnit * factor;
+  
+  // Calculer le prix par logement incluant les modules optionnels
+  const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
+    priceData.pricePerMonth * factor + 
+    (addComptabilite ? moduleComptabiliteUnit : 0) +
+    (addVentesAdditionnelles ? moduleVentesUnit : 0)
+  ) : null;
+  
   const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * factor : null;
   const totalDisplay = isCustomPricing ? null : total * factor;
   const totalMonthlyDisplay = isCustomPricing ? null : totalMonthly * factor;
@@ -277,7 +285,7 @@ export default function TarifsPage() {
                     ) : priceData ? (
                       <>
                         <p className="text-3xl md:text-4xl font-black text-primary">
-                          {pricePerLogementDisplay?.toFixed(2)}€
+                          {pricePerLogementWithModules?.toFixed(2)}€
                         </p>
                         <p className="text-sm text-gray-600">{t('perMonthLabel')} {vatLabel}</p>
                       </>

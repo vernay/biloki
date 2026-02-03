@@ -108,7 +108,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function FeaturesSection() {
-  const [selectedFeature, setSelectedFeature] = useState('channel-manager');
+  const [selectedFeature, setSelectedFeature] = useState<string | null>('channel-manager');
   const [hasUserClicked, setHasUserClicked] = useState(false);
   const videoRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('features');
@@ -116,7 +116,7 @@ export default function FeaturesSection() {
   
   // Auto-scroll vers la vidéo SEULEMENT si l'utilisateur a cliqué
   useEffect(() => {
-    if (hasUserClicked && videoRef.current && window.innerWidth < 768) {
+    if (hasUserClicked && selectedFeature && videoRef.current && window.innerWidth < 768) {
       setTimeout(() => {
         videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 0);
@@ -124,7 +124,12 @@ export default function FeaturesSection() {
   }, [selectedFeature, hasUserClicked]);
 
   const handleFeatureClick = (featureId: string) => {
-    setSelectedFeature(featureId);
+    // Si on clique sur la feature déjà sélectionnée, on la ferme
+    if (selectedFeature === featureId) {
+      setSelectedFeature(null);
+    } else {
+      setSelectedFeature(featureId);
+    }
     setHasUserClicked(true);
   };
 
@@ -148,7 +153,7 @@ export default function FeaturesSection() {
             {FEATURES.map((feature) => (
               <button
                 key={feature.id}
-                onClick={() => setSelectedFeature(feature.id)}
+                onClick={() => handleFeatureClick(feature.id)}
                 className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
                   selectedFeature === feature.id
                     ? 'border-primary bg-blue-50 shadow-lg'
@@ -174,13 +179,19 @@ export default function FeaturesSection() {
 
           {/* Right: Video Player */}
           <div className="md:col-span-3">
-            <div className="w-full h-auto max-h-96">
-              <VideoPlayer
-                src={activeFeature.videoSrc}
-                poster={activeFeature.videoPoster}
-                className="w-full h-full rounded-xl overflow-hidden shadow-xl"
-              />
-            </div>
+            {selectedFeature && activeFeature ? (
+              <div className="w-full h-auto max-h-96">
+                <VideoPlayer
+                  src={activeFeature.videoSrc}
+                  poster={activeFeature.videoPoster}
+                  className="w-full h-full rounded-xl overflow-hidden shadow-xl"
+                />
+              </div>
+            ) : (
+              <div className="w-full h-64 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500">
+                <p className="text-lg">{t('selectFeature') || 'Cliquez sur une fonctionnalité pour voir la vidéo'}</p>
+              </div>
+            )}
           </div>
         </div>
 

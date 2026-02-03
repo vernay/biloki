@@ -128,3 +128,43 @@ input[type="range"]::-moz-range-track {
   animation: slide-up 0.3s ease-out forwards;
 }
 
+/* Checkbox styling - coche blanche sur fond bleu */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--biloki-blue);
+  border-color: var(--biloki-blue);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 0.35rem;
+  height: 0.65rem;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--biloki-blue);
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(4, 164, 255, 0.2);
+}
+

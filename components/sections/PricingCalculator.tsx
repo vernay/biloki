@@ -33,6 +33,14 @@ export default function PricingCalculator() {
   const total = billingCycle === "annual" ? totalMonthly * 12 : totalMonthly;
   const moduleComptaUnit = MODULES.comptabilite.pricePerUnit * (billingCycle === "annual" ? (1 - ANNUAL_DISCOUNT) : 1) * (isParticulier ? 1 + VAT_RATE : 1);
   const moduleVentesUnit = MODULES.ventesAdditionnelles.pricePerUnit * (billingCycle === "annual" ? (1 - ANNUAL_DISCOUNT) : 1) * (isParticulier ? 1 + VAT_RATE : 1);
+  
+  // Calculer le prix par logement incluant les modules optionnels
+  const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
+    priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1) + 
+    (addComptabilite ? moduleComptaUnit : 0) +
+    (addVentesAdditionnelles ? moduleVentesUnit : 0)
+  ) : null;
+  
   const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1) : null;
   const totalDisplay = isCustomPricing ? null : total * (isParticulier ? 1 + VAT_RATE : 1);
   const totalMonthlyDisplay = isCustomPricing ? null : totalMonthly * (isParticulier ? 1 + VAT_RATE : 1);
@@ -302,7 +310,7 @@ export default function PricingCalculator() {
                     ) : (
                       <>
                         <p className="text-4xl md:text-5xl font-black text-primary">
-                          {pricePerLogementDisplay?.toFixed(2)}€
+                          {pricePerLogementWithModules?.toFixed(2)}€
                         </p>
                         <p className="text-sm text-gray-600">
                           {tCommon("perMonth")} {isParticulier ? t("includingVat") : t("excludingVat")}
