@@ -9,15 +9,58 @@ export default function EquipePage() {
     role: string;
     initials: string;
     photo?: string;
+    photoPosition?: string;
     linkedin?: string;
   }> = [
-    { name: 'Sebastien Vernay', role: t('roles.founder'), initials: 'SV', photo: '/images/equipe/Sebastien.png' },
-    { name: 'Antonio Silva Neto', role: t('roles.coFounder'), initials: 'AS', photo: '/images/equipe/Antonio.png' },
-    { name: 'Enzo Michaud', role: t('roles.fullStackJunior'), initials: 'EM', photo: '/images/equipe/Enzo.png' },
-    { name: 'Léo', role: t('roles.crmExpert'), initials: 'L', photo: '/images/equipe/Leo.png' },
-    { name: 'Grégoire Vernay', role: t('roles.salesMarketingManager'), initials: 'GV', photo: '/images/equipe/Greg.png' },
-    { name: 'Eddy Tredan', role: t('roles.devExpert'), initials: 'ET' },
-    { name: 'Bryan Montassier', role: t('roles.fullStackSenior'), initials: 'BM', photo: '/images/equipe/Bryan.png' },
+    {
+      name: 'Sebastien Vernay',
+      role: t('roles.founder'),
+      initials: 'SV',
+      photo: '/images/equipe/Sebastien.png',
+      photoPosition: '50% 10%',
+      linkedin: 'https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/'
+    },
+    {
+      name: 'Antonio Silva Neto',
+      role: t('roles.coFounder'),
+      initials: 'AS',
+      photo: '/images/equipe/Antonio.png',
+      linkedin: 'https://www.linkedin.com/in/antonio-silva-neto-831344117/'
+    },
+    {
+      name: 'Enzo Michaud',
+      role: t('roles.fullStackJunior'),
+      initials: 'EM',
+      photo: '/images/equipe/Enzo.png',
+      linkedin: 'https://www.linkedin.com/in/enzo-michaud-a19979180/'
+    },
+    {
+      name: 'Léo',
+      role: t('roles.crmExpert'),
+      initials: 'L',
+      photo: '/images/equipe/Leo.png',
+      linkedin: 'https://www.linkedin.com/in/l%C3%A9o-jacqueline/'
+    },
+    {
+      name: 'Grégoire Vernay',
+      role: t('roles.salesMarketingManager'),
+      initials: 'GV',
+      photo: '/images/equipe/Greg.png',
+      linkedin: 'https://www.linkedin.com/in/gregoirevernay/'
+    },
+    {
+      name: 'Eddy Tredan',
+      role: t('roles.devExpert'),
+      initials: 'ET',
+      linkedin: 'https://www.linkedin.com/in/eddy-tr%C3%A9dan-7b2238239/'
+    },
+    {
+      name: 'Bryan Montassier',
+      role: t('roles.fullStackSenior'),
+      initials: 'BM',
+      photo: '/images/equipe/Bryan.png',
+      linkedin: 'https://www.linkedin.com/in/bryanmtr/'
+    },
   ];
 
   return (
@@ -53,7 +96,8 @@ export default function EquipePage() {
                         <img
                           src={member.photo}
                           alt={member.name}
-                          className="w-full h-full object-cover object-top grayscale"
+                          className="w-full h-full object-cover grayscale"
+                          style={{ objectPosition: member.photoPosition ?? '50% 0%' }}
                         />
                       </div>
                     ) : (
