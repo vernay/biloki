@@ -275,34 +275,27 @@ export default function TarifsPage() {
             {/* Fonctionnalités incluses */}
             <div className="mt-10 pt-10 border-t border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-6">{t('includedFeatures')}</h3>
-              
-              <div className="space-y-6">
-                {/* Forfait Base */}
-                <div>
-                  <h4 className="font-bold text-primary mb-4">📦 {t('basePlan')}</h4>
-                  <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
-                    {Object.values(t.raw('baseFeatures') as Record<string, string>).map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <span className="text-primary font-bold mt-0.5">✓</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Support et Services */}
-                <div>
-                  <h4 className="font-bold text-primary mb-4">🤝 {t('supportServices')}</h4>
-                  <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
-                    {Object.values(t.raw('supportFeatures') as Record<string, string>).map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <span className="text-primary font-bold mt-0.5">✓</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <ul className="space-y-3">
+                {(t.raw('keyFeatures') as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                      <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span className="text-gray-700 font-semibold">+{t('moreFeatures')}</span>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -327,7 +320,7 @@ export default function TarifsPage() {
                 type="register"
                 className="block w-full bg-white text-primary font-bold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
               >
-                🚀 {common('startFreeTrial')}
+                {common('startFreeTrial')}
               </WebappLink>
               
               <div className="flex items-center justify-center gap-6 text-sm text-white/90 pt-4">
@@ -354,7 +347,7 @@ export default function TarifsPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm font-semibold"
               >
-                💬 {common('contactUs')}
+                {common('contactUs')}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

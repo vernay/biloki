@@ -571,6 +571,14 @@
     "infoNoCommitment": "Sans engagement",
     "infoAnnualPayment": "Paiement annuel : débité en une fois",
     "includedFeatures": "Fonctionnalités incluses",
+    "keyFeatures": [
+      "Gestion des réservations & voyageurs",
+      "Channel Manager intégré (Airbnb, Booking, etc.)",
+      "Messagerie centralisée",
+      "Automatisations & tâches récurrentes",
+      "Reporting & statistiques"
+    ],
+    "moreFeatures": "50 autres fonctionnalités",
     "basePlan": "Forfait de base",
     "baseFeatures": {
       "reservations": "Gestion complète des réservations et voyageurs",

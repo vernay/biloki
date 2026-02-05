@@ -550,6 +550,14 @@
     "infoNoCommitment": "No commitment",
     "infoAnnualPayment": "Annual payment: billed once",
     "includedFeatures": "Included features",
+    "keyFeatures": [
+      "Reservations & guest management",
+      "Integrated Channel Manager (Airbnb, Booking, etc.)",
+      "Unified messaging",
+      "Automations & recurring tasks",
+      "Reporting & analytics"
+    ],
+    "moreFeatures": "50 more features",
     "basePlan": "Base plan",
     "baseFeatures": {
       "reservations": "Complete booking and guest management",

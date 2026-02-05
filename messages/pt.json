@@ -1262,6 +1262,14 @@
     "infoNoCommitment": "Sem compromisso",
     "infoAnnualPayment": "Pagamento anual: faturado uma vez",
     "includedFeatures": "Funcionalidades incluídas",
+    "keyFeatures": [
+      "Reservas e gestão de hóspedes",
+      "Channel Manager integrado (Airbnb, Booking, etc.)",
+      "Mensagens unificadas",
+      "Automações e tarefas recorrentes",
+      "Relatórios e análises"
+    ],
+    "moreFeatures": "50 outras funcionalidades",
     "basePlan": "Plano base",
     "baseFeatures": {
       "reservations": "Gestão completa de reservas e hóspedes",
