@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion, type Variants } from 'framer-motion';
 import VideoPlayer from '@/components/ui/VideoPlayer';
 
 interface Feature {
@@ -129,7 +129,7 @@ export default function FeaturesSection() {
     setHasUserClicked(true);
   };
 
-  const listVariants = {
+  const listVariants: Variants = {
     hidden: {},
     show: {
       transition: {
@@ -139,15 +139,15 @@ export default function FeaturesSection() {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+    show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
   };
 
-  const fadeSlideVariants = {
+  const fadeSlideVariants: Variants = {
     initial: { opacity: 0, y: 8 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
-    exit: { opacity: 0, y: -8, transition: { duration: 0.3, ease: 'easeIn' } },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
+    exit: { opacity: 0, y: -8, transition: { duration: 0.3, ease: [0.4, 0, 1, 1] } },
   };
 
   return (
