@@ -4,6 +4,16 @@ export default function EquipePage() {
   const t = useTranslations('teamPage');
   const common = useTranslations('common');
 
+  const teamMembers = [
+    { name: 'Sebastien Vernay', role: 'Founder', initials: 'SV', photo: '/images/equipe/Sebastien.png' },
+    { name: 'Antonio Silva Neto', role: 'Co-founder', initials: 'AS', photo: '/images/equipe/Antonio.png' },
+    { name: 'Enzo Michaud', role: 'Développeur junior full stack', initials: 'EM', photo: '/images/equipe/Enzo.png' },
+    { name: 'Léo', role: 'Expert CRM', initials: 'L', photo: '/images/equipe/Leo.png' },
+    { name: 'Grégoire Vernay', role: 'Sales & Marketing manager', initials: 'GV', photo: '/images/equipe/Greg.png' },
+    { name: 'Eddy Tredan', role: 'Expert développement', initials: 'ET' },
+    { name: 'Bryan Montassier', role: 'Développeur senior full stack', initials: 'BM', photo: '/images/equipe/Bryan.png' },
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -25,53 +35,54 @@ export default function EquipePage() {
           </p>
         </div>
 
-        {/* Team Photo */}
-        <div className="mb-16 max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <img 
-              src="/images/equipe/equipe-biloki.png" 
-              alt={t('title')} 
-              className="w-full h-auto"
-            />
+        {/* Team Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member) => (
+              <div key={member.name} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div className="flex justify-center mb-6">
+                  <div className="relative">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-28 h-28 rounded-full object-cover bg-primary/10"
+                      />
+                    ) : (
+                      <div className="w-28 h-28 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">
+                        {member.initials}
+                      </div>
+                    )}
+                    <div className="absolute -right-2 -bottom-2 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 text-center">{member.name}</h3>
+                <p className="text-sm text-gray-600 text-center mt-1">{member.role}</p>
+              </div>
+            ))}
           </div>
-        </div>
 
-        {/* Description Section */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              {t('whoWeAre')}
-            </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
-                {t('whoWeAreText1')}
-              </p>
-              <p>
-                {t('whoWeAreText2')}
-              </p>
-              <p className="font-semibold text-primary">
-                {t('together')}
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col sm:flex-row gap-4">
-              <a
-                href="/reserver-demo"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                {t('meetTeam')}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300"
-              >
-                {common('contactUs')}
-              </a>
-            </div>
+          {/* CTA */}
+          <div className="mt-10 pt-8 border-t border-gray-200 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/reserver-demo"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              {t('meetTeam')}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300"
+            >
+              {common('contactUs')}
+            </a>
           </div>
         </div>
       </div>
