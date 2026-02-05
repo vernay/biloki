@@ -28,7 +28,7 @@ export default function VideoPlayer({ src, poster, title, className = "" }: Vide
   };
 
   return (
-    <div className={`relative w-full h-full overflow-hidden rounded-2xl shadow-lg bg-black ${className}`}>
+    <div className={`relative w-full h-full overflow-hidden rounded-2xl bg-white outline-none focus:outline-none ${className}`}>
       <video
         ref={videoRef}
         src={src}
@@ -36,7 +36,7 @@ export default function VideoPlayer({ src, poster, title, className = "" }: Vide
         controls
         onPause={handlePause}
         onPlay={() => setIsPlaying(true)}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover outline-none focus:outline-none focus-visible:outline-none"
       />
 
       {!isPlaying && (

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import VideoPlayer from '@/components/ui/VideoPlayer';
 
 interface Feature {
@@ -88,13 +89,14 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function FeaturesSection() {
-  const [selectedFeature, setSelectedFeature] = useState<string | null>('channel-manager');
+  const [selectedFeature, setSelectedFeature] = useState<string>('channel-manager');
   const [hasUserClicked, setHasUserClicked] = useState(false);
   const videoRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isInView, setIsInView] = useState(false);
   const t = useTranslations('features');
   const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
+  const reduceMotion = useReducedMotion();
   
   // Auto-scroll vers la vidéo SEULEMENT si l'utilisateur a cliqué
   useEffect(() => {
@@ -121,17 +123,35 @@ export default function FeaturesSection() {
   }, []);
 
   const handleFeatureClick = (featureId: string) => {
-    // Si on clique sur la feature déjà sélectionnée, on la ferme
-    if (selectedFeature === featureId) {
-      setSelectedFeature(null);
-    } else {
+    if (selectedFeature !== featureId) {
       setSelectedFeature(featureId);
     }
     setHasUserClicked(true);
   };
 
+  const listVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  };
+
+  const fadeSlideVariants = {
+    initial: { opacity: 0, y: 8 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' } },
+    exit: { opacity: 0, y: -8, transition: { duration: 0.3, ease: 'easeIn' } },
+  };
+
   return (
-    <section ref={sectionRef} className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
+    <section ref={sectionRef} className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12 md:mb-16">
@@ -146,70 +166,126 @@ export default function FeaturesSection() {
         {/* Desktop Layout: Cards left + Video right */}
         <div className="hidden md:grid md:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
           {/* Left: ALL Feature Cards */}
-          <div className="md:col-span-2 space-y-2 md:space-y-3">
-            {FEATURES.map((feature) => (
-              <button
-                key={feature.id}
-                onClick={() => handleFeatureClick(feature.id)}
-                style={{ animationDelay: `${FEATURES.indexOf(feature) * 120}ms` }}
-                className={`feature-card w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-300 group text-sm md:text-base ${
-                  selectedFeature === feature.id
-                    ? 'border-primary bg-blue-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-primary hover:shadow-md'
-                } ${isInView ? 'feature-card-in' : ''}`}
-              >
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    selectedFeature === feature.id
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
-                  }`}>
-                    {iconMap[feature.id]}
+          <motion.div
+            className="md:col-span-2 space-y-3"
+            variants={listVariants}
+            initial="hidden"
+            animate={isInView ? 'show' : 'hidden'}
+          >
+            {FEATURES.map((feature) => {
+              const isActive = selectedFeature === feature.id;
+              return (
+                <motion.button
+                  key={feature.id}
+                  variants={cardVariants}
+                  onClick={() => handleFeatureClick(feature.id)}
+                  whileHover={reduceMotion ? undefined : { y: -2 }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.985 }}
+                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group text-sm md:text-base backdrop-blur shadow-none hover:shadow-none outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0 ${
+                    isActive
+                      ? 'border-primary bg-blue-50/70 ring-1 ring-primary/30'
+                      : 'border-primary bg-white hover:border-primary'
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className={`p-2.5 rounded-lg flex-shrink-0 transition-all duration-200 ${
+                      isActive
+                        ? 'bg-primary text-white shadow-[0_8px_20px_rgba(37,99,235,0.35)]'
+                        : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
+                    }`}>
+                      {iconMap[feature.id]}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-gray-900">
+                        {t(`items.${feature.translationKey}.title`)}
+                      </h3>
+                      <p className="text-gray-600 text-xs hidden md:block">
+                        {t(`items.${feature.translationKey}.description`)}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900">{t(`items.${feature.translationKey}.title`)}</h3>
-                    <p className="text-gray-600 text-xs hidden md:block">{t(`items.${feature.translationKey}.description`)}</p>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
+                </motion.button>
+              );
+            })}
+          </motion.div>
 
           {/* Right: Video Player */}
           <div className="md:col-span-3">
-            {selectedFeature && activeFeature ? (
-              <div className="w-full h-auto max-h-96">
-                <VideoPlayer
-                  src={activeFeature.videoSrc}
-                  poster={activeFeature.videoPoster}
-                  className="w-full h-full rounded-xl overflow-hidden shadow-xl"
-                />
-              </div>
-            ) : (
-              <div className="w-full h-64 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500">
-                <p className="text-lg">{t('selectFeature') || 'Cliquez sur une fonctionnalité pour voir la vidéo'}</p>
-              </div>
-            )}
+            <div className="mb-4">
+              <AnimatePresence mode="wait">
+                <motion.h3
+                  key={`${activeFeature.id}-title`}
+                  variants={fadeSlideVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="text-2xl md:text-3xl font-bold text-gray-900"
+                >
+                  {t(`items.${activeFeature.translationKey}.title`)}
+                </motion.h3>
+              </AnimatePresence>
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={`${activeFeature.id}-desc`}
+                  variants={fadeSlideVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="text-gray-600 mt-2"
+                >
+                  {t(`items.${activeFeature.translationKey}.description`)}
+                </motion.p>
+              </AnimatePresence>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 via-white to-white">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={activeFeature.id}
+                  variants={fadeSlideVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  className="w-full h-auto max-h-[460px]"
+                >
+                  <VideoPlayer
+                    src={activeFeature.videoSrc}
+                    poster={activeFeature.videoPoster}
+                    className="w-full h-full"
+                  />
+                </motion.div>
+              </AnimatePresence>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
+            </div>
           </div>
         </div>
 
         {/* Mobile Layout: Accordion style with video below each card */}
-        <div className="md:hidden space-y-2">
-          {FEATURES.map((feature) => (
+        <motion.div
+          className="md:hidden space-y-2"
+          variants={listVariants}
+          initial="hidden"
+          animate={isInView ? 'show' : 'hidden'}
+        >
+          {FEATURES.map((feature) => {
+            const isActive = selectedFeature === feature.id;
+            return (
             <div key={feature.id}>
               {/* Card */}
-              <button
+              <motion.button
                 onClick={() => handleFeatureClick(feature.id)}
-                style={{ animationDelay: `${FEATURES.indexOf(feature) * 120}ms` }}
-                className={`feature-card w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-300 group text-sm md:text-base ${
-                  selectedFeature === feature.id
-                    ? 'border-primary bg-blue-50 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-primary hover:shadow-md hover:bg-gray-50'
-                } ${isInView ? 'feature-card-in' : ''}`}
+                variants={cardVariants}
+                whileHover={reduceMotion ? undefined : { y: -2 }}
+                whileTap={reduceMotion ? undefined : { scale: 0.985 }}
+                className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group text-sm md:text-base shadow-none hover:shadow-none outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0 ${
+                  isActive
+                    ? 'border-primary bg-blue-50/70 ring-1 ring-primary/30'
+                    : 'border-primary bg-white hover:border-primary'
+                }`}
               >
                 <div className="flex items-start gap-2 md:gap-3">
                   <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    selectedFeature === feature.id
+                    isActive
                       ? 'bg-primary text-white'
                       : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
                   }`}>
@@ -221,7 +297,7 @@ export default function FeaturesSection() {
                   </div>
                   {/* Play icon on the right */}
                   <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    selectedFeature === feature.id
+                    isActive
                       ? 'bg-primary text-white rotate-90'
                       : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
                   }`}>
@@ -230,49 +306,33 @@ export default function FeaturesSection() {
                     </svg>
                   </div>
                 </div>
-              </button>
+              </motion.button>
 
               {/* Video shown when this card is selected */}
-              {selectedFeature === feature.id && (
-                <div ref={videoRef} className="w-full h-auto max-h-96 mt-2">
-                  <VideoPlayer
-                    src={feature.videoSrc}
-                    poster={feature.videoPoster}
-                    className="w-full h-full rounded-xl overflow-hidden shadow-xl"
-                  />
-                </div>
-              )}
+              <AnimatePresence initial={false}>
+                {isActive && (
+                  <motion.div
+                    ref={videoRef}
+                    variants={fadeSlideVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="relative w-full h-auto max-h-96 mt-2 rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 to-white"
+                  >
+                    <VideoPlayer
+                      src={feature.videoSrc}
+                      poster={feature.videoPoster}
+                      className="w-full h-full"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          ))}
-        </div>
+          );
+        })}
+        </motion.div>
       </div>
-
-
-      <style jsx>{`
-        .feature-card {
-          opacity: 0;
-          transform: translateX(-80px);
-          will-change: transform, opacity;
-        }
-        .feature-card-in {
-          animation: slideIn 0.7s ease forwards;
-        }
-        @keyframes slideIn {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .feature-card {
-            opacity: 1;
-            transform: none;
-          }
-          .feature-card-in {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   );
 }
