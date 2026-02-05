@@ -456,11 +456,11 @@
     "roles": {
       "founder": "Fundador",
       "coFounder": "Cofundador",
-      "fullStackJunior": "Desarrollador full stack junior",
+      "fullStackJunior": "Desarrollador full stack",
       "crmExpert": "Experto CRM",
       "salesMarketingManager": "Responsable de Sales & Marketing",
       "devExpert": "Experto en desarrollo",
-      "fullStackSenior": "Desarrollador full stack senior"
+      "fullStackSenior": "Desarrollador full stack"
     },
     "whoWeAre": "¿Quiénes somos?",
     "whoWeAreText1": "Biloki nació del deseo de simplificar y automatizar la gestión de estancias para conserjerías modernas y propietarios. Nuestro equipo combina experiencia técnica con un profundo conocimiento de la industria del alquiler vacacional.",

@@ -56,6 +56,7 @@ export default function EquipePage() {
       name: 'Eddy Tredan',
       role: t('roles.devExpert'),
       initials: 'ET',
+      photo: '/images/equipe/Eddy.png',
       linkedin: 'https://www.linkedin.com/in/eddy-tr%C3%A9dan-7b2238239/'
     },
     {

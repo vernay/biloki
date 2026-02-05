@@ -456,11 +456,11 @@
     "roles": {
       "founder": "Founder",
       "coFounder": "Co-founder",
-      "fullStackJunior": "Junior full-stack developer",
+      "fullStackJunior": "Full-stack developer",
       "crmExpert": "CRM expert",
       "salesMarketingManager": "Sales & Marketing manager",
       "devExpert": "Development expert",
-      "fullStackSenior": "Senior full-stack developer"
+      "fullStackSenior": "Full-stack developer"
     },
     "whoWeAre": "Who are we?",
     "whoWeAreText1": "Biloki was born from the desire to simplify and automate stay management for modern concierge services and property owners. Our team combines technical expertise with in-depth knowledge of the vacation rental industry.",
