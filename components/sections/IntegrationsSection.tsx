@@ -61,24 +61,37 @@ export default function IntegrationsSection() {
             </div>
           </div>
           <div className="space-y-4">
-            <div className="overflow-hidden">
+            {/* Mobile: grid statique */}
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:hidden">
+              {logos.map((logo) => (
+                <div
+                  key={logo.alt}
+                  className="logo-card logo-card--grid rounded-2xl bg-[#f8fbff] p-3 flex items-center justify-center"
+                >
+                  <img src={logo.src} alt={logo.alt} className="h-9 object-contain" />
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: marquee */}
+            <div className="hidden md:block overflow-hidden">
               <div className="logo-marquee logo-marquee--left">
                 {[...topRow, ...topRow].map((logo, index) => (
                   <div
                     key={`${logo.alt}-top-${index}`}
-                    className="logo-card rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                    className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
                   >
                     <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="overflow-hidden">
+            <div className="hidden md:block overflow-hidden">
               <div className="logo-marquee logo-marquee--right">
                 {[...bottomRow, ...bottomRow].map((logo, index) => (
                   <div
                     key={`${logo.alt}-bottom-${index}`}
-                    className="logo-card rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                    className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
                   >
                     <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
                   </div>
@@ -101,8 +114,10 @@ export default function IntegrationsSection() {
           animation-name: marquee-right;
         }
         .logo-card {
-          min-width: 120px;
           transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .logo-card--marquee {
+          min-width: 120px;
         }
         .logo-card:hover {
           transform: translateY(-2px) scale(1.02);
