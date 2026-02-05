@@ -4,7 +4,13 @@ export default function EquipePage() {
   const t = useTranslations('teamPage');
   const common = useTranslations('common');
 
-  const teamMembers = [
+  const teamMembers: Array<{
+    name: string;
+    role: string;
+    initials: string;
+    photo?: string;
+    linkedin?: string;
+  }> = [
     { name: 'Sebastien Vernay', role: t('roles.founder'), initials: 'SV', photo: '/images/equipe/Sebastien.png' },
     { name: 'Antonio Silva Neto', role: t('roles.coFounder'), initials: 'AS', photo: '/images/equipe/Antonio.png' },
     { name: 'Enzo Michaud', role: t('roles.fullStackJunior'), initials: 'EM', photo: '/images/equipe/Enzo.png' },
