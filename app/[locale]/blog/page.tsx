@@ -14,6 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const articles = [
   {
+    slug: "salon-marseille-2026",
+    title: "Biloki au salon de la conciergerie à Marseille : on vous attend !",
+    excerpt: "Le 24 mars, retrouvez l’équipe Biloki à Marseille pour une démo complète : PMS, channel manager, messagerie, serrures connectées et marketplace API.",
+    date: "5 février 2026",
+    readTime: "4 min",
+    category: "Événement",
+    image: "/images/blog/salon-marseille.jpg",
+  },
+  {
     slug: "nice-quotas-airbnb-reglementation-2025",
     title: "Nice : Quotas par quartier pour les locations Airbnb",
     excerpt: "Nice durcit sa réglementation : quotas par quartier, 90 jours max, autorisations de 3 ans. Ce que les conciergeries doivent savoir.",
