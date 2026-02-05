@@ -20,7 +20,7 @@ export default function EquipePage() {
       initials: 'SV',
       photo: '/images/equipe/Sebastien.png',
       photoPosition: '50% 50%',
-      photoScale: 0.8,
+      photoScale: 0.92,
       photoFit: 'contain',
       linkedin: 'https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/'
     },
