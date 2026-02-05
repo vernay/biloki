@@ -246,7 +246,7 @@ export default function FeaturesSection() {
                   initial="initial"
                   animate="animate"
                   exit="exit"
-                  className="w-full h-auto max-h-[460px]"
+                  className="w-full aspect-video max-h-[460px]"
                 >
                   <VideoPlayer
                     src={activeFeature.videoSrc}
@@ -317,7 +317,7 @@ export default function FeaturesSection() {
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    className="relative w-full h-auto max-h-96 mt-2 rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 to-white"
+                    className="relative w-full aspect-video mt-2 rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 to-white"
                   >
                     <VideoPlayer
                       src={feature.videoSrc}
