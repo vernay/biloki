@@ -40,22 +40,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/appli-biloki',
-        destination: '/fr/fonctionnalites',
+        destination: '/fr/fonctionnalites/vue-ensemble',
         permanent: true,
       },
       {
         source: '/appli-biloki/',
-        destination: '/fr/fonctionnalites',
+        destination: '/fr/fonctionnalites/vue-ensemble',
         permanent: true,
       },
       {
         source: '/produits-2',
-        destination: '/fr/tarifs',
+        destination: '/fr',
         permanent: true,
       },
       {
         source: '/produits-2/',
-        destination: '/fr/tarifs',
+        destination: '/fr',
         permanent: true,
       },
       {
