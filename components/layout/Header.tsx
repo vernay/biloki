@@ -219,7 +219,7 @@ export default function Header() {
               onClick={() => setIsLanguageOpen(!isLanguageOpen)}
               className="text-white hover:opacity-80 font-semibold text-sm flex items-center gap-1 user-select-none"
             >
-              {t("language")}: {languageLabel}
+              {languageLabel}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -368,7 +368,7 @@ export default function Header() {
               onClick={() => setMobileLanguageOpen(!mobileLanguageOpen)}
               className="w-full text-left hover:opacity-80 py-2 flex items-center justify-between font-medium user-select-none"
             >
-              {t("language")}: {languageLabel}
+              {languageLabel}
               <svg 
                 className={`w-4 h-4 transition-transform ${mobileLanguageOpen ? 'rotate-180' : ''}`}
                 fill="none" 
