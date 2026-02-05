@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { calculatePrice, BillingPeriod, VAT_RATE, MODULES } from '@/lib/pricing-config';
+import { calculatePrice, BillingPeriod, VAT_RATE } from '@/lib/pricing-config';
 
 export default function SAbonnerPage() {
   const t = useTranslations('subscribePage');
@@ -12,9 +12,6 @@ export default function SAbonnerPage() {
   const [logements, setLogements] = useState(5);
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly');
   const [isParticulier, setIsParticulier] = useState(false);
-  const [addComptabilite, setAddComptabilite] = useState(false);
-  const [addVentesAdditionnelles, setAddVentesAdditionnelles] = useState(false);
-  const [logementVentesAdditionnelles, setLogementVentesAdditionnelles] = useState(1);
 
   const [formData, setFormData] = useState({
     prenom: '',
@@ -29,9 +26,6 @@ export default function SAbonnerPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const priceData = calculatePrice(logements, billingPeriod, {
-    addComptabilite,
-    addVentesAdditionnelles,
-    ventesLogements: logementVentesAdditionnelles,
     isParticulier
   });
   const factor = isParticulier ? 1 + VAT_RATE : 1;
@@ -39,15 +33,9 @@ export default function SAbonnerPage() {
   // Utiliser les données de la config centralisée
   const basePriceMonthly = priceData?.totalMonth ?? 0;
   const basePrice = billingPeriod === 'annual' ? basePriceMonthly * 12 : basePriceMonthly;
-  const comptabilitePrice = priceData?.totalComptabilite ?? 0;
-  const ventesAddPrice = priceData?.totalVentes ?? 0;
-  const totalPrice = basePrice + comptabilitePrice + ventesAddPrice;
+  const totalPrice = basePrice;
   const basePriceDisplay = basePrice * factor;
-  const comptabilitePriceDisplay = comptabilitePrice * factor;
-  const ventesAddPriceDisplay = ventesAddPrice * factor;
   const totalPriceDisplay = totalPrice * factor;
-  const moduleComptaUnit = MODULES.comptabilite.pricePerUnit * factor;
-  const moduleVentesUnit = MODULES.ventesAdditionnelles.pricePerUnit * factor;
   const taxLabel = isParticulier ? t('ttc') : t('ht');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -228,83 +216,6 @@ export default function SAbonnerPage() {
                   ))}
                 </ul>
               </div>
-
-              {/* Options supplémentaires */}
-              <div className="border-t border-gray-200 pt-10">
-                <h3 className="text-lg font-bold text-gray-900 mb-6">{t('additionalOptions')}</h3>
-
-                {/* Option 1: Comptabilité */}
-                <div className="mb-6 p-4 rounded-xl border-2 border-gray-200 hover:border-primary transition-colors">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <label className="flex items-center gap-3 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={addComptabilite}
-                          onChange={(e) => setAddComptabilite(e.target.checked)}
-                          className="w-5 h-5 accent-primary"
-                        />
-                        <div>
-                          <h4 className="font-semibold text-gray-900">{t('accountingModule')}</h4>
-                          <p className="text-sm text-gray-600">{t('accountingDesc')}</p>
-                        </div>
-                      </label>
-                    </div>
-                    <span className="font-bold text-primary whitespace-nowrap ml-4">
-                      +{moduleComptaUnit.toFixed(2)}€ /log/mois {taxLabel}
-                    </span>
-                  </div>
-                  {addComptabilite && (
-                    <div className="mt-3 p-3 bg-blue-50 rounded-lg text-sm text-gray-700">
-                      {t('applyToAll', { count: logements })} = 
-                      <span className="font-semibold text-primary"> {(logements * moduleComptaUnit).toFixed(2)}€ /mois {taxLabel}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Option 2: Ventes additionnelles */}
-                <div className="p-4 rounded-xl border-2 border-gray-200 hover:border-primary transition-colors">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <label className="flex items-center gap-3 cursor-pointer mb-3">
-                        <input
-                          type="checkbox"
-                          checked={addVentesAdditionnelles}
-                          onChange={(e) => setAddVentesAdditionnelles(e.target.checked)}
-                          className="w-5 h-5 accent-primary"
-                        />
-                        <div>
-                          <h4 className="font-semibold text-gray-900">{t('salesModule')}</h4>
-                          <p className="text-sm text-gray-600">{t('salesDesc')}</p>
-                        </div>
-                      </label>
-                      {addVentesAdditionnelles && (
-                        <div className="ml-8 mt-3 flex items-center gap-3 bg-blue-50 p-3 rounded-lg">
-                          <label className="text-sm font-semibold text-gray-700">{t('propertiesWithModule')} :</label>
-                          <input
-                            type="number"
-                            min="1"
-                            max={logements}
-                            value={logementVentesAdditionnelles}
-                            onChange={(e) => setLogementVentesAdditionnelles(parseInt(e.target.value) || 1)}
-                            className="w-20 px-3 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-primary"
-                          />
-                          <span className="text-sm text-gray-600">{t('of')} {logements}</span>
-                        </div>
-                      )}
-                    </div>
-                    <span className="font-bold text-primary whitespace-nowrap ml-4">
-                      +{moduleVentesUnit.toFixed(2)}€ /log/mois {taxLabel}
-                    </span>
-                  </div>
-                  {addVentesAdditionnelles && (
-                    <div className="mt-3 p-3 bg-blue-50 rounded-lg text-sm text-gray-700">
-                      {t('applyTo', { count: logementVentesAdditionnelles })} = 
-                      <span className="font-semibold text-primary"> {(logementVentesAdditionnelles * moduleVentesUnit).toFixed(2)}€ /mois {taxLabel}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
           </div>
 
@@ -319,20 +230,6 @@ export default function SAbonnerPage() {
                   <span>{t('propertiesCount', { count: logements })}</span>
                   <span className="font-semibold text-gray-900">{basePriceDisplay.toFixed(2)}€ {taxLabel}</span>
                 </div>
-
-                {addComptabilite && (
-                  <div className="flex justify-between text-gray-700">
-                    <span>{t('module')} {t('accountingLabel')}</span>
-                    <span className="font-semibold text-gray-900">+{comptabilitePriceDisplay.toFixed(2)}€ {taxLabel}</span>
-                  </div>
-                )}
-
-                {addVentesAdditionnelles && (
-                  <div className="flex justify-between text-gray-700">
-                    <span>{t('module')} {t('salesLabel')} ({logementVentesAdditionnelles} {t('propertiesLabel')})</span>
-                    <span className="font-semibold text-gray-900">+{ventesAddPriceDisplay.toFixed(2)}€ {taxLabel}</span>
-                  </div>
-                )}
               </div>
 
               <div className="flex justify-between mb-6 pt-6">

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { calculatePrice, getTierRange, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, MODULES } from '@/lib/pricing-config';
+import { calculatePrice, getTierRange, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE } from '@/lib/pricing-config';
 import { COLORS } from '@/lib/design-config';
 import WebappLink from '@/components/ui/WebappLink';
 
@@ -15,14 +15,8 @@ export default function TarifsPage() {
   const [logements, setLogements] = useState(5);
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly');
   const [isParticulier, setIsParticulier] = useState(false);
-  const [addComptabilite, setAddComptabilite] = useState(false);
-  const [addVentesAdditionnelles, setAddVentesAdditionnelles] = useState(false);
-  const [logementsVentesAdditionnelles, setLogementsVentesAdditionnelles] = useState(1);
 
   const priceData = calculatePrice(logements, billingPeriod, {
-    addComptabilite,
-    addVentesAdditionnelles,
-    ventesLogements: logementsVentesAdditionnelles,
     isParticulier
   });
   const isCustomPricing = logements > CUSTOM_PRICING_THRESHOLD;
@@ -30,18 +24,12 @@ export default function TarifsPage() {
   
   // Utiliser les données de la config centralisée
   const baseMonthly = priceData?.totalMonth ?? 0;
-  const comptaMonthly = priceData?.totalComptabilite ?? 0;
-  const ventesMonthly = priceData?.totalVentes ?? 0;
-  const totalMonthly = baseMonthly + comptaMonthly + ventesMonthly;
+  const totalMonthly = baseMonthly;
   const total = billingPeriod === 'annual' ? totalMonthly * 12 : totalMonthly;
-  const moduleComptabiliteUnit = MODULES.comptabilite.pricePerUnit * factor;
-  const moduleVentesUnit = MODULES.ventesAdditionnelles.pricePerUnit * factor;
   
-  // Calculer le prix par logement incluant les modules optionnels
+  // Calculer le prix par logement
   const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
-    priceData.pricePerMonth * factor + 
-    (addComptabilite ? moduleComptabiliteUnit : 0) +
-    (addVentesAdditionnelles ? moduleVentesUnit : 0)
+    priceData.pricePerMonth * factor
   ) : null;
   
   const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * factor : null;
@@ -200,70 +188,6 @@ export default function TarifsPage() {
               </div>
             </div>
 
-            {/* Modules additionnels */}
-            <div className="mb-8">
-              <label className="block text-sm font-semibold text-gray-700 mb-4">
-                {t('additionalOptions')}
-              </label>
-              <div className="space-y-4">
-                <label className="flex items-start gap-3 p-4 border rounded-lg cursor-pointer hover:border-primary transition">
-                  <input
-                    type="checkbox"
-                    checked={addComptabilite}
-                    onChange={(e) => setAddComptabilite(e.target.checked)}
-                    className="mt-1 w-5 h-5 accent-primary"
-                  />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between gap-3">
-                      <div>
-                        <p className="font-semibold text-gray-900">{t('accountingModule')}</p>
-                        <p className="text-sm text-gray-600">{t('accountingDesc')}</p>
-                      </div>
-                        <span className="font-semibold text-primary whitespace-nowrap">+{moduleComptabiliteUnit.toFixed(2)}€ {t('perPropertyPerMonth')} {vatLabel}</span>
-                    </div>
-                    {addComptabilite && (
-                      <p className="text-sm text-gray-600 mt-2">{t('appliedTo', { count: logements })}</p>
-                    )}
-                  </div>
-                </label>
-
-                <div className="p-4 border rounded-lg hover:border-primary transition">
-                  <label className="flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={addVentesAdditionnelles}
-                      onChange={(e) => setAddVentesAdditionnelles(e.target.checked)}
-                      className="mt-1 w-5 h-5 accent-primary"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between gap-3">
-                        <div>
-                          <p className="font-semibold text-gray-900">{t('salesModule')}</p>
-                          <p className="text-sm text-gray-600">{t('salesDesc')}</p>
-                        </div>
-                        <span className="font-semibold text-primary whitespace-nowrap">+{moduleVentesUnit.toFixed(2)}€ {t('perPropertyPerMonth')} {vatLabel}</span>
-                      </div>
-
-                      {addVentesAdditionnelles && (
-                        <div className="mt-3 flex items-center gap-3">
-                          <label className="text-sm text-gray-700 font-semibold">{t('propertiesConcerned')} :</label>
-                          <input
-                            type="number"
-                            min={1}
-                            max={logements}
-                            value={logementsVentesAdditionnelles}
-                            onChange={(e) => setLogementsVentesAdditionnelles(Math.max(1, Math.min(logements, Number(e.target.value) || 1)))}
-                            className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                          />
-                          <span className="text-sm text-gray-600">/ {logements} {logements > 1 ? common('properties') : common('property')}</span>
-                        </div>
-                      )}
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-
             {/* Price Display */}
             <div className="bg-white rounded-lg p-6 border-2 border-primary">
               <div className="grid md:grid-cols-2 gap-6">
@@ -358,32 +282,6 @@ export default function TarifsPage() {
                   <h4 className="font-bold text-primary mb-4">📦 {t('basePlan')}</h4>
                   <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
                     {Object.values(t.raw('baseFeatures') as Record<string, string>).map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <span className="text-primary font-bold mt-0.5">✓</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Module Comptabilité */}
-                <div>
-                  <h4 className="font-bold text-primary mb-4">📊 {t('accountingModule')} <span className="text-sm text-gray-600">(+{moduleComptabiliteUnit.toFixed(2)}€ {t('perPropertyPerMonth')})</span></h4>
-                  <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
-                    {Object.values(t.raw('accountingFeatures') as Record<string, string>).map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <span className="text-primary font-bold mt-0.5">✓</span>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Module Ventes */}
-                <div>
-                  <h4 className="font-bold text-primary mb-4">🛍️ {t('salesModule')} <span className="text-sm text-gray-600">(+{moduleVentesUnit.toFixed(2)}€ {t('perPropertyPerMonth')})</span></h4>
-                  <div className="grid grid-cols-1 gap-2 text-sm text-gray-700">
-                    {Object.values(t.raw('salesFeatures') as Record<string, string>).map((feature, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <span className="text-primary font-bold mt-0.5">✓</span>
                         <span>{feature}</span>

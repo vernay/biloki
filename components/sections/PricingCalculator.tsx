@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { calculatePrice, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, MODULES, FREE_TRIAL_DAYS, ANNUAL_DISCOUNT } from "@/lib/pricing-config";
+import { calculatePrice, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, FREE_TRIAL_DAYS, ANNUAL_DISCOUNT } from "@/lib/pricing-config";
 import { COLORS } from "@/lib/design-config";
 import WebappLink from "@/components/ui/WebappLink";
 
@@ -13,32 +13,20 @@ export default function PricingCalculator() {
   const [dwellings, setDwellings] = useState(5);
   const [billingCycle, setBillingCycle] = useState<BillingPeriod>("monthly");
   const [isParticulier, setIsParticulier] = useState(false);
-  const [addComptabilite, setAddComptabilite] = useState(false);
-  const [addVentesAdditionnelles, setAddVentesAdditionnelles] = useState(false);
-  const [dwellingsVentesAdditionnelles, setDwellingsVentesAdditionnelles] = useState(1);
 
   const priceData = calculatePrice(dwellings, billingCycle === "monthly" ? "monthly" : "annual", {
-    addComptabilite,
-    addVentesAdditionnelles,
-    ventesLogements: dwellingsVentesAdditionnelles,
     isParticulier
   });
   const isCustomPricing = dwellings > CUSTOM_PRICING_THRESHOLD || !priceData;
   
   // Utiliser les données de la config centralisée
   const baseMonthly = priceData?.totalMonth ?? 0;
-  const comptaMonthly = priceData?.totalComptabilite ?? 0;
-  const ventesMonthly = priceData?.totalVentes ?? 0;
-  const totalMonthly = baseMonthly + comptaMonthly + ventesMonthly;
+  const totalMonthly = baseMonthly;
   const total = billingCycle === "annual" ? totalMonthly * 12 : totalMonthly;
-  const moduleComptaUnit = MODULES.comptabilite.pricePerUnit * (billingCycle === "annual" ? (1 - ANNUAL_DISCOUNT) : 1) * (isParticulier ? 1 + VAT_RATE : 1);
-  const moduleVentesUnit = MODULES.ventesAdditionnelles.pricePerUnit * (billingCycle === "annual" ? (1 - ANNUAL_DISCOUNT) : 1) * (isParticulier ? 1 + VAT_RATE : 1);
   
-  // Calculer le prix par logement incluant les modules optionnels
+  // Calculer le prix par logement
   const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
-    priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1) + 
-    (addComptabilite ? moduleComptaUnit : 0) +
-    (addVentesAdditionnelles ? moduleVentesUnit : 0)
+    priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1)
   ) : null;
   
   const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1) : null;
@@ -47,14 +35,12 @@ export default function PricingCalculator() {
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDwellings(Math.max(1, Number(e.target.value)));
-    setDwellingsVentesAdditionnelles(prev => Math.min(Math.max(1, Number(e.target.value)), prev));
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = Number(e.target.value);
     if (!isNaN(val)) {
       setDwellings(Math.max(1, val));
-      setDwellingsVentesAdditionnelles(prev => Math.min(Math.max(1, val), prev));
     }
   };
 
@@ -212,80 +198,6 @@ export default function PricingCalculator() {
                     />
                     {t("individual")}
                   </label>
-                </div>
-              </div>
-
-              {/* Options supplémentaires */}
-              <div className="mb-12">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">{t("additionalOptions")}</h3>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl border-2 border-gray-200 hover:border-biloki-blue transition-colors">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                      <label className="flex items-start gap-3 cursor-pointer flex-1">
-                        <input
-                          type="checkbox"
-                          checked={addComptabilite}
-                          onChange={(e) => setAddComptabilite(e.target.checked)}
-                          className="mt-1 w-5 h-5 accent-biloki-blue"
-                        />
-                        <div>
-                          <p className="font-semibold text-gray-900">{t("accountingModule")}</p>
-                          <p className="text-sm text-gray-600">{t("accountingDesc")}</p>
-                        </div>
-                      </label>
-                      <span className="font-bold text-biloki-blue">
-                        +{moduleComptaUnit.toFixed(2)}€ /log/mois {isParticulier ? t("includingVat") : t("excludingVat")}
-                      </span>
-                    </div>
-                    {addComptabilite && (
-                      <div className="mt-3 p-3 bg-blue-50 rounded-lg text-sm text-gray-700">
-                        {dwellings} {dwellings === 1 ? tCommon("property") : tCommon("properties")} =
-                        <span className="font-semibold text-biloki-blue"> {(dwellings * moduleComptaUnit).toFixed(2)}€ /mois {isParticulier ? t("includingVat") : t("excludingVat")}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-4 rounded-xl border-2 border-gray-200 hover:border-biloki-blue transition-colors">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <label className="flex items-start gap-3 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={addVentesAdditionnelles}
-                            onChange={(e) => setAddVentesAdditionnelles(e.target.checked)}
-                            className="mt-1 w-5 h-5 accent-biloki-blue"
-                          />
-                          <div>
-                            <p className="font-semibold text-gray-900">{t("salesModule")}</p>
-                            <p className="text-sm text-gray-600">{t("salesDesc")}</p>
-                          </div>
-                        </label>
-                        {addVentesAdditionnelles && (
-                          <div className="ml-8 mt-3 flex items-center gap-3 bg-blue-50 p-3 rounded-lg">
-                            <label className="text-sm font-semibold text-gray-700">{t("numberOfProperties")} :</label>
-                            <input
-                              type="number"
-                              min={1}
-                              max={dwellings}
-                              value={dwellingsVentesAdditionnelles}
-                              onChange={(e) => setDwellingsVentesAdditionnelles(Math.max(1, Math.min(dwellings, Number(e.target.value) || 1)))}
-                              className="w-20 px-3 py-1 border border-gray-300 rounded text-center focus:ring-2 focus:ring-biloki-blue"
-                            />
-                            <span className="text-sm text-gray-600">/ {dwellings}</span>
-                          </div>
-                        )}
-                      </div>
-                      <span className="font-bold text-biloki-blue">
-                        +{moduleVentesUnit.toFixed(2)}€ /log/mois {isParticulier ? t("includingVat") : t("excludingVat")}
-                      </span>
-                    </div>
-                    {addVentesAdditionnelles && (
-                      <div className="mt-3 p-3 bg-blue-50 rounded-lg text-sm text-gray-700">
-                        {dwellingsVentesAdditionnelles} {dwellingsVentesAdditionnelles === 1 ? tCommon("property") : tCommon("properties")} =
-                        <span className="font-semibold text-biloki-blue"> {(dwellingsVentesAdditionnelles * moduleVentesUnit).toFixed(2)}€ /mois {isParticulier ? t("includingVat") : t("excludingVat")}</span>
-                      </div>
-                    )}
-                  </div>
                 </div>
               </div>
 
