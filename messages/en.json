@@ -453,6 +453,15 @@
   "teamPage": {
     "title": "Our team",
     "description": "A passionate team dedicated to simplifying your stay management.",
+    "roles": {
+      "founder": "Founder",
+      "coFounder": "Co-founder",
+      "fullStackJunior": "Junior full-stack developer",
+      "crmExpert": "CRM expert",
+      "salesMarketingManager": "Sales & Marketing manager",
+      "devExpert": "Development expert",
+      "fullStackSenior": "Senior full-stack developer"
+    },
     "whoWeAre": "Who are we?",
     "whoWeAreText1": "Biloki was born from the desire to simplify and automate stay management for modern concierge services and property owners. Our team combines technical expertise with in-depth knowledge of the vacation rental industry.",
     "whoWeAreText2": "We believe in artificial intelligence as a co-pilot to optimize your time and improve your guests' experience. Every day, we work to make your management smoother, more intuitive, and more efficient.",

@@ -5,13 +5,13 @@ export default function EquipePage() {
   const common = useTranslations('common');
 
   const teamMembers = [
-    { name: 'Sebastien Vernay', role: 'Founder', initials: 'SV', photo: '/images/equipe/Sebastien.png' },
-    { name: 'Antonio Silva Neto', role: 'Co-founder', initials: 'AS', photo: '/images/equipe/Antonio.png' },
-    { name: 'Enzo Michaud', role: 'Développeur junior full stack', initials: 'EM', photo: '/images/equipe/Enzo.png' },
-    { name: 'Léo', role: 'Expert CRM', initials: 'L', photo: '/images/equipe/Leo.png' },
-    { name: 'Grégoire Vernay', role: 'Sales & Marketing manager', initials: 'GV', photo: '/images/equipe/Greg.png' },
-    { name: 'Eddy Tredan', role: 'Expert développement', initials: 'ET' },
-    { name: 'Bryan Montassier', role: 'Développeur senior full stack', initials: 'BM', photo: '/images/equipe/Bryan.png' },
+    { name: 'Sebastien Vernay', role: t('roles.founder'), initials: 'SV', photo: '/images/equipe/Sebastien.png' },
+    { name: 'Antonio Silva Neto', role: t('roles.coFounder'), initials: 'AS', photo: '/images/equipe/Antonio.png' },
+    { name: 'Enzo Michaud', role: t('roles.fullStackJunior'), initials: 'EM', photo: '/images/equipe/Enzo.png' },
+    { name: 'Léo', role: t('roles.crmExpert'), initials: 'L', photo: '/images/equipe/Leo.png' },
+    { name: 'Grégoire Vernay', role: t('roles.salesMarketingManager'), initials: 'GV', photo: '/images/equipe/Greg.png' },
+    { name: 'Eddy Tredan', role: t('roles.devExpert'), initials: 'ET' },
+    { name: 'Bryan Montassier', role: t('roles.fullStackSenior'), initials: 'BM', photo: '/images/equipe/Bryan.png' },
   ];
 
   return (
@@ -43,11 +43,13 @@ export default function EquipePage() {
                 <div className="flex justify-center mb-6">
                   <div className="relative">
                     {member.photo ? (
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-28 h-28 rounded-full object-cover bg-primary/10"
-                      />
+                      <div className="w-28 h-28 rounded-full overflow-hidden bg-primary/10">
+                        <img
+                          src={member.photo}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top grayscale"
+                        />
+                      </div>
                     ) : (
                       <div className="w-28 h-28 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">
                         {member.initials}
@@ -62,6 +64,27 @@ export default function EquipePage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 text-center">{member.name}</h3>
                 <p className="text-sm text-gray-600 text-center mt-1">{member.role}</p>
+                <div className="mt-4 flex justify-center">
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition"
+                      aria-label={`LinkedIn ${member.name}`}
+                    >
+                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.79v2.18h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.63c0-1.82-.03-4.16-2.54-4.16-2.54 0-2.93 1.98-2.93 4.03V24h-5V8z" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/5 text-primary/60">
+                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.79v2.18h.07c.67-1.27 2.3-2.61 4.74-2.61 5.07 0 6 3.34 6 7.68V24h-5v-7.63c0-1.82-.03-4.16-2.54-4.16-2.54 0-2.93 1.98-2.93 4.03V24h-5V8z" />
+                      </svg>
+                    </span>
+                  )}
+                </div>
               </div>
             ))}
           </div>

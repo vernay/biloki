@@ -453,6 +453,15 @@
   "teamPage": {
     "title": "Nossa equipe",
     "description": "Uma equipe apaixonada dedicada a simplificar a gestão das suas estadias.",
+    "roles": {
+      "founder": "Fundador",
+      "coFounder": "Cofundador",
+      "fullStackJunior": "Desenvolvedor full stack júnior",
+      "crmExpert": "Especialista em CRM",
+      "salesMarketingManager": "Gerente de Sales & Marketing",
+      "devExpert": "Especialista em desenvolvimento",
+      "fullStackSenior": "Desenvolvedor full stack sênior"
+    },
     "whoWeAre": "Quem somos nós?",
     "whoWeAreText1": "Biloki nasceu do desejo de simplificar e automatizar a gestão de estadias para concierges modernos e proprietários. Nossa equipe combina experiência técnica com profundo conhecimento da indústria de aluguel por temporada.",
     "whoWeAreText2": "Acreditamos na inteligência artificial como copiloto para otimizar seu tempo e melhorar a experiência dos seus hóspedes. Todos os dias, trabalhamos para tornar sua gestão mais fluida, intuitiva e eficiente.",

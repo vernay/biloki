@@ -453,6 +453,15 @@
   "teamPage": {
     "title": "Notre équipe",
     "description": "Une équipe passionnée et dédiée à simplifier la gestion de vos séjours.",
+    "roles": {
+      "founder": "Fondateur",
+      "coFounder": "Co-fondateur",
+      "fullStackJunior": "Développeur junior full stack",
+      "crmExpert": "Expert CRM",
+      "salesMarketingManager": "Responsable Sales & Marketing",
+      "devExpert": "Expert développement",
+      "fullStackSenior": "Développeur senior full stack"
+    },
     "whoWeAre": "Qui sommes-nous ?",
     "whoWeAreText1": "Biloki est né de la volonté de simplifier et d'automatiser la gestion des séjours pour les conciergeries et propriétaires modernes. Notre équipe combine expertise technique et connaissance approfondie du secteur de la location saisonnière.",
     "whoWeAreText2": "Nous croyons en l'intelligence artificielle comme copilote pour optimiser votre temps et améliorer l'expérience de vos locataires. Chaque jour, nous travaillons pour rendre votre gestion plus fluide, plus intuitive et plus performante.",
