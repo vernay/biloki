@@ -112,14 +112,6 @@
         "title": "Guide digital avec IA intégrée 24/7",
         "description": "Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs."
       },
-      "comptabilite": {
-        "title": "Comptabilité et gestion",
-        "description": "Automatisez la gestion de vos factures, d'achat de prestation et ventes de service ainsi que l'export de vos données comptables."
-      },
-      "ventesExtras": {
-        "title": "Ventes d'extras à la carte",
-        "description": "Développez votre chiffre d'affaires en proposant des services extras sur l'interface locataire (exemples : livraison de fleurs, mini bar, ménage supplémentaire)."
-      },
       "marketplace": {
         "title": "Marketplace partenaires",
         "description": "Connectez vos outils externes à Biloki grâce à notre marketplace d'intégrations. API ouverte pour synchroniser vos données et automatiser vos workflows avec vos applications préférées."
@@ -155,14 +147,6 @@
       "guideDigital": {
         "title": "Guide digital avec IA intégrée 24/7",
         "desc": "Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs."
-      },
-      "comptabilite": {
-        "title": "Comptabilité et gestion",
-        "desc": "Automatisez la gestion de vos factures, d'achat de prestation et ventes de service ainsi que l'export de vos données comptables."
-      },
-      "ventesExtras": {
-        "title": "Ventes d'extras à la carte",
-        "desc": "Développez votre chiffre d'affaires en proposant des services extras sur l'interface locataire (exemples : livraison de fleurs, mini bar, ménage supplémentaire)."
       },
       "marketplace": {
         "title": "Marketplace partenaires",

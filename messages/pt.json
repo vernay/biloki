@@ -112,14 +112,6 @@
         "title": "Guia digital com IA integrada 24/7",
         "description": "Guia personalizado por propriedade: acesso, regras, recomendações locais, contatos úteis. Assistente IA disponível 24/7 para responder perguntas dos hóspedes."
       },
-      "comptabilite": {
-        "title": "Contabilidade e gestão",
-        "description": "Automatize a gestão de suas faturas, compras de serviços e vendas, bem como a exportação de seus dados contábeis."
-      },
-      "ventesExtras": {
-        "title": "Vendas adicionais à la carte",
-        "description": "Aumente sua receita oferecendo serviços adicionais na interface do hóspede (exemplos: entrega de flores, minibar, limpeza adicional)."
-      },
       "marketplace": {
         "title": "Marketplace de parceiros",
         "description": "Conecte suas ferramentas externas ao Biloki através do nosso marketplace de integrações. API aberta para sincronizar seus dados e automatizar seus fluxos de trabalho com seus aplicativos favoritos."
@@ -155,14 +147,6 @@
       "guideDigital": {
         "title": "Guia digital com IA integrada 24/7",
         "desc": "Guia personalizado por propriedade: acesso, regras, recomendações locais, contatos úteis. Assistente IA disponível 24/7 para responder às perguntas dos hóspedes."
-      },
-      "comptabilite": {
-        "title": "Contabilidade e gestão",
-        "desc": "Automatize a gestão das suas faturas, compras e vendas de serviços, assim como a exportação dos seus dados contábeis."
-      },
-      "ventesExtras": {
-        "title": "Vendas de extras à la carte",
-        "desc": "Aumente sua receita oferecendo serviços adicionais na interface do hóspede (exemplos: entrega de flores, minibar, limpeza extra)."
       },
       "marketplace": {
         "title": "Marketplace de parceiros",

@@ -168,30 +168,11 @@ export const BLOG_ARTICLES = {
 };
 
 // ============================================================================
-// MODULES OPTIONNELS DÉTAILLÉS
+// MODULES OPTIONNELS DÉTAILLÉS (désactivés pour le moment)
 // ============================================================================
 
 export const OPTIONAL_MODULES = {
-  comptabilite: {
-    name: 'Module Comptabilité',
-    price: '+2€/logement/mois',
-    features: [
-      'Pré-facturation automatique',
-      'Suivi dépenses et revenus',
-      'Rapports comptables détaillés',
-      'Export vers logiciels comptables',
-    ],
-  },
-  ventesAdditionnelles: {
-    name: 'Module Ventes Additionnelles',
-    price: '+3€/logement/mois',
-    features: [
-      'Marketplace services et produits',
-      'Upsell automatisé aux voyageurs',
-      'Analytics des ventes',
-      'Gestion des commissions',
-    ],
-  },
+  // Modules désactivés - à réactiver ultérieurement si besoin
 };
 
 // ============================================================================

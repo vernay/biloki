@@ -112,14 +112,6 @@
         "title": "Digital guide with built-in AI 24/7",
         "description": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
       },
-      "comptabilite": {
-        "title": "Accounting and management",
-        "description": "Automate the management of your invoices, service purchases and sales, as well as the export of your accounting data."
-      },
-      "ventesExtras": {
-        "title": "À la carte extras sales",
-        "description": "Grow your revenue by offering extra services on the tenant interface (examples: flower delivery, mini bar, extra cleaning)."
-      },
       "marketplace": {
         "title": "Partner Marketplace",
         "description": "Connect your external tools to Biloki through our integrations marketplace. Open API to synchronize your data and automate your workflows with your favorite applications."
@@ -155,14 +147,6 @@
       "guideDigital": {
         "title": "Digital guide with built-in AI 24/7",
         "desc": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
-      },
-      "comptabilite": {
-        "title": "Accounting and management",
-        "desc": "Automate the management of your invoices, service purchases and sales, as well as the export of your accounting data."
-      },
-      "ventesExtras": {
-        "title": "À la carte extras sales",
-        "desc": "Grow your revenue by offering extra services on the tenant interface (examples: flower delivery, mini bar, extra cleaning)."
       },
       "marketplace": {
         "title": "Partner Marketplace",
