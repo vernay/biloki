@@ -10,6 +10,7 @@ export default function EquipePage() {
     initials: string;
     photo?: string;
     photoPosition?: string;
+    photoScale?: number;
     linkedin?: string;
   }> = [
     {
@@ -18,6 +19,7 @@ export default function EquipePage() {
       initials: 'SV',
       photo: '/images/equipe/Sebastien.png',
       photoPosition: '50% 10%',
+      photoScale: 0.9,
       linkedin: 'https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/'
     },
     {
@@ -97,7 +99,10 @@ export default function EquipePage() {
                           src={member.photo}
                           alt={member.name}
                           className="w-full h-full object-cover grayscale"
-                          style={{ objectPosition: member.photoPosition ?? '50% 0%' }}
+                          style={{
+                            objectPosition: member.photoPosition ?? '50% 0%',
+                            transform: `scale(${member.photoScale ?? 1})`
+                          }}
                         />
                       </div>
                     ) : (
