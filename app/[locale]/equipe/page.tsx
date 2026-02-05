@@ -35,7 +35,7 @@ export default function EquipePage() {
       linkedin: 'https://www.linkedin.com/in/enzo-michaud-a19979180/'
     },
     {
-      name: 'Léo',
+      name: 'Léo Jacqueline',
       role: t('roles.crmExpert'),
       initials: 'L',
       photo: '/images/equipe/Leo.png',
