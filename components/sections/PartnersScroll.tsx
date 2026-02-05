@@ -11,12 +11,10 @@ export default function PartnersScroll() {
     { name: "Vrbo", logo: "/images/logo-partenaires/vrbo.png" },
     { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png" },
     { name: "PayPal", logo: "/images/logo-partenaires/paypal.png" },
-    { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png" },
+    { name: "Uber", logo: "/images/logo-partenaires/Uber.png" },
     { name: "Nuki", logo: "/images/logo-partenaires/nuki.png" },
-    { name: "Yale", logo: "/images/logo-partenaires/YaleJPG.jpg" },
     { name: "August", logo: "/images/logo-partenaires/August.webp" },
     { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png" },
-    { name: "PriceLabs", logo: "/images/logo-partenaires/pricelabs.png" },
     { name: "HubSpot", logo: "/images/logo-partenaires/HubSpot.png" },
   ];
 
