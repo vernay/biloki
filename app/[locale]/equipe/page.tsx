@@ -11,6 +11,7 @@ export default function EquipePage() {
     photo?: string;
     photoPosition?: string;
     photoScale?: number;
+    photoFit?: 'cover' | 'contain';
     linkedin?: string;
   }> = [
     {
@@ -18,8 +19,9 @@ export default function EquipePage() {
       role: t('roles.founder'),
       initials: 'SV',
       photo: '/images/equipe/Sebastien.png',
-      photoPosition: '50% 10%',
-      photoScale: 0.9,
+      photoPosition: '50% 50%',
+      photoScale: 0.8,
+      photoFit: 'contain',
       linkedin: 'https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/'
     },
     {
@@ -98,7 +100,7 @@ export default function EquipePage() {
                         <img
                           src={member.photo}
                           alt={member.name}
-                          className="w-full h-full object-cover grayscale"
+                          className={`w-full h-full grayscale ${member.photoFit === 'contain' ? 'object-contain' : 'object-cover'}`}
                           style={{
                             objectPosition: member.photoPosition ?? '50% 0%',
                             transform: `scale(${member.photoScale ?? 1})`
