@@ -91,6 +91,8 @@ export default function FeaturesSection() {
   const [selectedFeature, setSelectedFeature] = useState<string | null>('channel-manager');
   const [hasUserClicked, setHasUserClicked] = useState(false);
   const videoRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isInView, setIsInView] = useState(false);
   const t = useTranslations('features');
   const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
   
@@ -103,6 +105,21 @@ export default function FeaturesSection() {
     }
   }, [selectedFeature, hasUserClicked]);
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const handleFeatureClick = (featureId: string) => {
     // Si on clique sur la feature déjà sélectionnée, on la ferme
     if (selectedFeature === featureId) {
@@ -114,7 +131,7 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
+    <section ref={sectionRef} className="w-full bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12 md:mb-16">
@@ -134,11 +151,12 @@ export default function FeaturesSection() {
               <button
                 key={feature.id}
                 onClick={() => handleFeatureClick(feature.id)}
-                className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
+                style={{ animationDelay: `${FEATURES.indexOf(feature) * 120}ms` }}
+                className={`feature-card w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-300 group text-sm md:text-base ${
                   selectedFeature === feature.id
                     ? 'border-primary bg-blue-50 shadow-lg'
                     : 'border-gray-200 bg-white hover:border-primary hover:shadow-md'
-                }`}
+                } ${isInView ? 'feature-card-in' : ''}`}
               >
                 <div className="flex items-start gap-2 md:gap-3">
                   <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
@@ -182,11 +200,12 @@ export default function FeaturesSection() {
               {/* Card */}
               <button
                 onClick={() => handleFeatureClick(feature.id)}
-                className={`w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 group text-sm md:text-base ${
+                style={{ animationDelay: `${FEATURES.indexOf(feature) * 120}ms` }}
+                className={`feature-card w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-300 group text-sm md:text-base ${
                   selectedFeature === feature.id
                     ? 'border-primary bg-blue-50 shadow-lg'
                     : 'border-gray-200 bg-white hover:border-primary hover:shadow-md hover:bg-gray-50'
-                }`}
+                } ${isInView ? 'feature-card-in' : ''}`}
               >
                 <div className="flex items-start gap-2 md:gap-3">
                   <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
@@ -227,6 +246,33 @@ export default function FeaturesSection() {
           ))}
         </div>
       </div>
+
+
+      <style jsx>{`
+        .feature-card {
+          opacity: 0;
+          transform: translateX(-80px);
+          will-change: transform, opacity;
+        }
+        .feature-card-in {
+          animation: slideIn 0.7s ease forwards;
+        }
+        @keyframes slideIn {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .feature-card {
+            opacity: 1;
+            transform: none;
+          }
+          .feature-card-in {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }
