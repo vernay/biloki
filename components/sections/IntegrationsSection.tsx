@@ -16,8 +16,12 @@ export default function IntegrationsSection() {
     { src: "/images/logo-partenaires/paypal.png", alt: "PayPal" },
     { src: "/images/logo-partenaires/nuki.png", alt: "Nuki" },
     { src: "/images/logo-partenaires/August.webp", alt: "August" },
-    { src: "/images/logo-partenaires/Igloohome.png", alt: "Igloohome" }
+    { src: "/images/logo-partenaires/Igloohome.png", alt: "Igloohome" },
+    { src: "/images/logo-partenaires/logo-pennylane.png", alt: "Pennylane" }
   ];
+
+  const topRow = logos.slice(0, 5);
+  const bottomRow = logos.slice(5);
 
   const featureKeys = ['sync', 'realtime', 'payments', 'locks'] as const;
 
@@ -56,15 +60,67 @@ export default function IntegrationsSection() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-            {logos.map((logo) => (
-              <div key={logo.alt} className="rounded-2xl border border-[#e3eef9] bg-[#f8fbff] p-4 flex items-center justify-center shadow-sm">
-                <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+          <div className="space-y-4">
+            <div className="overflow-hidden">
+              <div className="logo-marquee logo-marquee--left">
+                {[...topRow, ...topRow].map((logo, index) => (
+                  <div
+                    key={`${logo.alt}-top-${index}`}
+                    className="logo-card rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                  >
+                    <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="overflow-hidden">
+              <div className="logo-marquee logo-marquee--right">
+                {[...bottomRow, ...bottomRow].map((logo, index) => (
+                  <div
+                    key={`${logo.alt}-bottom-${index}`}
+                    className="logo-card rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                  >
+                    <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .logo-marquee {
+          display: flex;
+          gap: 16px;
+          width: max-content;
+          animation: marquee-left 14s linear infinite;
+          will-change: transform;
+        }
+        .logo-marquee--right {
+          animation-name: marquee-right;
+        }
+        .logo-card {
+          min-width: 120px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .logo-card:hover {
+          transform: translateY(-2px) scale(1.02);
+          border-color: rgba(4, 164, 255, 0.6);
+          box-shadow: 0 8px 20px rgba(4, 164, 255, 0.18);
+        }
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee { animation: none; }
+        }
+      `}</style>
     </section>
   );
 }

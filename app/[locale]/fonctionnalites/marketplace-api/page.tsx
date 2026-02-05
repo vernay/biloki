@@ -22,6 +22,7 @@ const integrations: Integration[] = [
   { name: "PayPal", logo: "/images/logo-partenaires/paypal.png", category: ["all", "payments"], url: "https://www.paypal.com" },
   { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png", category: ["all", "accounting"], url: "https://quickbooks.intuit.com" },
   { name: "Xero", logo: "/images/logo-partenaires/xero.svg", category: ["all", "accounting"], url: "https://www.xero.com" },
+  { name: "Pennylane", logo: "/images/logo-partenaires/logo-pennylane.png", category: ["all", "accounting"], url: "https://www.pennylane.com" },
   { name: "Nuki", logo: "/images/logo-partenaires/nuki.png", category: ["all", "locks"], url: "https://nuki.io/fr-fr" },
   { name: "Yale", logo: "/images/logo-partenaires/YaleJPG.jpg", category: ["all", "locks"], url: "https://www.yalehome.com" },
   { name: "August", logo: "/images/logo-partenaires/August.webp", category: ["all", "locks"], url: "https://august.com" },
