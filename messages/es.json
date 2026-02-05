@@ -867,6 +867,12 @@
       "section7Content": "Para cualquier pregunta sobre cookies o protección de datos, puedes escribirnos a:"
     }
   },
+  "cookieBanner": {
+    "message": "Usamos cookies para garantizar el correcto funcionamiento del sitio, medir la audiencia y mejorar tu experiencia.",
+    "learnMore": "Saber más",
+    "refuse": "Rechazar",
+    "accept": "Aceptar"
+  },
   "smartLocksPage": {
     "title": "Cerraduras",
     "titleHighlight": "conectadas",

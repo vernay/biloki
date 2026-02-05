@@ -866,6 +866,12 @@
       "section7Content": "For any questions regarding cookies or data protection, you can write to us at:"
     }
   },
+  "cookieBanner": {
+    "message": "We use cookies to ensure the site works properly, measure audience and improve your experience.",
+    "learnMore": "Learn more",
+    "refuse": "Refuse",
+    "accept": "Accept"
+  },
   "smartLocksPage": {
     "title": "Smart",
     "titleHighlight": "Locks",

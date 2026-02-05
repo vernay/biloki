@@ -882,6 +882,12 @@
       "section7Content": "Pour toute question relative aux cookies ou à la protection des données, vous pouvez nous écrire à :"
     }
   },
+  "cookieBanner": {
+    "message": "Nous utilisons des cookies pour garantir le bon fonctionnement du site, mesurer l'audience et améliorer votre expérience.",
+    "learnMore": "En savoir plus",
+    "refuse": "Refuser",
+    "accept": "Accepter"
+  },
   "smartLocksPage": {
     "title": "Serrures",
     "titleHighlight": "connectées",

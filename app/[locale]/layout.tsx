@@ -5,6 +5,7 @@ import { locales, type Locale } from "@/lib/i18n/config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatBot from "@/components/ChatBot";
+import CookieBanner from "@/components/CookieBanner";
 
 type Props = {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Header />
       {children}
       <Footer />
+      <CookieBanner />
       <ChatBot />
     </NextIntlClientProvider>
   );
