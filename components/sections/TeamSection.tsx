@@ -15,8 +15,8 @@ export default function TeamSection() {
           <div className="flex justify-center md:justify-start">
             <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 w-full md:w-96">
               <img 
-                src="/images/equipe/equipe-biloki.png" 
-                alt="Équipe Biloki au salon Scale France" 
+                src="/images/blog/salon-marseille.jpg" 
+                alt="Équipe Biloki au salon de Marseille" 
                 className="w-full h-auto object-cover"
               />
             </div>
