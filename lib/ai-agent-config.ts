@@ -36,7 +36,7 @@ export const COMPANY_INFO = {
   phone: SUPPORT_PHONE,
   phoneFormatted: '09 64 18 00 69',
   address: '4 rue Voltaire - 44000 Nantes, France',
-  website: 'https://biloki.fr',
+  website: 'https://www.biloki.fr',
   socialMedia: {
     linkedin: 'https://linkedin.com/company/biloki',
   },

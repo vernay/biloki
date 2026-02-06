@@ -6,7 +6,7 @@ import fs from 'fs'
 import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://biloki.fr'
+  const baseUrl = 'https://www.biloki.fr'
 
   // Langues supportées
   const locales = ['fr', 'en', 'es', 'pt']

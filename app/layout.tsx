@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://biloki.fr"),
+  metadataBase: new URL("https://www.biloki.fr"),
   title: {
     default: "Biloki — Gestion de séjours sans effort",
     template: "%s · Biloki",

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://biloki.fr/sitemap.xml',
+    sitemap: 'https://www.biloki.fr/sitemap.xml',
   }
 }

@@ -37,7 +37,7 @@ export async function generateMetadata({
   );
 
   return {
-    metadataBase: new URL("https://biloki.fr"),
+    metadataBase: new URL("https://www.biloki.fr"),
     alternates: {
       canonical: canonicalPath,
       languages: {
@@ -56,7 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   const headerList = await headers();
   const pathname = headerList.get("x-canonical-path") || `/${locale}`;
-  const baseUrl = "https://biloki.fr";
+  const baseUrl = "https://www.biloki.fr";
   const jsonLd = buildJsonLd({ baseUrl, locale, pathname });
   
   if (!locales.includes(locale as Locale)) {
