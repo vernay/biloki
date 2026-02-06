@@ -378,7 +378,8 @@ export default function SmartLockWizard() {
               {t('stepDistance.unknown')}
             </button>
           </div>
-      )}
+          </div>
+        )}
 
       {/* ÉTAPE 6: Distance B-C (côté extérieur) */}
       {currentStep === 'distance_bc' && (
