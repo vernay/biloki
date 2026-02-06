@@ -261,6 +261,7 @@ export default function Header() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white p-2 hover:opacity-80"
+          aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (

@@ -1084,6 +1084,7 @@ export default function ChatBot() {
               onClick={clearConversation}
               className="text-white/70 hover:text-white hover:bg-white/20 p-2 rounded-lg transition-all"
               title="Effacer la conversation"
+              aria-label="Effacer la conversation"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -1093,6 +1094,7 @@ export default function ChatBot() {
             <button 
               onClick={() => setIsOpen(false)} 
               className="text-white/70 hover:text-white hover:bg-white/20 p-2 rounded-lg transition-all"
+              aria-label="Fermer le chat"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -1207,6 +1209,7 @@ export default function ChatBot() {
               onClick={() => handleSendMessage()}
               disabled={isLoading || !inputValue.trim()}
               className="bg-primary text-white rounded-lg px-3 py-3 hover:bg-[#0391dd] hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 font-medium min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Envoyer le message"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -1229,6 +1232,7 @@ export default function ChatBot() {
               ? 'bg-white border-2 border-white' 
               : 'bg-primary text-white'
           } hover:scale-110`}
+          aria-label="Ouvrir le chat"
         >
           {/* Notification badge */}
           {hasUnreadMessages && (
