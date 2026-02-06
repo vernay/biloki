@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 interface Feature {
   id: string;
@@ -102,7 +103,13 @@ export default function FeaturesSection() {
                 key={feature.id}
                 className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center"
               >
-                <div className={isReversed ? 'md:order-2' : ''}>
+                <motion.div
+                  className={isReversed ? 'md:order-2' : ''}
+                  initial={{ opacity: 0, x: isReversed ? 40 : -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
                   <div className="flex items-center gap-3 text-primary">
                     <span className="p-2.5 rounded-xl bg-primary/10 text-primary">
                       {iconMap[feature.id]}
@@ -125,15 +132,21 @@ export default function FeaturesSection() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
 
-                <div className={isReversed ? 'md:order-1' : ''}>
+                <motion.div
+                  className={isReversed ? 'md:order-1' : ''}
+                  initial={{ opacity: 0, x: isReversed ? -40 : 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
+                >
                   <div className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-white p-4">
                     <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
                       {t('imagePlaceholder')}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             );
           })}
