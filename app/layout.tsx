@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://biloki.fr"),
@@ -29,13 +30,15 @@ export const viewport: Viewport = {
   themeColor: "#04a4ff",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+
   return (
-    <html>
+    <html lang={locale}>
       <body>
         {children}
       </body>
