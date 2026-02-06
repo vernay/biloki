@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface VideoPlayerProps {
   src: string;
@@ -12,12 +12,10 @@ interface VideoPlayerProps {
 export default function VideoPlayer({ src, poster, title, className = "" }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
+    setShouldLoad(true);
   };
 
   const handlePause = () => {
@@ -27,13 +25,25 @@ export default function VideoPlayer({ src, poster, title, className = "" }: Vide
     }
   };
 
+  useEffect(() => {
+    if (!shouldLoad || !videoRef.current) return;
+    const playPromise = videoRef.current.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {
+        // Ignorer les blocages d'autoplay
+      });
+    }
+  }, [shouldLoad]);
+
   return (
     <div className={`relative w-full h-full overflow-hidden rounded-2xl bg-white outline-none focus:outline-none ${className}`}>
       <video
         ref={videoRef}
-        src={src}
+        src={shouldLoad ? src : undefined}
         poster={poster}
         controls
+        preload="none"
+        playsInline
         onPause={handlePause}
         onPlay={() => setIsPlaying(true)}
         className="w-full h-full object-cover outline-none focus:outline-none focus-visible:outline-none"

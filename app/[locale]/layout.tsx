@@ -3,11 +3,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ChatBot from "@/components/ChatBot";
-import CookieBanner from "@/components/CookieBanner";
+
+const ChatBot = dynamic(() => import("@/components/ChatBot"), { ssr: false });
+const CookieBanner = dynamic(() => import("@/components/CookieBanner"), { ssr: false });
 
 type Props = {
   children: React.ReactNode;
