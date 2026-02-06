@@ -1,69 +1,76 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+import fs from 'fs'
+import path from 'path'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://biloki.fr'
-  
+
   // Langues supportées
   const locales = ['fr', 'en', 'es', 'pt']
-  
-  // Pages principales (disponibles dans toutes les langues)
-  const routes = [
-    '',
-    '/tarifs',
-    '/fonctionnalites',
-    '/fonctionnalites/pms',
-    '/fonctionnalites/channel-manager',
-    '/fonctionnalites/messagerie',
-    '/fonctionnalites/serrures-connectees',
-    '/fonctionnalites/ia-automatisation',
-    '/fonctionnalites/prestataires',
-    '/fonctionnalites/reporting',
-    '/fonctionnalites/marketplace-api',
-    '/fonctionnalites/4-interfaces',
-    '/fonctionnalites/multi-langues',
-    '/fonctionnalites/vue-ensemble',
-    '/connexions-api',
-    '/equipe',
-    '/carriere',
-    '/contact',
-    '/blog',
-    '/programme-parrainage',
-    '/mentions-legales',
-    '/cgv',
-    '/cookies',
-  ]
-  
-  // Articles de blog (uniquement en français pour le moment)
-  const blogArticles = [
-    '/blog/automatiser-gestion-locations-saisonnieres',
-    '/blog/channel-manager-guide-complet-conciergeries',
-    '/blog/messagerie-automatisee-conciergerie',
-    '/blog/nice-quotas-airbnb-reglementation-2025',
-  ]
-  
-  // Génère les URLs pour toutes les langues (pages principales)
+
   const sitemapEntries: MetadataRoute.Sitemap = []
-  
+
   locales.forEach(locale => {
-    routes.forEach(route => {
+    const pages = getPagesForLocale()
+
+    pages.forEach(pagePath => {
+      const priority = pagePath === '' ? 1 : 0.8
+      const changeFrequency = pagePath.startsWith('/blog/') ? 'weekly' : 'monthly'
+
       sitemapEntries.push({
-        url: `${baseUrl}/${locale}${route}`,
+        url: `${baseUrl}/${locale}${pagePath}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency,
+        priority,
       })
     })
   })
-  
-  // Ajouter les articles de blog uniquement en français
-  blogArticles.forEach(article => {
-    sitemapEntries.push({
-      url: `${baseUrl}/fr${article}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    })
-  })
-  
+
   return sitemapEntries
+}
+
+function getPagesForLocale(): string[] {
+  const appDir = path.join(process.cwd(), 'app')
+  const localeDir = path.join(appDir, '[locale]')
+
+  if (!fs.existsSync(localeDir)) {
+    return []
+  }
+
+  const pages: string[] = []
+
+  const walk = (currentDir: string, currentRoute: string) => {
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true })
+
+    const hasPage = entries.some(
+      entry => entry.isFile() && (entry.name === 'page.tsx' || entry.name === 'page.ts')
+    )
+
+    if (hasPage) {
+      pages.push(currentRoute)
+    }
+
+    entries
+      .filter(entry => entry.isDirectory())
+      .forEach(dir => {
+        if (dir.name.startsWith('(') || dir.name.startsWith('_')) {
+          return
+        }
+
+        // Exclure les segments dynamiques ou catch-all
+        if (dir.name.includes('[')) {
+          return
+        }
+
+        const nextRoute = currentRoute === '' ? `/${dir.name}` : `${currentRoute}/${dir.name}`
+        walk(path.join(currentDir, dir.name), nextRoute)
+      })
+  }
+
+  walk(localeDir, '')
+
+  return pages
 }
