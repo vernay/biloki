@@ -883,6 +883,7 @@
     "heroSecondaryCta": "Ver la demo",
     "heroBullets": ["Seguro", "Instalación rápida", "+500 conserjerías"],
     "heroImagePlaceholder": "Marcador de imagen principal",
+    "heroImageAlt": "Cerradura inteligente",
     "needs": {
       "title": "Todo lo que necesita tu conserjería",
       "description": "Una plataforma única para gestionar el acceso a todas tus propiedades con total tranquilidad.",

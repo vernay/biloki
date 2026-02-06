@@ -768,6 +768,7 @@
     "heroSecondaryCta": "Ver a demo",
     "heroBullets": ["Seguro", "Instalação rápida", "+500 conciergeries"],
     "heroImagePlaceholder": "Espaço reservado para imagem principal",
+    "heroImageAlt": "Fechadura inteligente",
     "needs": {
       "title": "Tudo o que sua concierge precisa",
       "description": "Uma plataforma única para gerenciar o acesso a todas as suas propriedades com tranquilidade.",

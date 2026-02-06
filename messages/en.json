@@ -882,6 +882,7 @@
     "heroSecondaryCta": "Watch the demo",
     "heroBullets": ["Secure", "Fast installation", "500+ conciergeries"],
     "heroImagePlaceholder": "Hero image placeholder",
+    "heroImageAlt": "Smart lock",
     "needs": {
       "title": "Everything your concierge needs",
       "description": "A single platform to manage access to all your properties with peace of mind.",

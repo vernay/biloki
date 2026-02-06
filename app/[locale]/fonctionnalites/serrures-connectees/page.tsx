@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import SmartLockWizard from '@/components/sections/SmartLockWizard';
-import { SMART_LOCK_PARTNERS } from '@/lib/locks-config';
+import { SMART_LOCK_PARTNERS, SMART_LOCK_HERO_IMAGE } from '@/lib/locks-config';
 
 export default function SmartLocksPage() {
   const t = useTranslations('smartLocksPage');
@@ -96,11 +96,13 @@ export default function SmartLocksPage() {
               </div>
             </div>
             <div className="w-full">
-              <div
-                role="img"
-                aria-label={t('heroImagePlaceholder')}
-                className="aspect-[4/3] w-full rounded-2xl border border-dashed border-primary/30 bg-white/70 shadow-sm"
-              />
+              <div className="aspect-[4/3] w-full rounded-2xl border border-primary/10 bg-white/70 shadow-sm overflow-hidden">
+                <img
+                  src={SMART_LOCK_HERO_IMAGE.src}
+                  alt={t('heroImageAlt')}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

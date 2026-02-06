@@ -898,6 +898,7 @@
     "heroSecondaryCta": "Voir la démo",
     "heroBullets": ["Sécurisé", "Installation rapide", "+500 conciergeries"],
     "heroImagePlaceholder": "Emplacement image principale",
+    "heroImageAlt": "Serrure connectée",
     "needs": {
       "title": "Tout ce dont votre conciergerie a besoin",
       "description": "Une plateforme unique pour gérer les accès de tous vos logements en toute sérénité.",
