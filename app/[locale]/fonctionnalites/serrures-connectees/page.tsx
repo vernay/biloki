@@ -34,6 +34,52 @@ export default function SmartLocksPage() {
           </p>
         </div>
 
+        {/* Partners intro */}
+        <div className="mb-12">
+          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                Marques partenaires compatibles
+              </h2>
+              <p className="text-gray-700 max-w-3xl mx-auto">
+                Connexion entre l&apos;application de la serrure et Biloki pour permettre aux locataires
+                d&apos;ouvrir la porte directement via leur app.
+              </p>
+            </div>
+
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+              <div className="flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <img
+                  src="/images/logo-partenaires/nuki.png"
+                  alt="Nuki"
+                  className="h-10 w-28 object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <img
+                  src="/images/logo-partenaires/Igloohome.png"
+                  alt="Igloohome"
+                  className="h-10 w-28 object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <img
+                  src="/images/logo-partenaires/YaleJPG.jpg"
+                  alt="Yale"
+                  className="h-10 w-28 object-contain"
+                />
+              </div>
+              <div className="flex items-center justify-center rounded-xl border border-gray-200 bg-gray-50 p-4">
+                <img
+                  src="/images/logo-partenaires/August.webp"
+                  alt="August"
+                  className="h-10 w-28 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Wizard */}
         <SmartLockWizard />
       </div>
