@@ -124,7 +124,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-primary text-white shadow-md">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Logo className="h-14 md:h-16 w-auto" />
+        <Logo className="h-20 md:h-24 w-auto" />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8 text-white text-sm">
