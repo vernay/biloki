@@ -12,6 +12,9 @@ export default function Logo({ className = "h-[120px]", alt = "Biloki" }: LogoPr
         src="/logos/logo-biloki.png"
         alt={alt}
         className={className}
+        width={240}
+        height={120}
+        decoding="async"
       />
     </Link>
   );

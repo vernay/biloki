@@ -110,6 +110,8 @@ export default function Hero() {
                     src="/images/interfaces/gestionnaire.png" 
                     alt="Interface Conciergerie" 
                     className="w-full rounded-2xl shadow-2xl"
+                    width={320}
+                    height={640}
                   />
                 </div>
               </motion.div>
@@ -128,6 +130,8 @@ export default function Hero() {
                     src="/images/interfaces/proprietaire.png" 
                     alt="Interface Propriétaire" 
                     className="w-full rounded-2xl shadow-2xl"
+                    width={320}
+                    height={640}
                   />
                 </div>
               </motion.div>
@@ -146,6 +150,8 @@ export default function Hero() {
                     src="/images/interfaces/prestataire.png" 
                     alt="Interface Prestataire" 
                     className="w-full rounded-2xl shadow-2xl"
+                    width={320}
+                    height={640}
                   />
                 </div>
               </motion.div>
@@ -164,6 +170,8 @@ export default function Hero() {
                     src="/images/interfaces/locataire.png" 
                     alt="Interface Locataire" 
                     className="w-full rounded-2xl shadow-2xl"
+                    width={320}
+                    height={640}
                   />
                 </div>
               </motion.div>

@@ -47,6 +47,9 @@ export default function PartnersScroll() {
                 alt={partner.name}
                 className="max-h-16 max-w-full object-contain"
                 loading="lazy"
+                width={160}
+                height={64}
+                decoding="async"
               />
             </div>
           ))}

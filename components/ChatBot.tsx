@@ -1065,6 +1065,9 @@ export default function ChatBot() {
                 alt="Biloki" 
                 className="w-full h-full object-contain" 
                 style={{ filter: 'brightness(0) saturate(100%) invert(52%) sepia(98%) saturate(1752%) hue-rotate(175deg) brightness(101%) contrast(101%)' }}
+                width={40}
+                height={40}
+                decoding="async"
               />
             </div>
             <div>

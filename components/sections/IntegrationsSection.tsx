@@ -68,7 +68,15 @@ export default function IntegrationsSection() {
                   key={logo.alt}
                   className="logo-card logo-card--grid rounded-2xl bg-[#f8fbff] p-3 flex items-center justify-center"
                 >
-                  <img src={logo.src} alt={logo.alt} className="h-9 object-contain" />
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-9 object-contain"
+                    width={120}
+                    height={36}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               ))}
             </div>
@@ -81,7 +89,15 @@ export default function IntegrationsSection() {
                     key={`${logo.alt}-top-${index}`}
                     className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
                   >
-                    <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-10 object-contain"
+                      width={120}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ))}
               </div>
@@ -93,7 +109,15 @@ export default function IntegrationsSection() {
                     key={`${logo.alt}-bottom-${index}`}
                     className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
                   >
-                    <img src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-10 object-contain"
+                      width={120}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 ))}
               </div>

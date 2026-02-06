@@ -140,7 +140,15 @@ export default function AISection() {
               <div className="bg-gray-50 px-6 py-4 border-b border-gray-200 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-[var(--biloki-blue)] rounded-full flex items-center justify-center p-2">
-                    <img src="/logos/logo-biloki.png" alt="Biloki" className="w-full h-full" />
+                    <img
+                      src="/logos/logo-biloki.png"
+                      alt="Biloki"
+                      className="w-full h-full"
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div>
                     <div className="font-bold text-gray-900">{t("chat.botName")}</div>

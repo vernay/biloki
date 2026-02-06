@@ -18,6 +18,10 @@ export default function TeamSection() {
                 src="/images/blog/salon-marseille.jpg" 
                 alt="Équipe Biloki au salon de Marseille" 
                 className="w-full h-auto object-cover"
+                width={1200}
+                height={800}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
