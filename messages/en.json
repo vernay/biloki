@@ -1566,6 +1566,9 @@
     }
   },
   "smartLockWizard": {
+    "title": "Check compatibility",
+    "subtitle": "Find the ideal smart lock for your property in just a few steps.",
+    "imagePlaceholder": "Image placeholder",
     "validate": "Validate",
     "back": "Back",
     "restart": "Start over",

@@ -1567,6 +1567,9 @@
     }
   },
   "smartLockWizard": {
+    "title": "Verifica la compatibilidad",
+    "subtitle": "Encuentra la cerradura ideal para tu propiedad en unos pocos pasos.",
+    "imagePlaceholder": "Marcador de imagen",
     "validate": "Validar",
     "back": "Volver",
     "restart": "Empezar de nuevo",

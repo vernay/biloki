@@ -156,27 +156,55 @@ export default function SmartLockWizard() {
     window.location.href = `/fr/reserver-demo?${params.toString()}`;
   };
 
+  const stepsOrder: Step[] = ['type_logement', 'acces', 'ouverture_portail', 'type_serrure', 'sens_ouverture', 'distance_ab', 'distance_bc', 'resultat'];
+  const currentStepIndex = Math.max(0, stepsOrder.indexOf(currentStep));
+  const progressValue = ((currentStepIndex + 1) / stepsOrder.length) * 100;
+
+  const cardClass = "bg-white/90 backdrop-blur rounded-3xl p-8 md:p-10 shadow-[0_20px_60px_-35px_rgba(4,164,255,0.45)] border border-primary/10";
+  const optionButtonClass = "w-full p-6 border-2 border-gray-200 rounded-2xl bg-white hover:border-primary hover:bg-primary/5 transition-all text-left group";
+  const optionLabelClass = "text-xl font-semibold text-gray-800 group-hover:text-primary";
+  const backButtonClass = "text-primary hover:text-primary/80 font-semibold mb-6 flex items-center gap-2";
+  const primaryButtonClass = "w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl transition-all text-lg shadow-md";
+  const secondaryButtonClass = "w-full border-2 border-gray-300 hover:border-primary text-gray-600 hover:text-primary font-semibold py-4 rounded-xl transition-all text-lg";
+  const outlinePrimaryButtonClass = "w-full border-2 border-primary text-primary hover:bg-primary/5 font-bold py-4 rounded-xl transition-all text-lg";
+  const checkboxClass = "w-5 h-5 text-primary border-gray-300 rounded focus:ring-primary";
+
   return (
     <div ref={contentRef} className="w-full max-w-3xl mx-auto">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{t('title')}</h2>
+        <p className="text-gray-600">{t('subtitle')}</p>
+      </div>
+
+      <div className="mb-8 rounded-2xl border border-gray-100 bg-white/70 p-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 h-2 rounded-full bg-gray-100 overflow-hidden">
+            <div className="h-2 rounded-full bg-primary transition-all" style={{ width: `${progressValue}%` }} />
+          </div>
+          <span className="text-xs font-semibold text-gray-500">
+            {currentStepIndex + 1}/{stepsOrder.length}
+          </span>
+        </div>
+      </div>
       {/* ÉTAPE 1: Type de logement */}
       {currentStep === 'type_logement' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
+        <div className={cardClass}>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('step1.title')}</h2>
           <p className="text-gray-600 mb-8 text-lg">{t('step1.description')}</p>
           
           <div className="space-y-4">
             <button
               onClick={() => handleTypeLogement('maison')}
-              className="w-full p-6 border-2 border-gray-200 rounded-xl hover:border-[#04a4ff] hover:bg-blue-50 transition-all text-left group"
+              className={optionButtonClass}
             >
-              <span className="text-xl font-semibold text-gray-800 group-hover:text-[#04a4ff]">{t('step1.maison')}</span>
+              <span className={optionLabelClass}>{t('step1.maison')}</span>
             </button>
             
             <button
               onClick={() => handleTypeLogement('immeuble')}
-              className="w-full p-6 border-2 border-gray-200 rounded-xl hover:border-[#04a4ff] hover:bg-blue-50 transition-all text-left group"
+              className={optionButtonClass}
             >
-              <span className="text-xl font-semibold text-gray-800 group-hover:text-[#04a4ff]">{t('step1.immeuble')}</span>
+              <span className={optionLabelClass}>{t('step1.immeuble')}</span>
             </button>
           </div>
         </div>
@@ -184,8 +212,8 @@ export default function SmartLockWizard() {
 
       {/* ÉTAPE 2: Accès Maison */}
       {currentStep === 'acces' && formData.typeLogement === 'maison' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -197,9 +225,9 @@ export default function SmartLockWizard() {
               <button
                 key={option}
                 onClick={() => handleAccesMaison(option as any)}
-                className="w-full p-6 border-2 border-gray-200 rounded-xl hover:border-[#04a4ff] hover:bg-blue-50 transition-all text-left group"
+                className={optionButtonClass}
               >
-                <span className="text-xl font-semibold text-gray-800 group-hover:text-[#04a4ff]">{t(`step2Maison.${option}`)}</span>
+                <span className={optionLabelClass}>{t(`step2Maison.${option}`)}</span>
               </button>
             ))}
           </div>
@@ -208,8 +236,8 @@ export default function SmartLockWizard() {
 
       {/* ÉTAPE 2: Accès Immeuble */}
       {currentStep === 'acces' && formData.typeLogement === 'immeuble' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -218,12 +246,12 @@ export default function SmartLockWizard() {
           
           <div className="space-y-4 mb-8">
             {['digicode', 'badge', 'cle'].map(option => (
-              <label key={option} className="flex items-center p-6 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-[#04a4ff] hover:bg-blue-50 transition-all">
+              <label key={option} className="flex items-center p-6 border-2 border-gray-200 rounded-2xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
                 <input
                   type="checkbox"
                   checked={formData.accesImmeuble.includes(option)}
                   onChange={() => setFormData({ ...formData, accesImmeuble: toggleArrayValue(formData.accesImmeuble, option) })}
-                  className="w-5 h-5 text-[#04a4ff] border-gray-300 rounded focus:ring-[#04a4ff]"
+                  className={checkboxClass}
                 />
                 <span className="ml-4 text-xl font-semibold text-gray-800">{t(`step2Immeuble.${option}`)}</span>
               </label>
@@ -233,7 +261,7 @@ export default function SmartLockWizard() {
           <button
             onClick={validateAccesImmeuble}
             disabled={formData.accesImmeuble.length === 0}
-            className="w-full bg-[#04a4ff] hover:bg-[#0284c7] disabled:bg-gray-300 text-white font-bold py-4 rounded-xl transition-all text-lg"
+            className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-300 text-white font-bold py-4 rounded-xl transition-all text-lg shadow-md"
           >
             {t('validate')}
           </button>
@@ -242,8 +270,8 @@ export default function SmartLockWizard() {
 
       {/* ÉTAPE 3: Ouverture Portail */}
       {currentStep === 'ouverture_portail' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -252,12 +280,12 @@ export default function SmartLockWizard() {
           
           <div className="space-y-4 mb-8">
             {['digicode', 'telecommande', 'badge', 'cle'].map(option => (
-              <label key={option} className="flex items-center p-6 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-[#04a4ff] hover:bg-blue-50 transition-all">
+              <label key={option} className="flex items-center p-6 border-2 border-gray-200 rounded-2xl cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
                 <input
                   type="checkbox"
                   checked={formData.ouverturePortail.includes(option)}
                   onChange={() => setFormData({ ...formData, ouverturePortail: toggleArrayValue(formData.ouverturePortail, option) })}
-                  className="w-5 h-5 text-[#04a4ff] border-gray-300 rounded focus:ring-[#04a4ff]"
+                  className={checkboxClass}
                 />
                 <span className="ml-4 text-xl font-semibold text-gray-800">{t(`step3.${option}`)}</span>
               </label>
@@ -267,7 +295,7 @@ export default function SmartLockWizard() {
           <button
             onClick={validateOuverturePortail}
             disabled={formData.ouverturePortail.length === 0}
-            className="w-full bg-[#04a4ff] hover:bg-[#0284c7] disabled:bg-gray-300 text-white font-bold py-4 rounded-xl transition-all text-lg"
+            className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-300 text-white font-bold py-4 rounded-xl transition-all text-lg shadow-md"
           >
             {t('validate')}
           </button>
@@ -276,8 +304,8 @@ export default function SmartLockWizard() {
 
       {/* ÉTAPE 4: Type de serrure */}
       {currentStep === 'type_serrure' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -289,9 +317,9 @@ export default function SmartLockWizard() {
               <button
                 key={option}
                 onClick={() => handleTypeSerrure(option as any)}
-                className="w-full p-6 border-2 border-gray-200 rounded-xl hover:border-[#04a4ff] hover:bg-blue-50 transition-all text-left group"
+                className={optionButtonClass}
               >
-                <span className="text-xl font-semibold text-gray-800 group-hover:text-[#04a4ff]">{t(`step4.${option}`)}</span>
+                <span className={optionLabelClass}>{t(`step4.${option}`)}</span>
               </button>
             ))}
           </div>
@@ -300,8 +328,8 @@ export default function SmartLockWizard() {
 
       {/* ÉTAPE 5: Distance A-B (uniquement pour Maison) */}
       {currentStep === 'distance_ab' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -309,18 +337,14 @@ export default function SmartLockWizard() {
           <p className="text-gray-600 mb-8 text-lg">{t('stepDistance.description')}</p>
           
           {/* Image de la porte avec mesure */}
-          <div className="bg-gray-50 rounded-xl p-6 mb-8 flex justify-center">
-            <img 
-              src="/images/serrures/Distance.png" 
-              alt="Mesure distance A-B sur la serrure" 
-              className="max-w-full h-auto max-h-64 rounded-lg shadow-md"
-            />
+          <div className="bg-white rounded-2xl border border-dashed border-primary/40 p-6 mb-8 flex items-center justify-center">
+            <div className="h-48 w-full max-w-md rounded-xl bg-primary/5" aria-label={t('imagePlaceholder')} role="img" />
           </div>
           
           {/* Slider de mesure */}
           <div className="mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-[#04a4ff] text-white font-bold text-2xl px-6 py-3 rounded-xl">
+              <div className="bg-primary text-white font-bold text-2xl px-6 py-3 rounded-xl shadow-md">
                 {formData.distanceAB} mm
               </div>
             </div>
@@ -331,7 +355,7 @@ export default function SmartLockWizard() {
               value={formData.distanceAB || 40}
               onChange={(e) => setFormData({ ...formData, distanceAB: parseInt(e.target.value) })}
               aria-label={t('stepDistance.title')}
-              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#04a4ff]"
+              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
             />
             <div className="flex justify-between text-sm text-gray-500 mt-2">
               <span>25 mm</span>
@@ -342,44 +366,39 @@ export default function SmartLockWizard() {
           <div className="space-y-4">
             <button
               onClick={handleDistanceAB}
-              className="w-full bg-[#04a4ff] hover:bg-[#0284c7] text-white font-bold py-4 rounded-xl transition-all text-lg"
+              className={primaryButtonClass}
             >
               {t('validate')}
             </button>
             
             <button
               onClick={handleDistanceABUnknown}
-              className="w-full border-2 border-gray-300 hover:border-[#04a4ff] text-gray-600 hover:text-[#04a4ff] font-semibold py-4 rounded-xl transition-all text-lg"
+              className={secondaryButtonClass}
             >
               {t('stepDistance.unknown')}
             </button>
           </div>
-        </div>
       )}
 
       {/* ÉTAPE 6: Distance B-C (côté extérieur) */}
       {currentStep === 'distance_bc' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
           <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('stepDistanceBC.title')}</h2>
-          <p className="text-[#04a4ff] mb-8 text-lg">{t('stepDistanceBC.description')}</p>
+          <p className="text-primary mb-8 text-lg">{t('stepDistanceBC.description')}</p>
           
           {/* Image de la porte avec mesure B-C */}
-          <div className="bg-gray-50 rounded-xl p-6 mb-8 flex justify-center">
-            <img 
-              src="/images/serrures/Distance BC.png" 
-              alt="Mesure distance B-C sur la serrure" 
-              className="max-w-full h-auto max-h-64 rounded-lg shadow-md"
-            />
+          <div className="bg-white rounded-2xl border border-dashed border-primary/40 p-6 mb-8 flex items-center justify-center">
+            <div className="h-48 w-full max-w-md rounded-xl bg-primary/5" aria-label={t('imagePlaceholder')} role="img" />
           </div>
           
           {/* Slider de mesure */}
           <div className="mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-[#04a4ff] text-white font-bold text-2xl px-6 py-3 rounded-xl">
+              <div className="bg-primary text-white font-bold text-2xl px-6 py-3 rounded-xl shadow-md">
                 {formData.distanceBC} mm
               </div>
             </div>
@@ -390,7 +409,7 @@ export default function SmartLockWizard() {
               value={formData.distanceBC || 40}
               onChange={(e) => setFormData({ ...formData, distanceBC: parseInt(e.target.value) })}
               aria-label={t('stepDistanceBC.title')}
-              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#04a4ff]"
+              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
             />
             <div className="flex justify-between text-sm text-gray-500 mt-2">
               <span>25 mm</span>
@@ -401,25 +420,24 @@ export default function SmartLockWizard() {
           <div className="space-y-4">
             <button
               onClick={handleDistanceBC}
-              className="w-full bg-[#04a4ff] hover:bg-[#0284c7] text-white font-bold py-4 rounded-xl transition-all text-lg"
+              className={primaryButtonClass}
             >
               {t('validate')}
             </button>
             
             <button
               onClick={handleDistanceBCUnknown}
-              className="w-full border-2 border-gray-300 hover:border-[#04a4ff] text-gray-600 hover:text-[#04a4ff] font-semibold py-4 rounded-xl transition-all text-lg"
+              className={secondaryButtonClass}
             >
               {t('stepDistanceBC.unknown')}
             </button>
           </div>
-        </div>
       )}
 
       {/* ÉTAPE 7: Sens d'ouverture (CONVERGENCE) */}
       {currentStep === 'sens_ouverture' && (
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100">
-          <button onClick={handleBack} className="text-[#04a4ff] hover:text-[#0284c7] font-semibold mb-6 flex items-center gap-2">
+        <div className={cardClass}>
+          <button onClick={handleBack} className={backButtonClass}>
             ← {t('back')}
           </button>
           
@@ -431,9 +449,9 @@ export default function SmartLockWizard() {
               <button
                 key={option}
                 onClick={() => handleSensOuverture(option as any)}
-                className="w-full p-6 border-2 border-gray-200 rounded-xl hover:border-[#04a4ff] hover:bg-blue-50 transition-all text-left group"
+                className={optionButtonClass}
               >
-                <span className="text-xl font-semibold text-gray-800 group-hover:text-[#04a4ff]">{t(`step5.${option}`)}</span>
+                <span className={optionLabelClass}>{t(`step5.${option}`)}</span>
               </button>
             ))}
           </div>
@@ -442,7 +460,7 @@ export default function SmartLockWizard() {
 
       {/* RÉSULTAT */}
       {currentStep === 'resultat' && (
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 md:p-10 shadow-xl border-2 border-[#04a4ff]">
+        <div className="bg-gradient-to-br from-primary/10 via-white to-white rounded-3xl p-8 md:p-10 shadow-[0_25px_70px_-35px_rgba(4,164,255,0.45)] border border-primary/20">
           <div className="text-center mb-8">
             <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -453,7 +471,7 @@ export default function SmartLockWizard() {
             <p className="text-gray-700 text-xl mb-8">{t('result.description')}</p>
           </div>
 
-          <div className="bg-white rounded-xl p-6 mb-8 shadow-md">
+          <div className="bg-white/90 rounded-2xl p-6 mb-8 shadow-md border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('result.summary')}</h3>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
@@ -500,13 +518,13 @@ export default function SmartLockWizard() {
           <div className="space-y-4">
             <button
               onClick={handleBookDemo}
-              className="w-full bg-[#04a4ff] hover:bg-[#0284c7] text-white font-bold py-4 rounded-xl transition-all text-lg shadow-lg"
+              className={primaryButtonClass}
             >
               {t('result.bookDemo')}
             </button>
             <button
               onClick={handleRestart}
-              className="w-full border-2 border-[#04a4ff] text-[#04a4ff] hover:bg-blue-50 font-bold py-4 rounded-xl transition-all text-lg"
+              className={outlinePrimaryButtonClass}
             >
               {t('restart')}
             </button>

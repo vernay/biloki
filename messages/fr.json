@@ -1582,6 +1582,9 @@
     }
   },
   "smartLockWizard": {
+    "title": "Vérifiez la compatibilité",
+    "subtitle": "Trouvez la serrure connectée idéale pour votre logement en quelques étapes.",
+    "imagePlaceholder": "Emplacement image",
     "validate": "Valider",
     "back": "Retour",
     "restart": "Recommencer",
