@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import SmartLockWizard from '@/components/sections/SmartLockWizard';
 import { SMART_LOCK_PARTNERS, SMART_LOCK_HERO_IMAGE } from '@/lib/locks-config';
 
@@ -21,6 +22,20 @@ export default function SmartLocksPage() {
 
   const heroBullets = t.raw('heroBullets') as string[];
   const steps = t.raw('howItWorks.steps') as Array<{ title: string; description: string }>;
+
+  const needsContainer = {
+    hidden: { opacity: 0, y: 16 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.08 },
+    },
+  };
+
+  const needsItem = {
+    hidden: { opacity: 0, y: 18, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+  };
 
   const icons = {
     access: (
@@ -120,17 +135,29 @@ export default function SmartLocksPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            className="grid md:grid-cols-3 gap-6"
+            variants={needsContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             {needs.map((item, index) => (
-              <div key={index} className="rounded-2xl border border-gray-100 bg-slate-50/70 p-6 shadow-sm">
+              <motion.div
+                key={index}
+                variants={needsItem}
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-lg hover:border-primary/20"
+              >
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                   {icons[item.icon]}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
