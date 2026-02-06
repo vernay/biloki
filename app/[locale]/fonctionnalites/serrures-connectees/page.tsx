@@ -34,7 +34,7 @@ export default function SmartLocksPage() {
 
   const needsItem = {
     hidden: { opacity: 0, y: 18, scale: 0.98 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5 } },
   };
 
   const icons = {
