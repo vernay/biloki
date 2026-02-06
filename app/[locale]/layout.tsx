@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
-import { locales, type Locale } from "@/lib/i18n/config";
+import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatBot from "@/components/ChatBot";
@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const { locale } = params;
-  const headerList = headers();
+  const headerList = await headers();
   const pathname = headerList.get("x-canonical-path") || `/${locale}`;
 
   const localePrefix = `/${locale}`;
@@ -41,7 +41,10 @@ export async function generateMetadata({
     metadataBase: new URL("https://biloki.fr"),
     alternates: {
       canonical: canonicalPath,
-      languages,
+      languages: {
+        ...languages,
+        "x-default": `/${defaultLocale}${basePath}`,
+      },
     },
   };
 }

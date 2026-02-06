@@ -9,8 +9,13 @@ export const metadata: Metadata = {
   },
   description:
     "Biloki centralise, automatise et orchestre le cycle de vie des séjours pour conciergeries, propriétaires, prestataires et locataires.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
       { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
