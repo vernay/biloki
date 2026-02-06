@@ -58,7 +58,7 @@ export default function SmartLocksPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16 md:py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -135,20 +135,20 @@ export default function SmartLocksPage() {
       </section>
 
       {/* Partners */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-16 md:py-20 bg-primary">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               {t('partners.title')}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-white/90 max-w-3xl mx-auto">
               {t('partners.description')}
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
             {partners.map((partner) => (
-              <div key={partner.key} className="flex items-center justify-center rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div key={partner.key} className="flex items-center justify-center rounded-xl border border-white/20 bg-white p-4 shadow-md">
                 <img
                   src={partner.logo}
                   alt={partner.name}
