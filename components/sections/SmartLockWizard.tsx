@@ -432,6 +432,7 @@ export default function SmartLockWizard() {
               {t('stepDistanceBC.unknown')}
             </button>
           </div>
+        </div>
       )}
 
       {/* ÉTAPE 7: Sens d'ouverture (CONVERGENCE) */}
