@@ -117,7 +117,7 @@ export default function PricingCalculator() {
             {/* Sélecteur de logements */}
             <div className="mb-12">
               <div className="flex items-baseline justify-between mb-6">
-                <label className="text-lg font-semibold text-gray-900">
+                <label htmlFor="dwellings-range" className="text-lg font-semibold text-gray-900">
                   {t("numberOfProperties")}
                 </label>
                 <div className="text-right">
@@ -131,6 +131,7 @@ export default function PricingCalculator() {
               {/* Slider */}
               <input
                 type="range"
+                id="dwellings-range"
                 min="1"
                 max="250"
                 value={Math.min(dwellings, 250)}
@@ -148,8 +149,12 @@ export default function PricingCalculator() {
                   <p className="text-xl font-bold text-gray-900">1</p>
                 </div>
                 <div className="flex justify-center">
+                  <label htmlFor="dwellings-input" className="sr-only">
+                    {t("numberOfProperties")}
+                  </label>
                   <input
                     type="number"
+                    id="dwellings-input"
                     min="1"
                     value={dwellings}
                     onChange={handleInputChange}

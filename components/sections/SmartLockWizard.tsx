@@ -330,6 +330,7 @@ export default function SmartLockWizard() {
               max="70"
               value={formData.distanceAB || 40}
               onChange={(e) => setFormData({ ...formData, distanceAB: parseInt(e.target.value) })}
+              aria-label={t('stepDistance.title')}
               className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#04a4ff]"
             />
             <div className="flex justify-between text-sm text-gray-500 mt-2">
@@ -388,6 +389,7 @@ export default function SmartLockWizard() {
               max="70"
               value={formData.distanceBC || 40}
               onChange={(e) => setFormData({ ...formData, distanceBC: parseInt(e.target.value) })}
+              aria-label={t('stepDistanceBC.title')}
               className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#04a4ff]"
             />
             <div className="flex justify-between text-sm text-gray-500 mt-2">

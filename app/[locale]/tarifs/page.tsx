@@ -106,11 +106,13 @@ export default function TarifsPage() {
                 />
                 <input
                   type="number"
+                  id="logements-input"
                   min="1"
                   value={logements}
                   onChange={(e) => {
                     setLogements(Number(e.target.value));
                   }}
+                  aria-label={t('numberOfProperties')}
                   className="w-20 px-3 py-2 border border-gray-300 rounded-lg text-center font-semibold"
                 />
               </div>

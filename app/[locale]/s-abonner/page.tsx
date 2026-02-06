@@ -115,11 +115,12 @@ export default function SAbonnerPage() {
 
               {/* Nombre de logements */}
               <div className="mb-10">
-                <label className="block text-sm font-semibold text-gray-900 mb-4">
+                <label htmlFor="logements-range" className="block text-sm font-semibold text-gray-900 mb-4">
                   {t('numberOfProperties')} : <span className="text-primary text-2xl font-bold">{logements}</span>
                 </label>
                 <input
                   type="range"
+                  id="logements-range"
                   min="1"
                   max="200"
                   value={logements}
@@ -136,8 +137,12 @@ export default function SAbonnerPage() {
 
               {/* Ou input direct */}
               <div className="mb-10">
+                <label htmlFor="logements-input" className="sr-only">
+                  {t('enterDirectly')}
+                </label>
                 <input
                   type="number"
+                  id="logements-input"
                   min="1"
                   max="200"
                   value={logements}
