@@ -10,6 +10,7 @@ export default function SAbonnerPage() {
   const common = useTranslations('common');
   
   const [logements, setLogements] = useState(5);
+  const [logementsInput, setLogementsInput] = useState('5');
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly');
   const [isParticulier, setIsParticulier] = useState(false);
 
@@ -25,17 +26,21 @@ export default function SAbonnerPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const priceData = calculatePrice(logements, billingPeriod, {
+  const monthlyData = calculatePrice(logements, 'monthly', {
+    isParticulier
+  });
+  const annualData = calculatePrice(logements, 'annual', {
     isParticulier
   });
   const factor = isParticulier ? 1 + VAT_RATE : 1;
 
   // Utiliser les données de la config centralisée
-  const basePriceMonthly = priceData?.totalMonth ?? 0;
-  const basePrice = billingPeriod === 'annual' ? basePriceMonthly * 12 : basePriceMonthly;
-  const totalPrice = basePrice;
-  const basePriceDisplay = basePrice * factor;
-  const totalPriceDisplay = totalPrice * factor;
+  const totalMonthly = monthlyData?.totalMonth ?? 0;
+  const totalAnnualDiscounted = (annualData?.totalMonth ?? 0) * 12;
+  const totalAnnualFull = totalMonthly * 12;
+  const totalMonthlyForDisplay = billingPeriod === 'annual' ? (annualData?.totalMonth ?? 0) : totalMonthly;
+  const totalMonthlyDisplay = totalMonthlyForDisplay * factor;
+  const totalAnnualDisplay = (billingPeriod === 'annual' ? totalAnnualDiscounted : totalAnnualFull) * factor;
   const taxLabel = isParticulier ? t('ttc') : t('ht');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -124,7 +129,11 @@ export default function SAbonnerPage() {
                   min="1"
                   max="200"
                   value={logements}
-                  onChange={(e) => setLogements(parseInt(e.target.value))}
+                  onChange={(e) => {
+                    const next = Math.max(1, parseInt(e.target.value));
+                    setLogements(next);
+                    setLogementsInput(String(next));
+                  }}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
                 />
                 <div className="flex justify-between text-xs text-gray-500 mt-2">
@@ -145,8 +154,30 @@ export default function SAbonnerPage() {
                   id="logements-input"
                   min="1"
                   max="200"
-                  value={logements}
-                  onChange={(e) => setLogements(parseInt(e.target.value) || 1)}
+                  value={logementsInput}
+                  onChange={(e) => {
+                    const raw = e.target.value;
+                    if (raw === '') {
+                      setLogementsInput('');
+                      return;
+                    }
+                    const val = parseInt(raw);
+                    if (!isNaN(val)) {
+                      setLogementsInput(raw);
+                      setLogements(Math.max(1, val));
+                    }
+                  }}
+                  onBlur={() => {
+                    const val = parseInt(logementsInput);
+                    if (!logementsInput || isNaN(val)) {
+                      setLogements(1);
+                      setLogementsInput('1');
+                      return;
+                    }
+                    const clamped = Math.max(1, val);
+                    setLogements(clamped);
+                    setLogementsInput(String(clamped));
+                  }}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
                   placeholder={t('enterDirectly')}
                 />
@@ -233,14 +264,24 @@ export default function SAbonnerPage() {
               <div className="space-y-4 pb-6 border-b border-gray-200">
                 <div className="flex justify-between text-gray-700">
                   <span>{t('propertiesCount', { count: logements })}</span>
-                  <span className="font-semibold text-gray-900">{basePriceDisplay.toFixed(2)}€ {taxLabel}</span>
+                  <span className="font-semibold text-gray-900">{logements}</span>
+                </div>
+                <div className="flex justify-between text-gray-700">
+                  <span>{t('total')} {t('perMonthLabel')}</span>
+                  <span className="font-semibold text-gray-900">{totalMonthlyDisplay.toFixed(2)}€ {taxLabel}</span>
+                </div>
+                <div className="flex justify-between text-gray-700">
+                  <span>{t('total')} {t('perYearLabel')}</span>
+                  <span className="font-semibold text-gray-900">{totalAnnualDisplay.toFixed(2)}€ {taxLabel}</span>
                 </div>
               </div>
 
               <div className="flex justify-between mb-6 pt-6">
                 <span className="text-lg font-bold text-gray-900">{t('total')}</span>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-primary">{totalPriceDisplay.toFixed(2)}€ {taxLabel}</div>
+                  <div className="text-3xl font-bold text-primary">
+                    {(billingPeriod === 'annual' ? totalAnnualDisplay : totalMonthlyDisplay).toFixed(2)}€ {taxLabel}
+                  </div>
                   <p className="text-sm text-gray-600">
                     {billingPeriod === 'monthly' ? t('perMonthLabel') : t('perYearLabel')} {taxLabel}
                   </p>

@@ -13,28 +13,29 @@ export default function TarifsPage() {
   const locale = useLocale();
   
   const [logements, setLogements] = useState(5);
+  const [logementsInput, setLogementsInput] = useState('5');
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly');
   const [isParticulier, setIsParticulier] = useState(false);
 
-  const priceData = calculatePrice(logements, billingPeriod, {
+  const monthlyData = calculatePrice(logements, 'monthly', {
     isParticulier
   });
-  const isCustomPricing = logements > CUSTOM_PRICING_THRESHOLD;
+  const annualData = calculatePrice(logements, 'annual', {
+    isParticulier
+  });
+  const isCustomPricing = logements > CUSTOM_PRICING_THRESHOLD || !monthlyData || !annualData;
   const factor = isParticulier ? 1 + VAT_RATE : 1;
   
   // Utiliser les données de la config centralisée
-  const baseMonthly = priceData?.totalMonth ?? 0;
-  const totalMonthly = baseMonthly;
-  const total = billingPeriod === 'annual' ? totalMonthly * 12 : totalMonthly;
+  const totalMonthly = monthlyData?.totalMonth ?? 0;
+  const totalAnnualDiscounted = (annualData?.totalMonth ?? 0) * 12;
+  const totalAnnualFull = totalMonthly * 12;
+  const totalMonthlyForDisplay = billingPeriod === 'annual' ? (annualData?.totalMonth ?? 0) : totalMonthly;
   
-  // Calculer le prix par logement
-  const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
-    priceData.pricePerMonth * factor
-  ) : null;
-  
-  const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * factor : null;
-  const totalDisplay = isCustomPricing ? null : total * factor;
-  const totalMonthlyDisplay = isCustomPricing ? null : totalMonthly * factor;
+  const totalMonthlyDisplay = isCustomPricing ? null : totalMonthlyForDisplay * factor;
+  const totalAnnualDisplay = isCustomPricing
+    ? null
+    : (billingPeriod === 'annual' ? totalAnnualDiscounted : totalAnnualFull) * factor;
   const lastUpdate = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-US', {
     day: 'numeric', month: 'long', year: 'numeric'
   }).format(new Date());
@@ -76,11 +77,6 @@ export default function TarifsPage() {
             {/* Header */}
             <div className="mb-8 pb-6 border-b">
               <div className="flex items-center gap-2 mb-2">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10">
-                  <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                  </svg>
-                </span>
                 <h2 className="text-2xl font-bold text-primary">{t('whatIsMyPrice')}</h2>
               </div>
               <p className="text-sm text-gray-600">{t('priceExclVat')}</p>
@@ -98,7 +94,11 @@ export default function TarifsPage() {
                   min="1"
                   max="250"
                   value={logements}
-                  onChange={(e) => setLogements(Number(e.target.value))}
+                  onChange={(e) => {
+                    const next = Math.max(1, Number(e.target.value));
+                    setLogements(next);
+                    setLogementsInput(String(next));
+                  }}
                   className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
                   style={{
                     background: `linear-gradient(to right, ${COLORS.primary} 0%, ${COLORS.primary} ${((logements - 1) / 249) * 100}%, #e5e7eb ${((logements - 1) / 249) * 100}%, #e5e7eb 100%)`
@@ -108,9 +108,29 @@ export default function TarifsPage() {
                   type="number"
                   id="logements-input"
                   min="1"
-                  value={logements}
+                  value={logementsInput}
                   onChange={(e) => {
-                    setLogements(Number(e.target.value));
+                    const raw = e.target.value;
+                    if (raw === '') {
+                      setLogementsInput('');
+                      return;
+                    }
+                    const val = Number(raw);
+                    if (!isNaN(val)) {
+                      setLogementsInput(raw);
+                      setLogements(Math.max(1, val));
+                    }
+                  }}
+                  onBlur={() => {
+                    const val = Number(logementsInput);
+                    if (!logementsInput || isNaN(val)) {
+                      setLogements(1);
+                      setLogementsInput('1');
+                      return;
+                    }
+                    const clamped = Math.max(1, val);
+                    setLogements(clamped);
+                    setLogementsInput(String(clamped));
                   }}
                   aria-label={t('numberOfProperties')}
                   className="w-20 px-3 py-2 border border-gray-300 rounded-lg text-center font-semibold"
@@ -197,10 +217,10 @@ export default function TarifsPage() {
             {/* Price Display */}
             <div className="bg-white rounded-lg p-6 border-2 border-primary">
               <div className="grid md:grid-cols-2 gap-6">
-                {/* Par logement */}
+                {/* Total mensuel */}
                 <div className="text-center">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t('perProperty')}
+                    {t('totalEstimated')} ({t('perMonth')})
                   </p>
                   <div className="space-y-2">
                     {isCustomPricing ? (
@@ -212,21 +232,21 @@ export default function TarifsPage() {
                           {t('customPricing')}
                         </p>
                       </>
-                    ) : priceData ? (
+                    ) : (
                       <>
                         <p className="text-3xl md:text-4xl font-black text-primary">
-                          {pricePerLogementWithModules?.toFixed(2)}€
+                          {totalMonthlyDisplay?.toFixed(2)}€
                         </p>
-                        <p className="text-sm text-gray-600">{t('perMonthLabel')} {vatLabel}</p>
+                        <p className="text-sm text-gray-600">{vatLabel}</p>
                       </>
-                    ) : null}
+                    )}
                   </div>
                 </div>
 
-                {/* Total */}
+                {/* Total annuel */}
                 <div className="text-center">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t('totalEstimated')} {billingPeriod === 'monthly' ? `${t('perMonth')} (${vatLabel})` : `${t('annualPayment')} (${vatLabel})`}
+                    {t('totalEstimated')} ({t('annualPayment')})
                   </p>
                   <div className="space-y-2">
                     {isCustomPricing ? (
@@ -235,24 +255,17 @@ export default function TarifsPage() {
                           {t('customQuote')}
                         </p>
                         <p className="text-sm text-gray-600">
-                          {logements > 1 ? t('forPropertiesPlural', { count: logements }) : t('forProperties', { count: logements })}
+                          {t('customPricing')}
                         </p>
                       </>
-                    ) : priceData ? (
+                    ) : (
                       <>
                         <p className="text-3xl md:text-4xl font-black text-primary">
-                          {totalDisplay?.toFixed(2)}€
+                          {totalAnnualDisplay?.toFixed(2)}€
                         </p>
-                        <p className="text-sm text-gray-600">
-                          {billingPeriod === 'monthly'
-                            ? `${logements > 1 ? t('forPropertiesPlural', { count: logements }) : t('forProperties', { count: logements })} ${t('modulesIncluded')}`
-                            : `${t('annualPayment')} ${vatLabel} ${logements > 1 ? t('forPropertiesPlural', { count: logements }) : t('forProperties', { count: logements })} ${t('modulesIncluded')}`}
-                        </p>
-                        {billingPeriod === 'annual' && (
-                          <p className="text-xs text-gray-500">{t('annualDiscountNote')}</p>
-                        )}
+                        <p className="text-sm text-gray-600">{vatLabel}</p>
                       </>
-                    ) : null}
+                    )}
                   </div>
                 </div>
               </div>
@@ -285,18 +298,18 @@ export default function TarifsPage() {
               <ul className="space-y-3">
                 {(t.raw('keyFeatures') as string[]).map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                      <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                      <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
                 <li className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                    <svg className="h-3 w-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                    <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
                   <span className="text-gray-700 font-semibold">+{t('moreFeatures')}</span>

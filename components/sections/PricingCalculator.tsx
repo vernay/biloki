@@ -11,37 +11,60 @@ export default function PricingCalculator() {
   const tCommon = useTranslations("common");
   const t = useTranslations("pricingCalculator");
   const [dwellings, setDwellings] = useState(5);
+  const [dwellingsInput, setDwellingsInput] = useState("5");
   const [billingCycle, setBillingCycle] = useState<BillingPeriod>("monthly");
   const [isParticulier, setIsParticulier] = useState(false);
 
-  const priceData = calculatePrice(dwellings, billingCycle === "monthly" ? "monthly" : "annual", {
+  const monthlyData = calculatePrice(dwellings, "monthly", {
     isParticulier
   });
-  const isCustomPricing = dwellings > CUSTOM_PRICING_THRESHOLD || !priceData;
+  const annualData = calculatePrice(dwellings, "annual", {
+    isParticulier
+  });
+  const isCustomPricing = dwellings > CUSTOM_PRICING_THRESHOLD || !monthlyData || !annualData;
   
   // Utiliser les données de la config centralisée
-  const baseMonthly = priceData?.totalMonth ?? 0;
-  const totalMonthly = baseMonthly;
-  const total = billingCycle === "annual" ? totalMonthly * 12 : totalMonthly;
+  const totalMonthly = monthlyData?.totalMonth ?? 0;
+  const totalAnnualDiscounted = (annualData?.totalMonth ?? 0) * 12;
+  const totalAnnualFull = totalMonthly * 12;
+  const totalMonthlyForDisplay = billingCycle === "annual"
+    ? (annualData?.totalMonth ?? 0)
+    : totalMonthly;
   
-  // Calculer le prix par logement
-  const pricePerLogementWithModules = isCustomPricing ? null : priceData ? (
-    priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1)
-  ) : null;
-  
-  const pricePerLogementDisplay = isCustomPricing ? null : priceData ? priceData.pricePerMonth * (isParticulier ? 1 + VAT_RATE : 1) : null;
-  const totalDisplay = isCustomPricing ? null : total * (isParticulier ? 1 + VAT_RATE : 1);
-  const totalMonthlyDisplay = isCustomPricing ? null : totalMonthly * (isParticulier ? 1 + VAT_RATE : 1);
+  const totalMonthlyDisplay = isCustomPricing ? null : totalMonthlyForDisplay * (isParticulier ? 1 + VAT_RATE : 1);
+  const totalAnnualDisplay = isCustomPricing
+    ? null
+    : (billingCycle === "annual" ? totalAnnualDiscounted : totalAnnualFull) * (isParticulier ? 1 + VAT_RATE : 1);
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDwellings(Math.max(1, Number(e.target.value)));
+    const next = Math.max(1, Number(e.target.value));
+    setDwellings(next);
+    setDwellingsInput(String(next));
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = Number(e.target.value);
+    const raw = e.target.value;
+    if (raw === "") {
+      setDwellingsInput("");
+      return;
+    }
+    const val = Number(raw);
     if (!isNaN(val)) {
+      setDwellingsInput(raw);
       setDwellings(Math.max(1, val));
     }
+  };
+
+  const handleInputBlur = () => {
+    const val = Number(dwellingsInput);
+    if (!dwellingsInput || isNaN(val)) {
+      setDwellings(1);
+      setDwellingsInput("1");
+      return;
+    }
+    const clamped = Math.max(1, val);
+    setDwellings(clamped);
+    setDwellingsInput(String(clamped));
   };
 
   return (
@@ -156,8 +179,9 @@ export default function PricingCalculator() {
                     type="number"
                     id="dwellings-input"
                     min="1"
-                    value={dwellings}
+                    value={dwellingsInput}
                     onChange={handleInputChange}
+                    onBlur={handleInputBlur}
                     className="w-24 px-4 py-3 text-center text-2xl font-bold border-2 border-biloki-blue/20 rounded-xl focus:outline-none focus:border-biloki-blue focus:shadow-lg focus:shadow-biloki-blue/20 transition-all"
                   />
                 </div>
@@ -211,10 +235,10 @@ export default function PricingCalculator() {
 
               {/* Affichage des prix */}
               <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-                {/* Prix par unité */}
+                {/* Total mensuel */}
                 <div className="text-center">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t("perProperty")}
+                    {t("totalPerMonth")} ({isParticulier ? t("includingVat") : t("excludingVat")})
                   </p>
                   <div className="space-y-2">
                     {isCustomPricing ? (
@@ -227,21 +251,21 @@ export default function PricingCalculator() {
                     ) : (
                       <>
                         <p className="text-4xl md:text-5xl font-black text-primary">
-                          {pricePerLogementWithModules?.toFixed(2)}€
+                          {totalMonthlyDisplay?.toFixed(2)}€
                         </p>
                         <p className="text-sm text-gray-600">
-                          {tCommon("perMonth")} {isParticulier ? t("includingVat") : t("excludingVat")}
+                          {dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}
                         </p>
-                        <p className="text-xs text-gray-500 pt-2">{billingCycle === "monthly" ? t("monthlyBilling") : t("annualBilling", { percent: ANNUAL_DISCOUNT * 100 })}</p>
+                        <p className="text-xs text-gray-500 pt-2">{t("monthlyBilling")}</p>
                       </>
                     )}
                   </div>
                 </div>
 
-                {/* Total */}
+                {/* Total annuel */}
                 <div className="text-center">
                   <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {billingCycle === "monthly" ? `${t("totalPerMonth")} (${isParticulier ? t("includingVat") : t("excludingVat")})` : `${t("annualTotal")} (${isParticulier ? t("includingVat") : t("excludingVat")})`}
+                    {t("annualTotal")} ({isParticulier ? t("includingVat") : t("excludingVat")})
                   </p>
                   <div className="space-y-2">
                     {isCustomPricing ? (
@@ -254,11 +278,12 @@ export default function PricingCalculator() {
                     ) : (
                       <>
                         <p className="text-4xl md:text-5xl font-black text-primary">
-                          {(billingCycle === "monthly" ? totalMonthlyDisplay : totalDisplay)?.toFixed(2)}€
+                          {totalAnnualDisplay?.toFixed(2)}€
                         </p>
                         <p className="text-sm text-gray-600">
                           {dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}
                         </p>
+                        <p className="text-xs text-gray-500 pt-2">{t("annualBilling", { percent: ANNUAL_DISCOUNT * 100 })}</p>
                       </>
                     )}
                   </div>
