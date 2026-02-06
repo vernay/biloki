@@ -25,7 +25,14 @@ export default function proxy(request: NextRequest) {
   }
 
   // Appliquer le middleware next-intl normalement
-  return intlMiddleware(request);
+  const response = intlMiddleware(request);
+  return withCanonicalPathHeader(response, request.nextUrl.pathname);
+}
+
+function withCanonicalPathHeader(response: NextResponse, pathname: string) {
+  response.headers.set("x-middleware-override-headers", "x-canonical-path");
+  response.headers.set("x-middleware-request-x-canonical-path", pathname);
+  return response;
 }
 
 export const config = {
