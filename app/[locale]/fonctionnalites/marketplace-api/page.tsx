@@ -18,7 +18,7 @@ const integrations: Integration[] = [
   { name: "Booking.com", logo: "/images/logo-partenaires/Booking.com.png", category: ["all", "ota"], url: "https://www.booking.com" },
   { name: "Vrbo", logo: "/images/logo-partenaires/vrbo.png", category: ["all", "ota"], url: "https://www.vrbo.com" },
   { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png", category: ["all", "ota"], url: "https://www.expedia.fr" },
-  { name: "Stripe", logo: "/images/logo-partenaires/stripe.svg", category: ["all", "payments"], url: "https://stripe.com" },
+  { name: "Stripe", logo: "/images/logo-partenaires/Stripe.png", category: ["all", "payments"], url: "https://stripe.com" },
   { name: "PayPal", logo: "/images/logo-partenaires/paypal.png", category: ["all", "payments"], url: "https://www.paypal.com" },
   { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png", category: ["all", "accounting"], url: "https://quickbooks.intuit.com" },
   { name: "Xero", logo: "/images/logo-partenaires/xero.svg", category: ["all", "accounting"], url: "https://www.xero.com" },

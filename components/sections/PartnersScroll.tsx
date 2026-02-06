@@ -10,6 +10,7 @@ export default function PartnersScroll() {
     { name: "Booking.com", logo: "/images/logo-partenaires/Booking.com.png" },
     { name: "Vrbo", logo: "/images/logo-partenaires/vrbo.png" },
     { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png" },
+    { name: "Stripe", logo: "/images/logo-partenaires/Stripe.png" },
     { name: "PayPal", logo: "/images/logo-partenaires/paypal.png" },
     { name: "Uber", logo: "/images/logo-partenaires/Uber.png" },
     { name: "Nuki", logo: "/images/logo-partenaires/nuki.png" },
@@ -45,10 +46,10 @@ export default function PartnersScroll() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="max-h-16 max-w-full object-contain"
+                className="h-12 w-32 object-contain"
                 loading="lazy"
-                width={160}
-                height={64}
+                width={128}
+                height={48}
                 decoding="async"
               />
             </div>

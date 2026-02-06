@@ -11,6 +11,7 @@ export default function IntegrationsSection() {
     { src: "/images/logo-partenaires/Booking.com.png", alt: "Booking.com" },
     { src: "/images/logo-partenaires/vrbo.png", alt: "Vrbo" },
     { src: "/images/logo-partenaires/Expedia.png", alt: "Expedia" },
+    { src: "/images/logo-partenaires/Stripe.png", alt: "Stripe" },
     { src: "/images/logo-partenaires/Uber.png", alt: "Uber" },
     { src: "/images/logo-partenaires/HubSpot.png", alt: "HubSpot" },
     { src: "/images/logo-partenaires/paypal.png", alt: "PayPal" },
