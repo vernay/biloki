@@ -98,14 +98,7 @@ export default function FeaturesSection() {
   const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
   const reduceMotion = useReducedMotion();
   
-  // Auto-scroll vers la vidéo SEULEMENT si l'utilisateur a cliqué
-  useEffect(() => {
-    if (hasUserClicked && selectedFeature && videoRef.current && window.innerWidth < 768) {
-      setTimeout(() => {
-        videoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 0);
-    }
-  }, [selectedFeature, hasUserClicked]);
+  // Ne pas auto-scroll sur mobile: cela perturbe l'utilisateur
 
   useEffect(() => {
     if (!sectionRef.current) return;
