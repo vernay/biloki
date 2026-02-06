@@ -1,56 +1,45 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence, useReducedMotion, type Variants } from 'framer-motion';
-import VideoPlayer from '@/components/ui/VideoPlayer';
 
 interface Feature {
   id: string;
   translationKey: string;
-  videoSrc: string;
-  videoPoster?: string;
 }
 
 const FEATURES: Feature[] = [
   {
     id: 'channel-manager',
     translationKey: 'channelManager',
-    videoSrc: '/videos/Messagerie unifiée.mov'
   },
   {
     id: 'pms',
     translationKey: 'pms',
-    videoSrc: '/videos/guide-digital.mov'
   },
   {
     id: 'serrures',
     translationKey: 'serrures',
-    videoSrc: '/videos/serrure.mov'
   },
   {
     id: 'interfaces',
     translationKey: 'interfaces',
-    videoSrc: '/videos/Affectation des prestataires.mov'
   },
   {
     id: 'guide-digital',
     translationKey: 'guideDigital',
-    videoSrc: '/videos/guide-digital.mov'
   },
   {
     id: 'marketplace',
     translationKey: 'marketplace',
-    videoSrc: '/videos/Messagerie unifiée.mov'
   },
   {
     id: 'multi-langue',
     translationKey: 'multiLangue',
-    videoSrc: '/videos/guide-digital.mov'
   }
 ];
 
-const iconMap: { [key: string]: React.ReactNode } = {
+const iconMap: { [key: string]: ReactNode } = {
   'channel-manager': (
     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -89,62 +78,10 @@ const iconMap: { [key: string]: React.ReactNode } = {
 };
 
 export default function FeaturesSection() {
-  const [selectedFeature, setSelectedFeature] = useState<string>('channel-manager');
-  const [hasUserClicked, setHasUserClicked] = useState(false);
-  const videoRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isInView, setIsInView] = useState(false);
   const t = useTranslations('features');
-  const activeFeature = FEATURES.find(f => f.id === selectedFeature) || FEATURES[0];
-  const reduceMotion = useReducedMotion();
-  
-  // Ne pas auto-scroll sur mobile: cela perturbe l'utilisateur
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const handleFeatureClick = (featureId: string) => {
-    if (selectedFeature !== featureId) {
-      setSelectedFeature(featureId);
-    }
-    setHasUserClicked(true);
-  };
-
-  const listVariants: Variants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, x: -20 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
-  };
-
-  const fadeSlideVariants: Variants = {
-    initial: { opacity: 0, y: 8 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
-    exit: { opacity: 0, y: -8, transition: { duration: 0.3, ease: [0.4, 0, 1, 1] } },
-  };
 
   return (
-    <section ref={sectionRef} className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
+    <section className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="text-center mb-12 md:mb-16">
@@ -156,175 +93,51 @@ export default function FeaturesSection() {
           </p>
         </div>
 
-        {/* Desktop Layout: Cards left + Video right */}
-        <div className="hidden md:grid md:grid-cols-5 gap-6 md:gap-8 lg:gap-10">
-          {/* Left: ALL Feature Cards */}
-          <motion.div
-            className="md:col-span-2 space-y-3"
-            variants={listVariants}
-            initial="hidden"
-            animate={isInView ? 'show' : 'hidden'}
-          >
-            {FEATURES.map((feature) => {
-              const isActive = selectedFeature === feature.id;
-              return (
-                <motion.button
-                  key={feature.id}
-                  variants={cardVariants}
-                  onClick={() => handleFeatureClick(feature.id)}
-                  whileHover={reduceMotion ? undefined : { y: -2 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.985 }}
-                  className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group text-sm md:text-base backdrop-blur shadow-none hover:shadow-none outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0 ${
-                    isActive
-                      ? 'border-primary bg-blue-50/70 ring-1 ring-primary/30'
-                      : 'border-primary bg-white hover:border-primary'
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className={`p-2.5 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                      isActive
-                        ? 'bg-primary text-white shadow-[0_8px_20px_rgba(37,99,235,0.35)]'
-                        : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
-                    }`}>
-                      {iconMap[feature.id]}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-gray-900">
-                        {t(`items.${feature.translationKey}.title`)}
-                      </h3>
-                      <p className="text-gray-600 text-xs hidden md:block">
-                        {t(`items.${feature.translationKey}.description`)}
-                      </p>
-                    </div>
-                  </div>
-                </motion.button>
-              );
-            })}
-          </motion.div>
-
-          {/* Right: Video Player */}
-          <div className="md:col-span-3">
-            <div className="mb-4">
-              <AnimatePresence mode="wait">
-                <motion.h3
-                  key={`${activeFeature.id}-title`}
-                  variants={fadeSlideVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  className="text-2xl md:text-3xl font-bold text-gray-900"
-                >
-                  {t(`items.${activeFeature.translationKey}.title`)}
-                </motion.h3>
-              </AnimatePresence>
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={`${activeFeature.id}-desc`}
-                  variants={fadeSlideVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  className="text-gray-600 mt-2"
-                >
-                  {t(`items.${activeFeature.translationKey}.description`)}
-                </motion.p>
-              </AnimatePresence>
-            </div>
-
-            <div className="relative rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 via-white to-white">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.div
-                  key={activeFeature.id}
-                  variants={fadeSlideVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  className="w-full aspect-video max-h-[460px]"
-                >
-                  <VideoPlayer
-                    src={activeFeature.videoSrc}
-                    poster={activeFeature.videoPoster}
-                    className="w-full h-full"
-                  />
-                </motion.div>
-              </AnimatePresence>
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Layout: Accordion style with video below each card */}
-        <motion.div
-          className="md:hidden space-y-2"
-          variants={listVariants}
-          initial="hidden"
-          animate={isInView ? 'show' : 'hidden'}
-        >
-          {FEATURES.map((feature) => {
-            const isActive = selectedFeature === feature.id;
+        {/* Feature Blocks */}
+        <div className="space-y-16 md:space-y-20">
+          {FEATURES.map((feature, index) => {
+            const isReversed = index % 2 !== 0;
             return (
-            <div key={feature.id}>
-              {/* Card */}
-              <motion.button
-                onClick={() => handleFeatureClick(feature.id)}
-                variants={cardVariants}
-                whileHover={reduceMotion ? undefined : { y: -2 }}
-                whileTap={reduceMotion ? undefined : { scale: 0.985 }}
-                className={`w-full text-left p-4 rounded-xl border transition-all duration-300 group text-sm md:text-base shadow-none hover:shadow-none outline-none focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-0 ${
-                  isActive
-                    ? 'border-primary bg-blue-50/70 ring-1 ring-primary/30'
-                    : 'border-primary bg-white hover:border-primary'
-                }`}
+              <div
+                key={feature.id}
+                className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center"
               >
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    isActive
-                      ? 'bg-primary text-white'
-                      : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
-                  }`}>
-                    {iconMap[feature.id]}
+                <div className={isReversed ? 'md:order-2' : ''}>
+                  <div className="flex items-center gap-3 text-primary">
+                    <span className="p-2.5 rounded-xl bg-primary/10 text-primary">
+                      {iconMap[feature.id]}
+                    </span>
+                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">
+                      {t(`items.${feature.translationKey}.kicker`)}
+                    </p>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-gray-900">{t(`items.${feature.translationKey}.title`)}</h3>
-                    <p className="text-gray-600 text-xs">{t(`items.${feature.translationKey}.description`)}</p>
-                  </div>
-                  {/* Play icon on the right */}
-                  <div className={`p-2 rounded-lg flex-shrink-0 transition-all duration-200 ${
-                    isActive
-                      ? 'bg-primary text-white rotate-90'
-                      : 'bg-gray-100 text-primary group-hover:bg-primary group-hover:text-white'
-                  }`}>
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 3v18l14-9L5 3z"/>
-                    </svg>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mt-4">
+                    {t(`items.${feature.translationKey}.title`)}
+                  </h3>
+                  <p className="text-gray-600 mt-3 text-base md:text-lg">
+                    {t(`items.${feature.translationKey}.description`)}
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    {(t.raw(`items.${feature.translationKey}.bullets`) as string[]).map((bullet, bulletIndex) => (
+                      <li key={bulletIndex} className="flex items-start gap-3 text-gray-700">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className={isReversed ? 'md:order-1' : ''}>
+                  <div className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-white p-4">
+                    <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
+                      {t('imagePlaceholder')}
+                    </div>
                   </div>
                 </div>
-              </motion.button>
-
-              {/* Video shown when this card is selected */}
-              <AnimatePresence initial={false}>
-                {isActive && (
-                  <motion.div
-                    ref={videoRef}
-                    variants={fadeSlideVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    className="relative w-full aspect-video mt-2 rounded-2xl overflow-hidden border border-primary bg-gradient-to-br from-primary/5 to-white"
-                  >
-                    <VideoPlayer
-                      src={feature.videoSrc}
-                      poster={feature.videoPoster}
-                      className="w-full h-full"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
-        </motion.div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

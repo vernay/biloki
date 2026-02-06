@@ -92,34 +92,77 @@
     "title": "Funcionalidades",
     "titleHighlight": "esenciales",
     "description": "Todas las herramientas que necesitas para gestionar tus propiedades de manera eficiente.",
+    "imagePlaceholder": "Imagen próximamente",
     "items": {
       "channelManager": {
         "title": "Channel Manager",
-        "description": "Distribuye y sincroniza tus anuncios en más de 120 plataformas de reserva. Cada reserva se centraliza en tiempo real, sin riesgo de doble reserva."
+        "description": "Distribuye y sincroniza tus anuncios en más de 120 plataformas de reserva. Cada reserva se centraliza en tiempo real, sin riesgo de doble reserva.",
+        "kicker": "Distribución",
+        "bullets": [
+          "Sincronización de disponibilidad en tiempo real",
+          "Tarifas, restricciones y contenido alineados",
+          "Prevención automática de doble reserva"
+        ]
       },
       "pms": {
         "title": "Sistema de gestión de propiedades",
-        "description": "Centraliza toda tu actividad de gestión de propiedades en una herramienta. Reservas, estancias, huéspedes, propiedades, ingresos y operaciones, todo gestionado desde una única interfaz."
+        "description": "Centraliza toda tu actividad de gestión de propiedades en una herramienta. Reservas, estancias, huéspedes, propiedades, ingresos y operaciones, todo gestionado desde una única interfaz.",
+        "kicker": "Gestión de propiedades",
+        "bullets": [
+          "Vista 360° de reservas, ingresos y operaciones",
+          "Fichas unificadas de propiedades, huéspedes y propietarios",
+          "Flujos de trabajo claros y asignaciones"
+        ]
       },
       "serrures": {
         "title": "Cerraduras conectadas",
-        "description": "Genera códigos de acceso únicos para cada estancia. Activación y desactivación automática según las fechas de check-in y check-out, para tus proveedores de servicios y huéspedes."
+        "description": "Genera códigos de acceso únicos para cada estancia. Activación y desactivación automática según las fechas de check-in y check-out, para tus proveedores de servicios y huéspedes.",
+        "kicker": "Acceso",
+        "bullets": [
+          "Códigos únicos y temporales",
+          "Compartición segura con proveedores",
+          "Historial y control de accesos"
+        ]
       },
       "interfaces": {
         "title": "4 interfaces con IA integrada",
-        "description": "Una interfaz adaptada a cada rol: gestor, propietario, proveedor de servicios y huésped."
+        "description": "Una interfaz adaptada a cada rol: gestor, propietario, proveedor de servicios y huésped.",
+        "kicker": "Colaboración",
+        "bullets": [
+          "Interfaces por rol",
+          "IA integrada para acelerar tareas",
+          "Experiencia coherente en web y móvil"
+        ]
       },
       "guideDigital": {
         "title": "Guía digital con IA integrada 24/7",
-        "description": "Guía personalizada por propiedad: acceso, normas, recomendaciones locales, contactos útiles. Asistente IA disponible 24/7 para responder preguntas de los huéspedes."
+        "description": "Guía personalizada por propiedad: acceso, normas, recomendaciones locales, contactos útiles. Asistente IA disponible 24/7 para responder preguntas de los huéspedes.",
+        "kicker": "Experiencia del huésped",
+        "bullets": [
+          "Información clave antes de la llegada",
+          "Respuestas 24/7 con IA",
+          "Menos solicitudes para tu equipo"
+        ]
       },
       "marketplace": {
         "title": "Marketplace de socios",
-        "description": "Conecta tus herramientas externas a Biloki a través de nuestro marketplace de integraciones. API abierta para sincronizar tus datos y automatizar tus flujos de trabajo con tus aplicaciones favoritas."
+        "description": "Conecta tus herramientas externas a Biloki a través de nuestro marketplace de integraciones. API abierta para sincronizar tus datos y automatizar tus flujos de trabajo con tus aplicaciones favoritas.",
+        "kicker": "Ecosistema",
+        "bullets": [
+          "Conectores listos para usar",
+          "API abierta para necesidades a medida",
+          "Automatizaciones sin dependencia"
+        ]
       },
       "multiLangue": {
         "title": "Aplicación multilingüe",
-        "description": "Una interfaz e IA adaptadas automáticamente al idioma de cada usuario. Ideal para gestionar una clientela internacional sin fricciones."
+        "description": "Una interfaz e IA adaptadas automáticamente al idioma de cada usuario. Ideal para gestionar una clientela internacional sin fricciones.",
+        "kicker": "Internacional",
+        "bullets": [
+          "Traducción automática del contenido",
+          "Soporte multilingüe para huéspedes",
+          "Experiencia local sin esfuerzo"
+        ]
       }
     }
   },

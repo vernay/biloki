@@ -92,34 +92,77 @@
     "title": "Essential",
     "titleHighlight": "features",
     "description": "All the tools you need to manage your properties efficiently.",
+    "imagePlaceholder": "Image coming soon",
     "items": {
       "channelManager": {
         "title": "Channel Manager",
-        "description": "Distribute and synchronize your listings across 120+ booking platforms. Every booking is centralized in real-time, with no risk of double booking."
+        "description": "Distribute and synchronize your listings across 120+ booking platforms. Every booking is centralized in real-time, with no risk of double booking.",
+        "kicker": "Distribution",
+        "bullets": [
+          "Real-time availability sync",
+          "Rates, restrictions, and content aligned",
+          "Automatic double-booking prevention"
+        ]
       },
       "pms": {
         "title": "Property Management System",
-        "description": "Centralize all your property management activities in one tool. Bookings, stays, guests, properties, revenue, and operations - all managed from a single interface."
+        "description": "Centralize all your property management activities in one tool. Bookings, stays, guests, properties, revenue, and operations - all managed from a single interface.",
+        "kicker": "Property management",
+        "bullets": [
+          "360° view of bookings, revenue, and operations",
+          "Unified property, guest, and owner profiles",
+          "Clear team workflows and assignments"
+        ]
       },
       "serrures": {
         "title": "Smart Locks",
-        "description": "Generate unique access codes for each stay. Automatic activation and deactivation based on check-in and check-out dates, for your service providers and tenants."
+        "description": "Generate unique access codes for each stay. Automatic activation and deactivation based on check-in and check-out dates, for your service providers and tenants.",
+        "kicker": "Access",
+        "bullets": [
+          "Unique, time-bound codes",
+          "Secure sharing with providers",
+          "Access history and control"
+        ]
       },
       "interfaces": {
         "title": "4 interfaces with built-in AI",
-        "description": "An interface adapted to each role: manager, owner, service provider, and guest."
+        "description": "An interface adapted to each role: manager, owner, service provider, and guest.",
+        "kicker": "Collaboration",
+        "bullets": [
+          "Role-based interfaces",
+          "Built-in AI to speed up tasks",
+          "Consistent web and mobile experience"
+        ]
       },
       "guideDigital": {
         "title": "Digital guide with built-in AI 24/7",
-        "description": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions."
+        "description": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions.",
+        "kicker": "Guest experience",
+        "bullets": [
+          "Key info before arrival",
+          "24/7 AI answers",
+          "Fewer requests for your team"
+        ]
       },
       "marketplace": {
         "title": "Partner Marketplace",
-        "description": "Connect your external tools to Biloki through our integrations marketplace. Open API to synchronize your data and automate your workflows with your favorite applications."
+        "description": "Connect your external tools to Biloki through our integrations marketplace. Open API to synchronize your data and automate your workflows with your favorite applications.",
+        "kicker": "Ecosystem",
+        "bullets": [
+          "Ready-to-use connectors",
+          "Open API for custom needs",
+          "Automations without lock-in"
+        ]
       },
       "multiLangue": {
         "title": "Multi-language application",
-        "description": "An interface and AI automatically adapted to each user's language. Ideal for managing an international clientele without friction."
+        "description": "An interface and AI automatically adapted to each user's language. Ideal for managing an international clientele without friction.",
+        "kicker": "International",
+        "bullets": [
+          "Automatic content translation",
+          "Multilingual support for guests",
+          "Localized experience, effortlessly"
+        ]
       }
     }
   },
