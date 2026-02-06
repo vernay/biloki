@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://biloki.fr"),
   title: {
     default: "Biloki — Gestion de séjours sans effort",
     template: "%s · Biloki",
