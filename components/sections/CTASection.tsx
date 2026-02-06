@@ -16,7 +16,7 @@ export default function CTASection() {
             <img
               src="/logos/logo-biloki.png"
               alt="Biloki"
-              className="h-20 md:h-24"
+              className="h-20 md:h-24 w-auto"
               width={240}
               height={120}
               loading="lazy"
