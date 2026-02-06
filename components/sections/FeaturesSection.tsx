@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
@@ -69,8 +70,18 @@ const iconMap: { [key: string]: ReactNode } = {
   )
 };
 
+const featureLinks: Record<string, string> = {
+  'channel-manager': '/fonctionnalites/channel-manager',
+  pms: '/fonctionnalites/pms',
+  serrures: '/fonctionnalites/serrures-connectees',
+  interfaces: '/fonctionnalites/4-interfaces',
+  'guide-digital': '/fonctionnalites/ia-automatisation',
+  'multi-langue': '/fonctionnalites/multi-langues',
+};
+
 export default function FeaturesSection() {
   const t = useTranslations('features');
+  const tCommon = useTranslations('common');
 
   return (
     <section className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
@@ -123,6 +134,17 @@ export default function FeaturesSection() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-6">
+                    <Link
+                      href={featureLinks[feature.id]}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition"
+                    >
+                      {tCommon('learnMore')}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </Link>
+                  </div>
                 </motion.div>
 
                 <motion.div
