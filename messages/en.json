@@ -877,6 +877,74 @@
     "title": "Smart",
     "titleHighlight": "Locks",
     "description": "Secure your properties and automate guest access. Our team will help you find the best solution.",
+    "heroTitleSuffix": "for concierge teams",
+    "heroDescription": "Secure your properties and automate guest access. Open doors remotely in one click from your dashboard.",
+    "heroSecondaryCta": "Watch the demo",
+    "heroBullets": ["Secure", "Fast installation", "500+ conciergeries"],
+    "heroImagePlaceholder": "Hero image placeholder",
+    "needs": {
+      "title": "Everything your concierge needs",
+      "description": "A single platform to manage access to all your properties with peace of mind.",
+      "items": [
+        {
+          "title": "Remote access",
+          "description": "Lock and unlock your doors from anywhere via the app.",
+          "icon": "access"
+        },
+        {
+          "title": "Guest interface",
+          "description": "Your guests receive simple access directly on their phone.",
+          "icon": "mobile"
+        },
+        {
+          "title": "Automation",
+          "description": "Schedule access based on reservations. Everything is automatic.",
+          "icon": "automation"
+        },
+        {
+          "title": "Maximum security",
+          "description": "End-to-end encryption and real-time access logs.",
+          "icon": "security"
+        },
+        {
+          "title": "Multi-property",
+          "description": "Manage dozens of properties from a single dashboard.",
+          "icon": "multi"
+        },
+        {
+          "title": "Easy installation",
+          "description": "Compatible with your existing locks. Live in 10 minutes.",
+          "icon": "install"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Compatible partner brands",
+      "description": "Connection between the lock app and Biloki so guests can open the door directly from their app.",
+      "items": {
+        "nuki": "Nuki",
+        "igloohome": "Igloohome",
+        "yale": "Yale",
+        "august": "August"
+      }
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": [
+        {
+          "title": "Connect your lock",
+          "description": "Link your compatible smart lock to the Biloki platform."
+        },
+        {
+          "title": "Configure your properties",
+          "description": "Add your properties and associate them with the right locks."
+        },
+        {
+          "title": "Guests get access",
+          "description": "Travelers automatically receive access on arrival."
+        }
+      ]
+    },
     "team": "Biloki Partnership Team",
     "pageTitle": "Smart Locks",
     "duration": "20-30 min",

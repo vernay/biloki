@@ -893,6 +893,74 @@
     "title": "Serrures",
     "titleHighlight": "connectées",
     "description": "Sécurisez vos propriétés et automatisez l'accès de vos voyageurs. Notre équipe vous aidera à trouver la meilleure solution.",
+    "heroTitleSuffix": "pour la conciergerie",
+    "heroDescription": "Sécurisez vos propriétés et automatisez l'accès de vos voyageurs. Ouvrez les portes à distance en un clic depuis votre interface.",
+    "heroSecondaryCta": "Voir la démo",
+    "heroBullets": ["Sécurisé", "Installation rapide", "+500 conciergeries"],
+    "heroImagePlaceholder": "Emplacement image principale",
+    "needs": {
+      "title": "Tout ce dont votre conciergerie a besoin",
+      "description": "Une plateforme unique pour gérer les accès de tous vos logements en toute sérénité.",
+      "items": [
+        {
+          "title": "Accès à distance",
+          "description": "Ouvrez et verrouillez vos serrures depuis n'importe où via l'application.",
+          "icon": "access"
+        },
+        {
+          "title": "Interface locataire",
+          "description": "Vos voyageurs reçoivent un accès simplifié directement sur leur téléphone.",
+          "icon": "mobile"
+        },
+        {
+          "title": "Automatisation",
+          "description": "Programmez les accès selon les réservations. Tout est automatique.",
+          "icon": "automation"
+        },
+        {
+          "title": "Sécurité maximale",
+          "description": "Chiffrement de bout en bout et journal d'accès en temps réel.",
+          "icon": "security"
+        },
+        {
+          "title": "Multi-propriétés",
+          "description": "Gérez des dizaines de logements depuis un seul tableau de bord.",
+          "icon": "multi"
+        },
+        {
+          "title": "Installation facile",
+          "description": "Compatible avec vos serrures existantes. Opérationnel en 10 minutes.",
+          "icon": "install"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Marques partenaires compatibles",
+      "description": "Connexion entre l'application de la serrure et Biloki pour permettre aux locataires d'ouvrir la porte directement via leur app.",
+      "items": {
+        "nuki": "Nuki",
+        "igloohome": "Igloohome",
+        "yale": "Yale",
+        "august": "August"
+      }
+    },
+    "howItWorks": {
+      "title": "Comment ça marche ?",
+      "steps": [
+        {
+          "title": "Connectez votre serrure",
+          "description": "Reliez votre serrure connectée compatible à la plateforme Biloki."
+        },
+        {
+          "title": "Configurez vos logements",
+          "description": "Ajoutez vos propriétés et associez-les aux serrures correspondantes."
+        },
+        {
+          "title": "Vos locataires accèdent",
+          "description": "Les voyageurs reçoivent automatiquement l'accès à leur arrivée."
+        }
+      ]
+    },
     "team": "Biloki Partnership Team",
     "pageTitle": "Serrures Connectées",
     "duration": "20-30 min",

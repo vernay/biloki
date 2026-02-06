@@ -763,6 +763,74 @@
     "title": "Fechaduras",
     "titleHighlight": "conectadas",
     "description": "Proteja suas propriedades e automatize o acesso dos hóspedes. Nossa equipe ajudará você a encontrar a melhor solução.",
+    "heroTitleSuffix": "para a concierge",
+    "heroDescription": "Proteja suas propriedades e automatize o acesso dos hóspedes. Abra as portas remotamente com um clique no seu painel.",
+    "heroSecondaryCta": "Ver a demo",
+    "heroBullets": ["Seguro", "Instalação rápida", "+500 conciergeries"],
+    "heroImagePlaceholder": "Espaço reservado para imagem principal",
+    "needs": {
+      "title": "Tudo o que sua concierge precisa",
+      "description": "Uma plataforma única para gerenciar o acesso a todas as suas propriedades com tranquilidade.",
+      "items": [
+        {
+          "title": "Acesso remoto",
+          "description": "Tranque e destranque suas portas de qualquer lugar pelo app.",
+          "icon": "access"
+        },
+        {
+          "title": "Interface do hóspede",
+          "description": "Seus hóspedes recebem acesso simples diretamente no telefone.",
+          "icon": "mobile"
+        },
+        {
+          "title": "Automatização",
+          "description": "Agende acessos conforme as reservas. Tudo é automático.",
+          "icon": "automation"
+        },
+        {
+          "title": "Segurança máxima",
+          "description": "Criptografia ponta a ponta e registro de acesso em tempo real.",
+          "icon": "security"
+        },
+        {
+          "title": "Multi‑propriedades",
+          "description": "Gerencie dezenas de propriedades em um único painel.",
+          "icon": "multi"
+        },
+        {
+          "title": "Instalação fácil",
+          "description": "Compatível com suas fechaduras atuais. Pronto em 10 minutos.",
+          "icon": "install"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Marcas parceiras compatíveis",
+      "description": "Conexão entre o app da fechadura e a Biloki para que os hóspedes abram a porta direto no app.",
+      "items": {
+        "nuki": "Nuki",
+        "igloohome": "Igloohome",
+        "yale": "Yale",
+        "august": "August"
+      }
+    },
+    "howItWorks": {
+      "title": "Como funciona?",
+      "steps": [
+        {
+          "title": "Conecte sua fechadura",
+          "description": "Vincule sua fechadura inteligente compatível à plataforma Biloki."
+        },
+        {
+          "title": "Configure suas propriedades",
+          "description": "Adicione suas propriedades e associe às fechaduras corretas."
+        },
+        {
+          "title": "Seus hóspedes acessam",
+          "description": "Os viajantes recebem automaticamente o acesso na chegada."
+        }
+      ]
+    },
     "team": "Equipe de parcerias Biloki",
     "pageTitle": "Fechaduras conectadas",
     "duration": "20-30 min",

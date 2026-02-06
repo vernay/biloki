@@ -878,6 +878,74 @@
     "title": "Cerraduras",
     "titleHighlight": "conectadas",
     "description": "Asegura tus propiedades y automatiza el acceso de los huéspedes. Nuestro equipo te ayudará a encontrar la mejor solución.",
+    "heroTitleSuffix": "para la conserjería",
+    "heroDescription": "Asegura tus propiedades y automatiza el acceso de los huéspedes. Abre las puertas a distancia con un clic desde tu panel.",
+    "heroSecondaryCta": "Ver la demo",
+    "heroBullets": ["Seguro", "Instalación rápida", "+500 conserjerías"],
+    "heroImagePlaceholder": "Marcador de imagen principal",
+    "needs": {
+      "title": "Todo lo que necesita tu conserjería",
+      "description": "Una plataforma única para gestionar el acceso a todas tus propiedades con total tranquilidad.",
+      "items": [
+        {
+          "title": "Acceso remoto",
+          "description": "Abre y cierra tus cerraduras desde cualquier lugar con la app.",
+          "icon": "access"
+        },
+        {
+          "title": "Interfaz para huéspedes",
+          "description": "Tus viajeros reciben un acceso sencillo directamente en su teléfono.",
+          "icon": "mobile"
+        },
+        {
+          "title": "Automatización",
+          "description": "Programa los accesos según las reservas. Todo es automático.",
+          "icon": "automation"
+        },
+        {
+          "title": "Máxima seguridad",
+          "description": "Cifrado de extremo a extremo y registro de acceso en tiempo real.",
+          "icon": "security"
+        },
+        {
+          "title": "Multi‑propiedad",
+          "description": "Gestiona decenas de propiedades desde un solo panel.",
+          "icon": "multi"
+        },
+        {
+          "title": "Instalación fácil",
+          "description": "Compatible con tus cerraduras actuales. Lista en 10 minutos.",
+          "icon": "install"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Marcas asociadas compatibles",
+      "description": "Conexión entre la app de la cerradura y Biloki para que los huéspedes abran la puerta directamente desde su app.",
+      "items": {
+        "nuki": "Nuki",
+        "igloohome": "Igloohome",
+        "yale": "Yale",
+        "august": "August"
+      }
+    },
+    "howItWorks": {
+      "title": "¿Cómo funciona?",
+      "steps": [
+        {
+          "title": "Conecta tu cerradura",
+          "description": "Vincula tu cerradura inteligente compatible con la plataforma Biloki."
+        },
+        {
+          "title": "Configura tus propiedades",
+          "description": "Añade tus propiedades y asígnalas a las cerraduras correspondientes."
+        },
+        {
+          "title": "Tus huéspedes acceden",
+          "description": "Los viajeros reciben automáticamente el acceso al llegar."
+        }
+      ]
+    },
     "team": "Equipo de asociaciones Biloki",
     "pageTitle": "Cerraduras conectadas",
     "duration": "20-30 min",
