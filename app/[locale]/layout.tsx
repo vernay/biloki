@@ -3,13 +3,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { defaultLocale, locales, type Locale } from "@/lib/i18n/config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-const ChatBot = dynamic(() => import("@/components/ChatBot"), { ssr: false });
-const CookieBanner = dynamic(() => import("@/components/CookieBanner"), { ssr: false });
+import ClientOverlays from "@/components/layout/ClientOverlays";
 
 type Props = {
   children: React.ReactNode;
@@ -77,8 +74,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <Header />
       {children}
       <Footer />
-      <CookieBanner />
-      <ChatBot />
+      <ClientOverlays />
     </NextIntlClientProvider>
   );
 }
