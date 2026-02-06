@@ -30,7 +30,19 @@ export default function proxy(request: NextRequest) {
 }
 
 function withCanonicalPathHeader(response: NextResponse, pathname: string) {
-  response.headers.set("x-middleware-override-headers", "x-canonical-path");
+  const existing = response.headers.get("x-middleware-override-headers");
+  const merged = new Set(
+    (existing ?? "")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean)
+  );
+  merged.add("x-canonical-path");
+
+  response.headers.set(
+    "x-middleware-override-headers",
+    Array.from(merged).join(",")
+  );
   response.headers.set("x-middleware-request-x-canonical-path", pathname);
   return response;
 }

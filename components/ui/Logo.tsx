@@ -5,7 +5,7 @@ interface LogoProps {
   alt?: string;
 }
 
-export default function Logo({ className = "h-[120px]", alt = "Biloki" }: LogoProps) {
+export default function Logo({ className = "h-8 w-auto", alt = "Biloki" }: LogoProps) {
   return (
     <Link href="/">
       <img
