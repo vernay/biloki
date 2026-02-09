@@ -103,7 +103,7 @@ export default function Hero() {
                 whileHover={{ y: -8 }}
               >
                 <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-gray-800">{tInterfaces("labels.concierge")}</span>
+                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.concierge")}</span>
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
@@ -123,7 +123,7 @@ export default function Hero() {
                 whileHover={{ y: -8 }}
               >
                 <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-gray-800">{tInterfaces("labels.owner")}</span>
+                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.owner")}</span>
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
@@ -143,7 +143,7 @@ export default function Hero() {
                 whileHover={{ y: -8 }}
               >
                 <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-gray-800">{tInterfaces("labels.provider")}</span>
+                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.provider")}</span>
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
@@ -163,7 +163,7 @@ export default function Hero() {
                 whileHover={{ y: -8 }}
               >
                 <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-gray-800">{tInterfaces("labels.tenant")}</span>
+                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.tenant")}</span>
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
