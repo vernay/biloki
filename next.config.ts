@@ -10,6 +10,18 @@ const WEBAPP_SUBSCRIPTION_URL = `${WEBAPP_BASE_URL}/register/subscription`;
 const nextConfig: NextConfig = {
   redirects: async () => {
     return [
+      // Forcer le domaine canonique avec www
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'biloki.fr',
+          },
+        ],
+        destination: 'https://www.biloki.fr/:path*',
+        permanent: true,
+      },
       // Redirections vers webapp
       {
         source: '/:locale/commencer-gratuitement',
