@@ -180,6 +180,11 @@ const nextConfig: NextConfig = {
         destination: '/fr/fonctionnalites/4-interfaces',
         permanent: true,
       },
+      {
+        source: '/:locale/fonctionnalites/channel-manager',
+        destination: '/:locale/fonctionnalites/channel-manager/ota',
+        permanent: true,
+      },
       
       // Redirections articles blog non-français vers français
       {
