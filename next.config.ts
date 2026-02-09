@@ -185,6 +185,11 @@ const nextConfig: NextConfig = {
         destination: '/:locale/fonctionnalites/channel-manager/ota',
         permanent: true,
       },
+      {
+        source: '/:locale/fonctionnalites/reporting',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
       
       // Redirections articles blog non-français vers français
       {
