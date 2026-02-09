@@ -8,6 +8,12 @@ import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
 export default function ContactPage() {
   const t = useTranslations('contactPage');
   const tCommon = useTranslations('common');
+  const formattedSupportPhone = (() => {
+    const digits = SUPPORT_PHONE.replace(/\D/g, '');
+    const normalized = digits.startsWith('33') ? `0${digits.slice(2)}` : digits;
+    const withLeadingZero = normalized.startsWith('0') ? normalized : `0${normalized}`;
+    return withLeadingZero.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+  })();
 
   const [formData, setFormData] = useState({
     prenom: '',
@@ -131,7 +137,7 @@ export default function ContactPage() {
                 href={`tel:${SUPPORT_PHONE}`}
                 className="block text-center text-primary hover:text-blue-600 font-semibold text-lg transition"
               >
-                {SUPPORT_PHONE.replace(/^(\+33)?0?/, '').replace(/(\d{2})(?=\d)/g, '$1 ').trim()}
+                {formattedSupportPhone}
               </a>
               <p className="text-sm text-gray-600 text-center mt-2">{t('availableDuring')}</p>
             </div>
