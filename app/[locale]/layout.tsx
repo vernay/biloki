@@ -72,7 +72,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      {children}
+      <main className="pt-16 md:pt-0">
+        {children}
+      </main>
       <Footer />
       <ClientOverlays />
     </NextIntlClientProvider>
