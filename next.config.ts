@@ -140,6 +140,26 @@ const nextConfig: NextConfig = {
         destination: '/fr',
         permanent: true,
       },
+      {
+        source: '/nous-contacter',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/nous-contacter/',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/accueil',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/accueil/',
+        destination: '/fr',
+        permanent: true,
+      },
       
       // Redirections articles blog non-français vers français
       {
