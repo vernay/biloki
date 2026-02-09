@@ -175,6 +175,11 @@ const nextConfig: NextConfig = {
         destination: '/en/fonctionnalites/4-interfaces',
         permanent: true,
       },
+      {
+        source: '/fr/interface-prestataire',
+        destination: '/fr/fonctionnalites/4-interfaces',
+        permanent: true,
+      },
       
       // Redirections articles blog non-français vers français
       {
