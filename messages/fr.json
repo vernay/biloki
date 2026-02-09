@@ -89,60 +89,60 @@
     "customMessage": "Pour plus de 200 logements, nos équipes vous proposeront une offre personnalisée."
   },
   "features": {
-    "title": "Les fonctionnalités",
-    "titleHighlight": "essentielles",
+    "title": "Les 5 bonnes raisons de travailler",
+    "titleHighlight": "avec Biloki",
     "description": "Tous les outils dont vous avez besoin pour gérer vos propriétés efficacement.",
     "imagePlaceholder": "Image à ajouter",
     "items": {
       "channelManager": {
         "title": "Channel Manager",
-        "description": "Diffusez et synchronisez vos annonces sur plus de 120 plateformes de réservation. Chaque réservation est centralisée en temps réel, sans risque de double booking.",
+        "description": "Vendez partout, sans stress, sans surbooking. 120+ plateformes synchronisées en temps réel.",
         "kicker": "Distribution",
         "bullets": [
-          "Synchronisation temps réel des disponibilités",
-          "Tarifs, restrictions et contenus harmonisés",
-          "Prévention du double booking automatique"
+          "Disponibilités à jour instantanément",
+          "Tarifs et règles cohérents partout",
+          "Double booking bloqué"
         ]
       },
       "pms": {
         "title": "Property Management System",
-        "description": "Centralisez toute l'activité de votre conciergerie dans un seul outil. Réservations, séjours, voyageurs, logements, revenus et opérations, tout est piloté depuis une interface unique.",
+        "description": "Toute votre conciergerie sur un seul écran. Décidez plus vite, gagnez en rentabilité.",
         "kicker": "Gestion de propriétés",
         "bullets": [
-          "Vue 360° réservations, revenus et opérations",
-          "Fiches logement, voyageurs et propriétaires unifiées",
-          "Workflows d'équipe clairs et assignations"
+          "Vue 360° réservations, revenus, opérations",
+          "Fiches logements, voyageurs, propriétaires à jour",
+          "Workflows simples, zéro oubli"
         ]
       },
       "serrures": {
         "title": "Serrures connectées",
-        "description": "Générez des codes d'accès uniques pour chaque séjour. Activation et désactivation automatiques selon les dates d'arrivée et de départ, pour vos prestataires et vos locataires.",
+        "description": "Accès autonome et sécurisé. Codes uniques qui s’activent et s’expirent automatiquement.",
         "kicker": "Accès",
         "bullets": [
-          "Codes uniques et temporaires",
-          "Partage sécurisé avec prestataires",
-          "Historique et contrôle des accès"
+          "Codes uniques par séjour",
+          "Activation/désactivation automatique",
+          "Contrôle et historique des accès"
         ]
       },
       "interfaces": {
         "title": "4 interfaces avec IA intégrée",
-        "description": "Une interface adaptée à chaque rôle : gestionnaire, propriétaire, prestataire et voyageur.",
+        "description": "Un écran par rôle. Tout le monde voit l’essentiel, rien de plus.",
         "kicker": "Collaboration",
         "bullets": [
           "Interfaces dédiées par rôle",
-          "IA intégrée pour accélérer les tâches",
-          "Expérience cohérente sur web et mobile",
-          "Application multi-langue"
+          "IA intégrée pour aller plus vite",
+          "Expérience web + mobile",
+          "Multi-langue"
         ]
       },
       "guideDigital": {
         "title": "Guide digital avec IA intégrée 24/7",
-        "description": "Guide personnalisé par logement : accès, règles, recommandations locales, contacts utiles. Assistant IA disponible 24/7 pour répondre aux questions des voyageurs.",
+        "description": "Voyageurs autonomes, équipe soulagée. Un guide 24/7 qui répond à leur place.",
         "kicker": "Expérience voyageur",
         "bullets": [
-          "Infos clés avant l'arrivée",
-          "Réponses 24/7 via l'IA",
-          "Moins de sollicitations pour votre équipe"
+          "Infos clés avant l’arrivée",
+          "Réponses 24/7 par l’IA",
+          "Moins de sollicitations"
         ]
       },
       "marketplace": {
