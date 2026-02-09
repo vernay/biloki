@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         destination: 'https://www.biloki.fr/:path*',
         permanent: true,
       },
+          {
+            source: '/wp-login.php',
+            destination: '/fr',
+            permanent: true,
+          },
       // Redirections vers webapp
       {
         source: '/:locale/commencer-gratuitement',
@@ -157,6 +162,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/accueil/',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/wp-login.php',
         destination: '/fr',
         permanent: true,
       },
