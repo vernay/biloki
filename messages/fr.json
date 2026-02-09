@@ -131,7 +131,8 @@
         "bullets": [
           "Interfaces dédiées par rôle",
           "IA intégrée pour accélérer les tâches",
-          "Expérience cohérente sur web et mobile"
+          "Expérience cohérente sur web et mobile",
+          "Application multi-langue"
         ]
       },
       "guideDigital": {
@@ -152,16 +153,6 @@
           "Connecteurs prêts à l'emploi",
           "API ouverte pour sur-mesure",
           "Automatisations sans dépendance"
-        ]
-      },
-      "multiLangue": {
-        "title": "Application multi langue",
-        "description": "Une interface et une IA adaptées automatiquement à la langue de chaque utilisateur. Idéal pour gérer une clientèle internationale sans friction.",
-        "kicker": "International",
-        "bullets": [
-          "Traduction automatique du contenu",
-          "Support multilingue pour voyageurs",
-          "Expérience locale sans effort"
         ]
       }
     }
@@ -195,10 +186,6 @@
       "marketplace": {
         "title": "Marketplace partenaires",
         "desc": "Connectez vos outils externes à Biloki grâce à notre marketplace d'intégrations. API ouverte pour synchroniser vos données et automatiser vos workflows avec vos applications préférées."
-      },
-      "multiLangue": {
-        "title": "Application multi langue",
-        "desc": "Une interface et une IA adaptées automatiquement à la langue de chaque utilisateur. Idéal pour gérer une clientèle internationale sans friction."
       }
     }
   },

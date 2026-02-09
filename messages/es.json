@@ -131,7 +131,8 @@
         "bullets": [
           "Interfaces por rol",
           "IA integrada para acelerar tareas",
-          "Experiencia coherente en web y móvil"
+          "Experiencia coherente en web y móvil",
+          "Aplicación multilingüe"
         ]
       },
       "guideDigital": {
@@ -152,16 +153,6 @@
           "Conectores listos para usar",
           "API abierta para necesidades a medida",
           "Automatizaciones sin dependencia"
-        ]
-      },
-      "multiLangue": {
-        "title": "Aplicación multilingüe",
-        "description": "Una interfaz e IA adaptadas automáticamente al idioma de cada usuario. Ideal para gestionar una clientela internacional sin fricciones.",
-        "kicker": "Internacional",
-        "bullets": [
-          "Traducción automática del contenido",
-          "Soporte multilingüe para huéspedes",
-          "Experiencia local sin esfuerzo"
         ]
       }
     }
@@ -195,10 +186,6 @@
       "marketplace": {
         "title": "Marketplace de socios",
         "desc": "Conecta tus herramientas externas a Biloki a través de nuestro marketplace de integraciones. API abierta para sincronizar tus datos y automatizar tus flujos de trabajo con tus aplicaciones favoritas."
-      },
-      "multiLangue": {
-        "title": "Aplicación multilingüe",
-        "desc": "Una interfaz e IA automáticamente adaptada al idioma de cada usuario. Ideal para gestionar una clientela internacional sin fricciones."
       }
     }
   },

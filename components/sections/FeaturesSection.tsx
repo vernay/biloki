@@ -31,10 +31,7 @@ const FEATURES: Feature[] = [
     id: 'guide-digital',
     translationKey: 'guideDigital',
   },
-  {
-    id: 'multi-langue',
-    translationKey: 'multiLangue',
-  }
+  
 ];
 
 const iconMap: { [key: string]: ReactNode } = {
@@ -62,11 +59,6 @@ const iconMap: { [key: string]: ReactNode } = {
     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
-  ),
-  'multi-langue': (
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
   )
 };
 
@@ -76,7 +68,6 @@ const featureLinks: Record<string, string> = {
   serrures: '/fonctionnalites/serrures-connectees',
   interfaces: '/fonctionnalites/4-interfaces',
   'guide-digital': '/fonctionnalites/ia-automatisation',
-  'multi-langue': '/fonctionnalites/multi-langues',
 };
 
 export default function FeaturesSection() {
