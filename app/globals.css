@@ -6,6 +6,11 @@
   --biloki-blue-dark: #0391dd;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Chatbot header - utilise les variables de couleur Biloki */
 .chatbot-header {
   background: linear-gradient(to right, var(--biloki-blue), var(--biloki-blue-dark)) !important;
