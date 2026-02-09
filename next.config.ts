@@ -26,6 +26,16 @@ const nextConfig: NextConfig = {
         destination: `${WEBAPP_SUBSCRIPTION_URL}?lang=:locale`,
         permanent: false,
       },
+      {
+        source: '/:locale/landing',
+        destination: '/:locale',
+        permanent: true,
+      },
+      {
+        source: '/landing',
+        destination: '/fr',
+        permanent: true,
+      },
       
       // Redirections 301 - Anciennes URLs vers nouvelles pages
       {
