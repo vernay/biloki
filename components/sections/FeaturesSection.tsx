@@ -178,6 +178,26 @@ export default function FeaturesSection() {
                           className="h-full w-full object-contain"
                         />
                       </div>
+                    ) : feature.id === 'interfaces' ? (
+                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                        <Image
+                          src="/images/4-interfaces.png"
+                          alt={`${t('items.interfaces.title')} - 4 interfaces`}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    ) : feature.id === 'guide-digital' ? (
+                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                        <Image
+                          src="/images/guide-digital-ia.png"
+                          alt={`${t('items.guideDigital.title')} - Guide digital IA`}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
                     ) : (
                       <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
                         {t('imagePlaceholder')}
