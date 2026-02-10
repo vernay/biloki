@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
@@ -146,9 +147,22 @@ export default function FeaturesSection() {
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                 >
                   <div className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-white p-4">
-                    <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
-                      {t('imagePlaceholder')}
-                    </div>
+                    {feature.id === 'channel-manager' ? (
+                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                        <Image
+                          src="/images/Calendrier.png"
+                          alt={`${t('items.channelManager.title')} - Calendrier`}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-cover"
+                          priority={index === 0}
+                        />
+                      </div>
+                    ) : (
+                      <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
+                        {t('imagePlaceholder')}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               </div>
