@@ -161,8 +161,18 @@ export default function FeaturesSection() {
                     ) : feature.id === 'serrures' ? (
                       <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
                         <Image
-                          src="/images/ouverture-porte.png"
-                          alt={`${t('items.serrures.title')} - Ouverture de porte`}
+                          src="/images/Serrure-connectee-dashboard.png"
+                          alt={`${t('items.serrures.title')} - Tableau de bord`}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                    ) : feature.id === 'pms' ? (
+                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                        <Image
+                          src="/images/PMS.png"
+                          alt={`${t('items.pms.title')} - PMS`}
                           width={1200}
                           height={900}
                           className="h-full w-full object-contain"
