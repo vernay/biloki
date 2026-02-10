@@ -38,7 +38,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Checkboxes */}
-            <motion.div className="space-y-3" variants={containerVariants}>
+            <motion.div className="hidden sm:block space-y-3" variants={containerVariants}>
               {["check1", "check2", "check3", "check4"].map((checkKey) => (
                 <motion.div
                   key={checkKey}
