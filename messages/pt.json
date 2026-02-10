@@ -121,7 +121,8 @@
         "bullets": [
           "Códigos únicos e temporários",
           "Compartilhamento seguro com prestadores",
-          "Histórico e controle de acessos"
+          "Histórico e controle de acessos",
+          "Códigos enviados ao hóspede na sua plataforma: abertura pelo app"
         ]
       },
       "interfaces": {

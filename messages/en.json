@@ -121,7 +121,8 @@
         "bullets": [
           "Unique, time-bound codes",
           "Secure sharing with providers",
-          "Access history and control"
+          "Access history and control",
+          "Codes sent to guests on their platform: unlock via their app"
         ]
       },
       "interfaces": {

@@ -121,7 +121,8 @@
         "bullets": [
           "Códigos únicos y temporales",
           "Compartición segura con proveedores",
-          "Historial y control de accesos"
+          "Historial y control de accesos",
+          "Códigos enviados al huésped en su plataforma: apertura desde su app"
         ]
       },
       "interfaces": {
