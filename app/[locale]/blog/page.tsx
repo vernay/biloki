@@ -109,6 +109,7 @@ export default function BlogPage() {
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  unoptimized={article.slug === "ia-location-courte-duree-conciergeries"}
                 />
               </div>
 

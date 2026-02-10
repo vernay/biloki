@@ -54,6 +54,7 @@ export default function IALocationCourteDureePage() {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
+              unoptimized
               priority
             />
           </div>
