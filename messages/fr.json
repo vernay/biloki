@@ -121,7 +121,8 @@
         "bullets": [
           "Codes uniques par séjour",
           "Activation/désactivation automatique",
-          "Contrôle et historique des accès"
+          "Contrôle et historique des accès",
+          "Codes envoyés au locataire sur sa plateforme : ouverture via son app"
         ]
       },
       "interfaces": {

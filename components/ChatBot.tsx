@@ -2,14 +2,10 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useLocale } from 'next-intl';
-import useAgentData, { 
-  getPricingMessage, 
-  getFeaturesMessage, 
-  getIntegrationsMessage,
+import useAgentData, {
   getUserSizeFromCount,
-  type AgentDataResponse 
+  type AgentDataResponse
 } from '@/lib/hooks/useAgentData';
-import { WEBAPP_REGISTER_URL } from '@/lib/config';
 
 // Types
 type UserProfileType = 'owner' | 'concierge' | 'manager' | 'unknown';
@@ -32,18 +28,25 @@ interface UserProfile {
   interests?: string[];
 }
 
-type ConversationStep = 'greeting' | 'qualification' | 'discovery' | 'product' | 'partners' | 'conversion' | 'support';
+interface LeadData {
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
+  role?: string;
+  propertyCount?: number;
+  city?: string;
+  currentTools?: string[];
+  painPoints?: string[];
+  consent?: boolean;
+  humanReason?: string;
+}
 
-// Mots-clés pour détecter la langue
-const languageKeywords: Record<string, string[]> = {
-  en: ['hello', 'hi', 'hey', 'how', 'what', 'where', 'when', 'why', 'can', 'please', 'thank', 'yes', 'no', 'price', 'features', 'demo', 'help', 'owner', 'manager', 'property', 'the', 'and', 'is', 'are', 'have', 'want', 'need', 'my', 'i am', 'i\'m', 'would'],
-  es: ['hola', 'buenos', 'qué', 'cómo', 'dónde', 'cuándo', 'puede', 'gracias', 'sí', 'precio', 'funcionalidades', 'demo', 'ayuda', 'propietario', 'gestor', 'propiedad', 'el', 'la', 'los', 'y', 'o', 'es', 'son', 'tengo', 'quiero', 'mi', 'soy'],
-  pt: ['olá', 'oi', 'bom', 'como', 'onde', 'quando', 'pode', 'obrigado', 'sim', 'não', 'preço', 'funcionalidades', 'demo', 'ajuda', 'proprietário', 'gestor', 'propriedade', 'o', 'a', 'os', 'e', 'ou', 'é', 'são', 'tenho', 'quero', 'meu', 'sou'],
-  fr: ['bonjour', 'salut', 'comment', 'quoi', 'où', 'quand', 'pourquoi', 'pouvez', 'merci', 'oui', 'non', 'prix', 'tarif', 'fonctionnalités', 'démo', 'aide', 'propriétaire', 'gestionnaire', 'conciergerie', 'logement', 'le', 'la', 'les', 'et', 'ou', 'est', 'sont', 'ai', 'veux', 'mon', 'je suis'],
-};
+type ConversationStep = 'greeting' | 'qualification' | 'discovery' | 'product' | 'partners' | 'conversion' | 'support';
 
 export default function ChatBot() {
   const urlLocale = useLocale();
+  const supportedLocales = ['fr', 'en', 'es', 'pt'];
   
   // Récupérer les données de l'agent via l'API (pour la langue du site par défaut)
   const { data: agentData, isLoading: isAgentDataLoading } = useAgentData({ locale: urlLocale });
@@ -60,16 +63,21 @@ export default function ChatBot() {
     type: 'unknown',
     size: 'unknown',
   });
+  const [leadData, setLeadData] = useState<LeadData>({});
   const [conversationStep, setConversationStep] = useState<ConversationStep>('greeting');
   const [isHydrated, setIsHydrated] = useState(false);
   const [hasUnreadMessages, setHasUnreadMessages] = useState(false);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
+  const [awaitingHumanEmail, setAwaitingHumanEmail] = useState(false);
+  const [awaitingHumanReason, setAwaitingHumanReason] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const notificationSoundRef = useRef<HTMLAudioElement | null>(null);
   const chatWindowRef = useRef<HTMLDivElement | null>(null);
   const chatButtonRef = useRef<HTMLButtonElement | null>(null);
+  const hasInitializedRef = useRef(false);
+  const sessionIdRef = useRef<string>('');
 
   // Initialiser le son de notification
   useEffect(() => {
@@ -79,16 +87,26 @@ export default function ChatBot() {
     }
   }, []);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const stored = window.localStorage.getItem('biloki-chat-session');
+    if (stored) {
+      sessionIdRef.current = stored;
+      return;
+    }
+    const newId = window.crypto?.randomUUID ? window.crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
+    sessionIdRef.current = newId;
+    window.localStorage.setItem('biloki-chat-session', newId);
+  }, []);
+
   // Fermer le chatbot quand on clique en dehors
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      
-      // Ne pas fermer si on clique sur le bouton du chatbot ou dans la fenêtre du chatbot
       if (
-        chatWindowRef.current && 
+        chatWindowRef.current &&
         !chatWindowRef.current.contains(target) &&
-        chatButtonRef.current && 
+        chatButtonRef.current &&
         !chatButtonRef.current.contains(target)
       ) {
         setIsOpen(false);
@@ -129,12 +147,18 @@ export default function ChatBot() {
   const currentAgentData = agentDataForLang || agentData;
 
   // Quick replies suggestions
-  const quickReplies = [
-    { label: '💰 Tarifs', message: 'Quels sont vos tarifs ?' },
-    { label: '📋 Fonctionnalités', message: 'Quelles sont les fonctionnalités ?' },
-    { label: '📅 Démo', message: 'Je voudrais réserver une démo' },
-    { label: '❓ Aide', message: 'J\'ai besoin d\'aide' },
-  ];
+  const quickReplies = messages.length <= 2
+    ? [
+        { label: '👋 Parler à un humain', message: 'Parler à un humain' },
+        { label: '🤖 Continuer avec le bot', message: 'Continuer avec le bot' },
+      ]
+    : [
+        { label: '💰 Tarifs', message: 'Quels sont vos tarifs ?' },
+        { label: '📋 Fonctionnalités', message: 'Quelles sont les fonctionnalités ?' },
+        { label: '📅 Démo', message: 'Je voudrais réserver une démo' },
+        { label: '👋 Parler à un humain', message: 'Parler à un humain' },
+        { label: '❓ Aide', message: 'J\'ai besoin d\'aide' },
+      ];
 
   // Format time for messages
   const formatTime = (date: Date): string => {
@@ -150,11 +174,15 @@ export default function ChatBot() {
       localStorage.removeItem('chatbot-messages');
       localStorage.removeItem('chatbot-profile');
       localStorage.removeItem('chatbot-step');
+      localStorage.removeItem('chatbot-lead');
     }
     setMessages([createInitialMessage()]);
     setUserProfile({ type: 'unknown', size: 'unknown' });
+    setLeadData({});
     setConversationStep('greeting');
     setShowQuickReplies(true);
+    setAwaitingHumanEmail(false);
+    setAwaitingHumanReason(false);
   };
 
   // ============================================================================
@@ -206,133 +234,55 @@ export default function ChatBot() {
   // DÉTECTION DE LANGUE
   // ============================================================================
 
-  const detectLanguage = useCallback((message: string): string => {
-    const lowerMessage = message.toLowerCase();
+  const getPreferredLocale = useCallback((): string => {
+    if (typeof navigator === 'undefined') return urlLocale;
+    const browserLang = navigator.language?.split('-')[0]?.toLowerCase();
+    if (browserLang && supportedLocales.includes(browserLang)) {
+      return browserLang;
+    }
+    return urlLocale;
+  }, [urlLocale, supportedLocales]);
+
+  const detectLanguageFromText = useCallback((text: string): string => {
+    const normalized = text.toLowerCase();
     const scores: Record<string, number> = { fr: 0, en: 0, es: 0, pt: 0 };
-    
-    // Utiliser des regex avec des limites de mots pour une meilleure précision
-    for (const [lang, keywords] of Object.entries(languageKeywords)) {
-      for (const keyword of keywords) {
-        // Créer une regex avec des limites de mots (\b)
-        const regex = new RegExp(`\\b${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-        if (regex.test(lowerMessage)) {
-          scores[lang]++;
-        }
-      }
-    }
-    
-    const maxScore = Math.max(...Object.values(scores));
-    
-    // Si aucun score, utiliser la locale de l'URL comme fallback
-    if (maxScore === 0) return urlLocale;
-    
-    return Object.entries(scores).find(([, score]) => score === maxScore)?.[0] || urlLocale;
-  }, [urlLocale]);
 
-  // ============================================================================
-  // DÉTECTION DE TOPICS INTELLIGENTE (scoring par pertinence)
-  // ============================================================================
-
-  const detectTopics = useCallback((message: string): string[] => {
-    if (!currentAgentData?.topics) return [];
-    
-    const lowerMessage = message.toLowerCase();
-    const normalizedMessage = lowerMessage
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '') // Enlever les accents
-      .replace(/[^a-z0-9\s]/g, ' '); // Garder que lettres et chiffres
-    
-    // Score pour chaque topic détecté
-    const topicScores: { topic: string; score: number; matchedKeywords: string[] }[] = [];
-    
-    for (const [topic, keywords] of Object.entries(currentAgentData.topics)) {
-      let score = 0;
-      const matchedKeywords: string[] = [];
-      
-      for (const kw of keywords) {
-        const normalizedKw = kw.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        
-        // Match exact (mot complet) = score plus élevé
-        const wordBoundaryRegex = new RegExp(`\\b${normalizedKw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-        if (wordBoundaryRegex.test(normalizedMessage) || wordBoundaryRegex.test(lowerMessage)) {
-          // Bonus pour les mots-clés plus longs (plus spécifiques)
-          score += 10 + (normalizedKw.length > 5 ? 5 : 0);
-          matchedKeywords.push(kw);
-        } 
-        // Match partiel = score plus bas
-        else if (lowerMessage.includes(kw.toLowerCase())) {
-          score += 3;
-          matchedKeywords.push(kw);
-        }
-      }
-      
-      if (score > 0) {
-        topicScores.push({ topic, score, matchedKeywords });
-      }
-    }
-    
-    // Trier par score décroissant et retourner les topics
-    return topicScores
-      .sort((a, b) => b.score - a.score)
-      .map(t => t.topic);
-  }, [currentAgentData]);
-
-  // ============================================================================
-  // HELPERS POUR LES MESSAGES DYNAMIQUES (utilise les données de l'API)
-  // ============================================================================
-  const getPricingText = useCallback((): string => {
-    if (!currentAgentData) return '';
-    return getPricingMessage(currentAgentData, currentAgentData.translations.chatbot as Record<string, unknown>);
-  }, [currentAgentData]);
-
-  const getFeaturesText = useCallback((): string => {
-    if (!currentAgentData) return '';
-    return getFeaturesMessage(currentAgentData, currentAgentData.translations.chatbot as Record<string, unknown>);
-  }, [currentAgentData]);
-
-  const getIntegrationsText = useCallback((): string => {
-    if (!currentAgentData) return '';
-    return getIntegrationsMessage(currentAgentData, currentAgentData.translations.chatbot as Record<string, unknown>);
-  }, [currentAgentData]);
-
-  // ============================================================================
-  // CTA DYNAMIQUES SELON LE PROFIL (utilise les données de l'API)
-  // ============================================================================
-
-  const getDynamicCTA = useCallback((lang: string): { primary: { label: string; url: string }; secondary: { label: string; url: string } } => {
-    if (!currentAgentData?.ctas) {
-      return {
-        primary: { label: 'Réserver une démo', url: `/${lang}/reserver-demo` },
-        secondary: { label: 'Essai gratuit', url: `${WEBAPP_REGISTER_URL}?lang=${lang}` },
-      };
-    }
-    
-    const size = userProfile.size || 'unknown';
-    const ctas = currentAgentData?.ctas[size] || currentAgentData?.ctas['unknown'];
-    
-    const t = (key: string): string => {
-      if (!currentAgentData?.translations?.chatbot) return key;
-      const keys = key.split('.');
-      let value: unknown = currentAgentData.translations.chatbot;
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = (value as Record<string, unknown>)[k];
-        } else return key;
-      }
-      return typeof value === 'string' ? value : key;
+    const bump = (lang: string, count: number) => {
+      scores[lang] += count;
     };
-    
-    return {
-      primary: {
-        label: t(`actions.${ctas.primary.label}`),
-        url: `/${lang}${ctas.primary.url}`,
-      },
-      secondary: {
-        label: t(`actions.${ctas.secondary.label}`),
-        url: `/${lang}${ctas.secondary.url}`,
-      },
-    };
-  }, [userProfile.size, currentAgentData]);
+
+    const words = {
+      fr: ['bonjour', 'merci', 'prix', 'tarif', 'démo', 'fonctionnalité', 'contact', 'essai', 'aide'],
+      en: ['hello', 'thanks', 'price', 'pricing', 'demo', 'features', 'contact', 'trial', 'help'],
+      es: ['hola', 'gracias', 'precio', 'precios', 'demo', 'funcionalidades', 'contacto', 'ayuda', 'prueba'],
+      pt: ['ola', 'olá', 'obrigado', 'preço', 'precos', 'preços', 'demo', 'funcionalidades', 'contato', 'ajuda', 'teste'],
+    } as const;
+
+    (Object.keys(words) as Array<keyof typeof words>).forEach((lang) => {
+      words[lang].forEach((kw) => {
+        if (normalized.includes(kw)) bump(lang, 2);
+      });
+    });
+
+    if (/[¿¡]/.test(text) || /\b(el|la|los|las|una|unas|unos|para|por)\b/.test(normalized)) bump('es', 1);
+    if (/\b(the|and|with|please|how|what|price)\b/.test(normalized)) bump('en', 1);
+    if (/\b(para|com|você|voce|obrigado|preço|precos|preços)\b/.test(normalized)) bump('pt', 1);
+    if (/\b(le|la|les|des|pour|merci|prix|tarif)\b/.test(normalized)) bump('fr', 1);
+
+    const best = (Object.entries(scores) as Array<[string, number]>).sort((a, b) => b[1] - a[1])[0];
+    if (best && best[1] > 0) return best[0];
+    return getPreferredLocale();
+  }, [getPreferredLocale]);
+
+  const detectLanguage = useCallback((text?: string): { lang: string; confident: boolean } => {
+    if (text && text.trim().length > 2) {
+      const lang = detectLanguageFromText(text);
+      return { lang, confident: true };
+    }
+    const preferred = getPreferredLocale();
+    return { lang: preferred, confident: true };
+  }, [getPreferredLocale, detectLanguageFromText]);
+
 
   // ============================================================================
   // MESSAGE INITIAL (utilise les données de l'API)
@@ -359,512 +309,91 @@ export default function ChatBot() {
     };
   }, [currentAgentData]);
 
-  // ============================================================================
-  // GÉNÉRATION DE RÉPONSE (ARCHITECTURE MULTI-RÔLES)
-  // ============================================================================
-
-  const generateBotResponse = useCallback((userMessage: string, lang: string, agentData?: AgentDataResponse | null): { 
-    text: string; 
-    actions?: Array<{ label: string; url: string; type?: 'primary' | 'secondary' }> 
-  } => {
-    // Utiliser les données passées en paramètre, sinon fallback sur currentAgentData
-    const data = agentData || currentAgentData;
-    
-    const lowerMessage = userMessage.toLowerCase();
-    // Topics triés par pertinence (le premier est le plus probable)
-    const topics = detectTopics(userMessage);
-    const primaryTopic = topics[0]; // Le topic le plus pertinent
-    
-    // Helper de traduction local (utilise les données de l'API)
-    const t = (key: string, params?: Record<string, string | number>): string => {
-      if (!data?.translations?.chatbot) return key;
-      const keys = key.split('.');
-      let value: unknown = data.translations.chatbot;
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = (value as Record<string, unknown>)[k];
-        } else return key;
-      }
-      if (typeof value === 'string' && params) {
-        return Object.entries(params).reduce(
-          (str, [pk, pv]) => str.replace(new RegExp(`\\{${pk}\\}`, 'g'), String(pv)), value
-        );
-      }
-      return typeof value === 'string' ? value : key;
-    };
-    
-    const tRaw = (key: string): unknown => {
-      if (!data?.translations?.chatbot) return undefined;
-      const keys = key.split('.');
-      let value: unknown = data.translations.chatbot;
-      for (const k of keys) {
-        if (value && typeof value === 'object' && k in value) {
-          value = (value as Record<string, unknown>)[k];
-        } else return undefined;
-      }
-      return value;
-    };
-    
-    const trialDays = data?.pricing?.trialDays || 30;
-    const trialCta = t('trialCta', { days: trialDays });
-    const trialCtaRocket = t('trialCtaRocket', { days: trialDays });
-
-    // =========================================================================
-    // RÔLE 1: ACCUEIL / QUALIFICATION
-    // =========================================================================
-    
-    if (conversationStep === 'greeting' || conversationStep === 'qualification') {
-      // Détecter le type d'utilisateur
-      const ownerKeywords = tRaw('profileDetection.keywords.owner') as string[] | undefined;
-      const conciergeKeywords = tRaw('profileDetection.keywords.concierge') as string[] | undefined;
-      const managerKeywords = tRaw('profileDetection.keywords.manager') as string[] | undefined;
-      
-      let detectedType: UserProfileType | null = null;
-      if (ownerKeywords?.some(kw => lowerMessage.includes(kw.toLowerCase()))) detectedType = 'owner';
-      else if (conciergeKeywords?.some(kw => lowerMessage.includes(kw.toLowerCase()))) detectedType = 'concierge';
-      else if (managerKeywords?.some(kw => lowerMessage.includes(kw.toLowerCase()))) detectedType = 'manager';
-      
-      if (detectedType) {
-        setUserProfile(prev => ({ ...prev, type: detectedType! }));
-        setConversationStep('discovery');
-        return { 
-          text: t(`profileDetection.responses.${detectedType}`, { integrations: data?.integrations?.count || 120 })
-        };
-      }
-      
-      // Si un topic est détecté, on passe directement au sujet
-      if (topics.length > 0) {
-        setConversationStep('product');
-        // Continue avec le traitement des topics ci-dessous
-      } else {
-        // Réponse par défaut pour qualification
-        return { text: t('initialGreeting') };
-      }
-    }
-
-    // =========================================================================
-    // RÔLE 2: DISCOVERY (nombre de logements)
-    // =========================================================================
-    
-    if (conversationStep === 'discovery') {
-      const numberMatch = lowerMessage.match(/\d+/);
-      if (numberMatch) {
-        const count = parseInt(numberMatch[0]);
-        const size = data?.sizeThresholds 
-          ? getUserSizeFromCount(count, data.sizeThresholds) as UserSize
-          : 'unknown';
-        
-        setUserProfile(prev => ({ ...prev, propertyCount: count, size }));
-        setConversationStep('product');
-        
-        let responseText = '';
-        if (count >= 5) {
-          responseText = t('logementResponses.manyProperties', { count });
-        } else if (count >= 2) {
-          responseText = t('logementResponses.someProperties', { count, plural: 's' });
-        } else {
-          responseText = t('logementResponses.fewProperties', { count });
-        }
-        
-        responseText += t('logementResponses.askForDemo');
-        
-        // CTA dynamiques selon la taille
-        const dynamicCtas = getDynamicCTA(lang);
-        
-        return {
-          text: responseText,
-          actions: [
-            { label: dynamicCtas.primary.label, url: dynamicCtas.primary.url, type: 'primary' },
-            { label: dynamicCtas.secondary.label, url: dynamicCtas.secondary.url, type: 'secondary' }
-          ]
-        };
-      }
-      
-      // Si un topic est détecté pendant discovery, on répond au topic
-      if (topics.length > 0) {
-        setConversationStep('product');
-        // Continue avec le traitement des topics ci-dessous
-      } else {
-        return { text: t('logementResponses.askNumber') };
-      }
-    }
-
-    // =========================================================================
-    // RÔLE 3: EXPERT PRODUIT - Réponses basées sur le topic principal
-    // =========================================================================
-    
-    // Fonction helper pour générer une réponse avec CTA
-    const createResponse = (
-      text: string, 
-      actions?: Array<{ label: string; url: string; type?: 'primary' | 'secondary' }>
-    ) => {
-      return { text, actions: actions || [] };
+  const createHumanChoiceMessage = useCallback((): Message => {
+    const copy = {
+      fr: "Souhaitez-vous discuter avec un humain ou continuer avec le bot ?",
+      en: 'Would you like to talk to a human or continue with the bot?',
+      es: '¿Quieres hablar con un humano o continuar con el bot?',
+      pt: 'Você quer falar com um humano ou continuar com o bot?',
     };
 
-    // Traiter le topic principal (le plus pertinent)
-    switch (primaryTopic) {
-      case 'whatIsBiloki': {
-        const whatIsBilokiText = `${t('whatIsBiloki.title')}\n\n` +
-          `${t('whatIsBiloki.intro')}\n\n` +
-          `${t('whatIsBiloki.description')}\n\n` +
-          `${t('whatIsBiloki.benefit1')}\n` +
-          `${t('whatIsBiloki.benefit2')}\n` +
-          `${t('whatIsBiloki.benefit3')}\n` +
-          `${t('whatIsBiloki.benefit4')}\n` +
-          `${t('whatIsBiloki.benefit5')}\n` +
-          `${t('whatIsBiloki.benefit6')}\n\n` +
-          `${t('whatIsBiloki.callToAction')}`;
-        
-        return createResponse(whatIsBilokiText, [
-          { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
-      
-      case 'pricing': {
-        setConversationStep('conversion');
-        return createResponse(getPricingText(), [
-          { label: t('actions.seeDetailedPricing'), url: `/${lang}/tarifs`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
 
-      case 'features': {
-        return createResponse(getFeaturesText(), [
-          { label: t('actions.discoverFeatures'), url: `/${lang}/fonctionnalites/vue-ensemble`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
+    return {
+      id: 'choice-1',
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
+    };
+  }, [detectedLang, urlLocale]);
 
-      case 'channelManager': {
-        return createResponse(getIntegrationsText(), [
-          { label: 'Channel Manager', url: `/${lang}/fonctionnalites/channel-manager`, type: 'primary' },
-          { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-        ]);
-      }
+  const createHumanReasonPrompt = useCallback((): Message => {
+    const copy = {
+      fr: "Quel est le sujet de votre demande ? (optionnel)",
+      en: 'What is your request about? (optional)',
+      es: '¿Sobre qué trata tu solicitud? (opcional)',
+      pt: 'Sobre o que é sua solicitação? (opcional)',
+    };
 
-      case 'pms': {
-        const pmsInfo = data?.features?.pms;
-        if (pmsInfo) {
-          return createResponse(
-            `${pmsInfo.description}\n\n✅ ${pmsInfo.benefits.join('\n✅ ')}`,
-            [
-              { label: 'PMS', url: `/${lang}${pmsInfo.url}`, type: 'primary' },
-              { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-            ]
-          );
-        }
-        break;
-      }
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
 
-      case 'messaging': {
-        const msgInfo = data?.features?.messaging;
-        if (msgInfo) {
-          return createResponse(
-            `${msgInfo.description}\n\n✅ ${msgInfo.benefits.join('\n✅ ')}`,
-            [
-              { label: 'Messagerie', url: `/${lang}/fonctionnalites/messagerie`, type: 'primary' },
-              { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-            ]
-          );
-        }
-        break;
-      }
+    return {
+      id: `human-reason-${Date.now()}`,
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
+    };
+  }, [detectedLang, urlLocale]);
 
-      case 'providers': {
-        const provInfo = data?.features?.providers;
-        if (provInfo) {
-          return createResponse(
-            `${provInfo.description}\n\n✅ ${provInfo.benefits.join('\n✅ ')}`,
-            [
-              { label: t('contextual.providersLabel') || 'Gestion Prestataires', url: `/${lang}/fonctionnalites/prestataires`, type: 'primary' },
-              { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-            ]
-          );
-        }
-        break;
-      }
+  const createHumanEmailPrompt = useCallback((): Message => {
+    const copy = {
+      fr: "Pour discuter avec un humain, laissez votre numéro. En l'envoyant, vous acceptez d’être recontacté.",
+      en: 'To talk to a human, leave your phone number. By sending it, you agree to be contacted.',
+      es: 'Para hablar con un humano, deja tu número de teléfono. Al enviarlo, aceptas ser contactado.',
+      pt: 'Para falar com um humano, deixe seu número de telefone. Ao enviá-lo, você aceita ser contactado.',
+    };
 
-      case 'reporting': {
-        const repInfo = data?.features?.reporting;
-        if (repInfo) {
-          return createResponse(
-            `${repInfo.description}\n\n✅ ${repInfo.benefits.join('\n✅ ')}`,
-            [
-              { label: 'Reporting', url: `/${lang}/fonctionnalites/reporting`, type: 'primary' },
-              { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-            ]
-          );
-        }
-        break;
-      }
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
 
-      case 'smartLocks': {
-        const locksInfo = data?.features?.smartLocks;
-        if (locksInfo) {
-          return createResponse(
-            `${locksInfo.description}\n\n🔐 ${t('contextual.partners') || 'Partenaires'}: ${locksInfo.partners?.join(', ')}\n\n✅ ${locksInfo.benefits.join('\n✅ ')}`,
-            [
-              { label: t('contextual.smartLocksLabel') || 'Serrures connectées', url: `/${lang}/fonctionnalites/serrures-connectees`, type: 'primary' },
-              { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-            ]
-          );
-        }
-        break;
-      }
+    return {
+      id: `human-${Date.now()}`,
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
+    };
+  }, [detectedLang, urlLocale]);
 
-      case 'integration': {
-        return createResponse(getIntegrationsText(), [
-          { label: t('contextual.apiConnectionsLabel') || 'Connexions API', url: `/${lang}/connexions-api`, type: 'primary' },
-          { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-        ]);
-      }
+  const createHumanConfirmMessage = useCallback((): Message => {
+    const copy = {
+      fr: 'Merci, un membre de l’équipe vous recontactera rapidement.',
+      en: 'Thanks! A team member will get back to you shortly.',
+      es: 'Gracias. Un miembro del equipo te contactará pronto.',
+      pt: 'Obrigado! Um membro da equipe entrará em contato em breve.',
+    };
 
-      case 'ai': {
-        return createResponse(t('contextual.aiResponse'), [
-          { label: 'IA & Automatisation', url: `/${lang}/fonctionnalites/ia-automatisation`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
 
-      case 'demo': {
-        setConversationStep('conversion');
-        return createResponse(t('actions.twoOptions'), [
-          { label: t('actions.personalDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: trialCta, url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
+    return {
+      id: `human-confirm-${Date.now()}`,
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
+      actions: [
+        {
+          label: detectedLang === 'en'
+            ? 'Book a demo'
+            : detectedLang === 'es'
+              ? 'Reservar una demo'
+              : detectedLang === 'pt'
+                ? 'Agendar demo'
+                : 'Réserver une démo',
+          url: `/${detectedLang}/reserver-demo`,
+          type: 'primary',
+        },
+      ],
+    };
+  }, [detectedLang, urlLocale]);
 
-      case 'migration': {
-        return createResponse(t('contextual.migrationResponse'), [
-          { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
-
-      case 'contact': {
-        const company = data?.company;
-        if (company) {
-          const contactText = `📞 **${t('contextual.contactUs') || 'Contactez-nous'} :**\n\n` +
-            `📧 Email : ${company.email}\n` +
-            `📱 ${t('contextual.phone') || 'Téléphone'} : ${company.phoneFormatted}\n` +
-            `🕐 ${t('contextual.hours') || 'Horaires'} : ${company.support?.hours || 'Du lundi au vendredi, 9h-18h'}\n` +
-            `⏱️ ${t('contextual.responseTime') || 'Délai de réponse'} : ${company.support?.responseTime || 'Sous 24h'}\n\n` +
-            `${t('contextual.contactFormInfo') || 'Vous pouvez aussi nous contacter via le formulaire de notre page contact !'}`;
-          
-          return createResponse(contactText, [
-            { label: t('actions.contactPage') || 'Page Contact', url: `/${lang}/contact`, type: 'primary' },
-            { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'referral': {
-        const referral = data?.referralProgram;
-        if (referral) {
-          const referralText = `${t('referral.title')}\n\n` +
-            `${t('referral.intro')}\n\n` +
-            `✅ ${referral.forReferrer.reward}\n` +
-            `✅ ${referral.forReferrer.priorityAccess}\n\n` +
-            `**${t('referral.howItWorks')}**\n` +
-            `1. ${t('referral.step1')}\n` +
-            `2. ${t('referral.step2')}\n` +
-            `3. ${t('referral.step3')}`;
-          
-          return createResponse(referralText, [
-            { label: t('referral.details'), url: `/${lang}/programme-parrainage`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'faq': {
-        const faq = data?.faq;
-        if (faq) {
-          const faqText = `❓ **${t('contextual.faqTitle') || 'Questions fréquentes'} :**\n\n` +
-            faq.general.slice(0, 4).map((item: { q: string; a: string }) => `**${item.q}**\n→ ${item.a}`).join('\n\n') +
-            `\n\n${t('contextual.faqMore') || 'Vous avez une question spécifique ? N\'hésitez pas à me la poser !'}`;
-          
-          return createResponse(faqText, [
-            { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'team': {
-        const company = data?.company;
-        if (company) {
-          const teamText = `${t('about.title')}\n\n` +
-            `${company.legalName || 'SAS Biloki'}\n` +
-            `📍 ${company.address}\n` +
-            `👤 ${t('about.president')} : ${company.legal?.president || 'Vernay Sébastien'}\n\n` +
-            `${t('about.mission')}`;
-          
-          return createResponse(teamText, [
-            { label: t('about.ourTeam'), url: `/${lang}/equipe`, type: 'primary' },
-            { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'legal': {
-        const company = data?.company;
-        if (company?.legal) {
-          const legalText = `${t('legal.title')}\n\n` +
-            `**${company.legalName}**\n` +
-            `📍 ${company.address}\n` +
-            `🏛️ RCS : ${company.legal.rcs}\n` +
-            `💶 Capital : ${company.legal.capital}\n` +
-            `🔢 TVA : ${company.legal.tva}\n\n` +
-            `${t('legal.moreDetails')}`;
-          
-          return createResponse(legalText, [
-            { label: t('legal.legalNotice'), url: `/${lang}/mentions-legales`, type: 'secondary' },
-            { label: t('legal.termsOfService'), url: `/${lang}/cgv`, type: 'secondary' },
-            { label: t('actions.contactPage') || 'Contact', url: `/${lang}/contact`, type: 'primary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'blog': {
-        const articles = data?.blogArticles;
-        if (articles) {
-          const blogText = `📚 **${t('contextual.blogTitle') || 'Nos guides et articles'}**\n\n` +
-            Object.values(articles).map((article: { title: string; summary: string }) => 
-              `📖 **${article.title}**\n${article.summary.slice(0, 100)}...`
-            ).join('\n\n');
-          
-          return createResponse(blogText, [
-            { label: `📚 ${t('contextual.viewBlog') || 'Voir le blog'}`, url: `/${lang}/blog`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'modules': {
-        const modules = data?.optionalModules;
-        if (modules) {
-          const modulesText = `🧩 **${t('contextual.optionalModules') || 'Modules optionnels'}**\n\n` +
-            Object.values(modules).map((mod: { name: string; price: string; features: string[] }) => 
-              `**${mod.name}** (${mod.price})\n` +
-              mod.features.map((f: string) => `  ✅ ${f}`).join('\n')
-            ).join('\n\n');
-          
-          return createResponse(modulesText, [
-            { label: t('actions.seePricing'), url: `/${lang}/tarifs`, type: 'primary' },
-            { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'included': {
-        const included = data?.includedFeatures;
-        if (included) {
-          const includedText = `✅ **${t('contextual.includedTitle') || 'Tout ce qui est inclus dans votre forfait'} :**\n\n` +
-            included.map((f: string) => `• ${f}`).join('\n') +
-            `\n\n${t('contextual.andMore') || 'Et bien plus encore !'} 🚀`;
-          
-          return createResponse(includedText, [
-            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'primary' },
-            { label: t('actions.seePricing'), url: `/${lang}/tarifs`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'benefits': {
-        const metrics = data?.benefitsMetrics;
-        if (metrics) {
-          const benefitsText = `💪 **${t('contextual.benefitsTitle') || 'Les bénéfices concrets de Biloki'}**\n\n` +
-            `⏱️ ${t('contextual.timeSaved') || 'Gain de temps'} : **${metrics.timeSaved}**\n` +
-            `📉 ${t('contextual.adminReduction') || 'Réduction admin'} : **${metrics.adminReduction}**\n` +
-            `🚀 Migration : **${metrics.migrationTime}**\n` +
-            `💬 Support : **${metrics.supportResponse}**\n` +
-            `🔒 ${t('contextual.doubleBookings') || 'Double réservation'} : **${metrics.doubleBookings}**\n` +
-            `🌐 ${t('contextual.connectedPlatforms') || 'Plateformes connectées'} : **${metrics.platforms}**`;
-          
-          return createResponse(benefitsText, [
-            { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' },
-            { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-          ]);
-        }
-        break;
-      }
-
-      case 'support': {
-        return createResponse(t('contextual.supportResponse'), [
-          { label: t('actions.contactPage') || 'Contact', url: `/${lang}/contact`, type: 'primary' },
-          { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'secondary' }
-        ]);
-      }
-
-      case 'comparison': {
-        // Comparaison avec les concurrents - réponse générique
-        const comparisonText = `📊 **${t('contextual.comparisonTitle') || 'Biloki vs autres solutions'}**\n\n` +
-          `${t('contextual.comparisonText') || 'Biloki se distingue par sa simplicité, son prix compétitif et son support réactif. Nous proposons toutes les fonctionnalités essentielles pour gérer vos locations.'}\n\n` +
-          `${t('contextual.comparisonCta') || 'Envie d\'en savoir plus sur ce qui nous différencie ?'}`;
-        
-        return createResponse(comparisonText, [
-          { label: t('actions.bookDemo'), url: `/${lang}/reserver-demo`, type: 'primary' },
-          { label: t('actions.tryFree'), url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'secondary' }
-        ]);
-      }
-    }
-
-    // =========================================================================
-    // RÉPONSES CONTEXTUELLES (salutations, remerciements, etc.)
-    // =========================================================================
-
-    // Salutations
-    const greetingKeywords = ['bonjour', 'salut', 'hello', 'hi', 'hey', 'bonsoir', 'coucou', 'hola', 'olá', 'ola'];
-    if (greetingKeywords.some(kw => lowerMessage === kw || lowerMessage.startsWith(kw + ' '))) {
-      return createResponse(t('initialGreeting'));
-    }
-
-    // Remerciements
-    const thanksKeywordsStr = t('contextual.thanksKeywords');
-    const thanksKeywords = thanksKeywordsStr !== 'contextual.thanksKeywords' ? thanksKeywordsStr.split('|') : ['merci', 'thanks', 'gracias', 'obrigado'];
-    if (thanksKeywords.some(kw => lowerMessage.includes(kw))) {
-      return createResponse(t('contextual.thanksResponse'));
-    }
-
-    // Accords / Confirmations
-    const agreeKeywordsStr = t('demoStep.agree');
-    const agreeKeywords = agreeKeywordsStr !== 'demoStep.agree' ? agreeKeywordsStr.split('|') : ['oui', 'yes', 'ok', 'd\'accord', 'parfait'];
-    if (agreeKeywords.some(kw => lowerMessage.includes(kw))) {
-      return createResponse(t('demoStep.agreeResponse'), [
-        { label: t('actions.bookDemoShort'), url: `/${lang}/reserver-demo`, type: 'primary' }
-      ]);
-    }
-
-    // Plus tard / Réfléchir
-    const laterKeywordsStr = t('demoStep.later');
-    const laterKeywords = laterKeywordsStr !== 'demoStep.later' ? laterKeywordsStr.split('|') : ['plus tard', 'later', 'réfléchir', 'pas maintenant'];
-    if (laterKeywords.some(kw => lowerMessage.includes(kw))) {
-      return createResponse(t('demoStep.laterResponse'), [
-        { label: trialCtaRocket, url: `${WEBAPP_REGISTER_URL}?lang=${lang}`, type: 'primary' },
-        { label: t('actions.seePricing'), url: `/${lang}/tarifs`, type: 'secondary' }
-      ]);
-    }
-
-    // =========================================================================
-    // RÉPONSE PAR DÉFAUT - Ne pas inventer, guider l'utilisateur
-    // =========================================================================
-    
-    const dynamicCtas = getDynamicCTA(lang);
-    return createResponse(t('contextual.defaultResponse'), [
-      { label: dynamicCtas.primary.label, url: dynamicCtas.primary.url, type: 'primary' },
-      { label: dynamicCtas.secondary.label, url: dynamicCtas.secondary.url, type: 'secondary' }
-    ]);
-  }, [conversationStep, detectTopics, getDynamicCTA, getPricingText, getFeaturesText, getIntegrationsText, currentAgentData]);
 
   // ============================================================================
   // SCROLL ET EFFECTS
@@ -874,63 +403,18 @@ export default function ChatBot() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Charger depuis localStorage et initialiser avec les données de l'API
+  // Initialiser la conversation à chaque chargement (sans persistance)
   useEffect(() => {
-    if (typeof window !== 'undefined' && agentData) {
-      try {
-        const savedLang = localStorage.getItem('chatbot-detected-lang');
-        
-        if (savedLang) {
-          setDetectedLang(savedLang);
-        }
-
-        const savedMessages = localStorage.getItem('chatbot-messages');
-        if (savedMessages) {
-          const parsed = JSON.parse(savedMessages);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setMessages(parsed);
-          } else {
-            setMessages([createInitialMessage()]);
-          }
-        } else {
-          setMessages([createInitialMessage()]);
-        }
-
-        const savedProfile = localStorage.getItem('chatbot-profile');
-        if (savedProfile) {
-          const parsedProfile = JSON.parse(savedProfile);
-          if (parsedProfile && typeof parsedProfile === 'object') {
-            setUserProfile(parsedProfile);
-          }
-        }
-
-        const savedStep = localStorage.getItem('chatbot-step');
-        if (savedStep) {
-          setConversationStep(savedStep as ConversationStep);
-        }
-      } catch (error) {
-        // Si localStorage est corrompu, on nettoie tout
-        console.warn('ChatBot: localStorage corrompu, réinitialisation...');
-        localStorage.removeItem('chatbot-messages');
-        localStorage.removeItem('chatbot-profile');
-        localStorage.removeItem('chatbot-step');
-        localStorage.removeItem('chatbot-detected-lang');
-        setMessages([createInitialMessage()]);
-      }
-
+    if (typeof window !== 'undefined' && agentData && !hasInitializedRef.current) {
+      hasInitializedRef.current = true;
+      setDetectedLang(getPreferredLocale());
+      setMessages([createInitialMessage(), createHumanChoiceMessage()]);
+      setUserProfile({ type: 'unknown', size: 'unknown' });
+      setLeadData({});
+      setConversationStep('greeting');
       setIsHydrated(true);
     }
-  }, [urlLocale, currentAgentData, createInitialMessage]);
-
-  // Sauvegarder dans localStorage
-  useEffect(() => {
-    if (isHydrated && typeof window !== 'undefined') {
-      localStorage.setItem('chatbot-messages', JSON.stringify(messages));
-      localStorage.setItem('chatbot-profile', JSON.stringify(userProfile));
-      localStorage.setItem('chatbot-step', conversationStep);
-      localStorage.setItem('chatbot-detected-lang', detectedLang);
-    }
-  }, [messages, userProfile, conversationStep, isHydrated, detectedLang]);
+  }, [agentData, createInitialMessage, createHumanChoiceMessage, getPreferredLocale]);
 
   useEffect(() => {
     scrollToBottom();
@@ -975,8 +459,9 @@ export default function ChatBot() {
     const messageToSend = customMessage || inputValue;
     if (!messageToSend.trim()) return;
 
-    const newLang = detectLanguage(messageToSend);
-    if (newLang !== detectedLang) {
+    const languageDetection = detectLanguage(messageToSend);
+    const newLang = languageDetection.lang;
+    if (languageDetection.confident && newLang !== detectedLang) {
       setDetectedLang(newLang);
     }
 
@@ -992,6 +477,47 @@ export default function ChatBot() {
     setIsLoading(true);
     setShowQuickReplies(false);
 
+    const phoneMatch = messageToSend.trim().match(/^\+?[0-9][0-9\s().-]{6,}$/);
+    const normalizedMessage = messageToSend.trim().toLowerCase();
+    const wantsHuman =
+      normalizedMessage.includes('parler à un humain') ||
+      normalizedMessage.includes('parler a un humain') ||
+      normalizedMessage.includes('talk to a human') ||
+      normalizedMessage.includes('human') ||
+      normalizedMessage.includes('agent');
+
+    if (awaitingHumanReason) {
+      if (messageToSend.trim()) {
+        setLeadData((prev) => ({ ...prev, humanReason: messageToSend.trim() }));
+      }
+      setAwaitingHumanReason(false);
+      setAwaitingHumanEmail(true);
+      setMessages((prev) => [...prev, createHumanEmailPrompt()]);
+      setIsLoading(false);
+      return;
+    }
+
+    if (awaitingHumanEmail) {
+      if (phoneMatch) {
+        setLeadData((prev) => ({ ...prev, phone: messageToSend.trim(), consent: true }));
+        setAwaitingHumanEmail(false);
+        const confirm = createHumanConfirmMessage();
+        setMessages((prev) => [...prev, confirm]);
+      } else {
+        const prompt = createHumanEmailPrompt();
+        setMessages((prev) => [...prev, prompt]);
+      }
+      setIsLoading(false);
+      return;
+    }
+
+    if (wantsHuman) {
+      setAwaitingHumanReason(true);
+      setMessages((prev) => [...prev, createHumanReasonPrompt()]);
+      setIsLoading(false);
+      return;
+    }
+
     // Charger les données pour la langue détectée si nécessaire
     let dataForResponse = currentAgentData;
     if (newLang !== urlLocale) {
@@ -1005,36 +531,127 @@ export default function ChatBot() {
       }
     }
 
-    setTimeout(() => {
-      const response = generateBotResponse(messageToSend, newLang, dataForResponse);
+    const history = [...messages, userMessage]
+      .map((m) => ({ role: m.sender === 'user' ? 'user' : 'assistant', content: m.text }))
+      .slice(-8);
+
+    try {
+      const aiResponse = await fetch('/api/agent/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: messageToSend,
+          locale: newLang,
+          history,
+          lead: leadData,
+          sessionId: sessionIdRef.current || undefined,
+        }),
+      });
+
+      const aiData = await aiResponse.json();
+
+      if (!aiResponse.ok) {
+        const botResponse: Message = {
+          id: (Date.now() + 1).toString(),
+          text: aiData?.details
+            ? `Erreur API: ${aiData.details}`
+            : aiData?.error
+              ? `Erreur API: ${aiData.error}`
+              : 'Erreur API: réponse invalide',
+          sender: 'bot',
+          timestamp: new Date(),
+          actions: [
+            { label: 'Réserver une démo', url: `/${newLang}/reserver-demo`, type: 'primary' },
+            { label: 'Voir les tarifs', url: `/${newLang}/tarifs`, type: 'secondary' }
+          ],
+        };
+        setMessages((prev) => [...prev, botResponse]);
+        return;
+      }
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: response.text,
+        text: aiData.reply || 'Je ne sais pas encore. Souhaitez-vous une démo ?',
         sender: 'bot',
         timestamp: new Date(),
-        actions: response.actions
+        actions: Array.isArray(aiData.actions) ? aiData.actions : undefined,
       };
-      setMessages(prev => [...prev, botResponse]);
+
+      if (aiData.lead && typeof aiData.lead === 'object') {
+        setLeadData((prev) => ({ ...prev, ...aiData.lead }));
+
+        if (aiData.lead.propertyCount && dataForResponse?.sizeThresholds) {
+          const size = getUserSizeFromCount(aiData.lead.propertyCount, dataForResponse.sizeThresholds) as UserSize;
+          setUserProfile((prev) => ({
+            ...prev,
+            propertyCount: aiData.lead.propertyCount,
+            size,
+          }));
+          setConversationStep('product');
+        }
+      }
+
+      setMessages((prev) => [...prev, botResponse]);
+    } catch (error) {
+      const botResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Je rencontre un problème technique. Pouvez-vous réessayer dans quelques secondes ou réserver une démo ?',
+        sender: 'bot',
+        timestamp: new Date(),
+        actions: [
+          { label: 'Réserver une démo', url: `/${newLang}/reserver-demo`, type: 'primary' },
+          { label: 'Voir les tarifs', url: `/${newLang}/tarifs`, type: 'secondary' }
+        ],
+      };
+      setMessages((prev) => [...prev, botResponse]);
+    } finally {
       setIsLoading(false);
-      
+
       // Notification si le chat est fermé
       if (!isOpen) {
         setHasUnreadMessages(true);
-        // Son de notification (optionnel)
         try {
           notificationSoundRef.current?.play();
         } catch (e) {
           // Ignore si le son ne peut pas être joué
         }
       }
-    }, 500);
+    }
   };
 
   const handleQuickReply = (message: string) => {
+    if (message === 'Parler à un humain') {
+      setAwaitingHumanEmail(true);
+      setAwaitingHumanReason(true);
+      setMessages((prev) => [...prev, createHumanReasonPrompt()]);
+      setShowQuickReplies(false);
+      return;
+    }
+    if (message === 'Continuer avec le bot') {
+      setAwaitingHumanEmail(false);
+      setAwaitingHumanReason(false);
+      setShowQuickReplies(false);
+      const continueCopy = {
+        fr: "Parfait, dites-moi votre question.",
+        en: 'Great, tell me your question.',
+        es: 'Perfecto, dime tu pregunta.',
+        pt: 'Perfeito, diga sua pergunta.',
+      };
+      const locale = (detectedLang in continueCopy ? detectedLang : urlLocale) as keyof typeof continueCopy;
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `continue-${Date.now()}`,
+          text: continueCopy[locale] || continueCopy.fr,
+          sender: 'bot',
+          timestamp: new Date(),
+        },
+      ]);
+      return;
+    }
     handleSendMessage(message);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
@@ -1200,7 +817,7 @@ export default function ChatBot() {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyDown}
               placeholder={getT('placeholder')}
               className="flex-1 border border-gray-300 rounded-lg sm:rounded-xl px-3 sm:px-4 py-3 sm:py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-base sm:text-sm bg-white transition-all shadow-sm"
               disabled={isLoading}

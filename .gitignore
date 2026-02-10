@@ -2,6 +2,7 @@ node_modules/
 .next/
 .next 2/
 .next 3/
+.cache/
 *.icloud
 .env.local
 .DS_Store
