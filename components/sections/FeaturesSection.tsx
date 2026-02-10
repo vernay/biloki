@@ -158,6 +158,16 @@ export default function FeaturesSection() {
                           priority={index === 0}
                         />
                       </div>
+                    ) : feature.id === 'serrures' ? (
+                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                        <Image
+                          src="/images/ouverture-porte.png"
+                          alt={`${t('items.serrures.title')} - Ouverture de porte`}
+                          width={1200}
+                          height={900}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
                     ) : (
                       <div className="aspect-[4/3] rounded-2xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 text-sm">
                         {t('imagePlaceholder')}
