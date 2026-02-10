@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
 export const metadata: Metadata = {
-  title: "IA et location courte durée : comment les conciergeries vont changer de métier | Biloki",
+  title: "Comment Claude 4.6 va redessiner les contours de la location courte durée ? | Biloki",
   description:
     "L'IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez comment les conciergeries vont évoluer et pourquoi le modèle devient hybride.",
   keywords:
@@ -31,7 +32,7 @@ export default function IALocationCourteDureePage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5 leading-tight">
-            Comment l’IA va transformer la location courte durée (et pourquoi les conciergeries vont changer de métier)
+            Comment Claude 4.6 va redessiner les contours de la location courte durée ?
           </h1>
 
           <p className="text-xl text-gray-700 leading-relaxed">
@@ -44,6 +45,22 @@ export default function IALocationCourteDureePage() {
 
       {/* Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+        {/* Hero image */}
+        <div className="mb-12">
+          <div className="relative w-full h-64 md:h-80 lg:h-[420px] rounded-3xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/blog/claudeopus4.6.webp"
+              alt="Claude Opus 4.6"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 720px"
+              priority
+            />
+          </div>
+          <p className="text-xs text-gray-500 mt-3">
+            Source : Anthropic — annonce Claude Opus 4.6 (février 2026).
+          </p>
+        </div>
         {/* Intro */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Une transformation plus profonde que l’automatisation</h2>
@@ -74,6 +91,28 @@ export default function IALocationCourteDureePage() {
           <p className="text-gray-700 leading-relaxed mt-4">
             La location courte durée est avant tout un <strong>métier de communication</strong>. C’est précisément là que l’IA devient
             disruptive.
+          </p>
+        </section>
+
+        {/* Ce que Claude Opus 4.6 apporte */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Pourquoi Claude Opus 4.6 change la donne</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            D’après l’annonce officielle d’Anthropic, Opus 4.6 progresse sur plusieurs axes qui comptent directement
+            pour la gestion locative : fiabilité sur des tâches complexes, maintien de la qualité sur des sessions longues
+            et capacité à gérer des workflows multi-étapes sans supervision constante.
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>Meilleure planification et exécution autonome sur des tâches longues et multi-étapes.</li>
+            <li>Progrès en raisonnement et en analyse de contextes volumineux.</li>
+            <li>Fenêtre de contexte 1M tokens (beta) et sortie jusqu’à 128k tokens pour des échanges étendus.</li>
+            <li>Contrôle fin de l’effort (low/medium/high/max) et <em>adaptive thinking</em> pour équilibrer vitesse et profondeur.</li>
+            <li>Context compaction (beta) pour maintenir les conversations sur la durée sans perdre l’historique clé.</li>
+            <li>Profil de sûreté au moins équivalent aux versions précédentes, avec des évaluations de sécurité renforcées.</li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed mt-4">
+            Ces capacités rendent l’IA plus fiable sur des échanges sensibles (arrivées tardives, incidents, demandes
+            imprévues), tout en conservant une cohérence de ton et de contexte sur tout le séjour.
           </p>
         </section>
 
@@ -211,8 +250,18 @@ export default function IALocationCourteDureePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Sources et lectures utiles</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             <li>
+              <a className="text-primary hover:underline" href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank" rel="noreferrer">
+                Anthropic — Introducing Claude Opus 4.6 (annonce officielle)
+              </a>
+            </li>
+            <li>
               <a className="text-primary hover:underline" href="https://www.anthropic.com/claude" target="_blank" rel="noreferrer">
                 Anthropic — Claude (présentation et capacités)
+              </a>
+            </li>
+            <li>
+              <a className="text-primary hover:underline" href="https://www.anthropic.com/claude-opus-4-6-system-card" target="_blank" rel="noreferrer">
+                Anthropic — System card Opus 4.6 (sécurité et évaluations)
               </a>
             </li>
             <li>
