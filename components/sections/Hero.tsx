@@ -23,7 +23,7 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900"
+              className="text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 hero-title-shine"
               variants={itemVariants}
             >
               {t("title")}{" "}
@@ -39,28 +39,20 @@ export default function Hero() {
 
             {/* Checkboxes */}
             <motion.div className="space-y-3" variants={containerVariants}>
-              <motion.div 
-                className="flex items-center gap-3"
-                variants={itemVariants}
-              >
-                <div className="flex-shrink-0 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-gray-700 font-medium">{t("check1")}</span>
-              </motion.div>
-              <motion.div 
-                className="flex items-center gap-3"
-                variants={itemVariants}
-              >
-                <div className="flex-shrink-0 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24">
-                    <path d="M5 13l4 4L19 7"></path>
-                  </svg>
-                </div>
-                <span className="text-gray-700 font-medium">{t("check2")}</span>
-              </motion.div>
+              {["check1", "check2", "check3", "check4"].map((checkKey) => (
+                <motion.div
+                  key={checkKey}
+                  className="flex items-center gap-3"
+                  variants={itemVariants}
+                >
+                  <div className="flex-shrink-0 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <span className="text-gray-700 font-medium">{t(checkKey)}</span>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* CTA Buttons */}

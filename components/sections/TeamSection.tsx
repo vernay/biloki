@@ -13,7 +13,11 @@ export default function TeamSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Photo à gauche - petit format */}
           <div className="flex justify-center md:justify-start">
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 w-full md:w-96">
+            <div className="flex flex-col items-center md:items-start gap-3 w-full md:w-96">
+              <span className="-mt-2 inline-flex items-center rounded-full border border-primary bg-primary/10 px-4 py-1 text-sm font-semibold tracking-wide text-primary">
+                Actualité
+              </span>
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 w-full">
               <img 
                 src="/images/blog/salon-marseille.jpg" 
                 alt="Équipe Biloki au salon de Marseille" 
@@ -23,6 +27,7 @@ export default function TeamSection() {
                 loading="lazy"
                 decoding="async"
               />
+              </div>
             </div>
           </div>
 

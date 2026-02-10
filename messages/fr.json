@@ -66,9 +66,11 @@
   "hero": {
     "title": "La location saisonnière n'aura jamais été aussi",
     "titleHighlight": "simple",
-    "description": "5 outils en un, de la réservation au check-out. Une plateforme unique pour conciergeries, propriétaires, prestataires et voyageurs.",
-    "check1": "Du propriétaire indépendant aux grandes conciergeries",
-    "check2": "Le plus performant du marché",
+    "description": "Gérez vos locations courte durée depuis une seule plateforme : réservations, voyageurs, équipes et automatisations. Moins d’opérationnel, plus de développement.",
+    "check1": "Moins de messages et d’appels au quotidien",
+    "check2": "Une organisation claire pour vos équipes terrain",
+    "check3": "Des séjours fluides pour vos voyageurs",
+    "check4": "Plus de logements gérés sans recruter",
     "ctaPrimary": "Commencer gratuitement →",
     "ctaSecondary": "Réserver votre démo",
     "socialProof": "Déjà adopté par",
@@ -95,7 +97,7 @@
     "imagePlaceholder": "Image à ajouter",
     "items": {
       "channelManager": {
-        "title": "Channel Manager",
+        "title": "Évitez les doubles réservations avec notre channel manager",
         "description": "Vendez partout, sans stress, sans surbooking. 120+ plateformes synchronisées en temps réel.",
         "kicker": "Distribution",
         "bullets": [
@@ -105,7 +107,7 @@
         ]
       },
       "pms": {
-        "title": "Property Management System",
+        "title": "Gérez toute votre activité sur une plateforme",
         "description": "Toute votre conciergerie sur un seul écran. Décidez plus vite, gagnez en rentabilité.",
         "kicker": "Gestion de propriétés",
         "bullets": [
@@ -115,7 +117,7 @@
         ]
       },
       "serrures": {
-        "title": "Serrures connectées",
+        "title": "En 1 clic, fini les galères de clés",
         "description": "Accès autonome et sécurisé. Codes uniques qui s’activent et s’expirent automatiquement.",
         "kicker": "Accès",
         "bullets": [
@@ -126,7 +128,7 @@
         ]
       },
       "interfaces": {
-        "title": "4 interfaces avec IA intégrée",
+        "title": "4 interfaces interconnectées",
         "description": "Un écran par rôle. Tout le monde voit l’essentiel, rien de plus.",
         "kicker": "Collaboration",
         "bullets": [
@@ -137,13 +139,13 @@
         ]
       },
       "guideDigital": {
-        "title": "Guide digital avec IA intégrée 24/7",
-        "description": "Voyageurs autonomes, équipe soulagée. Un guide 24/7 qui répond à leur place.",
+        "title": "Un voyageur autonome, une équipe soulagée",
+        "description": "Un guide 24/7 qui automatise l’accueil et répond aux voyageurs à votre place.",
         "kicker": "Expérience voyageur",
         "bullets": [
-          "Infos clés avant l’arrivée",
-          "Réponses 24/7 par l’IA",
-          "Moins de sollicitations"
+          "Jusqu’à 70% de messages voyageurs en moins",
+          "Instructions d’arrivée et informations logement envoyées automatiquement",
+          "Assistance voyageurs disponible 24h/24, sans mobilisation de votre équipe"
         ]
       },
       "marketplace": {

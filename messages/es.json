@@ -66,9 +66,11 @@
   "hero": {
     "title": "El alquiler vacacional nunca ha sido tan",
     "titleHighlight": "simple",
-    "description": "5 herramientas en una, desde la reserva hasta el check-out. Una única plataforma para gestores, propietarios, proveedores de servicios y huéspedes.",
-    "check1": "Desde propietarios independientes hasta grandes gestores",
-    "check2": "La solución más potente del mercado",
+    "description": "Gestiona tus alquileres de corta duración desde una sola plataforma: reservas, huéspedes, equipos y automatizaciones. Menos operación, más crecimiento.",
+    "check1": "Menos mensajes y llamadas en el día a día",
+    "check2": "Una organización clara para tus equipos de campo",
+    "check3": "Estancias fluidas para tus huéspedes",
+    "check4": "Más propiedades gestionadas sin contratar",
     "ctaPrimary": "Empezar gratis →",
     "ctaSecondary": "Reserva tu demo",
     "socialProof": "Ya confían en nosotros",
@@ -95,7 +97,7 @@
     "imagePlaceholder": "Imagen próximamente",
     "items": {
       "channelManager": {
-        "title": "Channel Manager",
+        "title": "Evita las dobles reservas con nuestro channel manager",
         "description": "Distribuye y sincroniza tus anuncios en más de 120 plataformas de reserva. Cada reserva se centraliza en tiempo real, sin riesgo de doble reserva.",
         "kicker": "Distribución",
         "bullets": [
@@ -105,7 +107,7 @@
         ]
       },
       "pms": {
-        "title": "Sistema de gestión de propiedades",
+        "title": "Gestiona toda tu actividad en una sola plataforma",
         "description": "Centraliza toda tu actividad de gestión de propiedades en una herramienta. Reservas, estancias, huéspedes, propiedades, ingresos y operaciones, todo gestionado desde una única interfaz.",
         "kicker": "Gestión de propiedades",
         "bullets": [
@@ -115,7 +117,7 @@
         ]
       },
       "serrures": {
-        "title": "Cerraduras conectadas",
+        "title": "En 1 clic, se acabaron los problemas de llaves",
         "description": "Genera códigos de acceso únicos para cada estancia. Activación y desactivación automática según las fechas de check-in y check-out, para tus proveedores de servicios y huéspedes.",
         "kicker": "Acceso",
         "bullets": [
@@ -126,7 +128,7 @@
         ]
       },
       "interfaces": {
-        "title": "4 interfaces con IA integrada",
+        "title": "4 interfaces interconectadas",
         "description": "Una interfaz adaptada a cada rol: gestor, propietario, proveedor de servicios y huésped.",
         "kicker": "Colaboración",
         "bullets": [
@@ -137,13 +139,13 @@
         ]
       },
       "guideDigital": {
-        "title": "Guía digital con IA integrada 24/7",
-        "description": "Guía personalizada por propiedad: acceso, normas, recomendaciones locales, contactos útiles. Asistente IA disponible 24/7 para responder preguntas de los huéspedes.",
+        "title": "Un huésped autónomo, un equipo aliviado",
+        "description": "Una guía 24/7 que automatiza la llegada y responde a los huéspedes por ti.",
         "kicker": "Experiencia del huésped",
         "bullets": [
-          "Información clave antes de la llegada",
-          "Respuestas 24/7 con IA",
-          "Menos solicitudes para tu equipo"
+          "Hasta un 70% menos de mensajes de huéspedes",
+          "Instrucciones de llegada e información del alojamiento enviadas automáticamente",
+          "Asistencia a huéspedes 24/7 sin movilizar a tu equipo"
         ]
       },
       "marketplace": {

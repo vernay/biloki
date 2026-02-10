@@ -66,9 +66,11 @@
   "hero": {
     "title": "Vacation rentals have never been so",
     "titleHighlight": "simple",
-    "description": "5 tools in one, from booking to check-out. A single platform for property managers, owners, service providers and guests.",
-    "check1": "From independent owners to large property managers",
-    "check2": "The most powerful solution on the market",
+    "description": "Manage your short-term rentals from one platform: bookings, guests, teams, and automations. Less operations, more growth.",
+    "check1": "Fewer daily messages and calls",
+    "check2": "Clear organization for your field teams",
+    "check3": "Smooth stays for your guests",
+    "check4": "More properties managed without hiring",
     "ctaPrimary": "Start for free →",
     "ctaSecondary": "Book your demo",
     "socialProof": "Already trusted by",
@@ -95,7 +97,7 @@
     "imagePlaceholder": "Image coming soon",
     "items": {
       "channelManager": {
-        "title": "Channel Manager",
+        "title": "Avoid double bookings with our channel manager",
         "description": "Distribute and synchronize your listings across 120+ booking platforms. Every booking is centralized in real-time, with no risk of double booking.",
         "kicker": "Distribution",
         "bullets": [
@@ -105,7 +107,7 @@
         ]
       },
       "pms": {
-        "title": "Property Management System",
+        "title": "Manage your entire operation on one platform",
         "description": "Centralize all your property management activities in one tool. Bookings, stays, guests, properties, revenue, and operations - all managed from a single interface.",
         "kicker": "Property management",
         "bullets": [
@@ -115,7 +117,7 @@
         ]
       },
       "serrures": {
-        "title": "Smart Locks",
+        "title": "In one click, no more key hassles",
         "description": "Generate unique access codes for each stay. Automatic activation and deactivation based on check-in and check-out dates, for your service providers and tenants.",
         "kicker": "Access",
         "bullets": [
@@ -126,7 +128,7 @@
         ]
       },
       "interfaces": {
-        "title": "4 interfaces with built-in AI",
+        "title": "4 interconnected interfaces",
         "description": "An interface adapted to each role: manager, owner, service provider, and guest.",
         "kicker": "Collaboration",
         "bullets": [
@@ -137,13 +139,13 @@
         ]
       },
       "guideDigital": {
-        "title": "Digital guide with built-in AI 24/7",
-        "description": "Personalized guide per property: access, rules, local recommendations, useful contacts. AI assistant available 24/7 to answer guest questions.",
+        "title": "A self-serve guest, a relieved team",
+        "description": "A 24/7 guide that automates arrival info and answers guests for you.",
         "kicker": "Guest experience",
         "bullets": [
-          "Key info before arrival",
-          "24/7 AI answers",
-          "Fewer requests for your team"
+          "Up to 70% fewer guest messages",
+          "Arrival instructions and property info sent automatically",
+          "24/7 guest assistance without mobilizing your team"
         ]
       },
       "marketplace": {

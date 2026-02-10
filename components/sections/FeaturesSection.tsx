@@ -75,6 +75,24 @@ export default function FeaturesSection() {
   const t = useTranslations('features');
   const tCommon = useTranslations('common');
 
+  const splitTitle = (title: string) => {
+    const words = title.trim().split(/\s+/);
+    if (words.length <= 1) {
+      return { first: title, second: '' };
+    }
+
+    const splitIndex = Math.ceil(words.length / 2);
+    return {
+      first: words.slice(0, splitIndex).join(' '),
+      second: words.slice(splitIndex).join(' '),
+    };
+  };
+
+  const slideIn = (direction: 'left' | 'right') => ({
+    hidden: { opacity: 0, x: direction === 'left' ? -48 : 48 },
+    visible: { opacity: 1, x: 0 },
+  });
+
   return (
     <section className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,6 +110,8 @@ export default function FeaturesSection() {
         <div className="space-y-16 md:space-y-20">
           {FEATURES.map((feature, index) => {
             const isReversed = index % 2 !== 0;
+            const textDirection = isReversed ? 'right' : 'left';
+            const imageDirection = isReversed ? 'left' : 'right';
             return (
               <div
                 key={feature.id}
@@ -99,21 +119,23 @@ export default function FeaturesSection() {
               >
                 <motion.div
                   className={isReversed ? 'md:order-2' : ''}
-                  initial={{ opacity: 0, x: isReversed ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  variants={slideIn(textDirection)}
+                  initial="hidden"
+                  whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="flex items-center gap-3 text-primary">
-                    <span className="p-2.5 rounded-xl bg-primary/10 text-primary">
-                      {iconMap[feature.id]}
-                    </span>
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary">
-                      {t(`items.${feature.translationKey}.kicker`)}
-                    </p>
-                  </div>
                   <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mt-4">
-                    {t(`items.${feature.translationKey}.title`)}
+                    {(() => {
+                      const title = t(`items.${feature.translationKey}.title`);
+                      const { first, second } = splitTitle(title);
+                      return (
+                        <>
+                          <span className="text-gray-900">{first}</span>
+                          {second ? <span className="text-primary"> {second}</span> : null}
+                        </>
+                      );
+                    })()}
                   </h3>
                   <p className="text-gray-600 mt-3 text-base md:text-lg">
                     {t(`items.${feature.translationKey}.description`)}
@@ -141,14 +163,15 @@ export default function FeaturesSection() {
 
                 <motion.div
                   className={isReversed ? 'md:order-1' : ''}
-                  initial={{ opacity: 0, x: isReversed ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  variants={slideIn(imageDirection)}
+                  initial="hidden"
+                  whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                 >
-                  <div className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 via-white to-white p-4">
+                  <div className="relative rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white p-4">
                     {feature.id === 'channel-manager' ? (
-                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
                           src="/images/Calendrier.png"
                           alt={`${t('items.channelManager.title')} - Calendrier`}
@@ -159,7 +182,7 @@ export default function FeaturesSection() {
                         />
                       </div>
                     ) : feature.id === 'serrures' ? (
-                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
                           src="/images/ouverture-porte.png"
                           alt={`${t('items.serrures.title')} - Ouverture de porte`}
@@ -169,7 +192,7 @@ export default function FeaturesSection() {
                         />
                       </div>
                     ) : feature.id === 'pms' ? (
-                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
                           src="/images/PMS.png"
                           alt={`${t('items.pms.title')} - PMS`}
@@ -179,7 +202,7 @@ export default function FeaturesSection() {
                         />
                       </div>
                     ) : feature.id === 'interfaces' ? (
-                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
                           src="/images/4-interfaces.png"
                           alt={`${t('items.interfaces.title')} - 4 interfaces`}
@@ -189,7 +212,7 @@ export default function FeaturesSection() {
                         />
                       </div>
                     ) : feature.id === 'guide-digital' ? (
-                      <div className="aspect-[4/3] rounded-2xl border border-gray-200 overflow-hidden bg-white">
+                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
                           src="/images/guide-digital-ia.png"
                           alt={`${t('items.guideDigital.title')} - Guide digital IA`}
