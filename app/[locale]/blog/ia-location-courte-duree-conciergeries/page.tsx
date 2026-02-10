@@ -49,7 +49,7 @@ export default function IALocationCourteDureePage() {
         <div className="mb-12">
           <div className="relative w-full h-64 md:h-80 lg:h-[420px] rounded-3xl overflow-hidden shadow-lg">
             <Image
-              src="/images/blog/claudeopus4.6.webp"
+              src="/images/blog/claudeopus4.6.png"
               alt="Claude Opus 4.6"
               fill
               className="object-cover"

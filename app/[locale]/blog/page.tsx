@@ -20,7 +20,7 @@ const articles = [
     date: "10 février 2026",
     readTime: "9 min",
     category: "IA",
-    image: "/images/blog/claudeopus4.6.webp",
+    image: "/images/blog/claudeopus4.6.png",
   },
   {
     slug: "salon-marseille-2026",
