@@ -261,6 +261,28 @@ function buildKnowledge() {
   };
 }
 
+function buildFeaturesReply(locale: SupportedLocale) {
+  const introMap: Record<SupportedLocale, string> = {
+    fr: 'Biloki inclut :',
+    en: 'Biloki includes:',
+    es: 'Biloki incluye:',
+    pt: 'Biloki inclui:',
+  };
+
+  const outroMap: Record<SupportedLocale, (remaining: number) => string> = {
+    fr: (remaining) => (remaining > 0 ? `, et ${remaining} autres fonctionnalités.` : '.'),
+    en: (remaining) => (remaining > 0 ? `, and ${remaining} more features.` : '.'),
+    es: (remaining) => (remaining > 0 ? `, y ${remaining} funcionalidades más.` : '.'),
+    pt: (remaining) => (remaining > 0 ? `, e mais ${remaining} funcionalidades.` : '.'),
+  };
+
+  const limit = 6;
+  const list = INCLUDED_FEATURES.slice(0, limit).join(', ');
+  const remaining = Math.max(0, INCLUDED_FEATURES.length - limit);
+
+  return `${introMap[locale]} ${list}${outroMap[locale](remaining)}`.trim();
+}
+
 function buildSystemPrompt(locale: SupportedLocale) {
   const languageMap: Record<SupportedLocale, string> = {
     fr: 'français',
@@ -344,14 +366,27 @@ async function getApiKey(): Promise<string | null> {
   try {
     const envPath = path.join(process.cwd(), '.env.local');
     const raw = await fs.readFile(envPath, 'utf-8');
-    const line = raw
-      .split('\n')
-      .map((l) => l.trim())
-      .find((l) => l.startsWith('OPENAI_API_KEY='));
-    if (!line) return null;
-    const value = line.split('=')[1]?.trim();
-    if (!value) return null;
-    return value.replace(/^['"]|['"]$/g, '');
+    const lines = raw.split('\n').map((l) => l.trim());
+
+    for (let i = 0; i < lines.length; i += 1) {
+      const line = lines[i];
+      if (!line || line.startsWith('#')) continue;
+      if (!line.startsWith('OPENAI_API_KEY=')) continue;
+
+      let value = line.replace('OPENAI_API_KEY=', '').trim();
+
+      for (let j = i + 1; j < lines.length; j += 1) {
+        const next = lines[j];
+        if (!next || next.startsWith('#')) break;
+        if (/^[A-Z0-9_]+=/i.test(next)) break;
+        value += next;
+      }
+
+      if (!value) return null;
+      return value.replace(/^['"]|['"]$/g, '');
+    }
+
+    return null;
   } catch {
     return null;
   }
@@ -399,6 +434,31 @@ export async function POST(request: NextRequest) {
 
     if (!message) {
       return NextResponse.json({ error: 'Message manquant' }, { status: 400 });
+    }
+
+    const topic = detectTopic(message);
+    if (topic === 'features') {
+      const responsePayload = {
+        reply: buildFeaturesReply(locale),
+        lead: lead || {},
+        actions: buildCtas(message, locale),
+      };
+
+      if (sessionId) {
+        try {
+          await recordChatSession({
+            sessionId,
+            locale,
+            userMessage: message,
+            assistantMessage: responsePayload.reply,
+            lead: lead || {},
+          });
+        } catch (logError) {
+          console.error('Erreur log chat:', logError);
+        }
+      }
+
+      return NextResponse.json(responsePayload);
     }
 
     const propertyCount = extractPropertyCount(message);

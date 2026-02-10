@@ -154,7 +154,7 @@ export default function FeaturesSection() {
                           alt={`${t('items.channelManager.title')} - Calendrier`}
                           width={1200}
                           height={900}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-contain"
                           priority={index === 0}
                         />
                       </div>
