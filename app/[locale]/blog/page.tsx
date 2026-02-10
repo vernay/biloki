@@ -14,6 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const articles = [
   {
+    slug: "ia-location-courte-duree-conciergeries",
+    title: "IA et location courte durée : comment les conciergeries vont changer de métier",
+    excerpt: "L’IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez le modèle hybride qui s’impose.",
+    date: "10 février 2026",
+    readTime: "9 min",
+    category: "IA",
+    image: "/images/blog/automatisation.jpg",
+  },
+  {
     slug: "salon-marseille-2026",
     title: "Biloki au salon de la conciergerie à Marseille : on vous attend !",
     excerpt: "Le 24 mars, retrouvez l’équipe Biloki à Marseille pour une démo complète : PMS, channel manager, messagerie, serrures connectées et marketplace API.",
