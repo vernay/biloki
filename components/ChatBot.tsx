@@ -70,6 +70,7 @@ export default function ChatBot() {
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const [awaitingHumanEmail, setAwaitingHumanEmail] = useState(false);
   const [awaitingHumanReason, setAwaitingHumanReason] = useState(false);
+  const [hasRequestedEmail, setHasRequestedEmail] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -78,6 +79,7 @@ export default function ChatBot() {
   const chatButtonRef = useRef<HTMLButtonElement | null>(null);
   const hasInitializedRef = useRef(false);
   const sessionIdRef = useRef<string>('');
+  const lastSentEmailRef = useRef<string>('');
 
   // Initialiser le son de notification
   useEffect(() => {
@@ -183,6 +185,7 @@ export default function ChatBot() {
     setShowQuickReplies(true);
     setAwaitingHumanEmail(false);
     setAwaitingHumanReason(false);
+    setHasRequestedEmail(false);
   };
 
   // ============================================================================
@@ -347,10 +350,10 @@ export default function ChatBot() {
 
   const createHumanEmailPrompt = useCallback((): Message => {
     const copy = {
-      fr: "Pour discuter avec un humain, laissez votre numéro. En l'envoyant, vous acceptez d’être recontacté.",
-      en: 'To talk to a human, leave your phone number. By sending it, you agree to be contacted.',
-      es: 'Para hablar con un humano, deja tu número de teléfono. Al enviarlo, aceptas ser contactado.',
-      pt: 'Para falar com um humano, deixe seu número de telefone. Ao enviá-lo, você aceita ser contactado.',
+      fr: "Pour discuter avec un humain, laissez votre email. En l'envoyant, vous acceptez d'etre recontacte.",
+      en: 'To talk to a human, leave your email. By sending it, you agree to be contacted.',
+      es: 'Para hablar con un humano, deja tu email. Al enviarlo, aceptas ser contactado.',
+      pt: 'Para falar com um humano, deixe seu email. Ao envia-lo, voce aceita ser contactado.',
     };
 
     const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
@@ -391,6 +394,24 @@ export default function ChatBot() {
           type: 'primary',
         },
       ],
+    };
+  }, [detectedLang, urlLocale]);
+
+  const createEmailCapturePrompt = useCallback((): Message => {
+    const copy = {
+      fr: "Pouvez-vous laisser votre email pour que nous puissions vous recontacter ?",
+      en: 'Could you share your email so we can follow up?',
+      es: 'Puedes dejar tu email para que podamos contactarte?',
+      pt: 'Pode deixar seu email para que possamos entrar em contato?',
+    };
+
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
+
+    return {
+      id: `lead-email-${Date.now()}`,
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
     };
   }, [detectedLang, urlLocale]);
 
@@ -455,9 +476,29 @@ export default function ChatBot() {
   // HANDLERS
   // ============================================================================
 
+  const sendLeadToHubspot = useCallback(async (payload: { email: string; language?: string; role?: string; propertyCount?: number }) => {
+    try {
+      await fetch('/api/hubspot/chatbot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: payload.email,
+          language: payload.language,
+          role: payload.role,
+          propertyCount: payload.propertyCount,
+          source: 'chatbot',
+        }),
+      });
+    } catch (error) {
+      console.error('Erreur HubSpot (chatbot):', error);
+    }
+  }, []);
+
   const handleSendMessage = async (customMessage?: string) => {
     const messageToSend = customMessage || inputValue;
     if (!messageToSend.trim()) return;
+
+    const emailMatch = messageToSend.trim().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
 
     const languageDetection = detectLanguage(messageToSend);
     const newLang = languageDetection.lang;
@@ -477,7 +518,6 @@ export default function ChatBot() {
     setIsLoading(true);
     setShowQuickReplies(false);
 
-    const phoneMatch = messageToSend.trim().match(/^\+?[0-9][0-9\s().-]{6,}$/);
     const normalizedMessage = messageToSend.trim().toLowerCase();
     const wantsHuman =
       normalizedMessage.includes('parler à un humain') ||
@@ -498,8 +538,18 @@ export default function ChatBot() {
     }
 
     if (awaitingHumanEmail) {
-      if (phoneMatch) {
-        setLeadData((prev) => ({ ...prev, phone: messageToSend.trim(), consent: true }));
+      if (emailMatch) {
+        const email = emailMatch[0];
+        setLeadData((prev) => ({ ...prev, email, consent: true }));
+        if (email && email !== lastSentEmailRef.current) {
+          lastSentEmailRef.current = email;
+          void sendLeadToHubspot({
+            email,
+            language: detectedLang,
+            role: leadData.role,
+            propertyCount: leadData.propertyCount,
+          });
+        }
         setAwaitingHumanEmail(false);
         const confirm = createHumanConfirmMessage();
         setMessages((prev) => [...prev, confirm]);
@@ -509,6 +559,20 @@ export default function ChatBot() {
       }
       setIsLoading(false);
       return;
+    }
+
+    if (emailMatch) {
+      const email = emailMatch[0];
+      setLeadData((prev) => ({ ...prev, email, consent: true }));
+      if (email && email !== lastSentEmailRef.current) {
+        lastSentEmailRef.current = email;
+        void sendLeadToHubspot({
+          email,
+          language: detectedLang,
+          role: leadData.role,
+          propertyCount: leadData.propertyCount,
+        });
+      }
     }
 
     if (wantsHuman) {
@@ -590,7 +654,17 @@ export default function ChatBot() {
         }
       }
 
-      setMessages((prev) => [...prev, botResponse]);
+      setMessages((prev) => {
+        const next = [...prev, botResponse];
+        const userMessagesCount = next.filter((m) => m.sender === 'user').length;
+
+        if (!leadData.email && !hasRequestedEmail && !awaitingHumanEmail && userMessagesCount >= 2) {
+          setHasRequestedEmail(true);
+          return [...next, createEmailCapturePrompt()];
+        }
+
+        return next;
+      });
     } catch (error) {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
