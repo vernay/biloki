@@ -16,7 +16,7 @@ interface Message {
   text: string;
   sender: 'user' | 'bot';
   timestamp: Date;
-  actions?: Array<{ label: string; url: string; type?: 'primary' | 'secondary' }>;
+  actions?: Array<{ label: string; url?: string; message?: string; type?: 'primary' | 'secondary' }>;
 }
 
 interface UserProfile {
@@ -34,6 +34,7 @@ interface LeadData {
   phone?: string;
   company?: string;
   role?: string;
+  needType?: string;
   propertyCount?: number;
   city?: string;
   currentTools?: string[];
@@ -80,6 +81,11 @@ export default function ChatBot() {
   const hasInitializedRef = useRef(false);
   const sessionIdRef = useRef<string>('');
   const lastSentEmailRef = useRef<string>('');
+  const needMapRef = useRef<Record<string, string>>({
+    logiciel_gestion: 'Logiciel_gestion',
+    visite_site: 'Visite_site',
+    aide_compte: 'Aide_compte',
+  });
 
   // Initialiser le son de notification
   useEffect(() => {
@@ -397,6 +403,58 @@ export default function ChatBot() {
     };
   }, [detectedLang, urlLocale]);
 
+  const getNeedOptions = useCallback(() => {
+    const options = {
+      fr: [
+        { value: 'logiciel_gestion', label: "Je suis a la recherche d'un logiciel de gestion" },
+        { value: 'visite_site', label: 'Je visite simplement le site' },
+        { value: 'aide_compte', label: "J'ai besoin d'aide concernant mon compte" },
+      ],
+      en: [
+        { value: 'logiciel_gestion', label: 'I am looking for management software' },
+        { value: 'visite_site', label: 'I am just browsing the site' },
+        { value: 'aide_compte', label: 'I need help with my account' },
+      ],
+      es: [
+        { value: 'logiciel_gestion', label: 'Busco un software de gestion' },
+        { value: 'visite_site', label: 'Solo estoy visitando el sitio' },
+        { value: 'aide_compte', label: 'Necesito ayuda con mi cuenta' },
+      ],
+      pt: [
+        { value: 'logiciel_gestion', label: 'Procuro um software de gestao' },
+        { value: 'visite_site', label: 'Estou apenas visitando o site' },
+        { value: 'aide_compte', label: 'Preciso de ajuda com minha conta' },
+      ],
+    } as const;
+
+    const locale = (detectedLang in options ? detectedLang : urlLocale) as keyof typeof options;
+    return options[locale] || options.fr;
+  }, [detectedLang, urlLocale]);
+
+  const createNeedPrompt = useCallback((): Message => {
+    const copy = {
+      fr: 'Bonjour ! Quel est votre besoin aujourd\'hui ?',
+      en: 'Hi! What are you looking for today?',
+      es: 'Hola! Que estas buscando hoy?',
+      pt: 'Ola! O que voce procura hoje?',
+    };
+
+    const locale = (detectedLang in copy ? detectedLang : urlLocale) as keyof typeof copy;
+    const options = getNeedOptions();
+
+    return {
+      id: `need-${Date.now()}`,
+      text: copy[locale] || copy.fr,
+      sender: 'bot',
+      timestamp: new Date(),
+      actions: options.map((option) => ({
+        label: option.label,
+        message: `__need:${option.value}`,
+        type: 'primary',
+      })),
+    };
+  }, [detectedLang, getNeedOptions, urlLocale]);
+
   const createEmailCapturePrompt = useCallback((): Message => {
     const copy = {
       fr: "Bonjour, avant de commencer a discuter, pouvez-vous me transmettre votre adresse e-mail afin que nous puissions effectuer un suivi ?",
@@ -429,13 +487,13 @@ export default function ChatBot() {
     if (typeof window !== 'undefined' && agentData && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       setDetectedLang(getPreferredLocale());
-      setMessages([createEmailCapturePrompt()]);
+      setMessages([createNeedPrompt()]);
       setUserProfile({ type: 'unknown', size: 'unknown' });
       setLeadData({});
       setConversationStep('greeting');
       setIsHydrated(true);
     }
-  }, [agentData, createEmailCapturePrompt, getPreferredLocale]);
+  }, [agentData, createNeedPrompt, getPreferredLocale]);
 
   useEffect(() => {
     scrollToBottom();
@@ -476,7 +534,7 @@ export default function ChatBot() {
   // HANDLERS
   // ============================================================================
 
-  const sendLeadToHubspot = useCallback(async (payload: { email: string; language?: string; role?: string; propertyCount?: number }) => {
+  const sendLeadToHubspot = useCallback(async (payload: { email: string; language?: string; role?: string; propertyCount?: number; needType?: string }) => {
     try {
       await fetch('/api/hubspot/chatbot', {
         method: 'POST',
@@ -485,6 +543,7 @@ export default function ChatBot() {
           email: payload.email,
           language: payload.language,
           role: payload.role,
+          needType: payload.needType,
           propertyCount: payload.propertyCount,
           source: 'chatbot',
         }),
@@ -499,6 +558,10 @@ export default function ChatBot() {
     if (!messageToSend.trim()) return;
 
     const emailMatch = messageToSend.trim().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    const isNeedToken = messageToSend.startsWith('__need:');
+    const needValue = isNeedToken ? messageToSend.replace('__need:', '').trim() : '';
+    const needOptions = getNeedOptions();
+    const needLabel = needOptions.find((option) => option.value === needValue)?.label;
 
     const languageDetection = detectLanguage(messageToSend);
     const newLang = languageDetection.lang;
@@ -508,7 +571,7 @@ export default function ChatBot() {
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      text: messageToSend,
+      text: isNeedToken && needLabel ? needLabel : messageToSend,
       sender: 'user',
       timestamp: new Date()
     };
@@ -547,6 +610,7 @@ export default function ChatBot() {
             email,
             language: detectedLang,
             role: leadData.role,
+            needType: leadData.needType,
             propertyCount: leadData.propertyCount,
           });
         }
@@ -561,6 +625,15 @@ export default function ChatBot() {
       return;
     }
 
+    if (isNeedToken && needValue) {
+      const mappedNeed = needMapRef.current[needValue] ?? needValue;
+      setLeadData((prev) => ({ ...prev, needType: mappedNeed }));
+      setHasRequestedEmail(true);
+      setMessages((prev) => [...prev, createEmailCapturePrompt()]);
+      setIsLoading(false);
+      return;
+    }
+
     if (emailMatch) {
       const email = emailMatch[0];
       setLeadData((prev) => ({ ...prev, email, consent: true }));
@@ -570,6 +643,7 @@ export default function ChatBot() {
           email,
           language: detectedLang,
           role: leadData.role,
+          needType: leadData.needType,
           propertyCount: leadData.propertyCount,
         });
       }
@@ -830,17 +904,32 @@ export default function ChatBot() {
                 {message.actions && message.actions.length > 0 && (
                   <div className="mt-2 space-y-2">
                     {message.actions.map((action, idx) => (
-                      <a
-                        key={idx}
-                        href={action.url}
-                        className={`block text-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all transform hover:scale-[1.02] ${
-                          action.type === 'primary'
-                            ? 'bg-primary text-white hover:bg-[#0391dd] shadow-md hover:shadow-lg'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
-                        }`}
-                      >
-                        {action.label}
-                      </a>
+                      action.url ? (
+                        <a
+                          key={idx}
+                          href={action.url}
+                          className={`block text-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all transform hover:scale-[1.02] ${
+                            action.type === 'primary'
+                              ? 'bg-primary text-white hover:bg-[#0391dd] shadow-md hover:shadow-lg'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                          }`}
+                        >
+                          {action.label}
+                        </a>
+                      ) : (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => handleSendMessage(action.message || action.label)}
+                          className={`block w-full text-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all transform hover:scale-[1.02] ${
+                            action.type === 'primary'
+                              ? 'bg-primary text-white hover:bg-[#0391dd] shadow-md hover:shadow-lg'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                          }`}
+                        >
+                          {action.label}
+                        </button>
+                      )
                     ))}
                   </div>
                 )}

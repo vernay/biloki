@@ -8,6 +8,7 @@ type ChatbotPayload = {
   email?: string;
   language?: string;
   role?: string;
+  needType?: string;
   propertyCount?: number;
   source?: string;
 };
@@ -84,6 +85,7 @@ function buildProperties(payload: ChatbotPayload) {
     properties.langue = languageMap[payload.language] ?? payload.language;
   }
   if (payload.role) properties.role = payload.role;
+  if (payload.needType) properties.type_de_besoin = payload.needType;
   if (typeof payload.propertyCount === 'number') {
     properties.biloki_property_count = payload.propertyCount;
   }
