@@ -81,11 +81,10 @@ export default function ChatBot() {
   const hasInitializedRef = useRef(false);
   const sessionIdRef = useRef<string>('');
   const lastSentEmailRef = useRef<string>('');
-  const lastNeedTypeRef = useRef<string>('');
   const needMapRef = useRef<Record<string, string>>({
-    logiciel_gestion: 'Logiciel_gestion',
-    visite_site: 'Visite_site',
-    aide_compte: 'Aide_compte',
+    logiciel_gestion: 'logiciel_gestion',
+    visite_site: 'visite_site',
+    aide_compte: 'aide_compte',
   });
 
   // Initialiser le son de notification
@@ -564,10 +563,9 @@ export default function ChatBot() {
     const needOptions = getNeedOptions();
     const needLabel = needOptions.find((option) => option.value === needValue)?.label;
 
-    const languageDetection = detectLanguage(messageToSend);
-    const newLang = languageDetection.lang;
-    if (languageDetection.confident && newLang !== detectedLang) {
-      setDetectedLang(newLang);
+    const newLang = urlLocale;
+    if (detectedLang !== urlLocale) {
+      setDetectedLang(urlLocale);
     }
 
     const userMessage: Message = {
@@ -604,7 +602,6 @@ export default function ChatBot() {
     if (awaitingHumanEmail) {
       if (emailMatch) {
         const email = emailMatch[0];
-        const needType = leadData.needType ?? lastNeedTypeRef.current;
         setLeadData((prev) => ({ ...prev, email, consent: true }));
         if (email && email !== lastSentEmailRef.current) {
           lastSentEmailRef.current = email;
@@ -612,7 +609,7 @@ export default function ChatBot() {
             email,
             language: detectedLang,
             role: leadData.role,
-            needType,
+            needType: leadData.needType,
             propertyCount: leadData.propertyCount,
           });
         }
@@ -629,7 +626,6 @@ export default function ChatBot() {
 
     if (isNeedToken && needValue) {
       const mappedNeed = needMapRef.current[needValue] ?? needValue;
-      lastNeedTypeRef.current = mappedNeed;
       setLeadData((prev) => ({ ...prev, needType: mappedNeed }));
       setHasRequestedEmail(true);
       setMessages((prev) => [...prev, createEmailCapturePrompt()]);
@@ -639,7 +635,6 @@ export default function ChatBot() {
 
     if (emailMatch) {
       const email = emailMatch[0];
-      const needType = leadData.needType ?? lastNeedTypeRef.current;
       setLeadData((prev) => ({ ...prev, email, consent: true }));
       if (email && email !== lastSentEmailRef.current) {
         lastSentEmailRef.current = email;
@@ -647,7 +642,7 @@ export default function ChatBot() {
           email,
           language: detectedLang,
           role: leadData.role,
-          needType,
+          needType: leadData.needType,
           propertyCount: leadData.propertyCount,
         });
       }
