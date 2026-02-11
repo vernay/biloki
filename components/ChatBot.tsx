@@ -429,13 +429,13 @@ export default function ChatBot() {
     if (typeof window !== 'undefined' && agentData && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
       setDetectedLang(getPreferredLocale());
-      setMessages([createInitialMessage(), createHumanChoiceMessage()]);
+      setMessages([createEmailCapturePrompt()]);
       setUserProfile({ type: 'unknown', size: 'unknown' });
       setLeadData({});
       setConversationStep('greeting');
       setIsHydrated(true);
     }
-  }, [agentData, createInitialMessage, createHumanChoiceMessage, getPreferredLocale]);
+  }, [agentData, createEmailCapturePrompt, getPreferredLocale]);
 
   useEffect(() => {
     scrollToBottom();
