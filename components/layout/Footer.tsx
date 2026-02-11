@@ -133,19 +133,9 @@ export default function Footer() {
             <h3 className="font-semibold text-base mb-3">{t('support')}</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  {t('helpCenter')}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  {t('documentation')}
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  {t('status')}
-                </a>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  {t('contact')}
+                </Link>
               </li>
             </ul>
           </div>

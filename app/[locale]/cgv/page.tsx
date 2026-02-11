@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { CONTACT_EMAIL } from '@/lib/config';
 
 export default function CGVPage() {
   const t = useTranslations('legalPages.cgv');
@@ -129,10 +128,12 @@ export default function CGVPage() {
 
           <article className="space-y-4">
             <h2 className="text-2xl font-semibold text-primary">{t('section17Title')}</h2>
-            <p>
-              {t('section17Content')}{' '}
-              <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">{CONTACT_EMAIL}</a>
-            </p>
+            <p>{t('section17Content')}</p>
+          </article>
+
+          <article className="space-y-4">
+            <h2 className="text-2xl font-semibold text-primary">{t('section18Title')}</h2>
+            <p>{t('section18Content')}</p>
           </article>
         </div>
       </section>

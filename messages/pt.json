@@ -673,74 +673,76 @@
   },
   "legalPages": {
     "cgv": {
-      "badge": "Termos e condições",
-      "title": "Termos e condições",
-      "version": "Em vigor desde 20 de janeiro de 2026",
-      "section1Title": "1. Objeto",
-      "section1Content": "Os presentes Termos e Condições regem a prestação de soluções de software e serviços associados oferecidos pela Biloki (a \"Empresa\") aos seus clientes profissionais (o \"Cliente\"). Qualquer pedido ou uso dos nossos serviços implica a aceitação sem reservas destes Termos.",
-      "section2Title": "2. Definições",
+      "badge": "Condições Gerais de Venda",
+      "title": "Condições Gerais de Venda",
+      "version": "Em vigor desde 11 de fevereiro de 2026",
+      "section1Title": "1. Âmbito de aplicação",
+      "section1Content": "As presentes Condições Gerais de Venda e de Utilização (CGV) regem o acesso, o uso e a subscrição dos serviços oferecidos pela plataforma Biloki. Aplicam-se a qualquer utilizador, profissional ou particular, sem restrição nem reserva.",
+      "section2Title": "2. Aceitação e documentos contratuais",
       "section2Items": {
-        "platform": "\"Plataforma\": todos os módulos PMS, channel manager, mensagens, reporting, etc.",
-        "services": "\"Serviços\": acesso à Plataforma, atualizações, suporte e serviços opcionais.",
-        "contract": "\"Contrato\": o orçamento ou assinatura realizada pelo Cliente e estes Termos."
+        "platform": "A criação de uma conta, a ativação de um alojamento ou a subscrição de um plano implica aceitação plena, integral e sem reservas das presentes CGV.",
+        "services": "Os documentos contratuais são estas CGV, o Aviso legal, a Política de privacidade e, quando aplicável, as CGU Viajantes.",
+        "contract": "Em caso de contradição, as CGV prevalecem sobre qualquer documento não contratual (apresentação comercial, materiais de marketing, etc.)."
       },
-      "section3Title": "3. Serviços prestados",
+      "section3Title": "3. Qualificação do papel da Biloki",
       "section3Items": {
-        "access": "Acesso à Plataforma em modo SaaS durante a duração do Contrato.",
-        "maintenance": "Manutenção corretiva e evolutiva razoável.",
-        "support": "Suporte de acordo com o nível previsto na oferta escolhida.",
-        "additional": "Serviços adicionais (onboarding, formação, suporte) se incluídos no orçamento."
+        "access": "A Biloki atua exclusivamente como editora de plataforma tecnológica.",
+        "maintenance": "A Biloki não é concierge, nem gestora imobiliária, nem mandatária.",
+        "support": "A Biloki não é parte nos contratos celebrados entre viajantes, proprietários, conciergeries ou prestadores.",
+        "additional": "Não se configura mandato, relação de subordinação, sociedade de facto ou representação."
       },
-      "section4Title": "4. Preços e faturamento",
+      "section4Title": "4. Descrição dos serviços",
       "section4Items": {
-        "prices": "Os preços são indicados sem impostos e especificados no orçamento ou na página de preços.",
-        "billing": "Faturamento mensal ou anual de acordo com a opção escolhida; pagamento no vencimento.",
-        "delay": "Qualquer atraso no pagamento pode resultar na suspensão do acesso e aplicação de penalidades legais.",
-        "evolution": "Os preços podem mudar anualmente; qualquer modificação é notificada pelo menos 30 dias antes de entrar em vigor."
+        "prices": "Um agente conversacional de IA dedicado à estadia.",
+        "billing": "Ferramentas de automação e planeamento.",
+        "delay": "Interfaces de coordenação (concierge / proprietários / prestadores).",
+        "evolution": "Conexões API com serviços de terceiros conforme as ofertas subscritas. Os serviços são fornecidos no estado em que se encontram, sob uma obrigação de meios."
       },
-      "section5Title": "5. Obrigações do cliente",
+      "section5Title": "5. Serviços de terceiros (OTA / PMS / API / dispositivos conectados)",
       "section5Items": {
-        "info": "Fornecer informações precisas e manter os métodos de pagamento atualizados.",
-        "compliance": "Garantir a conformidade do conteúdo e dos dados com as regulamentações aplicáveis.",
-        "rights": "Respeitar os direitos de terceiros e o uso autorizado da Plataforma.",
-        "security": "Garantir a segurança do acesso (identificadores, senhas) e reportar qualquer incidente."
+        "info": "Algumas funcionalidades dependem de serviços de terceiros (OTA, PMS, channel managers, fechaduras conectadas, fornecedores cloud, etc.).",
+        "compliance": "A Biloki não poderá ser responsabilizada por falhas, interrupções, alterações, limitações ou supressão desses serviços de terceiros.",
+        "rights": "O Cliente é responsável pela configuração, compatibilidade e manutenção das suas subscrições e direitos de acesso junto desses terceiros.",
+        "security": "Esses serviços de terceiros podem afetar a exploração, a organização ou as receitas do Cliente."
       },
-      "section6Title": "6. Suporte e manutenção",
-      "section6Content": "O suporte está disponível através dos canais e horários especificados na oferta. A Empresa pode programar interrupções planejadas para manutenção, notificadas com tempo razoável quando possível.",
-      "section7Title": "7. Disponibilidade",
-      "section7Content": "A Empresa implementa meios razoáveis para garantir a disponibilidade contínua da Plataforma. O desempenho pode ser afetado por fatores externos (redes, provedores terceiros, força maior).",
-      "section8Title": "8. Propriedade intelectual",
-      "section8Content": "A Plataforma, seus componentes e todos os direitos de propriedade intelectual permanecem como propriedade exclusiva da Empresa. O Cliente tem um direito de uso não exclusivo, intransferível, limitado ao Contrato.",
-      "section9Title": "9. Dados pessoais e segurança",
+      "section6Title": "6. Acesso – conta – segurança",
+      "section6Content": "O Cliente é responsável pela confidencialidade das suas credenciais, pela exatidão das informações inseridas e pelas ações realizadas a partir da sua conta. Qualquer uso através da conta é considerado realizado pelo Cliente.",
+      "section7Title": "7. Suspensão – desativação",
+      "section7Content": "A Biloki reserva-se o direito de recusar o acesso, suspender ou desativar imediatamente qualquer conta ou alojamento sem aviso prévio nem indemnização, em especial em caso de incumprimento das CGV, falta de pagamento, uso abusivo ou risco legal, regulatório, técnico ou reputacional.",
+      "section8Title": "8. Condições financeiras",
+      "section8Content": "8.1 Preço: os preços aplicáveis são os vigentes no momento da subscrição. 8.2 Faturação por alojamento ativo: os serviços são faturados por alojamento ativo, independentemente do número de reservas, da taxa de ocupação ou do uso efetivo. 8.3 Pagamento anual – cláusula firme, definitiva e não reembolsável: o montante anual é exigível imediatamente e integralmente, sem possibilidade de reembolso. 8.4 Incumprimento de pagamento: suspensão dos serviços e exigibilidade dos valores devidos, com penalidades legais. 8.5 Direito de arrependimento: aplicável aos consumidores conforme a lei, não aplicável a profissionais, salvo disposição legal imperativa em contrário.",
+      "section9Title": "9. Duração – rescisão",
       "section9Items": {
-        "compliance": "Cada parte age em conformidade com as regulamentações aplicáveis (incluindo GDPR).",
-        "processor": "A Empresa age como processador dos dados processados em nome do Cliente.",
-        "measures": "Medidas técnicas e organizacionais razoáveis são implementadas para proteger os dados."
+        "compliance": "9.1 Rescisão pelo Cliente: a rescisão produz efeitos no final do período em curso, sem reembolso, inclusive para subscrições anuais.",
+        "processor": "9.2 Rescisão pela Biloki: possível a qualquer momento em caso de incumprimento das CGV ou de risco identificado, sem indemnização.",
+        "measures": "9.3 Efeitos da rescisão: acesso removido, automatizações desativadas, dados eliminados nos termos das obrigações legais."
       },
-      "section10Title": "10. Confidencialidade",
-      "section10Content": "Cada parte se compromete a manter confidencial as informações não públicas recebidas da outra parte, exceto por obrigação legal ou solicitação de uma autoridade competente.",
-      "section11Title": "11. Subcontratação",
-      "section11Content": "A Empresa pode utilizar subcontratados para a execução do Contrato, particularmente para hospedagem, pagamentos ou serviços específicos, em conformidade com as obrigações de segurança e confidencialidade.",
-      "section12Title": "12. Duração e rescisão",
+      "section10Title": "10. Cláusulas específicas de IA e automação",
+      "section10Content": "O Cliente reconhece que as respostas e ações da IA se baseiam em regras automatizadas e probabilísticas, podem ser incompletas ou inadequadas, e que as decisões finais competem exclusivamente ao Cliente. As automatizações não isentam o dever de controlo.",
+      "section11Title": "11. Responsabilidade (limitação máxima)",
+      "section11Content": "A responsabilidade da Biloki é excluída para litígios entre viajantes e proprietários, falhas de serviços de campo, perdas financeiras, sanções administrativas ou danos de imagem. A Biloki não responde por quaisquer danos indiretos. A responsabilidade total é limitada ao montante líquido recebido nos últimos doze meses.",
+      "section12Title": "12. Garantia / indemnização pelo Cliente",
       "section12Items": {
-        "duration": "O Contrato é celebrado pela duração prevista no orçamento ou assinatura.",
-        "termination": "Cada parte pode rescindir em caso de violação grave não remediada 30 dias após a notificação.",
-        "consequences": "Em caso de rescisão, os valores já faturados permanecem devidos; o acesso pode ser suspenso no vencimento."
+        "duration": "O Cliente garante e indenizará a Biloki por qualquer reclamação resultante da utilização dos serviços.",
+        "termination": "O Cliente garante a exatidão das informações transmitidas a viajantes e prestadores.",
+        "consequences": "O Cliente garante o cumprimento das leis aplicáveis e dos direitos de terceiros (conteúdos, parametrizações, dados)."
       },
-      "section13Title": "13. Responsabilidade",
+      "section13Title": "13. Propriedade intelectual",
       "section13Items": {
-        "obligation": "A Empresa está sujeita a uma obrigação de meios.",
-        "limit": "A responsabilidade total é limitada ao valor pago pelo Cliente nos últimos 12 meses.",
-        "exclusion": "Danos indiretos são excluídos (perda de receitas, dados, oportunidades)."
+        "obligation": "A plataforma, o agente de IA, os algoritmos, interfaces, bases de dados, marcas, logótipos e conteúdos são propriedade exclusiva da Biloki.",
+        "limit": "Qualquer reprodução, representação, extração ou reutilização é estritamente proibida.",
+        "exclusion": "É proibida qualquer tentativa de engenharia reversa, descompilação ou contorno."
       },
-      "section14Title": "14. Força maior",
-      "section14Content": "Nenhuma das partes será responsável por uma violação devido a um evento de força maior de acordo com a lei francesa. As obrigações são suspensas durante a duração do evento.",
-      "section15Title": "15. Notificações",
-      "section15Content": "Qualquer notificação contratual deve ser feita por escrito, por email ou correio para o endereço indicado por cada parte, e será considerada recebida na data de envio.",
-      "section16Title": "16. Lei aplicável e disputas",
-      "section16Content": "Estes Termos são regidos pela lei francesa. Qualquer disputa relacionada à sua interpretação ou execução será da jurisdição exclusiva dos tribunais de Paris, salvo disposição legal obrigatória em contrário.",
-      "section17Title": "17. Contato",
-      "section17Content": "Para qualquer pergunta sobre estes Termos ou para exercer seus direitos, você pode nos contatar em:"
+      "section14Title": "14. Dados pessoais",
+      "section14Content": "Os dados pessoais são tratados de acordo com a Política de privacidade publicada pela Biloki.",
+      "section15Title": "15. Confidencialidade (se aplicável)",
+      "section15Content": "Cada parte compromete-se a manter confidenciais as informações não públicas trocadas no âmbito da utilização dos serviços, salvo obrigação legal.",
+      "section16Title": "16. Força maior",
+      "section16Content": "A Biloki não poderá ser responsabilizada em caso de força maior ou de eventos fora do seu controlo (falhas de rede, fornecedores de alojamento, ciberataques, decisões administrativas, etc.).",
+      "section17Title": "17. Sobrevivência das cláusulas",
+      "section17Content": "As cláusulas relativas ao pagamento, responsabilidade, propriedade intelectual, dados, confidencialidade, lei aplicável e jurisdição sobrevivem à rescisão.",
+      "section18Title": "18. Lei aplicável – jurisdição",
+      "section18Content": "Estas CGV regem-se pela lei francesa. Qualquer litígio será da competência exclusiva dos tribunais da comarca da sede social da Biloki, salvo disposições legais imperativas em contrário."
     },
     "legalNotice": {
       "badge": "Aviso legal",

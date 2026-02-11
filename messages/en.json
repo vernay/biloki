@@ -787,74 +787,76 @@
   },
   "legalPages": {
     "cgv": {
-      "badge": "Terms and Conditions",
-      "title": "Terms and Conditions",
-      "version": "Effective as of January 20, 2026",
-      "section1Title": "1. Purpose",
-      "section1Content": "These Terms and Conditions govern the provision of software solutions and associated services offered by Biloki (the \"Company\") to its professional clients (the \"Client\"). Any order or use of our services implies unreserved acceptance of these Terms.",
-      "section2Title": "2. Definitions",
+      "badge": "General Terms and Conditions of Sale",
+      "title": "General Terms and Conditions of Sale",
+      "version": "Effective as of February 11, 2026",
+      "section1Title": "1. Scope",
+      "section1Content": "These General Terms and Conditions of Sale and Use (GTC) govern access to, use of, and subscription to services offered by the Biloki platform. They apply to any user, professional or individual, without restriction or reservation.",
+      "section2Title": "2. Acceptance and contractual documents",
       "section2Items": {
-        "platform": "\"Platform\": all PMS modules, channel manager, messaging, reporting, etc.",
-        "services": "\"Services\": access to the Platform, updates, support, and optional services.",
-        "contract": "\"Contract\": the quote or subscription taken out by the Client and these Terms."
+        "platform": "Creating an account, activating a property, or subscribing to a plan constitutes full and unconditional acceptance of these GTC.",
+        "services": "The contractual documents are these GTC, the Legal Notice, the Privacy Policy, and, where applicable, the Traveler Terms of Use.",
+        "contract": "In case of conflict, the GTC prevail over any non-contractual document (commercial presentation, marketing materials, etc.)."
       },
-      "section3Title": "3. Services provided",
+      "section3Title": "3. Biloki's role",
       "section3Items": {
-        "access": "Access to the Platform in SaaS mode for the duration of the Contract.",
-        "maintenance": "Reasonable corrective and evolutionary maintenance.",
-        "support": "Support according to the level provided in the chosen offer.",
-        "additional": "Additional services (onboarding, training, support) if included in the quote."
+        "access": "Biloki acts solely as a technology platform publisher.",
+        "maintenance": "Biloki is neither a concierge service, nor a property manager, nor an agent.",
+        "support": "Biloki is not a party to contracts concluded between travelers, owners, concierges, or service providers.",
+        "additional": "No mandate, subordination, de facto company, or representation relationship can be inferred."
       },
-      "section4Title": "4. Prices and billing",
+      "section4Title": "4. Description of services",
       "section4Items": {
-        "prices": "Prices are indicated excluding taxes and specified in the quote or pricing page.",
-        "billing": "Monthly or annual billing depending on the option chosen; payment at maturity.",
-        "delay": "Any late payment may result in suspension of access and application of legal penalties.",
-        "evolution": "Prices may change annually; any modification is notified at least 30 days before coming into effect."
+        "prices": "An AI conversational agent dedicated to the stay.",
+        "billing": "Automation and scheduling tools.",
+        "delay": "Coordination interfaces (concierge / owners / service providers).",
+        "evolution": "API connections with third-party services depending on subscribed offers. Services are provided as-is, under a best-efforts obligation."
       },
-      "section5Title": "5. Client obligations",
+      "section5Title": "5. Third-party services (OTA / PMS / API / connected devices)",
       "section5Items": {
-        "info": "Provide accurate information and keep payment methods up to date.",
-        "compliance": "Ensure compliance of content and data with applicable regulations.",
-        "rights": "Respect third-party rights and authorized use of the Platform.",
-        "security": "Ensure the security of access (identifiers, passwords) and report any incident."
+        "info": "Certain features depend on third-party services (OTA, PMS, channel managers, smart locks, cloud providers, etc.).",
+        "compliance": "Biloki cannot be held liable for malfunctions, interruptions, changes, limitations, or removal of these third-party services.",
+        "rights": "The Client is responsible for configuration, compatibility, and maintaining subscriptions and access rights with these third parties.",
+        "security": "These third-party services may impact the Client's operations, organization, or revenue."
       },
-      "section6Title": "6. Support and maintenance",
-      "section6Content": "Support is available through the channels and schedules specified in the offer. The Company may schedule planned interruptions for maintenance, notified within a reasonable time when possible.",
-      "section7Title": "7. Availability",
-      "section7Content": "The Company implements reasonable means to ensure continuous availability of the Platform. Performance may be affected by external factors (networks, third-party providers, force majeure).",
-      "section8Title": "8. Intellectual property",
-      "section8Content": "The Platform, its components, and all intellectual property rights remain the exclusive property of the Company. The Client has a non-exclusive, non-transferable right of use limited to the Contract.",
-      "section9Title": "9. Personal data and security",
+      "section6Title": "6. Access – account – security",
+      "section6Content": "The Client is responsible for keeping credentials confidential, the accuracy of information entered, and actions taken from their account. Any use via the account is deemed to be performed by the Client.",
+      "section7Title": "7. Suspension – deactivation",
+      "section7Content": "Biloki reserves the right to refuse access, suspend, or immediately deactivate any account or property without prior notice or compensation, in particular in case of non-compliance with the GTC, non-payment, abusive use, or legal, regulatory, technical, or reputational risk.",
+      "section8Title": "8. Financial terms",
+      "section8Content": "8.1 Price: applicable prices are those in effect at the time of subscription. 8.2 Billing per active property: services are billed per active property, regardless of number of bookings, occupancy rate, or actual use. 8.3 Annual payment – firm, final, non-refundable clause: the annual amount is due immediately and in full, with no refund possible. 8.4 Non-payment: suspension of services and immediate payment of amounts due, with statutory penalties. 8.5 Right of withdrawal: applicable to consumers under the law, not applicable to professionals, unless mandatory law provides otherwise.",
+      "section9Title": "9. Term – termination",
       "section9Items": {
-        "compliance": "Each party acts in compliance with applicable regulations (including GDPR).",
-        "processor": "The Company acts as a processor for data processed on behalf of the Client.",
-        "measures": "Reasonable technical and organizational measures are implemented to protect data."
+        "compliance": "9.1 Termination by the Client: termination takes effect at the end of the current period, with no refund, including for annual subscriptions.",
+        "processor": "9.2 Termination by Biloki: possible at any time in case of breach of the GTC or identified risk, without compensation.",
+        "measures": "9.3 Effects of termination: access removed, automations disabled, data deleted subject to legal obligations."
       },
-      "section10Title": "10. Confidentiality",
-      "section10Content": "Each party undertakes to keep confidential non-public information received from the other party, except for legal obligation or request from a competent authority.",
-      "section11Title": "11. Subcontracting",
-      "section11Content": "The Company may use subcontractors for the execution of the Contract, particularly for hosting, payments, or specific services, in compliance with security and confidentiality obligations.",
-      "section12Title": "12. Duration and termination",
+      "section10Title": "10. AI & automation specific clauses",
+      "section10Content": "The Client acknowledges that AI responses and actions rely on automated and probabilistic rules, may be incomplete or unsuitable, and that final decisions are exclusively the Client's. Automations do not remove the duty to supervise.",
+      "section11Title": "11. Liability (maximum limitation)",
+      "section11Content": "Biloki's liability is excluded for disputes between travelers and owners, field service failures, financial losses, administrative sanctions, or reputational damage. Biloki is not liable for any indirect damage. Total liability is capped at the net amount collected over the last twelve months.",
+      "section12Title": "12. Warranty / indemnification by the Client",
       "section12Items": {
-        "duration": "The Contract is concluded for the duration provided in the quote or subscription.",
-        "termination": "Each party may terminate in case of serious breach not remedied 30 days after notification.",
-        "consequences": "In case of termination, amounts already invoiced remain due; access may be suspended at maturity."
+        "duration": "The Client shall guarantee and indemnify Biloki against any claim resulting from the use of the services.",
+        "termination": "The Client guarantees the accuracy of information provided to travelers and service providers.",
+        "consequences": "The Client guarantees compliance with applicable laws and third-party rights (content, settings, data)."
       },
-      "section13Title": "13. Liability",
+      "section13Title": "13. Intellectual property",
       "section13Items": {
-        "obligation": "The Company is bound by an obligation of means.",
-        "limit": "Total liability is limited to the amount paid by the Client over the last 12 months.",
-        "exclusion": "Indirect damages are excluded (loss of revenue, data, opportunities)."
+        "obligation": "The platform, AI agent, algorithms, interfaces, databases, trademarks, logos, and content are the exclusive property of Biloki.",
+        "limit": "Any reproduction, representation, extraction, or reuse is strictly prohibited.",
+        "exclusion": "Any attempt at reverse engineering, decompilation, or circumvention is prohibited."
       },
-      "section14Title": "14. Force majeure",
-      "section14Content": "Neither party shall be held liable for a breach due to a force majeure event under French law. Obligations are suspended for the duration of the event.",
-      "section15Title": "15. Notifications",
-      "section15Content": "Any contractual notification must be made in writing, by email or mail to the address indicated by each party, and will be deemed received on the date of sending.",
-      "section16Title": "16. Applicable law and disputes",
-      "section16Content": "These Terms are governed by French law. Any dispute relating to their interpretation or execution shall fall under the exclusive jurisdiction of the Paris courts, unless otherwise required by mandatory law.",
-      "section17Title": "17. Contact",
-      "section17Content": "For any questions about these Terms or to exercise your rights, you can contact us at:"
+      "section14Title": "14. Personal data",
+      "section14Content": "Personal data are processed in accordance with the Privacy Policy published by Biloki.",
+      "section15Title": "15. Confidentiality (if applicable)",
+      "section15Content": "Each party undertakes to keep confidential any non-public information exchanged in connection with use of the services, except where required by law.",
+      "section16Title": "16. Force majeure",
+      "section16Content": "Biloki shall not be liable in case of force majeure or events beyond its control (network outages, hosting providers, cyberattacks, administrative decisions, etc.).",
+      "section17Title": "17. Survival of clauses",
+      "section17Content": "Clauses relating to payment, liability, intellectual property, data, confidentiality, applicable law, and jurisdiction survive termination.",
+      "section18Title": "18. Applicable law – jurisdiction",
+      "section18Content": "These GTC are governed by French law. Any dispute falls under the exclusive jurisdiction of the courts where Biloki's registered office is located, unless mandatory legal provisions provide otherwise."
     },
     "legalNotice": {
       "badge": "Legal Notice",
