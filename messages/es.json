@@ -432,6 +432,8 @@
       "qa": "Preguntas y respuestas personalizadas"
     },
     "form": {
+      "email": "Email",
+      "language": "Idioma",
       "youAre": "Eres",
       "select": "Seleccionar",
       "manager": "Gestor",

@@ -432,6 +432,8 @@
       "qa": "Personalized Q&A"
     },
     "form": {
+      "email": "Email",
+      "language": "Language",
       "youAre": "You are",
       "select": "Select",
       "manager": "Manager",

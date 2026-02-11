@@ -8,10 +8,27 @@ export default function ReserverDemoPage() {
   const common = useTranslations('common');
   
   const [formData, setFormData] = useState({
+    email: '',
+    language: '',
     role: '',
     logements: ''
   });
   const [showCalendly, setShowCalendly] = useState(false);
+
+  const parsePropertyCount = (value: string): number | undefined => {
+    if (!value) return undefined;
+    if (value.includes('-')) {
+      const parts = value.split('-');
+      const upper = Number.parseInt(parts[1], 10);
+      return Number.isNaN(upper) ? undefined : upper;
+    }
+    if (value.endsWith('+')) {
+      const base = Number.parseInt(value.replace('+', ''), 10);
+      return Number.isNaN(base) ? undefined : base;
+    }
+    const num = Number.parseInt(value, 10);
+    return Number.isNaN(num) ? undefined : num;
+  };
 
   useEffect(() => {
     // Charger le script Calendly seulement si le formulaire est soumis
@@ -31,8 +48,25 @@ export default function ReserverDemoPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const propertyCount = parsePropertyCount(formData.logements);
+
+    try {
+      await fetch('/api/hubspot/demo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: formData.email,
+          language: formData.language,
+          role: formData.role,
+          propertyCount,
+          source: 'reserver_demo',
+        }),
+      });
+    } catch (error) {
+      console.error('Erreur HubSpot:', error);
+    }
     setShowCalendly(true);
   };
 
@@ -118,6 +152,44 @@ export default function ReserverDemoPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">{t('yourInfo')}</h3>
                 
+                {/* Email + Langue */}
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      {t('form.email')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
+                      placeholder="name@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="language" className="block text-sm font-semibold text-gray-700 mb-2">
+                      {t('form.language')} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      id="language"
+                      name="language"
+                      value={formData.language}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
+                    >
+                      <option value="">{t('form.select')}</option>
+                      <option value="fr">Francais</option>
+                      <option value="en">English</option>
+                      <option value="es">Espanol</option>
+                      <option value="pt">Portugues</option>
+                    </select>
+                  </div>
+                </div>
+
                 {/* Role & Logements */}
                 <div className="space-y-4">
                   <div>
@@ -171,7 +243,7 @@ export default function ReserverDemoPage() {
             ) : (
               <div 
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/g-vernay-biloki/demonstration-biloki?hide_event_type_details=1&name={name}&email={email}"
+                data-url={`https://calendly.com/g-vernay-biloki/demonstration-biloki?hide_event_type_details=1&email=${encodeURIComponent(formData.email)}&a1=${encodeURIComponent(formData.language)}`}
                 style={{ minWidth: '100%', height: '650px' }}
               />
             )}
