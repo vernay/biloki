@@ -81,6 +81,7 @@ export default function ChatBot() {
   const hasInitializedRef = useRef(false);
   const sessionIdRef = useRef<string>('');
   const lastSentEmailRef = useRef<string>('');
+  const lastNeedTypeRef = useRef<string>('');
   const needMapRef = useRef<Record<string, string>>({
     logiciel_gestion: 'Logiciel_gestion',
     visite_site: 'Visite_site',
@@ -603,6 +604,7 @@ export default function ChatBot() {
     if (awaitingHumanEmail) {
       if (emailMatch) {
         const email = emailMatch[0];
+        const needType = leadData.needType ?? lastNeedTypeRef.current;
         setLeadData((prev) => ({ ...prev, email, consent: true }));
         if (email && email !== lastSentEmailRef.current) {
           lastSentEmailRef.current = email;
@@ -610,7 +612,7 @@ export default function ChatBot() {
             email,
             language: detectedLang,
             role: leadData.role,
-            needType: leadData.needType,
+            needType,
             propertyCount: leadData.propertyCount,
           });
         }
@@ -627,6 +629,7 @@ export default function ChatBot() {
 
     if (isNeedToken && needValue) {
       const mappedNeed = needMapRef.current[needValue] ?? needValue;
+      lastNeedTypeRef.current = mappedNeed;
       setLeadData((prev) => ({ ...prev, needType: mappedNeed }));
       setHasRequestedEmail(true);
       setMessages((prev) => [...prev, createEmailCapturePrompt()]);
@@ -636,6 +639,7 @@ export default function ChatBot() {
 
     if (emailMatch) {
       const email = emailMatch[0];
+      const needType = leadData.needType ?? lastNeedTypeRef.current;
       setLeadData((prev) => ({ ...prev, email, consent: true }));
       if (email && email !== lastSentEmailRef.current) {
         lastSentEmailRef.current = email;
@@ -643,7 +647,7 @@ export default function ChatBot() {
           email,
           language: detectedLang,
           role: leadData.role,
-          needType: leadData.needType,
+          needType,
           propertyCount: leadData.propertyCount,
         });
       }
