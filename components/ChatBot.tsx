@@ -399,7 +399,7 @@ export default function ChatBot() {
 
   const createEmailCapturePrompt = useCallback((): Message => {
     const copy = {
-      fr: "Pouvez-vous laisser votre email pour que nous puissions vous recontacter ?",
+      fr: "Bonjour, avant de commencer a discuter, pouvez-vous me transmettre votre adresse e-mail afin que nous puissions effectuer un suivi ?",
       en: 'Could you share your email so we can follow up?',
       es: 'Puedes dejar tu email para que podamos contactarte?',
       pt: 'Pode deixar seu email para que possamos entrar em contato?',
