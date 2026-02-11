@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
@@ -41,6 +42,12 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         {children}
+        <Script
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-eu1.hs-scripts.com/145156681.js"
+        />
       </body>
     </html>
   );
