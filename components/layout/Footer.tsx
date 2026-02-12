@@ -120,11 +120,6 @@ export default function Footer() {
                   {t('careers')}
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  {t('contact')}
-                </Link>
-              </li>
             </ul>
           </div>
 
