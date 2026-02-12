@@ -68,7 +68,7 @@ const featureLinks: Record<string, string> = {
   pms: '/fonctionnalites/pms',
   serrures: '/fonctionnalites/serrures-connectees',
   interfaces: '/fonctionnalites/4-interfaces',
-  'guide-digital': '/fonctionnalites/ia-automatisation',
+  'guide-digital': '/fonctionnalites/4-interfaces#locataire',
 };
 
 export default function FeaturesSection() {
