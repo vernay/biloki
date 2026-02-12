@@ -1155,7 +1155,29 @@
     "channelManager": {
       "title": "Channel Manager",
       "description": "Diffusez et synchronisez vos annonces sur plus de 120 plateformes de réservation.",
-      "content": "Chaque réservation est centralisée en temps réel, sans risque de double booking. Gérez tous vos canaux de distribution depuis une interface unique."
+      "content": "Chaque réservation est centralisée en temps réel, sans risque de double booking. Gérez tous vos canaux de distribution depuis une interface unique.",
+      "hero": {
+        "title": "Un voyageur autonome, une équipe soulagée",
+        "description": "Un guide 24/7 qui automatise l’accueil et répond aux voyageurs à votre place.",
+        "bullets": [
+          "Jusqu’à 70% de messages voyageurs en moins",
+          "Instructions d’arrivée et informations logement envoyées automatiquement",
+          "Assistance voyageurs disponible 24h/24, sans mobilisation de votre équipe"
+        ]
+      },
+      "subSections": {
+        "title": "Aller plus loin avec le Channel Manager",
+        "ota": {
+          "title": "Connexions OTA",
+          "description": "Connectez Airbnb, Booking, Vrbo et plus de 120 canaux pour diffuser vos annonces sans effort.",
+          "cta": "Voir les connexions OTA"
+        },
+        "calendars": {
+          "title": "Synchronisation des calendriers",
+          "description": "Des calendriers toujours à jour, des disponibilités fiables, zéro double réservation.",
+          "cta": "Voir la synchronisation"
+        }
+      }
     },
     "multiLanguage": {
       "title": "Multi-langues",

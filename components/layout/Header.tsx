@@ -158,19 +158,22 @@ export default function Header() {
                         onMouseEnter={() => setExpandedItem(item.id)}
                         onMouseLeave={() => setExpandedItem(null)}
                       >
-                        <button
-                          className="w-full text-left px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-primary transition text-sm font-medium flex items-center justify-between"
-                        >
-                          {getFeatureLabel(item.id)}
+                        <div className="flex items-center justify-between px-4 py-2.5">
+                          <Link
+                            href={item.href}
+                            className="text-gray-700 hover:text-primary transition text-sm font-medium"
+                          >
+                            {getFeatureLabel(item.id)}
+                          </Link>
                           <svg 
-                            className="w-4 h-4"
+                            className="w-4 h-4 text-gray-500"
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
-                        </button>
+                        </div>
                         {expandedItem === item.id && (
                           <div 
                             className="absolute left-full top-0 ml-1 w-72 bg-white rounded-lg shadow-xl py-2 border border-gray-100 z-50"
@@ -303,20 +306,34 @@ export default function Header() {
                   <div key={item.href}>
                     {item.subItems ? (
                       <div>
-                        <button
-                          onClick={() => setMobileExpandedFeatureItem(mobileExpandedFeatureItem === item.id ? null : item.id)}
-                          className="w-full text-left text-white hover:opacity-80 py-2 text-sm flex items-center justify-between font-medium"
-                        >
-                          {getFeatureLabel(item.id)}
-                          <svg 
-                            className={`w-4 h-4 transition-transform ${mobileExpandedFeatureItem === item.id ? 'rotate-180' : ''}`}
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
+                        <div className="flex items-center justify-between">
+                          <Link
+                            href={item.href}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setMobileFeaturesOpen(false);
+                              setMobileExpandedFeatureItem(null);
+                            }}
+                            className="text-white hover:opacity-80 py-2 text-sm font-medium"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
-                        </button>
+                            {getFeatureLabel(item.id)}
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => setMobileExpandedFeatureItem(mobileExpandedFeatureItem === item.id ? null : item.id)}
+                            className="text-white hover:opacity-80 py-2 pl-4"
+                            aria-label={t("features")}
+                          >
+                            <svg 
+                              className={`w-4 h-4 transition-transform ${mobileExpandedFeatureItem === item.id ? 'rotate-180' : ''}`}
+                              fill="none" 
+                              stroke="currentColor" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                        </div>
                         
                         {mobileExpandedFeatureItem === item.id && (
                           <div className="pl-4 space-y-2 my-2 rounded py-2 px-2" style={{ backgroundColor: '#0290d9' }}>
