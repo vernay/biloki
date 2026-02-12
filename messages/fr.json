@@ -1157,13 +1157,83 @@
       "description": "Diffusez et synchronisez vos annonces sur plus de 120 plateformes de réservation.",
       "content": "Chaque réservation est centralisée en temps réel, sans risque de double booking. Gérez tous vos canaux de distribution depuis une interface unique.",
       "hero": {
-        "title": "Un voyageur autonome, une équipe soulagée",
-        "description": "Un guide 24/7 qui automatise l’accueil et répond aux voyageurs à votre place.",
+        "kicker": "Channel Manager Biloki",
+        "title": "Synchronisez toutes vos annonces en temps reel",
+        "description": "Centralisez vos calendriers, tarifs et disponibilites sur plus de 120 plateformes, sans double reservation.",
+        "ctaPrimary": "Réserver une démo",
+        "ctaSecondary": "Essai gratuit",
         "bullets": [
-          "Jusqu’à 70% de messages voyageurs en moins",
-          "Instructions d’arrivée et informations logement envoyées automatiquement",
-          "Assistance voyageurs disponible 24h/24, sans mobilisation de votre équipe"
+          "Synchronisation instantanee des disponibilites",
+          "Tarifs et restrictions unifies sur tous les canaux",
+          "Fini les doubles reservations et les mises a jour manuelles"
+        ],
+        "stats": [
+          { "value": "120+", "label": "OTA connectées" },
+          { "value": "0", "label": "Double booking" },
+          { "value": "24/7", "label": "Support voyageurs" },
+          { "value": "10 min", "label": "Mise en place" }
         ]
+      },
+      "sections": {
+        "placeholders": {
+          "heroVisual": "Espace visuel produit",
+          "logo": "Logo partenaire",
+          "screenshot": "Espace capture d’écran"
+        },
+        "trusted": {
+          "title": "Connectez vos annonces partout",
+          "description": "Airbnb, Booking, Vrbo, Expedia... centralisez vos canaux et pilotez vos disponibilités en temps réel."
+        },
+        "why": {
+          "title": "Pourquoi un Channel Manager Biloki ?",
+          "description": "Des réservations synchronisées, des tarifs cohérents et une expérience voyageur fluide, sans travail manuel.",
+          "points": [
+            "Calendriers synchronisés en temps réel",
+            "Tarifs et restrictions mis a jour automatiquement",
+            "Moins d’erreurs, plus de revenus",
+            "Visibilité accrue sur les plateformes"
+          ]
+        },
+        "steps": {
+          "title": "Comment ca marche ?",
+          "stepLabel": "Etape {number}",
+          "items": [
+            {
+              "title": "Connectez vos plateformes",
+              "description": "Reliez vos comptes OTA en quelques clics et importez vos annonces."
+            },
+            {
+              "title": "Centralisez calendriers et tarifs",
+              "description": "Pilotez tout depuis Biloki : disponibilites, regles et prix."
+            },
+            {
+              "title": "Automatisez la diffusion",
+              "description": "Chaque modification se propage partout, instantanement."
+            }
+          ]
+        },
+        "features": {
+          "title": "Tout ce qu’il faut pour distribuer sans stress",
+          "description": "Des outils solides pour garder vos annonces synchronisees et vos equipes sereines.",
+          "items": [
+            {
+              "title": "Synchronisation multi-plateformes",
+              "description": "Airbnb, Booking, Vrbo, Expedia et plus de 120 canaux." 
+            },
+            {
+              "title": "Regles et restrictions unifiees",
+              "description": "Min. nuits, check-in/out, fermetures : tout se pilote en un seul endroit."
+            },
+            {
+              "title": "Tarification centralisee",
+              "description": "Mettez a jour vos prix en une fois et evitez les incoherences."
+            },
+            {
+              "title": "Mise a jour temps reel",
+              "description": "Des disponibilites fiables pour eviter les doubles reservations."
+            }
+          ]
+        }
       },
       "subSections": {
         "title": "Aller plus loin avec le Channel Manager",
@@ -1174,9 +1244,30 @@
         },
         "calendars": {
           "title": "Synchronisation des calendriers",
-          "description": "Des calendriers toujours à jour, des disponibilités fiables, zéro double réservation.",
+          "description": "Des calendriers toujours a jour, des disponibilites fiables, zero double reservation.",
           "cta": "Voir la synchronisation"
         }
+      },
+      "faq": {
+        "title": "Questions frequentes",
+        "items": [
+          {
+            "q": "Qu’est-ce qu’un channel manager ?",
+            "a": "C’est un outil qui synchronise automatiquement vos annonces, calendriers et tarifs sur toutes les plateformes."
+          },
+          {
+            "q": "Biloki se connecte a combien d’OTA ?",
+            "a": "Plus de 120 plateformes de reservation, dont Airbnb, Booking, Vrbo et Expedia."
+          },
+          {
+            "q": "Combien de temps pour se connecter ?",
+            "a": "La plupart des connexions sont actives en moins de 10 minutes."
+          },
+          {
+            "q": "Peut-on gerer les tarifs et regles depuis Biloki ?",
+            "a": "Oui, vous pilotez les prix, restrictions et disponibilites depuis une seule interface."
+          }
+        ]
       }
     },
     "multiLanguage": {

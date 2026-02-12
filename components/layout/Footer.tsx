@@ -1,15 +1,33 @@
 'use client';
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Logo from "@/components/ui/Logo";
 import { FEATURES } from "@/lib/features-config";
 import { getPrimaryColor } from "@/lib/design-config";
 import { useTranslations } from "next-intl";
+import { locales, type Locale } from "@/lib/i18n/config";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const tHeader = useTranslations("header");
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+  const pathLocale = pathname.split('/')[1] as Locale;
+  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
+
+  const withLocale = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+      return href;
+    }
+    if (href === '/') {
+      return `/${locale}`;
+    }
+    if (href.startsWith(`/${locale}/`) || href === `/${locale}`) {
+      return href;
+    }
+    return `/${locale}${href}`;
+  };
 
   // Mapping des IDs vers les clés de traduction (comme dans le Header)
   const getFeatureLabel = (id: string): string => {
@@ -91,12 +109,12 @@ export default function Footer() {
             <h3 className="font-semibold text-base mb-3">{t('biloki')}</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/tarifs" className="hover:text-white transition-colors">
+                <Link href={withLocale("/tarifs")} className="hover:text-white transition-colors">
                   {t('pricing')}
                 </Link>
               </li>
               <li>
-                <Link href="/programme-parrainage" className="hover:text-white transition-colors">
+                <Link href={withLocale("/programme-parrainage")} className="hover:text-white transition-colors">
                   {t('referral')}
                 </Link>
               </li>
@@ -106,17 +124,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/equipe" className="hover:text-white transition-colors">
+                <Link href={withLocale("/equipe")} className="hover:text-white transition-colors">
                   {t('team')}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
+                <Link href={withLocale("/blog")} className="hover:text-white transition-colors">
                   {t('blog')}
                 </Link>
               </li>
               <li>
-                <Link href="/carriere" className="hover:text-white transition-colors">
+                <Link href={withLocale("/carriere")} className="hover:text-white transition-colors">
                   {t('careers')}
                 </Link>
               </li>
@@ -128,7 +146,7 @@ export default function Footer() {
             <h3 className="font-semibold text-base mb-3">{t('support')}</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href={withLocale("/contact")} className="hover:text-white transition-colors">
                   {t('contact')}
                 </Link>
               </li>
@@ -140,17 +158,17 @@ export default function Footer() {
             <h3 className="font-semibold text-base mb-3">{t('legal')}</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>
-                <Link href="/mentions-legales" className="hover:text-white transition-colors">
+                <Link href={withLocale("/mentions-legales")} className="hover:text-white transition-colors">
                   {t('legalNotice')}
                 </Link>
               </li>
               <li>
-                <Link href="/cgv" className="hover:text-white transition-colors">
+                <Link href={withLocale("/cgv")} className="hover:text-white transition-colors">
                   {t('terms')}
                 </Link>
               </li>
               <li>
-                <Link href="/cookies" className="hover:text-white transition-colors">
+                <Link href={withLocale("/cookies")} className="hover:text-white transition-colors">
                   {t('cookies')}
                 </Link>
               </li>

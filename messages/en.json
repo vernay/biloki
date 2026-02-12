@@ -1141,13 +1141,83 @@
       "description": "Distribute and synchronize your listings on more than 120 booking platforms.",
       "content": "Each booking is centralized in real-time, with no risk of double booking. Manage all your distribution channels from a single interface.",
       "hero": {
-        "title": "A self-serve guest, a relieved team",
-        "description": "A 24/7 guide that automates arrival and answers guest questions for you.",
+        "kicker": "Biloki Channel Manager",
+        "title": "Keep every listing in sync, everywhere",
+        "description": "Centralize calendars, rates and availability across 120+ platforms with zero double bookings.",
+        "ctaPrimary": "Book a demo",
+        "ctaSecondary": "Free trial",
         "bullets": [
-          "Up to 70% fewer guest messages",
-          "Arrival instructions and property info sent automatically",
-          "24/7 guest assistance without mobilizing your team"
+          "Real-time availability sync",
+          "Unified rates and restrictions on all channels",
+          "No double bookings, no manual updates"
+        ],
+        "stats": [
+          { "value": "120+", "label": "Connected OTAs" },
+          { "value": "0", "label": "Double booking" },
+          { "value": "24/7", "label": "Guest support" },
+          { "value": "10 min", "label": "Setup time" }
         ]
+      },
+      "sections": {
+        "placeholders": {
+          "heroVisual": "Product visual space",
+          "logo": "Partner logo",
+          "screenshot": "Screenshot space"
+        },
+        "trusted": {
+          "title": "Connect your listings everywhere",
+          "description": "Airbnb, Booking, Vrbo, Expedia... centralize your channels and keep availability in real time."
+        },
+        "why": {
+          "title": "Why Biloki Channel Manager?",
+          "description": "Synchronized bookings, consistent pricing, and a smooth guest experience without manual work.",
+          "points": [
+            "Real-time calendar sync",
+            "Rates and restrictions updated automatically",
+            "Fewer errors, higher revenue",
+            "More visibility across platforms"
+          ]
+        },
+        "steps": {
+          "title": "How it works?",
+          "stepLabel": "Step {number}",
+          "items": [
+            {
+              "title": "Connect your platforms",
+              "description": "Link your OTA accounts in a few clicks and import your listings."
+            },
+            {
+              "title": "Centralize calendars and rates",
+              "description": "Manage availability, rules and pricing from one dashboard."
+            },
+            {
+              "title": "Automate distribution",
+              "description": "Every update propagates everywhere instantly."
+            }
+          ]
+        },
+        "features": {
+          "title": "Everything you need to distribute with confidence",
+          "description": "Solid tooling to keep listings in sync and teams calm.",
+          "items": [
+            {
+              "title": "Multi-platform sync",
+              "description": "Airbnb, Booking, Vrbo, Expedia and 120+ channels."
+            },
+            {
+              "title": "Unified rules and restrictions",
+              "description": "Minimum nights, check-in/out, closures: one control center."
+            },
+            {
+              "title": "Centralized pricing",
+              "description": "Update rates once and avoid inconsistencies."
+            },
+            {
+              "title": "Real-time updates",
+              "description": "Reliable availability to prevent double bookings."
+            }
+          ]
+        }
       },
       "subSections": {
         "title": "Go further with the Channel Manager",
@@ -1161,6 +1231,27 @@
           "description": "Always up-to-date calendars, reliable availability, zero double bookings.",
           "cta": "View synchronization"
         }
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": [
+          {
+            "q": "What is a channel manager?",
+            "a": "A tool that automatically synchronizes listings, calendars and rates across booking platforms."
+          },
+          {
+            "q": "How many OTAs does Biloki connect to?",
+            "a": "More than 120 booking platforms including Airbnb, Booking, Vrbo and Expedia."
+          },
+          {
+            "q": "How long does setup take?",
+            "a": "Most connections are live in under 10 minutes."
+          },
+          {
+            "q": "Can I manage rates and rules in Biloki?",
+            "a": "Yes, you control pricing, restrictions and availability from one interface."
+          }
+        ]
       }
     },
     "multiLanguage": {

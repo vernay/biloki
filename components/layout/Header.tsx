@@ -30,6 +30,19 @@ export default function Header() {
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
 
+  const withLocale = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+      return href;
+    }
+    if (href === '/') {
+      return `/${locale}`;
+    }
+    if (href.startsWith(`/${locale}/`) || href === `/${locale}`) {
+      return href;
+    }
+    return `/${locale}${href}`;
+  };
+
   // Fermer les dropdowns quand on clique en dehors
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -128,7 +141,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8 text-white text-sm">
-          <Link href="/" className="hover:opacity-80 transition">
+          <Link href={withLocale("/")} className="hover:opacity-80 transition">
             {t("home")}
           </Link>
           
@@ -160,7 +173,7 @@ export default function Header() {
                       >
                         <div className="flex items-center justify-between px-4 py-2.5">
                           <Link
-                            href={item.href}
+                            href={withLocale(item.href)}
                             className="text-gray-700 hover:text-primary transition text-sm font-medium"
                           >
                             {getFeatureLabel(item.id)}
@@ -183,7 +196,7 @@ export default function Header() {
                             {item.subItems.map((subItem) => (
                               <Link
                                 key={subItem.href}
-                                href={subItem.href}
+                                href={withLocale(subItem.href)}
                                 className="block px-4 py-2.5 text-gray-600 hover:bg-blue-50 hover:text-primary transition text-sm"
                               >
                                 {getSubItemLabel(subItem.href)}
@@ -194,7 +207,7 @@ export default function Header() {
                       </div>
                     ) : (
                       <Link
-                        href={item.href}
+                        href={withLocale(item.href)}
                         className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-primary transition text-sm font-medium"
                       >
                         {getFeatureLabel(item.id)}
@@ -206,10 +219,10 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/tarifs" className="hover:opacity-80 transition">
+          <Link href={withLocale("/tarifs")} className="hover:opacity-80 transition">
             {t("pricing")}
           </Link>
-          <Link href="/contact" className="hover:opacity-80 transition">
+          <Link href={withLocale("/contact")} className="hover:opacity-80 transition">
             {t("contact")}
           </Link>
         </div>
@@ -249,7 +262,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/reserver-demo" className="text-white hover:opacity-80 font-semibold text-sm">
+          <Link href={withLocale("/reserver-demo")} className="text-white hover:opacity-80 font-semibold text-sm">
             {t("demo")}
           </Link>
           <WebappLink type="login" className="text-white hover:opacity-80 font-semibold text-sm">
@@ -279,7 +292,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-primary px-4 py-4 space-y-3 border-t border-white border-opacity-20">
-          <Link href="/" onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
+          <Link href={withLocale("/")} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
             {t("home")}
           </Link>
           
@@ -308,7 +321,7 @@ export default function Header() {
                       <div>
                         <div className="flex items-center justify-between">
                           <Link
-                            href={item.href}
+                            href={withLocale(item.href)}
                             onClick={() => {
                               setIsOpen(false);
                               setMobileFeaturesOpen(false);
@@ -340,7 +353,7 @@ export default function Header() {
                             {item.subItems.map((subItem) => (
                               <Link
                                 key={subItem.href}
-                                href={subItem.href}
+                                href={withLocale(subItem.href)}
                                 onClick={() => {
                                   setIsOpen(false);
                                   setMobileFeaturesOpen(false);
@@ -356,7 +369,7 @@ export default function Header() {
                       </div>
                     ) : (
                       <Link
-                        href={item.href}
+                        href={withLocale(item.href)}
                         onClick={() => {
                           setIsOpen(false);
                           setMobileFeaturesOpen(false);
@@ -372,10 +385,10 @@ export default function Header() {
             )}
           </div>
           
-          <Link href="/tarifs" onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
+          <Link href={withLocale("/tarifs")} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
             {t("pricing")}
           </Link>
-          <Link href="/contact" onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
+          <Link href={withLocale("/contact")} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2">
             {t("contact")}
           </Link>
           <hr className="border-white border-opacity-20" />
@@ -421,7 +434,7 @@ export default function Header() {
           </div>
           
           <hr className="border-white border-opacity-20" />
-          <Link href="/reserver-demo" onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
+          <Link href={withLocale("/reserver-demo")} onClick={() => setIsOpen(false)} className="block text-white hover:opacity-80 py-2 font-semibold">
             {t("demo")}
           </Link>
           <WebappLink type="login" className="block text-white hover:opacity-80 py-2 font-semibold" onClick={() => setIsOpen(false)}>
