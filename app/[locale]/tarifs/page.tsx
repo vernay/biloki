@@ -40,8 +40,6 @@ export default function TarifsPage() {
     day: 'numeric', month: 'long', year: 'numeric'
   }).format(new Date());
 
-  const vatLabel = isParticulier ? t('incl') : t('excl');
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -237,7 +235,6 @@ export default function TarifsPage() {
                         <p className="text-3xl md:text-4xl font-black text-primary">
                           {totalMonthlyDisplay?.toFixed(2)}€
                         </p>
-                        <p className="text-sm text-gray-600">{vatLabel}</p>
                       </>
                     )}
                   </div>
@@ -263,7 +260,6 @@ export default function TarifsPage() {
                         <p className="text-3xl md:text-4xl font-black text-primary">
                           {totalAnnualDisplay?.toFixed(2)}€
                         </p>
-                        <p className="text-sm text-gray-600">{vatLabel}</p>
                       </>
                     )}
                   </div>
