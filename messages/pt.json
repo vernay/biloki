@@ -48,7 +48,8 @@
       "pms": "PMS",
       "channelManager": "Channel Manager",
       "calendarSync": "Sincronização de calendários",
-      "otaConnections": "Conexões OTA (Airbnb, Booking, etc.)",
+      "airbnbConnection": "Conexao Airbnb",
+      "bookingConnection": "Conexao Booking",
       "pricing": "Preços",
       "smartLocks": "Fechaduras conectadas",
       "fourInterfaces": "As 4 interfaces",
@@ -98,10 +99,10 @@
     "items": {
       "channelManager": {
         "title": "Evite reservas duplicadas com nosso channel manager",
-        "description": "Distribua e sincronize seus anúncios em mais de 120 plataformas de reserva. Cada reserva é centralizada em tempo real, sem risco de reserva dupla.",
+        "description": "Alugue em todos os canais, sem estresse, sem overbooking. Mais de 120 sites de reserva sincronizados em tempo real.",
         "kicker": "Distribuição",
         "bullets": [
-          "Sincronização de disponibilidade em tempo real",
+          "Disponibilidade dos anúncios atualizada instantaneamente",
           "Tarifas, restrições e conteúdo alinhados",
           "Prevenção automática de overbooking"
         ]
@@ -113,7 +114,7 @@
         "bullets": [
           "Visão 360° de reservas, receitas e operações",
           "Cadastros unificados de imóveis, hóspedes e proprietários",
-          "Planejamento de check-in, check-out, limpeza e manutenção"
+          "Planejamento de chegadas, partidas, limpeza e manutenção"
         ]
       },
       "serrures": {
@@ -121,9 +122,9 @@
         "description": "Gere códigos de acesso únicos para cada estadia. Ativação e desativação automática de acordo com as datas de check-in e check-out, para seus prestadores de serviços e hóspedes.",
         "kicker": "Acesso",
         "bullets": [
-          "Códigos únicos e temporários",
+          "Códigos únicos por estadia na interface do hóspede",
           "Compartilhamento seguro com prestadores",
-          "Histórico e controle de acessos",
+          "Controle e histórico de acessos no seu painel",
           "Códigos enviados ao hóspede na sua plataforma: abertura pelo app"
         ]
       },
@@ -134,7 +135,7 @@
         "bullets": [
           "Interfaces por função",
           "IA integrada para acelerar tarefas",
-          "Experiência consistente no web e no mobile",
+          "Web app + aplicativo móvel no computador e no telefone",
           "Aplicação multilíngue"
         ]
       },
@@ -221,7 +222,7 @@
     },
     "chat": {
       "botName": "Biloki AI",
-      "status": "Sempre disponível",
+      "description": "",
       "online": "Online",
       "placeholder": "Faça sua pergunta...",
       "quickDoor": "Código da porta",
@@ -329,7 +330,7 @@
     "items": {
       "time": {
         "title": "Economize até 20h / semana",
-        "description": "Automatize o essencial.\nFoco no que importa."
+        "description": "Automatize o essencial.\nFoco no crescimento."
       },
       "revenue": {
         "title": "Aumente sua receita",
@@ -342,14 +343,6 @@
       "money": {
         "title": "Reduza seus custos operacionais",
         "description": "Menos erros,\nmenos intervenções manuais."
-      },
-      "target": {
-        "title": "Centralize toda sua gestão",
-        "description": "Todo seu negócio,\nem uma única ferramenta."
-      },
-      "chart": {
-        "title": "Monitore seu negócio em tempo real",
-        "description": "Seu desempenho,\nclaro e acessível em qualquer lugar."
       }
     }
   },
@@ -1229,6 +1222,218 @@
         "title": "Pronto para automatizar seus acessos?",
         "description": "Integre suas fechaduras inteligentes com Biloki e gerencie todos os seus códigos de acesso automaticamente.",
         "button": "Experimentar grátis"
+      }
+    },
+    "airbnb": {
+      "title": "Conexão",
+      "titleHighlight": "Airbnb",
+      "description": "Conecte o Airbnb ao Biloki para sincronizar seus calendários, tarifas e reservas em tempo real, sem reservas duplicadas.",
+      "hero": {
+        "kicker": "Channel Manager Biloki",
+        "ctaPrimary": "Agendar uma demo",
+        "ctaSecondary": "Teste gratuito",
+        "badge": "Conexão direta",
+        "bullets": {
+          "sync": "Sincronização instantânea de disponibilidade",
+          "rates": "Tarifas e regras unificadas no Airbnb",
+          "avoid": "Fim das reservas duplicadas"
+        }
+      },
+      "sections": {
+        "trust": {
+          "title": "Uma conexão Airbnb confiável, gerenciada no Biloki",
+          "description": "Centralize seus anúncios do Airbnb em uma única interface e mantenha a disponibilidade sempre atualizada.",
+          "visual": "Prévia da sincronização Airbnb"
+        },
+        "highlight": {
+          "title": "Controle o desempenho no Airbnb",
+          "description": "Acompanhe reservas, ajuste preços e aplique regras em poucos cliques.",
+          "badge": "Dica Biloki",
+          "quote": "Seus anúncios no Airbnb ficam alinhados, sem esforço diário."
+        }
+      },
+      "benefits": {
+        "title": "Benefícios de uma conexão Airbnb",
+        "subtitle": "Menos operação, mais visibilidade e receita protegida.",
+        "items": {
+          "sync": {
+            "title": "Calendários sempre sincronizados",
+            "description": "Cada reserva no Airbnb atualiza a disponibilidade em todos os canais automaticamente."
+          },
+          "rates": {
+            "title": "Tarifas consistentes no Airbnb",
+            "description": "Gerencie preços e regras no Biloki para evitar diferenças."
+          },
+          "visibility": {
+            "title": "Mais visibilidade",
+            "description": "Publique anúncios sempre atualizados para maximizar a ocupação."
+          },
+          "control": {
+            "title": "Controle em tempo real",
+            "description": "Atualize uma vez e a sincronização cuida do resto."
+          }
+        }
+      },
+      "steps": {
+        "title": "Conexão Airbnb em 3 etapas",
+        "stepLabel": "Etapa {number}",
+        "items": {
+          "connect": {
+            "title": "Conecte sua conta",
+            "description": "Autorize o Biloki com segurança dentro da sua conta Airbnb."
+          },
+          "import": {
+            "title": "Importe seus anúncios",
+            "description": "Seus imóveis são importados automaticamente, sem cadastro manual."
+          },
+          "sync": {
+            "title": "Sincronize em tempo real",
+            "description": "Disponibilidade, tarifas e reservas ficam alinhadas em todos os canais."
+          }
+        }
+      },
+      "stats": {
+        "items": {
+          "setup": { "value": "5 min", "label": "Configuração" },
+          "updates": { "value": "Instantâneo", "label": "Atualizações" },
+          "channels": { "value": "120+", "label": "Canais" }
+        }
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre a conexão Airbnb",
+        "items": {
+          "setup": {
+            "question": "Quanto tempo leva para conectar o Airbnb?",
+            "answer": "A conexão leva apenas alguns minutos, com um passo a passo guiado."
+          },
+          "sync": {
+            "question": "A sincronização é instantânea?",
+            "answer": "Sim, as alterações são propagadas automaticamente assim que são salvas."
+          },
+          "requirements": {
+            "question": "Preciso de uma conta Airbnb Pro?",
+            "answer": "Não, o Biloki conecta-se à sua conta Airbnb existente."
+          },
+          "support": {
+            "question": "O Biloki ajuda na configuração?",
+            "answer": "Sim, nosso time ajuda você a configurar e validar a sincronização."
+          }
+        }
+      },
+      "cta": {
+        "title": "Pronto para conectar o Airbnb ao Biloki?",
+        "description": "Ative a sincronização e economize tempo a partir de hoje."
+      },
+      "links": {
+        "channelManager": "Channel Manager",
+        "booking": "Conexão Booking",
+        "calendars": "Sincronizar seus calendários"
+      }
+    },
+    "booking": {
+      "title": "Conexão",
+      "titleHighlight": "Booking.com",
+      "description": "Conecte o Booking.com ao Biloki para sincronizar seus calendários, tarifas e reservas em tempo real, sem reservas duplicadas.",
+      "hero": {
+        "kicker": "Channel Manager Biloki",
+        "ctaPrimary": "Agendar uma demo",
+        "ctaSecondary": "Teste gratuito",
+        "badge": "Conexão direta",
+        "bullets": {
+          "sync": "Sincronização instantânea de disponibilidade",
+          "rates": "Tarifas e regras unificadas no Booking.com",
+          "avoid": "Fim das reservas duplicadas"
+        }
+      },
+      "sections": {
+        "trust": {
+          "title": "Uma conexão Booking.com fluida e segura",
+          "description": "Centralize seus anúncios do Booking.com no Biloki e mantenha a disponibilidade sempre atualizada.",
+          "visual": "Prévia da sincronização Booking.com"
+        },
+        "highlight": {
+          "title": "Controle o desempenho no Booking.com",
+          "description": "Acompanhe reservas, ajuste preços e aplique regras em poucos cliques.",
+          "badge": "Dica Biloki",
+          "quote": "Seus anúncios no Booking.com ficam alinhados, sem esforço diário."
+        }
+      },
+      "benefits": {
+        "title": "Benefícios de uma conexão Booking.com",
+        "subtitle": "Menos operação, mais visibilidade e receita protegida.",
+        "items": {
+          "sync": {
+            "title": "Calendários sempre sincronizados",
+            "description": "Cada reserva no Booking.com atualiza a disponibilidade em todos os canais automaticamente."
+          },
+          "rates": {
+            "title": "Tarifas consistentes no Booking.com",
+            "description": "Gerencie preços e regras no Biloki para evitar diferenças."
+          },
+          "visibility": {
+            "title": "Mais visibilidade",
+            "description": "Publique anúncios sempre atualizados para maximizar a ocupação."
+          },
+          "control": {
+            "title": "Controle em tempo real",
+            "description": "Atualize uma vez e a sincronização cuida do resto."
+          }
+        }
+      },
+      "steps": {
+        "title": "Conexão Booking.com em 3 etapas",
+        "stepLabel": "Etapa {number}",
+        "items": {
+          "connect": {
+            "title": "Conecte sua conta",
+            "description": "Autorize o Biloki com segurança dentro da sua conta Booking.com."
+          },
+          "import": {
+            "title": "Importe seus anúncios",
+            "description": "Seus imóveis são importados automaticamente, sem cadastro manual."
+          },
+          "sync": {
+            "title": "Sincronize em tempo real",
+            "description": "Disponibilidade, tarifas e reservas ficam alinhadas em todos os canais."
+          }
+        }
+      },
+      "stats": {
+        "items": {
+          "setup": { "value": "5 min", "label": "Configuração" },
+          "updates": { "value": "Instantâneo", "label": "Atualizações" },
+          "channels": { "value": "120+", "label": "Canais" }
+        }
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre a conexão Booking.com",
+        "items": {
+          "setup": {
+            "question": "Quanto tempo leva para conectar o Booking.com?",
+            "answer": "A conexão leva apenas alguns minutos, com um passo a passo guiado."
+          },
+          "sync": {
+            "question": "A sincronização é instantânea?",
+            "answer": "Sim, as alterações são propagadas automaticamente assim que são salvas."
+          },
+          "requirements": {
+            "question": "Preciso de uma conta Booking.com específica?",
+            "answer": "Não, o Biloki conecta-se à sua conta Booking.com existente."
+          },
+          "support": {
+            "question": "O Biloki ajuda na configuração?",
+            "answer": "Sim, nosso time ajuda você a configurar e validar a sincronização."
+          }
+        }
+      },
+      "cta": {
+        "title": "Pronto para conectar o Booking.com ao Biloki?",
+        "description": "Ative a sincronização e economize tempo a partir de hoje."
+      },
+      "links": {
+        "channelManager": "Channel Manager",
+        "airbnb": "Conexão Airbnb",
+        "calendars": "Sincronizar seus calendários"
       }
     },
     "calendars": {

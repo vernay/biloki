@@ -80,7 +80,8 @@ export default function Header() {
   const getSubItemLabel = (href: string): string => {
     const labelMap: Record<string, string> = {
       '/fonctionnalites/channel-manager/calendriers': t('featuresMenu.calendarSync'),
-      '/fonctionnalites/channel-manager/ota': t('featuresMenu.otaConnections'),
+      '/fonctionnalites/channel-manager/airbnb': t('featuresMenu.airbnbConnection'),
+      '/fonctionnalites/channel-manager/booking': t('featuresMenu.bookingConnection'),
       '/fonctionnalites/channel-manager/tarifs': t('featuresMenu.pricing'),
     };
     return labelMap[href] || href;

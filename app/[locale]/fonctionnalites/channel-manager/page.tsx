@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { locales, type Locale } from '@/lib/i18n/config';
@@ -28,6 +29,7 @@ export default function ChannelManagerPage() {
   const stats = t.raw('hero.stats') as { value: string; label: string }[];
   const steps = t.raw('sections.steps.items') as { title: string; description: string }[];
   const faqItems = t.raw('faq.items') as { q: string; a: string }[];
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -44,7 +46,7 @@ export default function ChannelManagerPage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-white">
+    <main className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -82,7 +84,7 @@ export default function ChannelManagerPage() {
 
               <div className="grid gap-4">
                 {bullets.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 rounded-2xl bg-white/80 border border-blue-100 px-5 py-4 shadow-sm">
+                  <div key={index} className="flex items-start gap-3 rounded-2xl bg-white/80 border border-[var(--biloki-blue)] px-5 py-4 shadow-sm">
                     <span className="mt-0.5 h-5 w-5 flex items-center justify-center rounded-full bg-primary/10 text-primary">
                       <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -113,8 +115,8 @@ export default function ChannelManagerPage() {
             </div>
 
             <div className="relative">
-              <div className="rounded-[32px] border border-blue-100 bg-white/80 p-8 shadow-2xl">
-                <div className="aspect-[4/3] rounded-3xl border border-blue-100 bg-white flex items-center justify-center overflow-hidden">
+              <div className="rounded-[32px] bg-white/80 p-8 shadow-2xl">
+                <div className="aspect-[4/3] rounded-3xl border border-[var(--biloki-blue)] bg-white flex items-center justify-center overflow-hidden">
                   <img
                     src="/images/Calendrier.png"
                     alt={t('sections.placeholders.heroVisual')}
@@ -125,7 +127,7 @@ export default function ChannelManagerPage() {
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   {stats.map((stat, index) => (
-                    <div key={index} className="rounded-2xl border border-blue-100 bg-blue-50/60 px-4 py-3">
+                    <div key={index} className="rounded-2xl border border-[var(--biloki-blue)] bg-blue-50/60 px-4 py-3">
                       <p className="text-2xl font-bold text-primary">{stat.value}</p>
                       <p className="text-xs uppercase tracking-wide text-primary/80">{stat.label}</p>
                     </div>
@@ -139,7 +141,7 @@ export default function ChannelManagerPage() {
 
       {/* Trust / logos */}
       <section className="px-6 pb-16">
-        <div className="max-w-6xl mx-auto rounded-[32px] border border-blue-100 bg-white/70 p-10">
+        <div className="max-w-6xl mx-auto rounded-[32px] border border-[var(--biloki-blue)] bg-white/70 p-10">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('sections.trusted.title')}</h2>
@@ -152,7 +154,7 @@ export default function ChannelManagerPage() {
                 { src: '/images/logo-partenaires/vrbo.png', alt: 'Vrbo' },
                 { src: '/images/logo-partenaires/Expedia.png', alt: 'Expedia' },
               ].map((logo) => (
-                <div key={logo.alt} className="rounded-2xl border border-blue-100 bg-white py-6 flex items-center justify-center">
+                <div key={logo.alt} className="rounded-2xl border border-[var(--biloki-blue)] bg-white py-6 flex items-center justify-center">
                   <img
                     src={logo.src}
                     alt={logo.alt}
@@ -170,19 +172,23 @@ export default function ChannelManagerPage() {
       {/* Why */}
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="rounded-[32px] border border-blue-100 bg-white/70 p-8 shadow-lg">
+          <div className="rounded-[32px] border border-[var(--biloki-blue)] bg-white/70 p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('sections.why.title')}</h2>
             <p className="text-gray-600 mb-6">{t('sections.why.description')}</p>
             <div className="space-y-4">
               {(t.raw('sections.why.points') as string[]).map((point, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-primary" />
+                <div key={index} className="flex items-center gap-3">
+                  <span className="h-5 w-5 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   <p className="text-gray-700">{point}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-[32px] border border-blue-100 bg-white p-8 shadow-lg flex items-center justify-center">
+          <div className="rounded-[32px] border border-[var(--biloki-blue)] bg-white p-8 shadow-lg flex items-center justify-center">
             <img
               src="/images/PMS.png"
               alt={t('sections.placeholders.screenshot')}
@@ -197,7 +203,7 @@ export default function ChannelManagerPage() {
       {/* Steps */}
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
             {t('sections.steps.title')}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -205,27 +211,22 @@ export default function ChannelManagerPage() {
               <div key={index} className="relative">
                 {index < steps.length - 1 && (
                   <>
-                    <div className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 items-center" aria-hidden="true">
-                      <span className="h-px w-6 bg-primary/30" />
-                      <svg className="h-7 w-7 text-primary/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <div className="hidden md:flex absolute -right-7 top-1/2 -translate-y-1/2 items-center" aria-hidden="true">
+                      <svg className="h-7 w-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 6l6 6-6 6" />
                       </svg>
                     </div>
-                    <div className="md:hidden absolute left-1/2 -bottom-5 -translate-x-1/2 flex flex-col items-center" aria-hidden="true">
-                      <span className="h-6 w-px bg-primary/30" />
-                      <svg className="h-6 w-6 text-primary/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <div className="md:hidden absolute left-1/2 -bottom-6 -translate-x-1/2 flex flex-col items-center" aria-hidden="true">
+                      <svg className="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 13l6 6 6-6" />
                       </svg>
                     </div>
                   </>
                 )}
-                <div className="rounded-[28px] border border-blue-100 bg-white/95 p-7 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.6)] h-full">
+                <div className="rounded-[28px] border border-[var(--biloki-blue)] bg-white/95 p-7 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.6)] h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary font-bold">
-                      {index + 1}
-                    </span>
                     <span className="text-sm font-semibold uppercase tracking-wide text-primary">
                       {t('sections.steps.stepLabel', { number: index + 1 })}
                     </span>
@@ -238,68 +239,67 @@ export default function ChannelManagerPage() {
           </div>
         </div>
       </section>
-
-
-      {/* Sub menus */}
-      <section className="px-6 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
-            {t('subSections.title')}
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {t('subSections.ota.title')}
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {t('subSections.ota.description')}
-              </p>
-              <Link
-                href={withLocale('/fonctionnalites/channel-manager/ota')}
-                className="mt-auto inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-              >
-                {t('subSections.ota.cta')}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                {t('subSections.calendars.title')}
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {t('subSections.calendars.description')}
-              </p>
-              <Link
-                href={withLocale('/fonctionnalites/channel-manager/calendriers')}
-                className="mt-auto inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-              >
-                {t('subSections.calendars.cta')}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="px-6 pb-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-10">
             {t('faq.title')}
           </h2>
           <div className="space-y-4">
             {faqItems.map((item, index) => (
-              <div key={index} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.q}</h3>
-                <p className="text-gray-600">{item.a}</p>
+              <div key={index} className="rounded-2xl border border-[var(--biloki-blue)] bg-white shadow-sm">
+                <button
+                  type="button"
+                  className="w-full px-6 py-4 flex items-center justify-between text-left"
+                  aria-expanded={openFaqIndex === index}
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                >
+                  <span className="text-lg font-semibold text-gray-900">{item.q}</span>
+                  <svg
+                    className={`h-5 w-5 text-primary transition-transform ${openFaqIndex === index ? 'rotate-180' : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+                {openFaqIndex === index ? (
+                  <div className="px-6 pb-5 text-gray-600">
+                    {item.a}
+                  </div>
+                ) : null}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager/airbnb')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              Connexion Airbnb
+              <span aria-hidden="true">{'>'}</span>
+            </Link>
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager/booking')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              Connexion Booking
+              <span aria-hidden="true">{'>'}</span>
+            </Link>
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager/calendriers')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              Synchroniser vos calendriers
+              <span aria-hidden="true">{'>'}</span>
+            </Link>
           </div>
         </div>
       </section>

@@ -48,7 +48,7 @@ export default function BenefitsSection() {
     )
   };
 
-  const benefitKeys = ["time", "revenue", "star", "money", "target", "chart"];
+  const benefitKeys = ["time", "revenue", "star", "money"];
 
   return (
     <section className="w-full bg-gradient-to-b from-white to-gray-50 py-20 md:py-32">
@@ -64,7 +64,7 @@ export default function BenefitsSection() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {benefitKeys.map((key, index) => (
             <div 
               key={index}

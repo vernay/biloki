@@ -2,10 +2,28 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { locales, type Locale } from '@/lib/i18n/config';
 
 export default function CalendriersPage() {
   const t = useTranslations('featuresPages.calendars');
+  const tChannelManager = useTranslations('featuresPages.channelManager');
   const common = useTranslations('common');
+  const pathname = usePathname();
+  const pathLocale = pathname.split('/')[1] as Locale;
+  const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
+  const withLocale = (href: string) => {
+    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+      return href;
+    }
+    if (href === '/') {
+      return `/${locale}`;
+    }
+    if (href.startsWith(`/${locale}/`) || href === `/${locale}`) {
+      return href;
+    }
+    return `/${locale}${href}`;
+  };
 
   const benefitKeys = ['sync', 'time', 'centralize', 'commission', 'visibility', 'calendar'] as const;
   const benefitIcons = ['⚡', '⏰', '📊', '💰', '🎯', '📅'];
@@ -26,15 +44,17 @@ export default function CalendriersPage() {
               {t('description')}
             </p>
 
+            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/commencer-gratuitement"
+                href={withLocale('/commencer-gratuitement')}
                 className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition text-center"
               >
                 {common('startFreeTrial')}
               </Link>
               <Link
-                href="/reserver-demo"
+                href={withLocale('/reserver-demo')}
                 className="inline-block border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
               >
                 {common('bookDemo')}
@@ -59,7 +79,7 @@ export default function CalendriersPage() {
                 {t('sections.platforms.description2')}
               </p>
               <Link
-                href="/commencer-gratuitement"
+                href={withLocale('/commencer-gratuitement')}
                 className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
               >
                 {common('startFreeTrial')}
@@ -104,7 +124,7 @@ export default function CalendriersPage() {
                 {t('sections.centralized.description2')}
               </p>
               <Link
-                href="/commencer-gratuitement"
+                href={withLocale('/commencer-gratuitement')}
                 className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
               >
                 {common('startFreeTrial')}
@@ -127,7 +147,7 @@ export default function CalendriersPage() {
                 {t('sections.visibility.description2')}
               </p>
               <Link
-                href="/commencer-gratuitement"
+                href={withLocale('/commencer-gratuitement')}
                 className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
               >
                 {common('startFreeTrial')}
@@ -199,16 +219,42 @@ export default function CalendriersPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/reserver-demo"
+              href={withLocale('/reserver-demo')}
               className="inline-block bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg"
             >
               {common('bookDemo')}
             </Link>
             <Link
-              href="/commencer-gratuitement"
+              href={withLocale('/commencer-gratuitement')}
               className="inline-block bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg"
             >
               {common('startFreeTrial')}
+            </Link>
+          </div>
+        </div>
+
+        <div className="pt-10 pb-6 text-center">
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              {tChannelManager('title')}
+              <span aria-hidden="true">{'>'}</span>
+            </Link>
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager/airbnb')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              Connexion Airbnb
+              <span aria-hidden="true">{'>'}</span>
+            </Link>
+            <Link
+              href={withLocale('/fonctionnalites/channel-manager/booking')}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
+            >
+              Connexion Booking
+              <span aria-hidden="true">{'>'}</span>
             </Link>
           </div>
         </div>

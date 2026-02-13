@@ -140,6 +140,17 @@ input[type="range"]::-moz-range-track {
   overflow: hidden;
 }
 
+/* Hero title typewriter reveal */
+.hero-title-type {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  animation: hero-type var(--type-duration, 2.6s) linear var(--type-delay, 0.1s)
+    forwards;
+}
+
+
 .hero-title-shine::after {
   content: '';
   position: absolute;
@@ -150,7 +161,7 @@ input[type="range"]::-moz-range-track {
   background: linear-gradient(90deg, rgba(4, 164, 255, 0) 0%, rgba(4, 164, 255, 0.7) 45%, rgba(4, 164, 255, 0) 100%);
   transform: skewX(-16deg);
   mix-blend-mode: screen;
-  animation: hero-shine 2s ease-in-out infinite;
+  animation: hero-shine 6s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -159,10 +170,14 @@ input[type="range"]::-moz-range-track {
     left: -120%;
     opacity: 0;
   }
-  20% {
+  40% {
+    left: -120%;
+    opacity: 0;
+  }
+  55% {
     opacity: 1;
   }
-  50% {
+  75% {
     left: 120%;
     opacity: 0;
   }
@@ -170,6 +185,22 @@ input[type="range"]::-moz-range-track {
     left: 120%;
     opacity: 0;
   }
+}
+
+@keyframes hero-type {
+  to {
+    max-width: var(--type-width, 40ch);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-type {
+    animation: none;
+    max-width: none;
+  }
+
+  
 }
 
 /* Checkbox styling - coche blanche sur fond bleu */

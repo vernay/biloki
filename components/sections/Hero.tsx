@@ -10,6 +10,19 @@ export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
   const tInterfaces = useTranslations("animatedInterfaces");
+  const titleLine = t("title").trim();
+  const highlightLine = t("titleHighlight").trim();
+  const titleWords = titleLine.split(/\s+/).filter(Boolean);
+  const lastWord = titleWords[titleWords.length - 1] ?? "";
+  const baseWords = titleWords.slice(0, -1);
+  const splitIndex = Math.ceil(baseWords.length / 2);
+  const titleLineOne = baseWords.slice(0, splitIndex).join(" ");
+  const titleLineTwo = baseWords.slice(splitIndex).join(" ");
+  const titleLineThree = `${lastWord}${lastWord ? " " : ""}${highlightLine}`.trim();
+  const lineOneWords = titleLineOne.split(/\s+/).filter(Boolean);
+  const lineOneSplit = Math.ceil(lineOneWords.length / 2);
+  const lineOneBlue = lineOneWords.slice(0, lineOneSplit).join(" ");
+  const lineOneRest = lineOneWords.slice(lineOneSplit).join(" ");
   
   return (
     <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -23,11 +36,52 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 hero-title-shine"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic tracking-tight text-gray-900 hero-title-shine flex flex-col gap-2"
               variants={itemVariants}
             >
-              {t("title")}{" "}
-              <span className="text-primary">{t("titleHighlight")}</span>
+              <span
+                className="hero-title-type block"
+                style={
+                  {
+                    "--type-steps": titleLineOne.length,
+                    "--type-width": `${titleLineOne.length}ch`,
+                    "--type-duration": "0.7s",
+                    "--type-delay": "0.1s",
+                  } as React.CSSProperties
+                }
+              >
+                <span className="text-primary">{lineOneBlue}</span>
+                {lineOneRest ? ` ${lineOneRest}` : ""}
+              </span>
+              {titleLineTwo ? (
+                <span
+                  className="hero-title-type block"
+                  style={
+                    {
+                      "--type-steps": titleLineTwo.length,
+                      "--type-width": `${titleLineTwo.length}ch`,
+                      "--type-duration": "0.7s",
+                      "--type-delay": "0.9s",
+                    } as React.CSSProperties
+                  }
+                >
+                  {titleLineTwo}
+                </span>
+              ) : null}
+              <span
+                className="hero-title-type block"
+                style={
+                  {
+                    "--type-steps": titleLineThree.length,
+                    "--type-width": `${titleLineThree.length}ch`,
+                    "--type-duration": "0.7s",
+                    "--type-delay": titleLineTwo ? "1.7s" : "0.9s",
+                  } as React.CSSProperties
+                }
+              >
+                {lastWord ? `${lastWord} ` : ""}
+                <span className="text-primary">{highlightLine}</span>
+              </span>
             </motion.h1>
 
             <motion.p 

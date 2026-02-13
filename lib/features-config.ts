@@ -31,7 +31,8 @@ export const FEATURES: Feature[] = [
     icon: '🔄',
     subItems: [
       { label: 'Synchronisation des calendriers', href: '/fonctionnalites/channel-manager/calendriers' },
-      { label: 'Connexions OTA (Airbnb, Booking, etc.)', href: '/fonctionnalites/channel-manager/ota' },
+      { label: 'Connexion Airbnb', href: '/fonctionnalites/channel-manager/airbnb' },
+      { label: 'Connexion Booking', href: '/fonctionnalites/channel-manager/booking' },
     ],
   },
   {
