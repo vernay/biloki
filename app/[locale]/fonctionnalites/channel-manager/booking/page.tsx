@@ -38,8 +38,8 @@ export default function BookingConnectionPage() {
   return (
     <div className="min-h-screen bg-white">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#f8fbff] via-white to-[#e7f2ff]">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-12 items-center">
             <div>
               <p className="text-sm font-semibold text-primary uppercase tracking-[0.2em]">
                 {t('hero.kicker')}
@@ -95,7 +95,7 @@ export default function BookingConnectionPage() {
                     />
                   </div>
                 </div>
-                <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {stats.map((stat) => (
                     <div key={stat.label} className="rounded-2xl border border-[var(--biloki-blue)] bg-blue-50/60 px-4 py-3 text-center">
                       <p className="text-lg font-bold text-primary">{stat.value}</p>
@@ -109,8 +109,8 @@ export default function BookingConnectionPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="mb-20 rounded-[36px] bg-primary px-8 py-10 md:p-12 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+          <div className="mb-16 md:mb-20 rounded-[36px] bg-primary px-6 sm:px-8 py-8 md:p-12 relative overflow-hidden">
           <div className="absolute right-8 top-5 rounded-full bg-white/90 px-3 py-1.5 shadow-sm">
             <img
               src="/images/logo-partenaires/Booking.com.png"
@@ -198,7 +198,7 @@ export default function BookingConnectionPage() {
           </div>
         </div>
 
-        <div className="mb-20">
+        <div className="mb-16 md:mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
             {t('faq.title')}
           </h2>
@@ -219,12 +219,12 @@ export default function BookingConnectionPage() {
           </div>
         </div>
 
-        <div className="rounded-2xl p-12 text-white text-center bg-primary">
+        <div className="rounded-2xl p-8 sm:p-12 text-white text-center bg-primary">
           <h2 className="text-3xl font-bold mb-4">{t('cta.title')}</h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
             {t('cta.description')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link
               href={withLocale('/reserver-demo')}
               className="inline-block bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"

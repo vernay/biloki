@@ -53,9 +53,9 @@ export default function ChannelManagerPage() {
       />
 
       {/* Hero */}
-      <section className="pt-28 pb-16 px-6">
+      <section className="pt-20 md:pt-28 pb-12 md:pb-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-4">
                 {t('hero.kicker')}
@@ -125,7 +125,7 @@ export default function ChannelManagerPage() {
                     decoding="async"
                   />
                 </div>
-                <div className="mt-6 grid grid-cols-2 gap-4">
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="rounded-2xl border border-[var(--biloki-blue)] bg-blue-50/60 px-4 py-3">
                       <p className="text-2xl font-bold text-primary">{stat.value}</p>
@@ -140,9 +140,9 @@ export default function ChannelManagerPage() {
       </section>
 
       {/* Trust / logos */}
-      <section className="px-6 pb-16">
-        <div className="max-w-6xl mx-auto rounded-[32px] border border-[var(--biloki-blue)] bg-white/70 p-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <section className="px-4 sm:px-6 pb-12 md:pb-16">
+        <div className="max-w-6xl mx-auto rounded-[32px] border border-[var(--biloki-blue)] bg-white/70 p-6 sm:p-10">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('sections.trusted.title')}</h2>
               <p className="text-gray-600 max-w-xl">{t('sections.trusted.description')}</p>
@@ -170,8 +170,8 @@ export default function ChannelManagerPage() {
       </section>
 
       {/* Why */}
-      <section className="px-6 pb-20">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <section className="px-4 sm:px-6 pb-12 md:pb-20">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="rounded-[32px] border border-[var(--biloki-blue)] bg-white/70 p-8 shadow-lg">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('sections.why.title')}</h2>
             <p className="text-gray-600 mb-6">{t('sections.why.description')}</p>

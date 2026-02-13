@@ -33,8 +33,8 @@ export default function CalendriersPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-[#f8fbff] to-[#e9f5ff] py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-gradient-to-br from-[#f8fbff] to-[#e9f5ff] py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               {t('title')} <span className="text-primary">{t('titleHighlight')}</span>
@@ -46,16 +46,16 @@ export default function CalendriersPage() {
 
             
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href={withLocale('/commencer-gratuitement')}
-                className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition text-center"
+                className="inline-block bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:opacity-90 transition text-center">
               >
                 {common('startFreeTrial')}
               </Link>
               <Link
                 href={withLocale('/reserver-demo')}
-                className="inline-block border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
+                className="inline-block border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-blue-50 transition text-center">
               >
                 {common('bookDemo')}
               </Link>
@@ -64,10 +64,10 @@ export default function CalendriersPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Connexion avec les plateformes */}
-        <div className="mb-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="mb-16 md:mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 {t('sections.platforms.title')}
