@@ -121,7 +121,7 @@ export default function AirbnbConnectionPage() {
           <img
             src="/images/logo-partenaires/Airbnb.webp"
             alt="Airbnb"
-            className="absolute right-8 top-4 h-16 w-auto opacity-90"
+            className="absolute right-8 top-4 h-16 w-auto opacity-90 hidden md:block"
             loading="lazy"
             decoding="async"
           />

@@ -111,7 +111,7 @@ export default function BookingConnectionPage() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <div className="mb-16 md:mb-20 rounded-[36px] bg-primary px-6 sm:px-8 py-8 md:p-12 relative overflow-hidden">
-          <div className="absolute right-8 top-5 rounded-full bg-white/90 px-3 py-1.5 shadow-sm">
+          <div className="absolute right-8 top-5 rounded-full bg-white/90 px-3 py-1.5 shadow-sm hidden md:block">
             <img
               src="/images/logo-partenaires/Booking.com.png"
               alt="Booking.com"
