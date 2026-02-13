@@ -49,13 +49,13 @@ export default function CalendriersPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href={withLocale('/commencer-gratuitement')}
-                className="inline-block bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:opacity-90 transition text-center">
+                className="inline-block bg-primary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:opacity-90 transition text-center"
               >
                 {common('startFreeTrial')}
               </Link>
               <Link
                 href={withLocale('/reserver-demo')}
-                className="inline-block border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-blue-50 transition text-center">
+                className="inline-block border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-blue-50 transition text-center"
               >
                 {common('bookDemo')}
               </Link>
