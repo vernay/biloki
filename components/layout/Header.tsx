@@ -185,7 +185,7 @@ export default function Header() {
                         <div className="flex items-center justify-between px-4 py-2.5">
                           <Link
                             href={withLocale(item.href)}
-                            className="text-gray-700 hover:text-primary transition text-sm font-medium"
+                            className="text-primary hover:opacity-80 transition text-sm font-medium"
                           >
                             {getFeatureLabel(item.id)}
                           </Link>
@@ -210,7 +210,7 @@ export default function Header() {
                                 <Link
                                   key={subItem.href}
                                   href={withLocale(subItem.href)}
-                                  className="flex items-center gap-2 px-4 py-2.5 text-gray-600 hover:bg-blue-50 hover:text-primary transition text-sm"
+                                  className="flex items-center gap-2 px-4 py-2.5 text-primary hover:bg-blue-50 hover:opacity-80 transition text-sm"
                                 >
                                   {icon ? (
                                     <img
@@ -231,7 +231,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={withLocale(item.href)}
-                        className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-primary transition text-sm font-medium"
+                        className="block px-4 py-2.5 text-primary hover:bg-blue-50 hover:opacity-80 transition text-sm font-medium"
                       >
                         {getFeatureLabel(item.id)}
                       </Link>

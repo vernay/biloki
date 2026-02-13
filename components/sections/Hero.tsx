@@ -12,17 +12,11 @@ export default function Hero() {
   const tInterfaces = useTranslations("animatedInterfaces");
   const titleLine = t("title").trim();
   const highlightLine = t("titleHighlight").trim();
-  const titleWords = titleLine.split(/\s+/).filter(Boolean);
-  const lastWord = titleWords[titleWords.length - 1] ?? "";
-  const baseWords = titleWords.slice(0, -1);
-  const splitIndex = Math.ceil(baseWords.length / 2);
-  const titleLineOne = baseWords.slice(0, splitIndex).join(" ");
-  const titleLineTwo = baseWords.slice(splitIndex).join(" ");
-  const titleLineThree = `${lastWord}${lastWord ? " " : ""}${highlightLine}`.trim();
-  const lineOneWords = titleLineOne.split(/\s+/).filter(Boolean);
-  const lineOneSplit = Math.ceil(lineOneWords.length / 2);
-  const lineOneBlue = lineOneWords.slice(0, lineOneSplit).join(" ");
-  const lineOneRest = lineOneWords.slice(lineOneSplit).join(" ");
+  const fullTitle = `${titleLine} ${highlightLine}`.trim();
+  const titleWords = fullTitle.split(/\s+/).filter(Boolean);
+  const splitIndex = Math.ceil(titleWords.length / 2);
+  const titleLineOne = titleWords.slice(0, splitIndex).join(" ");
+  const titleLineTwo = titleWords.slice(splitIndex).join(" ");
   
   return (
     <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -36,78 +30,53 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 hero-title-shine flex flex-col gap-2"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left"
               variants={itemVariants}
             >
-              <span
-                className="hero-title-type block"
-                style={
-                  {
-                    "--type-steps": titleLineOne.length,
-                    "--type-width": `${titleLineOne.length}ch`,
-                    "--type-duration": "0.7s",
-                    "--type-delay": "0.1s",
-                  } as React.CSSProperties
-                }
-              >
-                <span className="text-primary">{lineOneBlue}</span>
-                {lineOneRest ? ` ${lineOneRest}` : ""}
-              </span>
-              {titleLineTwo ? (
-                <span
-                  className="hero-title-type block"
-                  style={
-                    {
-                      "--type-steps": titleLineTwo.length,
-                      "--type-width": `${titleLineTwo.length}ch`,
-                      "--type-duration": "0.7s",
-                      "--type-delay": "0.9s",
-                    } as React.CSSProperties
-                  }
-                >
-                  {titleLineTwo}
-                </span>
-              ) : null}
-              <span
-                className="hero-title-type block"
-                style={
-                  {
-                    "--type-steps": titleLineThree.length,
-                    "--type-width": `${titleLineThree.length}ch`,
-                    "--type-duration": "0.7s",
-                    "--type-delay": titleLineTwo ? "1.7s" : "0.9s",
-                  } as React.CSSProperties
-                }
-              >
-                {lastWord ? `${lastWord} ` : ""}
-                <span className="text-primary">{highlightLine}</span>
-              </span>
+              <span className="block text-primary">{titleLineOne}</span>
+              <span className="block">{titleLineTwo}</span>
             </motion.h1>
 
-            <motion.p 
-              className="text-lg text-gray-700 max-w-xl"
+            <motion.div
+              className="flex flex-col gap-3 text-sm text-gray-800"
               variants={itemVariants}
             >
-              {t("description")}
-            </motion.p>
-
-            {/* Checkboxes */}
-            <motion.div className="hidden sm:block space-y-3" variants={containerVariants}>
-              {["check1", "check2", "check3", "check4"].map((checkKey) => (
-                <motion.div
-                  key={checkKey}
-                  className="flex items-center gap-3"
-                  variants={itemVariants}
-                >
-                  <div className="flex-shrink-0 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24">
-                      <path d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 font-medium">{t(checkKey)}</span>
-                </motion.div>
-              ))}
+              <span className="inline-flex items-center gap-2">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-green-500 text-green-600">
+                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                {t("trialNote")}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-green-500 text-green-600">
+                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                Onboarding offert
+              </span>
             </motion.div>
+
+            <motion.div className="flex items-center gap-3" variants={itemVariants}>
+              <img
+                src="/images/logo-partenaires/Google.svg.png"
+                alt="Google"
+                className="h-4 w-auto"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="flex items-center gap-1 text-yellow-400">
+                <span aria-hidden="true">★</span>
+                <span aria-hidden="true">★</span>
+                <span aria-hidden="true">★</span>
+                <span aria-hidden="true">★</span>
+                <span aria-hidden="true">★</span>
+                <span className="text-sm text-gray-800 ml-2">5/5</span>
+              </div>
+            </motion.div>
+
 
             {/* CTA Buttons */}
             <motion.div 

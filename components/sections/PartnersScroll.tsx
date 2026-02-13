@@ -23,7 +23,7 @@ export default function PartnersScroll() {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="w-full bg-white py-12 overflow-hidden border-t border-b border-gray-100">
+    <section className="w-full bg-white pt-4 pb-8 -mt-12 overflow-hidden border-t border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
