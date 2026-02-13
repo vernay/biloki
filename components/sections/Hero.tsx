@@ -36,7 +36,7 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic tracking-tight text-gray-900 hero-title-shine flex flex-col gap-2"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 hero-title-shine flex flex-col gap-2"
               variants={itemVariants}
             >
               <span

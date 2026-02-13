@@ -21,8 +21,10 @@ export default function IntegrationsSection() {
     { src: "/images/logo-partenaires/logo-pennylane.png", alt: "Pennylane" }
   ];
 
-  const topRow = logos.slice(0, 5);
-  const bottomRow = logos.slice(5);
+  const topRow = logos.slice(0, 3);
+  const secondRow = logos.slice(3, 6);
+  const thirdRow = logos.slice(6, 9);
+  const bottomRow = logos.slice(9);
 
   const featureKeys = ['sync', 'realtime', 'payments', 'locks'] as const;
 
@@ -105,6 +107,46 @@ export default function IntegrationsSection() {
             </div>
             <div className="hidden md:block overflow-hidden">
               <div className="logo-marquee logo-marquee--right">
+                {[...secondRow, ...secondRow].map((logo, index) => (
+                  <div
+                    key={`${logo.alt}-second-${index}`}
+                    className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-10 object-contain"
+                      width={120}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden md:block overflow-hidden">
+              <div className="logo-marquee logo-marquee--left logo-marquee--slow">
+                {[...thirdRow, ...thirdRow].map((logo, index) => (
+                  <div
+                    key={`${logo.alt}-third-${index}`}
+                    className="logo-card logo-card--marquee rounded-2xl bg-[#f8fbff] p-4 flex items-center justify-center"
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="h-10 object-contain"
+                      width={120}
+                      height={40}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden md:block overflow-hidden">
+              <div className="logo-marquee logo-marquee--right logo-marquee--slow">
                 {[...bottomRow, ...bottomRow].map((logo, index) => (
                   <div
                     key={`${logo.alt}-bottom-${index}`}
@@ -137,6 +179,9 @@ export default function IntegrationsSection() {
         }
         .logo-marquee--right {
           animation-name: marquee-right;
+        }
+        .logo-marquee--slow {
+          animation-duration: 18s;
         }
         .logo-card {
           transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;

@@ -87,6 +87,16 @@ export default function Header() {
     return labelMap[href] || href;
   };
 
+  const getSubItemIcon = (href: string): { src: string; alt: string } | null => {
+    if (href === '/fonctionnalites/channel-manager/airbnb') {
+      return { src: '/images/logo-partenaires/Airbnb.webp', alt: 'Airbnb' };
+    }
+    if (href === '/fonctionnalites/channel-manager/booking') {
+      return { src: '/images/connexions-ota/bookingcom.svg', alt: 'Booking.com' };
+    }
+    return null;
+  };
+
   // Utilise maintenant les features depuis la config centralisée
   const featuresMenu = FEATURES;
 
@@ -194,15 +204,27 @@ export default function Header() {
                             onMouseEnter={() => setExpandedItem(item.id)}
                             onMouseLeave={() => setExpandedItem(null)}
                           >
-                            {item.subItems.map((subItem) => (
-                              <Link
-                                key={subItem.href}
-                                href={withLocale(subItem.href)}
-                                className="block px-4 py-2.5 text-gray-600 hover:bg-blue-50 hover:text-primary transition text-sm"
-                              >
-                                {getSubItemLabel(subItem.href)}
-                              </Link>
-                            ))}
+                            {item.subItems.map((subItem) => {
+                              const icon = getSubItemIcon(subItem.href);
+                              return (
+                                <Link
+                                  key={subItem.href}
+                                  href={withLocale(subItem.href)}
+                                  className="flex items-center gap-2 px-4 py-2.5 text-gray-600 hover:bg-blue-50 hover:text-primary transition text-sm"
+                                >
+                                  {icon ? (
+                                    <img
+                                      src={icon.src}
+                                      alt={icon.alt}
+                                      className="h-4 w-4 object-contain"
+                                      loading="lazy"
+                                      decoding="async"
+                                    />
+                                  ) : null}
+                                  <span>{getSubItemLabel(subItem.href)}</span>
+                                </Link>
+                              );
+                            })}
                           </div>
                         )}
                       </div>
@@ -351,20 +373,32 @@ export default function Header() {
                         
                         {mobileExpandedFeatureItem === item.id && (
                           <div className="pl-4 space-y-2 my-2 rounded py-2 px-2" style={{ backgroundColor: '#0290d9' }}>
-                            {item.subItems.map((subItem) => (
-                              <Link
-                                key={subItem.href}
-                                href={withLocale(subItem.href)}
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setMobileFeaturesOpen(false);
-                                  setMobileExpandedFeatureItem(null);
-                                }}
-                                className="block text-white hover:opacity-80 text-sm py-1"
-                              >
-                                {getSubItemLabel(subItem.href)}
-                              </Link>
-                            ))}
+                            {item.subItems.map((subItem) => {
+                              const icon = getSubItemIcon(subItem.href);
+                              return (
+                                <Link
+                                  key={subItem.href}
+                                  href={withLocale(subItem.href)}
+                                  onClick={() => {
+                                    setIsOpen(false);
+                                    setMobileFeaturesOpen(false);
+                                    setMobileExpandedFeatureItem(null);
+                                  }}
+                                  className="flex items-center gap-2 text-white hover:opacity-80 text-sm py-1"
+                                >
+                                  {icon ? (
+                                    <img
+                                      src={icon.src}
+                                      alt={icon.alt}
+                                      className="h-4 w-4 object-contain"
+                                      loading="lazy"
+                                      decoding="async"
+                                    />
+                                  ) : null}
+                                  <span>{getSubItemLabel(subItem.href)}</span>
+                                </Link>
+                              );
+                            })}
                           </div>
                         )}
                       </div>

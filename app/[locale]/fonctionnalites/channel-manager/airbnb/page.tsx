@@ -27,6 +27,12 @@ export default function AirbnbConnectionPage() {
 
   const bulletKeys = ['sync', 'rates', 'avoid'] as const;
   const benefitKeys = ['sync', 'rates', 'visibility', 'control'] as const;
+  const benefitTones = [
+    'bg-gradient-to-br from-[#ffe4e6] to-[#fff7ed]',
+    'bg-gradient-to-br from-[#e0f2fe] to-[#ecfeff]',
+    'bg-gradient-to-br from-[#dcfce7] to-[#f0fdf4]',
+    'bg-gradient-to-br from-[#ede9fe] to-[#f5f3ff]',
+  ];
   const stepKeys = ['connect', 'import', 'sync'] as const;
   const statKeys = ['setup', 'updates', 'channels'] as const;
   const faqKeys = ['setup', 'sync', 'requirements', 'support'] as const;
@@ -88,7 +94,7 @@ export default function AirbnbConnectionPage() {
                   </div>
                   <div className="aspect-[4/3] bg-white flex items-center justify-center">
                     <img
-                      src="/images/Calendrier.png"
+                      src="/images/connexions-ota/Biloki-Airbnb.svg"
                       alt={t('sections.trust.visual')}
                       className="h-full w-full object-contain"
                       loading="lazy"
@@ -111,33 +117,36 @@ export default function AirbnbConnectionPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {t('sections.trust.title')}
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl">
-            {t('sections.trust.description')}
-          </p>
-        </div>
-
-        <div className="mb-20">
+        <div className="mb-20 rounded-[36px] bg-primary px-8 py-10 md:p-12 relative overflow-hidden">
+          <img
+            src="/images/logo-partenaires/Airbnb.webp"
+            alt="Airbnb"
+            className="absolute right-8 top-4 h-16 w-auto opacity-90"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
                 {t('benefits.title')}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl">
+              <p className="text-lg text-white/80 max-w-2xl">
                 {t('benefits.subtitle')}
               </p>
             </div>
           </div>
           <div className="mt-10 grid md:grid-cols-2 gap-6">
-            {benefitKeys.map((key) => (
-              <div key={key} className="rounded-3xl border border-[#e3eef9] bg-white p-7 shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+            {benefitKeys.map((key, index) => (
+              <div
+                key={key}
+                className="group relative overflow-hidden rounded-3xl border border-white/20 bg-white/95 p-7 shadow-[0_24px_50px_-40px_rgba(15,23,42,0.6)] transition hover:-translate-y-1"
+              >
+                <div className="absolute -left-8 bottom-0 h-16 w-16 rounded-full bg-primary/10" aria-hidden="true" />
+                <div className="h-1.5 w-10 rounded-full bg-primary/80 mb-4" />
+                <h3 className="text-xl font-bold italic text-primary mb-2">
                   {t(`benefits.items.${key}.title`)}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {t(`benefits.items.${key}.description`)}
                 </p>
               </div>
@@ -215,10 +224,7 @@ export default function AirbnbConnectionPage() {
           </div>
         </div>
 
-        <div
-          className="rounded-2xl p-12 text-white text-center"
-          style={{ background: `linear-gradient(to right, ${getPrimaryColor()}, ${getPrimaryDarkColor()})` }}
-        >
+        <div className="rounded-2xl p-12 text-white text-center bg-primary">
           <h2 className="text-3xl font-bold mb-4">{t('cta.title')}</h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
             {t('cta.description')}
