@@ -134,7 +134,7 @@ export default function Header() {
     closeTimeoutRef.current = setTimeout(() => {
       setIsFeaturesOpen(false);
       setExpandedItem(null);
-    }, 300);
+    }, 500);
   };
 
   const handleMouseEnter = () => {
@@ -199,11 +199,25 @@ export default function Header() {
                           </svg>
                         </div>
                         {expandedItem === item.id && (
-                          <div 
-                            className="absolute left-full top-0 ml-1 w-72 bg-white rounded-lg shadow-xl py-2 border border-gray-100 z-50"
-                            onMouseEnter={() => setExpandedItem(item.id)}
-                            onMouseLeave={() => setExpandedItem(null)}
-                          >
+                          <>
+                            {/* Zone invisible de transition vers le sous-menu */}
+                            <div
+                              className="absolute w-4 h-full pointer-events-auto"
+                              style={{
+                                left: '100%',
+                                top: 0,
+                                backgroundColor: 'transparent',
+                                zIndex: 45,
+                              }}
+                              onMouseEnter={() => setExpandedItem(item.id)}
+                              onMouseLeave={() => setExpandedItem(null)}
+                            />
+                            {/* Sous-menu */}
+                            <div 
+                              className="absolute left-full top-0 ml-1 w-72 bg-white rounded-lg shadow-xl py-2 border border-gray-100 z-50"
+                              onMouseEnter={() => setExpandedItem(item.id)}
+                              onMouseLeave={() => setExpandedItem(null)}
+                            >
                             {item.subItems.map((subItem) => {
                               const icon = getSubItemIcon(subItem.href);
                               return (
@@ -225,7 +239,8 @@ export default function Header() {
                                 </Link>
                               );
                             })}
-                          </div>
+                            </div>
+                          </>
                         )}
                       </div>
                     ) : (
