@@ -12,11 +12,6 @@ export default function Hero() {
   const tInterfaces = useTranslations("animatedInterfaces");
   const titleLine = t("title").trim();
   const highlightLine = t("titleHighlight").trim();
-  const fullTitle = `${titleLine} ${highlightLine}`.trim();
-  const titleWords = fullTitle.split(/\s+/).filter(Boolean);
-  const splitIndex = Math.ceil(titleWords.length / 2);
-  const titleLineOne = titleWords.slice(0, splitIndex).join(" ");
-  const titleLineTwo = titleWords.slice(splitIndex).join(" ");
   
   return (
     <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -33,8 +28,8 @@ export default function Hero() {
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left"
               variants={itemVariants}
             >
-              <span className="block text-primary">{titleLineOne}</span>
-              <span className="block">{titleLineTwo}</span>
+              <span className="block">{titleLine}</span>
+              <span className="block"><span className="text-primary">{highlightLine}</span></span>
             </motion.h1>
 
             <motion.div

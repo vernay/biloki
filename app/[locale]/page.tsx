@@ -4,7 +4,7 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import AISection from "@/components/sections/AISection";
 import TeamSection from "@/components/sections/TeamSection";
-import BenefitsSection from "@/components/sections/BenefitsSection";
+import BenefitsIphoneSection from "@/components/sections/BenefitsIphoneSection";
 import AppBanner from "@/components/sections/AppBanner";
 import PricingCalculator from "@/components/sections/PricingCalculator";
 import CTASection from "@/components/sections/CTASection";
@@ -18,7 +18,7 @@ export default function HomePage() {
       <IntegrationsSection />
       <AISection />
       <TeamSection />
-      <BenefitsSection />
+      <BenefitsIphoneSection />
       <AppBanner />
       <PricingCalculator />
       <CTASection />
