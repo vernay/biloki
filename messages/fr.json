@@ -923,10 +923,14 @@
     }
   },
   "cookieBanner": {
-    "message": "Nous utilisons des cookies pour garantir le bon fonctionnement du site, mesurer l'audience et améliorer votre expérience.",
-    "learnMore": "En savoir plus",
-    "refuse": "Refuser",
-    "accept": "Accepter"
+    "message": "Cookie, sur google traduction, ça veut dire biscuit. Mais là, ça veut dire qu’on peut mesurer l’audience, comprendre l’usage de notre site et en maîtriser la sécurité. Rien de plus. Donner vos biscuits, ou ne pas donner vos biscuits ? Telle est la question.. Vous pouvez sélectionner ici ceux que vous autorisez.",
+    "consentTitle": "Plateforme de Gestion du Consentement : Personnalisez vos Options",
+    "consentNote": "Pour modifier vos préférences par la suite, cliquez sur le lien 'Préférences de cookies' situé dans le pied de page.",
+    "privacyPolicy": "Lire notre politique de confidentialité",
+    "cookieDeclaration": "Déclaration de cookies",
+    "choose": "Je choisis",
+    "refuse": "Je refuse",
+    "acceptAll": "J'accepte tous les cookies"
   },
   "smartLocksPage": {
     "title": "Serrures",

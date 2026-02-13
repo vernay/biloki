@@ -18,7 +18,7 @@ export default function CookieBanner() {
     }
   }, []);
 
-  const setConsent = (value: 'accepted' | 'refused') => {
+  const setConsent = (value: 'accepted' | 'refused' | 'custom') => {
     if (typeof window === 'undefined') return;
     window.localStorage.setItem(CONSENT_KEY, value);
     document.cookie = `${CONSENT_KEY}=${value}; Max-Age=31536000; Path=/; SameSite=Lax`;
@@ -30,30 +30,41 @@ export default function CookieBanner() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-6">
-        <div className="rounded-2xl bg-white shadow-2xl border border-gray-200 p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4">
-          <div className="flex-1">
-            <p className="text-sm text-gray-700">
-              {t('message')}{' '}
-              <Link href="/cookies" className="text-primary font-semibold hover:underline">
-                {t('learnMore')}
+        <div className="rounded-lg bg-white shadow-2xl border border-gray-200 p-6 md:p-8 flex flex-col gap-6">
+          <div className="space-y-3 text-sm text-gray-700">
+            <p>{t('message')}</p>
+            <p>{t('consentTitle')}</p>
+            <p>{t('consentNote')}</p>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/mentions-legales" className="text-primary font-semibold hover:underline">
+                {t('privacyPolicy')}
               </Link>
-              .
-            </p>
+              <Link href="/cookies" className="text-primary font-semibold hover:underline">
+                {t('cookieDeclaration')}
+              </Link>
+            </div>
           </div>
-          <div className="flex gap-3 w-full md:w-auto">
+          <div className="flex flex-col md:flex-row gap-3">
+            <button
+              type="button"
+              onClick={() => setConsent('custom')}
+              className="w-full md:w-auto px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition"
+            >
+              {t('choose')}
+            </button>
             <button
               type="button"
               onClick={() => setConsent('refused')}
-              className="w-full md:w-auto px-4 py-2 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition"
+              className="w-full md:w-auto px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:bg-gray-50 transition"
             >
               {t('refuse')}
             </button>
             <button
               type="button"
               onClick={() => setConsent('accepted')}
-              className="w-full md:w-auto px-4 py-2 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition"
+              className="w-full md:w-auto px-5 py-2.5 rounded-lg bg-primary text-white font-semibold hover:opacity-90 transition"
             >
-              {t('accept')}
+              {t('acceptAll')}
             </button>
           </div>
         </div>

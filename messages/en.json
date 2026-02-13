@@ -899,10 +899,14 @@
     }
   },
   "cookieBanner": {
-    "message": "We use cookies to ensure the site works properly, measure audience and improve your experience.",
-    "learnMore": "Learn more",
-    "refuse": "Refuse",
-    "accept": "Accept"
+    "message": "Cookie literally means biscuit. Here it means we can measure audience, understand how our site is used, and keep it secure. Nothing more. Give your biscuits, or not? That is the question. You can select the ones you allow here.",
+    "consentTitle": "Consent Management Platform: Customize Your Options",
+    "consentNote": "To change your preferences later, click the 'Cookie preferences' link in the footer.",
+    "privacyPolicy": "Read our privacy policy",
+    "cookieDeclaration": "Cookie declaration",
+    "choose": "I choose",
+    "refuse": "I refuse",
+    "acceptAll": "I accept all cookies"
   },
   "smartLocksPage": {
     "title": "Smart",

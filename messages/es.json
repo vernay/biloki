@@ -900,10 +900,14 @@
     }
   },
   "cookieBanner": {
-    "message": "Usamos cookies para garantizar el correcto funcionamiento del sitio, medir la audiencia y mejorar tu experiencia.",
-    "learnMore": "Saber más",
-    "refuse": "Rechazar",
-    "accept": "Aceptar"
+    "message": "Cookie significa galleta. Aquí significa que podemos medir la audiencia, entender el uso de nuestro sitio y mantener la seguridad. Nada más. ¿Dar tus galletas o no? Esa es la cuestión. Aquí puedes seleccionar las que autorizas.",
+    "consentTitle": "Plataforma de Gestión del Consentimiento: Personaliza tus opciones",
+    "consentNote": "Para modificar tus preferencias más tarde, haz clic en el enlace 'Preferencias de cookies' en el pie de página.",
+    "privacyPolicy": "Leer nuestra política de privacidad",
+    "cookieDeclaration": "Declaración de cookies",
+    "choose": "Yo elijo",
+    "refuse": "Yo rechazo",
+    "acceptAll": "Acepto todas las cookies"
   },
   "smartLocksPage": {
     "title": "Cerraduras",
