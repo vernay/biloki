@@ -131,6 +131,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/conditions-generales-de-vente',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      {
+        source: '/conditions-generales-de-vente/',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      {
+        source: '/boutique-biloki',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/boutique-biloki/',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
         source: '/produits-2',
         destination: '/fr',
         permanent: true,
