@@ -67,59 +67,39 @@ function getPagesForLocale(): string[] {
   }
 
   const pages: string[] = []
-  
-  // Pages de base à inclure
-  const staticPages = [
-    '',
-    '/tarifs',
-    '/contact',
-    '/reserver-demo',
-    '/commencer-gratuitement',
-    '/carriere',
-    '/equipe',
-    '/cgv',
-    '/cookies',
-    '/mentions-legales',
-  ]
-  
-  // Sections de fonctionnalités à inclure
-  const featurePages = [
-    '/fonctionnalites',
-    '/fonctionnalites/channel-manager',
-    '/fonctionnalites/channel-manager/airbnb',
-    '/fonctionnalites/channel-manager/booking',
-    '/fonctionnalites/channel-manager/calendriers',
-    '/fonctionnalites/channel-manager/ota',
-    '/fonctionnalites/pms',
-    '/fonctionnalites/vue-ensemble',
-  ]
 
   const walk = (currentDir: string, currentRoute: string) => {
     const entries = fs.readdirSync(currentDir, { withFileTypes: true })
 
+    // Vérifier si ce dossier contient un fichier page.tsx ou page.ts
     const hasPage = entries.some(
       entry => entry.isFile() && (entry.name === 'page.tsx' || entry.name === 'page.ts')
     )
 
-    if (hasPage && staticPages.includes(currentRoute)) {
+    if (hasPage) {
       pages.push(currentRoute)
     }
 
+    // Parcourir récursivement les sous-dossiers
     entries
       .filter(entry => entry.isDirectory())
       .forEach(dir => {
-        if (dir.name.startsWith('(') || dir.name.startsWith('_') || dir.name === 'api') {
+        // Exclure les dossiers spéciaux :
+        // - Groupes de routes Next.js : (group-name)
+        // - Dossiers privés : _private
+        // - Routes API
+        // - Routes dynamiques avec paramètres : [id], [slug], etc.
+        if (
+          dir.name.startsWith('(') || 
+          dir.name.startsWith('_') || 
+          dir.name === 'api' ||
+          dir.name.startsWith('[')
+        ) {
           return
         }
 
         const nextRoute = currentRoute === '' ? `/${dir.name}` : `${currentRoute}/${dir.name}`
-        
-        // Pour les routes de features, inclure spécifiquement
-        if (featurePages.some(fp => nextRoute === fp || nextRoute.startsWith(fp + '/'))) {
-          walk(path.join(currentDir, dir.name), nextRoute)
-        } else if (!nextRoute.startsWith('/fonctionnalites') && !dir.name.includes('[')) {
-          walk(path.join(currentDir, dir.name), nextRoute)
-        }
+        walk(path.join(currentDir, dir.name), nextRoute)
       })
   }
 
