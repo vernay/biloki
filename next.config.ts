@@ -81,11 +81,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/pt/:path*',
-        destination: '/fr/:path*',
-        permanent: true,
-      },
-      {
         source: '/nous-contacter',
         destination: '/fr/contact',
         permanent: true,
@@ -265,12 +260,6 @@ const nextConfig: NextConfig = {
       {
         source: '/pt/blog/:slug',
         destination: '/fr/blog/:slug',
-        permanent: true,
-      },
-      // Redirections pages ES/PT non traduites vers FR
-      {
-        source: '/es/fonctionnalites/:path*',
-        destination: '/fr/fonctionnalites/:path*',
         permanent: true,
       },
     ];
