@@ -66,6 +66,66 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/pt',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/pt/',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/es/',
+        destination: '/fr',
+        permanent: true,
+      },
+      {
+        source: '/pt/:path*',
+        destination: '/fr/:path*',
+        permanent: true,
+      },
+      {
+        source: '/nous-contacter',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/nous-contacter/',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/mentions-legales',
+        destination: '/fr/mentions-legales',
+        permanent: true,
+      },
+      {
+        source: '/mentions-legales/',
+        destination: '/fr/mentions-legales',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/serrures-connectees',
+        destination: '/fr/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/serrures-connectees/',
+        destination: '/fr/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/channel-manager/ota',
+        destination: '/fr/fonctionnalites/channel-manager',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/channel-manager/ota/',
+        destination: '/fr/fonctionnalites/channel-manager',
+        permanent: true,
+      },
+      {
         source: '/appli-biloki',
         destination: '/fr/fonctionnalites/vue-ensemble',
         permanent: true,
@@ -205,6 +265,12 @@ const nextConfig: NextConfig = {
       {
         source: '/pt/blog/:slug',
         destination: '/fr/blog/:slug',
+        permanent: true,
+      },
+      // Redirections pages ES/PT non traduites vers FR
+      {
+        source: '/es/fonctionnalites/:path*',
+        destination: '/fr/fonctionnalites/:path*',
         permanent: true,
       },
     ];
