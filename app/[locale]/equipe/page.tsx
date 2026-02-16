@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { useTranslations } from 'next-intl';
+
+export const metadata: Metadata = {
+  title: "L'équipe Biloki - Qui sommes-nous ?",
+  description: "Découvrez les fondateurs et l'équipe qui construit Biloki pour révolutionner la conciergerie.",
+};
 
 export default function EquipePage() {
   const t = useTranslations('teamPage');
