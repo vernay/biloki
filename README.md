@@ -85,7 +85,24 @@ Site web principal de Biloki construit avec **Next.js 16**, **React 19** et **Ta
 ├─ Récupère: prenom, nom, email, telephone, entreprise, message
 ├─ Valide les champs obligatoires
 └─ Envoie via Resend vers CONTACT_EMAIL
+
+/api/agent/* (AI Agent)
+├─ /chat (POST) - Conversations avec l'agent IA
+├─ /data (GET) - Récupérer données de l'agent
+└─ /followup (POST) - Suivi des conversations
+
+/api/hubspot/*
+├─ /chatbot (POST) - Intégration chatbot HubSpot
+└─ /demo (POST) - Gestion des demandes de démo
 ```
+
+#### **Sitemap dynamique** (`/sitemap.xml`)
+Généré automatiquement avec:
+- ✅ Toutes les pages du site (4 langues)
+- ✅ Tous les articles de blog (dynamique depuis `lib/blog/articles.ts`)
+- ✅ URLs alternates multilingues pour le SEO
+- ✅ Priorités et fréquences de changement optimisées
+- 📍 Accessible via: `https://www.biloki.fr/sitemap.xml`
 
 ### `/components` - Composants réutilisables
 
@@ -563,6 +580,9 @@ NEXT_PUBLIC_CONTACT_EMAIL=contact@biloki.fr
 NEXT_PUBLIC_SUPPORT_PHONE=0964180069
 NEXT_PUBLIC_APP_STORE_URL=https://apps.apple.com/app/biloki/VOTRE_APP_ID
 NEXT_PUBLIC_PLAY_STORE_URL=https://play.google.com/store/apps/details?id=com.biloki.app
+
+# URL de l'application web Biloki
+NEXT_PUBLIC_WEBAPP_URL=https://beta.biloki.fr
 ```
 
 ⚠️ **Ne pas commiter `.env.local`** - Ajouter à `.gitignore`
@@ -600,7 +620,38 @@ npm run lint
 
 ---
 
-## 📚 Ressources
+## � Déploiement
+
+### Déploiement automatique avec Vercel
+
+Le projet est configuré pour un déploiement automatique sur Vercel :
+
+**Configuration :**
+1. Connecter le repository GitHub à Vercel
+2. Configurer les variables d'environnement dans Vercel Dashboard
+3. Chaque push sur `main` → déploiement automatique
+
+**Variables d'environnement Vercel :**
+- `RESEND_API_KEY` - Clé API Resend
+- `RESEND_FROM_EMAIL` - Email d'envoi
+- `NEXT_PUBLIC_WEBAPP_URL` - URL webapp
+- Autres variables `NEXT_PUBLIC_*` selon besoin
+
+**Build settings :**
+```
+Framework Preset: Next.js
+Build Command: npm run build
+Output Directory: .next
+Install Command: npm install
+```
+
+**Domaine personnalisé :**
+- Production: `www.biloki.fr`
+- Preview: URLs automatiques pour chaque PR
+
+---
+
+## �📚 Ressources
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [React Documentation](https://react.dev)
