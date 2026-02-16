@@ -2167,6 +2167,30 @@
     "smartLocksFeature": {
       "title": "Serrures connectées Biloki - Gestion d'accès automatisée",
       "description": "Automatisez l'accès à vos logements. Intégration avec les principales serrures connectées du marché."
+    },
+    "blog-automate": {
+      "title": "Comment automatiser la gestion de ses locations saisonnières en 2026 | Biloki",
+      "description": "Automatisez vos locations saisonnières : 5 automatisations clés (messagerie, tarifs, ménage, accès, compta) pour gagner 20h/semaine et éviter les erreurs."
+    },
+    "blog-channelManager": {
+      "title": "Channel Manager : Le Guide Complet 2026 pour Conciergeries | Biloki",
+      "description": "Découvrez comment un channel manager optimise votre conciergerie : synchronisation automatique, gestion des tarifs, calendriers unifiés. Guide pratique complet."
+    },
+    "blog-ia": {
+      "title": "Comment Claude 4.6 va redessiner les contours de la location courte durée ? | Biloki",
+      "description": "L'IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez comment les conciergeries vont évoluer et pourquoi le modèle devient hybride."
+    },
+    "blog-messaging": {
+      "title": "Messagerie automatisée : scripts et workflows pour conciergeries | Biloki",
+      "description": "Automatisez vos messages voyageurs sur Airbnb et Booking : scripts prêts à l'emploi, déclencheurs, timing et bonnes pratiques pour conciergeries."
+    },
+    "blog-nice": {
+      "title": "Nice : Quotas par quartier pour les locations Airbnb - Ce que les conciergeries doivent savoir | Biloki",
+      "description": "Nice durcit sa réglementation Airbnb : quotas par quartier, 90 jours max, autorisations limitées à 3 ans. Comment s'adapter ? Guide complet pour les conciergeries."
+    },
+    "blog-salon": {
+      "title": "Biloki au salon de la conciergerie à Marseille | Biloki",
+      "description": "Le 24 mars, retrouvez l'équipe Biloki à Marseille pour découvrir toutes nos fonctionnalités et assister à une démo complète."
     }
   }
 }

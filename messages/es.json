@@ -1969,6 +1969,34 @@
     "marketplace": {
       "title": "Marketplace de Biloki - Conecta tus Proveedores",
       "description": "Conecta Biloki a tus plataformas: limpieza, mantenimiento, lencería, gestión de propiedades."
+    },
+    "smartLocksFeature": {
+      "title": "Cerraduras Inteligentes - Gestión Automatizada de Acceso",
+      "description": "Automatiza el acceso a tus propiedades. Integración con las principales cerraduras inteligentes del mercado."
+    },
+    "blog-automate": {
+      "title": "Cómo Automatizar la Gestión de Alquileres a Corto Plazo en 2026 | Biloki",
+      "description": "Automatiza tus alquileres a corto plazo: 5 automatizaciones clave (mensajería, precios, limpieza, acceso, contabilidad) para ahorrar 20h/semana y evitar errores."
+    },
+    "blog-channelManager": {
+      "title": "Channel Manager: Guía Completa 2026 para Concierges | Biloki",
+      "description": "Descubre cómo un channel manager optimiza tu negocio de conserjería: sincronización automática, gestión de tarifas, calendarios unificados. Guía práctica completa."
+    },
+    "blog-ia": {
+      "title": "Cómo Claude 4.6 Redefinirá los Alquileres a Corto Plazo | Biloki",
+      "description": "La IA conversacional transforma la mensajería de huéspedes, la gestión y los precios. Descubre cómo evolucionarán los servicios de conserjería y por qué surge el modelo híbrido."
+    },
+    "blog-messaging": {
+      "title": "Mensajería Automatizada: Scripts y Workflows para Concierges | Biloki",
+      "description": "Automatiza tus mensajes a huéspedes en Airbnb y Booking: scripts listos para usar, disparadores, tiempo y mejores prácticas para servicios de conserjería."
+    },
+    "blog-nice": {
+      "title": "Niza: Cuotas de Airbnb por Barrio - Lo que los Concierges Necesitan Saber | Biloki",
+      "description": "Niza endurece las regulaciones de Airbnb: cuotas por barrio, máximo 90 días, permisos limitados a 3 años. ¿Cómo adaptarse? Guía completa para servicios de conserjería."
+    },
+    "blog-salon": {
+      "title": "Biloki en la Feria de Conserjería en Marsella | Biloki",
+      "description": "El 24 de marzo, conoce al equipo de Biloki en Marsella para descubrir todas nuestras funciones y asistir a una demostración completa."
     }
   }
 }

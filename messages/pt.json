@@ -1968,6 +1968,34 @@
     "marketplace": {
       "title": "Marketplace Biloki - Conecte seus Fornecedores",
       "description": "Conecte Biloki às suas plataformas: limpeza, manutenção, roupas de cama, gestão de propriedades."
+    },
+    "smartLocksFeature": {
+      "title": "Fechaduras Inteligentes - Gestão Automatizada de Acesso",
+      "description": "Automatize o acesso às suas propriedades. Integração com as principais fechaduras inteligentes do mercado."
+    },
+    "blog-automate": {
+      "title": "Como Automatizar a Gestão de Aluguéis de Curta Duração em 2026 | Biloki",
+      "description": "Automatize seus aluguéis de curta duração: 5 automações-chave (mensagens, preços, limpeza, acesso, contabilidade) para economizar 20h/semana e evitar erros."
+    },
+    "blog-channelManager": {
+      "title": "Channel Manager: Guia Completo 2026 para Concierges | Biloki",
+      "description": "Descubra como um channel manager otimiza seu negócio de concierge: sincronização automática, gestão de tarifas, calendários unificados. Guia prático completo."
+    },
+    "blog-ia": {
+      "title": "Como Claude 4.6 Redefinirá Aluguéis de Curta Duração | Biloki",
+      "description": "A IA conversacional transforma mensagens para hóspedes, gestão e preços. Descubra como os serviços de concierge evoluirão e por que o modelo híbrido está emergindo."
+    },
+    "blog-messaging": {
+      "title": "Mensagens Automatizadas: Scripts e Workflows para Concierges | Biloki",
+      "description": "Automatize suas mensagens para hóspedes no Airbnb e Booking: scripts prontos para uso, acionadores, tempo e melhores práticas para serviços de concierge."
+    },
+    "blog-nice": {
+      "title": "Nice: Cotas de Airbnb por Bairro - O que os Concierges Precisam Saber | Biloki",
+      "description": "Nice endurece as regulamentações do Airbnb: cotas por bairro, máximo 90 dias, licenças limitadas a 3 anos. Como se adaptar? Guia completo para serviços de concierge."
+    },
+    "blog-salon": {
+      "title": "Biloki na Feira de Concierge em Marselha | Biloki",
+      "description": "Em 24 de março, conheça o time da Biloki em Marselha para descobrir todos os nossos recursos e assistir a uma demonstração completa."
     }
   }
 }

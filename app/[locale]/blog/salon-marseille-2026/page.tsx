@@ -1,10 +1,23 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Biloki au salon de la conciergerie à Marseille | Biloki",
-  description: "Le 24 mars, retrouvez l’équipe Biloki à Marseille pour découvrir toutes nos fonctionnalités et assister à une démo complète.",
-  keywords: "salon conciergerie, Marseille, Biloki, PMS, channel manager, messagerie automatisée",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-salon"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-salon"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function SalonMarseille2026Page() {
   return (

@@ -1,11 +1,24 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
-export const metadata: Metadata = {
-  title: "Channel Manager : Le Guide Complet 2026 pour Conciergeries | Biloki",
-  description: "Découvrez comment un channel manager optimise votre conciergerie : synchronisation automatique, gestion des tarifs, calendriers unifiés. Guide pratique complet.",
-  keywords: "channel manager, conciergerie, gestion multi-plateformes, synchronisation calendrier, tarifs dynamiques",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-channelManager"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-channelManager"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ChannelManagerGuidePage() {
   return (

@@ -1,11 +1,24 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
-export const metadata: Metadata = {
-  title: "Nice : Quotas par quartier pour les locations Airbnb - Ce que les conciergeries doivent savoir | Biloki",
-  description: "Nice durcit sa réglementation Airbnb : quotas par quartier, 90 jours max, autorisations limitées à 3 ans. Comment s'adapter ? Guide complet pour les conciergeries.",
-  keywords: "Nice Airbnb, quotas location saisonnière, réglementation meublé touristique, conciergerie Nice, loi Airbnb 2025",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-nice"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-nice"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function NiceQuotasAirbnbPage() {
   return (

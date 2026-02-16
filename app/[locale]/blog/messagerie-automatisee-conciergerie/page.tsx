@@ -1,11 +1,24 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
-export const metadata: Metadata = {
-  title: "Messagerie automatisée : scripts et workflows pour conciergeries | Biloki",
-  description: "Automatisez vos messages voyageurs sur Airbnb et Booking : scripts prêts à l'emploi, déclencheurs, timing et bonnes pratiques pour conciergeries.",
-  keywords: "messagerie automatisée conciergerie, messages Airbnb automatiques, workflows voyageurs, templates check-in",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-messaging"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-messaging"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function MessagerieAutomatiseePage() {
   return (

@@ -2081,6 +2081,34 @@
     "marketplace": {
       "title": "Biloki Marketplace - Connect Your Vendors",
       "description": "Connect Biloki to your platforms: cleaning, maintenance, linen, property management."
+    },
+    "smartLocksFeature": {
+      "title": "Smart Locks - Automated Access Management",
+      "description": "Automate access to your properties. Integration with major smart locks on the market."
+    },
+    "blog-automate": {
+      "title": "How to Automate Short-Term Rental Management in 2026 | Biloki",
+      "description": "Automate your short-term rentals: 5 key automations (messaging, pricing, cleaning, access, accounting) to save 20h/week and avoid errors."
+    },
+    "blog-channelManager": {
+      "title": "Channel Manager: Complete 2026 Guide for Concierges | Biloki",
+      "description": "Discover how a channel manager optimizes your concierge business: automatic synchronization, rate management, unified calendars. Complete practical guide."
+    },
+    "blog-ia": {
+      "title": "How Claude 4.6 Will Reshape Short-Term Rentals | Biloki",
+      "description": "Conversational AI transforms guest messaging, management and pricing. Discover how concierge services will evolve and why the hybrid model is emerging."
+    },
+    "blog-messaging": {
+      "title": "Automated Messaging: Scripts and Workflows for Concierges | Biloki",
+      "description": "Automate your guest messages on Airbnb and Booking: ready-to-use scripts, triggers, timing and best practices for concierge services."
+    },
+    "blog-nice": {
+      "title": "Nice: Airbnb Quotas Per District - What Concierges Need to Know | Biloki",
+      "description": "Nice tightens Airbnb regulations: district quotas, 90-day max, permits limited to 3 years. How to adapt? Complete guide for concierge services."
+    },
+    "blog-salon": {
+      "title": "Biloki at the Concierge Show in Marseille | Biloki",
+      "description": "On March 24, meet the Biloki team in Marseille to discover all our features and attend a complete demo."
     }
   }
 }

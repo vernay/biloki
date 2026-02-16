@@ -1,11 +1,24 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
-export const metadata: Metadata = {
-  title: "Comment automatiser la gestion de ses locations saisonnières en 2026 | Biloki",
-  description: "Automatisez vos locations saisonnières : 5 automatisations clés (messagerie, tarifs, ménage, accès, compta) pour gagner 20h/semaine et éviter les erreurs.",
-  keywords: "automatisation location saisonnière, automatiser conciergerie, workflows airbnb booking, messages automatiques, ménage planification",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-automate"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-automate"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function AutomatiserLocationsPage() {
   return (

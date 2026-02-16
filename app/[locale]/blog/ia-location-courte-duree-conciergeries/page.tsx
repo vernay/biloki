@@ -1,14 +1,25 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import Image from "next/image";
 import { FREE_TRIAL_CTA } from "@/lib/pricing-config";
 
-export const metadata: Metadata = {
-  title: "Comment Claude 4.6 va redessiner les contours de la location courte durée ? | Biloki",
-  description:
-    "L'IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez comment les conciergeries vont évoluer et pourquoi le modèle devient hybride.",
-  keywords:
-    "ia location courte durée, conciergerie ia, messagerie voyageurs, automatisation conciergerie, gestion locative intelligente",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.["blog-ia"]?.title || "Biloki";
+  const description = seoMetadata?.["blog-ia"]?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function IALocationCourteDureePage() {
   return (
