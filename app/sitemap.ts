@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getArticlesForLocale } from '@/lib/blog'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -13,6 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   locales.forEach(locale => {
     const pages = getPagesForLocale()
+
+    // Ajouter les articles de blog
+    const articles = getArticlesForLocale(locale)
+    pages.push(...articles.map(article => `/blog/${article.slug}`))
 
     pages.forEach(pagePath => {
       // Priorités basées sur l'importance
