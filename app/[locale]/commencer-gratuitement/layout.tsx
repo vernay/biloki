@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Essai gratuit Biloki - 14 jours sans engagement",
-  description: "Testez Biloki gratuitement pendant 14 jours. Accès complet à toutes les fonctionnalités, sans carte bancaire.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.trial?.title || "Biloki";
+  const description = seoMetadata?.trial?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function CommencerGratuitementLayout({
   children,

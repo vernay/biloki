@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Channel Manager Biloki - Synchronisation multi-plateformes",
-  description: "Synchronisez vos calendriers et tarifs sur Airbnb, Booking, Vrbo et autres OTA en temps réel.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.channelManager?.title || "Biloki";
+  const description = seoMetadata?.channelManager?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ChannelManagerLayout({
   children,

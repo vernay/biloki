@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Contactez Biloki - Support et demandes commerciales",
-  description: "Besoin d'aide ? Contactez notre équipe. Nous répondons rapidement à vos questions.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.contact?.title || "Biloki";
+  const description = seoMetadata?.contact?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ContactLayout({
   children,

@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Réservez une démo gratuite - Biloki",
-  description: "Réservez une démonstration gratuite de Biloki avec nos experts.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.demo?.title || "Biloki";
+  const description = seoMetadata?.demo?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ReserverDemoLayout({
   children,

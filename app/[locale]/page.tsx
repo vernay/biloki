@@ -1,14 +1,29 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import PartnersScroll from "@/components/sections/PartnersScroll";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
 import AISection from "@/components/sections/AISection";
 
-export const metadata: Metadata = {
-  title: "Biloki - Gagnez du temps dans la gestion de vos locations saisonnières",
-  description: "Centralisez, automatisez et orchestrez le cycle de vie de vos séjours. PMS, Channel Manager, Messagerie IA pour conciergeries.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.home?.title || "Biloki";
+  const description = seoMetadata?.home?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
+
 import TeamSection from "@/components/sections/TeamSection";
 import BenefitsIphoneSection from "@/components/sections/BenefitsIphoneSection";
 import AppBanner from "@/components/sections/AppBanner";

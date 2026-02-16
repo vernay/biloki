@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Tarifs Biloki - Plans flexibles pour conciergeries et propriétaires",
-  description: "Découvrez nos plans tarifaires. Calculez le prix selon vos logements. Essai gratuit 14 jours, sans carte bancaire.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.pricing?.title || "Biloki";
+  const description = seoMetadata?.pricing?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function TarifsLayout({
   children,

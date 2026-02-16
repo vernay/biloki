@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Gagnez en parrainant avec Biloki",
-  description: "Parrainez vos amis et gagnez des avantages exclusifs avec notre programme.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.referral?.title || "Biloki";
+  const description = seoMetadata?.referral?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ProgrammeParrainageLayout({
   children,

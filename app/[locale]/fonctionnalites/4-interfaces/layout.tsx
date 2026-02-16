@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Interface Biloki - Design moderne et intuitif",
-  description: "Découvrez l'interface épurée et intuitive de Biloki. Conçue pour la productivité et l'efficacité.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.fourInterfaces?.title || "Biloki";
+  const description = seoMetadata?.fourInterfaces?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function InterfacesLayout({
   children,

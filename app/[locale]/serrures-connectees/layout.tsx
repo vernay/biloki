@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Serrures connectées Biloki - Gestion d'accès automatisée",
-  description: "Automatisez l'accès à vos logements avec nos intégrations de serrures connectées.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
 
-export default function SerrruresConnecteesLayout({
+  const title = seoMetadata?.smartLocks?.title || "Biloki";
+  const description = seoMetadata?.smartLocks?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
+
+export default function SerruresConnecteesLayout({
   children,
 }: {
   children: React.ReactNode;

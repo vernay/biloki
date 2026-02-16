@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Politique de cookies Biloki",
-  description: "Informations sur l'utilisation des cookies et gestion de vos préférences.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.cookies?.title || "Biloki";
+  const description = seoMetadata?.cookies?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function CookiesLayout({
   children,

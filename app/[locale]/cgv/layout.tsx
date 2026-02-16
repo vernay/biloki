@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Conditions générales de vente Biloki",
-  description: "Découvrez les conditions générales de vente et conditions d'utilisation de Biloki.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.terms?.title || "Biloki";
+  const description = seoMetadata?.terms?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function CGVLayout({
   children,

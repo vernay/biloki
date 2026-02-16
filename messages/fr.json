@@ -2082,5 +2082,91 @@
       "doorOpening": "Sens d'ouverture de la porte",
       "bookDemo": "Réserver une démo gratuite"
     }
+  },
+  "seoMetadata": {
+    "home": {
+      "title": "Biloki - Gagnez du temps dans la gestion de vos locations saisonnières",
+      "description": "Centralisez, automatisez et orchestrez le cycle de vie de vos séjours. PMS, Channel Manager, Messagerie IA pour conciergeries."
+    },
+    "pricing": {
+      "title": "Tarifs Biloki - Plans flexibles pour conciergeries et propriétaires",
+      "description": "Découvrez nos plans tarifaires. Calculez le prix selon vos logements. Essai gratuit 14 jours, sans carte bancaire."
+    },
+    "contact": {
+      "title": "Contactez Biloki - Support et demandes commerciales",
+      "description": "Besoin d'aide ? Contactez notre équipe. Nous répondons rapidement à vos questions."
+    },
+    "trial": {
+      "title": "Essai gratuit Biloki - 14 jours sans engagement",
+      "description": "Testez Biloki gratuitement pendant 14 jours. Accès complet à toutes les fonctionnalités, sans carte bancaire."
+    },
+    "subscribe": {
+      "title": "S'abonner à Biloki - Gestion de locations saisonnières",
+      "description": "Choisissez votre plan d'abonnement et commencez à gérer vos séjours efficacement."
+    },
+    "login": {
+      "title": "Se connecter à Biloki",
+      "description": "Connectez-vous à votre compte Biloki pour accéder à votre tableau de bord."
+    },
+    "demo": {
+      "title": "Réservez une démo gratuite - Biloki",
+      "description": "Réservez une démonstration gratuite de Biloki avec nos experts."
+    },
+    "team": {
+      "title": "L'équipe Biloki - Qui sommes-nous ?",
+      "description": "Découvrez les fondateurs et l'équipe qui construit Biloki pour révolutionner la conciergerie."
+    },
+    "smartLocks": {
+      "title": "Serrures connectées Biloki - Gestion d'accès automatisée",
+      "description": "Automatisez l'accès à vos logements avec nos intégrations de serrures connectées."
+    },
+    "apiConnections": {
+      "title": "Connexions API Biloki - Intégrations OTA et partenaires",
+      "description": "Connectez Biloki à vos plateformes : Airbnb, Booking, Airbnb Luxury et autres OTA."
+    },
+    "careers": {
+      "title": "Rejoignez Biloki - Offres d'emploi et carrière",
+      "description": "Nous recrutons ! Découvrez nos offres d'emploi et rejoignez une équipe passionnée par la conciergerie."
+    },
+    "legalNotice": {
+      "title": "Mentions légales Biloki",
+      "description": "Mentions légales et informations juridiques concernant Biloki et son utilisation."
+    },
+    "terms": {
+      "title": "Conditions générales de vente Biloki",
+      "description": "Découvrez les conditions générales de vente et conditions d'utilisation de Biloki."
+    },
+    "cookies": {
+      "title": "Politique de cookies Biloki",
+      "description": "Informations sur l'utilisation des cookies et gestion de vos préférences."
+    },
+    "referral": {
+      "title": "Gagnez en parrainant avec Biloki",
+      "description": "Parrainez vos amis et gagnez des avantages exclusifs avec notre programme."
+    },
+    "pms": {
+      "title": "PMS Biloki - Système de gestion de propriétés",
+      "description": "Gérez tous vos séjours en un seul endroit. Centralisez réservations, calendriers, paiements et tâches."
+    },
+    "channelManager": {
+      "title": "Channel Manager Biloki - Synchronisation multi-plateformes",
+      "description": "Synchronisez vos calendriers et tarifs sur Airbnb, Booking, Vrbo et autres OTA en temps réel."
+    },
+    "fourInterfaces": {
+      "title": "Interface Biloki - Design moderne et intuitif",
+      "description": "Découvrez l'interface épurée et intuitive de Biloki. Conçue pour la productivité et l'efficacité."
+    },
+    "reporting": {
+      "title": "Reporting Biloki - Analyses et insights",
+      "description": "Analysez vos données de gestion. Dashboards détaillés, KPI en temps réel et rapports personnalisés."
+    },
+    "marketplace": {
+      "title": "Marketplace Biloki - Connectez vos prestataires",
+      "description": "Connectez-vous avec des prestataires vérifiés : nettoyage, maintenance, linge, conciergerie."
+    },
+    "smartLocksFeature": {
+      "title": "Serrures connectées Biloki - Gestion d'accès automatisée",
+      "description": "Automatisez l'accès à vos logements. Intégration avec les principales serrures connectées du marché."
+    }
   }
 }

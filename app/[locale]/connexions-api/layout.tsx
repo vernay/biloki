@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Connexions API Biloki - Intégrations OTA et partenaires",
-  description: "Connectez Biloki à vos plateformes : Airbnb, Booking, Airbnb Luxury et autres OTA.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.apiConnections?.title || "Biloki";
+  const description = seoMetadata?.apiConnections?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function ConnexionsAPILayout({
   children,

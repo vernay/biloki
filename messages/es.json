@@ -1888,5 +1888,87 @@
       "doorOpening": "Sentido de apertura",
       "bookDemo": "Reservar una demo gratuita"
     }
+  },
+  "seoMetadata": {
+    "home": {
+      "title": "Biloki - Ahorra Tiempo en la Gestión de Alquileres Vacacionales",
+      "description": "Centraliza, automatiza y orquesta el ciclo de vida de tus alquileres. PMS, Channel Manager, Mensajería IA para conciergeries."
+    },
+    "pricing": {
+      "title": "Precios de Biloki - Planes Flexibles para Gestores",
+      "description": "Descubre nuestros planes tarifarios. Calcula el precio según tus propiedades. Prueba gratuita 14 días, sin tarjeta bancaria."
+    },
+    "contact": {
+      "title": "Contacta con Biloki - Soporte y Ventas",
+      "description": "¿Necesitas ayuda? Contacta con nuestro equipo. Respondemos rápidamente tus preguntas."
+    },
+    "trial": {
+      "title": "Inicia tu Prueba Gratuita - 14 Días de Biloki",
+      "description": "Prueba Biloki gratuitamente durante 14 días. Acceso completo a todas las funcionalidades, sin tarjeta bancaria."
+    },
+    "subscribe": {
+      "title": "Suscribirse a Biloki - Gestión de Alquileres Vacacionales",
+      "description": "Elige tu plan de suscripción y comienza a gestionar tus alquileres de forma efectiva."
+    },
+    "login": {
+      "title": "Inicia Sesión en Biloki",
+      "description": "Accede a tu cuenta de Biloki para acceder a tu panel de control."
+    },
+    "demo": {
+      "title": "Reserva una Demo Gratuita - Biloki",
+      "description": "Reserva una demostración con nuestros expertos. Descubre cómo Biloki puede simplificar tu gestión."
+    },
+    "team": {
+      "title": "Equipo Biloki - Conoce Nuestro Equipo",
+      "description": "Descubre a los fundadores y el equipo que está construyendo Biloki para revolucionar la conciergerie."
+    },
+    "smartLocks": {
+      "title": "Cerraduras Conectadas Biloki - Gestión de Acceso Automatizada",
+      "description": "Automatiza el acceso a tus propiedades con nuestras integraciones de cerraduras conectadas."
+    },
+    "apiConnections": {
+      "title": "Conexiones API Biloki - Integraciones OTA",
+      "description": "Conecta Biloki a tus plataformas: Airbnb, Booking, Airbnb Luxury y otros OTAs."
+    },
+    "careers": {
+      "title": "Únete a Biloki - Oportunidades de Empleo",
+      "description": "¡Estamos contratando! Descubre nuestras ofertas de empleo y únete a un equipo apasionado por la conciergerie."
+    },
+    "legalNotice": {
+      "title": "Aviso Legal - Biloki",
+      "description": "Información legal y descargos de responsabilidad sobre Biloki y su uso."
+    },
+    "terms": {
+      "title": "Términos y Condiciones - Biloki",
+      "description": "Descubre los términos y condiciones de uso y de servicio de Biloki."
+    },
+    "cookies": {
+      "title": "Política de Cookies - Biloki",
+      "description": "Información sobre el uso de cookies y gestión de tus preferencias."
+    },
+    "referral": {
+      "title": "Gana con el Programa de Referencia de Biloki",
+      "description": "Refiere a tus amigos y gana beneficios exclusivos con nuestro programa."
+    },
+    "pms": {
+      "title": "PMS de Biloki - Sistema de Gestión de Propiedades",
+      "description": "Gestiona todos tus alquileres en un único lugar. Centraliza reservas, calendarios, pagos y tareas."
+    },
+    "channelManager": {
+      "title": "Biloki Channel Manager - Sincronización Multi-plataforma",
+      "description": "Sincroniza tus calendarios y tarifas en Airbnb, Booking, Vrbo y otros OTAs en tiempo real."
+    },
+    "fourInterfaces": {
+      "title": "Interfaz de Biloki - Diseño Moderno e Intuitivo",
+      "description": "Descubre las interfaces limpias e intuitivas de Biloki. Diseñadas para la productividad y la eficiencia."
+    },
+    "reporting": {
+      "title": "Reportes de Biloki - Análisis e Información",
+      "description": "Analiza tus datos de gestión. Dashboards detallados, KPIs en tiempo real y reportes personalizados."
+    },
+    "marketplace": {
+      "title": "Marketplace de Biloki - Conecta tus Proveedores",
+      "description": "Conecta Biloki a tus plataformas: limpieza, mantenimiento, lencería, gestión de propiedades."
+    }
   }
 }

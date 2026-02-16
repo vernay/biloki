@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Marketplace Biloki - Connectez vos prestataires",
-  description: "Connectez-vous avec des prestataires vérifiés : nettoyage, maintenance, linge, conciergerie.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.marketplace?.title || "Biloki";
+  const description = seoMetadata?.marketplace?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function MarketplaceAPILayout({
   children,

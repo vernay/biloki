@@ -2000,5 +2000,87 @@
       "doorOpening": "Door opening direction",
       "bookDemo": "Book a free demo"
     }
+  },
+  "seoMetadata": {
+    "home": {
+      "title": "Biloki - Save Time Managing Your Vacation Rentals",
+      "description": "Centralize, automate and orchestrate your vacation rental lifecycle. PMS, Channel Manager, AI Messaging for concierges."
+    },
+    "pricing": {
+      "title": "Biloki Pricing - Flexible Plans for Property Managers",
+      "description": "Discover our pricing plans. Calculate the price based on your properties. Free trial 14 days, no credit card required."
+    },
+    "contact": {
+      "title": "Contact Biloki - Support and Sales",
+      "description": "Need help? Contact our team. We respond quickly to your questions."
+    },
+    "trial": {
+      "title": "Start Your Free Trial - 14 Days of Biloki",
+      "description": "Test Biloki for free for 14 days. Full access to all features, no credit card required."
+    },
+    "subscribe": {
+      "title": "Subscribe to Biloki - Vacation Rental Management",
+      "description": "Choose your subscription plan and start managing your stays effectively."
+    },
+    "login": {
+      "title": "Sign in to Biloki",
+      "description": "Log in to your Biloki account to access your dashboard."
+    },
+    "demo": {
+      "title": "Book a Free Demo - Biloki",
+      "description": "Book a demonstration with our experts. Discover how Biloki can simplify your operations."
+    },
+    "team": {
+      "title": "Biloki Team - Meet Our Team",
+      "description": "Discover the founders and team building Biloki to revolutionize property management."
+    },
+    "smartLocks": {
+      "title": "Smart Locks Biloki - Automated Access Management",
+      "description": "Automate access to your properties with our smart lock integrations."
+    },
+    "apiConnections": {
+      "title": "Biloki API Connections - OTA Integrations",
+      "description": "Connect Biloki to your platforms: Airbnb, Booking, Airbnb Luxury and other OTAs."
+    },
+    "careers": {
+      "title": "Join Biloki - Job Opportunities and Careers",
+      "description": "We're hiring! Discover our job openings and join a team passionate about property management."
+    },
+    "legalNotice": {
+      "title": "Legal Notice - Biloki",
+      "description": "Legal information and disclaimer regarding Biloki and its use."
+    },
+    "terms": {
+      "title": "Terms and Conditions - Biloki",
+      "description": "Discover Biloki's terms and conditions of use and conditions of service."
+    },
+    "cookies": {
+      "title": "Cookie Policy - Biloki",
+      "description": "Information about cookie usage and managing your preferences."
+    },
+    "referral": {
+      "title": "Earn with Biloki's Referral Program",
+      "description": "Refer your friends and earn exclusive benefits with our program."
+    },
+    "pms": {
+      "title": "Biloki PMS - Property Management System",
+      "description": "Manage all your stays in one place. Centralize reservations, calendars, payments and tasks."
+    },
+    "channelManager": {
+      "title": "Biloki Channel Manager - Multi-Platform Synchronization",
+      "description": "Synchronize your calendars and rates on Airbnb, Booking, Vrbo and other OTAs in real-time."
+    },
+    "fourInterfaces": {
+      "title": "Biloki Interface - Modern and Intuitive Design",
+      "description": "Discover Biloki's clean and intuitive interfaces. Designed for productivity and efficiency."
+    },
+    "reporting": {
+      "title": "Biloki Reporting - Analytics and Insights",
+      "description": "Analyze your management data. Detailed dashboards, real-time KPIs and customized reports."
+    },
+    "marketplace": {
+      "title": "Biloki Marketplace - Connect Your Vendors",
+      "description": "Connect Biloki to your platforms: cleaning, maintenance, linen, property management."
+    }
   }
 }

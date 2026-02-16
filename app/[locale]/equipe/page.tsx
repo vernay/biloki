@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
 import { useTranslations } from 'next-intl';
+import { getMessages } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "L'équipe Biloki - Qui sommes-nous ?",
-  description: "Découvrez les fondateurs et l'équipe qui construit Biloki pour révolutionner la conciergerie.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const messages = await getMessages({ locale });
+  const seoMetadata = (messages as any).seoMetadata;
+
+  const title = seoMetadata?.team?.title || "Biloki";
+  const description = seoMetadata?.team?.description || "";
+
+  return {
+    title,
+    description,
+  };
+}
 
 export default function EquipePage() {
   const t = useTranslations('teamPage');
