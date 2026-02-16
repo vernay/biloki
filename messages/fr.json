@@ -2192,5 +2192,71 @@
       "title": "Biloki au salon de la conciergerie à Marseille | Biloki",
       "description": "Le 24 mars, retrouvez l'équipe Biloki à Marseille pour découvrir toutes nos fonctionnalités et assister à une démo complète."
     }
+  },
+  "blog": {
+    "salon": {
+      "breadcrumb": {
+        "home": "Accueil",
+        "blog": "Blog",
+        "current": "Salon Marseille"
+      },
+      "meta": {
+        "category": "Événement",
+        "date": "5 février 2026",
+        "readTime": "4 min de lecture"
+      },
+      "hero": {
+        "title": "Biloki au salon de la conciergerie à Marseille : on vous attend !",
+        "lead": "Rendez-vous le <strong>24 mars à Marseille</strong> pour rencontrer l'équipe Biloki en vrai. Nous serons présents pour vous montrer toutes les fonctionnalités et répondre à vos questions."
+      },
+      "sections": [
+        {
+          "heading": "Pourquoi venir nous rencontrer ?",
+          "content": "Rien ne vaut une démo en direct. Au salon, vous pourrez échanger avec notre équipe produit et découvrir comment Biloki simplifie la gestion de votre conciergerie.",
+          "items": [
+            "Voir l'outil en action, avec des cas concrets du quotidien.",
+            "Comprendre comment centraliser vos opérations sans friction.",
+            "Identifier les automatisations les plus adaptées à votre organisation."
+          ]
+        },
+        {
+          "heading": "Ce que nous allons présenter",
+          "type": "grid",
+          "items": [
+            {
+              "title": "PMS & opérations",
+              "description": "Gérez vos séjours, logements et équipes depuis une interface unique, avec une vue claire de votre activité."
+            },
+            {
+              "title": "Channel Manager",
+              "description": "Synchronisez vos calendriers et tarifs sur 120+ plateformes pour éviter les doubles réservations."
+            },
+            {
+              "title": "Messagerie automatisée",
+              "description": "Réduisez les échanges répétitifs grâce à des scénarios intelligents et des réponses instantanées."
+            },
+            {
+              "title": "Serrures connectées",
+              "description": "Automatisez l'accès voyageurs et prestataires avec des codes sécurisés selon les dates de séjour."
+            },
+            {
+              "title": "Marketplace API",
+              "description": "Connectez Biloki à vos outils existants pour un écosystème sur mesure."
+            }
+          ]
+        }
+      ],
+      "infoPratique": {
+        "date": "24 mars 2026",
+        "lieu": "Salon de la conciergerie, Marseille",
+        "text": "Passez nous voir, même sans rendez-vous. Nous vous accueillerons pour une démo personnalisée."
+      },
+      "cta": {
+        "title": "Vous voulez une démo dédiée ?",
+        "description": "Réservez un créneau à l'avance pour que l'équipe Biloki vous prépare une démonstration adaptée à votre activité.",
+        "button1": "Réserver une démo",
+        "button2": "Voir le post LinkedIn"
+      }
+    }
   }
 }

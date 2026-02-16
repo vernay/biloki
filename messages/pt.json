@@ -1997,5 +1997,71 @@
       "title": "Biloki na Feira de Concierge em Marselha | Biloki",
       "description": "Em 24 de março, conheça o time da Biloki em Marselha para descobrir todos os nossos recursos e assistir a uma demonstração completa."
     }
+  },
+  "blog": {
+    "salon": {
+      "breadcrumb": {
+        "home": "Início",
+        "blog": "Blog",
+        "current": "Feira de Marselha"
+      },
+      "meta": {
+        "category": "Evento",
+        "date": "5 de fevereiro de 2026",
+        "readTime": "4 min de leitura"
+      },
+      "hero": {
+        "title": "Biloki na Feira de Concierge em Marselha: Te esperamos!",
+        "lead": "Conheça o time da Biloki pessoalmente no <strong>24 de março em Marselha</strong>. Estaremos lá para mostrar todos os nossos recursos e responder suas perguntas."
+      },
+      "sections": [
+        {
+          "heading": "Por que nos visitar?",
+          "content": "Nada se compara com uma demonstração ao vivo. Na feira, você pode falar diretamente com nosso time de produto e descobrir como Biloki simplifica a gestão da sua concierge.",
+          "items": [
+            "Veja a ferramenta em ação com exemplos reais do dia a dia.",
+            "Entenda como centralizar suas operações sem fricção.",
+            "Identifique as automações melhor adequadas para sua organização."
+          ]
+        },
+        {
+          "heading": "O que apresentaremos",
+          "type": "grid",
+          "items": [
+            {
+              "title": "PMS e Operações",
+              "description": "Gerencie suas estadias, propriedades e times a partir de uma única interface com visibilidade clara da sua atividade."
+            },
+            {
+              "title": "Channel Manager",
+              "description": "Sincronize seus calendários e tarifas em mais de 120 plataformas para evitar duplas reservas."
+            },
+            {
+              "title": "Mensagens Automatizadas",
+              "description": "Reduza trocas repetitivas com cenários inteligentes e respostas instantâneas."
+            },
+            {
+              "title": "Fechaduras Inteligentes",
+              "description": "Automatize o acesso de hóspedes e fornecedores com códigos seguros baseados nas datas de hospedagem."
+            },
+            {
+              "title": "Marketplace API",
+              "description": "Conecte Biloki com suas ferramentas existentes para um ecossistema personalizado."
+            }
+          ]
+        }
+      ],
+      "infoPratique": {
+        "date": "24 de março de 2026",
+        "lieu": "Feira de Concierge, Marselha",
+        "text": "Nos visite, mesmo sem agendamento prévio. Vamos acolhê-lo para uma demonstração personalizada."
+      },
+      "cta": {
+        "title": "Quer uma demonstração dedicada?",
+        "description": "Reserve um horário com antecedência para que o time da Biloki prepare uma demonstração adaptada ao seu negócio.",
+        "button1": "Agendar uma demonstração",
+        "button2": "Ver a publicação no LinkedIn"
+      }
+    }
   }
 }

@@ -2110,5 +2110,71 @@
       "title": "Biloki at the Concierge Show in Marseille | Biloki",
       "description": "On March 24, meet the Biloki team in Marseille to discover all our features and attend a complete demo."
     }
+  },
+  "blog": {
+    "salon": {
+      "breadcrumb": {
+        "home": "Home",
+        "blog": "Blog",
+        "current": "Marseille Show"
+      },
+      "meta": {
+        "category": "Event",
+        "date": "February 5, 2026",
+        "readTime": "4 min read"
+      },
+      "hero": {
+        "title": "Biloki at the Concierge Show in Marseille: We're waiting for you!",
+        "lead": "Meet the Biloki team in person on <strong>March 24 in Marseille</strong>. We'll be there to show you all our features and answer your questions."
+      },
+      "sections": [
+        {
+          "heading": "Why visit us?",
+          "content": "Nothing beats a live demo. At the show, you can talk with our product team and discover how Biloki simplifies your concierge management.",
+          "items": [
+            "See the tool in action with real-world examples.",
+            "Understand how to centralize your operations seamlessly.",
+            "Identify the automations best suited to your organization."
+          ]
+        },
+        {
+          "heading": "What we'll present",
+          "type": "grid",
+          "items": [
+            {
+              "title": "PMS & Operations",
+              "description": "Manage your stays, properties and teams from a single interface with clear visibility of your activity."
+            },
+            {
+              "title": "Channel Manager",
+              "description": "Synchronize your calendars and rates across 120+ platforms to prevent double bookings."
+            },
+            {
+              "title": "Automated Messaging",
+              "description": "Reduce repetitive exchanges with intelligent scenarios and instant responses."
+            },
+            {
+              "title": "Smart Locks",
+              "description": "Automate guest and vendor access with secure codes based on stay dates."
+            },
+            {
+              "title": "Marketplace API",
+              "description": "Connect Biloki to your existing tools for a custom ecosystem."
+            }
+          ]
+        }
+      ],
+      "infoPratique": {
+        "date": "March 24, 2026",
+        "lieu": "Concierge Show, Marseille",
+        "text": "Stop by and see us, even without an appointment. We'll welcome you for a personalized demo."
+      },
+      "cta": {
+        "title": "Want a dedicated demo?",
+        "description": "Book a time slot in advance so the Biloki team can prepare a demo tailored to your business.",
+        "button1": "Book a demo",
+        "button2": "See the LinkedIn post"
+      }
+    }
   }
 }
