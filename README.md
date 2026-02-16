@@ -53,11 +53,14 @@ Site web principal de Biloki construit avec **Next.js 16**, **React 19** et **Ta
 - Exemple: `Hero`, `Features`, `Pricing`, `Team`
 
 #### **Blog** (`/blog`)
-- Chaque article = dossier avec `page.tsx`
-- Articles existants:
+- **Route dynamique**: `/blog/[slug]/page.tsx`
+- **Gestion centralisée**: `lib/blog/articles.ts`
+- **5 articles multilingues** (fr/en/es/pt):
   - `automatiser-gestion-locations-saisonnieres`
   - `channel-manager-guide-complet-conciergeries`
+  - `ia-location-courte-duree-conciergeries`
   - `messagerie-automatisee-conciergerie`
+  - `nice-quotas-airbnb-reglementation-2025`
 
 #### **Features** (`/fonctionnalites`)
 - Détail de chaque fonctionnalité produit
@@ -115,6 +118,13 @@ export const SUPPORT_PHONE         // Numéro de support
 export const APP_STORE_URL         // Lien App Store
 export const PLAY_STORE_URL        // Lien Play Store
 export const RESEND_FROM_EMAIL     // Email d'envoi (Resend)
+```
+
+**blog/** - Gestion du blog
+```typescript
+types.ts         // Types TypeScript (Locale, BlogArticle, etc.)
+articles.ts      // Base de données des articles (slug, date, contenu multilingue)
+index.ts         // Fonctions: getArticlesForLocale(), getArticleBySlug()
 ```
 
 ### `/public` - Assets statiques
@@ -196,6 +206,10 @@ lib/
 ├─ config.ts (contact, URLs)
 ├─ pricing-config.ts ⭐ TOUS LES PRIX ET TARIFS
 ├─ features-config.ts ⭐ TOUTES LES FEATURES
+├─ blog/ ⭐ GESTION DU BLOG
+│  ├─ types.ts (types TypeScript)
+│  ├─ articles.ts (base de données des articles)
+│  └─ index.ts (fonctions utilitaires)
 └─ (à ajouter: user-config.ts, modules-config.ts, etc.)
 ```
 
@@ -266,6 +280,54 @@ export default function MonComposant() {
 - Classes dans le JSX
 - Styles globaux dans `app/globals.css`
 - Couleurs/responsive: utiliser les classes Tailwind standards
+
+---
+
+## 📰 Ajouter un nouvel article de blog
+
+Le blog utilise un **système de routage dynamique** centralisé. Pour ajouter un article :
+
+### 1️⃣ Ajouter l'article dans `lib/blog/articles.ts`
+
+```typescript
+export const articles: BlogArticles = [
+  // Vos articles existants...
+  
+  // ✨ Nouvel article
+  {
+    slug: "mon-nouvel-article",
+    category: "Guide",
+    date: "2026-02-16",
+    readTime: "5 min",
+    image: "/images/blog/mon-article.jpg",
+    translations: {
+      fr: {
+        title: "Mon titre en français",
+        excerpt: "Description courte en français...",
+        content: `<p>Contenu HTML complet de l'article...</p>`
+      },
+      en: {
+        title: "My English title",
+        excerpt: "Short English description...",
+        content: `<p>Full HTML article content...</p>`
+      },
+      es: { /* ... */ },
+      pt: { /* ... */ }
+    }
+  }
+];
+```
+
+### 2️⃣ Ajouter l'image
+
+Placez votre image dans `/public/images/blog/mon-article.jpg`
+
+### 3️⃣ C'est tout ! 🎉
+
+- ✅ L'article apparaît automatiquement sur `/[locale]/blog`
+- ✅ Accessible via `/[locale]/blog/mon-nouvel-article`
+- ✅ Ajouté automatiquement au sitemap.xml
+- ✅ Disponible dans les 4 langues (fr/en/es/pt)
 
 ---
 
