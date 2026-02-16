@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getArticlesForLocale } from '../lib/blog'
+import { getArticlesForLocale } from '../lib/blog/index'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0

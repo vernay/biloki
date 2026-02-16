@@ -1,7 +1,8 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { getArticlesForLocale } from "@/lib/blog";
+import { Locale } from "@/lib/blog/types";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blogPage");
@@ -12,72 +13,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const articles = [
-  {
-    slug: "ia-location-courte-duree-conciergeries",
-    title: "Comment Claude 4.6 va redessiner les contours de la location courte durée ?",
-    excerpt: "L’IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez le modèle hybride qui s’impose.",
-    date: "10 février 2026",
-    readTime: "9 min",
-    category: "IA",
-    image: "/images/blog/claudeopus4.6.png",
-  },
-  {
-    slug: "salon-marseille-2026",
-    title: "Biloki au salon de la conciergerie à Marseille : on vous attend !",
-    excerpt: "Le 24 mars, retrouvez l’équipe Biloki à Marseille pour une démo complète : PMS, channel manager, messagerie, serrures connectées et marketplace API.",
-    date: "5 février 2026",
-    readTime: "4 min",
-    category: "Événement",
-    image: "/images/blog/salon-marseille.jpg",
-  },
-  {
-    slug: "nice-quotas-airbnb-reglementation-2025",
-    title: "Nice : Quotas par quartier pour les locations Airbnb",
-    excerpt: "Nice durcit sa réglementation : quotas par quartier, 90 jours max, autorisations de 3 ans. Ce que les conciergeries doivent savoir.",
-    date: "26 janvier 2026",
-    readTime: "6 min",
-    category: "Actualité",
-    image: "/images/blog/nice-airbnb.jpg",
-  },
-  {
-    slug: "channel-manager-guide-complet-conciergeries",
-    title: "Channel Manager : Le Guide Complet 2026 pour Conciergeries",
-    excerpt: "Découvrez comment un channel manager peut transformer votre conciergerie en synchronisant automatiquement vos annonces sur toutes les plateformes.",
-    date: "20 janvier 2026",
-    readTime: "8 min",
-    category: "Guide",
-    image: "/images/blog/channel-manager-guide.jpg",
-  },
-  {
-    slug: "automatiser-gestion-locations-saisonnieres",
-    title: "Comment Automatiser la Gestion de ses Locations Saisonnières en 2026",
-    excerpt: "Gagnez jusqu'à 20 heures par semaine en automatisant vos tâches répétitives. Découvrez les 5 automatisations essentielles.",
-    date: "À venir",
-    readTime: "7 min",
-    category: "Automatisation",
-    image: "/images/blog/automatisation.jpg",
-  },
-  {
-    slug: "messagerie-automatisee-conciergerie",
-    title: "Messagerie automatisée : scripts et workflows pour conciergeries",
-    excerpt: "Les messages clés à automatiser pour gagner du temps et améliorer l'expérience voyageurs sur Airbnb et Booking.",
-    date: "20 janvier 2026",
-    readTime: "9 min",
-    category: "Automatisation",
-    image: "/images/blog/messagerie-automatisee.jpg",
-  },
-];
-
-export default function BlogPage() {
-  const t = useTranslations("blogPage");
-  const common = useTranslations("common");
+export default async function BlogPage({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = await params;
+  const articles = getArticlesForLocale(locale);
+  const t = await getTranslations("blogPage");
+  const common = await getTranslations("common");
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Back button */}
-        <a href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
+        <a href={`/${locale}`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -135,7 +81,7 @@ export default function BlogPage() {
 
                 {/* CTA */}
                 <a
-                  href={`/blog/${article.slug}`}
+                  href={`/${locale}/blog/${article.slug}`}
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
                   {common("readArticle")}

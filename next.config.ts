@@ -265,23 +265,6 @@ const nextConfig: NextConfig = {
         destination: '/fr/fonctionnalites/4-interfaces',
         permanent: true,
       },
-      
-      // Redirections articles blog non-français vers français
-      {
-        source: '/en/blog/:slug',
-        destination: '/fr/blog/:slug',
-        permanent: true,
-      },
-      {
-        source: '/es/blog/:slug',
-        destination: '/fr/blog/:slug',
-        permanent: true,
-      },
-      {
-        source: '/pt/blog/:slug',
-        destination: '/fr/blog/:slug',
-        permanent: true,
-      },
     ];
   },
 };
