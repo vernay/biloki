@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getArticlesForLocale } from '../lib/blog/index'
+import { Locale } from '../lib/blog/types'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -8,7 +9,7 @@ import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.biloki.fr'
-  const locales = ['fr', 'en', 'es', 'pt']
+  const locales: Locale[] = ['fr', 'en', 'es', 'pt']
 
   const sitemapEntries: MetadataRoute.Sitemap = []
 
