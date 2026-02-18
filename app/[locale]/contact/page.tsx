@@ -21,12 +21,13 @@ export default function ContactPage() {
     email: '',
     telephone: '',
     entreprise: '',
+    raison: '',
     message: ''
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -57,6 +58,7 @@ export default function ContactPage() {
           email: '',
           telephone: '',
           entreprise: '',
+          raison: '',
           message: ''
         });
         setTimeout(() => setSubmitted(false), 3000);
@@ -249,6 +251,26 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
                 />
+              </div>
+
+              <div>
+                <label htmlFor="raison" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Raison du contact *
+                </label>
+                <select
+                  id="raison"
+                  name="raison"
+                  value={formData.raison}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white"
+                  required
+                >
+                  <option value="">Sélectionnez une option...</option>
+                  <option value="Demande de démo">Demande de démo</option>
+                  <option value="Support technique">Support technique</option>
+                  <option value="Question générale">Question générale</option>
+                  <option value="Demande de partenariat API">Demande de partenariat API</option>
+                </select>
               </div>
 
               <div>

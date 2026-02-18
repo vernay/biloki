@@ -2,11 +2,23 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription } = await req.json();
+    const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective } = await req.json();
+
+    console.log('📥 Requête HubSpot reçue:', {
+      firstName,
+      lastName,
+      email,
+      source,
+      requestType,
+      urgent,
+      hasConversation: !!conversation,
+      hasProblemDescription: !!problemDescription,
+    });
 
     // Vérifier que HubSpot API key existe
     const hubspotApiKey = process.env.HUBSPOT_PRIVATE_APP_TOKEN;
     if (!hubspotApiKey) {
+      console.error('❌ HUBSPOT_PRIVATE_APP_TOKEN manquante');
       return NextResponse.json(
         { error: 'HubSpot API key manquante' },
         { status: 500 }
@@ -31,15 +43,20 @@ export async function POST(req: NextRequest) {
       // Capitaliser la première lettre pour correspondre aux options HubSpot (Fr, En, Es, Pt)
       properties.langue = locale.charAt(0).toUpperCase() + locale.slice(1);
     }
-    if (role) properties.biloki_role = role;
+    if (role) properties.role = role;
+    
+    // Objectif d'intégration API (spécifique à la page marketplace)
+    if (integrationObjective) properties.type_dintegration = integrationObjective;
     
     // Type de demande pour workflow de notification (catégories: Demande de démo, Support technique, Question générale)
     if (requestType) {
-      properties.type_demande_chatbot = requestType;
+      properties.type_de_demande_chatbot = requestType;
     } else {
       // Fallback pour ancienne logique
-      properties.type_demande_chatbot = urgent ? 'Demande urgente' : 'Lead normal';
+      properties.type_de_demande_chatbot = urgent ? 'Demande urgente' : 'Lead normal';
     }
+
+    console.log('📋 Propriétés à envoyer à HubSpot:', properties);
 
     // Créer le contact dans HubSpot
     const contactResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
@@ -130,6 +147,8 @@ export async function POST(req: NextRequest) {
 
     const contactData = await contactResponse.json();
     const contactId = contactData.id;
+
+    console.log('✅ Contact HubSpot créé avec succès - ID:', contactId);
 
     // Ajouter une note avec la conversation + infos complémentaires
     if (conversation || propertyCount || source || problemDescription) {
@@ -255,8 +274,8 @@ async function createFollowUpTask(contactId: string, firstName: string, urgent: 
   };
 
   // Assigner à Grégoire Vernay pour toutes les tâches (urgentes ou non)
-  taskProperties.hubspot_owner_id = '145156681';
-  console.log(`✅ Tâche assignée à l'owner ID: 145156681`);
+  taskProperties.hubspot_owner_id = '31178324';
+  console.log(`✅ Tâche assignée à l'owner ID: 31178324`);
 
   const taskResponse = await fetch('https://api.hubapi.com/crm/v3/objects/tasks', {
     method: 'POST',

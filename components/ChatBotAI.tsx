@@ -317,7 +317,7 @@ export default function ChatBotAI() {
       const problemDescription = technicalDescription.trim() || 'Non spécifié';
 
       // Créer le contact + tâche urgente
-      await fetch('/api/hubspot/create-contact', {
+      const response = await fetch('/api/hubspot/create-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -337,6 +337,15 @@ export default function ChatBotAI() {
           urgent: true,
         }),
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('❌ Erreur API HubSpot:', errorData);
+        throw new Error(`Erreur HubSpot: ${errorData.error || 'Erreur inconnue'}`);
+      }
+
+      const result = await response.json();
+      console.log('✅ Contact HubSpot créé avec succès:', result);
 
       setMessages((prev) => [
         ...prev,

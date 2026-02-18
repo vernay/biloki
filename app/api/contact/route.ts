@@ -1,67 +1,59 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { CONTACT_EMAIL, RESEND_FROM_EMAIL } from '@/lib/config';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { prenom, nom, email, telephone, entreprise, message } = body;
+    const { prenom, nom, email, telephone, entreprise, raison, message } = body;
 
     // Validation basique
-    if (!prenom || !nom || !email || !message) {
+    if (!prenom || !nom || !email || !message || !raison) {
       return NextResponse.json(
         { error: 'Champs obligatoires manquants' },
         { status: 400 }
       );
     }
 
-    // Configuration pour l'email (utilise nodemailer ou un service d'email)
-    // Pour cet exemple, nous utilisons Resend (à installer avec: npm install resend)
-    
+    // Créer/mettre à jour le contact dans HubSpot
     try {
-      // Essayer d'importer Resend
-      const { Resend } = await import('resend');
-      const resend = new Resend(process.env.RESEND_API_KEY);
-
-      // Envoyer l'email
-      const result = await resend.emails.send({
-        from: RESEND_FROM_EMAIL,
-        to: CONTACT_EMAIL,
-        replyTo: email,
-        subject: `Nouveau message de contact de ${prenom} ${nom}`,
-        html: `
-          <h2>Nouveau message de contact</h2>
-          <p><strong>Prénom :</strong> ${prenom}</p>
-          <p><strong>Nom :</strong> ${nom}</p>
-          <p><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
-          <p><strong>Téléphone :</strong> ${telephone || 'Non fourni'}</p>
-          <p><strong>Entreprise :</strong> ${entreprise || 'Non fourni'}</p>
-          <p><strong>Message :</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
-        `,
+      // Construire l'URL absolue pour l'API HubSpot
+      const url = new URL(request.url);
+      const hubspotUrl = `${url.protocol}//${url.host}/api/hubspot/create-contact`;
+      
+      const hubspotResponse = await fetch(hubspotUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: prenom,
+          lastName: nom,
+          email: email,
+          phone: telephone || '',
+          company: entreprise || '',
+          conversation: `Message depuis le formulaire de contact:\n\n${message}`,
+          source: 'Formulaire de contact',
+          locale: 'fr',
+          requestType: raison,
+        }),
       });
 
-      if (result.error) {
-        console.error('Erreur Resend:', result.error);
+      if (!hubspotResponse.ok) {
+        const errorText = await hubspotResponse.text();
+        console.error('Erreur HubSpot:', errorText);
         return NextResponse.json(
-          { error: 'Erreur lors de l\'envoi de l\'email' },
+          { error: 'Erreur lors de l\'enregistrement du contact' },
           { status: 500 }
         );
       }
 
       return NextResponse.json(
-        { success: true, message: 'Email envoyé avec succès' },
+        { success: true, message: 'Contact enregistré avec succès dans HubSpot' },
         { status: 200 }
       );
-    } catch (resendError) {
-      // Si Resend n'est pas disponible, utiliser nodemailer ou afficher une erreur
-      console.error('Resend non disponible:', resendError);
-      
-      // Fallback: retourner une erreur
+    } catch (hubspotError) {
+      console.error('Erreur HubSpot:', hubspotError);
       return NextResponse.json(
-        { 
-          error: 'Service d\'email non configuré. Veuillez configurer Resend ou un autre service d\'email.',
-          details: 'Installez Resend avec: npm install resend'
-        },
+        { error: 'Erreur lors de l\'enregistrement du contact' },
         { status: 500 }
       );
     }

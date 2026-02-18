@@ -1,42 +1,79 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-
-declare global {
-  interface Window {
-    hbspt?: any;
-  }
-}
 
 export default function ConnexionsAPIPage() {
   const t = useTranslations('apiPage');
   const common = useTranslations('common');
+  
+  const [formData, setFormData] = useState({
+    prenom: '',
+    nom: '',
+    email: '',
+    telephone: '',
+    entreprise: '',
+    objectif: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    // Load HubSpot script
-    const script = document.createElement('script');
-    script.src = 'https://js.hsforms.net/forms/v2.js';
-    script.async = true;
-    script.onload = () => {
-      if (window.hbspt) {
-        window.hbspt.forms.create({
-          region: 'eu1',
-          portalId: '48192046',
-          formId: '2e53ea17-c6f7-4e33-ad78-2dc48c3c7cdd',
-          target: '#hubspot-form-api'
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/hubspot/create-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.prenom,
+          lastName: formData.nom,
+          email: formData.email,
+          phone: formData.telephone,
+          company: formData.entreprise,
+          integrationObjective: formData.objectif,
+          conversation: `Demande de connexion API\n\nObjectif: ${formData.objectif}\n\nMessage:\n${formData.message}`,
+          source: 'Demande de connexion API',
+          locale: 'fr',
+          requestType: 'Demande de partenariat API',
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          prenom: '',
+          nom: '',
+          email: '',
+          telephone: '',
+          entreprise: '',
+          objectif: '',
+          message: ''
         });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert('Erreur lors de l\'envoi du formulaire');
       }
-    };
-    document.body.appendChild(script);
-
-    // Load Calendly script
-    const calendlyScript = document.createElement('script');
-    calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
-    calendlyScript.async = true;
-    document.body.appendChild(calendlyScript);
-  }, []);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Erreur lors de l\'envoi du formulaire');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -116,10 +153,138 @@ export default function ConnexionsAPIPage() {
 
           {/* Right Side - Form */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <div 
-              id="hubspot-form-api"
-              style={{ minWidth: '100%' }}
-            />
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Demander une connexion API</h3>
+            
+            {submitted && (
+              <div className="mb-6 p-4 bg-green-100 border border-green-400 rounded-lg">
+                <p className="text-green-800 font-semibold">✓ Votre demande a été envoyée avec succès ! Notre équipe vous contactera rapidement.</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="prenom" className="block text-sm font-semibold text-gray-900 mb-2">
+                    Prénom *
+                  </label>
+                  <input
+                    type="text"
+                    id="prenom"
+                    name="prenom"
+                    value={formData.prenom}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="nom" className="block text-sm font-semibold text-gray-900 mb-2">
+                    Nom *
+                  </label>
+                  <input
+                    type="text"
+                    id="nom"
+                    name="nom"
+                    value={formData.nom}
+                    onChange={handleChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="telephone" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Téléphone
+                </label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  value={formData.telephone}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="entreprise" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Entreprise
+                </label>
+                <input
+                  type="text"
+                  id="entreprise"
+                  name="entreprise"
+                  value={formData.entreprise}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="objectif" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Objectif de la demande *
+                </label>
+                <select
+                  id="objectif"
+                  name="objectif"
+                  value={formData.objectif}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
+                  required
+                >
+                  <option value="">Sélectionnez un objectif...</option>
+                  <option value="Intégration Channel Manager">Intégration Channel Manager</option>
+                  <option value="Intégration PMS">Intégration PMS</option>
+                  <option value="Intégration OTA">Intégration OTA</option>
+                  <option value="Intégration comptabilité">Intégration comptabilité</option>
+                  <option value="Intégration paiement">Intégration paiement</option>
+                  <option value="Intégration serrures">Intégration serrures connectées</option>
+                  <option value="Autre intégration">Autre type d'intégration</option>
+                  <option value="Devenir partenaire">Devenir partenaire API</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                  placeholder="Décrivez votre projet d'intégration..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? 'Envoi en cours...' : 'Envoyer la demande'}
+              </button>
+            </form>
           </div>
         </div>
       </div>
