@@ -33,26 +33,34 @@ export default function ConnexionsAPIPage() {
     setLoading(true);
 
     try {
+      const payload = {
+        firstName: formData.prenom,
+        lastName: formData.nom,
+        email: formData.email,
+        phone: formData.telephone,
+        company: formData.entreprise,
+        integrationObjective: formData.objectif,
+        conversation: `Demande de connexion API\n\nObjectif: ${formData.objectif}\n\nMessage:\n${formData.message}`,
+        source: 'Demande de connexion API',
+        locale: 'fr',
+        requestType: 'Demande de partenariat API',
+      };
+
+      console.log('📤 Envoi demande connexion API:', payload);
+
       const response = await fetch('/api/hubspot/create-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          firstName: formData.prenom,
-          lastName: formData.nom,
-          email: formData.email,
-          phone: formData.telephone,
-          company: formData.entreprise,
-          integrationObjective: formData.objectif,
-          conversation: `Demande de connexion API\n\nObjectif: ${formData.objectif}\n\nMessage:\n${formData.message}`,
-          source: 'Demande de connexion API',
-          locale: 'fr',
-          requestType: 'Demande de partenariat API',
-        }),
+        body: JSON.stringify(payload),
       });
 
+      const result = await response.json();
+      console.log('📥 Réponse HubSpot:', result);
+
       if (response.ok) {
+        console.log('✅ Demande envoyée avec succès');
         setSubmitted(true);
         setFormData({
           prenom: '',
@@ -65,10 +73,11 @@ export default function ConnexionsAPIPage() {
         });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
+        console.error('❌ Erreur lors de l\'envoi:', result);
         alert('Erreur lors de l\'envoi du formulaire');
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('❌ Erreur:', error);
       alert('Erreur lors de l\'envoi du formulaire');
     } finally {
       setLoading(false);

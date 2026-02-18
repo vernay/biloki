@@ -99,6 +99,9 @@ export async function POST(req: NextRequest) {
         if (searchData.results && searchData.results.length > 0) {
           const contactId = searchData.results[0].id;
           
+          console.log('♻️ Contact existant trouvé - ID:', contactId);
+          console.log('📝 Mise à jour avec les propriétés:', properties);
+          
           // Mettre à jour le contact existant
           const updateResponse = await fetch(
             `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
@@ -112,7 +115,20 @@ export async function POST(req: NextRequest) {
             }
           );
 
+          if (!updateResponse.ok) {
+            const updateError = await updateResponse.json();
+            console.error('❌ Erreur lors de la mise à jour du contact:', updateError);
+            return NextResponse.json(
+              { 
+                error: 'Erreur lors de la mise à jour du contact',
+                details: updateError.message || updateError,
+              },
+              { status: 500 }
+            );
+          }
+
           const updatedContact = await updateResponse.json();
+          console.log('✅ Contact mis à jour avec succès - ID:', contactId);
           
           // Ajouter une note avec la conversation
           if (conversation || propertyCount || source || problemDescription) {
