@@ -1,0 +1,292 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function POST(req: NextRequest) {
+  try {
+    const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription } = await req.json();
+
+    // Vérifier que HubSpot API key existe
+    const hubspotApiKey = process.env.HUBSPOT_PRIVATE_APP_TOKEN;
+    if (!hubspotApiKey) {
+      return NextResponse.json(
+        { error: 'HubSpot API key manquante' },
+        { status: 500 }
+      );
+    }
+
+    // Préparer les propriétés du contact avec les noms internes exacts
+    const properties: any = {
+      firstname: firstName,
+      lastname: lastName,
+      email: email,
+    };
+
+    // Propriétés optionnelles standard
+    if (phone) properties.phone = phone;
+    if (company) properties.company = company;
+    
+    // Propriétés personnalisées Biloki
+    if (propertyCount) properties.biloki_property_count = propertyCount;
+    if (source) properties.source_biloki = source;
+    if (locale) {
+      // Capitaliser la première lettre pour correspondre aux options HubSpot (Fr, En, Es, Pt)
+      properties.langue = locale.charAt(0).toUpperCase() + locale.slice(1);
+    }
+    if (role) properties.biloki_role = role;
+    
+    // Type de demande pour workflow de notification (catégories: Demande de démo, Support technique, Question générale)
+    if (requestType) {
+      properties.type_demande_chatbot = requestType;
+    } else {
+      // Fallback pour ancienne logique
+      properties.type_demande_chatbot = urgent ? 'Demande urgente' : 'Lead normal';
+    }
+
+    // Créer le contact dans HubSpot
+    const contactResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${hubspotApiKey}`,
+      },
+      body: JSON.stringify({ properties }),
+    });
+
+    if (!contactResponse.ok) {
+      const errorData = await contactResponse.json();
+      console.error('Erreur HubSpot:', errorData);
+      
+      // Si le contact existe déjà, on le met à jour
+      if (errorData.category === 'CONFLICT') {
+        // Récupérer l'ID du contact existant via email
+        const searchResponse = await fetch(
+          `https://api.hubapi.com/crm/v3/objects/contacts/search`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${hubspotApiKey}`,
+            },
+            body: JSON.stringify({
+              filterGroups: [{
+                filters: [{
+                  propertyName: 'email',
+                  operator: 'EQ',
+                  value: email,
+                }],
+              }],
+            }),
+          }
+        );
+
+        const searchData = await searchResponse.json();
+        if (searchData.results && searchData.results.length > 0) {
+          const contactId = searchData.results[0].id;
+          
+          // Mettre à jour le contact existant
+          const updateResponse = await fetch(
+            `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
+            {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${hubspotApiKey}`,
+              },
+              body: JSON.stringify({ properties }),
+            }
+          );
+
+          const updatedContact = await updateResponse.json();
+          
+          // Ajouter une note avec la conversation
+          if (conversation || propertyCount || source || problemDescription) {
+            await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+          }
+
+          // Créer une tâche de suivi (même pour contact existant)
+          try {
+            await createFollowUpTask(contactId, firstName, urgent || false, problemDescription, hubspotApiKey);
+          } catch (error) {
+            console.error('❌ Erreur lors de la création de la tâche HubSpot:', error);
+            // Ne pas bloquer si la tâche échoue
+          }
+
+          return NextResponse.json({
+            success: true,
+            contactId,
+            updated: true,
+          });
+        }
+      }
+      
+      return NextResponse.json(
+        { 
+          error: 'Erreur lors de la création du contact',
+          details: errorData.message || errorData,
+          category: errorData.category
+        },
+        { status: 500 }
+      );
+    }
+
+    const contactData = await contactResponse.json();
+    const contactId = contactData.id;
+
+    // Ajouter une note avec la conversation + infos complémentaires
+    if (conversation || propertyCount || source || problemDescription) {
+      await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+    }
+
+    // Créer une tâche pour le suivi
+    try {
+      await createFollowUpTask(contactId, firstName, urgent || false, problemDescription, hubspotApiKey);
+    } catch (error) {
+      console.error('❌ Erreur lors de la création de la tâche HubSpot:', error);
+      // Ne pas bloquer si la tâche échoue
+    }
+
+    return NextResponse.json({
+      success: true,
+      contactId,
+      created: true,
+    });
+
+  } catch (error) {
+    console.error('Erreur serveur:', error);
+    return NextResponse.json(
+      { error: 'Erreur serveur' },
+      { status: 500 }
+    );
+  }
+}
+
+// Ajouter une note au contact avec le transcript de conversation
+async function addNoteToContact(
+  contactId: string, 
+  conversation: string | undefined, 
+  propertyCount: string | undefined,
+  source: string | undefined,
+  problemDescription: string | undefined,
+  apiKey: string
+) {
+  let noteBody = '📝 Nouveau lead capturé via chatbot\n\n';
+  
+  if (propertyCount) {
+    noteBody += `🏠 Nombre de logements : ${propertyCount}\n`;
+  }
+  
+  if (source) {
+    noteBody += `📍 Source : ${source}\n`;
+  }
+  
+  if (problemDescription) {
+    noteBody += `\n🛠 Problème technique décrit :\n${problemDescription}\n`;
+  }
+  
+  if (conversation) {
+    noteBody += `\n---\n\n💬 Transcript de conversation :\n\n${conversation}\n`;
+  }
+  
+  noteBody += '\n---\nCapturé automatiquement via le chatbot du site';
+
+  await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      properties: {
+        hs_note_body: noteBody,
+        hs_timestamp: new Date().toISOString(),
+      },
+      associations: [
+        {
+          to: { id: contactId },
+          types: [
+            {
+              associationCategory: 'HUBSPOT_DEFINED',
+              associationTypeId: 202, // Note to Contact
+            },
+          ],
+        },
+      ],
+    }),
+  });
+}
+
+// Créer une tâche de suivi
+async function createFollowUpTask(contactId: string, firstName: string, urgent: boolean, problemDescription: string | undefined, apiKey: string) {
+  console.log(`📋 Création tâche ${urgent ? 'URGENTE' : 'normale'} pour contact ${contactId}...`);
+  
+  // Si urgente : tâche immédiate (dans 10 minutes)
+  // Sinon : tâche pour demain matin à 10h
+  const now = new Date();
+  let taskTimestamp: Date;
+  
+  if (urgent) {
+    // Dans 10 minutes
+    taskTimestamp = new Date(now.getTime() + (10 * 60 * 1000));
+  } else {
+    // Demain à 10h
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(10, 0, 0, 0);
+    taskTimestamp = tomorrow;
+  }
+
+  let taskBody = urgent 
+    ? `🛠 SUPPORT TECHNIQUE URGENT - Contacter le visiteur rapidement.\n\n`
+    : `Nouveau lead capturé via chatbot. Recontacter ${firstName} pour qualifier le besoin.\n\n`;
+  
+  if (problemDescription) {
+    taskBody += `Problème décrit :\n${problemDescription}\n\n`;
+  }
+  
+  taskBody += `Consulter la conversation complète et les coordonnées dans la fiche contact.`;
+
+  const taskProperties: any = {
+    hs_task_body: taskBody,
+    hs_task_subject: urgent
+      ? `🛠 URGENT - Support technique pour ${firstName}`
+      : `🤖 Suivre lead chatbot: ${firstName}`,
+    hs_task_status: 'NOT_STARTED',
+    hs_task_priority: urgent ? 'HIGH' : 'MEDIUM',
+    hs_timestamp: taskTimestamp.toISOString(),
+  };
+
+  // Assigner à Grégoire Vernay pour toutes les tâches (urgentes ou non)
+  taskProperties.hubspot_owner_id = '145156681';
+  console.log(`✅ Tâche assignée à l'owner ID: 145156681`);
+
+  const taskResponse = await fetch('https://api.hubapi.com/crm/v3/objects/tasks', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      properties: taskProperties,
+      associations: [
+        {
+          to: { id: contactId },
+          types: [
+            {
+              associationCategory: 'HUBSPOT_DEFINED',
+              associationTypeId: 204, // Task to Contact
+            },
+          ],
+        },
+      ],
+    }),
+  });
+
+  if (!taskResponse.ok) {
+    const errorData = await taskResponse.json();
+    console.error('❌ Erreur création tâche HubSpot:', errorData);
+    throw new Error(`Erreur création tâche: ${errorData.message || 'Unknown error'}`);
+  }
+
+  const taskData = await taskResponse.json();
+  console.log(`✅ Tâche HubSpot créée avec succès - ID: ${taskData.id}`);
+  return taskData;
+}

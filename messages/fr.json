@@ -45,7 +45,7 @@
     "language": "Langue",
     "switcherLabel": "Changer de langue",
     "featuresMenu": {
-      "pms": "PMS",
+      "pms": "Gestion des propriétés (PMS)",
       "channelManager": "Channel Manager",
       "calendarSync": "Synchronisation des calendriers",
       "airbnbConnection": "Connexion Airbnb",

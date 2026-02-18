@@ -25,7 +25,7 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left"
               variants={itemVariants}
             >
               <span className="block">{titleLine}</span>
@@ -54,22 +54,29 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <motion.div className="flex items-center gap-3" variants={itemVariants}>
-              <img
-                src="/images/logo-partenaires/Google.svg.png"
-                alt="Google"
-                className="h-4 w-auto"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="flex items-center gap-1 text-yellow-400">
-                <span aria-hidden="true">★</span>
-                <span aria-hidden="true">★</span>
-                <span aria-hidden="true">★</span>
-                <span aria-hidden="true">★</span>
-                <span aria-hidden="true">★</span>
-                <span className="text-sm text-gray-800 ml-2">5/5</span>
-              </div>
+            <motion.div variants={itemVariants}>
+              <a 
+                href="https://www.google.com/search?sca_esv=0ccad900ef2a9a41&sxsrf=ANbL-n6YfqBDfznGLjZ0nDaSP_EzhT30Dg:1771407903783&q=Biloki+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NTQ2MDA2MzGxMLQ0MDEyNjA028DI-IqR2ykzJz87U8GxLLN4ESsyDwCdZzewNgAAAA&rldimm=5130036448190423016&tbm=lcl&hl=fr-FR&sa=X&ved=2ahUKEwifzO3W4OKSAxVBoScCHUYdLwoQ9fQKegQILRAG&biw=1558&bih=807&dpr=1#lkt=LocalPoiReviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+              >
+                <img
+                  src="/images/logo-partenaires/Google.svg.png"
+                  alt="Google"
+                  className="h-4 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="flex items-center gap-1 text-yellow-400">
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span aria-hidden="true">★</span>
+                  <span className="text-sm text-gray-800 ml-2">5/5</span>
+                </div>
+              </a>
             </motion.div>
 
 

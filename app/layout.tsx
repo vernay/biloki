@@ -42,12 +42,14 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         {children}
+        {/* Script HubSpot temporairement commenté pour tester le nouveau chatbot AI
         <Script
           id="hs-script-loader"
           async
           defer
           src="//js-eu1.hs-scripts.com/145156681.js"
         />
+        */}
       </body>
     </html>
   );
