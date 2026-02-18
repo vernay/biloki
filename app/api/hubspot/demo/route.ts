@@ -89,6 +89,9 @@ function buildProperties(payload: DemoPayload) {
   }
   properties.source_inbound = 'Site internet';
   if (payload.source) properties.source_biloki = payload.source;
+  
+  // Ajouter le type de demande
+  properties.type_de_demande_chatbot = 'Demande de démo';
 
   return properties;
 }

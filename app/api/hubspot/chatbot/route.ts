@@ -91,6 +91,9 @@ function buildProperties(payload: ChatbotPayload) {
   }
   properties.source_inbound = 'Site internet';
   if (payload.source) properties.source_biloki = payload.source;
+  
+  // Ajouter le type de demande (par défaut "Question générale" pour le chatbot)
+  properties.type_de_demande_chatbot = 'Question générale';
 
   return properties;
 }
