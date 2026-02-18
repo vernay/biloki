@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
           phone: telephone || '',
           company: entreprise || '',
           conversation: `Message depuis le formulaire de contact:\n\n${message}`,
-          source: 'Formulaire de contact',
+          source: 'formulaire_contact',
           locale: 'fr',
           requestType: raison,
         }),
