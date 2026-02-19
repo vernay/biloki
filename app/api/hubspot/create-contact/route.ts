@@ -1,5 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+function isTypeDemandeChatbotValidationError(errorData: unknown): boolean {
+  const serialized = JSON.stringify(errorData).toLowerCase();
+  return (
+    serialized.includes('type_de_demande_chatbot') &&
+    (
+      serialized.includes('invalid') ||
+      serialized.includes('not one of') ||
+      serialized.includes('allowed') ||
+      serialized.includes('enumeration') ||
+      serialized.includes('option')
+    )
+  );
+}
+
+function normalizeTypeDemandeValue(value: unknown): string {
+  if (typeof value !== 'string' || !value.trim()) {
+    return 'Autre';
+  }
+
+  const normalized = value.trim().toLowerCase();
+
+  if (normalized === 'demande de démo' || normalized === 'demande de demo') {
+    return 'Demande de démo';
+  }
+
+  if (normalized === 'support technique' || normalized === 'problème technique' || normalized === 'probleme technique') {
+    return 'Support technique';
+  }
+
+  if (normalized === 'question générale' || normalized === 'question generale') {
+    return 'Question générale';
+  }
+
+  if (normalized === 'autre') {
+    return 'Autre';
+  }
+
+  return value.trim();
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective } = await req.json();
@@ -52,12 +92,7 @@ export async function POST(req: NextRequest) {
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
     // Type de demande pour workflow de notification
-    if (requestType) {
-      properties.type_de_demande_chatbot = requestType;
-    } else {
-      // Fallback par défaut si aucun requestType fourni
-      properties.type_de_demande_chatbot = 'Autre';
-    }
+    properties.type_de_demande_chatbot = normalizeTypeDemandeValue(requestType);
 
     console.log('📋 Propriétés à envoyer à HubSpot:', properties);
 
@@ -74,6 +109,41 @@ export async function POST(req: NextRequest) {
     if (!contactResponse.ok) {
       const errorData = await contactResponse.json();
       console.error('Erreur HubSpot:', errorData);
+
+      if (isTypeDemandeChatbotValidationError(errorData)) {
+        console.warn('⚠️ type_de_demande_chatbot rejeté par HubSpot, retry sans cette propriété (create)');
+        const fallbackProperties = { ...properties };
+        delete fallbackProperties.type_de_demande_chatbot;
+
+        const fallbackCreateResponse = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${hubspotApiKey}`,
+          },
+          body: JSON.stringify({ properties: fallbackProperties }),
+        });
+
+        if (fallbackCreateResponse.ok) {
+          const fallbackContactData = await fallbackCreateResponse.json();
+          const fallbackContactId = fallbackContactData.id;
+          console.log('✅ Contact créé avec succès après fallback - ID:', fallbackContactId);
+
+          if (conversation || propertyCount || source || problemDescription) {
+            await addNoteToContact(fallbackContactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+          }
+
+          return NextResponse.json({
+            success: true,
+            contactId: fallbackContactId,
+            created: true,
+            fallbackApplied: true,
+          });
+        }
+
+        const fallbackErrorData = await fallbackCreateResponse.json();
+        console.error('❌ Erreur fallback création contact:', fallbackErrorData);
+      }
       
       // Si le contact existe déjà, on le met à jour
       if (errorData.category === 'CONFLICT') {
@@ -121,6 +191,43 @@ export async function POST(req: NextRequest) {
           if (!updateResponse.ok) {
             const updateError = await updateResponse.json();
             console.error('❌ Erreur lors de la mise à jour du contact:', updateError);
+
+            if (isTypeDemandeChatbotValidationError(updateError)) {
+              console.warn('⚠️ type_de_demande_chatbot rejeté par HubSpot, retry sans cette propriété (update)');
+              const fallbackProperties = { ...properties };
+              delete fallbackProperties.type_de_demande_chatbot;
+
+              const fallbackUpdateResponse = await fetch(
+                `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
+                {
+                  method: 'PATCH',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${hubspotApiKey}`,
+                  },
+                  body: JSON.stringify({ properties: fallbackProperties }),
+                }
+              );
+
+              if (fallbackUpdateResponse.ok) {
+                console.log('✅ Contact mis à jour avec succès après fallback - ID:', contactId);
+
+                if (conversation || propertyCount || source || problemDescription) {
+                  await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+                }
+
+                return NextResponse.json({
+                  success: true,
+                  contactId,
+                  updated: true,
+                  fallbackApplied: true,
+                });
+              }
+
+              const fallbackUpdateError = await fallbackUpdateResponse.json();
+              console.error('❌ Erreur fallback mise à jour:', fallbackUpdateError);
+            }
+
             return NextResponse.json(
               { 
                 error: 'Erreur lors de la mise à jour du contact',
