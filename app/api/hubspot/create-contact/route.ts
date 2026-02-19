@@ -135,13 +135,7 @@ export async function POST(req: NextRequest) {
             await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
           }
 
-          // Créer une tâche de suivi (même pour contact existant)
-          try {
-            await createFollowUpTask(contactId, firstName, urgent || false, problemDescription, hubspotApiKey);
-          } catch (error) {
-            console.error('❌ Erreur lors de la création de la tâche HubSpot:', error);
-            // Ne pas bloquer si la tâche échoue
-          }
+          // Les tâches sont maintenant gérées par les workflows HubSpot
 
           return NextResponse.json({
             success: true,
@@ -171,13 +165,7 @@ export async function POST(req: NextRequest) {
       await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
     }
 
-    // Créer une tâche pour le suivi
-    try {
-      await createFollowUpTask(contactId, firstName, urgent || false, problemDescription, hubspotApiKey);
-    } catch (error) {
-      console.error('❌ Erreur lors de la création de la tâche HubSpot:', error);
-      // Ne pas bloquer si la tâche échoue
-    }
+    // Les tâches sont maintenant gérées par les workflows HubSpot
 
     return NextResponse.json({
       success: true,
