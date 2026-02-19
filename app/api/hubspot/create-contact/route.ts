@@ -36,6 +36,9 @@ export async function POST(req: NextRequest) {
     if (phone) properties.phone = phone;
     if (company) properties.company = company;
     
+    // Champ source standard HubSpot (toujours "site internet" car toutes les demandes viennent du site)
+    properties.source = 'site internet';
+    
     // Propriétés personnalisées Biloki
     if (propertyCount) properties.biloki_property_count = propertyCount;
     if (source) properties.source_biloki = source;
