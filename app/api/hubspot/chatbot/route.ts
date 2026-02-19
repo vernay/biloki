@@ -89,7 +89,9 @@ function buildProperties(payload: ChatbotPayload) {
   if (typeof payload.propertyCount === 'number') {
     properties.biloki_property_count = payload.propertyCount;
   }
-  properties.source_inbound = payload.source === 'chatbot' ? 'Chatbot' : 'Site internet';
+  if (payload.source !== 'chatbot') {
+    properties.source_inbound = 'Site internet';
+  }
   if (payload.source) properties.source_biloki = payload.source;
   
   // Ajouter le type de demande (par défaut "Question générale" pour le chatbot)

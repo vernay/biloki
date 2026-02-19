@@ -131,10 +131,8 @@ export async function POST(req: NextRequest) {
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
     // Isolation des workflows : éviter que le chatbot déclenche le workflow
-    // "formulaire de contact" tout en gardant une source lisible dans HubSpot.
-    if (source === 'chatbot') {
-      properties.source_inbound = 'Chatbot';
-    } else if (source) {
+    // "formulaire de contact". Pour le chatbot, on n'alimente pas source_inbound.
+    if (source && source !== 'chatbot') {
       properties.source_inbound = 'Site internet';
     }
 
