@@ -111,6 +111,42 @@ export default function ChatBotAI() {
     }
   }, [isOpen]);
 
+  const buildConversationTranscript = (conversationMessages: Message[]) => {
+    return conversationMessages
+      .map((m) => `${m.role === 'user' ? 'Visiteur' : 'Assistant'}: ${m.content.replace(/\[BUTTON:.*?\|.*?\]/g, '').replace(/\[LEAD_FORM\]/g, '').trim()}`)
+      .join('\n\n');
+  };
+
+  const syncQuestionConversationToHubSpot = async (conversationMessages: Message[]) => {
+    if (selectedChoice !== 'question' || !leadFormData.email) return;
+
+    const conversation = buildConversationTranscript(conversationMessages);
+    if (!conversation.trim()) return;
+
+    try {
+      await fetch('/api/hubspot/create-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: leadFormData.firstName,
+          lastName: leadFormData.lastName,
+          email: leadFormData.email,
+          phone: leadFormData.phone,
+          propertyCount: leadFormData.propertyCount,
+          role: leadFormData.role,
+          conversation: `Question générale via chatbot\n\n${conversation}`,
+          source: 'chatbot',
+          locale,
+          requestType: 'Question générale',
+        }),
+      });
+    } catch (error) {
+      console.error('Erreur sync conversation HubSpot:', error);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -121,6 +157,7 @@ export default function ChatBotAI() {
       content: input.trim(),
     };
 
+    const messagesWithUser = [...messages, userMessage];
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
@@ -132,7 +169,7 @@ export default function ChatBotAI() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
+          messages: messagesWithUser.map((m) => ({
             role: m.role,
             content: m.content,
           })),
@@ -169,16 +206,24 @@ export default function ChatBotAI() {
         });
       }
 
+      const finalMessages = [...messagesWithUser, assistantMessage];
+      void syncQuestionConversationToHubSpot(finalMessages);
+
     } catch (error) {
       console.error('Erreur chat:', error);
+
+      const errorAssistantMessage: Message = {
+        id: Date.now().toString(),
+        role: 'assistant',
+        content: 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
+      };
+
       setMessages((prev) => [
         ...prev,
-        {
-          id: Date.now().toString(),
-          role: 'assistant',
-          content: 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
-        },
+        errorAssistantMessage,
       ]);
+
+      void syncQuestionConversationToHubSpot([...messagesWithUser, errorAssistantMessage]);
     } finally {
       setIsLoading(false);
     }
@@ -212,9 +257,7 @@ export default function ChatBotAI() {
     setShowChoiceButtons(false);
 
     // Construire le transcript de conversation
-    const conversation = messages
-      .map((m) => `${m.role === 'user' ? 'Visiteur' : 'Assistant'}: ${m.content.replace(/\[BUTTON:.*?\|.*?\]/g, '').replace(/\[LEAD_FORM\]/g, '')}`)
-      .join('\n\n');
+    const conversation = buildConversationTranscript(messages);
 
     if (choice === 'demo') {
       setIsLoading(true);
@@ -310,9 +353,7 @@ export default function ChatBotAI() {
 
     try {
       // Construire le transcript de conversation
-      const conversation = messages
-        .map((m) => `${m.role === 'user' ? 'Visiteur' : 'Assistant'}: ${m.content.replace(/\[BUTTON:.*?\|.*?\]/g, '').replace(/\[LEAD_FORM\]/g, '')}`)
-        .join('\n\n');
+      const conversation = buildConversationTranscript(messages);
 
       const problemDescription = technicalDescription.trim() || 'Non spécifié';
 
