@@ -117,23 +117,26 @@ export default function ChatBotAI() {
       .join('\n\n');
   };
 
-  const buildEssentialQuestionTranscript = (conversationMessages: Message[]) => {
-    const userQuestions = conversationMessages
-      .filter((m) => m.role === 'user')
-      .map((m) => m.content.replace(/\[BUTTON:.*?\|.*?\]/g, '').replace(/\[LEAD_FORM\]/g, '').trim())
-      .filter(Boolean);
+  const getLatestUserQuestion = (conversationMessages: Message[]) => {
+    const lastUserMessage = [...conversationMessages]
+      .reverse()
+      .find((m) => m.role === 'user');
 
-    if (userQuestions.length === 0) return '';
+    if (!lastUserMessage) return '';
 
-    return userQuestions
-      .map((question, index) => `${index + 1}. ${question}`)
-      .join('\n');
+    return lastUserMessage.content
+      .replace(/\[BUTTON:.*?\|.*?\]/g, '')
+      .replace(/\[LEAD_FORM\]/g, '')
+      .trim();
   };
 
   const syncQuestionConversationToHubSpot = async (conversationMessages: Message[]) => {
     if (selectedChoice !== 'question' || !leadFormData.email) return;
 
-    const conversation = buildEssentialQuestionTranscript(conversationMessages);
+    const latestQuestion = getLatestUserQuestion(conversationMessages);
+    if (!latestQuestion) return;
+
+    const conversation = `Question utilisateur:\n${latestQuestion}`;
     if (!conversation.trim()) return;
 
     try {
@@ -153,7 +156,6 @@ export default function ChatBotAI() {
           source: 'chatbot',
           locale,
           requestType: 'Question générale',
-          noteMode: 'question_consolidated',
         }),
       });
     } catch (error) {
@@ -353,7 +355,6 @@ export default function ChatBotAI() {
           source: 'chatbot',
           locale,
           requestType: 'Question générale',
-          noteMode: 'question_consolidated',
         }),
       }).catch(error => {
         console.error('Erreur création contact HubSpot (arrière-plan):', error);
