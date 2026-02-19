@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
       // Capitaliser la première lettre pour correspondre aux options HubSpot (Fr, En, Es, Pt)
       properties.langue = locale.charAt(0).toUpperCase() + locale.slice(1);
     }
-    if (role) properties.role = role;
+    if (role) properties.role = role.toLowerCase(); // HubSpot attend les valeurs en minuscules
     
     // Objectif d'intégration API (spécifique à la page marketplace)
     if (integrationObjective) properties.type_dintegration = integrationObjective;
