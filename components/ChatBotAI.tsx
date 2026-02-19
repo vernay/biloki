@@ -45,7 +45,7 @@ export default function ChatBotAI() {
 
   // Charger l'état sauvegardé au montage du composant
   useEffect(() => {
-    const savedState = localStorage.getItem('biloki-chatbot-state');
+    const savedState = sessionStorage.getItem('biloki-chatbot-state');
     if (savedState) {
       try {
         const parsed = JSON.parse(savedState);
@@ -90,7 +90,7 @@ export default function ChatBotAI() {
         showChoiceButtons,
         selectedChoice,
       };
-      localStorage.setItem('biloki-chatbot-state', JSON.stringify(stateToSave));
+      sessionStorage.setItem('biloki-chatbot-state', JSON.stringify(stateToSave));
     }
   }, [messages, leadFormData, leadSubmitted, showChoiceButtons, selectedChoice]);
 
