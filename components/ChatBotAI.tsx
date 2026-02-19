@@ -117,10 +117,23 @@ export default function ChatBotAI() {
       .join('\n\n');
   };
 
+  const buildEssentialQuestionTranscript = (conversationMessages: Message[]) => {
+    const userQuestions = conversationMessages
+      .filter((m) => m.role === 'user')
+      .map((m) => m.content.replace(/\[BUTTON:.*?\|.*?\]/g, '').replace(/\[LEAD_FORM\]/g, '').trim())
+      .filter(Boolean);
+
+    if (userQuestions.length === 0) return '';
+
+    return userQuestions
+      .map((question, index) => `${index + 1}. ${question}`)
+      .join('\n');
+  };
+
   const syncQuestionConversationToHubSpot = async (conversationMessages: Message[]) => {
     if (selectedChoice !== 'question' || !leadFormData.email) return;
 
-    const conversation = buildConversationTranscript(conversationMessages);
+    const conversation = buildEssentialQuestionTranscript(conversationMessages);
     if (!conversation.trim()) return;
 
     try {
@@ -140,6 +153,7 @@ export default function ChatBotAI() {
           source: 'chatbot',
           locale,
           requestType: 'Question générale',
+          noteMode: 'question_consolidated',
         }),
       });
     } catch (error) {
@@ -336,10 +350,10 @@ export default function ChatBotAI() {
           phone: leadFormData.phone,
           propertyCount: leadFormData.propertyCount,
           role: leadFormData.role,
-          conversation: `Question générale via chatbot\n\n${conversation}`,
           source: 'chatbot',
           locale,
           requestType: 'Question générale',
+          noteMode: 'question_consolidated',
         }),
       }).catch(error => {
         console.error('Erreur création contact HubSpot (arrière-plan):', error);

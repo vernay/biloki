@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const CONSOLIDATED_QUESTION_NOTE_MARKER = '[BILOKI_CHATBOT_QUESTION_CONSOLIDATED]';
+
+type NoteMode = 'standard' | 'question_consolidated';
+
 function isTypeDemandeChatbotValidationError(errorData: unknown): boolean {
   const serialized = JSON.stringify(errorData).toLowerCase();
   return (
@@ -42,7 +46,7 @@ function normalizeTypeDemandeValue(value: unknown): string {
 
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective } = await req.json();
+    const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective, noteMode } = await req.json();
 
     console.log('📥 Requête HubSpot reçue:', {
       firstName,
@@ -92,7 +96,22 @@ export async function POST(req: NextRequest) {
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
     // Type de demande pour workflow de notification
-    properties.type_de_demande_chatbot = normalizeTypeDemandeValue(requestType);
+    const normalizedRequestType = normalizeTypeDemandeValue(requestType);
+    properties.type_de_demande_chatbot = normalizedRequestType;
+
+    const effectiveNoteMode: NoteMode = noteMode === 'question_consolidated' ? 'question_consolidated' : 'standard';
+    const shouldUseConsolidatedQuestionNote =
+      source === 'chatbot' &&
+      normalizedRequestType === 'Question générale' &&
+      effectiveNoteMode === 'question_consolidated';
+
+    const hasConversation = typeof conversation === 'string' && conversation.trim().length > 0;
+    const hasProblemDescription = typeof problemDescription === 'string' && problemDescription.trim().length > 0;
+    const hasPropertyCount = typeof propertyCount === 'string' && propertyCount.trim().length > 0;
+
+    const shouldAddNote = shouldUseConsolidatedQuestionNote
+      ? hasConversation
+      : hasConversation || hasPropertyCount || hasProblemDescription;
 
     console.log('📋 Propriétés à envoyer à HubSpot:', properties);
 
@@ -129,8 +148,8 @@ export async function POST(req: NextRequest) {
           const fallbackContactId = fallbackContactData.id;
           console.log('✅ Contact créé avec succès après fallback - ID:', fallbackContactId);
 
-          if (conversation || propertyCount || source || problemDescription) {
-            await addNoteToContact(fallbackContactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+          if (shouldAddNote) {
+            await addNoteToContact(fallbackContactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
           }
 
           return NextResponse.json({
@@ -212,8 +231,8 @@ export async function POST(req: NextRequest) {
               if (fallbackUpdateResponse.ok) {
                 console.log('✅ Contact mis à jour avec succès après fallback - ID:', contactId);
 
-                if (conversation || propertyCount || source || problemDescription) {
-                  await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+                if (shouldAddNote) {
+                  await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
                 }
 
                 return NextResponse.json({
@@ -241,8 +260,8 @@ export async function POST(req: NextRequest) {
           console.log('✅ Contact mis à jour avec succès - ID:', contactId);
           
           // Ajouter une note avec la conversation
-          if (conversation || propertyCount || source || problemDescription) {
-            await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+          if (shouldAddNote) {
+            await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
           }
 
           // Les tâches sont maintenant gérées par les workflows HubSpot
@@ -271,8 +290,8 @@ export async function POST(req: NextRequest) {
     console.log('✅ Contact HubSpot créé avec succès - ID:', contactId);
 
     // Ajouter une note avec la conversation + infos complémentaires
-    if (conversation || propertyCount || source || problemDescription) {
-      await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, hubspotApiKey);
+    if (shouldAddNote) {
+      await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
     }
 
     // Les tâches sont maintenant gérées par les workflows HubSpot
@@ -299,8 +318,15 @@ async function addNoteToContact(
   propertyCount: string | undefined,
   source: string | undefined,
   problemDescription: string | undefined,
+  requestType: string,
+  noteMode: NoteMode,
   apiKey: string
 ) {
+  if (noteMode === 'question_consolidated' && source === 'chatbot' && requestType === 'Question générale') {
+    await addOrUpdateConsolidatedQuestionNote(contactId, conversation, apiKey);
+    return;
+  }
+
   // Adapter le titre et le footer en fonction de la source
   let noteTitle = '📝 Nouveau lead';
   let noteFooter = 'Capturé automatiquement';
@@ -351,6 +377,10 @@ async function addNoteToContact(
   
   noteBody += `\n---\n${noteFooter}`;
 
+  await createNoteForContact(contactId, noteBody, apiKey);
+}
+
+async function createNoteForContact(contactId: string, noteBody: string, apiKey: string) {
   await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
     method: 'POST',
     headers: {
@@ -368,11 +398,90 @@ async function addNoteToContact(
           types: [
             {
               associationCategory: 'HUBSPOT_DEFINED',
-              associationTypeId: 202, // Note to Contact
+              associationTypeId: 202,
             },
           ],
         },
       ],
+    }),
+  });
+}
+
+async function addOrUpdateConsolidatedQuestionNote(contactId: string, conversation: string | undefined, apiKey: string) {
+  const cleanedConversation = (conversation || '').trim();
+  if (!cleanedConversation) return;
+
+  const noteBody = [
+    CONSOLIDATED_QUESTION_NOTE_MARKER,
+    '🤖 Questions utilisateur (chatbot)',
+    '',
+    cleanedConversation,
+    '',
+    '---',
+    'Mise à jour automatique depuis le chatbot du site',
+  ].join('\n');
+
+  const associationResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/notes?limit=100`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+    },
+  });
+
+  if (!associationResponse.ok) {
+    await createNoteForContact(contactId, noteBody, apiKey);
+    return;
+  }
+
+  const associationData = await associationResponse.json() as { results?: Array<{ id: string }> };
+  const noteIds = associationData.results?.map((item) => item.id).filter(Boolean) ?? [];
+
+  if (noteIds.length === 0) {
+    await createNoteForContact(contactId, noteBody, apiKey);
+    return;
+  }
+
+  const batchReadResponse = await fetch('https://api.hubapi.com/crm/v3/objects/notes/batch/read', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      properties: ['hs_note_body'],
+      inputs: noteIds.map((id) => ({ id })),
+    }),
+  });
+
+  if (!batchReadResponse.ok) {
+    await createNoteForContact(contactId, noteBody, apiKey);
+    return;
+  }
+
+  const notesData = await batchReadResponse.json() as {
+    results?: Array<{ id: string; properties?: { hs_note_body?: string } }>;
+  };
+
+  const existingConsolidatedNote = notesData.results?.find((note) =>
+    note.properties?.hs_note_body?.includes(CONSOLIDATED_QUESTION_NOTE_MARKER)
+  );
+
+  if (!existingConsolidatedNote?.id) {
+    await createNoteForContact(contactId, noteBody, apiKey);
+    return;
+  }
+
+  await fetch(`https://api.hubapi.com/crm/v3/objects/notes/${existingConsolidatedNote.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      properties: {
+        hs_note_body: noteBody,
+        hs_timestamp: new Date().toISOString(),
+      },
     }),
   });
 }
