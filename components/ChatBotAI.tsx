@@ -316,6 +316,14 @@ export default function ChatBotAI() {
 
       const problemDescription = technicalDescription.trim() || 'Non spécifié';
 
+      console.log('📤 Envoi demande support technique:', {
+        firstName: leadFormData.firstName,
+        lastName: leadFormData.lastName,
+        email: leadFormData.email,
+        phone: leadFormData.phone,
+        problemDescription,
+      });
+
       // Créer le contact + tâche urgente
       const response = await fetch('/api/hubspot/create-contact', {
         method: 'POST',
@@ -337,6 +345,8 @@ export default function ChatBotAI() {
           urgent: true,
         }),
       });
+
+      console.log('📥 Réponse serveur:', response.status, response.statusText);
 
       if (!response.ok) {
         const errorData = await response.json();
