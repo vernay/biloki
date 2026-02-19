@@ -259,14 +259,14 @@ export default function ConnexionsAPIPage() {
                   required
                 >
                   <option value="">Sélectionnez un objectif...</option>
-                  <option value="Intégration Channel Manager">Intégration Channel Manager</option>
+                  <option value="Intégration Channel manager">Intégration Channel manager</option>
                   <option value="Intégration PMS">Intégration PMS</option>
-                  <option value="Intégration OTA">Intégration OTA</option>
+                  <option value="Intégration OTA's">Intégration OTA's</option>
                   <option value="Intégration comptabilité">Intégration comptabilité</option>
                   <option value="Intégration paiement">Intégration paiement</option>
-                  <option value="Intégration serrures">Intégration serrures connectées</option>
+                  <option value="Intégration serrures connectées">Intégration serrures connectées</option>
                   <option value="Autre intégration">Autre type d'intégration</option>
-                  <option value="Devenir partenaire">Devenir partenaire API</option>
+                  <option value="Devenir partenaire API">Devenir partenaire API</option>
                 </select>
               </div>
 
