@@ -76,8 +76,8 @@ export async function POST(req: NextRequest) {
     if (phone) properties.phone = phone;
     if (company) properties.company = company;
     
-    // Champ source standard HubSpot (toujours "site internet" car toutes les demandes viennent du site)
-    properties.source = 'site internet';
+    // Ne pas envoyer la propriété HubSpot "source" : elle n'existe pas sur ce portail
+    // On utilise les propriétés Biloki dédiées (source_biloki / source_inbound si configurée)
     
     // Propriétés personnalisées Biloki
     if (propertyCount) properties.biloki_property_count = propertyCount;
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
       // Capitaliser la première lettre pour correspondre aux options HubSpot (Fr, En, Es, Pt)
       properties.langue = locale.charAt(0).toUpperCase() + locale.slice(1);
     }
-    if (role) properties.role = role.toLowerCase(); // HubSpot attend les valeurs en minuscules
+    if (role) properties.role = role;
     
     // Objectif d'intégration API (spécifique à la page marketplace)
     if (integrationObjective) properties.type_dintegration = integrationObjective;
