@@ -44,6 +44,40 @@ function normalizeTypeDemandeValue(value: unknown): string {
   return value.trim();
 }
 
+function normalizeRoleValue(value: unknown): string | undefined {
+  if (typeof value !== 'string' || !value.trim()) {
+    return undefined;
+  }
+
+  const normalized = value.trim().toLowerCase();
+
+  if (normalized === 'gestionnaire') {
+    return 'gestionnaire';
+  }
+
+  if (normalized === 'propriétaire' || normalized === 'proprietaire') {
+    return 'propriétaire';
+  }
+
+  if (normalized === 'autre') {
+    return 'autre';
+  }
+
+  return value.trim();
+}
+
+function mapRequestTypeToTypeDeBesoin(requestType: string): string {
+  switch (requestType) {
+    case 'Demande de démo':
+      return 'Logiciel_gestion';
+    case 'Support technique':
+      return 'Aide_compte';
+    case 'Question générale':
+    default:
+      return 'Visite_site';
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective, noteMode } = await req.json();
@@ -90,14 +124,22 @@ export async function POST(req: NextRequest) {
       // Capitaliser la première lettre pour correspondre aux options HubSpot (Fr, En, Es, Pt)
       properties.langue = locale.charAt(0).toUpperCase() + locale.slice(1);
     }
-    if (role) properties.role = role;
+    const normalizedRole = normalizeRoleValue(role);
+    if (normalizedRole) properties.role = normalizedRole;
     
     // Objectif d'intégration API (spécifique à la page marketplace)
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
+    // Compatibilité workflow HubSpot (ancien + nouveau)
+    // Certains workflows existants écoutent encore `source_inbound` et/ou `type_de_besoin`.
+    if (source === 'chatbot') {
+      properties.source_inbound = 'Site internet';
+    }
+
     // Type de demande pour workflow de notification
     const normalizedRequestType = normalizeTypeDemandeValue(requestType);
     properties.type_de_demande_chatbot = normalizedRequestType;
+    properties.type_de_besoin = mapRequestTypeToTypeDeBesoin(normalizedRequestType);
 
     const effectiveNoteMode: NoteMode = noteMode === 'question_consolidated' ? 'question_consolidated' : 'standard';
     const shouldUseConsolidatedQuestionNote =
@@ -193,6 +235,12 @@ export async function POST(req: NextRequest) {
           
           console.log('♻️ Contact existant trouvé - ID:', contactId);
           console.log('📝 Mise à jour avec les propriétés:', properties);
+
+          // Forcer un changement de valeur pour garantir la réinscription workflow
+          // dans HubSpot quand la demande reste "Question générale".
+          if (source === 'chatbot' && normalizedRequestType === 'Question générale') {
+            await forceQuestionWorkflowReenrollment(contactId, hubspotApiKey);
+          }
           
           // Mettre à jour le contact existant
           const updateResponse = await fetch(
@@ -308,6 +356,29 @@ export async function POST(req: NextRequest) {
       { error: 'Erreur serveur' },
       { status: 500 }
     );
+  }
+}
+
+async function forceQuestionWorkflowReenrollment(contactId: string, apiKey: string) {
+  const response = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        properties: {
+          type_de_demande_chatbot: 'Autre',
+        },
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const details = await response.text();
+    console.warn('⚠️ Impossible de forcer la réinscription workflow (reset temporaire):', details);
   }
 }
 
