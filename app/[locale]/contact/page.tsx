@@ -179,7 +179,7 @@ export default function ContactPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="prenom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('firstName')}
+                    {t('firstName')} *
                   </label>
                   <input
                     type="text"
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="nom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('lastName')}
+                    {t('lastName')} *
                   </label>
                   <input
                     type="text"
@@ -211,7 +211,7 @@ export default function ContactPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('emailLabel')}
+                    {t('emailLabel')} *
                   </label>
                   <input
                     type="email"
@@ -226,7 +226,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="telephone" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('phoneLabel')}
+                    {t('phoneLabel')} *
                   </label>
                   <input
                     type="tel"
@@ -235,6 +235,7 @@ export default function ContactPage() {
                     value={formData.telephone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                    required
                   />
                 </div>
               </div>
@@ -270,12 +271,13 @@ export default function ContactPage() {
                   <option value="Support technique">Support technique</option>
                   <option value="Question générale">Question générale</option>
                   <option value="Demande de partenariat API">Demande de partenariat API</option>
+                  <option value="Autre">Autre</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                  {t('message')}
+                  {t('message')} *
                 </label>
                 <textarea
                   id="message"
