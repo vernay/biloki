@@ -191,7 +191,37 @@ async function addNoteToContact(
   problemDescription: string | undefined,
   apiKey: string
 ) {
-  let noteBody = '📝 Nouveau lead capturé via chatbot\n\n';
+  // Adapter le titre et le footer en fonction de la source
+  let noteTitle = '📝 Nouveau lead';
+  let noteFooter = 'Capturé automatiquement';
+  
+  switch (source) {
+    case 'chatbot':
+      noteTitle = '🤖 Nouveau lead capturé via chatbot';
+      noteFooter = 'Capturé automatiquement via le chatbot du site';
+      break;
+    case 'formulaire_connexions_api':
+      noteTitle = '🔌 Demande de connexion API reçue';
+      noteFooter = 'Soumise via le formulaire Connexions API';
+      break;
+    case 'formulaire_demo':
+      noteTitle = '📅 Demande de démo reçue';
+      noteFooter = 'Soumise via le formulaire Réserver une démo';
+      break;
+    case 'formulaire_contact':
+      noteTitle = '📧 Demande de contact reçue';
+      noteFooter = 'Soumise via le formulaire de contact';
+      break;
+    case 'formulaire_essai':
+      noteTitle = '🆓 Inscription essai gratuit';
+      noteFooter = 'Soumise via le formulaire d\'essai gratuit';
+      break;
+    default:
+      noteTitle = '📝 Nouveau lead';
+      noteFooter = 'Capturé automatiquement';
+  }
+  
+  let noteBody = noteTitle + '\n\n';
   
   if (propertyCount) {
     noteBody += `🏠 Nombre de logements : ${propertyCount}\n`;
@@ -206,10 +236,10 @@ async function addNoteToContact(
   }
   
   if (conversation) {
-    noteBody += `\n---\n\n💬 Transcript de conversation :\n\n${conversation}\n`;
+    noteBody += `\n---\n\n💬 Détails :\n\n${conversation}\n`;
   }
   
-  noteBody += '\n---\nCapturé automatiquement via le chatbot du site';
+  noteBody += `\n---\n${noteFooter}`;
 
   await fetch('https://api.hubapi.com/crm/v3/objects/notes', {
     method: 'POST',
