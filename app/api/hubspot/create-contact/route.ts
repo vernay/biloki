@@ -48,12 +48,12 @@ export async function POST(req: NextRequest) {
     // Objectif d'intégration API (spécifique à la page marketplace)
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
-    // Type de demande pour workflow de notification (catégories: Demande de démo, Support technique, Question générale)
+    // Type de demande pour workflow de notification
     if (requestType) {
       properties.type_de_demande_chatbot = requestType;
     } else {
-      // Fallback pour ancienne logique
-      properties.type_de_demande_chatbot = urgent ? 'Demande urgente' : 'Lead normal';
+      // Fallback par défaut si aucun requestType fourni
+      properties.type_de_demande_chatbot = 'Autre';
     }
 
     console.log('📋 Propriétés à envoyer à HubSpot:', properties);
