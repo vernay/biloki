@@ -41,7 +41,7 @@ export default function ConnexionsAPIPage() {
         company: formData.entreprise,
         integrationObjective: formData.objectif,
         conversation: `Demande de connexion API\n\nObjectif: ${formData.objectif}\n\nMessage:\n${formData.message}`,
-          source: 'formulaire_contact',
+        source: 'formulaire_connexions_api',
         locale: 'fr',
         requestType: 'Demande de partenariat API',
       };
