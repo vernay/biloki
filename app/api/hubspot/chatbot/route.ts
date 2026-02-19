@@ -85,11 +85,11 @@ function buildProperties(payload: ChatbotPayload) {
     properties.langue = languageMap[payload.language] ?? payload.language;
   }
   if (payload.role) properties.role = payload.role;
-  if (payload.needType) properties.type_de_besoin = payload.needType;
+  if (payload.needType && payload.source !== 'chatbot') properties.type_de_besoin = payload.needType;
   if (typeof payload.propertyCount === 'number') {
     properties.biloki_property_count = payload.propertyCount;
   }
-  properties.source_inbound = 'Site internet';
+  properties.source_inbound = payload.source === 'chatbot' ? 'Chatbot' : 'Site internet';
   if (payload.source) properties.source_biloki = payload.source;
   
   // Ajouter le type de demande (par défaut "Question générale" pour le chatbot)

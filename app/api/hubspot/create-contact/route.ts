@@ -130,16 +130,23 @@ export async function POST(req: NextRequest) {
     // Objectif d'intégration API (spécifique à la page marketplace)
     if (integrationObjective) properties.type_dintegration = integrationObjective;
     
-    // Compatibilité workflow HubSpot (ancien + nouveau)
-    // Certains workflows existants écoutent encore `source_inbound` et/ou `type_de_besoin`.
+    // Isolation des workflows : éviter que le chatbot déclenche le workflow
+    // "formulaire de contact" tout en gardant une source lisible dans HubSpot.
     if (source === 'chatbot') {
+      properties.source_inbound = 'Chatbot';
+    } else if (source) {
       properties.source_inbound = 'Site internet';
     }
 
     // Type de demande pour workflow de notification
     const normalizedRequestType = normalizeTypeDemandeValue(requestType);
     properties.type_de_demande_chatbot = normalizedRequestType;
-    properties.type_de_besoin = mapRequestTypeToTypeDeBesoin(normalizedRequestType);
+
+    // Ne pas alimenter `type_de_besoin` pour le chatbot,
+    // car cette propriété peut déclencher les workflows du formulaire contact.
+    if (source !== 'chatbot') {
+      properties.type_de_besoin = mapRequestTypeToTypeDeBesoin(normalizedRequestType);
+    }
 
     const effectiveNoteMode: NoteMode = noteMode === 'question_consolidated' ? 'question_consolidated' : 'standard';
     const shouldUseConsolidatedQuestionNote =
