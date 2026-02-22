@@ -63,6 +63,12 @@ export function middleware(request: NextRequest) {
     '/es/fonctionnalites/pms/sejours': '/es/fonctionnalites/pms',
     '/pt/fonctionnalites/pms/sejours': '/pt/fonctionnalites/pms',
 
+    // Channel Manager sub-pages
+    '/fr/fonctionnalites/channel-manager/tarifs': '/fr/fonctionnalites/channel-manager',
+    '/en/fonctionnalites/channel-manager/tarifs': '/en/fonctionnalites/channel-manager',
+    '/es/fonctionnalites/channel-manager/tarifs': '/es/fonctionnalites/channel-manager',
+    '/pt/fonctionnalites/channel-manager/tarifs': '/pt/fonctionnalites/channel-manager',
+
     // Serrures connectees
     '/fr/serrures-connectees': '/fr/fonctionnalites/serrures-connectees',
     '/en/serrures-connectees': '/en/fonctionnalites/serrures-connectees',
