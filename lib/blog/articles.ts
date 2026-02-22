@@ -6,7 +6,7 @@ export const articles: BlogArticles = [
     category: "tips",
     date: "2026-02-22",
     readTime: "5 min",
-    image: "/images/blog/france-tourisme.jpg",
+    image: "/images/blog/france-tourisme.png",
     translations: {
       fr: {
         title: "102 millions de touristes en France : Une opportunité record pour les conciergeries",
