@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
 const CONSOLIDATED_QUESTION_NOTE_MARKER = '[BILOKI_CHATBOT_QUESTION_CONSOLIDATED]';
 
@@ -78,6 +79,73 @@ function mapRequestTypeToTypeDeBesoin(requestType: string): string {
   }
 }
 
+function shouldForceWorkflowReenrollment(source: string | undefined, requestType: string): boolean {
+  return source === 'chatbot' && (
+    requestType === 'Question générale' ||
+    requestType === 'Support technique'
+  );
+}
+
+function shouldSendSupportAlert(source: string | undefined, requestType: string): boolean {
+  return source === 'chatbot' && requestType === 'Support technique';
+}
+
+async function sendInternalSupportAlert(params: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone?: string;
+  locale?: string;
+  propertyCount?: string;
+  role?: string;
+  problemDescription?: string;
+  conversation?: string;
+  contactId: string;
+}) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const to = process.env.SUPPORT_ALERT_TO_EMAIL ?? process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+  const from = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev';
+
+  if (!resendApiKey || !to) {
+    console.warn('⚠️ Notification support non envoyée (RESEND_API_KEY ou SUPPORT_ALERT_TO_EMAIL manquant)');
+    return;
+  }
+
+  const resend = new Resend(resendApiKey);
+  const fullName = `${params.firstName} ${params.lastName}`.trim();
+  const subject = `🛠 Support technique chatbot: ${fullName}`;
+
+  const details = [
+    `Contact HubSpot ID: ${params.contactId}`,
+    `Nom: ${fullName}`,
+    `Email: ${params.email}`,
+    `Téléphone: ${params.phone || 'Non renseigné'}`,
+    `Rôle: ${params.role || 'Non renseigné'}`,
+    `Langue: ${params.locale || 'Non renseignée'}`,
+    `Nombre de logements: ${params.propertyCount || 'Non renseigné'}`,
+    '',
+    'Problème décrit:',
+    params.problemDescription || 'Non spécifié',
+    '',
+    'Conversation:',
+    params.conversation || 'Non fournie',
+  ].join('\n');
+
+  const result = await resend.emails.send({
+    from,
+    to,
+    subject,
+    text: details,
+  });
+
+  if (result.error) {
+    console.error('❌ Erreur envoi notification support interne:', result.error);
+    return;
+  }
+
+  console.log('✅ Notification support interne envoyée');
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { firstName, lastName, email, phone, company, propertyCount, conversation, source, locale, role, urgent, requestType, problemDescription, integrationObjective, noteMode } = await req.json();
@@ -109,6 +177,21 @@ export async function POST(req: NextRequest) {
       lastname: lastName,
       email: email,
     };
+
+    // Génère un identifiant unique pour chaque requête chatbot (UUID v4 simplifié)
+    properties.chatbot_last_request_id = generateChatbotRequestId();
+
+// --- UTILS ---
+/**
+ * Génère un identifiant unique (UUID v4) pour la propriété chatbot_last_request_id
+ */
+function generateChatbotRequestId(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    const r = Math.random() * 16 | 0,
+      v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
 
     // Propriétés optionnelles standard
     if (phone) properties.phone = phone;
@@ -199,6 +282,21 @@ export async function POST(req: NextRequest) {
             await addNoteToContact(fallbackContactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
           }
 
+          if (shouldSendSupportAlert(source, normalizedRequestType)) {
+            await sendInternalSupportAlert({
+              firstName,
+              lastName,
+              email,
+              phone,
+              locale,
+              propertyCount,
+              role,
+              problemDescription,
+              conversation,
+              contactId: fallbackContactId,
+            });
+          }
+
           return NextResponse.json({
             success: true,
             contactId: fallbackContactId,
@@ -242,9 +340,9 @@ export async function POST(req: NextRequest) {
           console.log('📝 Mise à jour avec les propriétés:', properties);
 
           // Forcer un changement de valeur pour garantir la réinscription workflow
-          // dans HubSpot quand la demande reste "Question générale".
-          if (source === 'chatbot' && normalizedRequestType === 'Question générale') {
-            await forceQuestionWorkflowReenrollment(contactId, hubspotApiKey);
+          // dans HubSpot quand la demande est renvoyée sur un contact existant.
+          if (shouldForceWorkflowReenrollment(source, normalizedRequestType)) {
+            await forceWorkflowReenrollment(contactId, hubspotApiKey);
           }
           
           // Mettre à jour le contact existant
@@ -288,6 +386,21 @@ export async function POST(req: NextRequest) {
                   await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
                 }
 
+                if (shouldSendSupportAlert(source, normalizedRequestType)) {
+                  await sendInternalSupportAlert({
+                    firstName,
+                    lastName,
+                    email,
+                    phone,
+                    locale,
+                    propertyCount,
+                    role,
+                    problemDescription,
+                    conversation,
+                    contactId,
+                  });
+                }
+
                 return NextResponse.json({
                   success: true,
                   contactId,
@@ -315,6 +428,21 @@ export async function POST(req: NextRequest) {
           // Ajouter une note avec la conversation
           if (shouldAddNote) {
             await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
+          }
+
+          if (shouldSendSupportAlert(source, normalizedRequestType)) {
+            await sendInternalSupportAlert({
+              firstName,
+              lastName,
+              email,
+              phone,
+              locale,
+              propertyCount,
+              role,
+              problemDescription,
+              conversation,
+              contactId,
+            });
           }
 
           // Les tâches sont maintenant gérées par les workflows HubSpot
@@ -347,6 +475,21 @@ export async function POST(req: NextRequest) {
       await addNoteToContact(contactId, conversation, propertyCount, source, problemDescription, normalizedRequestType, effectiveNoteMode, hubspotApiKey);
     }
 
+    if (shouldSendSupportAlert(source, normalizedRequestType)) {
+      await sendInternalSupportAlert({
+        firstName,
+        lastName,
+        email,
+        phone,
+        locale,
+        propertyCount,
+        role,
+        problemDescription,
+        conversation,
+        contactId,
+      });
+    }
+
     // Les tâches sont maintenant gérées par les workflows HubSpot
 
     return NextResponse.json({
@@ -364,7 +507,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-async function forceQuestionWorkflowReenrollment(contactId: string, apiKey: string) {
+async function forceWorkflowReenrollment(contactId: string, apiKey: string) {
   const response = await fetch(
     `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}`,
     {
@@ -383,7 +526,7 @@ async function forceQuestionWorkflowReenrollment(contactId: string, apiKey: stri
 
   if (!response.ok) {
     const details = await response.text();
-    console.warn('⚠️ Impossible de forcer la réinscription workflow (reset temporaire):', details);
+    console.warn('⚠️ Impossible de forcer la réinscription workflow (reset temporaire type_de_demande_chatbot):', details);
   }
 }
 

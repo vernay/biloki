@@ -96,7 +96,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-white/80">
               {FEATURES.slice(0, 5).map((feature) => (
                 <li key={feature.id}>
-                  <Link href={feature.href} className="hover:text-white transition-colors">
+                  <Link href={withLocale(feature.href)} className="hover:text-white transition-colors">
                     {getFeatureLabel(feature.id)}
                   </Link>
                 </li>

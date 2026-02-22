@@ -223,7 +223,7 @@
     },
     "chat": {
       "botName": "Biloki AI",
-      "description": "",
+      "status": "Toujours disponible",
       "online": "Online",
       "placeholder": "Ask your question...",
       "quickDoor": "Door code",
@@ -345,6 +345,14 @@
       "money": {
         "title": "Reduce your operational costs",
         "description": "Fewer errors,\nfewer manual interventions."
+      },
+      "target": {
+        "title": "Centralisez toute votre gestion",
+        "description": "Tout votre business,\ndans un seul outil."
+      },
+      "chart": {
+        "title": "Pilotez votre activité en temps réel",
+        "description": "Vos performances,\nclaires et accessibles partout."
       }
     }
   },
@@ -546,6 +554,61 @@
     "newsletter": "Receive our latest articles",
     "subscribeNewsletter": "Subscribe"
   },
+  "subscribePage": {
+    "badge": "Flexible configuration",
+    "title": "Configure your",
+    "titleHighlight": "subscription",
+    "description": "Pay according to your needs. Add the modules that suit you.",
+    "priceConfigurator": "Price configurator",
+    "numberOfProperties": "Number of properties",
+    "enterDirectly": "Or enter the number directly",
+    "billing": "Billing",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "annualSavings": "-10% savings",
+    "clientType": "Client type",
+    "professional": "Professional (excl. VAT)",
+    "individual": "Individual (incl. VAT)",
+    "includedFeatures": "Included features",
+    "features": {
+      "pms": "Complete PMS with stay management",
+      "channelManager": "Channel Manager (calendar sync)",
+      "pricing": "Rates & availability",
+      "ota": "OTA connections (Airbnb, Booking, etc.)",
+      "messaging": "Smart messaging with AI",
+      "locks": "Smart locks",
+      "reporting": "Reporting & performance",
+      "interfaces": "4 interfaces (owner, property manager, provider, guest)",
+      "api": "API Marketplace",
+      "support": "Email support"
+    },
+    "additionalOptions": "Additional options",
+    "accountingModule": "Accounting Module",
+    "accountingDesc": "Automatic pre-invoicing for all your properties",
+    "salesModule": "Additional Sales Module",
+    "salesDesc": "Offer additional services and products",
+    "propertiesWithModule": "Properties with this module",
+    "of": "of",
+    "applyToAll": "Apply to all your {count} properties",
+    "applyTo": "Apply to {count} property(ies)",
+    "orderSummary": "Order summary",
+    "propertiesCount": "{count} properties",
+    "module": "Module",
+    "accountingLabel": "Accounting",
+    "salesLabel": "Add. sales",
+    "propertiesLabel": "prop.",
+    "total": "Total",
+    "perMonthLabel": "/month",
+    "perYearLabel": "/year",
+    "firstMonthFree": "1st month free",
+    "payFromSecondMonth": "You only pay from the 2nd month.",
+    "payFromSecondMonthAnnual": "You only pay from the 2nd month of the first year.",
+    "noCardRequired": "✓ No credit card required",
+    "securePayment": "Secure payment upon validation",
+    "completeRegistration": "Complete my registration",
+    "ht": "excl. VAT",
+    "ttc": "incl. VAT"
+  },
   "pricingPage": {
     "title": "Pricing transparency",
     "subtitle": "Fair and simple pricing",
@@ -556,6 +619,7 @@
     "noCreditCard": "No credit card required",
     "cancelAnytime": "Cancel anytime",
     "needHelp": "Need help choosing?",
+    "contactUs": "Nous contacter",
     "whatIsMyPrice": "What's my price?",
     "priceExclVat": "Price excl. VAT • calculated in real-time",
     "savedAnnually": "saved annually",
@@ -655,65 +719,10 @@
     "description": "A platform adapted to each user's specific needs",
     "labels": {
       "concierge": "Property Manager",
-      "owner": "Owner", 
+      "owner": "Owner",
       "provider": "Service Provider",
       "tenant": "Guest"
     }
-  },
-  "subscribePage": {
-    "badge": "Flexible configuration",
-    "title": "Configure your",
-    "titleHighlight": "subscription",
-    "description": "Pay according to your needs. Add the modules that suit you.",
-    "priceConfigurator": "Price configurator",
-    "numberOfProperties": "Number of properties",
-    "enterDirectly": "Or enter the number directly",
-    "billing": "Billing",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "annualSavings": "-10% savings",
-    "clientType": "Client type",
-    "professional": "Professional (excl. VAT)",
-    "individual": "Individual (incl. VAT)",
-    "includedFeatures": "Included features",
-    "features": {
-      "pms": "Complete PMS with stay management",
-      "channelManager": "Channel Manager (calendar sync)",
-      "pricing": "Rates & availability",
-      "ota": "OTA connections (Airbnb, Booking, etc.)",
-      "messaging": "Smart messaging with AI",
-      "locks": "Smart locks",
-      "reporting": "Reporting & performance",
-      "interfaces": "4 interfaces (owner, property manager, provider, guest)",
-      "api": "API Marketplace",
-      "support": "Email support"
-    },
-    "additionalOptions": "Additional options",
-    "accountingModule": "Accounting Module",
-    "accountingDesc": "Automatic pre-invoicing for all your properties",
-    "salesModule": "Additional Sales Module",
-    "salesDesc": "Offer additional services and products",
-    "propertiesWithModule": "Properties with this module",
-    "of": "of",
-    "applyToAll": "Apply to all your {count} properties",
-    "applyTo": "Apply to {count} property(ies)",
-    "orderSummary": "Order summary",
-    "propertiesCount": "{count} properties",
-    "module": "Module",
-    "accountingLabel": "Accounting",
-    "salesLabel": "Add. sales",
-    "propertiesLabel": "prop.",
-    "total": "Total",
-    "perMonthLabel": "/month",
-    "perYearLabel": "/year",
-    "firstMonthFree": "1st month free",
-    "payFromSecondMonth": "You only pay from the 2nd month.",
-    "payFromSecondMonthAnnual": "You only pay from the 2nd month of the first year.",
-    "noCardRequired": "✓ No credit card required",
-    "securePayment": "Secure payment upon validation",
-    "completeRegistration": "Complete my registration",
-    "ht": "excl. VAT",
-    "ttc": "incl. VAT"
   },
   "loginPage": {
     "title": "Log in",
@@ -916,7 +925,11 @@
     "heroTitleSuffix": "for concierge teams",
     "heroDescription": "Secure your properties and automate guest access. Open doors remotely in one click from your dashboard.",
     "heroSecondaryCta": "Watch the demo",
-    "heroBullets": ["Secure", "Fast installation", "500+ conciergeries"],
+    "heroBullets": [
+      "Secure",
+      "Fast installation",
+      "500+ conciergeries"
+    ],
     "heroImagePlaceholder": "Hero image placeholder",
     "heroImageAlt": "Smart lock",
     "needs": {
@@ -1102,25 +1115,54 @@
         "badge": "Manager Interface",
         "title": "Control your entire business",
         "description": "Manage all your properties, tenants, providers and owners from an intuitive dashboard. Everything is centralized for a 360° view of your business.",
-        "features": ["All your properties under control from a single dashboard", "Unified communication: messages, emails, SMS synchronized", "Smart planning that anticipates and optimizes your resources", "Simplified operations with advanced automations", "Biloki AI: a copilot that acts for you", "Real-time statistics to drive your performance"]
+        "features": [
+          "All your properties under control from a single dashboard",
+          "Unified communication: messages, emails, SMS synchronized",
+          "Smart planning that anticipates and optimizes your resources",
+          "Simplified operations with advanced automations",
+          "Biloki AI: a copilot that acts for you",
+          "Real-time statistics to drive your performance"
+        ]
       },
       "owner": {
         "badge": "Owner Interface",
         "title": "Complete transparency for your owners",
         "description": "Give your owners a clear overview of their property with real-time access to performance, revenue and operations.",
-        "features": ["Property overview with booking calendar", "Key figures & performance: occupancy rate, net revenue", "Guest reviews centralized from all platforms", "Complete transparency on all operations", "Simplified relationship with the concierge via dedicated messaging", "Peace of mind investment tracking with detailed reports"]
+        "features": [
+          "Property overview with booking calendar",
+          "Key figures & performance: occupancy rate, net revenue",
+          "Guest reviews centralized from all platforms",
+          "Complete transparency on all operations",
+          "Simplified relationship with the concierge via dedicated messaging",
+          "Peace of mind investment tracking with detailed reports"
+        ]
       },
       "provider": {
         "badge": "Provider Interface",
         "title": "Simplify the work of your internal or external providers",
         "description": "Give your providers a simple and efficient mobile-first interface. Available as mobile app and web app (no need to download the application). Each provider receives the right information at the right time, without manual intervention.",
-        "features": ["Clear and centralized planning accessible on mobile", "Real-time notifications for each new mission", "Precise instructions per mission: address, access, guidelines", "Task validation with photos for traceability", "Direct communication with the concierge", "Complete history of completed interventions"]
+        "features": [
+          "Clear and centralized planning accessible on mobile",
+          "Real-time notifications for each new mission",
+          "Precise instructions per mission: address, access, guidelines",
+          "Task validation with photos for traceability",
+          "Direct communication with the concierge",
+          "Complete history of completed interventions"
+        ]
       },
       "guest": {
         "badge": "Guest Interface",
         "title": "A premium guest experience",
         "description": "Offer your guests an autonomous and premium experience. Personalized guide per property with AI assistant available 24/7.",
-        "features": ["Simplified access: codes, wifi, parking in one click", "Autonomous journey with personalized digital guide", "Direct communication with the host via messaging", "Instant key information: check-in, check-out, rules", "Biloki AI: intelligent assistant available 24/7", "Local tips: personalized local recommendations", "Additional sales: order services and products (champagne, breakfast...)"]
+        "features": [
+          "Simplified access: codes, wifi, parking in one click",
+          "Autonomous journey with personalized digital guide",
+          "Direct communication with the host via messaging",
+          "Instant key information: check-in, check-out, rules",
+          "Biloki AI: intelligent assistant available 24/7",
+          "Local tips: personalized local recommendations",
+          "Additional sales: order services and products (champagne, breakfast...)"
+        ]
       },
       "ctaTitle": "Ready to discover these 4 interfaces?",
       "ctaDescription": "Book a personalized demo and see how each interface transforms the user experience."
@@ -1151,10 +1193,22 @@
           "No double bookings, no manual updates"
         ],
         "stats": [
-          { "value": "120+", "label": "Connected OTAs" },
-          { "value": "0", "label": "Double booking" },
-          { "value": "24/7", "label": "Guest support" },
-          { "value": "10 min", "label": "Setup time" }
+          {
+            "value": "120+",
+            "label": "Connected OTAs"
+          },
+          {
+            "value": "0",
+            "label": "Double booking"
+          },
+          {
+            "value": "24/7",
+            "label": "Guest support"
+          },
+          {
+            "value": "10 min",
+            "label": "Setup time"
+          }
         ]
       },
       "sections": {
@@ -1282,37 +1336,73 @@
         "reservations": {
           "title": "Booking & calendar management",
           "description": "Centralize all your bookings (Airbnb, Booking, direct site, etc.) in a single synchronized calendar.",
-          "features": ["Automatic multi-platform calendar synchronization", "Avoid double bookings", "Clear view by property, by day and by channel", "Real-time arrivals and departures management"]
+          "features": [
+            "Automatic multi-platform calendar synchronization",
+            "Avoid double bookings",
+            "Clear view by property, by day and by channel",
+            "Real-time arrivals and departures management"
+          ]
         },
         "channelManager": {
           "title": "Integrated Channel Manager",
           "description": "Publish your listings and manage your rates on 120+ platforms from a single dashboard.",
-          "features": ["Multi-platform publishing from a single tool", "Automatic price and availability updates", "One-click date opening/closing", "Restriction management (minimum nights, check-in/out)"]
+          "features": [
+            "Multi-platform publishing from a single tool",
+            "Automatic price and availability updates",
+            "One-click date opening/closing",
+            "Restriction management (minimum nights, check-in/out)"
+          ]
         },
         "operations": {
           "title": "Concierge operations automation",
           "description": "Automatically create cleaning missions, schedule interventions and assign providers.",
-          "features": ["Automatic cleaning mission creation", "Missions sent directly to provider interface in real-time", "Linen scheduling, inventory, maintenance", "Automatic provider assignment", "Cleaning checklists per property"]
+          "features": [
+            "Automatic cleaning mission creation",
+            "Missions sent directly to provider interface in real-time",
+            "Linen scheduling, inventory, maintenance",
+            "Automatic provider assignment",
+            "Cleaning checklists per property"
+          ]
         },
         "communication": {
           "title": "Guest communication (guest experience)",
           "description": "Centralize and automate all your exchanges with guests in one place.",
-          "features": ["Automatic messages before arrival (codes, info)", "Personalized check-in / check-out instructions", "Airbnb, Booking, WhatsApp, SMS centralization", "24/7 AI support for guest questions"]
+          "features": [
+            "Automatic messages before arrival (codes, info)",
+            "Personalized check-in / check-out instructions",
+            "Airbnb, Booking, WhatsApp, SMS centralization",
+            "24/7 AI support for guest questions"
+          ]
         },
         "access": {
           "title": "Access & connected device management",
           "description": "Generate temporary codes and automatically manage access to smart locks.",
-          "features": ["Automatic temporary access code generation", "Access activation/deactivation based on booking dates", "Integration with smart locks and thermostats", "Complete access history"]
+          "features": [
+            "Automatic temporary access code generation",
+            "Access activation/deactivation based on booking dates",
+            "Integration with smart locks and thermostats",
+            "Complete access history"
+          ]
         },
         "billing": {
           "title": "Billing, commissions & owners",
           "description": "Automate billing, commission calculation and revenue management by owner. (Optional paid module: +€2/property/month)",
-          "features": ["Automatic commission calculation", "Owner invoicing and pre-invoicing", "Revenue, fees, cleaning breakdown", "Detailed dashboards per owner or per property"]
+          "features": [
+            "Automatic commission calculation",
+            "Owner invoicing and pre-invoicing",
+            "Revenue, fees, cleaning breakdown",
+            "Detailed dashboards per owner or per property"
+          ]
         },
         "reporting": {
           "title": "Reporting & performance management",
           "description": "Get a clear view of your performance to make the right decisions.",
-          "features": ["Real-time occupancy rate", "Revenue per property and per platform", "Operational cost tracking", "Performance analysis to justify added value"]
+          "features": [
+            "Real-time occupancy rate",
+            "Revenue per property and per platform",
+            "Operational cost tracking",
+            "Performance analysis to justify added value"
+          ]
         }
       },
       "ctaTitle": "Ready to transform your concierge business?",
@@ -1527,9 +1617,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Setup" },
-          "updates": { "value": "Instant", "label": "Updates" },
-          "channels": { "value": "120+", "label": "Channels" }
+          "setup": {
+            "value": "5 min",
+            "label": "Setup"
+          },
+          "updates": {
+            "value": "Instant",
+            "label": "Updates"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Channels"
+          }
         }
       },
       "faq": {
@@ -1633,9 +1732,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Setup" },
-          "updates": { "value": "Instant", "label": "Updates" },
-          "channels": { "value": "120+", "label": "Channels" }
+          "setup": {
+            "value": "5 min",
+            "label": "Setup"
+          },
+          "updates": {
+            "value": "Instant",
+            "label": "Updates"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Channels"
+          }
         }
       },
       "faq": {
@@ -1787,9 +1895,29 @@
     "initialGreeting": "Hello! 👋 I'm the Biloki assistant.\n\nHow can I help you?\n• Discover our features\n• Understand pricing\n• Answer your questions",
     "profileDetection": {
       "keywords": {
-        "owner": ["owner", "my property", "my apartment", "my house", "my properties", "landlord"],
-        "concierge": ["concierge", "agency", "rental management", "manager", "company", "business", "property management company"],
-        "manager": ["manager", "property manager", "manage", "management"]
+        "owner": [
+          "owner",
+          "my property",
+          "my apartment",
+          "my house",
+          "my properties",
+          "landlord"
+        ],
+        "concierge": [
+          "concierge",
+          "agency",
+          "rental management",
+          "manager",
+          "company",
+          "business",
+          "property management company"
+        ],
+        "manager": [
+          "manager",
+          "property manager",
+          "manage",
+          "management"
+        ]
       },
       "responses": {
         "owner": "Perfect! As a property owner, Biloki can help you:\n\n✅ Sync your calendars across all platforms\n✅ Automate communication with your guests\n✅ Manage smart lock access codes\n✅ Track your revenue in real-time\n\nHow many properties do you manage?",
@@ -1999,6 +2127,64 @@
       "distanceBC": "Distance B-C",
       "doorOpening": "Door opening direction",
       "bookDemo": "Book a free demo"
+    }
+  },
+  "smartLockConfigurator": {
+    "validate": "Valider",
+    "back": "← Retour",
+    "restart": "↻ Recommencer",
+    "step1": {
+      "title": "Quel est votre type de logement ?",
+      "description": "Sélectionnez le type de propriété que vous souhaitez sécuriser.",
+      "maison": "Maison",
+      "immeuble": "Immeuble"
+    },
+    "step2Maison": {
+      "title": "Comment accédez-vous à votre propriété ?",
+      "description": "Sélectionnez votre méthode d'accès principale.",
+      "portail": "Portail",
+      "acces_direct": "Accès direct à la porte",
+      "autre": "Autre méthode"
+    },
+    "step2Immeuble": {
+      "title": "Comment accédez-vous à l'immeuble ?",
+      "description": "Choisissez une ou plusieurs méthodes d'accès.",
+      "digicode": "Digicode",
+      "badge": "Badge",
+      "cle": "Clé"
+    },
+    "step3": {
+      "title": "Comment ouvrez-vous votre portail ?",
+      "description": "Choisissez une ou plusieurs méthodes d'ouverture.",
+      "digicode": "Par digicode",
+      "telecommande": "Par télécommande",
+      "badge": "Par badge",
+      "cle": "Par clé"
+    },
+    "step4": {
+      "title": "Quel type de serrure avez-vous ?",
+      "description": "Sélectionnez le type de serrure installé sur votre porte.",
+      "cylindre_europeen": "Cylindre européen",
+      "cylindre_rond": "Cylindre rond",
+      "autre": "Autre",
+      "inconnu": "Je ne sais pas"
+    },
+    "step5": {
+      "title": "Quel est le sens d'ouverture de votre porte ?",
+      "description": "Indique comment s'ouvre votre porte pour une compatibilité optimale.",
+      "interieur": "Intérieur",
+      "exterieur": "Extérieur"
+    },
+    "result": {
+      "title": "Configuration complète !",
+      "description": "Parfait ! Nous avons identifié la solution de serrure connectée la plus adaptée à votre propriété.",
+      "summary": "Résumé de votre configuration",
+      "property": "Type de propriété",
+      "access": "Méthode d'accès",
+      "portalOpening": "Ouverture du portail",
+      "lockType": "Type de serrure",
+      "doorOpening": "Sens d'ouverture de la porte",
+      "bookDemo": "Réserver une démo gratuite"
     }
   },
   "seoMetadata": {

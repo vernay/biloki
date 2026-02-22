@@ -223,12 +223,12 @@
     },
     "chat": {
       "botName": "Biloki AI",
-      "description": "",
       "online": "Online",
       "placeholder": "Faça sua pergunta...",
       "quickDoor": "Código da porta",
       "quickCheckout": "Check-out",
-      "quickRestaurants": "Restaurantes"
+      "quickRestaurants": "Restaurantes",
+      "status": "Toujours disponible"
     },
     "demo": {
       "userMessage": "Olá, qual é a senha do Wi-Fi?",
@@ -345,6 +345,14 @@
       "money": {
         "title": "Reduza seus custos operacionais",
         "description": "Menos erros,\nmenos intervenções manuais."
+      },
+      "target": {
+        "title": "Centralisez toute votre gestion",
+        "description": "Tout votre business,\ndans un seul outil."
+      },
+      "chart": {
+        "title": "Pilotez votre activité en temps réel",
+        "description": "Vos performances,\nclaires et accessibles partout."
       }
     }
   },
@@ -802,7 +810,11 @@
     "heroTitleSuffix": "para a concierge",
     "heroDescription": "Proteja suas propriedades e automatize o acesso dos hóspedes. Abra as portas remotamente com um clique no seu painel.",
     "heroSecondaryCta": "Ver a demo",
-    "heroBullets": ["Seguro", "Instalação rápida", "+500 conciergeries"],
+    "heroBullets": [
+      "Seguro",
+      "Instalação rápida",
+      "+500 conciergeries"
+    ],
     "heroImagePlaceholder": "Espaço reservado para imagem principal",
     "heroImageAlt": "Fechadura inteligente",
     "needs": {
@@ -988,25 +1000,54 @@
         "badge": "Interface do gestor",
         "title": "Controle todo o seu negócio",
         "description": "Gerencie todas as suas propriedades, hóspedes, prestadores e proprietários a partir de um painel intuitivo. Tudo está centralizado para uma visão 360° do seu negócio.",
-        "features": ["Todas as suas propriedades sob controle a partir de um único painel", "Comunicação unificada: mensagens, emails, SMS sincronizados", "Planejamento inteligente que antecipa e otimiza seus recursos", "Operações simplificadas com automações avançadas", "Biloki AI: um copiloto que age por você", "Estatísticas em tempo real para impulsionar seu desempenho"]
+        "features": [
+          "Todas as suas propriedades sob controle a partir de um único painel",
+          "Comunicação unificada: mensagens, emails, SMS sincronizados",
+          "Planejamento inteligente que antecipa e otimiza seus recursos",
+          "Operações simplificadas com automações avançadas",
+          "Biloki AI: um copiloto que age por você",
+          "Estatísticas em tempo real para impulsionar seu desempenho"
+        ]
       },
       "owner": {
         "badge": "Interface do proprietário",
         "title": "Transparência total para seus proprietários",
         "description": "Dê aos seus proprietários uma visão clara da sua propriedade com acesso em tempo real ao desempenho, receitas e operações.",
-        "features": ["Visão geral da propriedade com calendário de reservas", "Números-chave e desempenho: taxa de ocupação, receita líquida", "Avaliações de hóspedes centralizadas de todas as plataformas", "Transparência total em todas as operações", "Relação simplificada com o concierge via mensagens dedicadas", "Acompanhamento sereno do investimento com relatórios detalhados"]
+        "features": [
+          "Visão geral da propriedade com calendário de reservas",
+          "Números-chave e desempenho: taxa de ocupação, receita líquida",
+          "Avaliações de hóspedes centralizadas de todas as plataformas",
+          "Transparência total em todas as operações",
+          "Relação simplificada com o concierge via mensagens dedicadas",
+          "Acompanhamento sereno do investimento com relatórios detalhados"
+        ]
       },
       "provider": {
         "badge": "Interface do prestador",
         "title": "Simplifique o trabalho dos seus prestadores internos ou externos",
         "description": "Dê aos seus prestadores uma interface mobile-first simples e eficiente. Disponível como app móvel e web app (sem necessidade de baixar o aplicativo). Cada prestador recebe a informação certa no momento certo, sem intervenção manual.",
-        "features": ["Planejamento claro e centralizado acessível no celular", "Notificações em tempo real para cada nova missão", "Instruções precisas por missão: endereço, acesso, diretrizes", "Validação de tarefas com fotos para rastreabilidade", "Comunicação direta com o concierge", "Histórico completo de intervenções realizadas"]
+        "features": [
+          "Planejamento claro e centralizado acessível no celular",
+          "Notificações em tempo real para cada nova missão",
+          "Instruções precisas por missão: endereço, acesso, diretrizes",
+          "Validação de tarefas com fotos para rastreabilidade",
+          "Comunicação direta com o concierge",
+          "Histórico completo de intervenções realizadas"
+        ]
       },
       "guest": {
         "badge": "Interface do hóspede",
         "title": "Uma experiência premium para o hóspede",
         "description": "Ofereça aos seus hóspedes uma experiência autônoma e premium. Guia personalizado por propriedade com assistente IA disponível 24/7.",
-        "features": ["Acesso simplificado: códigos, wifi, estacionamento em um clique", "Jornada autônoma com guia digital personalizado", "Comunicação direta com o anfitrião via mensagens", "Informações-chave instantâneas: check-in, check-out, regras", "Biloki AI: assistente inteligente disponível 24/7", "Dicas locais: recomendações locais personalizadas", "Vendas adicionais: peça serviços e produtos (champanhe, café da manhã...)"]
+        "features": [
+          "Acesso simplificado: códigos, wifi, estacionamento em um clique",
+          "Jornada autônoma com guia digital personalizado",
+          "Comunicação direta com o anfitrião via mensagens",
+          "Informações-chave instantâneas: check-in, check-out, regras",
+          "Biloki AI: assistente inteligente disponível 24/7",
+          "Dicas locais: recomendações locais personalizadas",
+          "Vendas adicionais: peça serviços e produtos (champanhe, café da manhã...)"
+        ]
       },
       "ctaTitle": "Pronto para descobrir essas 4 interfaces?",
       "ctaDescription": "Agende uma demo personalizada e veja como cada interface transforma a experiência do usuário."
@@ -1024,7 +1065,132 @@
     "channelManager": {
       "title": "Channel Manager",
       "description": "Distribua e sincronize seus anúncios em mais de 120 plataformas de reserva.",
-      "content": "Cada reserva é centralizada em tempo real, sem risco de reserva dupla. Gerencie todos os seus canais de distribuição a partir de uma única interface."
+      "content": "Cada reserva é centralizada em tempo real, sem risco de reserva dupla. Gerencie todos os seus canais de distribuição a partir de uma única interface.",
+      "hero": {
+        "kicker": "Channel Manager Biloki",
+        "title": "Synchronisez toutes vos annonces en temps réel",
+        "description": "Centralisez vos calendriers, tarifs et disponibilités sur plus de 120 plateformes, sans double réservation.",
+        "ctaPrimary": "Réserver une démo",
+        "ctaSecondary": "Essai gratuit",
+        "bullets": [
+          "Synchronisation instantanée des disponibilités",
+          "Tarifs et restrictions unifiés sur tous les canaux",
+          "Fini les doubles réservations et les mises à jour manuelles"
+        ],
+        "stats": [
+          {
+            "value": "120+",
+            "label": "OTA connectées"
+          },
+          {
+            "value": "0",
+            "label": "Double booking"
+          },
+          {
+            "value": "24/7",
+            "label": "Support voyageurs"
+          },
+          {
+            "value": "10 min",
+            "label": "Mise en place"
+          }
+        ]
+      },
+      "sections": {
+        "placeholders": {
+          "heroVisual": "Espace visuel produit",
+          "logo": "Logo partenaire",
+          "screenshot": "Espace capture d’écran"
+        },
+        "trusted": {
+          "title": "Connectez vos annonces partout",
+          "description": "Airbnb, Booking, Vrbo, Expedia... centralisez vos canaux et pilotez vos disponibilités en temps réel."
+        },
+        "why": {
+          "title": "Pourquoi un Channel Manager Biloki ?",
+          "description": "Des réservations synchronisées, des tarifs cohérents et une expérience voyageur fluide, sans travail manuel.",
+          "points": [
+            "Calendriers synchronisés en temps réel",
+            "Tarifs et restrictions mis à jour automatiquement",
+            "Moins d’erreurs, plus de revenus",
+            "Visibilité accrue sur les plateformes"
+          ]
+        },
+        "steps": {
+          "title": "Comment ça marche ?",
+          "stepLabel": "Étape {number}",
+          "items": [
+            {
+              "title": "Connectez vos plateformes",
+              "description": "Reliez vos comptes OTA en quelques clics et importez vos annonces."
+            },
+            {
+              "title": "Centralisez calendriers et tarifs",
+              "description": "Pilotez tout depuis Biloki : disponibilités, règles et prix."
+            },
+            {
+              "title": "Automatisez la diffusion",
+              "description": "Chaque modification se propage partout, instantanément."
+            }
+          ]
+        },
+        "features": {
+          "title": "Tout ce qu’il faut pour distribuer sans stress",
+          "description": "Des outils solides pour garder vos annonces synchronisées et vos équipes sereines.",
+          "items": [
+            {
+              "title": "Synchronisation multi-plateformes",
+              "description": "Airbnb, Booking, Vrbo, Expedia et plus de 120 canaux."
+            },
+            {
+              "title": "Règles et restrictions unifiées",
+              "description": "Min. nuits, check-in/out, fermetures : tout se pilote en un seul endroit."
+            },
+            {
+              "title": "Tarification centralisée",
+              "description": "Mettez à jour vos prix en une fois et évitez les incohérences."
+            },
+            {
+              "title": "Mise à jour temps réel",
+              "description": "Des disponibilités fiables pour éviter les doubles réservations."
+            }
+          ]
+        }
+      },
+      "subSections": {
+        "title": "Aller plus loin avec le Channel Manager",
+        "ota": {
+          "title": "Connexions OTA",
+          "description": "Connectez Airbnb, Booking, Vrbo et plus de 120 canaux pour diffuser vos annonces sans effort.",
+          "cta": "Voir les connexions OTA"
+        },
+        "calendars": {
+          "title": "Synchronisation des calendriers",
+          "description": "Des calendriers toujours a jour, des disponibilites fiables, zero double reservation.",
+          "cta": "Voir la synchronisation"
+        }
+      },
+      "faq": {
+        "title": "Questions frequentes",
+        "items": [
+          {
+            "q": "Qu’est-ce qu’un channel manager ?",
+            "a": "C’est un outil qui synchronise automatiquement vos annonces, calendriers et tarifs sur toutes les plateformes."
+          },
+          {
+            "q": "Biloki se connecte a combien d’OTA ?",
+            "a": "Plus de 120 plateformes de reservation, dont Airbnb, Booking, Vrbo et Expedia."
+          },
+          {
+            "q": "Combien de temps pour se connecter ?",
+            "a": "La plupart des connexions sont actives en moins de 10 minutes."
+          },
+          {
+            "q": "Peut-on gerer les tarifs et regles depuis Biloki ?",
+            "a": "Oui, vous pilotez les prix, restrictions et disponibilites depuis une seule interface."
+          }
+        ]
+      }
     },
     "multiLanguage": {
       "title": "Multilíngue",
@@ -1055,37 +1221,73 @@
         "reservations": {
           "title": "Gestão de reservas e calendários",
           "description": "Centralize todas as suas reservas (Airbnb, Booking, site direto, etc.) em um único calendário sincronizado.",
-          "features": ["Sincronização automática de calendários multi-plataforma", "Evite reservas duplas", "Visão clara por propriedade, por dia e por canal", "Gestão de chegadas e partidas em tempo real"]
+          "features": [
+            "Sincronização automática de calendários multi-plataforma",
+            "Evite reservas duplas",
+            "Visão clara por propriedade, por dia e por canal",
+            "Gestão de chegadas e partidas em tempo real"
+          ]
         },
         "channelManager": {
           "title": "Channel Manager integrado",
           "description": "Publique seus anúncios e gerencie suas tarifas em mais de 120 plataformas a partir de um único painel.",
-          "features": ["Publicação multi-plataforma a partir de uma única ferramenta", "Atualizações automáticas de preços e disponibilidades", "Abertura/fechamento de datas com um clique", "Gestão de restrições (noites mínimas, check-in/out)"]
+          "features": [
+            "Publicação multi-plataforma a partir de uma única ferramenta",
+            "Atualizações automáticas de preços e disponibilidades",
+            "Abertura/fechamento de datas com um clique",
+            "Gestão de restrições (noites mínimas, check-in/out)"
+          ]
         },
         "operations": {
           "title": "Automação de operações de concierge",
           "description": "Crie automaticamente missões de limpeza, agende intervenções e atribua prestadores.",
-          "features": ["Criação automática de missões de limpeza", "Missões enviadas diretamente para a interface do prestador em tempo real", "Agendamento de roupas de cama, inventário, manutenção", "Atribuição automática de prestadores", "Checklists de limpeza por propriedade"]
+          "features": [
+            "Criação automática de missões de limpeza",
+            "Missões enviadas diretamente para a interface do prestador em tempo real",
+            "Agendamento de roupas de cama, inventário, manutenção",
+            "Atribuição automática de prestadores",
+            "Checklists de limpeza por propriedade"
+          ]
         },
         "communication": {
           "title": "Comunicação com hóspedes (experiência do hóspede)",
           "description": "Centralize e automatize todas as suas trocas com os hóspedes em um só lugar.",
-          "features": ["Mensagens automáticas antes da chegada (códigos, info)", "Instruções personalizadas de check-in / check-out", "Centralização de Airbnb, Booking, WhatsApp, SMS", "Suporte IA 24/7 para perguntas dos hóspedes"]
+          "features": [
+            "Mensagens automáticas antes da chegada (códigos, info)",
+            "Instruções personalizadas de check-in / check-out",
+            "Centralização de Airbnb, Booking, WhatsApp, SMS",
+            "Suporte IA 24/7 para perguntas dos hóspedes"
+          ]
         },
         "access": {
           "title": "Gestão de acessos e dispositivos conectados",
           "description": "Gere códigos temporários e gerencie automaticamente o acesso às fechaduras inteligentes.",
-          "features": ["Geração automática de códigos de acesso temporários", "Ativação/desativação de acesso de acordo com datas de reserva", "Integração com fechaduras inteligentes e termostatos", "Histórico completo de acessos"]
+          "features": [
+            "Geração automática de códigos de acesso temporários",
+            "Ativação/desativação de acesso de acordo com datas de reserva",
+            "Integração com fechaduras inteligentes e termostatos",
+            "Histórico completo de acessos"
+          ]
         },
         "billing": {
           "title": "Faturamento, comissões e proprietários",
           "description": "Automatize o faturamento, cálculo de comissões e gestão de receitas por proprietário. (Módulo opcional pago: +2€/propriedade/mês)",
-          "features": ["Cálculo automático de comissões", "Faturamento e pré-faturamento de proprietários", "Detalhamento de receitas, despesas, limpeza", "Painéis detalhados por proprietário ou por propriedade"]
+          "features": [
+            "Cálculo automático de comissões",
+            "Faturamento e pré-faturamento de proprietários",
+            "Detalhamento de receitas, despesas, limpeza",
+            "Painéis detalhados por proprietário ou por propriedade"
+          ]
         },
         "reporting": {
           "title": "Reporting e gestão de desempenho",
           "description": "Obtenha uma visão clara do seu desempenho para tomar as decisões certas.",
-          "features": ["Taxa de ocupação em tempo real", "Receitas por propriedade e por plataforma", "Acompanhamento de custos operacionais", "Análise de desempenho para justificar o valor agregado"]
+          "features": [
+            "Taxa de ocupação em tempo real",
+            "Receitas por propriedade e por plataforma",
+            "Acompanhamento de custos operacionais",
+            "Análise de desempenho para justificar o valor agregado"
+          ]
         }
       },
       "ctaTitle": "Pronto para transformar seu negócio de concierge?",
@@ -1300,9 +1502,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Configuração" },
-          "updates": { "value": "Instantâneo", "label": "Atualizações" },
-          "channels": { "value": "120+", "label": "Canais" }
+          "setup": {
+            "value": "5 min",
+            "label": "Configuração"
+          },
+          "updates": {
+            "value": "Instantâneo",
+            "label": "Atualizações"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Canais"
+          }
         }
       },
       "faq": {
@@ -1406,9 +1617,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Configuração" },
-          "updates": { "value": "Instantâneo", "label": "Atualizações" },
-          "channels": { "value": "120+", "label": "Canais" }
+          "setup": {
+            "value": "5 min",
+            "label": "Configuração"
+          },
+          "updates": {
+            "value": "Instantâneo",
+            "label": "Atualizações"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Canais"
+          }
         }
       },
       "faq": {
@@ -1652,7 +1872,8 @@
     "getPricing": "Obter preços",
     "loading": "Carregando...",
     "transparentPricing": "Preços transparentes",
-    "monthlyBilling": "Faturamento mensal"
+    "monthlyBilling": "Faturamento mensal",
+    "contactUs": "Nous contacter"
   },
   "animatedInterfaces": {
     "title": "Nossas 4 Interfaces",
@@ -1674,9 +1895,29 @@
     "initialGreeting": "Olá! 👋 Sou o assistente Biloki.\n\nComo posso ajudá-lo?\n• Descobrir nossas funcionalidades\n• Entender os preços\n• Responder suas perguntas",
     "profileDetection": {
       "keywords": {
-        "owner": ["proprietário", "proprietario", "minha propriedade", "meu apartamento", "minha casa", "minhas propriedades", "locador"],
-        "concierge": ["concierge", "agência", "agencia", "gestão de aluguel", "gerente", "empresa", "companhia", "property management"],
-        "manager": ["gestor", "administrador", "property manager", "gerencio", "gestão"]
+        "owner": [
+          "proprietário",
+          "proprietario",
+          "minha propriedade",
+          "meu apartamento",
+          "minha casa",
+          "minhas propriedades"
+        ],
+        "concierge": [
+          "concierge",
+          "agência",
+          "agencia",
+          "gestão de aluguel",
+          "gerente",
+          "empresa",
+          "companhia"
+        ],
+        "manager": [
+          "gestor",
+          "administrador",
+          "property manager",
+          "gerencio"
+        ]
       },
       "responses": {
         "owner": "Perfeito! Como proprietário, Biloki pode ajudá-lo a:\n\n✅ Sincronizar seus calendários em todas as plataformas\n✅ Automatizar a comunicação com seus hóspedes\n✅ Gerenciar códigos de acesso de fechaduras inteligentes\n✅ Acompanhar sua receita em tempo real\n\nQuantas propriedades você gerencia?",
@@ -1992,6 +2233,64 @@
     "blog-nice": {
       "title": "Nice: Cotas de Airbnb por Bairro - O que os Concierges Precisam Saber | Biloki",
       "description": "Nice endurece as regulamentações do Airbnb: cotas por bairro, máximo 90 dias, licenças limitadas a 3 anos. Como se adaptar? Guia completo para serviços de concierge."
+    }
+  },
+  "smartLockConfigurator": {
+    "validate": "Valider",
+    "back": "← Retour",
+    "restart": "↻ Recommencer",
+    "step1": {
+      "title": "Quel est votre type de logement ?",
+      "description": "Sélectionnez le type de propriété que vous souhaitez sécuriser.",
+      "maison": "Maison",
+      "immeuble": "Immeuble"
+    },
+    "step2Maison": {
+      "title": "Comment accédez-vous à votre propriété ?",
+      "description": "Sélectionnez votre méthode d'accès principale.",
+      "portail": "Portail",
+      "acces_direct": "Accès direct à la porte",
+      "autre": "Autre méthode"
+    },
+    "step2Immeuble": {
+      "title": "Comment accédez-vous à l'immeuble ?",
+      "description": "Choisissez une ou plusieurs méthodes d'accès.",
+      "digicode": "Digicode",
+      "badge": "Badge",
+      "cle": "Clé"
+    },
+    "step3": {
+      "title": "Comment ouvrez-vous votre portail ?",
+      "description": "Choisissez une ou plusieurs méthodes d'ouverture.",
+      "digicode": "Par digicode",
+      "telecommande": "Par télécommande",
+      "badge": "Par badge",
+      "cle": "Par clé"
+    },
+    "step4": {
+      "title": "Quel type de serrure avez-vous ?",
+      "description": "Sélectionnez le type de serrure installé sur votre porte.",
+      "cylindre_europeen": "Cylindre européen",
+      "cylindre_rond": "Cylindre rond",
+      "autre": "Autre",
+      "inconnu": "Je ne sais pas"
+    },
+    "step5": {
+      "title": "Quel est le sens d'ouverture de votre porte ?",
+      "description": "Indique comment s'ouvre votre porte pour une compatibilité optimale.",
+      "interieur": "Intérieur",
+      "exterieur": "Extérieur"
+    },
+    "result": {
+      "title": "Configuration complète !",
+      "description": "Parfait ! Nous avons identifié la solution de serrure connectée la plus adaptée à votre propriété.",
+      "summary": "Résumé de votre configuration",
+      "property": "Type de propriété",
+      "access": "Méthode d'accès",
+      "portalOpening": "Ouverture du portail",
+      "lockType": "Type de serrure",
+      "doorOpening": "Sens d'ouverture de la porte",
+      "bookDemo": "Réserver une démo gratuite"
     }
   }
 }

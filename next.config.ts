@@ -66,18 +66,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/pt',
-        destination: '/fr',
-        permanent: true,
-      },
-      {
         source: '/pt/',
-        destination: '/fr',
+        destination: '/pt',
         permanent: true,
       },
       {
         source: '/es/',
-        destination: '/fr',
+        destination: '/es',
         permanent: true,
       },
       {
@@ -111,6 +106,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/:locale/serrures-connectees',
+        destination: '/:locale/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
+        source: '/:locale/serrures-connectees/',
+        destination: '/:locale/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
+        source: '/serrures-connectees',
+        destination: '/fr/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
+        source: '/serrures-connectees/',
+        destination: '/fr/fonctionnalites/serrures-connectees',
+        permanent: true,
+      },
+      {
         source: '/fonctionnalites/channel-manager/ota',
         destination: '/fr/fonctionnalites/channel-manager',
         permanent: true,
@@ -122,12 +137,184 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/appli-biloki',
-        destination: '/fr/fonctionnalites/vue-ensemble',
+        destination: '/fr/fonctionnalites/pms',
         permanent: true,
       },
       {
         source: '/appli-biloki/',
-        destination: '/fr/fonctionnalites/vue-ensemble',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      // Redirections des anciennes pages fonctionnalites
+      {
+        source: '/:locale/fonctionnalites/messagerie',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/messagerie/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/ia-automatisation',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/ia-automatisation/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/multi-langues',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/multi-langues/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/logements',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/logements/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/reporting',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/reporting/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/tableau-bord',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/tableau-bord/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/voyageurs',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/voyageurs/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/sejours',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/sejours/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/prestataires',
+        destination: '/:locale/fonctionnalites/4-interfaces',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/prestataires/',
+        destination: '/:locale/fonctionnalites/4-interfaces',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/reporting',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/reporting/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/vue-ensemble',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/vue-ensemble/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      // Variantes sans locale
+      {
+        source: '/fonctionnalites/messagerie',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/messagerie/',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/ia-automatisation',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/ia-automatisation/',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/multi-langues',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/multi-langues/',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/prestataires',
+        destination: '/fr/fonctionnalites/4-interfaces',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/prestataires/',
+        destination: '/fr/fonctionnalites/4-interfaces',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/reporting',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/reporting/',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/vue-ensemble',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/vue-ensemble/',
+        destination: '/fr/fonctionnalites/pms',
         permanent: true,
       },
       {
