@@ -15,6 +15,7 @@ const WEBAPP_REGISTER_URL = `${WEBAPP_BASE_URL}/register`;
 export default function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Normalize trailing slashes and handle old feature page redirects
   // Normaliser les slashs finaux (éviter les doublons /page vs /page/)
   if (pathname.length > 1 && pathname.endsWith("/")) {
     const normalized = pathname.slice(0, -1);
