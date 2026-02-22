@@ -2129,87 +2129,87 @@
   "seoMetadata": {
     "home": {
       "title": "Biloki - Gagnez du temps dans la gestion de vos locations saisonnières",
-      "description": "Centralisez, automatisez et orchestrez le cycle de vie de vos séjours. PMS, Channel Manager, Messagerie IA pour conciergeries."
+      "description": "Centralisez, automatisez et orchestrez le cycle de vie de vos séjours. PMS, Channel Manager, Messagerie IA pour conciergeries et gestionnaires."
     },
     "pricing": {
       "title": "Tarifs Biloki - Plans flexibles pour conciergeries et propriétaires",
-      "description": "Découvrez nos plans tarifaires. Calculez le prix selon vos logements. Essai gratuit 14 jours, sans carte bancaire."
+      "description": "Tarifs dégressifs de 16,99€ à 7,99€ par logement. Essai gratuit 14 jours sans carte bancaire. Calculez votre prix selon votre nombre de propriétés."
     },
     "contact": {
       "title": "Contactez Biloki - Support et demandes commerciales",
-      "description": "Besoin d'aide ? Contactez notre équipe. Nous répondons rapidement à vos questions."
+      "description": "Besoin d'aide ou d'une démo personnalisée ? Contactez notre équipe support et commerciale. Réponse rapide garantie pour conciergeries et propriétaires."
     },
     "trial": {
       "title": "Essai gratuit Biloki - 14 jours sans engagement",
-      "description": "Testez Biloki gratuitement pendant 14 jours. Accès complet à toutes les fonctionnalités, sans carte bancaire."
+      "description": "Testez Biloki gratuitement pendant 14 jours. Accès complet à toutes les fonctionnalités, sans carte bancaire. PMS + Channel Manager inclus."
     },
     "subscribe": {
       "title": "S'abonner à Biloki - Gestion de locations saisonnières",
-      "description": "Choisissez votre plan d'abonnement et commencez à gérer vos séjours efficacement."
+      "description": "Choisissez votre plan d'abonnement Biloki et gérez vos locations saisonnières efficacement. Tarifs dégressifs, essai gratuit 14 jours disponible."
     },
     "login": {
       "title": "Se connecter à Biloki",
-      "description": "Connectez-vous à votre compte Biloki pour accéder à votre tableau de bord."
+      "description": "Connectez-vous à votre compte Biloki pour gérer vos locations saisonnières. Accédez à votre tableau de bord PMS et Channel Manager en un clic."
     },
     "demo": {
       "title": "Réservez une démo gratuite - Biloki",
-      "description": "Réservez une démonstration gratuite de Biloki avec nos experts."
+      "description": "Réservez une démonstration gratuite de 30 minutes avec nos experts. Découvrez comment Biloki optimise la gestion de vos locations saisonnières."
     },
     "team": {
       "title": "L'équipe Biloki - Qui sommes-nous ?",
-      "description": "Découvrez les fondateurs et l'équipe qui construit Biloki pour révolutionner la conciergerie."
+      "description": "Découvrez les fondateurs et l'équipe qui construit Biloki pour révolutionner la conciergerie et la gestion de locations saisonnières en France."
     },
     "smartLocks": {
       "title": "Serrures connectées Biloki - Gestion d'accès automatisée",
-      "description": "Automatisez l'accès à vos logements avec nos intégrations de serrures connectées."
+      "description": "Automatisez l'accès à vos logements avec nos intégrations de serrures connectées. Compatible Nuki, Igloohome, RemoteLock, Yale et 15+ marques."
     },
     "apiConnections": {
       "title": "Connexions API Biloki - Intégrations OTA et partenaires",
-      "description": "Connectez Biloki à vos plateformes : Airbnb, Booking, Airbnb Luxury et autres OTA."
+      "description": "Connectez Biloki à 50+ plateformes : Airbnb, Booking.com, Vrbo, Expedia, Airbnb Luxury. Synchronisation temps réel de vos calendriers et tarifs."
     },
     "careers": {
       "title": "Rejoignez Biloki - Offres d'emploi et carrière",
-      "description": "Nous recrutons ! Découvrez nos offres d'emploi et rejoignez une équipe passionnée par la conciergerie."
+      "description": "Nous recrutons ! Découvrez nos offres d'emploi tech et business. Rejoignez une équipe passionnée qui révolutionne la conciergerie en France."
     },
     "legalNotice": {
       "title": "Mentions légales Biloki",
-      "description": "Mentions légales et informations juridiques concernant Biloki et son utilisation."
+      "description": "Mentions légales de Biloki SAS : informations juridiques, hébergement, éditeur, RGPD. Siège social à Nantes, logiciel de gestion locative développé en France."
     },
     "terms": {
       "title": "Conditions générales de vente Biloki",
-      "description": "Découvrez les conditions générales de vente et conditions d'utilisation de Biloki."
+      "description": "Consultez les conditions générales de vente (CGV) et conditions d'utilisation de Biloki. Tarifs, engagement, résiliation, garanties et support client."
     },
     "cookies": {
       "title": "Politique de cookies Biloki",
-      "description": "Informations sur l'utilisation des cookies et gestion de vos préférences."
+      "description": "Informations sur l'utilisation des cookies sur biloki.com. Gérez vos préférences de consentement et paramètres de confidentialité selon le RGPD."
     },
     "referral": {
       "title": "Gagnez en parrainant avec Biloki",
-      "description": "Parrainez vos amis et gagnez des avantages exclusifs avec notre programme."
+      "description": "Parrainez d'autres conciergeries et propriétaires et gagnez des réductions exclusives. Programme de parrainage Biloki : récompenses pour vous et vos filleuls."
     },
     "pms": {
       "title": "PMS Biloki - Système de gestion de propriétés",
-      "description": "Gérez tous vos séjours en un seul endroit. Centralisez réservations, calendriers, paiements et tâches."
+      "description": "Logiciel PMS pour locations saisonnières. Centralisez réservations, calendriers, paiements et tâches en un seul outil. Essai gratuit 14 jours."
     },
     "channelManager": {
       "title": "Channel Manager Biloki - Synchronisation multi-plateformes",
-      "description": "Synchronisez vos calendriers et tarifs sur Airbnb, Booking, Vrbo et autres OTA en temps réel."
+      "description": "Synchronisez vos calendriers et tarifs sur Airbnb, Booking, Vrbo et 50+ OTA en temps réel. Évitez les double-réservations automatiquement."
     },
     "fourInterfaces": {
       "title": "Interface Biloki - Design moderne et intuitif",
-      "description": "Découvrez l'interface épurée et intuitive de Biloki. Conçue pour la productivité et l'efficacité."
+      "description": "Découvrez les 4 interfaces Biloki : conciergerie, propriétaire, prestataire et voyageur. Design épuré et intuitif pour une productivité maximale."
     },
     "reporting": {
       "title": "Reporting Biloki - Analyses et insights",
-      "description": "Analysez vos données de gestion. Dashboards détaillés, KPI en temps réel et rapports personnalisés."
+      "description": "Tableaux de bord détaillés pour analyser vos performances. KPI en temps réel, rapports personnalisés et insights pour optimiser votre conciergerie."
     },
     "marketplace": {
       "title": "Marketplace Biloki - Connectez vos prestataires",
-      "description": "Connectez-vous avec des prestataires vérifiés : nettoyage, maintenance, linge, conciergerie."
+      "description": "Marketplace de prestataires vérifiés pour conciergeries : nettoyage, maintenance, linge, photographes. Simplifiez la gestion de vos sous-traitants."
     },
     "smartLocksFeature": {
       "title": "Serrures connectées Biloki - Gestion d'accès automatisée",
-      "description": "Automatisez l'accès à vos logements. Intégration avec les principales serrures connectées du marché."
+      "description": "Automatisez l'accès à vos logements avec 15+ marques de serrures connectées. Codes temporaires, check-in autonome et sécurité renforcée."
     },
     "blog-automate": {
       "title": "Comment automatiser la gestion de ses locations saisonnières en 2026 | Biloki",
@@ -2217,11 +2217,11 @@
     },
     "blog-channelManager": {
       "title": "Channel Manager : Le Guide Complet 2026 pour Conciergeries | Biloki",
-      "description": "Découvrez comment un channel manager optimise votre conciergerie : synchronisation automatique, gestion des tarifs, calendriers unifiés. Guide pratique complet."
+      "description": "Guide complet channel manager pour conciergeries : synchronisation Airbnb et Booking, gestion des tarifs, calendriers unifiés. Optimisez votre distribution."
     },
     "blog-ia": {
       "title": "Comment Claude 4.6 va redessiner les contours de la location courte durée ? | Biloki",
-      "description": "L'IA conversationnelle transforme la messagerie voyageurs, la gestion et le pricing. Découvrez comment les conciergeries vont évoluer et pourquoi le modèle devient hybride."
+      "description": "L'IA conversationnelle transforme la messagerie voyageurs et le pricing. Comment les conciergeries évoluent vers un modèle hybride humain-IA en 2026."
     },
     "blog-messaging": {
       "title": "Messagerie automatisée : scripts et workflows pour conciergeries | Biloki",
@@ -2229,7 +2229,7 @@
     },
     "blog-nice": {
       "title": "Nice : Quotas par quartier pour les locations Airbnb - Ce que les conciergeries doivent savoir | Biloki",
-      "description": "Nice durcit sa réglementation Airbnb : quotas par quartier, 90 jours max, autorisations limitées à 3 ans. Comment s'adapter ? Guide complet pour les conciergeries."
+      "description": "Réglementation Airbnb à Nice : quotas par quartier, 90 jours max, autorisations 3 ans. Guide complet pour conciergeries et stratégies d'adaptation 2026."
     }
   }
 }

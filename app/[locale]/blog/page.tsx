@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blogPage");
   return {
     title: `${t("title")} Biloki | Conseils et Guides pour Conciergeries Modernes`,
-    description: "Découvrez nos guides, conseils et actualités sur la gestion de locations saisonnières, les channel managers, l'automatisation et les meilleures pratiques pour conciergeries.",
+    description: "Guides et conseils sur la gestion de locations saisonnières : channel manager, PMS, automatisation, stratégies de conciergerie. Actualités et bonnes pratiques.",
     keywords: "blog conciergerie, gestion location saisonnière, channel manager, PMS, automatisation",
   };
 }
