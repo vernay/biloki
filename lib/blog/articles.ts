@@ -351,6 +351,8 @@ export const articles: BlogArticles = [
       },
     },
   },
+  {
+    slug: "salon-marseille-2026",
     category: "event",
     date: "2026-02-05",
     readTime: "4 min",
