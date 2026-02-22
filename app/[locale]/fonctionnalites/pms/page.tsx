@@ -1,10 +1,14 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import RelatedPages from '@/components/ui/RelatedPages';
 
 export default function PMSPage() {
   const t = useTranslations('featuresPages.pms');
+  const common = useTranslations('common');
+  const relatedT = useTranslations('relatedPages');
+  const locale = useLocale();
 
   const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'billing', 'reporting'] as const;
   const icons = ['📅', '🌐', '⚙️', '💬', '🔐', '💰', '📊'];
@@ -103,6 +107,44 @@ export default function PMSPage() {
             </div>
           </div>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/connexions-api`,
+              title: relatedT('apiConnections.title'),
+              description: relatedT('apiConnections.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/blog`,
+              title: relatedT('blog.title'),
+              description: relatedT('blog.description')
+            }
+          ]}
+          className="mt-16 mb-16"
+        />
       </div>
     </main>
   );

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getAllArticleSlugs } from "@/lib/blog";
 import { Locale } from "@/lib/blog/types";
+import RelatedPages from "@/components/ui/RelatedPages";
 
 interface BlogArticlePageProps {
   params: Promise<{
@@ -41,6 +42,7 @@ export default async function BlogArticlePage({
   const { locale, slug } = await params;
   const article = getArticleBySlug(slug, locale);
   const common = await getTranslations("common");
+  const relatedT = await getTranslations("relatedPages");
 
   if (!article) {
     notFound();
@@ -153,6 +155,44 @@ export default async function BlogArticlePage({
             </svg>
           </a>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/blog`,
+              title: relatedT('blog.title'),
+              description: relatedT('blog.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            }
+          ]}
+          className="mt-12"
+        />
 
         {/* Back to Blog */}
         <div className="mt-8 text-center">

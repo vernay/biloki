@@ -3,11 +3,14 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { locales, type Locale } from '@/lib/i18n/config';
+import RelatedPages from '@/components/ui/RelatedPages';
 
 export default function ChannelManagerPage() {
   const t = useTranslations('featuresPages.channelManager');
+  const common = useTranslations('common');
+  const relatedT = useTranslations('relatedPages');
   const pathname = usePathname();
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
@@ -302,6 +305,45 @@ export default function ChannelManagerPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* Pages connexes pour SEO */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/connexions-api`,
+              title: relatedT('apiConnections.title'),
+              description: relatedT('apiConnections.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/blog`,
+              title: relatedT('blog.title'),
+              description: relatedT('blog.description')
+            }
+          ]}
+        />
       </section>
     </main>
   );

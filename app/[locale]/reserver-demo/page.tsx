@@ -1,11 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import RelatedPages from '@/components/ui/RelatedPages';
 
 export default function ReserverDemoPage() {
   const t = useTranslations('demoPage');
   const common = useTranslations('common');
+  const relatedT = useTranslations('relatedPages');
+  const locale = useLocale();
   
   const [formData, setFormData] = useState({
     email: '',
@@ -249,6 +252,44 @@ export default function ReserverDemoPage() {
             )}
           </div>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/contact`,
+              title: relatedT('contact.title'),
+              description: relatedT('contact.description')
+            },
+            {
+              href: `/${locale}/equipe`,
+              title: "Notre équipe",
+              description: "Découvrez les personnes derrière Biloki"
+            }
+          ]}
+          className="mt-16"
+        />
       </div>
     </main>
   );

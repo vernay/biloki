@@ -1,13 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
+import RelatedPages from '@/components/ui/RelatedPages';
+import { useLocale } from 'next-intl';
 
 export default function ContactPage() {
   const t = useTranslations('contactPage');
   const tCommon = useTranslations('common');
+  const relatedT = useTranslations('relatedPages');
+  const locale = useLocale();
   const formattedSupportPhone = (() => {
     const digits = SUPPORT_PHONE.replace(/\D/g, '');
     const normalized = digits.startsWith('33') ? `0${digits.slice(2)}` : digits;
@@ -79,6 +83,31 @@ export default function ContactPage() {
     { q: t('faq.q3'), a: t('faq.a3') },
     { q: t('faq.q4'), a: t('faq.a4') },
   ];
+
+  // JSON-LD pour SEO FAQ
+  useEffect(() => {
+    const faqJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqJsonLd);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [faqItems]);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50">
@@ -324,6 +353,45 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Pages connexes pour SEO */}
+      <section className="py-12 max-w-6xl mx-auto px-4 sm:px-6">
+        <RelatedPages
+          title={tCommon('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/blog`,
+              title: relatedT('blog.title'),
+              description: relatedT('blog.description')
+            },
+            {
+              href: `/${locale}/equipe`,
+              title: 'Notre équipe',
+              description: 'Découvrez les personnes derrière Biloki'
+            }
+          ]}
+        />
       </section>
     </main>
   );

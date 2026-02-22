@@ -32,7 +32,50 @@
     "properties": "logements",
     "perMonth": "par mois",
     "monthly": "Mensuel",
-    "annual": "Annuel"
+    "annual": "Annuel",
+    "relatedPages": "Voir aussi"
+  },
+  "relatedPages": {
+    "pricing": {
+      "title": "Voir nos tarifs",
+      "description": "Calculez le prix selon votre nombre de logements"
+    },
+    "features": {
+      "title": "Découvrir les fonctionnalités",
+      "description": "PMS, Channel Manager, messagerie IA et plus"
+    },
+    "demo": {
+      "title": "Réserver une démo gratuite",
+      "description": "Échangez avec nos experts en 30 minutes"
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "description": "Notre équipe vous répond rapidement"
+    },
+    "trial": {
+      "title": "Essai gratuit 14 jours",
+      "description": "Testez toutes les fonctionnalités sans engagement"
+    },
+    "channelManager": {
+      "title": "Channel Manager",
+      "description": "Synchronisez vos calendriers sur toutes les plateformes"
+    },
+    "pms": {
+      "title": "PMS - Gestion complète",
+      "description": "Centralisez tous vos séjours en un seul endroit"
+    },
+    "apiConnections": {
+      "title": "Connexions API",
+      "description": "Airbnb, Booking.com et 50+ intégrations"
+    },
+    "smartLocks": {
+      "title": "Serrures connectées",
+      "description": "Automatisez l'accès à vos logements"
+    },
+    "blog": {
+      "title": "Lire le blog Biloki",
+      "description": "Guides et conseils pour conciergeries"
+    }
   },
   "header": {
     "home": "Accueil",

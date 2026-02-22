@@ -30,9 +30,51 @@ import AppBanner from "@/components/sections/AppBanner";
 import PricingCalculator from "@/components/sections/PricingCalculator";
 import CTASection from "@/components/sections/CTASection";
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  const softwareAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Biloki",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "5.00",
+      "priceCurrency": "EUR",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "5.00",
+        "priceCurrency": "EUR",
+        "unitText": "par logement et par mois"
+      }
+    },
+    "description": "PMS et Channel Manager tout-en-un pour la gestion de locations saisonnières. Synchronisez vos calendriers sur Airbnb, Booking.com et plus de 50 plateformes.",
+    "featureList": [
+      "Channel Manager multi-plateformes",
+      "PMS complet",
+      "Messagerie IA automatisée",
+      "Gestion des accès et serrures connectées",
+      "Facturation et comptabilité",
+      "Marketplace de prestataires"
+    ],
+    "screenshot": "https://www.biloki.fr/images/interfaces/gestionnaire.png",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+      />
       <Hero />
       <PartnersScroll />
       <FeaturesSection />

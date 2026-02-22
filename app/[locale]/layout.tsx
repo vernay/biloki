@@ -109,8 +109,24 @@ function buildJsonLd({
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Biloki",
+      legalName: "SAS Biloki",
       url: baseUrl,
       logo: `${baseUrl}/logos/biloki-logo-full.png`,
+      description: "PMS et Channel Manager pour la gestion de locations saisonnières et conciergeries",
+      foundingDate: "2023",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "4 rue Voltaire",
+        addressLocality: "Nantes",
+        postalCode: "44000",
+        addressCountry: "FR"
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "contact@biloki.fr",
+        availableLanguage: ["French", "English", "Spanish", "Portuguese"]
+      },
       sameAs: [
         "https://www.instagram.com/bilokiofficial/",
         "https://www.linkedin.com/company/biloki/",

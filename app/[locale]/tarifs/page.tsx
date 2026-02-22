@@ -1,15 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { calculatePrice, getTierRange, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE } from '@/lib/pricing-config';
 import { COLORS } from '@/lib/design-config';
 import WebappLink from '@/components/ui/WebappLink';
+import RelatedPages from '@/components/ui/RelatedPages';
 
 export default function TarifsPage() {
   const t = useTranslations('pricingPage');
   const common = useTranslations('common');
   const trialT = useTranslations('trialPage');
+  const relatedT = useTranslations('relatedPages');
   const locale = useLocale();
   
   const [logements, setLogements] = useState(5);
@@ -39,6 +41,44 @@ export default function TarifsPage() {
   const lastUpdate = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-US', {
     day: 'numeric', month: 'long', year: 'numeric'
   }).format(new Date());
+
+  // JSON-LD pour SEO avec grille tarifaire dégressive
+  useEffect(() => {
+    const productJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Biloki - PMS et Channel Manager",
+      "description": "Logiciel de gestion de locations saisonnières avec tarification dégressive selon le nombre de logements",
+      "brand": {
+        "@type": "Brand",
+        "name": "Biloki"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "16.99",
+        "highPrice": "1598.00",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": "7.99",
+          "maxPrice": "16.99",
+          "priceCurrency": "EUR",
+          "unitText": "par logement et par mois"
+        },
+        "description": "Tarification dégressive : de 16,99€/logement (1-3 logements) à 7,99€/logement (100-200 logements)",
+        "availability": "https://schema.org/InStock"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(productJsonLd);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -370,6 +410,44 @@ export default function TarifsPage() {
             </div>
           </div>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/commencer-gratuitement`,
+              title: relatedT('trial.title'),
+              description: relatedT('trial.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/contact`,
+              title: relatedT('contact.title'),
+              description: relatedT('contact.description')
+            },
+            {
+              href: `/${locale}/connexions-api`,
+              title: relatedT('apiConnections.title'),
+              description: relatedT('apiConnections.description')
+            }
+          ]}
+          className="mt-16"
+        />
       </div>
     </main>
   );

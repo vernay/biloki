@@ -1,12 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { FREE_TRIAL_DAYS_LABEL } from '@/lib/pricing-config';
+import RelatedPages from '@/components/ui/RelatedPages';
 
 export default function CommencerGratuitementPage() {
   const t = useTranslations('trialPage');
   const common = useTranslations('common');
+  const relatedT = useTranslations('relatedPages');
+  const locale = useLocale();
   
   const [formData, setFormData] = useState({
     prenom: '',
@@ -276,6 +279,44 @@ export default function CommencerGratuitementPage() {
             </form>
           </div>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/connexions-api`,
+              title: relatedT('apiConnections.title'),
+              description: relatedT('apiConnections.description')
+            },
+            {
+              href: `/${locale}/blog`,
+              title: relatedT('blog.title'),
+              description: relatedT('blog.description')
+            }
+          ]}
+          className="mt-16"
+        />
       </div>
     </main>
   );

@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { getArticlesForLocale } from "@/lib/blog";
 import { Locale } from "@/lib/blog/types";
+import RelatedPages from "@/components/ui/RelatedPages";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blogPage");
@@ -18,6 +19,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
   const articles = getArticlesForLocale(locale);
   const t = await getTranslations("blogPage");
   const common = await getTranslations("common");
+  const relatedT = await getTranslations("relatedPages");
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
@@ -113,6 +115,44 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
             </button>
           </div>
         </div>
+
+        {/* Pages connexes pour SEO */}
+        <RelatedPages
+          title={common('relatedPages')}
+          links={[
+            {
+              href: `/${locale}/fonctionnalites/channel-manager`,
+              title: relatedT('channelManager.title'),
+              description: relatedT('channelManager.description')
+            },
+            {
+              href: `/${locale}/fonctionnalites/pms`,
+              title: relatedT('pms.title'),
+              description: relatedT('pms.description')
+            },
+            {
+              href: `/${locale}/tarifs`,
+              title: relatedT('pricing.title'),
+              description: relatedT('pricing.description')
+            },
+            {
+              href: `/${locale}/reserver-demo`,
+              title: relatedT('demo.title'),
+              description: relatedT('demo.description')
+            },
+            {
+              href: `/${locale}/connexions-api`,
+              title: relatedT('apiConnections.title'),
+              description: relatedT('apiConnections.description')
+            },
+            {
+              href: `/${locale}/contact`,
+              title: relatedT('contact.title'),
+              description: relatedT('contact.description')
+            }
+          ]}
+          className="mt-16"
+        />
       </div>
     </main>
   );
