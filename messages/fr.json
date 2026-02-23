@@ -1418,7 +1418,17 @@
           "q": "Quel est le support client ?",
           "a": "Un support chat 24/7 inclus dans l'essai gratuit. Pour les forfaits Premium, bénéficiez d'un support prioritaire et d'une assistance IA dédiée."
         }
-      ]
+      ],
+      "ctaLabels": {
+        "reservations": "Découvrir les 4 interfaces",
+        "channelManager": "En savoir plus sur le Channel Manager",
+        "operations": "Voir la gestion des opérations",
+        "communication": "Découvrir la messagerie IA",
+        "access": "Découvrir les serrures connectées",
+        "reporting": "Voir les plans tarifaires",
+        "marketplaceApi": "Voir toutes les intégrations",
+        "freeTrial": "Essai gratuit"
+      }
     },
     "marketplace": {
       "title": "Intégrations",

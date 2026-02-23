@@ -33,13 +33,13 @@ export default function PMSPage() {
   
   // CTA links pour chaque section
   const sectionLinks: Record<string, { href: string; label: string }> = {
-    reservations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Découvrir les 4 interfaces' },
-    channelManager: { href: `/${locale}/fonctionnalites/channel-manager`, label: 'En savoir plus sur le Channel Manager' },
-    operations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Voir la gestion des opérations' },
-    communication: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Découvrir la messagerie IA' },
-    access: { href: `/${locale}/fonctionnalites/serrures-connectees`, label: 'Découvrir les serrures connectées' },
-    reporting: { href: `/${locale}/tarifs`, label: 'Voir les plans tarifaires' },
-    marketplaceApi: { href: `/${locale}/fonctionnalites/marketplace-api`, label: 'Voir toutes les intégrations' }
+    reservations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.reservations') },
+    channelManager: { href: `/${locale}/fonctionnalites/channel-manager`, label: t('ctaLabels.channelManager') },
+    operations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.operations') },
+    communication: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.communication') },
+    access: { href: `/${locale}/fonctionnalites/serrures-connectees`, label: t('ctaLabels.access') },
+    reporting: { href: `/${locale}/tarifs`, label: t('ctaLabels.reporting') },
+    marketplaceApi: { href: `/${locale}/fonctionnalites/marketplace-api`, label: t('ctaLabels.marketplaceApi') }
   };
 
   const sections = sectionKeys.map((key, index) => ({
@@ -106,7 +106,7 @@ export default function PMSPage() {
                         href="/commencer-gratuitement"
                         className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-[#0293e6] transition-colors"
                       >
-                        Essai gratuit
+                        {t('ctaLabels.freeTrial')}
                       </Link>
                       <Link
                         href={sectionLinks[sectionKeys[index]].href}
@@ -229,7 +229,7 @@ export default function PMSPage() {
 
         {/* FAQ Section */}
         <div className="mt-20 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-0">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('faqTitle')}</h2>
               <p className="text-lg text-gray-600">{t('faqDescription')}</p>
@@ -237,14 +237,14 @@ export default function PMSPage() {
 
             <div className="space-y-4">
               {t.raw('faq').map((item: any, index: number) => (
-                <details key={index} className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow border border-gray-100">
-                  <summary className="flex items-center justify-between font-bold text-gray-900 text-lg">
-                    <span>{item.q}</span>
+                <details key={index} className="bg-white rounded-lg shadow-md p-4 sm:p-6 cursor-pointer hover:shadow-lg transition-shadow border border-gray-100">
+                  <summary className="flex items-center justify-between font-bold text-gray-900 text-base sm:text-lg">
+                    <span className="pr-4">{item.q}</span>
                     <svg className="w-6 h-6 text-primary flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <p className="text-gray-600 mt-4 leading-relaxed">{item.a}</p>
+                  <p className="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">{item.a}</p>
                 </details>
               ))}
             </div>

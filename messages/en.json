@@ -32,7 +32,50 @@
     "properties": "properties",
     "perMonth": "per month",
     "monthly": "Monthly",
-    "annual": "Annual"
+    "annual": "Annual",
+    "relatedPages": "See also"
+  },
+  "relatedPages": {
+    "pricing": {
+      "title": "View our pricing",
+      "description": "Calculate the price based on your number of properties"
+    },
+    "features": {
+      "title": "Discover features",
+      "description": "PMS, Channel Manager, AI messaging and more"
+    },
+    "demo": {
+      "title": "Book a free demo",
+      "description": "Talk with our experts in 30 minutes"
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "Our team responds quickly"
+    },
+    "trial": {
+      "title": "14-day free trial",
+      "description": "Test all features with no commitment"
+    },
+    "channelManager": {
+      "title": "Channel Manager",
+      "description": "Synchronize your calendars across all platforms"
+    },
+    "pms": {
+      "title": "PMS - Complete Management",
+      "description": "Centralize all your stays in one place"
+    },
+    "apiConnections": {
+      "title": "API Connections",
+      "description": "Airbnb, Booking.com and 50+ integrations"
+    },
+    "smartLocks": {
+      "title": "Smart locks",
+      "description": "Automate access to your properties"
+    },
+    "blog": {
+      "title": "Read Biloki blog",
+      "description": "Guides and tips for property managers"
+    }
   },
   "header": {
     "home": "Home",
@@ -1403,12 +1446,32 @@
             "Operational cost tracking",
             "Performance analysis to justify added value"
           ]
+        },
+        "marketplaceApi": {
+          "title": "Connect your favorite tools to Biloki",
+          "description": "Easily integrate Biloki with your existing applications through our partner marketplace and open API.",
+          "features": [
+            "Connect to over 120 OTAs and platforms",
+            "Connect your smart locks with our partners",
+            "Integrate your accounting, payment and communication tools",
+            "Synchronize your data via an open API"
+          ]
         }
       },
       "ctaTitle": "Ready to transform your concierge business?",
       "ctaDescription": "Discover how Biloki can centralize and automate your entire business to save time and improve profitability.",
       "bookDemo": "Book a demo",
-      "freeTrial": "Free trial (1 month)"
+      "freeTrial": "Free trial (1 month)",
+      "ctaLabels": {
+        "reservations": "Discover the 4 interfaces",
+        "channelManager": "Learn more about the Channel Manager",
+        "operations": "See operations management",
+        "communication": "Discover AI messaging",
+        "access": "Discover smart locks",
+        "reporting": "See pricing plans",
+        "marketplaceApi": "See all integrations",
+        "freeTrial": "Free trial"
+      }
     },
     "marketplace": {
       "title": "Integrations",

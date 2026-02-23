@@ -32,7 +32,50 @@
     "properties": "propiedades",
     "perMonth": "al mes",
     "monthly": "Mensual",
-    "annual": "Anual"
+    "annual": "Anual",
+    "relatedPages": "Ver también"
+  },
+  "relatedPages": {
+    "pricing": {
+      "title": "Ver nuestros precios",
+      "description": "Calcula el precio según tu número de propiedades"
+    },
+    "features": {
+      "title": "Descubrir las funcionalidades",
+      "description": "PMS, Channel Manager, mensajería IA y más"
+    },
+    "demo": {
+      "title": "Reservar una demo gratuita",
+      "description": "Habla con nuestros expertos en 30 minutos"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "Nuestro equipo responde rápidamente"
+    },
+    "trial": {
+      "title": "Prueba gratuita 14 días",
+      "description": "Prueba todas las funcionalidades sin compromiso"
+    },
+    "channelManager": {
+      "title": "Channel Manager",
+      "description": "Sincroniza tus calendarios en todas las plataformas"
+    },
+    "pms": {
+      "title": "PMS - Gestión completa",
+      "description": "Centraliza todas tus reservas en un solo lugar"
+    },
+    "apiConnections": {
+      "title": "Conexiones API",
+      "description": "Airbnb, Booking.com y más de 50 integraciones"
+    },
+    "smartLocks": {
+      "title": "Cerraduras inteligentes",
+      "description": "Automatiza el acceso a tus propiedades"
+    },
+    "blog": {
+      "title": "Leer el blog de Biloki",
+      "description": "Guías y consejos para conserjerías"
+    }
   },
   "header": {
     "home": "Inicio",
@@ -1403,12 +1446,32 @@
             "Seguimiento de costes operativos",
             "Análisis de rendimiento para justificar el valor añadido"
           ]
+        },
+        "marketplaceApi": {
+          "title": "Conecta tus herramientas favoritas a Biloki",
+          "description": "Integra fácilmente Biloki con tus aplicaciones existentes a través de nuestro marketplace de partners y nuestra API abierta.",
+          "features": [
+            "Conéctate a más de 120 OTAs y plataformas",
+            "Conecta tus cerraduras inteligentes con nuestros partners",
+            "Integra tus herramientas de contabilidad, pago y comunicación",
+            "Sincroniza tus datos mediante una API abierta"
+          ]
         }
       },
       "ctaTitle": "¿Listo para transformar tu negocio de conserjería?",
       "ctaDescription": "Descubre cómo Biloki puede centralizar y automatizar todo tu negocio para ahorrar tiempo y mejorar la rentabilidad.",
       "bookDemo": "Reservar una demostración",
-      "freeTrial": "Prueba gratuita (1 mes)"
+      "freeTrial": "Prueba gratuita (1 mes)",
+      "ctaLabels": {
+        "reservations": "Descubrir las 4 interfaces",
+        "channelManager": "Saber más sobre el Channel Manager",
+        "operations": "Ver la gestión de operaciones",
+        "communication": "Descubrir la mensajería IA",
+        "access": "Descubrir las cerraduras inteligentes",
+        "reporting": "Ver planes de precios",
+        "marketplaceApi": "Ver todas las integraciones",
+        "freeTrial": "Prueba gratuita"
+      }
     },
     "marketplace": {
       "title": "Integraciones",
