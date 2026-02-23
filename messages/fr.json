@@ -1395,6 +1395,10 @@
       "faqDescription": "Trouvez les réponses à vos questions sur notre PMS Biloki",
       "faq": [
         {
+          "q": "Qu'est-ce qu'un PMS pour la location saisonnière ?",
+          "a": "Un PMS (Property Management System) est un logiciel de gestion immobilière conçu pour centraliser et automatiser la gestion de locations courte durée. Il permet de gérer les réservations, les calendriers, les tarifs, la communication avec les voyageurs, les opérations de ménage et maintenance, ainsi que le suivi financier. Biloki est un PMS tout-en-un qui intègre également un channel manager, des serrures connectées et une IA pour automatiser votre activité de conciergerie."
+        },
+        {
           "q": "Avec combien de logements peut-on commencer ?",
           "a": "Biloki s'adapte à votre croissance. Vous pouvez commencer avec 1 seul logement et augmenter jusqu'à plusieurs centaines. Il n'y a aucune limite."
         },
@@ -1407,16 +1411,12 @@
           "a": "Biloki s'intègre à plus de 120 OTA et plateformes : Airbnb, Booking.com, Vrbo, Expedia, Tripadvisor, Agoda, HomeAway et bien d'autres. Si votre OTA n'est pas dans la liste, nous avons une API ouverte pour la connecter."
         },
         {
-          "q": "Biloki compatibilité avec les serrures connectées ?",
+          "q": "Biloki est-il compatible avec les serrures connectées ?",
           "a": "Oui, Biloki s'intègre avec les principales serrures : Nuki, Yale, August, Igloohome et d'autres. Nous créons automatiquement des codes d'accès temporaires pour chaque locataire et prestataire."
         },
         {
           "q": "Est-ce que je peux exporter mes données ?",
           "a": "Bien sûr ! Vos données vous appartiennent. Vous pouvez exporter tout à tout moment. Biloki dispose aussi d'une API ouverte pour une intégration personnalisée."
-        },
-        {
-          "q": "Quel est le support client ?",
-          "a": "Un support chat 24/7 inclus dans l'essai gratuit. Pour les forfaits Premium, bénéficiez d'un support prioritaire et d'une assistance IA dédiée."
         }
       ],
       "ctaLabels": {

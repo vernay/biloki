@@ -1471,7 +1471,35 @@
         "reporting": "See pricing plans",
         "marketplaceApi": "See all integrations",
         "freeTrial": "Free trial"
-      }
+      },
+      "faqTitle": "Frequently Asked Questions",
+      "faqDescription": "Find answers to your questions about our Biloki PMS",
+      "faq": [
+        {
+          "q": "What is a PMS for vacation rentals?",
+          "a": "A PMS (Property Management System) is real estate management software designed to centralize and automate short-term rental management. It manages reservations, calendars, rates, guest communication, cleaning and maintenance operations, as well as financial tracking. Biloki is an all-in-one PMS that also integrates a channel manager, smart locks, and AI to automate your property management business."
+        },
+        {
+          "q": "How many properties can I start with?",
+          "a": "Biloki adapts to your growth. You can start with just 1 property and scale up to several hundred. There are no limits."
+        },
+        {
+          "q": "How long does it take to integrate Biloki?",
+          "a": "Integration is simple and fast. You can be operational in less than 2 hours. Our teams can support you for more advanced customization."
+        },
+        {
+          "q": "Which OTAs are supported?",
+          "a": "Biloki integrates with over 120 OTAs and platforms: Airbnb, Booking.com, Vrbo, Expedia, Tripadvisor, Agoda, HomeAway and many others. If your OTA is not in the list, we have an open API to connect it."
+        },
+        {
+          "q": "Is Biloki compatible with smart locks?",
+          "a": "Yes, Biloki integrates with major smart locks: Nuki, Yale, August, Igloohome and others. We automatically create temporary access codes for each guest and service provider."
+        },
+        {
+          "q": "Can I export my data?",
+          "a": "Of course! Your data belongs to you. You can export everything at any time. Biloki also has an open API for custom integration."
+        }
+      ]
     },
     "marketplace": {
       "title": "Integrations",

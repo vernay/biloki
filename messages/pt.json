@@ -1356,7 +1356,35 @@
         "reporting": "Ver planos de preços",
         "marketplaceApi": "Ver todas as integrações",
         "freeTrial": "Teste gratuito"
-      }
+      },
+      "faqTitle": "Perguntas frequentes",
+      "faqDescription": "Encontre respostas para suas perguntas sobre nosso PMS Biloki",
+      "faq": [
+        {
+          "q": "O que é um PMS para aluguel por temporada?",
+          "a": "Um PMS (Property Management System) é um software de gestão imobiliária projetado para centralizar e automatizar a gestão de aluguéis de curta temporada. Ele permite gerenciar reservas, calendários, tarifas, comunicação com hóspedes, operações de limpeza e manutenção, além de acompanhamento financeiro. Biloki é um PMS completo que também integra um channel manager, fechaduras inteligentes e IA para automatizar seu negócio de gestão de propriedades."
+        },
+        {
+          "q": "Com quantas propriedades posso começar?",
+          "a": "Biloki se adapta ao seu crescimento. Você pode começar com apenas 1 propriedade e escalar até várias centenas. Não há limites."
+        },
+        {
+          "q": "Quanto tempo leva para integrar o Biloki?",
+          "a": "A integração é simples e rápida. Você pode estar operacional em menos de 2 horas. Nossas equipes podem ajudá-lo para uma personalização mais avançada."
+        },
+        {
+          "q": "Quais OTAs são suportadas?",
+          "a": "Biloki se integra com mais de 120 OTAs e plataformas: Airbnb, Booking.com, Vrbo, Expedia, Tripadvisor, Agoda, HomeAway e muitas outras. Se sua OTA não estiver na lista, temos uma API aberta para conectá-la."
+        },
+        {
+          "q": "Biloki é compatível com fechaduras inteligentes?",
+          "a": "Sim, Biloki se integra com as principais fechaduras: Nuki, Yale, August, Igloohome e outras. Criamos automaticamente códigos de acesso temporários para cada hóspede e prestador de serviços."
+        },
+        {
+          "q": "Posso exportar meus dados?",
+          "a": "Claro! Seus dados pertencem a você. Você pode exportar tudo a qualquer momento. Biloki também possui uma API aberta para integração personalizada."
+        }
+      ]
     },
     "marketplace": {
       "title": "Integrações",
