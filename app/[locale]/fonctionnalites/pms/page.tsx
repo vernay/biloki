@@ -30,6 +30,17 @@ export default function PMSPage() {
 
   const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'reporting', 'marketplaceApi'] as const;
   const icons = ['📅', '🌐', '⚙️', '💬', '🔐', '💰', '📊'];
+  
+  // CTA links pour chaque section
+  const sectionLinks: Record<string, { href: string; label: string }> = {
+    reservations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Découvrir les 4 interfaces' },
+    channelManager: { href: `/${locale}/fonctionnalites/channel-manager`, label: 'En savoir plus sur le Channel Manager' },
+    operations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Voir la gestion des opérations' },
+    communication: { href: `/${locale}/fonctionnalites/4-interfaces`, label: 'Découvrir la messagerie IA' },
+    access: { href: `/${locale}/fonctionnalites/serrures-connectees`, label: 'Découvrir les serrures connectées' },
+    reporting: { href: `/${locale}/tarifs`, label: 'Voir les plans tarifaires' },
+    marketplaceApi: { href: `/${locale}/fonctionnalites/marketplace-api`, label: 'Voir toutes les intégrations' }
+  };
 
   const sections = sectionKeys.map((key, index) => ({
     title: t(`sections.${key}.title`),
@@ -88,6 +99,25 @@ export default function PMSPage() {
                         </li>
                       ))}
                     </ul>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-gray-200">
+                      <Link
+                        href="/commencer-gratuitement"
+                        className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-[#0293e6] transition-colors"
+                      >
+                        Essai gratuit
+                      </Link>
+                      <Link
+                        href={sectionLinks[sectionKeys[index]].href}
+                        className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors"
+                      >
+                        {sectionLinks[sectionKeys[index]].label}
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
