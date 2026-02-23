@@ -2,7 +2,9 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import RelatedPages from '@/components/ui/RelatedPages';
+import LogosCarousel from '@/components/sections/LogosCarousel';
 
 export default function PMSPage() {
   const t = useTranslations('featuresPages.pms');
@@ -10,7 +12,24 @@ export default function PMSPage() {
   const relatedT = useTranslations('relatedPages');
   const locale = useLocale();
 
-  const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'billing', 'reporting'] as const;
+  // Logos pour l'animation de la section Marketplace API
+  const marketplaceLogos = [
+    { name: "Airbnb", logo: "/images/logo-partenaires/Airbnb.webp" },
+    { name: "Booking.com", logo: "/images/logo-partenaires/Booking.com.png" },
+    { name: "Vrbo", logo: "/images/logo-partenaires/vrbo.png" },
+    { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png" },
+    { name: "Stripe", logo: "/images/logo-partenaires/Stripe.png" },
+    { name: "PayPal", logo: "/images/logo-partenaires/paypal.png" },
+    { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png" },
+    { name: "Pennylane", logo: "/images/logo-partenaires/logo-pennylane.png" },
+    { name: "Nuki", logo: "/images/logo-partenaires/nuki.png" },
+    { name: "Yale", logo: "/images/logo-partenaires/YaleJPG.jpg" },
+    { name: "August", logo: "/images/logo-partenaires/August.webp" },
+    { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png" },
+    { name: "HubSpot", logo: "/images/logo-partenaires/HubSpot.png" },
+  ];
+
+  const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'reporting', 'marketplaceApi'] as const;
   const icons = ['📅', '🌐', '⚙️', '💬', '🔐', '💰', '📊'];
 
   const sections = sectionKeys.map((key, index) => ({
@@ -23,7 +42,7 @@ export default function PMSPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-[1400px] mx-auto px-6 py-20">
         {/* Title with gradient */}
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">
           {t('title')} <span className="text-primary">{t('titleHighlight')}</span>
@@ -33,52 +52,127 @@ export default function PMSPage() {
         </p>
 
         {/* Sections Grid */}
-        <div className="space-y-8">
-          {sections.map((section, index) => (
-            <div 
-              key={index}
-              id={section.anchor}
-              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
-            >
-              <div className="grid md:grid-cols-3 gap-8 items-stretch">
-                {/* Visual Side */}
-                <div className={`hidden md:flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 p-12 group-hover:scale-105 transition-transform duration-300 overflow-hidden ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                  <div className="text-6xl">{section.icon}</div>
-                </div>
-
-                {/* Content Side */}
-                <div className={`md:col-span-2 p-8 md:p-12 flex flex-col justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="text-5xl flex-shrink-0 mt-1 md:hidden">{section.icon}</div>
-                    <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-                      {section.title}
-                    </h2>
-                  </div>
+        <div className="space-y-16 md:space-y-20">
+          {sections.map((section, index) => {
+            const isReversed = index % 2 !== 0;
+            // Pour la section Channel Manager (index 1), on donne beaucoup plus d'espace à l'image
+            const gridClass = index === 1 
+              ? "grid md:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-center"
+              : "grid md:grid-cols-2 gap-10 lg:gap-14 items-center";
+            
+            return (
+              <div
+                key={index}
+                id={section.anchor}
+                className={gridClass}
+              >
+                {/* Contenu texte */}
+                <div className={isReversed ? 'md:order-2' : ''}>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+                    {section.title}
+                  </h2>
                   
-                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mt-3 text-base md:text-lg leading-relaxed">
                     {section.description}
                   </p>
 
-                  <div className="space-y-3">
-                    <p className="font-semibold text-gray-900 flex items-center gap-2">
+                  <div className="mt-6">
+                    <p className="font-semibold text-gray-900 flex items-center gap-2 mb-3">
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
                       {t('withBiloki')}
                     </p>
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-3">
                       {section.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-3">
+                        <li key={featureIndex} className="flex items-start gap-3 text-gray-700">
                           <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
-                          <span className="text-gray-700">{feature}</span>
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
+
+                {/* Image ou icône */}
+                <div className={isReversed ? 'md:order-1' : ''}>
+                  {index === 0 ? (
+                    <div className="relative w-full max-h-96">
+                      <Image 
+                        src="/images/Calendrier.png" 
+                        alt="Calendrier des réservations" 
+                        width={4000}
+                        height={2400}
+                        className="w-full h-auto object-contain"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ) : index === 1 ? (
+                    <div className="relative w-full">
+                      <Image 
+                        src="/images/connexion-ota.png" 
+                        alt="Connexions OTA" 
+                        width={4000}
+                        height={4000}
+                        className="w-full h-auto max-w-none"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ) : index === 2 ? (
+                    <div className="relative w-full">
+                      <Image 
+                        src="/images/prestataires.png" 
+                        alt="Gestion des prestataires" 
+                        width={4000}
+                        height={4000}
+                        className="w-full h-auto max-w-none"
+                        priority={index === 0}
+                      />
+                    </div>
+                  ) : index === 3 ? (
+                    <div className="relative w-full">
+                      <Image 
+                        src="/images/Messagerie.svg" 
+                        alt="Messagerie centralisée" 
+                        width={4000}
+                        height={4000}
+                        className="w-full h-auto max-w-none"
+                        priority={false}
+                      />
+                    </div>
+                  ) : index === 4 ? (
+                    <div className="relative w-full">
+                      <Image 
+                        src="/images/Serrures.png" 
+                        alt="Gestion des accès et serrures connectées" 
+                        width={4000}
+                        height={4000}
+                        className="w-full h-auto max-w-none"
+                        priority={false}
+                      />
+                    </div>
+                  ) : index === 5 ? (
+                    <div className="relative w-full">
+                      <Image 
+                        src="/images/Reporting.png" 
+                        alt="Reporting et pilotage de la performance" 
+                        width={4000}
+                        height={4000}
+                        className="w-full h-auto max-w-none"
+                        priority={false}
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative w-full">
+                      <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8">
+                        <LogosCarousel logos={marketplaceLogos} rows={4} />
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* CTA Section */}

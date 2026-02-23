@@ -1344,32 +1344,32 @@
       "title": "Un PMS complet pour gérer votre activité",
       "titleHighlight": "avec ses 4 interfaces",
       "description": "Centralisez, automatisez et pilotez toute l'activité de votre conciergerie en un seul outil puissant.",
-      "withBiloki": "Avec Biloki, vous pouvez :",
+      "withBiloki": "Avec Biloki :",
       "sections": {
         "reservations": {
-          "title": "Gestion des réservations & calendrier",
+          "title": "Gérez toutes vos réservations sur un seul tableau de bord",
           "description": "Centralisez toutes vos réservations (Airbnb, Booking, site direct, etc.) dans un calendrier unique et synchronisé.",
           "features": ["Synchronisation automatique des calendriers multi-plateformes", "Éviter les doubles réservations", "Vue claire par logement, par jour et par canal", "Gestion des arrivées et départs en temps réel"]
         },
         "channelManager": {
-          "title": "Channel Manager intégré",
-          "description": "Publiez vos annonces et gérez vos tarifs sur 120+ plateformes depuis un seul tableau de bord.",
+          "title": "Diffusez vos annonces sur toutes les OTA depuis un seul endroit",
+          "description": "Connectez vous aux plateformes de réservation et importez l'ensemble de vos hébergements sur la plateforme en un clic",
           "features": ["Publication multi-plateformes depuis un seul outil", "Mise à jour automatique des prix et disponibilités", "Fermeture/ouverture de dates en un clic", "Gestion des restrictions (minimum de nuits, check-in/out)"]
         },
         "operations": {
-          "title": "Automatisation des opérations de conciergerie",
-          "description": "Créez automatiquement les missions de ménage, planifiez les interventions et affectez les prestataires.",
+          "title": "Orchestrez vos opérations sans effort",
+          "description": "Créez automatiquement les missions de ménage, planifiez les interventions et affectez les prestataires. Vos salariés bénéficient d'un accès utilisateur dédié.",
           "features": ["Création automatique des missions de ménage", "Missions envoyées directement sur l'interface prestataire en temps réel", "Planification du linge, états des lieux, maintenance", "Affectation automatique des prestataires", "Checklists de nettoyage par logement"]
         },
         "communication": {
-          "title": "Communication voyageurs (guest experience)",
-          "description": "Centralisez et automatisez tous vos échanges avec les voyageurs en un seul endroit.",
-          "features": ["Messages automatiques avant l'arrivée (codes, infos)", "Instructions de check-in / check-out personnalisées", "Centralisation Airbnb, Booking, WhatsApp, SMS", "Support IA 24/7 pour les questions des voyageurs"]
+          "title": "Discutez avec tous vos interlocuteurs au même endroit",
+          "description": "Une messagerie centralisée pour discuter avec les locataires, les prestataires, les propriétaires via les canaux OTA's, WhatsApp, SMS et bien plus.",
+          "features": ["Centralisez tous les messages depuis Airbnb, Booking, WhatsApp, SMS et canaux OTA", "Messagerie unifiée avec locataires, prestataires et propriétaires", "Messages automatiques avant l'arrivée (codes, infos essentielles)", "Support IA 24/7 disponible pour les questions des voyageurs"]
         },
         "access": {
-          "title": "Gestion des accès & objets connectés",
+          "title": "Automatisez l'accès à vos logements en toute sérénité",
           "description": "Générez des codes temporaires et gérez automatiquement l'accès aux serrures connectées.",
-          "features": ["Génération automatique de codes d'accès temporaires", "Activation/désactivation des accès selon les dates de réservation", "Intégration avec serrures connectées et thermostats", "Historique complet des accès"]
+          "features": ["Connecter vos serrures connectées à l'application", "Génération automatique de codes d'accès temporaires pour vos locataires et prestataires", "Activation/désactivation des accès selon les dates de réservation ou de prestations", "Historique complet des accès"]
         },
         "billing": {
           "title": "Facturation, commissions & propriétaires",
@@ -1377,9 +1377,14 @@
           "features": ["Calcul automatique des commissions", "Facturation propriétaires et pré-facturation", "Ventilation revenus, frais, ménages", "Tableaux de bord détaillés par propriétaire ou par bien"]
         },
         "reporting": {
-          "title": "Reporting & pilotage de la performance",
+          "title": "Analysez vos performances en un coup d'œil",
           "description": "Obtenez une vision claire de vos performances pour prendre les bonnes décisions.",
-          "features": ["Taux d'occupation en temps réel", "Revenu par logement et par plateforme", "Suivi des coûts opérationnels", "Analyse de performance pour justifier la valeur ajoutée"]
+          "features": ["Taux d'occupation en temps réel", "Revenu par logement et par plateforme", "Suivi des coûts opérationnels", "Les propriétaires peuvent consulter les performances de leurs logements sur leur interface", "Analyse de performance pour justifier la valeur ajoutée"]
+        },
+        "marketplaceApi": {
+          "title": "Connectez vos outils préférés à Biloki",
+          "description": "Intégrez facilement Biloki avec vos applications existantes grâce à notre marketplace de partenaires et notre API ouverte.",
+          "features": ["Connectez-vous à plus de 120 OTA et plateformes", "Connectez vos serrures connectées avec nos partenaires", "Intégrez vos outils comptables, paiement et communication", "Synchronisez vos données via une API ouverte"]
         }
       },
       "ctaTitle": "Prêt à transformer votre conciergerie ?",
