@@ -14,19 +14,19 @@ export default function PMSPage() {
 
   // Logos pour l'animation de la section Marketplace API
   const marketplaceLogos = [
-    { name: "Airbnb", logo: "/images/logo-partenaires/Airbnb.webp" },
-    { name: "Booking.com", logo: "/images/logo-partenaires/Booking.com.png" },
-    { name: "Vrbo", logo: "/images/logo-partenaires/vrbo.png" },
-    { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png" },
-    { name: "Stripe", logo: "/images/logo-partenaires/Stripe.png" },
-    { name: "PayPal", logo: "/images/logo-partenaires/paypal.png" },
-    { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png" },
-    { name: "Pennylane", logo: "/images/logo-partenaires/logo-pennylane.png" },
-    { name: "Nuki", logo: "/images/logo-partenaires/nuki.png" },
-    { name: "Yale", logo: "/images/logo-partenaires/YaleJPG.jpg" },
-    { name: "August", logo: "/images/logo-partenaires/August.webp" },
-    { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png" },
-    { name: "HubSpot", logo: "/images/logo-partenaires/HubSpot.png" },
+    { src: "/images/logo-partenaires/Airbnb.webp", alt: "Airbnb" },
+    { src: "/images/logo-partenaires/Booking.com.png", alt: "Booking.com" },
+    { src: "/images/logo-partenaires/vrbo.png", alt: "Vrbo" },
+    { src: "/images/logo-partenaires/Expedia.png", alt: "Expedia" },
+    { src: "/images/logo-partenaires/Stripe.png", alt: "Stripe" },
+    { src: "/images/logo-partenaires/paypal.png", alt: "PayPal" },
+    { src: "/images/logo-partenaires/QuickBooks.png", alt: "QuickBooks" },
+    { src: "/images/logo-partenaires/logo-pennylane.png", alt: "Pennylane" },
+    { src: "/images/logo-partenaires/nuki.png", alt: "Nuki" },
+    { src: "/images/logo-partenaires/YaleJPG.jpg", alt: "Yale" },
+    { src: "/images/logo-partenaires/August.webp", alt: "August" },
+    { src: "/images/logo-partenaires/Igloohome.png", alt: "Igloohome" },
+    { src: "/images/logo-partenaires/HubSpot.png", alt: "HubSpot" },
   ];
 
   const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'reporting', 'marketplaceApi'] as const;
@@ -162,9 +162,7 @@ export default function PMSPage() {
                     </div>
                   ) : (
                     <div className="relative w-full">
-                      <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8">
-                        <LogosCarousel logos={marketplaceLogos} rows={4} />
-                      </div>
+                      <LogosCarousel logos={marketplaceLogos} />
                     </div>
                   )}
                 </div>

@@ -1,97 +1,147 @@
 'use client';
 
 interface Logo {
-  name: string;
-  logo: string;
+  src: string;
+  alt: string;
 }
 
 interface LogosCarouselProps {
   logos: Logo[];
-  rows?: number;
 }
 
-export default function LogosCarousel({
-  logos,
-  rows = 4
-}: LogosCarouselProps) {
-  // Diviser les logos en rangées
-  const logosPerRow = Math.ceil(logos.length / rows);
-  const rowsArray = Array.from({ length: rows }, (_, i) =>
-    logos.slice(i * logosPerRow, (i + 1) * logosPerRow)
-  );
+export default function LogosCarousel({ logos }: LogosCarouselProps) {
+  // Diviser les logos en 4 rangées
+  const logosPerRow = Math.ceil(logos.length / 4);
+  const topRow = logos.slice(0, logosPerRow);
+  const secondRow = logos.slice(logosPerRow, logosPerRow * 2);
+  const thirdRow = logos.slice(logosPerRow * 2, logosPerRow * 3);
+  const bottomRow = logos.slice(logosPerRow * 3);
 
   return (
-    <div className="relative w-full space-y-6">
-      {rowsArray.map((rowLogos, rowIndex) => {
-        const isReversed = rowIndex % 2 !== 0;
-        const duplicatedLogos = [...rowLogos, ...rowLogos];
-
-        return (
-          <div key={rowIndex} className="relative w-full overflow-hidden">
+    <div className="space-y-4">
+      {/* Row 1 - Left */}
+      <div className="overflow-hidden">
+        <div className="logo-marquee logo-marquee--left">
+          {[...topRow, ...topRow].map((logo, index) => (
             <div
-              className={`flex w-max ${isReversed ? 'logo-marquee--right' : 'logo-marquee--left'}`}
+              key={`${logo.alt}-top-${index}`}
+              className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
             >
-              {duplicatedLogos.map((logo, index) => (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className="flex-shrink-0 mx-6 h-20 flex items-center justify-center"
-                >
-                  <img
-                    src={logo.logo}
-                    alt={logo.name}
-                    className="h-10 w-28 object-contain"
-                    loading="lazy"
-                    width={112}
-                    height={40}
-                    decoding="async"
-                  />
-                </div>
-              ))}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 object-contain"
+                width={120}
+                height={40}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* Gradient overlays pour effet de fondu */}
-            <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-white to-transparent pointer-events-none" />
-            <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent pointer-events-none" />
-          </div>
-        );
-      })}
+      {/* Row 2 - Right */}
+      <div className="overflow-hidden">
+        <div className="logo-marquee logo-marquee--right">
+          {[...secondRow, ...secondRow].map((logo, index) => (
+            <div
+              key={`${logo.alt}-second-${index}`}
+              className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 object-contain"
+                width={120}
+                height={40}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Row 3 - Left (Slow) */}
+      <div className="overflow-hidden">
+        <div className="logo-marquee logo-marquee--left logo-marquee--slow">
+          {[...thirdRow, ...thirdRow].map((logo, index) => (
+            <div
+              key={`${logo.alt}-third-${index}`}
+              className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 object-contain"
+                width={120}
+                height={40}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Row 4 - Right (Slow) */}
+      <div className="overflow-hidden">
+        <div className="logo-marquee logo-marquee--right logo-marquee--slow">
+          {[...bottomRow, ...bottomRow].map((logo, index) => (
+            <div
+              key={`${logo.alt}-bottom-${index}`}
+              className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-10 object-contain"
+                width={120}
+                height={40}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
 
       <style jsx>{`
-        @keyframes marquee-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes marquee-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .logo-marquee--left {
+        .logo-marquee {
           display: flex;
-          animation: marquee-left 20s linear infinite;
+          gap: 16px;
+          width: max-content;
+          animation: marquee-left 14s linear infinite;
           will-change: transform;
         }
-
         .logo-marquee--right {
-          display: flex;
-          animation: marquee-right 20s linear infinite;
-          will-change: transform;
+          animation-name: marquee-right;
         }
-
-        @media (max-width: 768px) {
-          .logo-marquee--left,
-          .logo-marquee--right {
-            animation-duration: 12s;
-          }
+        .logo-marquee--slow {
+          animation-duration: 18s;
+        }
+        .logo-card {
+          transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .logo-card--marquee {
+          min-width: 120px;
+        }
+        .logo-card:hover {
+          transform: translateY(-2px) scale(1.02);
+          border-color: rgba(4, 164, 255, 0.6);
+          box-shadow: 0 8px 20px rgba(4, 164, 255, 0.18);
+        }
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee { animation: none; }
         }
       `}</style>
     </div>
