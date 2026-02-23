@@ -53,12 +53,12 @@ export default function Footer() {
             </div>
 
             {/* Réseaux sociaux */}
-            <div className="flex gap-4 items-start mt-4">
+            <div className="flex gap-4 items-center py-4">
               <a 
                 href="https://www.instagram.com/bilokiofficial/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity block p-1"
                 aria-label="Instagram"
               >
                 <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ export default function Footer() {
                 href="https://www.instagram.com/bilokiofficial/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity block p-1"
                 aria-label="Facebook"
               >
                 <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/biloki/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity block p-1"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ export default function Footer() {
                 href="https://twitter.com/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
+                className="hover:opacity-80 transition-opacity block p-1"
                 aria-label="Twitter"
               >
                 <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
