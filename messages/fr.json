@@ -1390,7 +1390,35 @@
       "ctaTitle": "Prêt à transformer votre conciergerie ?",
       "ctaDescription": "Découvrez comment Biloki peut centraliser et automatiser toute votre activité pour gagner du temps et améliorer votre rentabilité.",
       "bookDemo": "Réserver une démo",
-      "freeTrial": "Essai gratuit (1 mois)"
+      "freeTrial": "Essai gratuit (1 mois)",
+      "faqTitle": "Questions fréquentes",
+      "faqDescription": "Trouvez les réponses à vos questions sur notre PMS Biloki",
+      "faq": [
+        {
+          "q": "Avec combien de logements peut-on commencer ?",
+          "a": "Biloki s'adapte à votre croissance. Vous pouvez commencer avec 1 seul logement et augmenter jusqu'à plusieurs centaines. Il n'y a aucune limite."
+        },
+        {
+          "q": "Combien de temps faut-il pour intégrer Biloki ?",
+          "a": "L'intégration est simple et rapide. Vous pouvez être opérationnel en moins de 2 heures. Nos équipes peuvent vous accompagner pour une personnalisation plus poussée."
+        },
+        {
+          "q": "Quelles sont les OTA supportées ?",
+          "a": "Biloki s'intègre à plus de 120 OTA et plateformes : Airbnb, Booking.com, Vrbo, Expedia, Tripadvisor, Agoda, HomeAway et bien d'autres. Si votre OTA n'est pas dans la liste, nous avons une API ouverte pour la connecter."
+        },
+        {
+          "q": "Biloki compatibilité avec les serrures connectées ?",
+          "a": "Oui, Biloki s'intègre avec les principales serrures : Nuki, Yale, August, Igloohome et d'autres. Nous créons automatiquement des codes d'accès temporaires pour chaque locataire et prestataire."
+        },
+        {
+          "q": "Est-ce que je peux exporter mes données ?",
+          "a": "Bien sûr ! Vos données vous appartiennent. Vous pouvez exporter tout à tout moment. Biloki dispose aussi d'une API ouverte pour une intégration personnalisée."
+        },
+        {
+          "q": "Quel est le support client ?",
+          "a": "Un support chat 24/7 inclus dans l'essai gratuit. Pour les forfaits Premium, bénéficiez d'un support prioritaire et d'une assistance IA dédiée."
+        }
+      ]
     },
     "marketplace": {
       "title": "Intégrations",

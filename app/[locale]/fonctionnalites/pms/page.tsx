@@ -197,6 +197,30 @@ export default function PMSPage() {
           </div>
         </div>
 
+        {/* FAQ Section */}
+        <div className="mt-20 py-16 md:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-0">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{t('faqTitle')}</h2>
+              <p className="text-lg text-gray-600">{t('faqDescription')}</p>
+            </div>
+
+            <div className="space-y-4">
+              {t.raw('faq').map((item: any, index: number) => (
+                <details key={index} className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow border border-gray-100">
+                  <summary className="flex items-center justify-between font-bold text-gray-900 text-lg">
+                    <span>{item.q}</span>
+                    <svg className="w-6 h-6 text-primary flex-shrink-0 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <p className="text-gray-600 mt-4 leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Pages connexes pour SEO */}
         <RelatedPages
           title={common('relatedPages')}
