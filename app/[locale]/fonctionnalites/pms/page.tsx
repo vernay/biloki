@@ -62,7 +62,6 @@ export default function PMSPage() {
             return (
               <div
                 key={index}
-                id={section.anchor}
                 className={gridClass}
               >
                 {/* Contenu texte */}
