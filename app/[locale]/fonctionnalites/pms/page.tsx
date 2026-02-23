@@ -37,7 +37,6 @@ export default function PMSPage() {
     description: t(`sections.${key}.description`),
     icon: icons[index],
     features: t.raw(`sections.${key}.features`) as string[],
-    anchor: key === 'billing' ? 'facturation-commissions' : undefined
   }));
 
   return (
