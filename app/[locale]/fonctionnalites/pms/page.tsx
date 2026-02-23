@@ -12,21 +12,20 @@ export default function PMSPage() {
   const relatedT = useTranslations('relatedPages');
   const locale = useLocale();
 
-  // Logos pour l'animation de la section Marketplace API
+  // Logos pour l'animation de la section Marketplace API (mêmes que IntegrationsSection)
   const marketplaceLogos = [
     { src: "/images/logo-partenaires/Airbnb.webp", alt: "Airbnb" },
     { src: "/images/logo-partenaires/Booking.com.png", alt: "Booking.com" },
     { src: "/images/logo-partenaires/vrbo.png", alt: "Vrbo" },
     { src: "/images/logo-partenaires/Expedia.png", alt: "Expedia" },
     { src: "/images/logo-partenaires/Stripe.png", alt: "Stripe" },
+    { src: "/images/logo-partenaires/Uber.png", alt: "Uber" },
+    { src: "/images/logo-partenaires/HubSpot.png", alt: "HubSpot" },
     { src: "/images/logo-partenaires/paypal.png", alt: "PayPal" },
-    { src: "/images/logo-partenaires/QuickBooks.png", alt: "QuickBooks" },
-    { src: "/images/logo-partenaires/logo-pennylane.png", alt: "Pennylane" },
     { src: "/images/logo-partenaires/nuki.png", alt: "Nuki" },
-    { src: "/images/logo-partenaires/YaleJPG.jpg", alt: "Yale" },
     { src: "/images/logo-partenaires/August.webp", alt: "August" },
     { src: "/images/logo-partenaires/Igloohome.png", alt: "Igloohome" },
-    { src: "/images/logo-partenaires/HubSpot.png", alt: "HubSpot" },
+    { src: "/images/logo-partenaires/logo-pennylane.png", alt: "Pennylane" },
   ];
 
   const sectionKeys = ['reservations', 'channelManager', 'operations', 'communication', 'access', 'reporting', 'marketplaceApi'] as const;
