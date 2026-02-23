@@ -113,7 +113,7 @@ export default function PMSPage() {
                         width={4000}
                         height={4000}
                         className="w-full h-auto max-w-none"
-                        priority={index === 0}
+                        priority={false}
                       />
                     </div>
                   ) : index === 2 ? (
@@ -124,7 +124,7 @@ export default function PMSPage() {
                         width={4000}
                         height={4000}
                         className="w-full h-auto max-w-none"
-                        priority={index === 0}
+                        priority={false}
                       />
                     </div>
                   ) : index === 3 ? (
