@@ -37,7 +37,7 @@ export default function Hero() {
               variants={itemVariants}
             >
               <img
-                src="/images/interfaces/mobile-ordi.svg"
+                src="/images/interfaces/mobile-ordi.png"
                 alt="Interface Biloki"
                 className="w-full"
                 width={900}
@@ -127,7 +127,7 @@ export default function Hero() {
               animate="show"
             >
               <img
-                src="/images/interfaces/mobile-ordi.svg"
+                src="/images/interfaces/mobile-ordi.png"
                 alt="Interface Biloki"
                 className="w-full h-auto lg:scale-140 2xl:scale-170"
                 width={900}
