@@ -29,7 +29,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-x-auto">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Colonne gauche - Contenu */}
@@ -40,13 +40,13 @@ export default function Hero() {
             animate="show"
           >
             <motion.h1 
-              className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-4xl"
+              className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed"
               variants={itemVariants}
             >
               <span className="block">{titleLine} simple pour les</span>
               <span className="block">
                 <motion.span 
-                  className="inline whitespace-nowrap font-extrabold"
+                  className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
                   style={{ color: roles[currentRole].color }}
                   key={currentRole}
                   initial={{ opacity: 0, y: 40 }}
