@@ -33,6 +33,19 @@ export default function Hero() {
             </motion.h1>
 
             <motion.div
+              className="lg:hidden"
+              variants={itemVariants}
+            >
+              <img
+                src="/images/interfaces/mobile-ordi.svg"
+                alt="Interface Biloki"
+                className="w-full"
+                width={900}
+                height={700}
+              />
+            </motion.div>
+
+            <motion.div
               className="flex flex-col gap-3 text-sm text-gray-800"
               variants={itemVariants}
             >
@@ -106,7 +119,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Colonne droite - Mockup principal */}
-          <div className="relative lg:h-[600px] flex items-center justify-center">
+          <div className="relative hidden lg:flex lg:h-[600px] items-center justify-center">
             <motion.div
               className="w-full max-w-[48rem] sm:max-w-[64rem] lg:max-w-[72rem]"
               variants={itemVariants}
