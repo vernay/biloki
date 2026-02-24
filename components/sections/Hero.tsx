@@ -8,7 +8,7 @@ import { containerVariants, itemVariants } from "@/lib/animations-config";
 import WebappLink from "@/components/ui/WebappLink";
 
 const roles = [
-  { name: "conciergeries", color: "#0284c7" },      // Bleu foncé
+  { name: "conciergeries", color: "#0890d9" },      // Bleu intermédiaire
   { name: "propriétaires", color: "#04a4ff" },      // Bleu Biloki
   { name: "locataires", color: "#ff7f00" },         // Orange
   { name: "prestataires", color: "#22c55e" },       // Vert
@@ -43,7 +43,7 @@ export default function Hero() {
               className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed"
               variants={itemVariants}
             >
-              <span className="block">{titleLine} simple pour les</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} simple pour les</span>
               <span className="block">
                 <motion.span 
                   className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
