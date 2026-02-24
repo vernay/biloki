@@ -92,7 +92,7 @@ export default function BookingConnectionPage() {
                   </div>
                   <div className="aspect-[4/3] bg-white flex items-center justify-center">
                     <img
-                      src="/images/connexions-ota/Biloki-Booking.com.svg"
+                      src="/images/connexions-ota/biloki-booking.png"
                       alt={t('sections.trust.visual')}
                       className="h-full w-full object-contain"
                       loading="lazy"
