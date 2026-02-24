@@ -8,10 +8,10 @@ import { containerVariants, itemVariants } from "@/lib/animations-config";
 import WebappLink from "@/components/ui/WebappLink";
 
 const roles = [
-  { name: "conciergeries", color: "#0890d9" },      // Bleu intermédiaire
-  { name: "propriétaires", color: "#04a4ff" },      // Bleu Biloki
-  { name: "locataires", color: "#ff7f00" },         // Orange
-  { name: "prestataires", color: "#22c55e" },       // Vert
+  { name: "Conciergeries", color: "#0890d9" },      // Bleu intermédiaire
+  { name: "Propriétaires", color: "#04a4ff" },      // Bleu Biloki
+  { name: "Locataires", color: "#ff7f00" },         // Orange
+  { name: "Prestataires", color: "#22c55e" },       // Vert
 ];
 
 export default function Hero() {
