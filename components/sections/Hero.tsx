@@ -124,7 +124,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
-                    src="/images/interfaces/gestionnaire.png" 
+                    src="/images/interfaces/gestionnaire-ordi.svg" 
                     alt="Interface Conciergerie" 
                     className="w-full rounded-2xl shadow-2xl"
                     width={320}

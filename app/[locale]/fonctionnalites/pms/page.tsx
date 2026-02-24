@@ -126,7 +126,7 @@ export default function PMSPage() {
                   {index === 0 ? (
                     <div className="relative w-full max-h-96">
                       <Image 
-                        src="/images/Calendrier.png" 
+                        src="/images/pms/Calendrier.png" 
                         alt="Calendrier des réservations" 
                         width={4000}
                         height={2400}
@@ -137,7 +137,7 @@ export default function PMSPage() {
                   ) : index === 1 ? (
                     <div className="relative w-full">
                       <Image 
-                        src="/images/connexion-ota.png" 
+                        src="/images/pms/connexion-ota.png" 
                         alt="Connexions OTA" 
                         width={4000}
                         height={4000}
@@ -148,7 +148,7 @@ export default function PMSPage() {
                   ) : index === 2 ? (
                     <div className="relative w-full">
                       <Image 
-                        src="/images/prestataires.png" 
+                        src="/images/pms/prestataires.png" 
                         alt="Gestion des prestataires" 
                         width={4000}
                         height={4000}
@@ -159,7 +159,7 @@ export default function PMSPage() {
                   ) : index === 3 ? (
                     <div className="relative w-full">
                       <Image 
-                        src="/images/Messagerie.svg" 
+                        src="/images/pms/Messagerie.svg" 
                         alt="Messagerie centralisée" 
                         width={4000}
                         height={4000}
@@ -170,7 +170,7 @@ export default function PMSPage() {
                   ) : index === 4 ? (
                     <div className="relative w-full">
                       <Image 
-                        src="/images/Serrures.png" 
+                        src="/images/pms/Serrures.png" 
                         alt="Gestion des accès et serrures connectées" 
                         width={4000}
                         height={4000}
@@ -181,7 +181,7 @@ export default function PMSPage() {
                   ) : index === 5 ? (
                     <div className="relative w-full">
                       <Image 
-                        src="/images/Reporting.png" 
+                        src="/images/pms/Reporting.png" 
                         alt="Reporting et pilotage de la performance" 
                         width={4000}
                         height={4000}

@@ -121,7 +121,7 @@ export default function ChannelManagerPage() {
               <div className="rounded-[32px] bg-white/80 p-8 shadow-2xl">
                 <div className="aspect-[4/3] rounded-3xl border border-[var(--biloki-blue)] bg-white flex items-center justify-center overflow-hidden">
                   <img
-                    src="/images/Calendrier.png"
+                    src="/images/pms/Calendrier.png"
                     alt={t('sections.placeholders.heroVisual')}
                     className="h-full w-full object-contain"
                     loading="lazy"
@@ -193,7 +193,7 @@ export default function ChannelManagerPage() {
           </div>
           <div className="rounded-[32px] border border-[var(--biloki-blue)] bg-white p-8 shadow-lg flex items-center justify-center">
             <img
-              src="/images/PMS.png"
+              src="/images/pms/PMS.png"
               alt={t('sections.placeholders.screenshot')}
               className="h-full w-full max-h-[420px] object-contain"
               loading="lazy"

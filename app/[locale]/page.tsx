@@ -59,7 +59,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       "Facturation et comptabilité",
       "Marketplace de prestataires"
     ],
-    "screenshot": "https://www.biloki.fr/images/interfaces/gestionnaire.png",
+    "screenshot": "https://www.biloki.fr/images/interfaces/gestionnaire-ordi.svg",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",

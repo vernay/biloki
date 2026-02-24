@@ -173,7 +173,7 @@ export default function FeaturesSection() {
                     {feature.id === 'channel-manager' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/Calendrier.png"
+                          src="/images/pms/Calendrier.png"
                           alt={`${t('items.channelManager.title')} - Calendrier`}
                           width={1200}
                           height={900}
@@ -184,7 +184,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'serrures' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/ouverture-porte.png"
+                          src="/images/serrures/ouverture-porte.png"
                           alt={`${t('items.serrures.title')} - Ouverture de porte`}
                           width={1200}
                           height={900}
@@ -194,7 +194,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'pms' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/PMS.png"
+                          src="/images/pms/PMS.png"
                           alt={`${t('items.pms.title')} - PMS`}
                           width={1200}
                           height={900}
@@ -204,7 +204,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'interfaces' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/4-interfaces.png"
+                          src="/images/interfaces/4-interfaces.png"
                           alt={`${t('items.interfaces.title')} - 4 interfaces`}
                           width={1200}
                           height={900}
@@ -214,7 +214,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'guide-digital' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/guide-digital-ia.png"
+                          src="/images/marketing/guide-digital-ia.png"
                           alt={`${t('items.guideDigital.title')} - Guide digital IA`}
                           width={1200}
                           height={900}
