@@ -105,93 +105,21 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Colonne droite - Maquettes de téléphones */}
+          {/* Colonne droite - Mockup principal */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
-            <motion.div 
-              className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6"
-              variants={containerVariants}
+            <motion.div
+              className="w-full max-w-sm sm:max-w-md lg:max-w-lg"
+              variants={itemVariants}
               initial="hidden"
               animate="show"
             >
-              {/* Propriétaire */}
-              <motion.div 
-                className="flex flex-col items-center space-y-2 sm:col-start-1 sm:row-start-1"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.owner")}</span>
-                </div>
-                <div className="w-32 sm:w-40">
-                  <img 
-                    src="/images/interfaces/mobile-ordi.svg" 
-                    alt="Interface Propriétaire" 
-                    className="w-full"
-                    width={320}
-                    height={640}
-                  />
-                </div>
-              </motion.div>
-
-              {/* Conciergerie (ordinateur) */}
-              <motion.div 
-                className="flex flex-col items-center space-y-2 sm:col-start-2 sm:row-start-1"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.concierge")}</span>
-                </div>
-                <div className="w-32 sm:w-40">
-                  <img 
-                    src="/images/interfaces/mobile-ordi.svg" 
-                    alt="Interface Conciergerie" 
-                    className="w-full"
-                    width={320}
-                    height={640}
-                  />
-                </div>
-              </motion.div>
-
-              {/* Prestataire */}
-              <motion.div 
-                className="flex flex-col items-center space-y-2 sm:col-start-3 sm:row-start-1"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.provider")}</span>
-                </div>
-                <div className="w-32 sm:w-40">
-                  <img 
-                    src="/images/interfaces/mobile-ordi.svg" 
-                    alt="Interface Prestataire" 
-                    className="w-full"
-                    width={320}
-                    height={640}
-                  />
-                </div>
-              </motion.div>
-
-              {/* Locataire */}
-              <motion.div 
-                className="flex flex-col items-center space-y-2 sm:col-start-2 sm:row-start-2"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.tenant")}</span>
-                </div>
-                <div className="w-32 sm:w-40">
-                  <img 
-                    src="/images/interfaces/mobile-ordi.svg" 
-                    alt="Interface Locataire" 
-                    className="w-full"
-                    width={320}
-                    height={640}
-                  />
-                </div>
-              </motion.div>
+              <img
+                src="/images/interfaces/mobile-ordi.svg"
+                alt="Interface Biloki"
+                className="w-full"
+                width={900}
+                height={700}
+              />
             </motion.div>
           </div>
         </div>
