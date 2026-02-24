@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
@@ -85,10 +86,14 @@ export default function AirbnbConnectionPage() {
               <div className="rounded-[32px] bg-white/80 p-6 shadow-2xl border border-white/60">
                 <div className="rounded-3xl border border-[var(--biloki-blue)] bg-white overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-[#f7fbff] to-white">
-                    <img
+                    <Image
                       src="/images/logo-partenaires/Airbnb.webp"
                       alt="Airbnb"
-                      className="h-7 w-auto"
+                      width={200}
+                      height={200}
+                      quality={100}
+                      className="h-7 w-auto object-contain"
+                      priority
                     />
                     <span className="text-xs font-semibold text-primary">{t('hero.badge')}</span>
                   </div>
@@ -118,10 +123,13 @@ export default function AirbnbConnectionPage() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <div className="mb-16 md:mb-20 rounded-[36px] bg-primary px-6 sm:px-8 py-8 md:p-12 relative overflow-hidden">
-          <img
+          <Image
             src="/images/logo-partenaires/Airbnb.webp"
             alt="Airbnb"
-            className="absolute right-8 top-4 h-16 w-auto opacity-90 hidden md:block"
+            width={200}
+            height={200}
+            quality={100}
+            className="absolute right-8 top-4 h-16 w-auto opacity-90 hidden md:block object-contain"
             loading="lazy"
             decoding="async"
           />

@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
@@ -78,10 +79,14 @@ export default function BookingConnectionPage() {
               <div className="rounded-[32px] bg-white/80 p-6 shadow-2xl border border-white/60">
                 <div className="rounded-3xl border border-[var(--biloki-blue)] bg-white overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-[#f7fbff] to-white">
-                    <img
+                    <Image
                       src="/images/logo-partenaires/Booking.com.png"
                       alt="Booking.com"
-                      className="h-7 w-auto"
+                      width={737}
+                      height={163}
+                      quality={100}
+                      className="h-7 w-auto object-contain"
+                      priority
                     />
                     <span className="text-xs font-semibold text-primary">{t('hero.badge')}</span>
                   </div>
@@ -112,10 +117,13 @@ export default function BookingConnectionPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <div className="mb-16 md:mb-20 rounded-[36px] bg-primary px-6 sm:px-8 py-8 md:p-12 relative overflow-hidden">
           <div className="absolute right-8 top-5 rounded-full bg-white/90 px-3 py-1.5 shadow-sm hidden md:block">
-            <img
+            <Image
               src="/images/logo-partenaires/Booking.com.png"
               alt="Booking.com"
-              className="h-10 w-auto"
+              width={737}
+              height={163}
+              quality={100}
+              className="h-10 w-auto object-contain"
               loading="lazy"
               decoding="async"
             />
