@@ -108,34 +108,14 @@ export default function Hero() {
           {/* Colonne droite - Maquettes de téléphones */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
             <motion.div 
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6"
+              className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6"
               variants={containerVariants}
               initial="hidden"
               animate="show"
             >
-              {/* Conciergerie */}
-              <motion.div 
-                className="flex flex-col items-center space-y-2"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="text-center">
-                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.concierge")}</span>
-                </div>
-                <div className="w-32 sm:w-40">
-                  <img 
-                    src="/images/interfaces/gestionnaire-ordi.svg" 
-                    alt="Interface Conciergerie" 
-                    className="w-full rounded-2xl shadow-2xl"
-                    width={320}
-                    height={640}
-                  />
-                </div>
-              </motion.div>
-
               {/* Propriétaire */}
               <motion.div 
-                className="flex flex-col items-center space-y-2"
+                className="flex flex-col items-center space-y-2 sm:col-start-1 sm:row-start-1"
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
               >
@@ -146,7 +126,27 @@ export default function Hero() {
                   <img 
                     src="/images/interfaces/proprietaire.png" 
                     alt="Interface Propriétaire" 
-                    className="w-full rounded-2xl shadow-2xl"
+                    className="w-full"
+                    width={320}
+                    height={640}
+                  />
+                </div>
+              </motion.div>
+
+              {/* Conciergerie (ordinateur) */}
+              <motion.div 
+                className="flex flex-col items-center space-y-2 sm:col-start-2 sm:row-start-1"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div className="text-center">
+                  <span className="text-xs sm:text-sm font-bold text-[var(--biloki-blue)]">{tInterfaces("labels.concierge")}</span>
+                </div>
+                <div className="w-32 sm:w-40">
+                  <img 
+                    src="/images/interfaces/gestionnaire-ordi.svg" 
+                    alt="Interface Conciergerie" 
+                    className="w-full"
                     width={320}
                     height={640}
                   />
@@ -155,7 +155,7 @@ export default function Hero() {
 
               {/* Prestataire */}
               <motion.div 
-                className="flex flex-col items-center space-y-2"
+                className="flex flex-col items-center space-y-2 sm:col-start-3 sm:row-start-1"
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
               >
@@ -166,7 +166,7 @@ export default function Hero() {
                   <img 
                     src="/images/interfaces/prestataire.png" 
                     alt="Interface Prestataire" 
-                    className="w-full rounded-2xl shadow-2xl"
+                    className="w-full"
                     width={320}
                     height={640}
                   />
@@ -175,7 +175,7 @@ export default function Hero() {
 
               {/* Locataire */}
               <motion.div 
-                className="flex flex-col items-center space-y-2"
+                className="flex flex-col items-center space-y-2 sm:col-start-2 sm:row-start-2"
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
               >
@@ -186,7 +186,7 @@ export default function Hero() {
                   <img 
                     src="/images/interfaces/locataire.png" 
                     alt="Interface Locataire" 
-                    className="w-full rounded-2xl shadow-2xl"
+                    className="w-full"
                     width={320}
                     height={640}
                   />
