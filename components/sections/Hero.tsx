@@ -43,7 +43,7 @@ export default function Hero() {
               className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed"
               variants={itemVariants}
             >
-              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} simple pour les</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} simple pour vous :</span>
               <span className="block">
                 <motion.span 
                   className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
