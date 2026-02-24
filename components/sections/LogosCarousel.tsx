@@ -19,8 +19,28 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
 
   return (
     <div className="space-y-4">
-      {/* Row 1 - Left */}
-      <div className="overflow-hidden">
+      {/* Mobile: grille statique */}
+      <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:hidden">
+        {logos.map((logo) => (
+          <div
+            key={logo.alt}
+            className="logo-card logo-card--grid rounded-2xl bg-white/50 p-3 flex items-center justify-center"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="h-9 object-contain"
+              width={120}
+              height={36}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: marquees */}
+      <div className="hidden md:block overflow-hidden">
         <div className="logo-marquee logo-marquee--left">
           {[...topRow, ...topRow].map((logo, index) => (
             <div
@@ -41,8 +61,7 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
         </div>
       </div>
 
-      {/* Row 2 - Right */}
-      <div className="overflow-hidden">
+      <div className="hidden md:block overflow-hidden">
         <div className="logo-marquee logo-marquee--right">
           {[...secondRow, ...secondRow].map((logo, index) => (
             <div
@@ -63,8 +82,7 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
         </div>
       </div>
 
-      {/* Row 3 - Left (Slow) */}
-      <div className="overflow-hidden">
+      <div className="hidden md:block overflow-hidden">
         <div className="logo-marquee logo-marquee--left logo-marquee--slow">
           {[...thirdRow, ...thirdRow].map((logo, index) => (
             <div
@@ -85,8 +103,7 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
         </div>
       </div>
 
-      {/* Row 4 - Right (Slow) */}
-      <div className="overflow-hidden">
+      <div className="hidden md:block overflow-hidden">
         <div className="logo-marquee logo-marquee--right logo-marquee--slow">
           {[...bottomRow, ...bottomRow].map((logo, index) => (
             <div
