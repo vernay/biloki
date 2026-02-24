@@ -39,7 +39,7 @@ export default function Hero() {
               <img
                 src="/images/interfaces/mobile-ordi.png"
                 alt="Interface Biloki"
-                className="w-full"
+                className="w-full scale-125 origin-top"
                 width={900}
                 height={700}
               />
