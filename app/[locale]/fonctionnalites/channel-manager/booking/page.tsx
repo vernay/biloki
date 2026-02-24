@@ -94,7 +94,7 @@ export default function BookingConnectionPage() {
                     <img
                       src="/images/connexions-ota/biloki-booking.png"
                       alt={t('sections.trust.visual')}
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-contain scale-110 sm:scale-125"
                       loading="lazy"
                       decoding="async"
                     />

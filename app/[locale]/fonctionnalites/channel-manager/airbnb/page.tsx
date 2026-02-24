@@ -99,9 +99,9 @@ export default function AirbnbConnectionPage() {
                   </div>
                   <div className="aspect-[4/3] bg-white flex items-center justify-center">
                     <img
-                      src="/images/connexions-ota/Biloki-Airbnb.svg"
+                      src="/images/connexions-ota/biloki-airbnb.png"
                       alt={t('sections.trust.visual')}
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-contain scale-110 sm:scale-125"
                       loading="lazy"
                       decoding="async"
                     />
