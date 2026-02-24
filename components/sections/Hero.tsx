@@ -119,7 +119,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Colonne droite - Mockup principal */}
-          <div className="relative hidden lg:flex lg:h-[600px] items-center justify-center">
+          <div className="relative hidden lg:flex lg:h-[600px] items-center justify-center lg:pl-16">
             <motion.div
               className="w-full max-w-[48rem] sm:max-w-[64rem] lg:max-w-[72rem]"
               variants={itemVariants}
@@ -129,7 +129,7 @@ export default function Hero() {
               <img
                 src="/images/interfaces/mobile-ordi.svg"
                 alt="Interface Biloki"
-                className="w-full"
+                className="w-full h-auto lg:scale-140 2xl:scale-170"
                 width={900}
                 height={700}
               />
