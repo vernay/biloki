@@ -124,7 +124,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
-                    src="/images/interfaces/proprietaire.png" 
+                    src="/images/interfaces/mobile-ordi.svg" 
                     alt="Interface Propriétaire" 
                     className="w-full"
                     width={320}
@@ -144,7 +144,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
-                    src="/images/interfaces/gestionnaire-ordi.svg" 
+                    src="/images/interfaces/mobile-ordi.svg" 
                     alt="Interface Conciergerie" 
                     className="w-full"
                     width={320}
@@ -164,7 +164,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
-                    src="/images/interfaces/prestataire.png" 
+                    src="/images/interfaces/mobile-ordi.svg" 
                     alt="Interface Prestataire" 
                     className="w-full"
                     width={320}
@@ -184,7 +184,7 @@ export default function Hero() {
                 </div>
                 <div className="w-32 sm:w-40">
                   <img 
-                    src="/images/interfaces/locataire.png" 
+                    src="/images/interfaces/mobile-ordi.svg" 
                     alt="Interface Locataire" 
                     className="w-full"
                     width={320}
