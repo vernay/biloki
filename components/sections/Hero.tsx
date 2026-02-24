@@ -108,7 +108,7 @@ export default function Hero() {
           {/* Colonne droite - Mockup principal */}
           <div className="relative lg:h-[600px] flex items-center justify-center">
             <motion.div
-              className="w-full max-w-sm sm:max-w-md lg:max-w-lg"
+              className="w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl"
               variants={itemVariants}
               initial="hidden"
               animate="show"
