@@ -159,7 +159,7 @@ export default function BenefitsIphoneSection() {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50">
+    <section className="w-full bg-white">
       {/* Version mobile - statique, en dehors du wrapper GSAP */}
       <div className="block md:hidden py-12 px-6">
         <div className="max-w-md mx-auto">
@@ -221,7 +221,7 @@ export default function BenefitsIphoneSection() {
                 <div
                   key={key}
                   ref={(el) => { cardsRef.current[index] = el; }}
-                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary p-6 flex flex-col justify-center items-center shadow-lg ${cardRounding[index]}`}
+                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary p-6 flex flex-col justify-center items-center ${cardRounding[index]}`}
                   style={{ width: `${CARD_W}px`, height: `${CARD_H}px` }}
                 >
                   <div className="text-white/80 mb-3">

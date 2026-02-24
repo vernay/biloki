@@ -169,7 +169,7 @@ export default function FeaturesSection() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                 >
-                  <div className="relative rounded-3xl bg-gradient-to-br from-gray-50 via-white to-white p-4">
+                  <div className="relative rounded-3xl bg-white p-4">
                     {feature.id === 'channel-manager' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
