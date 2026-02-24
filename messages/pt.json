@@ -109,7 +109,13 @@
   },
   "hero": {
     "title": "O aluguel por temporada nunca foi tão",
-    "titleHighlight": "simples",
+    "titleHighlight": "simples para você:",
+    "roles": {
+      "concierges": "Concierges",
+      "owners": "Proprietários",
+      "tenants": "Inquilinos",
+      "providers": "Prestadores"
+    },
     "trialNote": "1 mes de teste gratuito sem cartao de credito",
     "description": "Gerencie seus aluguéis de curta duração em uma única plataforma: reservas, hóspedes, equipes e automações. Menos operação, mais crescimento.",
     "check1": "Menos mensagens e ligações no dia a dia",

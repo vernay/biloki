@@ -109,7 +109,13 @@
   },
   "hero": {
     "title": "El alquiler vacacional nunca ha sido tan",
-    "titleHighlight": "simple",
+    "titleHighlight": "simple para ti:",
+    "roles": {
+      "concierges": "Conserjerías",
+      "owners": "Propietarios",
+      "tenants": "Inquilinos",
+      "providers": "Proveedores"
+    },
     "trialNote": "1 mes de prueba gratis sin tarjeta bancaria",
     "description": "Gestiona tus alquileres de corta duración desde una sola plataforma: reservas, huéspedes, equipos y automatizaciones. Menos operación, más crecimiento.",
     "check1": "Menos mensajes y llamadas en el día a día",

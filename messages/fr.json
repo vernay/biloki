@@ -109,7 +109,13 @@
   },
   "hero": {
     "title": "La location saisonnière n'aura jamais été aussi",
-    "titleHighlight": "simple",
+    "titleHighlight": "simple pour vous :",
+    "roles": {
+      "concierges": "Conciergeries",
+      "owners": "Propriétaires",
+      "tenants": "Locataires",
+      "providers": "Prestataires"
+    },
     "trialNote": "1 mois d'essai gratuit sans carte bancaire",
     "description": "Gérez vos locations courte durée depuis une seule plateforme : réservations, voyageurs, équipes et automatisations. Moins d’opérationnel, plus de développement.",
     "check1": "Moins de messages et d’appels au quotidien",

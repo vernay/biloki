@@ -7,23 +7,26 @@ import { useState, useEffect } from "react";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
 import WebappLink from "@/components/ui/WebappLink";
 
-const roles = [
-  { name: "Conciergeries", color: "#0890d9" },      // Bleu intermédiaire
-  { name: "Propriétaires", color: "#04a4ff" },      // Bleu Biloki
-  { name: "Locataires", color: "#ff7f00" },         // Orange
-  { name: "Prestataires", color: "#22c55e" },       // Vert
-];
+const roleKeys = ["concierges", "owners", "tenants", "providers"] as const;
+
+const roleColors = {
+  concierges: "#0890d9",    // Bleu intermédiaire
+  owners: "#04a4ff",        // Bleu Biloki
+  tenants: "#ff7f00",       // Orange
+  providers: "#22c55e",     // Vert
+};
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
   const tInterfaces = useTranslations("animatedInterfaces");
   const titleLine = t("title").trim();
+  const titleHighlight = t("titleHighlight").trim();
   const [currentRole, setCurrentRole] = useState(0);
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
+      setCurrentRole((prev) => (prev + 1) % roleKeys.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -43,18 +46,18 @@ export default function Hero() {
               className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed"
               variants={itemVariants}
             >
-              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} simple pour vous :</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} {titleHighlight}</span>
               <span className="block">
                 <motion.span 
                   className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
-                  style={{ color: roles[currentRole].color }}
+                  style={{ color: roleColors[roleKeys[currentRole]] }}
                   key={currentRole}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -40 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
                 >
-                  {roles[currentRole].name}
+                  {t(`roles.${roleKeys[currentRole]}`)}
                 </motion.span>
               </span>
             </motion.h1>

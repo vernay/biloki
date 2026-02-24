@@ -109,7 +109,13 @@
   },
   "hero": {
     "title": "Vacation rentals have never been so",
-    "titleHighlight": "simple",
+    "titleHighlight": "simple for you:",
+    "roles": {
+      "concierges": "Concierges",
+      "owners": "Owners",
+      "tenants": "Tenants",
+      "providers": "Service providers"
+    },
     "trialNote": "1 month free trial, no credit card required",
     "description": "Manage your short-term rentals from one platform: bookings, guests, teams, and automations. Less operations, more growth.",
     "check1": "Fewer daily messages and calls",
