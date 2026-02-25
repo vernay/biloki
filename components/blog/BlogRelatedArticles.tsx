@@ -17,17 +17,21 @@ interface BlogRelatedArticlesProps {
   currentSlug: string;
   articles: RelatedArticle[];
   locale: string;
+  relatedSlugs?: string[]; // Prioritize these article slugs for related articles
 }
 
 export default function BlogRelatedArticles({ 
   currentSlug, 
   articles,
-  locale 
+  locale,
+  relatedSlugs
 }: BlogRelatedArticlesProps) {
-  // Filter out current article and limit to 3 related articles
-  const relatedArticles = articles
-    .filter(article => article.slug !== currentSlug)
-    .slice(0, 3);
+  // Filter related articles: prioritize those in relatedSlugs, then fallback to first 3
+  const relatedArticles = relatedSlugs && relatedSlugs.length > 0
+    ? articles.filter(article => relatedSlugs.includes(article.slug)).slice(0, 3)
+    : articles
+        .filter(article => article.slug !== currentSlug)
+        .slice(0, 3);
 
   if (relatedArticles.length === 0) {
     return null;

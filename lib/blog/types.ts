@@ -23,6 +23,7 @@ export interface BlogArticle {
   image: string;
   author?: BlogAuthor;
   featured?: boolean;
+  relatedSlugs?: string[]; // Related article slugs for internal linking (max 3)
   translations: Record<Locale, BlogArticleTranslation>;
 }
 

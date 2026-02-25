@@ -2,11 +2,306 @@ import { BlogArticles } from "./types";
 
 export const articles: BlogArticles = [
   {
+    slug: "loi-le-meur-2026-location-saisonniere",
+    category: "regulation",
+    date: "2026-02-25",
+    readTime: "7 min",
+    image: "/images/blog/Marteau.png",
+    relatedSlugs: ["nice-quotas-airbnb-reglementation-2025", "channel-manager-guide-complet-conciergeries", "automatiser-gestion-locations-saisonnieres"],
+    translations: {
+      fr: {
+        title: "Loi Le Meur 2026 : nouvelles règles location saisonnière",
+        excerpt: "Découvrez ce que change la loi Le Meur pour la location saisonnière en 2026 : obligations, déclaration en mairie, sanctions et impacts pour les conciergeries.",
+        content: `
+          <div class="space-y-8">
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Loi Le Meur 2026 : ce que change la nouvelle réglementation</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La loi Le Meur sur la location saisonnière marque une étape importante dans l'évolution de la réglementation française. En 2026, les propriétaires et les conciergeries doivent composer avec un cadre plus strict, centré sur la transparence, la déclaration en mairie et la transmission des données aux collectivités.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Mais que prévoit exactement la loi Le Meur ? Quelles sont les nouvelles obligations pour les logements en location courte durée ? Et comment s'adapter sans complexifier sa gestion ? Voici une analyse complète et structurée.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Pourquoi la loi Le Meur a-t-elle été mise en place ?</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Le marché de la location saisonnière a connu une croissance massive ces dix dernières années, notamment via des plateformes comme Airbnb ou Booking. Cette croissance a soulevé plusieurs problématiques : tension sur le marché locatif, multiplication des logements non déclarés, difficulté pour les communes à contrôler l'activité réelle et manque de visibilité sur le nombre de nuitées louées.
+              </p>
+              <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg">
+                <p class="text-gray-800 font-semibold mb-3">Ce que vise la loi :</p>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Renforcer les obligations déclaratives.</li>
+                  <li>• Améliorer la transmission de données aux communes.</li>
+                  <li>• Permettre aux collectivités de mieux réguler le marché local.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Déclaration en mairie : une obligation renforcée</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Dans les communes concernées, tout logement destiné à la location saisonnière doit faire l'objet d'une déclaration préalable. Cette déclaration permet d'obtenir un numéro d'enregistrement, qui doit obligatoirement apparaître sur les annonces publiées sur les plateformes.
+              </p>
+              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                <p class="text-gray-800 font-semibold mb-2">Concrètement, cela implique :</p>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Chaque bien est identifié officiellement.</li>
+                  <li>• L'absence de numéro peut entraîner le retrait de l'annonce.</li>
+                  <li>• Les contrôles municipaux sont facilités.</li>
+                </ul>
+              </div>
+              <p class="text-gray-700 leading-relaxed mt-4">
+                Dans certaines zones tendues, des autorisations supplémentaires peuvent être nécessaires (changement d'usage notamment).
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Transmission des données par les plateformes</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                L'un des points centraux de la loi Le Meur concerne la transmission automatique d'informations aux communes. Les plateformes doivent désormais communiquer l'identification des logements, le nombre de nuitées louées, la durée d'activité et certaines données financières.
+              </p>
+              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                <p class="text-gray-800 font-semibold mb-2">Cette transparence permet aux collectivités de vérifier :</p>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Le respect du plafond de nuitées pour les résidences principales.</li>
+                  <li>• La conformité des déclarations.</li>
+                  <li>• L'existence d'annonces non enregistrées.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Quelles sanctions en cas de non-respect ?</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Le non-respect de la réglementation peut entraîner des amendes administratives, le retrait ou blocage de l'annonce, ainsi que des pénalités financières importantes. La loi renforce surtout la capacité des communes à appliquer ces sanctions de manière effective.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Quel impact pour les conciergeries et gestionnaires ?</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Même si la responsabilité principale incombe au propriétaire, les conciergeries jouent un rôle central dans la conformité. En pratique, elles doivent désormais vérifier la déclaration en mairie lors de l'onboarding, s'assurer que le numéro d'enregistrement apparaît sur chaque annonce, conserver les justificatifs administratifs et structurer le suivi des nuitées par logement.
+              </p>
+              <div class="bg-white border border-gray-200 rounded-2xl p-6">
+                <p class="text-gray-800 font-semibold mb-3">La gestion devient plus documentée et plus rigoureuse :</p>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Process d'onboarding conforme des logements.</li>
+                  <li>• Archivage des pièces justificatives.</li>
+                  <li>• Suivi des nuitées et plafonds par bien.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">La professionnalisation du secteur s'accélère</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La loi Le Meur traduit une tendance de fond : la location saisonnière n'est plus une activité informelle. Elle devient encadrée juridiquement, surveillée statistiquement et contrôlée administrativement. Les gestionnaires doivent centraliser leurs informations, suivre précisément les données d'activité et adopter des process de conformité clairs.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Comment anticiper les évolutions réglementaires ?</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La réglementation locale évolue régulièrement selon les décisions municipales. Pour limiter les risques, vérifiez systématiquement les obligations locales, formalisez un process de conformité, conservez les preuves administratives et assurez un suivi précis des nuitées et déclarations.
+              </p>
+            </section>
+
+            <section class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">FAQ - Loi Le Meur et location saisonnière</h3>
+              <div class="space-y-4 text-gray-700">
+                <div>
+                  <p class="font-semibold">La loi Le Meur s'applique-t-elle partout en France ?</p>
+                  <p>Elle s'applique à l'ensemble du territoire, mais son impact est plus fort dans les communes ayant mis en place un système d'enregistrement obligatoire.</p>
+                </div>
+                <div>
+                  <p class="font-semibold">Faut-il déclarer une résidence principale ?</p>
+                  <p>Oui, dans les communes concernées, une déclaration peut être obligatoire même pour une résidence principale. Le nombre de nuitées peut également être plafonné.</p>
+                </div>
+                <div>
+                  <p class="font-semibold">Quelles sont les obligations des conciergeries ?</p>
+                  <p>Les conciergeries doivent s'assurer que les biens qu'elles gèrent sont conformes : numéro d'enregistrement valide, affichage correct sur les annonces et suivi des données.</p>
+                </div>
+                <div>
+                  <p class="font-semibold">Quelles sont les sanctions possibles ?</p>
+                  <p>Les sanctions peuvent inclure des amendes administratives et la suppression des annonces en cas de non-conformité.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Aller plus loin</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• <a href="/blog/nice-quotas-airbnb-reglementation-2025" class="text-primary font-semibold hover:underline">Nice : quotas Airbnb par quartier</a></li>
+                <li>• <a href="/blog/automatiser-gestion-locations-saisonnieres" class="text-primary font-semibold hover:underline">Automatiser la gestion des locations saisonnières</a></li>
+                <li>• <a href="/blog/channel-manager-guide-complet-conciergeries" class="text-primary font-semibold hover:underline">Guide complet du channel manager</a></li>
+              </ul>
+            </section>
+
+            <section class="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Besoin d'un suivi simple de la conformité ?</h3>
+              <p class="text-gray-700 mb-4">Centralisez vos déclarations, vos preuves et le suivi des nuitées dans un seul outil.</p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="/commencer-gratuitement" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                  Essai gratuit
+                </a>
+                <a href="/reserver-demo" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all">
+                  Réserver votre démo
+                </a>
+              </div>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Conclusion</h2>
+              <p class="text-gray-700 leading-relaxed">
+                La loi Le Meur renforce la réglementation de la location saisonnière en France en mettant l'accent sur la transparence et la traçabilité. Pour les propriétaires comme pour les conciergeries, elle implique une gestion plus structurée et une vigilance accrue sur les obligations déclaratives. Dans un environnement réglementaire en constante évolution, adopter une organisation claire et centralisée devient un véritable atout pour sécuriser son activité à long terme.
+              </p>
+            </section>
+          </div>
+        `,
+      },
+      en: {
+        title: "Le Meur Law 2026: new short-term rental rules",
+        excerpt: "What the Le Meur law changes for short-term rentals in 2026: municipal registration, data sharing, sanctions, and impacts for concierge services.",
+        content: `
+          <div class="space-y-8">
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Le Meur Law 2026: what changes for short-term rentals</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                In 2026, the Le Meur law strengthens France's short-term rental framework around transparency, municipal registration, and data transmission to local authorities.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Key obligations</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Mandatory registration in the municipality, with an official registration number.</li>
+                <li>• Platforms must transmit listing data and nights booked to municipalities.</li>
+                <li>• Non-compliance can lead to delisting and administrative fines.</li>
+              </ul>
+            </section>
+
+            <section class="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Related articles</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• <a href="/blog/nice-quotas-airbnb-reglementation-2025" class="text-primary font-semibold hover:underline">Nice: Airbnb quotas by district</a></li>
+                <li>• <a href="/blog/automatiser-gestion-locations-saisonnieres" class="text-primary font-semibold hover:underline">Automate vacation rental operations</a></li>
+              </ul>
+            </section>
+
+            <section class="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Want a simple compliance workflow?</h3>
+              <p class="text-gray-700 mb-4">Centralize registrations, proofs, and night-count tracking in one tool.</p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="/commencer-gratuitement" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                  Free trial
+                </a>
+                <a href="/reserver-demo" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all">
+                  Book a demo
+                </a>
+              </div>
+            </section>
+          </div>
+        `,
+      },
+      es: {
+        title: "Ley Le Meur 2026: nuevas reglas para alquileres de corta duracion",
+        excerpt: "Que cambia la ley Le Meur en 2026: registro municipal, transmision de datos, sanciones y efectos para las consjerjerias.",
+        content: `
+          <div class="space-y-8">
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Ley Le Meur 2026: cambios para el alquiler turistico</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La ley Le Meur refuerza el marco del alquiler de corta duracion con mas transparencia, registro municipal y transmision de datos a los ayuntamientos.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Obligaciones clave</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Registro obligatorio y numero visible en los anuncios.</li>
+                <li>• Las plataformas deben comunicar noches y actividad.</li>
+                <li>• Incumplir puede implicar multas o bloqueo del anuncio.</li>
+              </ul>
+            </section>
+
+            <section class="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Articulos relacionados</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• <a href="/blog/nice-quotas-airbnb-reglementation-2025" class="text-primary font-semibold hover:underline">Niza: cuotas de Airbnb por barrio</a></li>
+                <li>• <a href="/blog/channel-manager-guide-complet-conciergeries" class="text-primary font-semibold hover:underline">Guia completo de channel manager</a></li>
+              </ul>
+            </section>
+
+            <section class="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Quieres un seguimiento simple?</h3>
+              <p class="text-gray-700 mb-4">Centraliza registros, pruebas y conteo de noches en un solo lugar.</p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="/commencer-gratuitement" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                  Prueba gratuita
+                </a>
+                <a href="/reserver-demo" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all">
+                  Reservar demo
+                </a>
+              </div>
+            </section>
+          </div>
+        `,
+      },
+      pt: {
+        title: "Lei Le Meur 2026: novas regras para aluguel de temporada",
+        excerpt: "O que a lei Le Meur muda em 2026: registro municipal, envio de dados, sancoes e impactos para concierges.",
+        content: `
+          <div class="space-y-8">
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Lei Le Meur 2026: mudancas para alugueis de curta duracao</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                A lei Le Meur reforca o marco regulatorio com mais transparencia, registro municipal e transmissao de dados para as prefeituras.
+              </p>
+            </section>
+
+            <section>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Obrigacoes principais</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Registro obrigatorio e numero visivel no anuncio.</li>
+                <li>• Plataformas devem enviar dados de atividade e noites.</li>
+                <li>• Penalidades e remocao de anuncios em caso de nao conformidade.</li>
+              </ul>
+            </section>
+
+            <section class="bg-white border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Artigos relacionados</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>• <a href="/blog/nice-quotas-airbnb-reglementation-2025" class="text-primary font-semibold hover:underline">Nice: cotas do Airbnb por bairro</a></li>
+                <li>• <a href="/blog/automatiser-gestion-locations-saisonnieres" class="text-primary font-semibold hover:underline">Automatizar a gestao de alugueis</a></li>
+              </ul>
+            </section>
+
+            <section class="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Quer um acompanhamento simples?</h3>
+              <p class="text-gray-700 mb-4">Centralize registros, comprovantes e controle de noites em um unico lugar.</p>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <a href="/commencer-gratuitement" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                  Teste gratuito
+                </a>
+                <a href="/reserver-demo" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary/5 transition-all">
+                  Agendar demo
+                </a>
+              </div>
+            </section>
+          </div>
+        `,
+      },
+    },
+  },
+  {
     slug: "france-102-millions-touristes-opportunite",
     category: "tips",
     date: "2026-02-22",
     readTime: "5 min",
     image: "/images/blog/france-tourisme.png",
+    relatedSlugs: ["automatiser-gestion-locations-saisonnieres", "channel-manager-guide-complet-conciergeries"],
     translations: {
       fr: {
         title: "102 millions de touristes en France : Une opportunité record pour les conciergeries",
@@ -20,12 +315,12 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
-                <p class="text-gray-800 font-semibold mb-3">📊 L'opportunité en chiffres :</p>
+                <p class="text-gray-800 font-semibold mb-3">L'opportunité en chiffres :</p>
                 <ul class="space-y-2 text-gray-700">
-                  <li>✓ <strong>280 000 touristes par jour</strong> en moyenne (pic à 500k/jour en haute saison)</li>
-                  <li>✓ <strong>+12% YoY</strong> : une croissance continue année après année</li>
-                  <li>✓ <strong>Durée moyenne : 6 jours</strong> en France (37M de nuitées)</li>
-                  <li>✓ <strong>Dépense moyenne : 1 200€</strong> par touriste pendant leur séjour</li>
+                  <li>• <strong>280 000 touristes par jour</strong> en moyenne (pic à 500k/jour en haute saison)</li>
+                  <li>• <strong>+12% YoY</strong> : une croissance continue année après année</li>
+                  <li>• <strong>Durée moyenne : 6 jours</strong> en France (37M de nuitées)</li>
+                  <li>• <strong>Dépense moyenne : 1 200€</strong> par touriste pendant leur séjour</li>
                 </ul>
               </div>
             </section>
@@ -35,7 +330,7 @@ export const articles: BlogArticles = [
               
               <div class="space-y-6">
                 <div class="bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">1️⃣ Optimiser votre présence sur les OTA</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">1. Optimiser votre présence sur les OTA</h3>
                   <p class="text-gray-700 mb-3">
                     La majorité des 102M de touristes découvrent les logements via Airbnb et Booking. Assurez-vous d'être visible et bien positionné.
                   </p>
@@ -48,7 +343,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">2️⃣ Gérer l'afflux avec un Channel Manager</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">2. Gérer l'afflux avec un Channel Manager</h3>
                   <p class="text-gray-700 mb-3">
                     Avechauteur augmentation du trafic, assurez-vous de pouvoir gérer les réservations sans surcharge.
                   </p>
@@ -61,7 +356,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">3️⃣ Personnaliser l'expérience voyageur</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">3. Personnaliser l'expérience voyageur</h3>
                   <p class="text-gray-700 mb-3">
                     Le touriste 2026 cherche l'authenticité et l'expérience locals. Offrez bien plus qu'un logement.
                   </p>
@@ -74,7 +369,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-red-50 to-transparent border-l-4 border-red-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">4️⃣ Automatiser les opérations</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">4. Automatiser les opérations</h3>
                   <p class="text-gray-700 mb-3">
                     Plus de réservations = plus d'opérations. L'automatisation devient critiquement.
                   </p>
@@ -87,7 +382,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-purple-50 to-transparent border-l-4 border-purple-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">5️⃣ Diversifier vos canaux de distribution</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">5. Diversifier vos canaux de distribution</h3>
                   <p class="text-gray-700 mb-3">
                     Ne dépendez pas uniquement d'Airbnb/Booking. Élargissez votre reach.
                   </p>
@@ -130,7 +425,7 @@ export const articles: BlogArticles = [
             </section>
 
             <section class="bg-primary text-white p-10 rounded-2xl">
-              <h3 class="text-3xl font-bold mb-3">✅ Préparez votre conciergerie à cette vague touristique</h3>
+              <h3 class="text-3xl font-bold mb-3">Préparez votre conciergerie à cette vague touristique</h3>
               <p class="text-white/90 mb-6 text-lg">Biloki - La seule plateforme qui centralise PMS, Channel Manager, Messagerie IA et Automatisations. Parfait pour gérer l'afflux de réservations sans surcharge.</p>
               <div class="flex flex-col sm:flex-row gap-4">
                 <a href="/reserver-demo" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-bold rounded-lg hover:shadow-xl transition-all">
@@ -156,12 +451,12 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
-                <p class="text-gray-800 font-semibold mb-3">📊 The Opportunity in Numbers:</p>
+                <p class="text-gray-800 font-semibold mb-3">The Opportunity in Numbers:</p>
                 <ul class="space-y-2 text-gray-700">
-                  <li>✓ <strong>280,000 tourists per day</strong> on average</li>
-                  <li>✓ <strong>+12% YoY</strong>: continuous growth year after year</li>
-                  <li>✓ <strong>Average stay: 6 days</strong> in France</li>
-                  <li>✓ <strong>Average spending: $1,300</strong> per tourist during their stay</li>
+                  <li>• <strong>280,000 tourists per day</strong> on average</li>
+                  <li>• <strong>+12% YoY</strong>: continuous growth year after year</li>
+                  <li>• <strong>Average stay: 6 days</strong> in France</li>
+                  <li>• <strong>Average spending: $1,300</strong> per tourist during their stay</li>
                 </ul>
               </div>
             </section>
@@ -245,12 +540,12 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
-                <p class="text-gray-800 font-semibold mb-3">📊 La oportunidad en cifras:</p>
+                <p class="text-gray-800 font-semibold mb-3">La oportunidad en cifras:</p>
                 <ul class="space-y-2 text-gray-700">
-                  <li>✓ <strong>280.000 turistas por día</strong> en promedio</li>
-                  <li>✓ <strong>+12% interanual</strong>: crecimiento continuo</li>
-                  <li>✓ <strong>Estancia promedio: 6 días</strong> en Francia</li>
-                  <li>✓ <strong>Gasto promedio: 1.200€</strong> por turista</li>
+                  <li>• <strong>280.000 turistas por día</strong> en promedio</li>
+                  <li>• <strong>+12% interanual</strong>: crecimiento continuo</li>
+                  <li>• <strong>Estancia promedio: 6 días</strong> en Francia</li>
+                  <li>• <strong>Gasto promedio: 1.200€</strong> por turista</li>
                 </ul>
               </div>
             </section>
@@ -260,17 +555,17 @@ export const articles: BlogArticles = [
               
               <div class="space-y-6">
                 <div class="bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">1️⃣ Optimiza tu Presencia en OTA</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">1. Optimiza tu Presencia en OTA</h3>
                   <p class="text-gray-700">La mayoría de los turistas descubren alojamientos a través de Airbnb y Booking.</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">2️⃣ Gestiona el Flujo con un Channel Manager</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">2. Gestiona el Flujo con un Channel Manager</h3>
                   <p class="text-gray-700">Con mayor flujo de tráfico, asegúrate de poder gestionar reservas.</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">3️⃣ Personaliza la Experiencia del Viajero</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">3. Personaliza la Experiencia del Viajero</h3>
                   <p class="text-gray-700">Los turistas modernos buscan autenticidad y experiencias locales.</p>
                 </div>
               </div>
@@ -303,12 +598,12 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
-                <p class="text-gray-800 font-semibold mb-3">📊 A Oportunidade em Números:</p>
+                <p class="text-gray-800 font-semibold mb-3">A Oportunidade em Números:</p>
                 <ul class="space-y-2 text-gray-700">
-                  <li>✓ <strong>280.000 turistas por dia</strong> em média</li>
-                  <li>✓ <strong>+12% ao ano</strong>: crescimento contínuo</li>
-                  <li>✓ <strong>Estadia média: 6 dias</strong> na França</li>
-                  <li>✓ <strong>Gasto médio: 1.200€</strong> por turista</li>
+                  <li>• <strong>280.000 turistas por dia</strong> em média</li>
+                  <li>• <strong>+12% ao ano</strong>: crescimento contínuo</li>
+                  <li>• <strong>Estadia média: 6 dias</strong> na França</li>
+                  <li>• <strong>Gasto médio: 1.200€</strong> por turista</li>
                 </ul>
               </div>
             </section>
@@ -318,17 +613,17 @@ export const articles: BlogArticles = [
               
               <div class="space-y-6">
                 <div class="bg-gradient-to-r from-green-50 to-transparent border-l-4 border-green-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">1️⃣ Otimize Sua Presença em OTA</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">1. Otimize Sua Presença em OTA</h3>
                   <p class="text-gray-700">A maioria dos turistas descobre acomodações via Airbnb e Booking.</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">2️⃣ Gerencie o Fluxo com um Channel Manager</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">2. Gerencie o Fluxo com um Channel Manager</h3>
                   <p class="text-gray-700">Com maior fluxo de tráfego, garanta que possa gerenciar reservas.</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-orange-50 to-transparent border-l-4 border-orange-500 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">3️⃣ Personalize a Experiência do Viajante</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">3. Personalize a Experiência do Viajante</h3>
                   <p class="text-gray-700">Turistas modernos buscam autenticidade e experiências locais.</p>
                 </div>
               </div>
@@ -357,6 +652,7 @@ export const articles: BlogArticles = [
     date: "2026-02-05",
     readTime: "4 min",
     image: "/images/blog/salon-marseille.jpg",
+    relatedSlugs: ["channel-manager-guide-complet-conciergeries", "automatiser-gestion-locations-saisonnieres"],
     translations: {
       fr: {
         title: "Biloki au salon de la conciergerie à Marseille : on vous attend !",
@@ -614,6 +910,7 @@ export const articles: BlogArticles = [
     date: "2026-01-20",
     readTime: "8 min",
     image: "/images/blog/automatisation.jpg",
+    relatedSlugs: ["channel-manager-guide-complet-conciergeries", "messagerie-automatisee-conciergerie", "ia-location-courte-duree-conciergeries"],
     translations: {
       fr: {
         title: "Comment automatiser la gestion de ses locations saisonnières en 2026",
@@ -627,12 +924,12 @@ export const articles: BlogArticles = [
               </p>
               
               <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
-                <p class="text-gray-800 font-semibold mb-3">📊 Impact mesuré sur nos clients :</p>
+                <p class="text-gray-800 font-semibold mb-3">Impact mesuré sur nos clients :</p>
                 <ul class="space-y-2 text-gray-700">
-                  <li><strong>✓ 12-18 heures/semaine</strong> économisées dès 15 logements</li>
-                  <li><strong>✓ -40%</strong> d'incidents liés au check-in</li>
-                  <li><strong>✓ +0,3 point</strong> de satisfaction voyageurs en moyenne</li>
-                  <li><strong>✓ +10-15%</strong> de conversion sur les demandes</li>
+                  <li><strong>• 12-18 heures/semaine</strong> économisées dès 15 logements</li>
+                  <li><strong>• -40%</strong> d'incidents liés au check-in</li>
+                  <li><strong>• +0,3 point</strong> de satisfaction voyageurs en moyenne</li>
+                  <li><strong>• +10-15%</strong> de conversion sur les demandes</li>
                 </ul>
               </div>
             </section>
@@ -642,7 +939,7 @@ export const articles: BlogArticles = [
               
               <div class="space-y-6">
                 <div class="border-l-4 border-primary bg-white p-6 rounded-r-lg shadow-sm">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">1️⃣ Messagerie voyageurs multicanal</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">1. Messagerie voyageurs multicanal</h3>
                   <p class="text-gray-700 mb-3">Déclenchez automatiquement les messages essentiels à chaque étape du séjour.</p>
                   <ul class="text-sm text-gray-600 space-y-1 ml-4">
                     <li>📧 <strong>J-2 :</strong> Instructions d'accès + code wifi + parking</li>
@@ -652,7 +949,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="border-l-4 border-primary bg-white p-6 rounded-r-lg shadow-sm">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">2️⃣ Planning ménage et maintenance</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">2. Planning ménage et maintenance</h3>
                   <p class="text-gray-700 mb-3">Génération automatique de tickets après chaque check-out avec assignation intelligente.</p>
                   <ul class="text-sm text-gray-600 space-y-1 ml-4">
                     <li>🧹 Création automatique des missions ménage</li>
@@ -662,7 +959,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="border-l-4 border-primary bg-white p-6 rounded-r-lg shadow-sm">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">3️⃣ Tarifs et disponibilité synchronisés</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">3. Tarifs et disponibilité synchronisés</h3>
                   <p class="text-gray-700 mb-3">Un calendrier central = tous vos canaux à jour instantanément.</p>
                   <ul class="text-sm text-gray-600 space-y-1 ml-4">
                     <li>💰 Blocage instantané sur Airbnb, Booking, Vrbo</li>
@@ -672,7 +969,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="border-l-4 border-primary bg-white p-6 rounded-r-lg shadow-sm">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">4️⃣ Accès et sécurité</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">4. Accès et sécurité</h3>
                   <p class="text-gray-700 mb-3">Codes temporaires automatiques et expiration garantie à la sortie.</p>
                   <ul class="text-sm text-gray-600 space-y-1 ml-4">
                     <li>🔐 Codes uniques par séjour (serrures connectées ou coffres)</li>
@@ -682,12 +979,12 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="border-l-4 border-primary bg-white p-6 rounded-r-lg shadow-sm">
-                  <h3 class="text-xl font-bold text-gray-900 mb-2">5️⃣ Facturation et comptabilité</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">5. Facturation et comptabilité</h3>
                   <p class="text-gray-700 mb-3">Vos factures se génèrent toutes seules. Vous avez juste à vérifier.</p>
                   <ul class="text-sm text-gray-600 space-y-1 ml-4">
-                    <li>📊 Factures automatiques (TVA, frais ménage, options)</li>
-                    <li>📊 Exports comptables prêts à importer</li>
-                    <li>📊 Suivi des règlements + relances auto</li>
+                    <li>• Factures automatiques (TVA, frais ménage, options)</li>
+                    <li>• Exports comptables prêts à importer</li>
+                    <li>• Suivi des règlements + relances auto</li>
                   </ul>
                 </div>
               </div>
@@ -699,17 +996,17 @@ export const articles: BlogArticles = [
                 <div>
                   <h4 class="font-bold text-primary mb-3">Semaine 1-2 : Les fondations</h4>
                   <ul class="space-y-2 text-sm">
-                    <li>✅ Normaliser vos templates de messages (FR/EN)</li>
-                    <li>✅ Connecter Airbnb, Booking, Vrbo</li>
-                    <li>✅ Activer les messages automatiques clés</li>
+                    <li>• Normaliser vos templates de messages (FR/EN)</li>
+                    <li>• Connecter Airbnb, Booking, Vrbo</li>
+                    <li>• Activer les messages automatiques clés</li>
                   </ul>
                 </div>
                 <div>
                   <h4 class="font-bold text-primary mb-3">Semaine 3-4 : L'optimisation</h4>
                   <ul class="space-y-2 text-sm">
-                    <li>✅ Automatiser le planning ménage</li>
-                    <li>✅ Paramétrer les règles tarifaires</li>
-                    <li>✅ Mettre en place les exports comptables</li>
+                    <li>• Automatiser le planning ménage</li>
+                    <li>• Paramétrer les règles tarifaires</li>
+                    <li>• Mettre en place les exports comptables</li>
                   </ul>
                 </div>
               </div>
@@ -839,6 +1136,7 @@ export const articles: BlogArticles = [
     date: "2026-01-20",
     readTime: "8 min",
     image: "/images/blog/channel-manager-guide.jpg",
+    relatedSlugs: ["automatiser-gestion-locations-saisonnieres", "messagerie-automatisee-conciergerie", "ia-location-courte-duree-conciergeries"],
     translations: {
       fr: {
         title: "Channel Manager : Le Guide Complet 2026 pour Conciergeries",
@@ -852,7 +1150,7 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg my-6">
-                <p class="text-gray-800"><strong>💡 En pratique :</strong> Une réservation confirmée sur Airbnb bloque instantanément les mêmes dates sur Booking.com et TOUS vos autres canaux. Plus de double réservation, plus de mises à jour manuelles.</p>
+                <p class="text-gray-800"><strong>En pratique :</strong> Une réservation confirmée sur Airbnb bloque instantanément les mêmes dates sur Booking.com et TOUS vos autres canaux. Plus de double réservation, plus de mises à jour manuelles.</p>
               </div>
             </section>
 
@@ -901,20 +1199,20 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
-                  <h3 class="text-lg font-bold text-green-900 mb-4">✅ Avec channel manager</h3>
+                  <h3 class="text-lg font-bold text-green-900 mb-4">Avec channel manager</h3>
                   <ul class="space-y-3 text-sm text-gray-700">
-                    <li>✨ Zéro double réservation</li>
-                    <li>✨ Gain de 15-20h/semaine</li>
-                    <li>✨ Cohérence tarifaire automatique</li>
-                    <li>✨ Sérénité opérationnelle</li>
-                    <li>✨ Meilleure satisfaction client</li>
+                    <li>• Zéro double réservation</li>
+                    <li>• Gain de 15-20h/semaine</li>
+                    <li>• Cohérence tarifaire automatique</li>
+                    <li>• Sérénité opérationnelle</li>
+                    <li>• Meilleure satisfaction client</li>
                   </ul>
                 </div>
               </div>
             </section>
 
             <section class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">📊 Le ROI d'un channel manager</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Le ROI d'un channel manager</h3>
               <p class="text-gray-700 mb-6">Prenez l'exemple d'une conciergerie gérant 15 logements sur 3 plateformes :</p>
               
               <div class="space-y-3">
@@ -962,7 +1260,7 @@ export const articles: BlogArticles = [
 
             <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg my-6">
               <p class="text-gray-800 font-medium">
-                <strong>💡 In practice:</strong> A booking on Airbnb instantly blocks the same dates on Booking.com and all your other channels.
+                <strong>In practice:</strong> A booking on Airbnb instantly blocks the same dates on Booking.com and all your other channels.
               </p>
             </div>
 
@@ -1050,6 +1348,7 @@ export const articles: BlogArticles = [
     date: "2026-01-15",
     readTime: "7 min",
     image: "/images/blog/claudeopus4.6.png",
+    relatedSlugs: ["channel-manager-guide-complet-conciergeries", "automatiser-gestion-locations-saisonnieres", "messagerie-automatisee-conciergerie"],
     translations: {
       fr: {
         title: "Comment l'IA transforme la gestion des locations courte durée",
@@ -1063,12 +1362,12 @@ export const articles: BlogArticles = [
               </p>
 
               <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg my-6">
-                <p class="text-gray-800"><strong>🚀 L'IA fait aujourd'hui :</strong></p>
+                <p class="text-gray-800"><strong>L'IA fait aujourd'hui :</strong></p>
                 <ul class="mt-3 space-y-2 text-gray-700">
-                  <li>✓ Répond aux questions 24/7 en langage naturel</li>
-                  <li>✓ Optimise les tarifs en fonction de la demande</li>
-                  <li>✓ Automatise 70% des tâches répétitives</li>
-                  <li>✓ Prédit les problèmes avant qu'ils surviennent</li>
+                  <li>• Répond aux questions 24/7 en langage naturel</li>
+                  <li>• Optimise les tarifs en fonction de la demande</li>
+                  <li>• Automatise 70% des tâches répétitives</li>
+                  <li>• Prédit les problèmes avant qu'ils surviennent</li>
                 </ul>
               </div>
             </section>
@@ -1086,7 +1385,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-400 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">📊 2) Optimisation des prix dynamiques</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">2) Optimisation des prix dynamiques</h3>
                   <p class="text-gray-700 mb-3">Ajustement automatique et intelligent des tarifs selon la demande, les événements locaux, la concurrence et l'historique.</p>
                   <div class="bg-white rounded p-3 text-sm text-gray-600 border border-blue-200">
                     <strong>Résultat :</strong> +12-15% de revenu moyen sans surcharger la gestion
@@ -1116,13 +1415,13 @@ export const articles: BlogArticles = [
             </section>
 
             <section class="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8 rounded-2xl">
-              <h3 class="text-2xl font-bold mb-3">⚠️ L'IA sans cadre = risques</h3>
+              <h3 class="text-2xl font-bold mb-3">L'IA sans cadre = risques</h3>
               <p class="text-white/90 mb-4">Il est crucial que l'IA reste un <strong>copilote</strong>, pas un pilote automatique :</p>
               <ul class="space-y-2 text-sm">
-                <li>✓ Vous vérifiez toujours les décisions critiques</li>
-                <li>✓ Les tarifs restent pilotés par votre stratégie</li>
-                <li>✓ Les messages automatiques sont pré-approuvés</li>
-                <li>✓ Aucune action commerciale sans validation</li>
+                <li>• Vous vérifiez toujours les décisions critiques</li>
+                <li>• Les tarifs restent pilotés par votre stratégie</li>
+                <li>• Les messages automatiques sont pré-approuvés</li>
+                <li>• Aucune action commerciale sans validation</li>
               </ul>
             </section>
 
@@ -1236,6 +1535,7 @@ export const articles: BlogArticles = [
     date: "2026-01-18",
     readTime: "6 min",
     image: "/images/blog/messagerie-automatisee.jpg",
+    relatedSlugs: ["channel-manager-guide-complet-conciergeries", "automatiser-gestion-locations-saisonnieres", "ia-location-courte-duree-conciergeries"],
     translations: {
       fr: {
         title: "Messagerie automatisée : Scripts et workflows pour conciergeries",
@@ -1264,7 +1564,7 @@ export const articles: BlogArticles = [
               
               <div class="space-y-4">
                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 transition">
-                  <div class="font-bold text-primary text-lg">1️⃣</div>
+                  <div class="font-bold text-primary text-lg">1</div>
                   <div>
                     <h4 class="font-bold text-gray-900">Confirmation de réservation</h4>
                     <p class="text-gray-600 text-sm">Envoyé immédiatement après la réservation pour rassurer le voyageur et confirmer l'information.</p>
@@ -1272,15 +1572,15 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 transition">
-                  <div class="font-bold text-primary text-lg">2️⃣</div>
+                  <div class="font-bold text-primary text-lg">2</div>
                   <div>
                     <h4 class="font-bold text-gray-900">Instructions pré-arrivée (J-2)</h4>
-                    <p class="text-gray-600 text-sm">📍 Adresse précise • 🔑 Code d'entrée • 📶 WiFi • 🅿️ Parking • 🏁 Point de repère</p>
+                    <p class="text-gray-600 text-sm">Adresse précise  Code d'entrée  WiFi  Parking  Point de repère</p>
                   </div>
                 </div>
 
                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 transition">
-                  <div class="font-bold text-primary text-lg">3️⃣</div>
+                  <div class="font-bold text-primary text-lg">3</div>
                   <div>
                     <h4 class="font-bold text-gray-900">Message de bienvenue (Jour J)</h4>
                     <p class="text-gray-600 text-sm">Guide du logement • Recommandations locales • Numéro d'urgence • Infos pratiques</p>
@@ -1288,7 +1588,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 transition">
-                  <div class="font-bold text-primary text-lg">4️⃣</div>
+                  <div class="font-bold text-primary text-lg">4</div>
                   <div>
                     <h4 class="font-bold text-gray-900">Check-in midstay (J+1)</h4>
                     <p class="text-gray-600 text-sm">Vérifier que tout se passe bien et anticiper les problèmes avant le départ.</p>
@@ -1296,7 +1596,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4 p-4 border border-gray-200 rounded-lg hover:bg-blue-50 transition">
-                  <div class="font-bold text-primary text-lg">5️⃣</div>
+                  <div class="font-bold text-primary text-lg">5</div>
                   <div>
                     <h4 class="font-bold text-gray-900">Rappel check-out (J-1)</h4>
                     <p class="text-gray-600 text-sm">Heure de départ • Procédure • Restitution des clés • État de la propriété</p>
@@ -1322,24 +1622,24 @@ export const articles: BlogArticles = [
             </section>
 
             <section class="bg-green-50 border-2 border-green-200 rounded-2xl p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">✅ Les bonnes pratiques</h3>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Les bonnes pratiques</h3>
               <div class="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 class="font-bold text-primary mb-3">Timing optimal</h4>
                   <ul class="space-y-2 text-sm text-gray-700">
-                    <li>✓ J-2 : instructions (temps pour poser Q)</li>
-                    <li>✓ Jour J : accueil bienveillant</li>
-                    <li>✓ J+1 : vérification discrète</li>
-                    <li>✓ J-1 : rappel sans trop stopper</li>
+                    <li>• J-2 : instructions (temps pour poser Q)</li>
+                    <li>• Jour J : accueil bienveillant</li>
+                    <li>• J+1 : vérification discrète</li>
+                    <li>• J-1 : rappel sans trop stopper</li>
                   </ul>
                 </div>
                 <div>
                   <h4 class="font-bold text-primary mb-3">Contenu efficace</h4>
                   <ul class="space-y-2 text-sm text-gray-700">
-                    <li>✓ Court et scannable</li>
-                    <li>✓ Ton chaleureux, pas robot</li>
-                    <li>✓ Emojis stratégiques</li>
-                    <li>✓ Lien direct plutôt que texte brut</li>
+                    <li>• Court et scannable</li>
+                    <li>• Ton chaleureux, pas robot</li>
+                    <li>• Emojis stratégiques</li>
+                    <li>• Lien direct plutôt que texte brut</li>
                   </ul>
                 </div>
               </div>
@@ -1458,6 +1758,7 @@ export const articles: BlogArticles = [
     date: "2026-01-22",
     readTime: "6 min",
     image: "/images/blog/nice-airbnb.jpg",
+    relatedSlugs: ["loi-le-meur-2026-location-saisonniere", "automatiser-gestion-locations-saisonnieres", "channel-manager-guide-complet-conciergeries"],
     translations: {
       fr: {
         title: "Nice : Quotas Airbnb par quartier - Ce que les conciergeries doivent savoir",
@@ -1480,7 +1781,7 @@ export const articles: BlogArticles = [
               
               <div class="space-y-6">
                 <div class="bg-gradient-to-r from-blue-50 to-transparent border-l-4 border-blue-400 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">📍 Mesure 1 : Quotas par quartier</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Mesure 1 : Quotas par quartier</h3>
                   <p class="text-gray-700 mb-3">Chaque quartier de Nice a désormais un nombre maximum de meublés touristiques autorisés. Une fois le quota atteint, aucune nouvelle autorisation n'est délivrée.</p>
                   
                   <div class="bg-white rounded-lg p-4 border border-blue-200 text-sm text-gray-700">
@@ -1498,7 +1799,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="bg-gradient-to-r from-red-50 to-transparent border-l-4 border-red-400 p-6 rounded-r-lg">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">⏳ Mesure 3 : Autorisations limitées à 3 ans</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Mesure 3 : Autorisations limitées à 3 ans</h3>
                   <p class="text-gray-700 mb-3">Les autorisations de changement d'usage ne sont plus perpétuelles. Elles sont accordées pour une durée maximale de 3 ans, renouvelable.</p>
                   
                   <div class="bg-white rounded-lg p-4 border border-red-200 text-sm text-gray-700">
@@ -1513,7 +1814,7 @@ export const articles: BlogArticles = [
               
               <div class="space-y-4">
                 <div class="flex gap-4">
-                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">✓</div>
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
                   <div>
                     <h4 class="font-bold text-gray-900 mb-1">Étape 1 : Diagnostic immédiat</h4>
                     <p class="text-gray-700 text-sm">Vérifiez auprès de la mairie de Nice le statut exact de chacun de vos logements (quota, autorisation, date d'expiration).</p>
@@ -1521,7 +1822,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4">
-                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">✓</div>
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
                   <div>
                     <h4 class="font-bold text-gray-900 mb-1">Étape 2 : Antici pez les renouvellements</h4>
                     <p class="text-gray-700 text-sm">Mettez en place un système de rappel pour 6 mois avant expiration de chaque autorisation. Les délais administratifs peuvent être longs.</p>
@@ -1529,7 +1830,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4">
-                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">✓</div>
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
                   <div>
                     <h4 class="font-bold text-gray-900 mb-1">Étape 3 : Documentez vos séjours</h4>
                     <p class="text-gray-700 text-sm">Tenez à jour le décompte des jours de location pour chaque résidence principale (respect des 90 jours).</p>
@@ -1537,7 +1838,7 @@ export const articles: BlogArticles = [
                 </div>
 
                 <div class="flex gap-4">
-                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">✓</div>
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</div>
                   <div>
                     <h4 class="font-bold text-gray-900 mb-1">Étape 4 : Diversifiez si possible</h4>
                     <p class="text-gray-700 text-sm">Si vous avez capacité, considérez une expansion vers d'autres zones non saturées (région PACA, Côte d'Azur).</p>

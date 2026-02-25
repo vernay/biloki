@@ -601,7 +601,15 @@
     "title": "Blog",
     "description": "Guides, tips and news to optimize your property management",
     "newsletter": "Receive our latest articles",
-    "subscribeNewsletter": "Subscribe"
+    "subscribeNewsletter": "Subscribe",
+    "sidebarCtaTitle": "Ready to automate?",
+    "sidebarCtaText": "Put these tips into practice with Biloki.",
+    "sidebarCtaFree": "Free trial 14 days",
+    "sidebarCtaDemo": "Book a demo",
+    "sidebarNewsletterTitle": "Stay informed",
+    "sidebarNewsletterText": "Receive our best tips directly.",
+    "sidebarNewsletterButton": "Subscribe",
+    "trendingArticles": "Trending articles"
   },
   "subscribePage": {
     "badge": "Flexible configuration",

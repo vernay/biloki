@@ -24,6 +24,14 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
+// Optimize description to max 155 characters (Google SERP limit)
+function optimizeDescription(text: string): string {
+  if (text.length <= 155) return text;
+  const trimmed = text.substring(0, 155);
+  const lastSpace = trimmed.lastIndexOf(' ');
+  return lastSpace > 120 ? trimmed.substring(0, lastSpace) + '...' : trimmed + '...';
+}
+
 export async function generateMetadata({
   params,
 }: BlogArticlePageProps): Promise<Metadata> {
@@ -38,7 +46,7 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: article.excerpt,
+    description: optimizeDescription(article.excerpt),
   };
 }
 
@@ -96,8 +104,43 @@ export default async function BlogArticlePage({
     pt: { home: 'Início', blog: 'Blog' }
   }[locale] || { home: 'Accueil', blog: 'Blog' };
 
+  // Calculate word count from article content (strip HTML)
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
+  const wordCount = stripHtml(article.content).trim().split(/\s+/).length;
+  
+  // Build absolute URL
+  const absoluteUrl = `https://biloki.com/${locale}/blog/${slug}`;
+
+  // Schema.org BlogPosting structured data
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    image: `https://biloki.com${article.image}`,
+    datePublished: article.date,
+    dateModified: article.updatedDate || article.date,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      url: `https://biloki.com/${locale}`
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Biloki",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://biloki.com/images/logo.png"
+      }
+    },
+    description: optimizeDescription(article.excerpt),
+    articleBody: stripHtml(article.content).substring(0, 5000),
+    wordCount: wordCount,
+    timeRequired: `PT${article.readTime.replace(/\D/g, '')}M`
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       <ReadingProgressBar />
       <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -119,6 +162,7 @@ export default async function BlogArticlePage({
                 currentSlug={slug}
                 articles={allArticles}
                 locale={locale}
+                relatedSlugs={article.relatedSlugs}
               />
             </div>
 

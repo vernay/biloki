@@ -601,7 +601,15 @@
     "title": "Blog",
     "description": "Guides, conseils et actualités pour optimiser la gestion de votre conciergerie",
     "newsletter": "Recevez nos derniers articles",
-    "subscribeNewsletter": "S'abonner"
+    "subscribeNewsletter": "S'abonner",
+    "sidebarCtaTitle": "Prêt à automatiser ?",
+    "sidebarCtaText": "Mettez en pratique ces conseils avec Biloki.",
+    "sidebarCtaFree": "Essai gratuit 14j",
+    "sidebarCtaDemo": "Réserver une démo",
+    "sidebarNewsletterTitle": "Rester informé",
+    "sidebarNewsletterText": "Reçevez nos meilleurs conseils directement.",
+    "sidebarNewsletterButton": "S'abonner",
+    "trendingArticles": "Articles tendance"
   },
   "subscribePage": {
     "title": "Configuration flexible",
