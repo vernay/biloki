@@ -10,6 +10,7 @@ export interface BlogArticleForLocale {
   image: string;
   author?: BlogAuthor;
   featured?: boolean;
+  relatedSlugs?: string[];
   title: string;
   excerpt: string;
   content: string;
@@ -30,6 +31,7 @@ export function getArticlesForLocale(locale: Locale): BlogArticleForLocale[] {
       image: article.image,
       author: article.author,
       featured: article.featured,
+      relatedSlugs: article.relatedSlugs,
       ...article.translations[locale],
     }))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -54,6 +56,7 @@ export function getArticleBySlug(
     image: article.image,
     author: article.author,
     featured: article.featured,
+    relatedSlugs: article.relatedSlugs,
     ...article.translations[locale],
   };
 }
