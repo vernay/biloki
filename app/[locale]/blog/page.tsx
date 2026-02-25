@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
 import { getArticlesForLocale } from "@/lib/blog";
 import { Locale } from "@/lib/blog/types";
 import RelatedPages from "@/components/ui/RelatedPages";
+import BlogGrid from "@/components/blog/BlogGrid";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blogPage");
@@ -42,59 +42,12 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
           </p>
         </div>
 
-        {/* Articles Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article) => (
-            <article 
-              key={article.slug}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col"
-            >
-              {/* Image */}
-              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-primary to-blue-600">
-                <Image 
-                  src={article.image} 
-                  alt={article.title}
-                  fill
-                  className="object-cover hover:scale-110 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  unoptimized={article.slug === "ia-location-courte-duree-conciergeries"}
-                />
-              </div>
-
-              <div className="p-6 flex flex-col flex-1">
-                {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                  <span className="bg-blue-100 text-primary px-3 py-1 rounded-full font-semibold">
-                    {article.category}
-                  </span>
-                  <span>{article.date}</span>
-                  <span>• {article.readTime}</span>
-                </div>
-
-                {/* Title */}
-                <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                  {article.title}
-                </h2>
-
-                {/* Excerpt */}
-                <p className="text-gray-700 mb-4 flex-1 line-clamp-3">
-                  {article.excerpt}
-                </p>
-
-                {/* CTA */}
-                <a
-                  href={`/${locale}/blog/${article.slug}`}
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-                >
-                  {common("readArticle")}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* Articles Grid avec filtres */}
+        <BlogGrid
+          articles={articles}
+          locale={locale}
+          readMoreLabel={common("readArticle")}
+        />
 
         {/* Newsletter CTA */}
         <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">

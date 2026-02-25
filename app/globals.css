@@ -7,8 +7,10 @@
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Chatbot header - utilise les variables de couleur Biloki */
