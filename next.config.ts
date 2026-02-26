@@ -280,6 +280,50 @@ const nextConfig: NextConfig = {
         destination: '/fr/fonctionnalites/4-interfaces',
         permanent: true,
       },
+      
+      // Pages sans locale → ajouter /fr/
+      {
+        source: '/contact',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/contact/',
+        destination: '/fr/contact',
+        permanent: true,
+      },
+      {
+        source: '/cgv',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      {
+        source: '/cgv/',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      
+      // Sous-paths qui n'existent pas
+      {
+        source: '/:locale/fonctionnalites/pms/sejours',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/pms/sejours/',
+        destination: '/:locale/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/reporting',
+        destination: '/:locale/fonctionnalites',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/reporting/',
+        destination: '/:locale/fonctionnalites',
+        permanent: true,
+      },
     ];
   },
 };
