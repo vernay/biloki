@@ -17,6 +17,16 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/equipe`,
+      languages: {
+        fr: '/fr/equipe',
+        en: '/en/equipe',
+        es: '/es/equipe',
+        pt: '/pt/equipe',
+        'x-default': '/fr/equipe',
+      },
+    },
   };
 }
 
