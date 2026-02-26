@@ -47,6 +47,16 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: optimizeDescription(article.excerpt),
+    alternates: {
+      canonical: `/${locale}/blog/${slug}`,
+      languages: {
+        fr: `/fr/blog/${slug}`,
+        en: `/en/blog/${slug}`,
+        es: `/es/blog/${slug}`,
+        pt: `/pt/blog/${slug}`,
+        "x-default": `/fr/blog/${slug}`,
+      },
+    },
   };
 }
 
@@ -108,28 +118,28 @@ export default async function BlogArticlePage({
   const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
   const wordCount = stripHtml(article.content).trim().split(/\s+/).length;
   
-  // Build absolute URL
-  const absoluteUrl = `https://biloki.com/${locale}/blog/${slug}`;
+  // Build absolute URL with correct domain
+  const absoluteUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
 
   // Schema.org BlogPosting structured data
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
-    image: `https://biloki.com${article.image}`,
+    image: `https://www.biloki.fr${article.image}`,
     datePublished: article.date,
     dateModified: article.updatedDate || article.date,
     author: {
       "@type": "Person",
       name: author.name,
-      url: `https://biloki.com/${locale}`
+      url: `https://www.biloki.fr/${locale}`
     },
     publisher: {
       "@type": "Organization",
       name: "Biloki",
       logo: {
         "@type": "ImageObject",
-        url: "https://biloki.com/images/logo.png"
+        url: "https://www.biloki.fr/images/logo.png"
       }
     },
     description: optimizeDescription(article.excerpt),
