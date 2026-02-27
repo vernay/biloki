@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { calculatePrice, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, FREE_TRIAL_DAYS, ANNUAL_DISCOUNT } from "@/lib/pricing-config";
 import { COLORS } from "@/lib/design-config";
 import WebappLink from "@/components/ui/WebappLink";
+import { trackCalculatorUse } from "@/lib/tracking";
 
 export default function PricingCalculator() {
   const tCommon = useTranslations("common");
@@ -14,6 +15,7 @@ export default function PricingCalculator() {
   const [dwellingsInput, setDwellingsInput] = useState("5");
   const [billingCycle, setBillingCycle] = useState<BillingPeriod>("monthly");
   const [isParticulier, setIsParticulier] = useState(false);
+  const [hasTrackedInitialLoad, setHasTrackedInitialLoad] = useState(false);
 
   const monthlyData = calculatePrice(dwellings, "monthly", {
     isParticulier
@@ -35,6 +37,15 @@ export default function PricingCalculator() {
   const totalAnnualDisplay = isCustomPricing
     ? null
     : (billingCycle === "annual" ? totalAnnualDiscounted : totalAnnualFull) * (isParticulier ? 1 + VAT_RATE : 1);
+
+  // Track calculator usage when parameters change
+  useEffect(() => {
+    if (!hasTrackedInitialLoad) {
+      setHasTrackedInitialLoad(true);
+      return; // Don't track on initial load
+    }
+    trackCalculatorUse(dwellings, billingCycle, isParticulier);
+  }, [dwellings, billingCycle, isParticulier, hasTrackedInitialLoad]);
 
   const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const next = Math.max(1, Number(e.target.value));

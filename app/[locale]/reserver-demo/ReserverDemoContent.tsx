@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import RelatedPages from '@/components/ui/RelatedPages';
+import { trackDemoClick } from '@/lib/tracking';
 
 export default function ReserverDemoContent() {
   const t = useTranslations('demoPage');
@@ -67,6 +68,9 @@ export default function ReserverDemoContent() {
           source: 'formulaire_demo',
         }),
       });
+      
+      // Track demo booking submission
+      trackDemoClick('demo_page');
     } catch (error) {
       console.error('Erreur HubSpot:', error);
     }

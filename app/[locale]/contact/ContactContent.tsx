@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
 import RelatedPages from '@/components/ui/RelatedPages';
 import { useLocale } from 'next-intl';
+import { trackContactFormSubmit } from '@/lib/tracking';
 
 export default function ContactContent() {
   const t = useTranslations('contactPage');
@@ -55,6 +56,9 @@ export default function ContactContent() {
       const data = await response.json();
 
       if (response.ok) {
+        // Track contact form submission
+        trackContactFormSubmit(formData.raison || 'general', 'contact_page');
+        
         setSubmitted(true);
         setFormData({
           prenom: '',
