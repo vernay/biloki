@@ -11,6 +11,7 @@ import BlogTags from "@/components/blog/BlogTags";
 import ShareButtons from "@/components/blog/ShareButtons";
 import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
 import { translateCategory } from "@/lib/blog/categories";
+import { SITE_BASE_URL } from "@/lib/config";
 
 interface BlogArticlePageProps {
   params: Promise<{
@@ -44,8 +45,8 @@ export async function generateMetadata({
     };
   }
 
-  const absoluteImageUrl = `https://www.biloki.fr${article.image}`;
-  const absoluteUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
+  const absoluteImageUrl = new URL(article.image, SITE_BASE_URL).toString();
+  const absoluteUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
 
   return {
     title: article.title,
@@ -132,7 +133,7 @@ export default async function BlogArticlePage({
   const defaultAuthor = defaultAuthorByLocale[locale] || defaultAuthorByLocale.fr;
 
   const author = article.author || defaultAuthor;
-  const currentUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
+  const currentUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
 
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
@@ -149,27 +150,27 @@ export default async function BlogArticlePage({
   const wordCount = stripHtml(article.content).trim().split(/\s+/).length;
   
   // Build absolute URL with correct domain
-  const absoluteUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
+  const absoluteUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
 
   // Schema.org BlogPosting structured data
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: article.title,
-    image: `https://www.biloki.fr${article.image}`,
+    image: new URL(article.image, SITE_BASE_URL).toString(),
     datePublished: article.date,
     dateModified: article.updatedDate || article.date,
     author: {
       "@type": "Person",
       name: author.name,
-      url: `https://www.biloki.fr/${locale}`
+      url: `${SITE_BASE_URL}/${locale}`
     },
     publisher: {
       "@type": "Organization",
       name: "Biloki",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.biloki.fr/images/logo.png"
+        url: `${SITE_BASE_URL}/images/logo.png`
       }
     },
     description: optimizeDescription(article.excerpt),
@@ -233,19 +234,19 @@ export default async function BlogArticlePage({
             "@type": "ListItem",
             "position": 1,
             "name": breadcrumbLabels.home,
-            "item": `https://www.biloki.fr/${locale}`
+            "item": `${SITE_BASE_URL}/${locale}`
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": breadcrumbLabels.blog,
-            "item": `https://www.biloki.fr/${locale}/blog`
+            "item": `${SITE_BASE_URL}/${locale}/blog`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": article.title,
-            "item": `https://www.biloki.fr/${locale}/blog/${slug}`
+            "item": `${SITE_BASE_URL}/${locale}/blog/${slug}`
           }
         ]
       }) }} />
