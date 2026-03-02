@@ -11,6 +11,30 @@ export const metadata: Metadata = {
   },
   description:
     "Biloki centralise, automatise et orchestre le cycle de vie des séjours pour conciergeries, propriétaires, prestataires et locataires.",
+  openGraph: {
+    title: "Biloki — Gestion de séjours sans effort",
+    description:
+      "Biloki centralise, automatise et orchestre le cycle de vie des séjours pour conciergeries, propriétaires, prestataires et locataires.",
+    siteName: "Biloki",
+    url: "https://www.biloki.fr",
+    type: "website",
+    images: [
+      {
+        url: "https://www.biloki.fr/logos/logo-biloki.png",
+        width: 1000,
+        height: 1000,
+        alt: "Biloki - Gestion de séjours",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Biloki — Gestion de séjours sans effort",
+    description:
+      "Biloki centralise, automatise et orchestre le cycle de vie des séjours pour conciergeries, propriétaires, prestataires et locataires.",
+    images: ["https://www.biloki.fr/logos/logo-biloki.png"],
+  },
   robots: {
     index: true,
     follow: true,
