@@ -1,0 +1,2618 @@
+Mémoire de recherche de
+Alexandre FARDIN
+
+17 rue de la Sorbonne
+75005 Paris
+MASTER 2 : GESTION ET STRATEGIE DE L’INVESTISSEMENT IMMOBILIER ET DE LA
+CONSTRUCTION – GESIIC
+
+Probléma)que : La loca'on de courte durée est-elle un inves'ssement
+rentable sur le long terme ?
+
+ENCADRANT : Morgan VIDAILHET
+
+Promo'on : 2024-2025
+Paris, le 30/04/2025
+
+Remerciements :
+
+Tout d’abord, je .ens à remercier mon directeur de mémoire, Monsieur VIDAILHET Morgan, pour les
+précieux conseils qu’il a pu m’apporter tout au long de la rédac.on de ce dernier. Nous avons pu
+échanger à plusieurs reprises, que ce soit en période de vacances et même les week-ends. Son écoute
+et sa disponibilité m’ont permis d’aborder plus sereinement chaque par.e de mon mémoire.
+Ensuite, je souhaite remercier tout le corps professoral du master GESIIC au sein de l’université Paris 1
+Panthéon-Sorbonne, qui m’a accordé son temps et apporté ses connaissances sur le sujet que je traite.
+Leurs aides m’ont permis d’enrichir les recherches que j’ai menées et de répondre à mes ques.ons.
+Enﬁn, je .ens à remercier mes camarades de classe qui m’ont également prodigué des conseils et fait
+des retours construc.fs, me permeRant de progresser sur la qualité de mon rendu ﬁnal.
+
+Table des matières :
+Sommaire de ges,on : ....................................................................................................................... 1
+Introduc,on :...................................................................................................................................... 2
+PARTIE 1 — Revue de li<érature ...................................................................................................... 3
+I. Déﬁni,on et fonc,onnement de la loca,on de courte durée ....................................................... 3
+A) Évolu.on historique et chiﬀres clés............................................................................................ 3
+B) Les principaux acteurs ................................................................................................................ 4
+C) Typologie des ac.fs immobiliers et proﬁls des inves.sseurs ...................................................... 5
+II. Iden,ﬁer les facteurs clés de réussite d’un inves,ssement en loca,on de courte durée ........... 6
+A) Un emplacement stratégique ..................................................................................................... 6
+B) Une ges.on professionnelle : ..................................................................................................... 6
+C) Une expérience client unique ..................................................................................................... 7
+D) Le yield management (Expert professionnel, Pricelabs)............................................................. 9
+E) Des ou.ls numériques adaptés (Dashboard, AirDNA) .............................................................. 10
+F) Une automa.sa.on des procédures via des channels Managers. ............................................ 11
+III. Avantages et inconvénients de la loca,on de courte durée ...................................................... 13
+A) Les avantages :.......................................................................................................................... 13
+1. Rentabilité importante (comparaison de projet) ...................................................................... 13
+2. Généra.on de cash-ﬂow ........................................................................................................... 14
+3. Une ﬂexibilité et pleine autonomie........................................................................................... 15
+a)
+
+Flexibilité juridique .............................................................................................................. 15
+
+b)
+
+Autonomie opéra.onnelle .................................................................................................. 17
+
+c)
+
+Op.misa.on de l’usage du bien : ........................................................................................ 17
+
+B) Les limites et les risques associés ............................................................................................. 18
+1. Accès au ﬁnancement : ré.cence des ins.tu.ons bancaires.................................................... 18
+2. Les dépenses principales et celles liées à la ges.on (services de conciergerie, maintenance). 18
+3. Restric.ons réglementaires (limite à 120 jours, enregistrements, quotas) .............................. 19
+4. Changements dans l'environnement ﬁscal (LMNP, réformes) .................................................. 20
+a)
+
+La loi Le Meur (loi n° 2024-1039 du 19 novembre 2024) .................................................... 20
+
+b)
+
+La Loi de ﬁnances 2025 (loi n° 2025-127 du 14 février 2025).............................................. 21
+
+A) L’Impact sur l’oﬀre loca.ve ....................................................................................................... 22
+B) Acceptabilités sociales et réac.ons des collec.vités locales .................................................... 27
+1.
+
+Perte de mixité résiden.elle et conﬂits d’usage .................................................................. 27
+
+2.
+
+Airbnb transforme-t-il les quar.ers en « villes fantômes » ?............................................... 27
+
+C) Mesures de régula.on urbaines et stratégies des municipalités à l’étranger .......................... 28
+1.
+
+Comparaisons interna.onales : pra.ques en Europe.......................................................... 28
+
+2.
+
+Les pra.ques hors Europe : ................................................................................................. 29
+
+D) Un déséquilibre concurren.el avec le secteur hôtelier ? ......................................................... 30
+PARTIE 2 — Probléma,que et méthodologie ................................................................................. 33
+I. Hypothèses de l’étude................................................................................................................... 33
+II. Probléma,que.............................................................................................................................. 34
+III. Méthodologie : ............................................................................................................................ 35
+A) Méthodologie qualita.ve ......................................................................................................... 35
+B) Objec.fs.................................................................................................................................... 36
+C) Risques et limites ...................................................................................................................... 36
+PARTIE 3 — Analyses de données et résultats ................................................................................ 37
+I. Étude des données et synthèse des résultats............................................................................... 37
+A) Hypothèses 1 : La loca'on de courte durée est-elle plus rentable que celle de la loca'on de
+longue durée à condi'on d'une ges'on professionnelle et d'une localisa'on stratégique........... 37
+B) Hypothèses 2 : Un modèle aﬀaibli par l’augmenta'on des règles strictes dans les zones
+tendues. ........................................................................................................................................ 39
+C) Hypothèses 3 : Le processus de professionnalisa'on représente un facteur clé pour assurer la
+viabilité à long terme. ................................................................................................................... 40
+D) Hypothèses 4 : Une exposi'on ampliﬁée aux chocs externes (sanitaires, clima'ques,
+économiques) ................................................................................................................................ 42
+E) Hypothèses 5 : Une approche patrimoniale à long terme comme condi'on de rentabilité réelle
+...................................................................................................................................................... 43
+II. Discussion ..................................................................................................................................... 46
+Conclusion : ...................................................................................................................................... 50
+Bibliographie : .................................................................................................................................. 52
+Annexes : .......................................................................................................................................... 53
+
+Sommaire de ges,on :
+Ce mémoire vise à étudier la loca.on de courte durée comme stratégie d’inves.ssement, et de
+déterminer si ce modèle économique est viable dans le temps. La ques.on de recherche est « La
+loca(on de courte durée est-elle un inves(ssement rentable sur le long terme ? »
+Le mémoire repose sur l’idée que la loca.on de courte durée oﬀre des rendements supérieurs à la
+loca.on tradi.onnelle et une plus grande ﬂexibilité. Cependant, la LCD fait face à des réglementa.ons
+de plus en plus strictes, une ﬁscalité moins favorable et une compé..on grandissante, ce qui soulève
+des ques.ons sur sa pérennité de ce modèle.
+Pour traiter ce sujet, l’étude s’appuie sur une démarche qualita.ve permeRant d’explorer en
+profondeur les enjeux de ce modèle économique. CeRe étude se compose de cinq entre.ens semidirec.fs réalisés grâce à des proﬁls variés tels qu’une conciergerie, un professionnel de la LCD, un
+inves.sseur par.culier de pe.te taille et un plus grand inves.sseur. Ces interviews m’ont permis
+d’iden.ﬁer les facteurs clés de réussite, les limites opéra.onnelles ainsi que les tendances de marché.
+Les cinq hypothèses étudiées portent notamment sur :
+•
+
+Hypothèse 1 : La loca'on de courte durée est-elle plus rentable que celle de la loca'on de
+longue durée à condi'on d'une ges'on professionnelle et d'une localisa'on stratégique.
+
+•
+
+Hypothèse 2 : Un modèle aﬀaibli par l’augmenta'on des règles strictes dans les zones tendues.
+
+•
+
+Hypothèse 3 : Le processus de professionnalisa'on représente un facteur clé pour assurer la
+viabilité à long terme.
+
+•
+
+Hypothèse 4 : Une exposi'on ampliﬁée aux chocs externes (sanitaires, clima'ques,
+économiques).
+
+•
+
+Hypothèse 5 : Une approche patrimoniale à long terme comme condi'on de rentabilité réelle.
+
+Ce mémoire a pour objec.f de déﬁnir les condi.ons indispensables à une rentabilité pérenne, de
+repérer les limites du modèle en vigueur et de comprendre comment les acteurs du secteur s’adaptent
+face aux changements du marché et de l’environnement réglementaire.
+
+1
+
+Introduc,on :
+L’essor des loca.ons de courte durée (LCD) est un phénomène majeur qui a transformé le secteur
+touris.que et de l’habitat résiden.el au cours de ces dernières années.
+En 2008, un nouveau modèle économique a vu le jour, celui de d’Airbnb. CeRe société a développé une
+plateforme en ligne facilitant la connexion entre les par.culiers et les inves.sseurs loca.fs pour la
+loca.on d'un bien immobilier à court terme. Depuis son lancement, la plateforme a connu un grand
+succès et a toujours été en pleine croissance, produisant des bénéﬁces en perpétuelle hausse.
+Cependant, la crise sanitaire a cons.tué un point de bascule diﬃcile : d'après Sta.sta, le volume des
+réserva.ons hôtelières est passé de 327 milliards à 193 milliards, ce qui représente une baisse de plus
+de 40 %. CeRe chute notable a souligné la sensibilité du modèle face aux crises sanitaires mondiales.
+Malgré ceRe baisse signiﬁca.ve les chiﬀres sont répar.s à la hausse et ont progressé chaque année
+pour aReindre 448 milliards de dollars en 2023. Ce phénomène illustre bien un besoin important de la
+loca.on de courte durée et un nouveau mode de consomma.on de l’habitat.
+Même si Airbnb reste le leader de la loca.on de courte durée on retrouve un grand nombre de
+concurrents, tels que « booking » axé en par.e sur les séjours hôteliers ou encore « Vrbo » qui se
+concentre sur les loca.ons de vacances « en.ères », c’est-à-dire pas de chambre partagée.
+L’environnement de la loca.on de courte durée se compose de plusieurs acteurs comme les
+propriétaires par.culiers, inves.sseurs loca.fs et les « marketplaces », qui correspondent aux
+plateformes de diﬀusion. Toutefois, d’autres acteurs sont venus se greﬀer autour de ceRe nouvelle
+pra.que tels que les conciergeries, les blanchisseries, les professionnels de ménage, et même le «
+Home Staging ».
+L'aRrait croissant pour ce type d'inves.ssement peut s'expliquer par des rendements intéressants, la
+ﬂexibilité de la durée de loca.on et des disposi.ons ﬁscales favorables à contrario des baux à long
+terme. Cependant ceRe pra.que rencontre quelques diﬃcultés actuelles liées à des changements
+stricts de la part de chaque collec.vité locale et via l’appari.on de nouvelles réglementa.ons.
+Également des ques.ons, sur les plans économiques, sociaux et réglementaires suscitent de nombreux
+débats tels que l’augmenta.on de la tension loca.ve pour la loca.on de longue durée, une concurrence
+déloyale sur le secteur de l’hôtellerie ou encore la dégrada.on de la vie sociale dans certains quar.ers.
+Aﬁn de traiter la ques.on, il est nécessaire de comprendre à la fois les bénéﬁces des loca.ons de courte
+durée et les limites sur lesquelles ce modèle est confronté, notamment dans un cadre de plus en plus
+réglementé. CeRe observa.on suscite de nombreuses interroga.ons : Est-ce que la loca.on à court
+terme est vraiment plus lucra.ve que la loca.on tradi.onnelle ? Assiste-t-on à une diminu.on
+progressive de ce genre d'inves.ssement ?
+C’est à travers ces ques.onnements que mon choix s'est naturellement porté sur l'étude de la ques.on
+suivante : La loca.on de courte durée est-elle un inves.ssement rentable sur le long terme ?
+Ce mémoire s’ar,culera en trois par,es complémentaires :
+Dans un premier temps, je vais me consacrer à établir une vue d’ensemble du marché de la loca.on à
+court terme. L’objec.f est d’établir les fondements théoriques indispensables à la compréhension de
+ce modèle : son évolu.on, ses principaux intervenants, la classiﬁca.on des ac.fs impliqués et les
+facteurs déterminants de succès observés chez les inves.sseurs CeRe revue de liRérature aidera aussi
+
+2
+
+à iden.ﬁer les contraintes structurelles et les limites liées à ce type d’inves.ssement, qu’ils soient de
+nature économique, réglementaire ou territoriale.
+Dans la deuxième par.e, j’expliquerai les hypothèses de ceRe étude ainsi que la méthodologie. CeRe
+recherche s’appuiera sur une approche qualita.ve, qui comprendra quatre entre.ens semi-direc.fs
+avec des spécialistes et des inves.sseurs du secteur. CeRe approche cherche à meRre en pra.que les
+savoirs théoriques dans un contexte concret.
+Pour ﬁnir, la troisième par.e meRra en avant les résultats de l'analyse qualita.ve en fonc.on des
+hypothèses établies. Elle présentera par la suite une analyse cri.que, puis s'ouvrira sur des perspec.ves
+d'évolu.on du modèle. On discutera en par.culier de : la rentabilité à court terme par rapport au long
+terme, la robustesse du modèle face aux évolu.ons réglementaires, la comparaison avec d'autres
+approches immobilières, les condi.ons de pérennité à long terme, la rentabilité des inves.ssements
+interna.onaux, ainsi que les facteurs de diﬀérencia.on dans un marché saturé.
+En conclusion, ce travail sera clôturé par une synthèse globale qui récapitulera les leçons .rées des
+diverses études scien.ﬁques et de mon analyse qualita.ve, tout en proposant des axes de réﬂexion
+permeRant de répondre à ma probléma.que.
+
+PARTIE 1 — Revue de li0érature
+
+I. Déﬁni1on et fonc1onnement de la loca1on de courte durée
+
+A) Évolu1on historique et chiﬀres clés
+Ce chapitre a pour objec.f de présenter les fondamentaux de la loca.on de courte durée et de
+comprendre dans quel environnement évolue ce marché.
+La loca.on de courte durée signiﬁe la mise en loca.on de son logement meublé pour une période
+allant de quelques nuits à quelques mois. Elle vise une clientèle diverse : des touristes, des
+professionnels en voyage ou encore des personnes en phase de transi.on (rénova.on,
+déménagement, etc.). CeRe forme de loca.on ne doit pas servir de résidence principale au locataire.
+C’est en 1995 que tout a commencé avec l’arrivée de VRBO. La première plateforme permeRait de
+réserver des loca.ons de vacances et de courte durée disponibles uniquement aux États-Unis. CeRe
+innova.on est apparue lors de l’explosion de la bulle internet entre 1995 et 2000, un phénomène
+largement lié à l’essor d’internet et à la forte demande des u.lisateurs. Un an plus tard, c’est l’arrivée
+de booking.com, qui dans un premier temps était u.lisé comme agrégateur de tarifs permeRant aux
+u.lisateurs de comparer les prix des hôtels et des loca.ons de vacances. Ensuite Booking.com a élargi
+son oﬀre, en étant le premier site de réserva.on d’hôtels et de loca.ons de vacances.
+Le milieu des années 2000 a aussi marqué la
+créa.on de HomeAway, résultant de la fusion de
+cinq diﬀérentes plateformes de loca.on, qui a par
+la suite racheté VRBO en 2006. En 2015, presque
+une décennie plus tard, Expedia a acquis
+HomeAway, ce qui lui a permis de surpasser
+Booking.com et de s'établir comme le principal
+fournisseur mondial de logements hôteliers.
+
+3
+
+L’arrivée du géant Airbnb, fondé en 2008 à San Francisco, s’est démarquée en oﬀrant diﬀérentes
+formules comme la loca.on de maisons de vacances, de chambres et logements atypiques. Airbnb a
+été la pionnière en oﬀrant aux voyageurs la possibilité de réserver une chambre chez un hôte.
+Aujourd’hui la communauté d’Airbnb représente plus de 8 millions d’annonces, plus de 5 millions
+d’hôtes sur Airbnb et plus de 2 milliards de voyageurs à ce jour d’après la mul.na.onale.
+Ce<e évolu,on technologique s’est accompagnée d’un changement dans les habitudes de
+consomma,on. En eﬀet, les nouveaux voyageurs recherchent un hébergement qui se rapproche du
+confort de leur domicile, avec des espaces partagés comme une cuisine, un salon ou des pièces de vie,
+des éléments rarement proposés par les hôtels tradi.onnels. En outre, les visiteurs recherchent une
+ﬂexibilité accrue concernant les horaires de « check-in et check-out », rendue possible par des systèmes
+autonomes tels que les boîtes à clés ou les serrures connectées. On remarque ceRe tendance surtout
+en France, où les déplacements internes sont courants. L'approche de la loca.on de courte durée
+s'aligne sur ceRe mobilité et awre par la diversité de ses oﬀres, y compris dans les zones rurales ou
+localisa.on secondaire avec peu d’établissement hôtelier.
+De fait, les hébergements de courte durée sont devenus un pilier de l’économie touris,que.
+Actuellement, les hébergements de courte de durée représentent
+un segment incontournable de l’économie touris.que. En 2023, la
+France a enregistré 176 millions de nuitées en loca.on de courte
+durée, soit 23,9% de plus que les campings mais 21,02% de moins
+que les hôtels selon Eurostat. La plupart des nuitées ont été
+réservées par les voyageurs venant de France (68%) et d’Europe
+(89%)1.
+
+B) Les principaux acteurs
+•
+
+Les hôtes représentent les propriétaires ou ges.onnaires de biens, ils meRent à disposi.on leurs
+biens pour une durée limitée. On dis.ngue d’une part les par.culiers, qui louent une par.e de leur
+résidence principale ou leur résidence secondaire, et d’autre part les inves.sseurs, qui adoptent
+une approche purement ﬁnancière, c’est-à-dire une loca.on de courte durée à l’année avec en
+moyenne un objec.f minimum un taux de rendement brut à 6%. Les ges.onnaires professionnels
+sont quant à eux des sociétés ou des indépendants spécialisés dans la ges.on de biens en LCD.
+
+•
+
+Les plateformes numériques sont celles qui permeRent de meRre en rela.on l’hôte et le voyageur.
+Elles représentent l’intermédiaire d’échange entre les deux par.es. On y retrouve notamment
+Airbnb, Booking.com, Abritel ou encore Expedia. Ces plateformes se rémunèrent par des
+commissions sur chaque réserva.on eﬀectuée ; en général, une part plus importante est à la charge
+du voyageur et une part moins importante à la charge de l’hôte. L’objec.f de ce modèle est
+d’encourager au maximum les inves.sseurs à louer leurs biens via la plateforme.
+
+•
+
+Enﬁn, les voyageurs sont ceux qui réservent le bien pour se loger. Contrairement à une idée reçue,
+il ne s’agit pas uniquement de touristes : ces séjours peuvent aussi être mo.vés par des
+déplacements professionnels.
+
+Les acteurs majeurs qui facilitent la loca.on d'un bien immobilier sont les locataires, les hôtes et les
+plateformes de loca.on. Cependant, il est aussi important de considérer d'autres acteurs qui ajoutent
+
+1
+
+Rapport Airbnb 2023, Deloi3e
+
+4
+
+de la valeur à cet écosystème, comme les sociétés de neRoyage professionnel, les services de
+conciergerie ou même les blanchisseries.
+
+C) Typologie des ac1fs immobiliers et proﬁls des inves1sseurs
+La majorité des biens disponibles sur les sites de loca.on de courte durée sont des appartements et
+des maisons tradi.onnels. D'après AirDNA, une plateforme spécialisée dans l’analyse des données
+issues d’Airbnb, une grande par.e de l’oﬀre disponible est composée de studios et de T1,
+principalement situés dans les grandes villes françaises telles que Paris, Lyon, Marseille ou Bordeaux.
+On trouve également sur Airbnb des résidences de tourisme, c’est-à-dire des logements meublés et
+équipés, proposant des presta.ons hôtelières telles que le pe.t-déjeuner, un service d’accueil et de
+récep.on, l’accès à divers équipements (salle de sport, salle de jeux, cinéma, piscine), ainsi qu’un
+service de ménage régulier. Pour être classés en tant que résidences de tourisme, ces lieux doivent se
+conformer à un cahier des charges rigoureux. Ce dernier permet de les évaluer de 1 à 5 étoiles en
+fonc.on de normes établies par Atout France. CeRe dis.nc.on, valable pour une durée de cinq ans,
+diﬀérencie ces logements des loca.ons tradi.onnelles à court terme.
+On remarque également la présence de chambres privées et de chambres partagées dans un logement
+occupé par le propriétaire. CeRe op.on permet au voyageur, souvent à pe.t budget, de bénéﬁcier d’un
+hébergement moins coûteux. Enﬁn, le géant a pris une autre tournure depuis quelques années en
+meRant en avant sur son site des logements atypiques aﬁn de privilégier au maximum l’expérience
+client. On observe des oﬀres de tous types, c’est-à-dire cabanes dans les arbres, bulles transparentes,
+maisons troglodytes, châteaux, .ny houses, maisons sur l’eau ou encore péniches.
+Pour comprendre de manière op.male à qui sont essen.ellement adressés les diﬀérents types d'ac.fs
+et pourquoi, je vous propose un tableau explica.f ci-dessous qui présente les oﬀres, leur cible et leurs
+bénéﬁces :
+Typologie
+Logement en,er
+Chambre privée / partagée
+Logement atypique
+Résidence de tourisme
+
+Cible
+Familles, séjours
+professionnels et amicales
+Étudiants, jeunes cadres,
+voyageurs avec pe.t budget
+Familles et amis
+
+Avantages
+Grands espaces, in.mités,
+autonomie
+Economique mais peu
+d’in.mité
+Bonne expérience client avec
+des logements variés mais
+souvent très coûteux.
+Familles, séjours professionnels Presta.ons et services de
+et amicaux en quête de bonnes qualité mais plutôt coûteux.
+presta.ons.
+
+Les proﬁls d’inves.sseurs sont assez variés : une par.e sont des primo-inves.sseurs assez jeunes, qui
+se posi.onnent sur des biens de pe.te taille de type T1 et T2, âgés de 25 à 30 ans. Une autre catégorie
+de proﬁls regroupe ceux qui cherchent des revenus supplémentaires, dus à une reconversion ou même
+à un arrêt d’ac.vité, souvent âgés de 30 à 45 ans. Puis, il y a l’inves.sseur patrimonial, possédant déjà
+un patrimoine important, qui cherche à diversiﬁer son ac.vité, augmenter ses rendements ou même
+faire un arbitrage, en passant de la loca.on nue ou meublée à la loca.on de courte durée.
+
+5
+
+II. Iden1ﬁer les facteurs clés de réussite d’un inves1ssement en loca1on de courte durée
+
+A) Un emplacement stratégique
+On entend souvent que les trois règles d’or en immobilier sont : la localisa.on, la localisa.on et encore
+la localisa.on. En eﬀet, sa situa.on géographique va déterminer l’environnement dans lequel le
+propriétaire ou le locataire va y vivre. Il en va de soi que la loca.on de courte durée n’échappe pas à
+ceRe règle, car une bonne localisa.on permet la proximité de nombreux services : besoin de première
+nécessité, transports, ac.vités culturelles ou spor.ves ainsi que sa connexion au .ssu urbain
+touris.que et économique.
+L’étude "Loca.on, loca.on and professionaliza.on: a mul.level hedonic analysis of Airbnb lis.ng prices
+and revenue", publiée en avril 2019 dans la revue Regional Studies, Regional Science par Robbin
+Deboosere, Danielle Jane Kerrigan, David Wachsmuth et Ahmed El-Geneidy, analyse les déterminants
+du prix et du revenu des annonces Airbnb à New York en meRant en évidence le rôle central de la
+localisa.on et de la professionnalisa.on des hôtes. L'élément le plus déterminant souligné dans ceRe
+étude est la facilité d'accès aux centres d'emploi par le biais des transports publics, jugée per.nente
+pour évaluer la proximité des points d'intérêt touris.que. Ce facteur est illustré par la cita.on "Transit
+accessibility to jobs has the most impact on both average nightly price and average monthly revenue."
+On peut donc se poser la ques.on de pourquoi ce lien avec l’emploi ? Tout simplement parce que les
+zones d’emploi majeures comme avec le quar.er animé de Midtown ManhaRan concentrent des
+musées, restaurants, commerces etc. Ainsi, un hébergement qui permet de s’y rendre facilement est
+plus aRrayant pour les touristes, même s'il est légèrement éloigné du centre.
+Comme indiqué page 151 à travers la cita.on "However, lis'ngs with high accessibility (deﬁned here as
+access to jobs via transit) charge an average of 12.2% more per night and earn an average of 13.2%
+more monthly revenue." Cela illustre que les logements très accessibles en transports en commun,
+c’est-à-dire bien connectés aux zones d’emploi, pra.quent des prix moyens par nuit supérieurs de 12,2
+% et génèrent en moyenne 13,2 % de revenus mensuels supplémentaires. CeRe accessibilité cons.tue
+ainsi un levier majeur de performance pour les loca.ons de courte durée.
+Également l’étude montre que la proximité avec le centre-ville reste un atout c’est-à-dire que plus le
+logement est proche du centre, plus il est rentable à condi.on qu’il ne soit pas isolé des quar.ers.
+Exemple : "Lis'ngs charge higher prices per night (1.5%) and earn more monthly average revenue
+(2.4%) for every 1 km closer to Times Square." CeRe cita.on montre que les logements pra.quent des
+prix plus élevés par nuit et gagnent plus de revenus mensuels moyens à chaque kilomètre de Times
+Square.
+
+B) Une ges1on professionnelle :
+Les Airbnb les plus rentables ne doivent pas leur succès à la seule localisa.on. Ce qui les diﬀérencie,
+c’est une ges.on professionnelle qui répond aux critères aRendus par les voyageurs : simplicité, ﬁabilité
+et qualité d’accueil. A ce .tre, le statut de Superhost est un signal de conﬁance et de qualité souvent
+obtenu lié à une ges.on professionnelle de son bien immobilier. L’étude montre que les hôtes les plus
+structurés, réac.fs et visibles génèrent plus de revenus que les autres.
+
+6
+
+Pour y parvenir l’hôte doit répondre à quatre critères majeurs : Une évalua.on globale de 4,8/5, un
+taux de réponse supérieur ou égal à 90%, un taux d’annula.on inférieur à 1% et 10 séjours terminés ou
+100 nuits sur au moins 3 séjours minimum sur l’année. Par la suite, l'hôte est réévalué tous les trois
+mois (1er janvier, 1er avril, 1er juillet, 1er octobre) sur la base des performances des 12 mois antérieurs.
+Cela lui donne l'occasion de perdre son statut et de le récupérer s'il répond aux critères d'Airbnb. Voir
+Annexe.
+D’autre part le rôle de SuperHost ne joue pas un rôle symbolique, mais cons.tue un véritable levier
+économique pour les propriétaires. En eﬀet, il permet aux hôtes de proﬁter de revenus
+supplémentaires en valorisant la viabilité et la qualité perçues par les précédents voyageurs de leurs
+services. Comme le souligne, l’étude de Robbin Deboosere, Danielle Jane Kerrigan, David Wachsmuth
+et Ahmed El-Geneidy par "This superhost status allows hosts to charge a slight premium [...] and results
+in a substan.al increase of 15.1% in monthly revenue. " (p. 150). Cela signiﬁe que le statut de superhost
+permet aux hôtes de pra.quer des tarifs légèrement plus élevés, ce qui se traduit par une
+augmenta.on substan.elle de 15,1 % de leurs revenus mensuels. En d'autres termes, les voyageurs
+sont prêts à dépenser davantage pour des proﬁls expérimentés, considérés comme plus professionnels
+et ﬁables.
+Un autre levier clé de professionnalisa.on est l’ac.va.on de la réserva,on instantanée qui permet de
+valider la réserva.on sans aRendre la valida.on de l’hôte. CeRe fonc.onnalité est couramment u.lisée
+par les hôtes les plus organisés qui cherchent à réduire le temps de ges.on et à maximiser le taux
+d’occupa.on. Comme le montre l’étude, les annonces avec ceRe op.on enregistrent des revenus
+supérieurs de 14,2%, malgré un prix par nuit légèrement inférieur de 1,8%, page 150 de l’étude.
+La qualité de présenta,on d’une annonce joue un rôle majeur dans sa performance sur Airbnb. Trois
+éléments sont par.culièrement importants : le nombre de photos et leurs qualités, la note moyenne
+de l’hébergement et les avis laissés par les voyageurs. L’étude montre que chaque étoile
+supplémentaire dans la nota.on moyenne augmente le prix par nuit de 8,3%, chaque photo ajoutée
+entraîne une légère hausse des revenus mensuels et que le nombre d’avis posi.fs est corrélé au revenu
+car les annonces avec beaucoup d’avis sont plus visibles par la plateforme et plus souvent réservées.
+Enﬁn, l’étude constate une grande performance économique pour les logements en.ers avec une
+performance de +51,2% de revenus par rapport aux chambres privées, page 149 de l’étude. Ce résultat
+s’explique par les préférences des voyageurs en ma.ère de confort, d’in.mité et d’autonomie. De plus
+les logements en.ers permeRent de mieux répondre aux aRentes des familles ou des groupes ce qui
+élargit la clientèle cible et le poten.el de réserva.on.
+Pour conclure sur ceRe par.e, l’étude montre que pour maximiser ses revenus, il ne suﬃt pas d’avoir
+un logement bien placé mais également d’avoir une ges.on professionnelle. Pour ce faire, il est
+recommandé de meRre en place les ou.ls appropriés (réserva.on immédiate), obtenir des
+cer.ﬁca.ons de qualité (Superhost), soigner sa présenta.on (images, descrip.ons, commentaires) et
+oﬀrir une proposi.on qui répond aux besoins (logement complet, confort, capacité).2
+
+C) Une expérience client unique
+
+2
+
+L’ar6cle "Loca6on, loca6on and professionaliza6on: a mul6level hedonic analysis of Airbnb lis6ng prices and
+revenue", publiée en avril 2019 dans la revue Regional Studies, Regional Science par Robbin Deboosere,
+Danielle Jane Kerrigan, David Wachsmuth et Ahmed El-Geneidy
+
+7
+
+Les plateformes comme Airbnb ont largement contribué à l’essor d’un nouveau segment de
+d’hébergement touris.que, celui des logements atypiques. Bien au-delà du simple lit chez l’habitat,
+ces oﬀres incluent des châteaux, cabanes dans les arbres, moulins, maisons troglodytes, péniches etc.
+CeRe évolu.on est au cœur de l’ar.cle « L’écotourisme à l’épreuve du diver.ssement sensoriel » de
+Anaba, Bodet, Bouchet publié en 2014 qui montre comment certains hébergements posi.onnés
+comme écotouris.ques s’appuient en réalité sur une logique de diver.ssement sensoriel, proche de
+celle des parcs d’aRrac.ons. CeRe stratégie repose sur un engagement fort : proposer aux voyageurs
+une expérience singulière, immersive et inoubliable, qui va au-delà de l'aspect purement fonc.onnel
+d'un hébergement. CeRe orienta.on éclaire les décisions stratégiques de plateformes telles qu'Airbnb,
+qui cherchent actuellement à promouvoir ces logements uniques pour revitaliser l'expérience client.
+L’ar.cle met en évidence une double stratégie : d’une part, les hébergements atypiques sont conçus
+pour oﬀrir une expérience immersive et émo.onnelle, c’est le cas par exemple avec une vue
+panoramique, sons de la nature, originalité architecturale, isolement ; d’autre part, de se diﬀérencier
+des autres logements sur les plateformes de courte durée. Également dans cet ar.cle les auteurs
+présentent une étude de cas sur « Les Nuits insolites » qui est un site d’hébergement atypique installé
+dans une ancienne carrière de pierre naturelle proposant des hébergements variés : cabanes perchées,
+bulles transparentes, rouloRes et hébergement théma.ques (espaces, jungle etc.). L’étude repose sur
+deux volets, une analyse qualita.ve avec un entre.en semi-direc.f avec le fondateur du site qui
+explique que son objec.f est de vendre un imaginaire (retour en enfance, nuit sous les étoiles), des
+émo.ons et une immersion. La cita.on « Je ne propose pas un hébergement, je propose une
+aventure » illustre bien mes propos. Le second volet de ceRe étude concerne une analyse quan.ta.ve
+par un ques.onnaire diﬀusé auprès de 351 clients aﬁn d’iden.ﬁer les mo.fs de réserva.ons et évaluer
+les aRentes des voyageurs. Les résultats de l’enquête client montrent que les visiteurs cherchent une
+expérience unique, hors du quo.dien et de l’originalité.3
+Dans ceRe dynamique, Airbnb a en,èrement repensé son applica,on et interface web à l’été 2025
+en structurant sa page d’accueil autour de trois onglets principaux : Logements, Experiences (Ac.vités
+locales, culturelles), Services (Massage, chef, coiﬀure, etc). CeRe mise à jour vise à mieux valoriser les
+hébergements atypiques et à renforcer l’expérience client.
+Par ailleurs, il existe d’autres plateformes qui ont fait le choix de se posi.onner sur le marché des
+logements atypiques. Comme évoqué précédemment ce type de logement est de plus en plus
+recherché par les voyageurs et représente aujourd’hui un segment de marché à part en.ère GrennGo,
+WeGoGreenR et Un Lit au pré. Ces trois plateformes ne proposent pas d’appartement classique, tous
+les logements sont insolites ou diﬀérents du standard hôtelier, par exemple : yourtes, cabanes, bulles,
+tentes safaris, .ny houses, rouloRe. Chaque plateforme valorise une forme de tourisme durable telle
+qu’un faible impact environnemental, un respect du territoire, une ges.on de l’eau et des énergies
+renouvelables et écoconstruc.on. Contrairement aux grandes plateformes ouvertes comme Airbnb,
+ces acteurs ne référencent pas automa.quement tous les logements. Les hôtes ont l'obliga.on de faire
+valider leur hébergement. Le choix est opéré sur la base d'un dossier, selon des critères rigoureux :
+environnement naturel, architecture singulière, engagements précis en ma.ère d'environnement et
+authen.cité de l'hospitalité. Conséquence : le voyageur bénéﬁcie d'une sélec.on brève, mais bien
+organisée et minu.eusement élaborée, qui répond à ses aRentes.
+
+3
+
+l’ar6cle « L’écotourisme à l’épreuve du diver6ssement sensoriel : Le cas des hébergements atypiques » de
+Anaba, Bodet, Bouchet publié en 2014
+
+8
+
+D) Le yield management (Expert professionnel, Pricelabs)
+Le yield management ou plus communément appelé revenue management est le fait de générer un
+maximum de chiﬀre d’aﬀaires selon l’oﬀre et la demande. Ce concept de ges.on de revenus a émergé
+dans les années 80 notamment dans l’industrie aérienne et a été popularisé par l’entreprise American
+Airlines qui u.lisait ceRe stratégie. D’autres secteurs ont donc suivi ceRe tendance, tels que l’industrie
+de loca.on de voiture, puis l’industrie hôtelière. A ceRe époque très peu d’ou.ls digitaux existaient, ce
+qui cons.tuait souvent un poste d’emploi à part en.ère ou de mission composant ceRe exper.se.4
+Ils existent souvent deux stratégies tarifaires bien dis.nctes comme l’explique Patrick Legohérel et
+Élisabeth Pou.er dans le livre in.tulé « Revenue Management - 2e éd. 2017 ». En eﬀet, la première
+approche est celle de .rer les prix vers le bas aﬁn de maximiser son taux de remplissage ; ceRe stratégie
+est souvent u.lisée pour les hôtels plus « low cost » ayant une capacité de chambre importante au
+même .tre que les propriétaires de plusieurs logements Airbnb ayant une qualité de service
+rela.vement faible. De l’autre, la stratégie est de louer à des prix supérieurs à ceux du marché sans
+pour autant louer l’en.èreté du stock (soit le nombre total des chambres), ceRe stratégie est souvent
+u.lisée par des hôtels haut de gamme, c’est aussi le cas pour les Airbnb avec des concepts tels que
+JungleRoom, .ny houses et d’autres concepts plus atypiques qui proposent des presta.ons de qualité.
+Les principales missions d’un revenu manager ou de logiciel intégrant du Yield Management s’ar.culent
+autour de quatre étapes :
+•
+
+•
+
+•
+
+•
+
+L’analyse de données : Il s’agit dans un premier temps d’analyser la base de données
+historiques de l’ac.vité (réserva.ons passées, prix moyen par nuitée, taux d’occupa.on, taux
+d’annula.ons). Ces données permeRent d’observer des « jours types », c’est-à-dire périodes
+comparables en termes de demande notamment pour les hautes saisons, basse saison.
+Prévision de la demande : Ensuite, les logiciels ou le revenu manager u.lisent des techniques
+quan.ta.ves pour prévoir la demande future permeRant d’an.ciper les volumes des
+demandes de réserva.ons ainsi que les annula.ons aﬁn de prendre des décisions objec.ves.
+Des modèles mathéma.ques de prévision viennent également en sou.en des revenus
+managers grâce aux ou.ls informa.ques et font souvent par.e intégrante des applica.ons de
+yield management telles que Price Labs. Parmi ces modèles mathéma.ques on dis.ngue
+l’analyse de séries temporelles, le lissage exponen.el simple et le Holt-Winters permeRant de
+détecter les tendances et la saisonnalité.
+L’op,misa,on des revenus : Sur la base de l’analyse de données et la prévision de la demande,
+le revenu manager ou l’applica.on détermine l'associa.on op.male prix/volume aﬁn de
+maximiser les receRes. Par exemple, sur des périodes à forte demande comme les week-ends,
+les vacances, les jours de congés, les jours d'événement (spectacle, salon dans la région), les
+tarifs seront augmentés car la demande sera supérieure à l’oﬀre. Cependant durant les
+périodes creuseuses ou hors saison, à l’inverse les tarifs seront diminués dû à une demande
+moins importante.
+Le contrôle des performances : Enﬁn la dernière étape consiste à mesurer les résultats obtenus
+et à les comparer. Le revenu manager ou l’applica.on détermine certains indicateurs de clés
+de performances tels que le taux d’occupa.on, le revenu par unité disponible appelé (RevPAR).
+RevPAR = Prix moyen par chambre (ADR) * Le taux d’occupa(on
+
+4
+
+Livre : Revenue Management - 2e éd. 2017 de Patrick Legohérel et Élisabeth Pou6er
+
+9
+
+ou
+RevPAR = Chiﬀre d’aﬀaires hébergement (HT) / Nombre de chambres disponibles
+Ce pilotage régulier des KPI permet de meRre en place des ac.ons correc.ves en cas de sousperformance pour la loca.on de courte durée.
+
+E) Des ou1ls numériques adaptés (Dashboard, AirDNA)
+Le secteur immobilier est historiquement lent à adopter les nouvelles technologies, que ce soit au sein
+des sociétés de ges.on, des family oﬃces ou même dans les agences immobilières, et ce malgré son
+rôle central au sein de l’économie globale. Toutefois, l’essor des technologies aussi souvent appelé
+« PropTech », vient changer ceRe dynamique notamment celui de la loca.on de courte durée. Ce
+marché est caractérisé par une opacité informa.onnelle et une vola.lité de l’oﬀre et de la demande.
+Bien que les sites comme Airbnb communiquent sur des informa.ons clés comme le taux d’occupa.on
+ou le revenu total généré au cours des derniers mois, cela reste tout de même assez ﬂou et diﬃcile à
+analyser par les propriétaires, ges.onnaires et property managers. CeRe opacité représente un frein
+majeur à la prise de décision c’est pourquoi de nouveaux ou.ls technologiques émergent pour
+accompagner les ges.onnaires de biens, qu’ils soient indépendants ou professionnels. Ces ou.ls
+facilitent la compréhension de la dynamique du marché, l'ajustement des tarifs en direct et la mise en
+perspec.ve des résultats aﬁn de comparer les performances avec celles des concurrents.
+L’ar.cle in.tulé "Property management technology adop.on in the short-term housing rental market"
+de Göppinger, Luque et Marcato (2024), publié dans Real Estate Economics s’inscrit pleinement dans
+ceRe dynamique. En eﬀet, les auteurs étudient l’impact de l’adop.on d’une solu.on d’intelligence de
+marché appelée Smart Rental PRO développée par Transparent Intelligence Inc sur les performances
+des ges.onnaires de biens (Property Managers) à Madrid. CeRe solu.on a depuis été intégrée à la
+plateforme Lighthouse, nouvelle marque de référence issue du rapprochement entre Transparent et
+OTA Insight.
+Pour étudier l'impact de ceRe solu.on sur les performances opéra.onnelles des PM, l’ar.cle évalue
+l’eﬀet de l’u.lisa.on d’un dashboard fourni comprenant des données comme le taux d’occupa,on par
+logement, le prix journalier moyen (ADR) et le revenu mensuel total géré. CeRe étude comprend 2
+196 logements listés sur Airbnb à Madrid en Espagne gérés par 63 property managers sur une période
+de 18 mois soit de juillet 2018 à décembre 2019. Les résultats de ceRe étude produisent des eﬀets
+sta.s.quement signiﬁca.fs et économiquement importants : +13,3% d’occupa.on, -15,1% du prix
+journalier moyen, +11,6% de revenu mensuel total. Ces résultats montrent que les PM équipés de ceRe
+technologie bénéﬁcient d’un avantage concurren.el et d’une meilleure connaissance approfondie du
+marché.
+L’ou.l d’intelligence de marché permet aux property managers de mieux ajuster leurs prix, ce qui se
+traduit par une augmenta.on du taux d’occupa.on et des revenus. Cependant, l’étude montre que
+ceRe stratégie est eﬃcace uniquement dans le haut de gamme car une légère baisse des tarifs suﬃt à
+améliorer signiﬁca.vement le taux d’occupa.on. En revanche, dans le segment bas de gamme, une
+baisse plus marquée des prix ne permet pas d’augmenter suﬃsamment le taux d’occupa.on pour
+compenser une baisse de revenu.
+Également, il existe d’autres supports numériques complémentaires permeRant d’analyser le marché,
+d’avoir des études compara.ves et d’es.mer les revenus poten.els et d’op.miser les tarifs, c’est le cas
+
+10
+
+de AirDNA. Cet ou.l est une plateforme d’analyse de données spécialisée dans les loca.ons de courte
+durée (Airbnb, Vrbo…). Elle oﬀre des analyses sur les tendances du marché, les prévisions de revenus
+et les références concurren.elles. Les ou.ls comme Airbi.cs proposent aussi des solu.ons
+rela.vement similaires avec une tariﬁca.on plus ﬂexible que AirDNA, un Dashboard plus ergonomique
+et une carte de chaleur. Quant à Mashvisor, beaucoup u.lisé aux États-Unis permet quant à lui
+d’es.mer les rendements loca.fs à court et moyen terme, d’avoir une analyse par quar.er et a
+l’avantage d’une simplicité d’u.lisateur à contrario de AirDNA qui peuvent être assez lourds en termes
+d’informa.on et de données. Voir Annexe
+Toutefois, la technologie va au-delà de l'analyse. Pour meRre en pra.que ceRe connaissance à une
+échelle importante, l'automa.sa.on des processus s'avère essen.elle. C'est dans ceRe situa.on que
+les Channel Managers entrent en jeu.
+
+F) Une automa1sa1on des procédures via des channels Managers.
+L’u.lisa.on d’un Système de Ges.on de Canaux couramment appelé Chanel Manager Système (CMS)
+permet aux professionnels de LCD de centraliser la ges,on de canaux de distribu,on (Airbnb, Booking,
+Expedia, etc.) à travers une seule interface. Cela répond à deux objec.fs : Maximiser les ventes tout en
+réduisant les coûts de ges.on.
+Pour les professionnels de l’hébergement, la sélec.on des CMS dépend du type d’ac.vité : hôtel
+classique ou loca.on de courte durée (Airbnb). En ce qui concerne le secteur hôtelier, des plateformes
+telles que SiteMinder, Cloudbed ou RoomRaccoon sont par.culièrement appropriées : elles
+centralisent les réserva.ons provenant de Booking, Expedia, Google Hotel, tout en intégrant parfois un
+PMS (Property Manager System) et un moteur de réserva.on. En revanche des plateformes comme
+Smoobu, Guesty, Lodgify ou Hostaway sont créées spéciﬁquement pour la ges.on de loca.on
+d’hébergement de courte durée. Elles ont l’avantage de proposer des services similaires au CMS
+hôteliers tels que la centralisa.on des réserva.ons provenant de Booking, Airbnb ou encore Abritel,
+l’automa.sa.on des messages des voyageurs et la tariﬁca.on dynamiques. Des solu.ons comme
+Smoobu ou Lodgify se dis.nguent par.culièrement par leurs tarifs raisonnables, tout en proposant un
+éventail de fonc.onnalités pensé pour les plus pe.ts propriétaires. À l'opposé de Guesty ou Hostaway
+qui s'adressent aux professionnels et aux agences, avec des tarifs plus importants dus à leurs
+fonc.onnalités sophis.quées.
+Selon l’étude menée par Ali Avan, Ahmet Baytok, Özcan Zorlu et Murat Toker in.tulée "Management
+of Online Sales Channels at Hotels : Channel Manager System", ces systèmes présentent plusieurs
+avantages :
+1. La centralisa.on et synchronisa.on en temps réel :
+Comme évoqué précédemment un Chanel Manager donne la possibilité de contrôler l’ensemble des
+canaux de distribu.on à par.r d’une seule et même interface. L’ou.l permet la mise à jour des tarifs,
+la ges.on des disponibilités entre chaque plateforme de loca.on. Cela permet d’éviter les doubles
+réserva.ons et les erreurs répétées. Par exemple : si un individu X réalise une réserva.on sur Booking
+à 20h, le Chanel Manager le repère et interdit immédiatement les réserva.ons sur les autres sites tels
+qu’Airbnb ou Abritel. A travers la cita.on : "enables the simultaneous control and synchroniza.on of
+these channels" (p. 324), les auteurs meRent en évidence que les Chanel Managers assurent une
+uniformité instantanée sur toutes les plateformes, un aspect crucial lorsque la disponibilité varie jour
+après jour.
+
+11
+
+2. Economie de temps et réduc.ons des coûts :
+Grâce à l’automa.sa.on des tâches récurrentes associées à la diﬀusion d’annonces et à la révision de
+calendriers, les CMS réduisent la charge de travail administra.ve pour les ges.onnaires. Comme le
+notent les auteurs : "reduces 'me and increases the eﬃciency of the hotel businesses" (p. 326). Cela
+implique une réduc.on de la main-d'œuvre consacrée à la ges.on manuelle, une diminu.on des
+erreurs humaines, et par conséquent, une augmenta.on neRe de la produc.vité.
+Cela a également un impact ﬁnancier direct pour les hôtels et parfois minimisé par les ges.onnaires
+par.culiers de plus pe.te taille. En eﬀet, pour les ges.onnaires indépendants, le traitement manuel
+de plusieurs réserva.ons sur les diﬀérentes « marketplaces » peut rapidement représenter des heures
+quo.diennes de travail. À par.r d’un certain volume, il devient diﬃcilement soutenable sans
+externaliser ou embaucher. Grâce aux diﬀérents CMS, il est plus facile de maximiser la ges.on pour un
+seul et même individu, avant de faire appel à une conciergerie ou d’embaucher un salarié.
+3. Améliora.on de la ges.on des tarifs :
+L’un des atouts stratégiques du CMS est la réac,vité tarifaire. Bien que d’autres ou.ls externes de Yield
+Management existent, ceRe fonc.onnalité est quasi systéma.quement intégrée aux CMS hôteliers, à
+contrario des CMS conçus pour la loca.on de courte durée. En revanche la plupart des CMS adaptés à
+la LCD sont compa.bles avec des ou.ls externes tels que PriceLabs ou Beyond Princing, bénéﬁciant
+ainsi des mêmes systèmes pour ajuster leurs tarifs de façon dynamique et automa.sée.
+En eﬀet, lorsqu’il reste qu’un nombre restreint de disponibilités de logement Airbnb ou de chambre
+hôtelière, le CMS peut ajuster automa.quement les tarifs pour op.miser la marge.
+Concrètement, cela signiﬁe que le système peut augmenter les prix des nuitées ou chambres en
+fonc.on que le stock de logements disponibles diminue, c’est notamment le cas quand des dates sont
+propices à un aﬄux de voyageurs importants (week-end, jours fériés, vacances scolaires). Ainsi, le CMS
+se transforme en un ou.l de ges.on de rendement accessible même pour les pe.ts ges.onnaires
+d’Airbnb. Les auteurs résument bien ceRe idée : "Hotel management can increase its proﬁtability when
+the occupancy rate goes up" (p. 326). CeRe logique s’applique aussi pleinement à la loca.on de courte
+durée, même si l’auteur parle des hôtels.
+
+4. Une meilleure visibilité sur les moteurs de recherche
+Un autre atout majeur des CMS réside dans le fait d’accroître la visibilité d’un bien. En eﬀet, les CMS
+ont pour fonc.onnalité de diﬀuser le bien sur des moteurs de recherche spécialisés tels que Trivago,
+ou Kayak. Également, les CMS peuvent diﬀuser le bien directement sur les canaux de distribu.on
+comme Airbnb, Expedia ou Booking. D’après l’étude, "the extent of CMS contacts web aﬀects the
+recogni'on and pres'ge of the hotel posi'vely" (p. 327). Autrement dit, être présent sur plusieurs
+plateformes rehausse la notoriété perçue et le posi.onnement par rapport à la compé..on.
+Par conséquent, plus un bien est présent sur un grand nombre de plateformes, plus il est exposé à un
+nombre de voyageurs importants, ce qui mécaniquement augmente les chances de réserva.on. CeRe
+diﬀusion omnicanale est renforcée par sa centralisa.on : une simple actualisa.on via le CMS permet
+d’harmoniser les informa.ons telles que le prix, le stock, les images sur l’ensemble des sites de façon
+simultanée.
+5. Un avantage compé..f fondé sur la donnée
+
+12
+
+Quelques CMS proposent des fonc.onnalités sophis.quées comme des études de marché local en
+intégrant des informa.ons de marché : prix moyens, taux d’occupa.on des concurrents, événements
+à venir dans la région. L’étude explique que : "CMS authori.es analyze the region [...] and provide
+detailed reports for the occupancy rates and prices about the other hotels in the region" (p. 325). La
+faculté de surveiller le marché en direct donne aux professionnels la possibilité de prévoir les
+tendances et d'adapter leur stratégie commerciale en conséquence.
+En somme, les Chanel Managers se révèlent être un ou.l d’automa.sa.on stratégique essen.el pour
+l’hôtellerie et tous les ges.onnaires d’hébergements souhaitant allier performance, rapidité et
+économies d’échelles.
+
+III. Avantages et inconvénients de la loca1on de courte durée
+
+A) Les avantages :
+1. Rentabilité importante (comparaison de projet)
+La loca.on de courte durée awre de plus en plus d’inves.sseurs immobiliers, en par.culier pour sa
+rentabilité aRrac.ve. En eﬀet, le prix de la nuitée est souvent supérieur à celui d’une loca.on
+tradi.onnelle en faisant un prorata sur trente jours. Prenons l’exemple d’un bien localisé à Paris : le
+coût moyen d’une loca.on d’un studio est d’environ 900 € / mois ; si l’on le divise par 30 jours, cela
+nous donne un ra.o de 30 € la nuit, bien loin des prix aﬃchés sur les plateformes. Après un échange
+téléphonique avec un membre de l’équipe HostnFly, un des leaders sur le marché de la conciergerie et
+de la LCD parisienne, les prix des nuitées sont très disparates, variant beaucoup d’un arrondissement
+à un autre et de la typologie du logement (studio, T1, T2, T3 etc). Il est donc diﬃcile de donner une
+moyenne exacte.
+Par exemple, prenons Nantes, une ville de taille moyenne : d'après l'agence immobilière locale Citya,
+le loyer moyen d'un studio en loca.on longue durée est de 550 € par mois, alors que selon AirDNA, la
+loca.on courte durée coûte en moyenne 55 € la nuit.
+D’après cet exemple, la somme des revenus générés par nuitée suﬃt à générer autant que loca.on de
+longue durée au cours des dix premiers jours (55€ x 10j = 550€). ARen.on, cet exemple ne prend pas
+en compte d’autres facteurs externes qui pourraient impacter néga.vement le rendement lié en par.e
+à des frais annexes (conciergerie, ménage) ainsi qu’à la ﬁscalité.
+CeRe tendance à la surperformance observée en France s'aligne avec une dynamique plus étendue à
+l'échelle de l'Europe. Une étude détaillée par Jover et Cocola-Gant en 2022 au Portugal met en avant
+l’importance de la loca.on de courte durée dans les stratégies d’inves.ssements immobiliers à
+Lisbonne et Porto. Les auteurs aﬃrment que « les bénéﬁces issus de plateformes telles qu’Airbnb
+peuvent tripler, voire quadrupler ceux d’une loca.on à long terme à durée équivalente », et ils es.ment
+que les rendements annuels pourraient aReindre « jusqu’à 13% dans certains cas, en fonc.on du lieu
+et du niveau de ges.on de la propriété ». (p. 13-14 de l’ar.cle)
+L’enquête révèle que ceRe popularité est aRribuée non seulement aux tarifs onéreux des
+hébergements (qui peuvent parfois dépasser les 100€ pour des studios situés dans les centres
+historiques), mais aussi à la professionnalisa.on du domaine. Eﬀec.vement, le développement des
+« corporate hosts », sociétés spécialisées dans la ges.on d’appartements pour le compte de
+propriétaires, équivalent à la conciergerie en France donne aux inves.sseurs l’occasion d’op.miser leur
+rendement, taux d’occupa.on tout en déléguant la ges.on quo.dienne (neRoyage, ges.on des
+arrivées et des départs et l’entre.en). L’un des acteurs interrogés dans l’étude explique : « Nous avons
+
+13
+
+pris contact avec des propriétaires oﬀrant des loca.ons tradi.onnelles et nous leur avons démontré
+qu’ils pouvaient mul.plier par deux ou trois leurs bénéﬁces net grâce à la LCD. » (p. 11 de l’ar.cle)
+Bien que ces méthodes soient documentées au Portugal, on constate qu’elles résonnent clairement
+dans les grandes villes françaises où l’écart de bénéﬁce entre la loca.on à long terme et la LCD est tout
+aussi prononcé. CeRe analyse met en évidence que la dynamique ne se limite pas à un cadre local, mais
+résulte d'un modèle économique global où la loca.on de courte durée se transforme en un ou,l
+ﬁnancier stratégique de choix, par.culièrement dans les régions urbaines prisées.
+Il convient de souligner que les rendements indiqués dans l'étude sont des es.ma.ons brutes. Les
+auteurs n'examinent pas en détail l'impact de la ﬁscalité locale et des coûts d'exploita.on, malgré le
+fait que ces facteurs puissent fortement réduire le rendement net perçu par les inves.sseurs.
+CeRe dis.nc.on entre le rendement brut et net met en évidence la nécessité de meRre les chiﬀres
+proclamés en perspec.ve, et de diﬀérencier explicitement un rendement théorique brut d'un
+rendement net eﬀec.vement obtenu. Aﬁn de bien comprendre les diﬀérentes charges de ce modèle
+économique, je traiterai de manière approfondie les divers coûts liés à la LCD dans la sec.on dédiée
+aux inconvénients, in.tulée « Les limites et les risques associés ».
+
+2. Généra9on de cash-ﬂow
+Ce concept représente le ﬂux de trésorerie plus communément appelé cash-ﬂow. Il s’agit de la
+diﬀérence entre les produits encaissés moins les charges décaissées. Si les produits sont supérieurs
+aux charges, alors on appelle cela un Cash-ﬂow posi.f souvent u.lisé dans le monde de l’entreprise.
+Cet indicateur fait par.e des données clés recherchées par les inves.sseurs, ce qui nous amène donc
+à nous interroger sur les raisons de cet intérêt. En eﬀet, les revenus générés permeRent en grande
+par.e de ﬁnancer un crédit immobilier sans pour autant rajouter de l’argent supplémentaire de son
+salaire ou d’autres ressources économiques personnelles. Les inves.sseurs qui réalisent ce type
+d’inves.ssement cherchent à générer des ﬂux de trésorerie posi.fs pour réinves.r ces revenus dans
+d’autres projets que ce soit en immobilier ou même sur des placements ﬁnanciers plus liquides, aﬁn
+de générer une croissance exponen.elle.
+Bien qu’il existe des ou.ls pour op.miser les revenus tels que la tariﬁca.on dynamique, cela reste un
+ou.l addi.onnel, ce sont avant tout les caractéris.ques du bien immobilier qui déterminent la
+performance d’un logement en loca.on de courte durée. Le rapport publié par Benoit Faye en 2023,
+in.tulé Le temps et la valeur hédonique des hébergements loca.fs entre pairs : l’exemple d’Airbnb,
+permet d’exposer les principaux critères qui peuvent augmenter les revenus d’une loca.on de courte
+durée.
+Tout d’abord, La centralité et la qualité du voisinage sont valorisées pour les courts séjours, car la
+localisa,on reste un critère de premier ordre pour les voyageurs et sont prêts à payer le prix fort, cela
+peut être mo.vé par la proximité d’un parc d’aRrac.on, d’un chan.er et bien d’autres raisons
+spéciﬁques. L’espace est aussi un facteur essen.el pour les loca.ons temporaires. Plus la surface d'un
+logement est importante, plus les voyageurs sont disposés à débourser un prix élevé. Eﬀec.vement,
+un logement spacieux oﬀre aux propriétaires la possibilité d'oﬀrir divers couchages, soit par des
+chambres dis.nctes, soit grâce à des aménagements tels qu'un canapé conver.ble. Ceci op.mise
+l'u.lisa.on de chaque mètre carré en hébergeant un plus grand nombre de voyageurs sur une même
+superﬁcie.
+
+14
+
+A .tre d’exemple, il existe des logements de type
+studio combinant lit double mezzanine et un canapé
+conver.ble pouvant accueillir 5 à 6 voyageurs.
+L’objec.f est d’exploiter au maximum chaque mètre
+carré, en ciblant des voyageurs qui cherchent avant
+tout un hébergement fonc.onnel pour y passer la
+nuit.5
+Les équipements cons.tuent un facteur déterminant
+ayant un impact direct sur le prix de la nuitée et un
+eﬀet diﬀérencié selon la durée du séjour. Ces deux
+variables clés inﬂuencent directement la généra.on
+de poten.el cash-ﬂow
+Ce graphique montre comment la durée de séjour
+modère l’eﬀet des équipements sur le prix par nuit. CeRe étude empirique est également issue du
+rapport in.tulé « Le temps et la valeur hédonique des hébergements loca.fs entre pairs : l’exemple
+d’Airbnb », qui s’appuie sur un échan.llon de données issues de la plateforme Airbnb pour l’année
+2019, comprenant un total de 58 745 annonces ac.ves à Paris, dont 37 106 de logements en.ers.
+L’axe ver,cal représente l’eﬀet de modéra.on de la durée du séjour (DS) sur la valorisa.on de cet
+équipement. En économétrie ou en sciences sociales, un eﬀet de modéra.on se réfère à une
+circonstance où l'ampleur ou l'orienta.on d'un eﬀet varie en fonc.on de la valeur d'une autre variable.
+Si la valeur est posi.ve sur cet axe l’équipement est plus valorisé pour les séjours long terme, exemple :
+piscine, machine à laver, cuisine. Si la valeur est néga.ve sur cet axe l’équipement est moins valorisé
+quand la durée augmente, donc plus rentable sur le court terme. C’est le cas avec la TV, la Wi-Fi ou le
+sèche-cheveux.
+Quant à l’axe horizontal il représente l’eﬀet direct de l’équipement sur le prix (sans tenir compte de la
+durée du séjour). Si la valeur est posi.ve sur cet axe, l’équipement augmente directement le prix par
+nuit quelle que soit la durée, exemple : Salle de sport, Jacuzzi. En revanche si la valeur est néga.ve sur
+cet axe, l’équipement est peu ou pas valorisé, voire un a un eﬀet neutre ou légèrement néga.f,
+exemple : interphone, entrée 24h/24.
+La loca.on à court terme oﬀre l'opportunité de .rer rapidement proﬁt d'aRributs cachés ou sousévalués en loca.on longue durée. C'est ce processus ac.f d'évalua.on hédonique qui jus.ﬁe la créa.on
+rapide de ﬂux de trésorerie, dépassant largement les loyers mensuels tradi.onnels.
+
+3. Une ﬂexibilité et pleine autonomie
+a) Flexibilité juridique
+L’essor des plateformes de loca.on de courte durée a profondément modiﬁé la manière dont les
+propriétaires peuvent gérer l’usage de leur bien. En s’écartant du modèle rigide de la loca.on classique,
+qui impose un bail d’habita.on et complique la reprise du logement par le propriétaire. En eﬀet, la loi
+5
+
+rapport publié par Benoit Faye en 2023, in6tulé Le temps et la valeur hédonique des hébergements
+
+loca.fs entre pairs : l’exemple d’Airbnb
+
+15
+
+du 6 juillet 1989 aussi appelée loi Mermaz, encadre les rela.ons entre bailleurs et locataires pour les
+logements à usage de résidence principale. CeRe réglementa.on légale implique certaines condi.ons.
+Le bailleur a l’obliga.on d’aRendre la ﬁn du bail et de respecter un préavis de six mois pour un bail vide,
+ou trois mois pour un bail meublé. Il ne peut donner congé que dans certains cas précis : reprise pour
+y habiter, vente du logement, ou mo.f légi.me et sérieux (ex : non-paiement des loyers).
+Par ailleurs, en dehors des cas dérogatoires tels que le bail étudiant ou mobilité, un bail classique pour
+une résidence principale doit obligatoirement être conclu pour une durée minimale d’un an. Toute
+durée plus courte, comme un bail de 6 mois est illégale et sera requaliﬁable en bail d’un an par un juge.
+Face à ces contraintes juridiques dues en par.e à l’engagement long terme qu’implique un bail
+d’habita.on classique, l'op.on de la loca.on de courte durée se présente comme une alterna.ve
+par.culièrement séduisante. Lorsqu’un logement ne cons.tue pas la résidence principale du locataire,
+comme c’est parfois le cas pour une résidence secondaire, le propriétaire et le locataire peuvent
+déterminer librement la durée du bail. Il est tout à fait légal de signer un bail meublé d’une durée de 6
+mois, sans être soumis aux règles de la loi de 1989. En complément, le propriétaire peut également
+louer son bien en courte durée, sous réserve de respecter la réglementa.on locale notamment dans
+les zones tendues. Ce régime permet de percevoir des revenus supplémentaires sans renoncer
+totalement à l’usage du bien par son propriétaire.
+Parallèlement à ces usages, un autre modèle s’est développé : La mise en loca.on de façon
+occasionnelle sa propre résidence principale via des plateformes comme Airbnb. Il ne s’agit alors ni de
+résidence secondaire, ni d’un bail meublé, mais d’un usage temporaire ou partagé du logement
+principal. C’est précisément ce type de pra.que que décrivent Kerrigan et Wachsmuth (2020), dans
+leur étude sur Airbnb à Montréal publiée dans Nouvelles pra.ques sociales. Les auteurs analysent des
+situa.ons dans lesquelles les propriétaires louent tout ou une par.e de leur résidence principale, de
+façon ponctuelle en expliquant le « partage du logement ». CeRe pra.que repose sur la moné,sa,on
+d’un surplus de ressources résiden,elles, telles qu’une pièce non u.lisée ou un logement
+temporairement vide (voyages, déplacement des propriétaires). Comme le résument les auteurs, « Le
+partage du logement suppose que les gens partagent leur propre domicile […] pour aider à payer leur
+hypothèque ou leur loyer » (p. 385). Cela oﬀre une plus grande ﬂexibilité dans l’usage du bien
+immobilier, notamment lors des absences temporaires du propriétaire ou pour la mise à disposi.on
+d’une chambre vacante tout en permeRant de percevoir des revenus.
+Il est aussi important d’évoquer un bail spéciﬁque, qui peut être u.lisé de manière hybride pour les
+loca.ons meublées touris.ques : Le bail mobilité. Créé par la loi ELAN en 2018, ce disposi.f s’adresse
+aux locataires ayant un proﬁl lié à une mobilité professionnelle ou académique (stage, forma.on,
+missions à court terme). Comme le précise Ac,onLogement le bail mobilité porte sur des logements
+meublés comportant des critères d’ameublement et d’équipement bien spéciﬁques. La durée du
+contrat de loca.on est comprise entre 1 et 10 mois, non renouvelable et non reconduc.ble ne devant
+pas dépasser 10 mois.
+Ce type de bail d’habita.on plus souple permet :
+•
+
+Au locataire de par.r de son logement à tout moment, avec un préavis d’un mois par leRre
+recommandée ou acte d’huissier. Ce type de contrat a l’avantage pour le locataire de ne pas
+payer le mois de juillet et août. En eﬀet, s’il signe le 1er septembre ou une période rela.vement
+proche à ceRe date, cela lui permet de ne pas payer le mois de juillet et d’oût, car la durée de
+10 mois sera écoulée. Ce bail est souvent compa.ble pour les étudiants et professionnels car
+les vacances d’été se passent courant juillet et août.
+
+16
+
+•
+
+Au bailleur de récupérer son logement à l’échéance du bail, en donnant congé avec un délai
+d’un mois par leRre recommandée ou acte un acte d’huissier. Il a l’interdic.on de meRre ﬁn
+au bail avant la ﬁn du contrat.
+
+Il existe également le bail étudiant, ressemblant beaucoup au bail mobilité, à la diﬀérence qu’il est
+conclu pour une durée ﬁxe de 9 mois, non renouvelable tacitement. Des.né exclusivement aux
+étudiants, il peut toutefois être reconduit par la signature d’un nouveau bail, notamment si l’étudiant
+con.nue son parcours académique l’année suivante, ce qui ne permet le bail mobilité. Ce bail est donc
+par.culièrement adapté aux étudiants, idéal pour un cursus universitaire. Les condi.ons de préavis du
+locataire sont iden.ques à celles du bail mobilité : un mois de préavis no.ﬁé par leRre recommandée
+ou acte d’huissier. En revanche le propriétaire ne peut pas donner congé avant l’échéance du bail, il
+doit aRendre la ﬁn du bail.
+Ces deux types de contrat sont considérés comme souples, tant pour le bailleur que pour le locataire
+car aucun disposi.f en droit français ne prévoit autant de ﬂexibilité pour la loca.on d’un logement
+meublé à usage de résidence principale. Ce cadre juridique plus souple est pleinement compa.ble avec
+l’usage d’Airbnb, en par.culier via le bail mobilité. La plateforme Airbnb l’a bien compris, c’est pourquoi
+elle fournit un guide et une documenta.on détaillée pour les hôtes aﬁn d’expliquer comment
+paramétrer une annonce mobilité sur la plateforme. Par ailleurs, de nombreuses entreprises de type
+conciergerie meRent en avant le bail mobilité dans leurs solu.ons de loca.ons de courte durée en
+proposant une solu.on hybride entre loca.on longue durée et courte durée. CeRe formule leur permet
+de séduire une nouvelle clientèle awrée par la ﬂexibilité et les revenus supplémentaires générés par
+ce disposi.f. Parmi ces acteurs, on retrouve Checkyguest, WeHost etc.
+
+b) Autonomie opéra9onnelle
+CeRe souplesse est d’autant plus renforcée par l’émergence d’un écosystème de services spécialisés
+tels que la conciergerie, le ménage, la ges.on automa.sée des clés et réserva.ons qui permet au
+locataire de déléguer la quasi-totalité des tâches quo.diennes de la LCD. Comme le notent les auteurs
+page 398, plus d’un .ers des hôtes ac.fs d’Airbnb à Montréal répondent en moins de cinq minutes aux
+demandes des voyageurs, et plus d’un quart répondent en moins d’une minute. Ces délais sont
+réalisables uniquement grâce à l'emploi de services de réponse automa.sée.
+
+c)
+
+Op9misa9on de l’usage du bien :
+
+Pour la résidence principale :
+Comme évoqué précédemment par Kerrigan et Wachsmuth, ce modèle, qualiﬁé « de partage de
+logement », permet de générer des revenus supplémentaires sans renoncer à la perte totale de l’usage
+du bien. La loca.on de courte durée oﬀre en eﬀet la possibilité de valoriser temporairement un bien
+immobilier, qu’il s’agisse d’une chambre vacante ou d’une absence de plusieurs jours ou semaines sans
+rupture de jouissance ni d’engagement à long terme. Ce levier d’op.misa.on permet à la fois de
+concilier ﬂexibilité et rentabilité mais tout en restant dans la limite réglementaire des 120 jours/an.
+
+17
+
+Pour la résidence secondaire :
+Selon l’INSEE, une résidence secondaire est une habita.on u.lisée pour des séjours de courte durée ;
+il s’agit d’une résidence occupée occasionnellement au cours de l’année (les vacances, les week-ends,
+les séjours ponctuels professionnels ou familiaux). Un logement peut être considéré comme une
+résidence secondaire quelle que soit la situa.on du propriétaire, mais le simple fait de posséder deux
+logements ne suﬃt pas à qualiﬁer automa.quement l’une d’eux de résidence secondaire. Ce statut
+dépend de l’usage réel du logement, et non du seul nombre de biens détenus. Contrairement à la
+résidence principale, la résidence secondaire peut être louée en loca,on de courte durée toute
+l’année, sans limite de jours, à condi.on de respecter les règles qui s’appliquent à chaque commune.
+Actuellement, les résidences restent inoccupées plus de 70% du temps en moyenne (INSEE). CeRe
+sous-u.lisa.on soulève un enjeu ﬁnancier important pour le propriétaire, faisant face à des charges
+importantes : taxes, entre.ens, assurances) sans retour sur inves.ssement. Dans ceRe situa.on, la
+loca.on de courte durée reste une solu.on pragma.que. Elle oﬀre la possibilité de payer les charges
+liées à l’entre.en du logement et d’y percevoir des revenus complémentaires tout en préservant la
+possibilité de l’u.liser. CeRe ﬂexibilité séduit un grand nombre croissant de propriétaires. D’après
+l’INSEE, au 1er janvier 2024, la France comptait 3,7 millions de résidences secondaires et logements
+occasionnels, soit 9,8% du parc immobilier na.onal. Ce vivier important de biens sous-u.lisés alimente
+la dynamique de la LCD et contribue au succès de ce modèle, en par.culier ceux souhaitant op.miser
+l’usage de leur bien.
+Pour conclure, la LCD se posi.onne comme un instrument de ges.on ﬂexible, ajustable au calendrier
+et aux objec.fs du propriétaire, tout en valorisant ponctuellement un bien immobilier.
+
+B) Les limites et les risques associés
+1. Accès au ﬁnancement : ré9cence des ins9tu9ons bancaires
+D’après retour d’expérience et d’échanges avec des conseillers bancaires (CIC et Crédit Mutuel), il est
+diﬃcile de se faire ﬁnancer un projet pour un inves.ssement de courte durée. Les conseillers
+considèrent que ce modèle économique est rela.vement instable et ne présente pas de garan.e
+certaine pour ﬁnancer un projet. Avant d'accorder un prêt, l'ins.tu.on ﬁnancière examine la
+per.nence du projet et la capacité de l'emprunteur à rembourser le crédit. CeRe diﬃculté représente
+l’une des plus grosses barrières à l’entrée des inves.sseurs les moins expérimentés. Il est toutefois
+possible d’obtenir un ﬁnancement sous certaines condi.ons par.culières, comme la mise en place de
+garan.es hypothécaires, de garan.es solidaires, ou en ayant prouvé par le passé que ce mécanisme est
+pérenne et rentable sur un horizon temporel rela.vement long.
+2. Les dépenses principales et celles liées à la ges9on (services de conciergerie, maintenance)
+Avant de proposer son appartement à la loca.on de courte durée, de nombreux inves.sseurs
+minimisent l'importance de l’ameublement et des rénova.ons nécessaires. En eﬀet, la décora.on,
+l’esthé.que et la qualité sont des no.ons importantes en LCD, d’autant plus que le marché devient de
+plus en plus concurren.el avec de nouveaux entrants chaque année. Il est donc recommandé d’allouer
+un budget assez conséquent pour acheter des meubles de qualité, une box internet, des rideaux, des
+cadres, etc. Il est parfois nécessaire d’envisager quelques travaux tels que la peinture, le revêtement
+de sol, l’électricité et même de la plomberie pour proposer un hébergement de qualité.
+Pour illustrer les dépenses courantes et liées à la ges.on, j’ai fait le choix de réaliser un tableau
+regroupant l’ensemble des dépenses.
+
+18
+
+Catégories
+Frais de ménage
+Charges ﬁxes
+Commission des marketplaces
+
+Ou.ls numériques / Marke.ng
+
+Caractéris.ques
+NeRoyage, produits de
+ménage et linge
+Électricité, eau, assurance,
+internet
+Airbnb
+Booking.com
+Annonce, photo, logiciel,
+chanel manager
+
+Es.ma.ons mensuelles
+25 à 40€/heure
+150 à 200€
+Pour Airbnb, 3% du CA pour le
+propriétaire
+Pour booking.com, 15% à 18%
+du CA pour le propriétaire
+20 à 50€
+
+Une autre formule couramment u.lisée par les inves.sseurs est celle des conciergeries. Elles ont pour
+mission de réaliser de nombreuses tâches issues de la loca.on de courte durée moyenne une
+rémunéra.on en pourcentage du montant total des nuitées. Parmi ces missions, elles s’occupent de
+l’accueil, de la récep.on des voyageurs, de la remise des clés, des états des lieux entrants et sortants,
+du neRoyage, de la blanchisserie (changement des draps et des servieRes), des répara.ons, de
+l’entre.en, de la rédac.on de l’annonce et de la mise en ligne.
+D’après l’étude que j’ai réalisée auprès d’une
+vingtaine d’entreprises, en contactant des
+conciergeries de diﬀérentes villes et en consultant
+plusieurs sites, les tarifs appliqués oscillent
+généralement entre 20 et 25 % de commissions.
+Selon mes observa.ons, les diﬀérences tarifaires
+entre les conciergeries portent principalement sur
+les frais de ménage qui sont inclus ou non dans la
+commission et la méthode de calcul (prix TTC à la
+nuitée ou % sur les revenus générés).
+
+% de comissions
+14
+12
+10
+8
+6
+4
+2
+0
+
+12
+
+3
+1
+19% HT
+
+4
+
+1
+20% HT 20% TTC 22% TTC 25% TTC
+
+3. Restric9ons réglementaires (limite à 120 jours, enregistrements, quotas)
+En 2018, la Loi ELAN est adoptée et marque un tournant dans l’encadrement majeur des loca.ons de
+courte durée en introduisant plusieurs réglementa.ons pour faire face à la croissance rapide des
+logements touris.ques :6
+•
+
+•
+
+•
+
+6
+
+La loi impose un plafond d’une limite de 120 jours par an pour les résidences principales (c’està-dire occupées au moins 8 mois par an par le propriétaire ou locataire). CeRe réglementa.on
+vise à réduire la transforma.on de logements en meublés touris.ques.
+Déclara,on obligatoire et numérota,on : Pour les communes comptant plus de 200 000
+résidents (et pour certains secteurs touris.ques tels que Paris, Lyon, Nice, Bordeaux), la loi
+autorise les mairies à imposer une déclara.on préalable en ligne ainsi qu’un numéro
+d’enregistrement à inclure dans toutes les annonces en ligne composé de 13 caractères.
+Dans certaines grandes villes comme (Paris Lyon, Bordeaux, Nantes), transformer un logement
+en meublé de tourisme nécessite une autorisa,on préalable. Bien que la Loi ELAN n'ait pas
+
+Ar6cle L. 324-1-1 du Code du tourisme
+
+19
+
+été à l'origine du changement d'usage, elle a pourtant renforcé ce mécanisme en accordant
+aux municipalités le pouvoir de resserrer les condi.ons de changement d'usage, d'imposer plus
+régulièrement une règle de compensa.on et de renforcer les contrôles. CeRe autorisa.on n’est
+pas requise pour les résidences principales louées moins de 120 jours par an. Au-delà de ce
+seuil, ou si le logement est une résidence secondaire ou un bien loca.f, l’obliga.on s’applique.
+Cependant, seules les collec.vités suivantes peuvent légalement imposer une autorisa.on
+préalable de changement d’usage pour les logements touris.ques : les communes de 200 000
+habitants, les communes situées en zone tendue, déﬁnies par décret et les communes d’Hautsde-Seine (92), de Seine-Saint-Denis (93) et de Val-de-Marne (94).7
+Enﬁn, la loi oblige les plateformes comme (Airbnb, Abritel) à transmeRre aux municipalités le nombre
+de nuitées réservées par logement. Cela permet aux collec.vités de repérer les hôtes qui dépasseraient
+la limite des 120 jours autorisée pour une résidence principale. En cas d’infrac.on, les contrevenants
+s’exposent à une amende pouvant aller jusqu’à 50 000 € si le logement a été transformé illégalement
+en meublé touris.que, ou jusqu’à 5 000 € par annonce non conforme en l’absence de numéro
+d’enregistrement.
+La loi ELAN (2018) vise à donner aux communes des ou.ls pour mieux encadrer la loca.on de courte
+durée, en imposant des règles strictes avec pour objec.f de luRer contre le déséquilibre loca.f aﬁn
+d’éviter que les logements des.nés aux résidences principales et secondaires soient transformés en
+logements touris.ques.
+4. Changements dans l'environnement ﬁscal (LMNP, réformes)
+a) La loi Le Meur (loi n° 2024-1039 du 19 novembre 2024)
+En France, la réglementa.on des loca.ons de courte durée se durcit dras,quement, en par.culier avec
+l'introduc.on de la Loi n° 2024-1039 du 19 novembre 2024 nommée loi Le MEUR, fréquemment
+désignée comme la loi an.-Airbnb. CeRe loi renforce les ou.ls déjà introduits par la loi ELAN (2018),
+elle vise notamment à réduire les avantages ﬁscaux et réglementaires pour les loca.ons de meublés
+touris.ques, avec un renforcement des obliga.ons d'enregistrement et l'introduc.on d'ou.ls de
+régula.on par les autorités locales.
+Le texte de loi donne la possibilité aux municipalités de plafonner le nombre de jours des loca.ons de
+courte durée passant de 120 jours actuellement à 90 jours pour la loca.on de sa résidence principale
+notamment via les plateformes en ligne, et élargit leur applica.on à plus de communes.
+Un point signiﬁca.f de ceRe loi concerne les exigences énergé.ques : tous les logements meublés de
+tourisme devront disposer d’un DPE avec une note comprise entre A et E entre le 2 novembre 2024 et
+le 3 décembre 2033, et de A à D à par.r du 1er janvier 2034.
+Par ailleurs, ce mécanisme renforce également les pouvoirs des collec.vités locales en leur accordant
+la faculté :
+•
+•
+
+7
+
+de déterminer un quota de logements touris.ques,
+de délimiter des secteurs dans lesquels les construc.ons nouvelles sont réservées à la
+résidence principale.
+
+Ar6cle L.631-7 du Code de la construc6on et de l’habita6on
+
+20
+
+Enﬁn, Les collec.vités pourront appliquer des sanc.ons directes suivant le mo.f de l’infrac.on :
+•
+•
+
+10 000 € au maximum en cas de défaut d’enregistrement d'un logement touris.que ;
+20 000 € au maximum en cas de déclara.on inexacte ou d'usage d'un faux numéro
+d'enregistrement.
+b) La Loi de ﬁnances 2025 (loi n° 2025-127 du 14 février 2025)
+
+Dans la même logique que la Loi Le Meur mais d’un point de vue plus ﬁscal, la loi de ﬁnances de 2025
+modiﬁe également l’aRrac.vité des meublés de tourisme.
+Le Régime micro BIC, plafonds et abaSements :
+À par.r du 1er janvier 2025, les aba<ements forfaitaires appliqués aux revenus loca.fs dans le cadre
+du régime micro-BIC sont revus à la baisse pour les loca.ons en meublé de tourisme.8
+D’après le site oﬃciel de l’administra.on française :
+•
+•
+
+50 % pour les biens classés et les chambres d'hôtes (avec un plafond de 77 700 € de revenus
+loca.fs par an).
+30 % pour les biens non classés (avec un maximum de 15 000 € de revenus loca.fs par an).
+
+Pour comprendre ce changement j’ai réalisé un tableau comparant les taux d’abaRement avant et après
+la réforme :
+Typologie
+
+Avant la réforme
+
+AbaRement 2025
+50%
+
+Plafond avant la
+réforme (annuel)
+188 700 €
+
+Plafond 2025
+(annuel)
+77 700 €
+
+Meublé de
+tourisme classé
+Meublé de
+tourisme non
+classé
+
+71%
+50%
+
+30%
+
+77 700 €
+
+15 000 €
+
+La réduc.on de l’abaRement ﬁscal entraînera pour les propriétaires une augmenta.on des revenus
+imposables à déclarer. Or, plus l'abaRement est faible, plus la part des revenus loca.fs soumis à l'impôt
+augmente. Cela entraîne mécaniquement une hausse de la base imposable, et donc un montant
+d'impôt à payer plus important, à revenu égal. De plus, une des composantes importantes est le
+plafond qui s’est vu très fortement diminué passant de 77 700 € à 15 000€ pour le meublé de tourisme
+non classé.
+Actuellement le meublé de tourisme non classé représente la majeure par.e des loca.ons sur les
+plateformes de courte durée. Ce plafond n'a pas été ﬁxé au hasard ; il est presque systéma.quement
+aReint. En eﬀet, 15 000 € par an équivaut à 1 250 € par mois, une somme que de nombreux par.culiers
+réalisent sur des plateformes telles qu’Airbnb. CeRe réforme pourrait avoir pour conséquence d’une
+part le risque de sor.e du régime micro-BIC pour le régime réel et d’autre part indirectement inciter
+les propriétaires à classer leurs biens pour conserver un abaRement ﬁscal raisonnable (50 % au lieu de
+30%).
+
+8
+
+Source : Administra6on française
+
+21
+
+Le Régime LMNP au réel : réintégra(on des amor(ssements dans le calcul de la plus-value :
+Tout d’abord, pour être soumis au régime réel de plein droit, les revenus loca.fs doivent excéder les
+plafonds du micro-BIC (men.onnés ci-dessus). Néanmoins, on peut aussi choisir volontairement de
+suivre ce régime, même si l'on ne respecte pas ces seuils.
+En vertu de la Loi de ﬁnances de 2025, qui est entrée en vigueur le 15 février 2025, le cadre ﬁscal des
+loca.ons meublées non professionnelles (LMNP) au réel a été également signiﬁca.vement durci.
+Désormais, l’ar.cle 84 de ceRe législa.on exige la réintégra,on des amor,ssements déduits pendant
+la durée de loca.on dans le calcul de la plus-value taxable lors de la vente. Cela signiﬁe que les
+propriétaires qui ont choisi le régime réel fréquent dans la loca.on de courte durée pour op.miser la
+ﬁscalité via l’amor.ssement du bien, mobilier et travaux verront ces sommes intégrées à la plus-value
+lors de la cession. CeRe réforme supprime un atout majeur du statut LMNP, qui permeRait jusqu'à
+présent de produire peu d'imposi.on sur le revenu durant l'exploita.on tout en proﬁtant d'un régime
+de plus-value avantageux lors de la revente.
+Toutefois il est à noter que certaines excep.ons à ceRe réintégra.on sont prévues (ar.cle 150 VB II-4°
+du CGI) telles que les travaux d’améliora.on et les travaux de construc.on ou reconstruc.on. Si les
+dépenses sont correctement classiﬁées, cela peut minimiser l'eﬀet ﬁscal. Il devient donc stratégique
+de meRre en place une comptabilité analy.que eﬃcace.
+Globalement, la loi de ﬁnances de 2025 réduit fortement l’intérêt ﬁscal du LMNP, notamment en courte
+durée. Face à ces modiﬁca.ons ﬁscales et réglementaires, certains inves.sseurs envisagent désormais
+de conserver les biens plus longtemps pour réduire ou échapper à la plus-value. D’autres envisagent
+même de prendre le statut de loueur meublé professionnel (LMP), lorsqu’ils peuvent en bénéﬁcier
+c’est-à-dire quand les revenus loca.fs meublés sont supérieurs à 23 000€ et que les revenus loca.fs
+sont supérieurs aux revenus professionnels du foyer ﬁscal.
+En eﬀet, le statut de LMP est plus aRrac.f à long terme :
+•
+
+En cas de vente, la plus-value suit le régime des plus-values professionnelles, et peuvent être
+exonérées totalement ou par.ellement après 5 ou 10 ans d’ac.vité si les condi.ons des ar.cles
+157 sep.es et 238 quindecies du CGI sont remplies (exonéra.on selon le chiﬀre d’aﬀaires et la
+durée d’exercice).
+
+•
+
+Par ailleurs, contrairement au LMNP, la réintégra.on des amor.ssements dans la plus-value
+n’est pas systéma.que : elle dépend du traitement comptable et de l’applica.on du régime des
+plus-values professionnelles.
+
+•
+
+Enﬁn, en LMP, si l’ac.vité est exercée à .tre principal c’est-à-dire que les revenus loca.fs
+dépassent 23 000 € et excèdent les autres bénéﬁces professionnels du ménage, les biens sont
+considérés comme bien professionnels et sont exonérés totalement de l’assieRe de l’IFI. Sans
+ces condi.ons, le LMP reste imposable à l’IFI, tout comme le LMNP, qui est toujours soumis à
+l’IFI quelle que soit la situa.on.
+
+IV. Enjeux territoriaux et socio-économiques
+
+A) L’Impact sur l’oﬀre loca1ve
+22
+
+En date du 1er janvier 2025, le contexte actuel de la loca.on résiden.elle en France est très tendu
+notamment dans les grandes métropoles. D’après un échan.llon de plus de 150 000 oﬀres et
+demandes de loca.on enregistrées sur Locservice.fr au cours des douze derniers mois, on observe une
+intensiﬁca.on de la tension loca.ve.9
+
+D’après ceRe étude, la France compte en moyenne 4,8 candidats/oﬀre, contre 3,35 en 2025. Il est donc
+logique que les principales villes françaises occupent les premières places du classement, avec Lyon qui
+dénombre 12,97 candidats par oﬀre, Rennes qui suit avec 11,03 candidats par oﬀre et enﬁn Paris en
+troisième posi.on avec 10,35 candidats par oﬀre.
+CeRe tension sur le marché loca.f est accentuée par divers facteurs structurels et conjoncturels.
+Contrairement à ce que certains ar.cles et médias pourraient faire croire au sujet des loca.ons de
+courte durée, celle-ci n’est qu’une cause parmi bien d’autres :
+1. Une oﬀre de logements insuﬃsante :
+Plusieurs dynamiques contribuent à la raréfac.on de l’oﬀre disponible sur le marché loca.f :
+•
+•
+
+•
+
+Chute des construc,ons neuves : Certains projets sont gelés à cause d’une hausse des coûts
+de construc.on et des taux d’intérêts.
+Blocage du parc sur la loca,on : Les locataires restent de plus en plus longtemps, ne pouvant
+plus acheter face à un pouvoir d’achat en diminu.on et une augmenta.on des prix de
+l’immobilier qui augmente plus vite que les salaires. De plus, les propriétaires conservent leurs
+biens face à l’instabilité ﬁscale et aux contraintes (DPE énergé.que, Loi climat).
+Vieillissement de la popula,on : Les personnes âgées conservent leurs logements plus
+longtemps, conduisant à une réduc.on du stock de logement disponible.
+
+2. Une demande en hausse :
+Parallèlement, la demande loca.ve ne cesse d’augmenter due à la démographie et au recentrage dans
+les grandes villes.
+•
+
+9
+
+La démographie : Croissance du nombre de ménages (Personnes seules, en couple sans
+enfants).
+
+Observatoire 2025 LocService
+
+23
+
+•
+
+Recentrage dans les grandes villes : Les étudiants et les jeunes professionnels se dirigent vers
+les grandes villes aﬁn d'accéder aux ins.tu.ons d'enseignement supérieur et aux principaux
+pôles d'emploi. Ce déplacement de popula.on des régions rurales ou périurbaines vers les
+centres urbains plus ac.fs accentue la tension sur le marché de la loca.on dans ces grandes
+métropoles.
+
+3. Un contexte économique défavorable à l’accession à la propriété :
+La remontée rapide des taux directeurs par la Banque centrale européenne, combinée à une inﬂa.on
+persistante, a fortement compliqué l’accès à la propriété, rendant ainsi les ménages à rester locataires.
+Au mois d'avril 2025, la moyenne du taux pour un prêt
+immobilier sur deux décennies aReint 3,35 %, alors
+qu'il était de 1,60 % en juin 2022. Ainsi, le taux a plus
+que doublé en l'espace de trois ans, rendant la
+propriété beaucoup plus diﬃcile d'accès pour de
+nombreux foyers.10
+Cependant, une légère baisse a commencé au cours de
+2024, associée à la diminu.on des taux directeurs de la
+Banque centrale européenne vers la ﬁn de l'année. CeRe progression a par.cipé à la stabilisa.on, voire
+à une légère diminu.on des taux de crédit. Toutefois, ces chiﬀres demeurent neRement plus élevés
+que ceux enregistrés il y a trois ans, con.nuant de restreindre l'accès au marché immobilier pour une
+par.e de la popula.on.
+Varia3on mensuelle de l'indice des prix à la consomma3on
+harmonisé (IPCH) en France de janvier 2021 à avril 2024
+7,3%
+
+1,4%
+
+En novembre 2024, en France, l'inﬂa.on était de
+1,8 %, comparée à son niveau record de 7,3 % en
+février 2023. CeRe ﬂambée avait été
+principalement portée par la hausse des prix de
+l’énergie (gaz, électricité, carburants) et des
+denrées alimentaires, en lien avec la guerre en
+Ukraine, les tensions sur les chaînes
+d’approvisionnement mondiales et des
+condi.ons clima.ques défavorables.11
+
+4. Compé((on entre usages du logement, l’impact d’Airbnb :
+Enﬁn, la tension sur le marché loca.f est exacerbée par l'augmenta.on des u.lisa.ons alterna.ves du
+logement, qui dévie une par.e grandissante du stock immobilier vers des usages autres que la loca.on
+tradi.onnelle. C’est le cas d’Airbnb et des meublés de tourisme qui dans certaines villes excèdent celui
+des logements disponibles à l'année. Exemple : D’après un ar.cle du journal Le Monde publié le 07
+novembre 202412, le nombre meublé de tourisme représente entre 25% et 30% du stock immobilier
+10
+
+Meilleurtaux
+Sta6sta 2025
+12
+Ar6cle Le Monde in6tulé « Sur les Airbnb, le Parlement a voté une loi morale » : Annecy, débordée par les
+meublés de tourisme, va réoxygéner sa vieille ville, publié par Véronique Chocron
+11
+
+24
+
+d’Annecy. La ville de Biarritz se situe aussi dans ce même cas de ﬁgure. S’ajoute à cela les meublés
+étudiants qui sont fréquemment loués pour de courtes durées et à des tarifs loca.fs plus onéreux
+venant ainsi réduire l’oﬀre de loca.on dite « classique » à savoir de longue durée.
+De plus, dans l’ar.cle : « Impact économique et réglementa.on des meublés de tourisme » de Romain
+PRIOL et Christophe STROBEL dans la sec.on « pour autant, une ac'vité loca've sur plateforme qui
+s’accompagne d’eﬀets indésirables », nous permet également de jus.ﬁer son rôle néga.f dans les
+zones tendues. Cependant, dans les zones peu touris.ques, non tendues, il n’y a pas d’impact
+inﬂa.onniste sur les loyers exigés, les LCD sont même bénéﬁques puisqu’elles comblent la surcapacité
+et contribuent à la rénova.on du bâ. et à l’augmenta.on des taxes et des impôts locaux notamment
+avec les taxes de séjour.
+En revanche, dans les zones urbaines qui connaissent des tensions élevées sur le marché de
+l’immobilier, les LCD entraînent un eﬀet inﬂa.onniste. En eﬀet, sur ce marché il existe déjà des tensions
+sur le foncier et le bâ. à court et à moyen terme. Sur le marché de la longue durée, l’arrivée de LCD
+vient ampliﬁer ce phénomène et accroître ceRe tension existante. Étant donné la rareté du parc loca.f,
+toute propriété mise en loca.on de courte durée est par conséquent exclue du marché de la loca.on
+longue durée : On appelle cela « le mécanisme de conversion » (Lee 2016). Ce phénomène s’est ampliﬁé
+au cours des dix dernières années puisque les revenus générés et la ﬁscalité sont plus avantageux pour
+la loca.on LCD par rapport à la loca.on de longue durée « nue » plus par.culièrement.
+Les tableaux ci-dessous .rés du modèle de Pascal et Weaton illustrent bien les eﬀets de conversion de
+logement résiden.el en meublé de tourisme non seulement sur le marché de la loca,on résiden.elle
+(ﬁgure 1), mais aussi sur le marché de l’immobilier à l’achat (ﬁgure 2)
+
+La ﬁgure 1 représente le marché de la loca.on résiden.elle comprenant deux axes : l’axe ver.cal
+indique les prix de la loca.on résiden.elle autrement dit le loyer, tandis que l’axe horizontal exprime
+la quan,té de logements disponible à la loca.on
+La courbe en noire décroissante évoque la demande classique de logements à louer, c’est-à-dire plus
+le prix est bas, plus les ménages souhaitent louer.
+La courbe en bleue correspond à l’oﬀre classique de logement, c’est-à-dire avant le développement des
+loca.ons touris.ques. On observe que plus le loyer est élevé plus les propriétaires meRent leurs biens
+en loca.on classique.
+
+25
+
+La courbe orange correspond à l’oﬀre de loca.on résiden.elle depuis les meublés de tourisme, mais
+qui ne sont pas compris dans ceRe courbe. Elle représente donc une oﬀre réduite à cause du
+détournement d’une par.e de ces logements vers la loca.on touris.que type Airbnb. Elle est plus
+pentue que la courbe bleue, ce qui signiﬁe qu’à chaque niveau de prix, la quan.té disponible est plus
+faible. Ce graphique traduit que l’oﬀre de logement tradi,onnelle diminue pour les résidents. En eﬀet
+la courbe orange avec meublés de tourisme, souvent plus rentable par rapport à l’oﬀre originale fait
+déplacer vers la gauche les quan.tés disponibles de loca.on (QM ß Q0). Ce retrait de logement
+classique entraîne aussi une hausse des prix sur le marché loca.f (hausse des loyers), car la courbe
+d’oﬀre avec meublés de tourisme par rapport à l’oﬀre originale engendre un déplacement vers le haut,
+le prix d’équilibre ini,al P0 se déplace vers le prix PM. CeRe augmenta.on découle d'un double
+processus : une oﬀre diminuée face à une demande constante, voire croissante dans les grandes villes.
+Ce déséquilibre accentue la pression pour les locataires dans les zones tendues qui se retrouvent
+confrontés à une raréfac.on des logements accessibles.
+
+La ﬁgure 2, quand elle correspond au marché de l’immobilier à l’achat comprenant aussi deux axes :
+L’axe ver.cal traduit les prix d’achat des logements, et l’axe horizontal la quan.té de logements.
+La courbe d’oﬀre représentée en blues foncé et ascendante représente l’oﬀre de logement mise en
+vente. Elle est croissante : plus le prix est élevé plus les propriétaires sont enclins à vendre. CeRe
+réac.on des propriétaires entraîne une augmenta.on de l’oﬀre disponible sur le marché.
+Concernant la courbe de demande originale représentée par la courbe noire décroissante, avec une
+pente descendante, illustre que plus le prix d’achat augmente, moins il y a d’acheteurs.
+Enﬁn, la courbe en gris clair fait référence à la demande avec les meublés de tourisme. La demande
+est ici augmentée en raison de l’intérêt accru pour l’achat de bien immobilier des.né à la loca.on
+touris.que. CeRe courbe se déplace vers la droite car de nouveaux acheteurs entrent sur le marché,
+ceux des inves.sseurs touris.ques (Airbnb, Booking). La courbe gris clair est bien au-dessus de la
+courbe noire. En eﬀet, à chaque niveau de prix, plus de logements sont désormais demandés à l’achat.
+Par conséquent, cela entraîne une hausse du prix d’équilibre (P0 vers PM) et une augmenta,on de la
+quan,té échangée (Q0 vers QM).
+D’après AirDNA13, le nombre de logements sur Airbnb représente plus de 3% du parc résiden,el
+na.onal es.mé à environ 33 millions de logements en France, ce qui conﬁrme que la loca.on de courte
+durée a un impact signiﬁca.f sur l’oﬀre résiden.elle, d’autant plus que AirDNA ne prend pas en compte
+les autres plateformes telles que Booking ou encore Abritel.
+Par conséquent, il est évident qu’Airbnb n’est pas le seul responsable de ceRe pénurie résiden.elle.
+C’est un élément qui contribue à l’aggrava.on, surtout dans les zones tendues. Toutefois, son incidence
+s’inscrit dans un ensemble plus vaste de facteurs structurels : ralen.ssement des construc.ons,
+stagna.on du parc, vieillissement démographique, recentrage de la popula.on et obstacles
+grandissants à l'accession à la propriété (augmenta.on du taux de crédit, diminu.on du pouvoir d’achat
+des ménages et augmenta.on de la ﬁscalité immobilière). C'est la combinaison de ces facteurs qui rend
+compte de la situa.on présente, et non un seul responsable. Ainsi toute réponse publique eﬃcace
+devra prendre en compte l’ensemble de ces facteurs pour répondre à ce déﬁcit de logement.
+
+13
+
+AirDNA est une entreprise spécialisée dans la donnée et l’analyse du marché des loca6ons de courte durée.
+
+26
+
+B) Acceptabilités sociales et réac1ons des collec1vités locales
+1. Perte de mixité résiden1elle et conﬂits d’usage
+Dans l’ar.cle publié en 2017, in.tulé « When Tourists Move In: How Should Urban Planners Respond
+to Airbnb ? » de Nicole Gurran & Peter Phibbs, les acteurs évoquent les eﬀets néga.fs d’Airbnb sur
+certains quar.ers de Sydney. En eﬀet, Airbnb génère un ﬂux touris.que dans les zones résiden.elles,
+causant des nuisances (bruit, fêtes, sta.onnement illégal, déchets, non-respect des règles d’immeuble)
+venant ainsi perturber le quo.dien des résidents à l’année. La cita.on de cet ar.cle illustre bien ceRe
+situa.on "All of the local government submissions report that noise, nuisance, traﬃc, parking, and
+waste management issues may arise when short-term holiday accommoda'ons penetrate residen'al
+areas". Face à ce phénomène, de nombreuses plaintes ont été déposées par les résidents vivant à
+l’année entraînant parfois des tensions au sein de la copropriété et même des quar.ers.
+Par ailleurs, l’exemple de Leichhardt Council (une municipalité de la banlieue de Sydney) montre une
+tendance à l’augmenta.on des réclama.ons par les résidents à propos des logements Airbnb. Ces
+plaintes ne concernent plus uniquement les nuisances sonores et comportements extrêmes. Elles
+révèlent également un malaise général causé par la présence régulière de nouveaux habitants dans le
+voisinage. Cela illustre parfaitement mes propos : "Signiﬁcantly, the complaints are not about noise or
+outrageous behavior, but merely the percep'on that a new person or people are occupying the
+premises each week. It is the feeling of unease that the changing 'de of faces brings on." (Richardson,
+2015, p. 4), page 87. Cela montre que le simple renouvellement régulier des résidents suﬃt à fragiliser
+le .ssu social local, même en l'absence de nuisances objec.ves.
+
+2. Airbnb transforme-t-il les quar1ers en « villes fantômes » ?
+Le développement important d’Airbnb dans les centres urbains de Barcelone et Lisbonne a entraîné
+une muta.on radicale de la composi.on sociale et fonc.onnelle de plusieurs quar.ers historiques.
+Dans l’ar.cle « Territorialisa.on de la plateforme Airbnb : Analyse compara.ve de « l’airbnbisa.on »
+des villes à Barcelone et Lisbonne », rédigé par Alexandre Grondeau et Gwenaëlle Dourthe meRent en
+avant ce phénomène. En eﬀet, les auteurs parlent d’une « monoculture touris,que » qui a
+progressivement remplacé les habitants à l’année par un ﬂux constant de tourisme de passage,
+conduisant à une « désar,cula,on du ,ssu résiden,els ».
+Des quar.ers en.ers comme El Gò.c, El Raval, Bairro Alto ou Alfama ont connu une surabondance de
+logement Airbnb, souvent au détriment du parc loca.f à long terme. CeRe concentra.on entraîne une
+déser,ﬁca,on de la vie locale : fermeture des commerces, dispari.on des établissements scolaires et
+déclin du .ssu social.
+À Barcelone, ceRe situa.on se traduit de manière importante. En eﬀet, la popula.on résiden.elle dans
+certains quar.ers centraux a connu une baisse signiﬁca.ve de plus de 45%, due à la pression
+immobilière générée par les loca.ons touris.ques selon l’ar.cle « The inﬂuence of Airbnb on the supply
+of homes for rent in Barcelona », paru en 2024 sur le site de l’Université Ouverte de Catalogne (UOC).
+Également, d’après une étude publiée dans Current Issues in Tourism en 2021, une hausse de 1% de la
+part de logements Airbnb dans une ville entraîne en moyenne une croissance moyenne de 3,7% des
+
+27
+
+loyers sur le parc résiden.el à long terme. Ces dynamiques contribuent aux départs massifs des
+habitants vivant à l’année.
+Face à ce changement radical des logements classiques en logements touris.ques, de nombreuses
+résistances se sont imposées à Barcelone comme à Lisbonne. Barcelone est une des villes pionnières
+de la luRe contre le changement d’usage des logements en meublé de tourisme. CeRe résistance
+présente des ac.ons paciﬁques à d’autres plus radicales. Parmi les ac.ons paciﬁques, diﬀérents
+collec.fs engagés composés de locataires, de propriétaires et d’ac.vistes sensibles à ceRe
+probléma.que organisent des ac.ons sous forme de réunions, assemblées ou aides administra.ves.
+Dans ces collec.fs on retrouve « Plataforma de Afectados por la Hipoteca » nommé PAH, « Sindicat
+habitatge rava », « El Raval no se Vende », « Barceloneta Diu Prou » ou encore « Habitatge i ciutat ». A
+Lisbonne, on recense, « Stop Despejos », « Alfama vive » et « Movimento referendo pela habitacao ».
+Outre les ac.ons citoyennes paciﬁques, d’autres formes plus radicales émergent à travers des Street
+Art contestataires, notamment des graﬃ.s et slogans cri.ques à l’égard du tourisme et d’Airbnb. Celleci s’exprime à travers des propos tels que « tourist go home » à Barcelone ou « fuck mass tourism » à
+Lisbonne. Ces graﬃ.s sont par.culièrement localisés dans les quar.ers touris.ques comme Gò.c,
+Alfama et non loin des lieux d’associa.ons militantes. Voir Annexe
+Dans ce contexte de tension sociale grandissante, de nombreuses municipalités ont mis en place des
+règles strictes régissant l’u.lisa.on des plateformes de loca.on à court terme. En France, un cadre
+législa.f spéciﬁque s’est progressivement établi pour faire face à ce déséquilibre causé par
+l’accroissement des LCD, en par.culier dans les zones tendues.
+A l’échelle interna.onale, les réac.ons diﬀèrent considérablement en fonc.on des contextes urbains,
+des restric.ons économiques et des priorités poli.ques. Le cas de Barcelone, pionnière et symbole
+d’une poli.que proac.ve de régula.on, représente un point d’entrée par.culièrement per.nent. Cela
+permeRra dans un second temps, de clariﬁer les stratégies mises en œuvre dans d’autres grandes villes
+européennes et hors d’Europe.
+
+C) Mesures de régula1on urbaines et stratégies des municipalités à l’étranger
+1. Comparaisons interna9onales : pra9ques en Europe
+Selon les contextes poli.ques et sociaux, les villes ont abordé diﬀéremment l’arrivée d’Airbnb, comme
+le souligne l’ar.cle « Les villes contre Airbnb ? » de Thomas Aguilera, Francesca Ar.oli et Claire Colomb
+sor.e en 2019. En eﬀet, ces plateformes sont cri.quées pour la dégrada.on des quar.ers et
+d’augmenter la tension loca.ve.
+Certaines villes ont adopté des réglementa.ons beaucoup plus strictes notamment à Barcelone, à
+l’image de Barcelone. Suite à l’élec.on d’Ada Colau, la municipalité a gelé l’octroi de nouvelles licences
+pour la loca.on touris.que de logements en.ers. Puis, en 2017 un plan de zonage spéciﬁque nommé
+(PEUAT) a été mis en place permeRant d’interdire ces loca.ons dans des quar.ers déjà saturés, comme
+le centre historique de Barcelone. Pour assurer l’applica.on de ces règles, la ville a mis en place une
+brigade de contrôle cons.tuée de 70 inspecteurs chargés des contrôles sur le terrain, appuyés par 30
+analystes chargés d’iden.ﬁer les annonces illégales. En cas de non-conformité le propriétaire s’expose
+à une amende pouvant aller jusqu’à 30 000€.
+La capitale allemande fait également par.e des villes ayant mis en place une réglementa.on stricte,
+notamment avec la loi « Zwecken•remdungsverbot » de 2014 interdisant le changement d’usage qui
+par défaut interdit la loca.on touris.que d’un logement en.er. En revanche, la loca.on par.elle soit
+
+28
+
+de moins de 50% de la surface de sa résidence principale est autorisée car n’étant pas considérée
+comme un changement d’usage. Toutefois, la loi de 2014 de Berlin a été assouplie permeRant de louer
+pour une durée illimitée sa résidence principale à condi.on d’obtenir une autorisa.on préalable, de
+s’enregistrer auprès de la municipalité et d’aRribuer un numéro d’enregistrement à chaque annonce.
+Concernant la résidence secondaire, la durée maximale autorisée est de 90 jours par an, sous les
+mêmes condi.ons d’enregistrement.
+A l’inverse, à Milan, la ville a fait le choix de ne pas freiner le développement des loca.ons de courte
+durée en n’imposant aucune limite de durée maximale de loca.on, aucune obliga.on de licence ou
+autorisa.on, aucune obliga.on de changement d’usage requis et aucun zonage ou plafonnement
+instauré. Il suﬃt d’une obliga.on d’enregistrement.
+Quant à Lisbonne, la réglementa.on est plus permissive que Berlin et Barcelone mais reste moins
+souple que Milan. Pour expliquer ceRe réglementa.on peu restric.ve, il est important de comprendre
+son contexte. Le Portugal frappé par la crise de la deRe adopte en 2012 de nombreuses réformes
+libérales suite à la pression de la Troïka (UE, BCE, FMI). L’objec.f est de relancer l’économie via le
+tourisme et l’immobilier. Les mesures prises sont : la suppression du contrôle des loyers,
+l’assouplissement des règles d’urbanisme, la créa.on du statut de « logement local » c’est-à-dire que
+toute personne peut louer librement un bien meublé à des touristes. Face à la hausse des prix de
+l’immobilier et des loyers, la réduc.on de l’oﬀre disponible et une gentriﬁca.on rapide des tensions
+sociales s’instaurent. En réac.on, le gouvernement a mis en place des mesures correctrices, telles que
+la créa.on de « zones de conten.on », interdisant l’ouverture de nouveaux logements touris.ques
+dans certains quar.ers de Lisbonne (comme Alfama, Bairro Alto, Baixa-Chiado ou Mouraria). D’autres
+disposi.ons incluent l’obliga.on d’obtenir un numéro d’enregistrement, la mise en place d’un registre
+public des logements touris.ques, ainsi que la possibilité pour les syndics d’immeuble de s’opposer à
+l’installa.on de meublés touris.ques. Cependant la ville reste assez souple avec aucune limite
+na.onale pour les loca.ons de courte durée à Lisbonne.
+Pour résumer, les villes réagissent très diﬀéremment à Airbnb selon le contexte économique, social,
+culturel et poli.que. Certaines villes comme Berlin et Barcelone ont une réglementa.on stricte sur les
+loca.ons de courte durée à contrario de Milan ou Lisbonne qui misent sur une ouverture économique.
+D’autres villes comme Paris optent pour un encadrement par.el en instaurant des réglementa.ons
+intermédiaires comme une loca.on de 90 jours Paris et la possibilité aux villes d’instaurer leurs propres
+réglementa.ons concernant les loca.ons de courte durée depuis l’arrivée de Loi Le Meur de novembre
+2024.14
+2. Les pra9ques hors Europe :
+L’ar.cle de Shirley Nieuwland et Rianne van Melik publié en 2018 étudie comment les diﬀérentes villes
+cherchent à contrôler Airbnb en réponse aux externalités néga.ves perçues des loca.ons à court
+terme. Même si les plateformes apportent de nombreux avantages économiques et touris.ques, elles
+sont aussi dénoncées comme responsables pour l’augmenta.on des loyers, la gentriﬁca.on et la
+détériora.on de la qualité de vie des habitants. L’ar.cle examine les poli.ques de 11 villes en Europe
+et aux États-Unis, meRant en évidence une tendance générale à privilégier des restric.ons spéciﬁques
+(nombre de nuits, obliga.on de résidence principale, normes de sécurité) plutôt qu’une interdic.on
+totale.
+
+14
+
+L’ar6cle « Les villes contre Airbnb ? » de Thomas Aguilera, Francesca Ar6oli et Claire Colomb
+
+29
+
+L'ar.cle se penche spéciﬁquement sur la situa.on de la ville de Denver, qui se trouve dans l'État du
+Colorado aux États-Unis, aﬁn d'étudier minu.eusement la façon dont elle régule les loca.ons de courte
+durée. La ville autorise la loca.on de courte durée uniquement pour les résidences principales. Pour
+encadrer ceRe pra.que, la capitale du Colorado a mis en place une réglementa.on ﬂexible novatrice,
+reposant sur un système de licence en ligne, une obliga.on de sécurité (détecteur de fumée, monoxyde
+de carbone et ex.ncteur), une taxe de séjour de 10,75% alignée sur celle du secteur hôtelier. A travers
+ceRe poli.que, Denver cherche un compromis entre les bénéﬁces économiques, c’est-à-dire les
+revenus pour les hôtes et l’aRrait touris.que. Et d’autre part, les risques sociaux tels que la hausse des
+loyers, le manque de logement, ou les nuisances de quar.er.
+Globalement, les villes américaines analysées tendent à privilégier une stratégie plus contraignante
+que les villes européennes pour ce qui est de la réglementa.on touris.que. On observe une tendance
+de manière par.culièrement marquée dans les villes telles que Santa Monica, New York, San Francisco
+et Anaheim à l’excep.on de Denver.
+Santa Monica a instauré l’un des systèmes les plus sévères aux États-Unis concernant l’hébergement
+touris.que. La LCD ne sont permises que si l’hôte réside sur les lieux pendant la période de loca.on,
+ce qui rend la loca.on de logement en.er impossible lorsque le propriétaire est absent. La ville a mis
+en place un système de permis obligatoire, associé à des standards de sécurité tels que la présence de
+détecteurs de fumée, d’ex.ncteurs, etc. Si des infrac.ons sont constatées, des pénalités pourraient
+être imposées, non seulement aux hôtes, mais aussi aux plateformes telles qu’Airbnb. Aﬁn d’assurer
+l’eﬃcacité de la régula.on, un mécanisme de surveillance des annonces illicites a été mis en place.
+Avec la grande pression sur le marché du logement et l’engouement pour Airbnb, New York ﬁgure
+parmi les marchés les plus régulés du pays. La loi interdit la loca.on de logements en.ers pour une
+durée inférieure à 30 jours. En eﬀet, la loca.on de moins de 30 jours au sein de la législa.on newyorkaise correspond à une loca.on de courte durée. Pour qu’elle soit légale, la présence de l’hôte est
+obligatoire pendant la durée du séjour. A l’inverse la loca.on de plus de 30 jours traduit d’une loca.on
+à long terme. Les annonces illégales peuvent être sanc.onnées par des amendes considérables,
+pouvant aReindre plusieurs dizaines de milliers de dollars. Par ailleurs, la municipalité travaille en
+étroite coopéra.on avec les services ﬁscaux et de logement aﬁn d'iden.ﬁer les infrac.ons.
+San Francisco a également mis en place une réglementa.on sévère concernant les loca.ons de court
+terme. Les hôtes ont l’obliga.on de se faire enregistrer auprès de la ville, et Airbnb se doit de supprimer
+les annonces non enregistrées sur la plateforme, sous peine de sanc.ons. La loca.on de logements
+en.ers est limitée pour une durée maximale de 90 jours par an. La loi ﬁxe également des normes de
+sécurité et requiert la présence en personne du propriétaire durant la loca.on.
+Anaheim, pour sa part, a pris la mesure la plus extrême en proscrivant complètement les loca.ons de
+courte durée. En 2016, la ville a adopté une interdic.on totale des loca.ons de courte durée, en
+réponse aux mul.ples réclama.ons de résidents rela.ves aux désagréments (nuisances sonores,
+sta.onnement, déchets) et à la tension sur l’oﬀre de logements. Un plan de transi.on a été instauré
+pour faciliter une cession d’ac.vité progressive pour les hôtes. Cependant, en 2019, face à des conﬂits
+juridiques et à des tensions poli.ques, la ville a par.ellement modiﬁé sa poli.que : seules les loca.ons
+déjà enregistrées avant l’interdic.on peuvent con.nuer à fonc.onner, à condi.on de se conformer à
+un cadre réglementaire rigoureux (autorisa.on annuelle, durée minimale de séjour, taxes et règles de
+voisinage).
+
+D) Un déséquilibre concurren1el avec le secteur hôtelier ?
+
+30
+
+Il n’est pas évident de mesurer l’impact réel d’Airbnb sur les revenus hôteliers. Bien que la plateforme
+semble concurrencer l’industrie de l’hôtellerie, en proposant des op.ons alterna.ves plus
+économiques, son impact peut grandement diﬀérer selon les situa.ons locales. En eﬀet, certaines
+études montrent une pression sur les prix et une baisse de la demande hôtelière, notamment l’étude
+in.tulée "The Rise of the Sharing Economy: Es.ma.ng the Impact of Airbnb on the Hotel Industry"
+publiée par Georgios Zervas, Davide Proserpio, John W. Byers en 2017. Et de l’autre, l’étude nommée
+"The irrup'on of Airbnb and its eﬀects on hotel proﬁtability: An analysis of Barcelona’s hotel sector" de
+Juan Pedro Aznar, Josep M. Sayeras, Alba Rocafort, Jorge Galiana publiée en 2017, montre une
+corréla.on posi.ve entre la densité d’Airbnb et rentabilité hôtelière en expliquant que les deux types
+d’oﬀres coexistent dans les zones aRrac.ves comme à Barcelone.
+La première étude des auteurs, Georgios Zervas, Davide Proserpio, John W. Byers, a réalisé une collecte
+de données importante, de plus de 2,8 millions de nuitées réservées via Airbnb entre janvier 2011 et
+février 2024. CeRe analyse porte notamment sur des villes américaines ayant connu un développement
+rapide d’Airbnb dont Aus.n au Texas. Concernant les données hôtelières, celles-ci proviennent de
+Smith Travel Research, une base réputée dans le secteur qui couvre plus de 50 villes aux États-Unis et
+con.ennent pour chaque hôtel des indicateurs de performances clés : revenus mensuels, prix moyen
+par chambre, taux d’occupa.on, nombre de chambres. Même si l’étude est na.onale, l’analyse reste
+centrée à Aus.n, car ceRe ville a connu une croissance rapide et facilement mesurable de l’oﬀre Airbnb.
+D’autant plus que le secteur hôtelier localement est concentré ce qui permet de pouvoir obtenir une
+analyse ﬁne de l’impact d’Airbnb sur le secteur hôtelier.
+CeRe étude montre que les revenus hôteliers ont tendance à baisser, liée à l’arrivée des Airbnb. En
+eﬀet, la cita.on "Each 10% increase in the size of the Airbnb market results in a 0.39% decrease in hotel
+room revenue." (p. 688) jus.ﬁe que chaque augmenta.on de 10% de l’oﬀre Airbnb entraîne une baisse
+de 0,39% des revenus hôteliers. CeRe sta.s.que devient encore plus signiﬁca.ve lorsque le marché a
+une forte croissance, c’est le cas à Aus.n par exemple. Par ailleurs, l’impact se concentre sur les hôtels
+plus économiques car ils sont en concurrence directe avec les LCD, souvent perçus comme plus ﬂexibles
+et moins chers. A l’inverse, les hôtels haut de gamme sont quant à eux moins impactés grâce aux
+services spéciﬁques comme l’accueil 24h/24, salle de réunion, de sport et autres services de standing.
+La cita.on "The impact is non-trivial and concentrated in lower-end hotels and those not catering to
+business travelers". (p. 702) illustre bien que les hôtels économiques sont les plus touchés. Concernant
+l’impact sur le prix moyen par chambre et le taux d’occupa.on, l’étude montre que l’arrivée d’Airbnb
+n’a pas entraîné de baisse signiﬁca.ve des prix exercés par les hôtels, notamment les chaînes et les
+hôtels haut de gamme. Cela s’explique en par.e par le fait que le posi.onnement d’un hôtel haut de
+gamme repose sur le main.en de ses tarifs, et qu’une baisse trop importante pourrait nuire à son
+image. Par ailleurs, chaque hôtel a des coûts ﬁxes élevés et des marges sensibles à la baisse de prix.
+En revanche, le taux d’occupa,on a connu une baisse importante, en par.e due à la concurrence de
+logements de LCD oﬀrant des prix plus compé..fs, une expérience locale diﬀérente et d’un logement
+en en.er plutôt qu’une chambre. Les auteurs es.ment qu’une hausse de 50% du nombre d’annonces
+Airbnb à Aus.n est corrélée à une baisse d’environ 2% des revenus hôteliers mensuels.
+D’autre part, l’étude "The Irrup'on of Airbnb and Its Eﬀects on Hotel Proﬁtability: An Analysis of
+Barcelona’s Hotel Sector" (Aznar et al. 2017) abou.t à une conclusion opposée. CeRe étude vise à
+évaluer empiriquement l’impact des Airbnb sur la rentabilité des hôtels à Barcelone, une ville qui a
+fortement été marquée par l’arrivée des meublés de tourisme. Contrairement aux travaux précédents
+sur la baisse des prix ou le taux d’occupa.on, les auteurs ont choisi de se focaliser sur un autre
+indicateur clé, celui de la RevPAR (revenu par chambre disponible), qui intègre à la fois le taux
+d’occupa.on et le prix par nuit, ce qui équivaut à la mul.plica.on de ces deux indicateurs. CeRe étude
+
+31
+
+mobilise une approche économétrique, avec des régressions linéaires mul.ples appliquées à des
+données de panel structurées par district, correspondant aux 10 districts administra.fs de Barcelone,
+sur une période de 2008 à 2016. Une régression linéaire est une méthode sta.s.que couramment
+u.lisée dans le secteur de la recherche qui permet de modéliser la rela.on entre une variable
+dépendante et une ou plusieurs variables indépendantes, aussi appelée variable explica.ve.
+Pour ce faire, les auteurs ont croisé plusieurs variables explica.ves telles que : la densité d’annonces
+Airbnb dans chaque district, le prix moyen des logements Airbnb, le nombre de nuitées touris.ques
+globales dans la ville, la capacité hôtelière locale (nombre de chambres et d’hôtels) et des variables de
+contrôle temporelles tels que la saisonnalité et les tendances annuelles.
+Leur principal résultat souligne une corréla,on posi,ve entre la densité des Airbnb et le niveau de
+RevPAR dans certains districts à Barcelone. Autrement dit, les hôtels restent compé..fs même dans
+les quar.ers les plus touris.ques malgré la montée en puissance des loca.ons de courte durée. Dans
+ce contexte, les auteurs concluent à une rela.on de complémentarité plutôt que de subs.tu.on entre
+les deux formes d’hébergement : "In tourist areas with high density of Airbnb lis'ngs, the proﬁtability
+of hotels remains posi've, which suggests a complementary rather than subs'tu've rela'onship
+between the two types of accommoda'on. " (Aznar et al., 2017, p. 138).
+Ils expliquent ce phénomène par une segmenta,on de la clientèle : Airbnb est plus adapté pour les
+familles, jeunes voyageurs, groupes et séjours plus longs nécessitant une cuisine, un lave-linge etc.
+Tandis que les hôtels conservent un avantage pour les voyageurs à court terme et une clientèle
+habituée à un certain standing et services complémentaires (piscine, salle de sport etc..). Pour eux,
+Airbnb ne réduit pas mécaniquement la part de marché des hôtes, il permet au contraire d’absorber
+une demande supplémentaire qui se veut diﬀérente de celle de l’hôtellerie. CeRe logique d’oﬀre
+complémentaire est renforcée par le fait que ces deux modèles répondent à des usages, des aRentes
+et des budgets diﬀérents. Toutefois, ceRe étude ne démontre pas une absence totale de concurrence,
+mais suggère que dans un contexte de forte demande touris.que comme celui de Barcelone, cela ne
+se traduit pas par une détériora.on de la rentabilité globale des hôtels.
+Contrairement à l’étude américaine, cet ar.cle montre que l’eﬀet d’Airbnb sur le secteur de l’hôtelier
+n’est pas nécessairement néga.f pour les hôtels. Dans un marché touris.que dynamique comme
+Barcelone, la croissance d’Airbnb ne se fait pas forcément aux détriments des hôtels, qui main.ennent
+voire améliorent leur rentabilité. Pour conclure, l’impact d’Airbnb dépend du contexte local, du
+posi.onnement des hôtels, de la réglementa.on et de la structure de la demande touris.que, c’est
+pour ceRe raison que la réponse est nuancée.
+En revanche, en France, les LCD bénéﬁcient d’un avantage concurren.el par rapport aux secteurs
+hôteliers parfois considérés comme inéquitables. En eﬀet, le secteur de l’hôtellerie doit faire face à des
+contraintes plus spéciﬁques que ce soit sur l’aspect réglementaire, juridique ou ﬁscal.
+En premier lieu, les hôtels doivent respecter des normes réglementaires plus strictes, notamment en
+ma.ère de sécurité incendie, d’accessibilité aux personnes handicapées (accès PMR) et d’hygiène. A
+l’opposé, les par.culiers qui louent leur propriété sur des plateformes telles qu’Airbnb ne sont pas
+obligés de suivre ces règles. CeRe disparité pose une ques.on d’équité dans le marché d’hébergement
+concurren.el. Dans l'ar.cle in.tulé « Impact économique et réglementa.on des meublés de
+tourisme », rédigé par Romain Priol et Christophe Strobel, publié en 2023, les auteurs meRent en
+évidence que ceRe situa.on engendre chez les professionnels de l'hôtellerie une sensa.on de
+concurrence déloyale.
+
+32
+
+Enﬁn, la diﬀérence de traitement ﬁscal ampliﬁe ce rapport déséquilibré. En eﬀet, les hôtels sont soumis
+à la taxe sur la valeur ajoutée (10 % par le séjour) ainsi qu’à l’impôt sur les sociétés. En comparaison,
+les LCD sont généralement soumises au régime micro-BIC, bien plus avantageux. Un propriétaire peut
+ainsi bénéﬁcier d’un abaRement de 30 % pour les meublés non classés, contre 50 % auparavant, et à
+50 % pour les meublés classés, au lieu de 71 % (confère page 11 de mon mémoire). Même si
+l’abaRement ﬁscal appliqué aux loca.ons de courte durée a été réduit au 1er janvier 2025, la ﬁscalité
+reste plus favorable que celle du secteur hôtelier. CeRe asymétrie con.nue d’inciter les propriétaires à
+privilégier la loca.on meublée touris.que au détriment de l’exploita.on hôtelière.
+
+PARTIE 2 — Probléma1que et méthodologie
+I. Hypothèses de l’étude
+Au terme de ceRe revue de liRérature, il apparaît que la loca.on de courte durée possède de nombreux
+avantages tels que la rentabilité, le cash-ﬂow généré et la ﬂexibilité. Cependant, divers facteurs
+d’inquiétude menacent leur viabilité : le renforcement des règles, la hausse des dépenses et la
+satura.on du marché de la LCD. Ces interroga.ons nous ques.onnent sur la rentabilité à long terme
+de ce modèle. C’est en se basant sur ces observa.ons que plusieurs hypothèses se sont établies pour
+orienter l'analyse qualita.ve réalisée auprès d'inves.sseurs et de professionnels du domaine.
+Hypothèse 1 : La loca'on de courte durée est-elle plus rentable que celle de la loca'on de longue durée
+à condi'on d'une ges'on professionnelle et d'une localisa'on stratégique.
+De nombreux acteurs sur le marché soulignent les hauts rendements bruts de la loca.on à court terme,
+fréquemment au-delà de 8 % dans les régions urbaines animées ou touris.ques. Cependant, ceRe
+performance ne peut être aReinte que si plusieurs éléments sont maîtrisés tels que le taux
+d’occupa.on, les coûts variables (électricité, eau), la qualité des annonces, le yield management, et
+l’automa.sa.on des tâches. CeRe hypothèse tente de vériﬁer si, sur le long terme, seuls les
+inves.sseurs ayant professionnalisé leur ges.on réussissent à conserver des niveaux de rentabilité
+réellement supérieurs à ceux de la loca.on classique (à long terme).
+Hypothèse 2 : Un modèle aﬀaibli par l’augmenta'on des règles strictes dans les zones tendues.
+Les récentes législa.ons (la loi Le Meur de 2024, la loi de ﬁnances de 2025) témoignent d’un désir
+grandissant des autorités publiques de limiter le développement des loca.ons de courte durée. Ces
+mesures pourraient progressivement nuire à la rentabilité neRe de ce type de loca.on en réduisant la
+durée de loca.on, les avantages ﬁscaux notamment celui du statut LMNP, ou en instaurant des quotas
+et des obliga.ons à l’ensemble du territoire na.onal. CeRe hypothèse envisage que dans les villes
+fortement régulées (Paris, Nantes, Bordeaux, Lyon), la LCD pourrait perdre de son aRrac.vité par
+rapport à la loca.on meublée tradi.onnelle d’ici 5 à 10 ans.
+Hypothèse 3 : Le processus de professionnalisa'on représente un facteur clé pour assurer la viabilité à
+long terme.
+CeRe hypothèse se base sur le principe que la rentabilité d’un logement en loca.on touris.que n’est
+pas seulement liée à ses aRributs physiques (localisa.on, superﬁcie, aRrait du quar.er), mais
+principalement à la façon dont elle est administrée au jour le jour. Dans un environnement marqué par
+la concurrence des Airbnb qui s’intensiﬁe et des règles de plus en plus strictes, seuls les inves.sseurs
+qui réussissent à organiser leur ac.vité comme une micro-entreprise semblent capables des
+performances stables sur le long terme. Cela comprend notamment l’u.lisa.on d’ou.ls de tariﬁca.on
+dynamique tels que « PriceLabs », l’analyse de données comme « AirDNA » et la ges.on automa.sée
+
+33
+
+via des Chanel Manager permeRant d’avoir un pilotage plus professionnel et de suivre des indicateurs
+de performance (taux d’occupa.on, RevPAR..). CeRe hypothèse tente d'examiner si un niveau élevé de
+professionnalisme dans la ges.on de l'ac.f aide à aRénuer l'imprévisibilité du marché (saisonnalité,
+ralen.ssements de la demande, concurrence) et garan.t la rentabilité sur une période d'années.
+
+Hypothèse 4 : Une exposi'on ampliﬁée aux chocs externes (sanitaires, clima'ques, économiques)
+La loca.on de courte durée repose sur une stratégie de ﬂux tendu qui se caractérise par des visites
+rapides, un renouvellement constant des clients et une forte dépendance à l'ac.vité touris.que et
+professionnelle.
+La crise du Covid-19 en est un parfait exemple, caractérisée par une annula.on massive de
+réserva.ons, une fermeture des fron.ères et une baisse importante des taux d’occupa.on. Cependant,
+d’autres types de chocs économiques, clima.ques ou même poli.ques pourraient générer des eﬀets
+semblables sur les performances opéra.onnelles.
+Il convient donc de déterminer si ceRe vulnérabilité structurelle a un impact durable sur la rentabilité
+de la LCD, et si certains types de biens ou emplacements sont plus sensibles que d'autres. CeRe
+ques.on soulève la réﬂexion sur la capacité du modèle à absorber les aléas extérieurs et à maintenir
+une rentabilité stable dans un environnement incertain.
+
+Hypothèse 5 : Une approche patrimoniale à long terme comme condi'on de rentabilité réelle
+CeRe hypothèse est fondée sur l'idée que la rentabilité d'un inves.ssement ne se limite pas à un simple
+calcul entre les revenus de loca.on et les coûts à court terme. Sur une période de 10 à 15 ans, d’autres
+facteurs se manifestent et deviennent même cruciaux pour la performance globale de l’inves.ssement.
+Ces leviers incluent :
+•
+•
+•
+
+L’es.ma.on du bien c’est-à-dire à sa revente, qui dépend de sa posi.on géographique, de son
+état d’entre.en et du contexte immobilier.
+L’op.on ﬁscale peut varier en fonc.on des régimes sélec.onnés (LNMP réel, société,
+démembrement etc.).
+La capacité à meRre en place un produit des.né à la revente, c’est-à-dire un bâ.ment op.misé
+pour la loca.on avec une rentabilité prouvée.
+
+En d’autres termes, un inves.sseur qui ne se concentre uniquement sur les « ﬂux de trésorerie
+mensuels » risque de négliger d’autres aspects patrimoniaux considérablement plus signiﬁca.fs sur le
+long terme. L’objec.f de ceRe hypothèse est donc de vériﬁer si les inves.sseurs les plus eﬃcaces sont
+ceux qui prennent en compte, dès le début du projet, une perspec.ve stratégique complète englobant
+la ges.on, la ﬁscalité et l’éventuelle cession du projet.
+
+II. Probléma1que
+Au cours de ces dernières années, la loca.on de courte durée est devenue une op.on d’inves.ssement
+très recherchée par les inves.sseurs, en témoigne le journal « Le Monde ». En France, en 2024 le
+nombre d’annonces s’établit à 960 000, soit plus de 60 % par rapport à 2019. CeRe croissance
+
+34
+
+s’accompagne par le développement des plateformes et de leurs notoriétés ainsi qu’à la
+professionnalisa.on du marché de la conciergerie. Ce type d’inves.ssement a été considéré pendant
+longtemps comme un moyen d’obtenir une rentabilité neRement plus importante qu’à celle de la
+loca.on classique. Cependant, ceRe dynamique se confronte à de nouveaux obstacles. D’un côté, le
+développement des loca.ons de courte durée a provoqué l’accroissement des tensions sur le marché
+immobilier poussant les autorités à réguler de manière plus stricte ce type d’ac.vité. Cela s’est traduit
+par un plafond de nuitée dans certaines villes, un régime d’autorisa.on spéciﬁque, une imposi.on
+diﬀérente et même l’interdic.on de ce type d’ac.vité comme à Anaheim. De l’autre, la dépendance de
+ce modèle à des ﬂux touris.ques variables comme l’a illustré la crise du Covid-19 a révélé sa fragilité
+structurelle. Enﬁn, la progression rapide des dépenses telles que l’inﬂa.on, les coûts ﬁxes et variables,
+les frais de plateforme cumulés à la professionnalisa.on du secteur semble creuser les écarts entre les
+pe.ts inves.sseurs plus novices et ceux qui considèrent ceRe ac.vité comme une réelle entreprise.
+Ces changements soulèvent des ques.ons sur la durabilité économique de la LCD à long terme.
+Derrière une apparente promesse de rentabilité importante, se cachent des réalités très variées en
+fonc.on des types d’inves.sseurs, des stratégies d’exploita.on, des régions géographiques et des
+régimes réglementaires locaux. La majorité des études actuelles se focalisent sur l’augmenta.on de la
+loca.on de courte durée ou ses externalités néga.ves comme la raréfac.on des logements disponibles,
+les tensions sociales ou encore celles des probléma.ques urbaines. Cependant, il existe peu de
+recherches qui se penchent sur les condi.ons réelles permeRant à un inves.sseur de préserver une
+rentabilité sur le long terme. En par.culier, l’analyse qualita.ve des stratégies réellement mises en
+œuvre sur le terrain reste largement absente de la liRérature.
+Dans ce contexte, la probléma.que principale de ce mémoire est : La loca.on de courte durée est-elle
+un inves.ssement rentable sur le long terme.
+
+III. Méthodologie :
+
+A) Méthodologie qualita1ve
+Étant donné la variété des proﬁls d’inves.sseurs, des stratégies de mise en œuvre et des cadres
+réglementaires locaux, une méthode qualita.ve basée sur des entre.ens semi-direc.fs a été choisie.
+CeRe décision est mo.vée par le besoin de dépasser une simple lecture ﬁnancière de la rentabilité. Le
+but n’est pas uniquement d’analyser les indicateurs ﬁnanciers mais de saisir en détail les processus qui
+mo.vent les choix d’inves.ssements, par des raisonnements stratégiques, des décisions patrimoniales,
+la ges.on des risques ou encore la faculté à s’ajuster aux changements du marché.
+A l’opposé d’une méthodologie quan.ta.ve basée sur des données sta.s.ques et peu suscep.bles de
+contextualisa.on, l’approche qualita.ve oﬀre la possibilité de comprendre les décisions des
+inves.sseurs et leurs stratégies dans ce contexte. CeRe méthode donne souvent des aspects
+impercep.bles dans les chiﬀres comme la ges.on quo.dienne, la prévision des contraintes légales, les
+décisions ﬁscales, les critères de choix d'un ac.f, le contrôle des coûts ou encore la vision à long terme.
+Dans le cadre de ceRe étude, cinq semi-entre.ens direc.fs ont été réalisés par diﬀérents proﬁls : des
+inves.sseurs par.culiers, professionnels ainsi qu’une conciergerie permeRant d’illustrer une variété de
+localisa.ons, de tailles de portefeuille, de niveaux de professionnalisme et de moments d’entrée sur le
+marché.
+Ø Chris.an est un propriétaire de quatre gîtes théma.ques (montagne, mer, ville et campagne)
+à proximité de son domicile (au fond de son jardin), qu’il gère lui-même depuis 2022. Sa
+stratégie a changé très récemment car il a fait le choix de meRre ces gîtes en logement longue
+durée.
+
+35
+
+Ø Emmanuel est un ancien responsable d’une entreprise de conciergerie spécialisée dans la
+ges.on de biens en LCD pour le compte d’inves.sseurs, principalement des personnes plus
+seniors d’au moins 40 ans ayant cons.tué un patrimoine.
+Ø Madame X est une propriétaire individuelle de 25 lots en loca.on de longue durée et 5 lots en
+loca.on de courte durée dans des zones touris.ques à forte saisonnalité.
+Ø Marc est un agent immobilier spécialisé dans l’inves.ssement et la commercialisa.on de biens
+à voca.on saisonnière.
+Ø Sophie et Julien sont un couple d’inves.sseurs mul.-sites exploitant plusieurs biens en LCD
+dans diﬀérentes sta.ons balnéaires et de montagne.
+
+B) Objec1fs
+L’enquête vise à répondre à la probléma.que centrale en traduisant les hypothèses en objec.fs
+concrets. Son objec.f est :
+•
+
+•
+•
+•
+•
+
+De repérer les circonstances spéciﬁques dans lesquelles un inves.ssement loca.f de courte
+durée demeure proﬁtable sur le long terme, en dépit des simples facteurs d’opportunité ou
+de contexte.
+De comprendre comment les inves.sseurs se conforment aux changements réglementaires,
+ﬁscaux et économiques qui ont un impact sur les LCD.
+D’évaluer le niveau de professionnalisme des hôtes dans le suivi des performances, de
+l’automa.sa.on des tâches et dans l’adapta.on de leurs oﬀres par rapport à la concurrence.
+D’évaluer la réac.vité du modèle face à des chocs externes, qu’ils soient de nature sanitaire,
+clima.que ou économique, et de déterminer les facteurs de résilience.
+Et de saisir comment les inves.sseurs envisagent leurs projets sur le long terme, notamment
+par la valorisa.on de leur patrimoine, par l’op.misa.on ﬁscale, par un arbitrage ou même
+une cession de l’ac.f.
+
+C) Risques et limites
+CeRe approche oﬀre la possibilité d’examiner minu.eusement les stratégies des inves.sseurs et les
+décisions concrètes, contrairement à une méthode plus quan.ta.ve qui analyse des données agrégées.
+La méthode quan.ta.ve fournit un aperçu crucial des aspects subjec.fs de la performance, tels que la
+mo.va.on, l'assurance ou la propension au risque, qui sont fréquemment négligés dans les données
+quan.ta.ves.
+Cependant, ceRe méthode comporte de nombreux risques et limites. Premièrement, les personnes
+interrogées ne représentent pas l’ensemble des inves.sseurs en loca.on courte durée, en raison du
+nombre restreint de par.cipants et d’un possible biais de sélec.on. De plus, les volontaires interrogés
+possèdent une expérience sur le marché avancé, ce qui n’est pas forcément le cas de l’ensemble des
+inves.sseurs du secteur.
+Par ailleurs, les informa.ons collectées sont déclarées par les individus eux-mêmes et reﬂètent des
+points de vue personnels, sans valida.on indépendante des performances ﬁnancières. Enﬁn, une
+approche qualita.ve ne permet pas d’établir des corréla.ons exactes entre les variables, ni de
+quan.ﬁer de manière rigoureuse l’eﬀet de certaines décisions.
+
+36
+
+PARTIE 3 — Analyses de données et résultats
+I. Étude des données et synthèse des résultats
+
+A) Hypothèses 1 : La loca'on de courte durée est-elle plus rentable que celle de la loca'on de
+longue durée à condi'on d'une ges'on professionnelle et d'une localisa'on stratégique.
+CeRe supposi.on se fonde sur l’idée que la rentabilité de la loca.on de courte durée est supérieure à
+celle de la loca.on tradi.onnelle (de longue durée) mais n’est pas toujours garan.e. Elle suppose que
+deux condi.ons majeures soient réunies : celle d’une ges,on professionnelle et d’une localisa,on
+stratégique. La ges.on professionnelle vise à maximiser le taux d’occupa.on, les prix et la qualité de
+l’expérience. La localisa.on permet également d’assurer une demande constante mais aussi un
+poten.el de revenu plus élevé.
+Il s’agit de savoir si, dans la pra.que, les inves.sseurs et professionnels interrogés observent une
+meilleure rentabilité de la LCD et s’ils l’aRribuent à ces deux éléments clés.
+Tous les candidats interviewés s’accordent à dire que la LCD peut oﬀrir un rendement brut bien plus
+élevé que la loca.on tradi.onnelle, souvent deux à trois fois supérieure. Cependant cela ne s’applique
+que dans les régions où la demande touris.que ou professionnelle est assez forte.
+Des rendements plus élevés, mais condi,onnés par la localisa,on et le segment ciblé.
+Marc, agent immobilier spécialisé dans la LCD, remarque que « la loca'on de courte durée oﬀre des
+rentabilités brutes de 8 à 12 % selon l’emplacement, tandis que la loca'on de longue durée aﬃche
+souvent des rendements autour de 4 à 5 %. » Sophie et Julien montrent aussi ceRe dis.nc.on à l’aide
+d’un exemple concret : un studio loué 550€ en loca.on longue durée peut rapporter entre 1 200€ et 1
+400€ mensuellement en loca.on de courte durée, même après soustrac.on des coûts de ménage et
+frais d’Airbnb. Toutefois, Mme X, ayant testé les deux modèles, c’est-à-dire longue durée et courte
+durée, conﬁrme ceRe tendance tout en soulignant « qu’une grande par'e repose sur la saisonnalité et
+de la concurrence dans la zone géographique. » Dans quelques régions, l’augmenta.on de l’oﬀre peut
+vite faire baisser le tarif moyen par nuitée, annulant en par.e l’avantage de la LCD.
+La ges,on professionnelle comme condi,on sine qua non.
+Les cinq entre.ens s’accordent à dire que : sans une administra.on rigoureuse et organisée, les
+bénéﬁces éventuels de la LCD peuvent rapidement diminuer. Chris.an, qui supervise
+personnellement ses quatre gîtes théma.ques près de chez lui, déclare « On est juste à côté, c’est
+pra'que pour s’en occuper […] On a commencé en juillet 2022 et ça a plutôt bien démarré. » Sa
+présence fréquente lui donne la possibilité de garan.r un suivi con.nu, de vériﬁer l’état des gîtes et
+de réagir rapidement aux sollicita.ons des clients.
+Sophie et Julien, quant à eux, ont décidé de conﬁer la ges.on à une conciergerie, acceptant un coût de
+20 % TTC de leur chiﬀre d’aﬀaires. Cela leur permet la garan.e d’un service eﬃcace et de qualité sur
+les diﬀérents sites sans y consacrer du temps. Pour eux, c’est aussi une manière d’acheter « la
+tranquillité. » Quant à Marc, il n’externalise pas sa ges.on mais u.lise des ou.ls de tariﬁca.on
+dynamique comme celui de PriceLabs. Il souligne le fait que cet ou.l lui permet de « gagner jusqu’à 15
+% de chiﬀre d’aﬀaires en plus par rapport à une grille de tariﬁca'on ﬁxe. »
+Cependant, Emmanuel, ancien responsable d’une conciergerie, nuance en meRant l’accent sur les
+éventuelles contraintes d’une ges.on trop standardisée : « Ils passaient trop par l’informa'que […] il y
+
+37
+
+avait moins de rela'on client, et c’est ce qui manquait. » Il illustre ce constat par des détails d’accueil
+négligés : « Les voyageurs aiment trouver une bouteille d’eau, quelques dosemes de café […] ce sont des
+amen'ons simples, mais qui font la diﬀérence. »
+Dans le même esprit, madame X rapporte qu’un remplacement occasionnel de personnel de neRoyage,
+moins rigoureux que celui habituel, a suﬃ à baisser l’expérience client et a suscité des commentaires
+néga.fs.
+Ces remarques meRent en avant que la professionnalisa.on ne réside pas uniquement par
+l’op.misa.on des prix et la logis.que. Elle demande aussi une considéra,on spéciﬁque de la rela,on
+avec le client, qui a un impact direct sur la ﬁdélisa.on des voyageurs. CeRe rela.on impacte également
+directement les recommanda.ons des voyageurs pour d’autres poten.els clients ainsi que les avis
+Airbnb.
+Les limites en cas de mauvaise exécu,on.
+D’après le retour d’expériences de chaque personne interviewée, l’absence de suivi ou une ges.on
+imprécise peut réduire le bénéﬁce économique de la LCD. Mme X explique avoir connu des périodes
+de vacances loca.ves plus longues que prévu lorsqu’elle ne pouvait pas se rendre en physique pour
+accueillir les voyageurs. Également, Chris.an reconnaît que « si on ne répond pas rapidement aux
+messages, on risque de perdre des réserva'ons. »
+À cela s’ajoutent les coûts imprévus qui peuvent également diminuer la rentabilité, tels que des
+répara.ons de dernière minute ou le remplacement régulier de meubles, notamment quand les biens
+ont une rota.on importante de voyageurs. Mme X men.onne aussi l’eﬀet des coûts variables, en
+par.culier l’électricité : « Pendant l’hiver, la facture d’électricité grimpe rapidement, et quand certains
+logements sont mal isolés cela peut correspondre à 250€ par mois. »
+Localisa,on et diﬀérencia,on : les deux clés du succès.
+Bien que la localisa.on dans les hypercentre des villes favorise les réserva.ons, cela ne suﬃt pas : il
+doit être accompagné d’une proposi.on unique. Sophie et Julien ont bien compris l’importance de la
+localisa.on, en proposant des logements avec vue sur la mer ou situés au pied des pistes, ainsi que la
+nécessité d’oﬀrir un bien de qualité, en installant un jacuzzi dans chaque logement et en optant pour
+une décora.on très moderne.
+Par ailleurs, Marc aReste que « le seul moyen de maintenir un bon taux d’occupa'on, c’est d’avoir un
+produit qui sort du lot. » Mme X conﬁrme également ceRe no.on de diﬀérencia.on à travers la
+cita.on : « Seuls les biens ayant un véritable avantage con'nuent à être loués en période creuse à des
+prix de marché. »
+Enﬁn, dans ceRe logique Chris.an a fait le choix de réaliser quatre gîtes théma.ques : montagne, mer,
+ville et campagne et des presta.ons premium telles qu’un sauna et hammam. Toutefois, malgré ceRe
+approche de diﬀérencia.on, Chris.an a ﬁnalement décidé de réorienter la totalité de ces gîtes en
+loca.on de longue durée. En eﬀet, leur emplacement en dehors du centre-ville réduisant la demande
+pour des loca.ons à court terme notamment lors des périodes plus creuses. CeRe décision s’est
+accompagnée par d’autres événements externes comme l’augmenta.on des réglementa.ons, de la
+ﬁscalité et de leurs déménagements.
+
+Synthèse :
+
+38
+
+Les interviews conﬁrment l'hypothèse : la loca.on de courte durée est plus lucra.ve que la loca.on
+longue durée, mais seulement si une ges.on professionnelle et un emplacement stratégique sont
+associés. Ces deux facteurs agissent comme des leviers complémentaires : l’absence de l’un diminue
+considérablement l’inﬂuence de l’autre. La liRérature sou.ent ceRe interdépendance, tout en meRant
+l’accent sur le fait que la saisonnalité, la concurrence locale et les coûts variables peuvent aRénuer les
+performances.
+
+B) Hypothèses 2 : Un modèle aﬀaibli par l’augmenta'on des règles strictes dans les zones
+tendues.
+Dans un environnement de renforcement des règles, en par.culier dans les zones déﬁnies comme
+« tendues », la LCD est confrontée à des déﬁs. Facteurs tels que la pression sur le marché immobilier,
+la volonté des autorités de réguler le marché, les restric.ons sur le nombre de nuitées, les exigences
+administra.ves ou encore l’intensiﬁca.on de la ﬁscalité sont autant de facteurs suscep.bles d’aﬀecter
+son aRrait et sa proﬁtabilité. L’objec.f de ceRe hypothèse est d’évaluer comment ces changements
+inﬂuencent la rentabilité et la pérennité du modèle de la LCD en fonc.on des proﬁls interviewés.
+Des contraintes réglementaires et ﬁscales de plus en plus strictes.
+L’ensemble des personnes interrogées constate un renforcement marqué des réglementa.ons,
+notamment dans certaines régions, ce qui complique l’ac.vité de la LCD. Marc précise que « dans
+certaines villes, il est nécessaire de signaler chaque loca'on, d'obtenir un numéro d'enregistrement et
+de se conformer à une limite annuelle de nuitées. » Ces procédures peuvent dissuader certains
+inves.sseurs, notamment ceux qui ne sont pas familiers avec la ges.on de procédures administra.ves
+compliquées ou qui n'ont pas une bonne compréhension des règles locales.
+En plus des contraintes locales, il existe des modiﬁca.ons ﬁscales à l’échelle na.onale. Le projet de loi
+de ﬁnances 2025 envisage une réduc.on notable du régime d’abaRement ﬁscal pour les loca.ons
+meublées dédiées au tourisme. Auparavant, le régime micro-BIC proposait un abaRement de 71 % pour
+les meublés classés et de 50 % pour les autres. Toutefois, ces taux sont désormais réduits à 50 % pour
+les meublés classés et 30 % pour les non classés. Parallèlement, les seuils de chiﬀre d’aﬀaires pour
+bénéﬁcier de ces abaRements ont également diminué passant de 188 700 € à 50 000 € pour les
+meublés classés et passant de 77 700 € à seulement 15 000 € pour les non classés. CeRe combinaison
+de réduc.on de l’abaRement et de diminu.on du plafond incite un grand nombre d’inves.sseurs à
+abandonner le régime micro-BIC au proﬁt du régime réel, qui est plus administra.f et généralement
+moins proﬁtable sur le plan ﬁscal. Dans des situa.ons spéciﬁques, en par.culier pour les contribuables
+dans les tranches d'imposi.on élevées soumis aux prélèvements sociaux, le taux d'imposi.on eﬀec.f
+peut grimper à 50 % ou même dépasser 65 %, diminuant considérablement la marge neRe de l'ac.vité.
+Chris.an, qui avait choisi la LCD, indique que « l’augmenta.on des réglementa.ons et de la ﬁscalité a
+pesé dans la décision de repasser en loca.on longue durée. » Il prévoit par ailleurs un renforcement
+ﬁscal encore plus prononcé :
+« À mon avis, au moins sur les endroits tendus, comme en bord de mer ou à la montagne, la ﬁscalité va
+se corser encore plus les années à venir. Je fais conﬁance à nos gouvernements, quels qu’ils soient, ils
+vont bien nous trouver des taxes supplémentaires. »
+Un impact direct sur la rentabilité.
+L’adapta.on à ces exigences engendre fréquemment des dépenses supplémentaires : charges
+administra.ves, ges.on déléguée ou encore conformités techniques. Tous ces aspects contribuent à
+
+39
+
+diminuer la proﬁtabilité neRe. Sophie et Julien, qui gèrent des propriétés dans des régions touris.ques,
+admeRent que « si l’on ﬁxe une restric'on à 120 jours par an à par'r de demain, notre modèle ne
+survivra pas. »
+L'accumula.on de ces contraintes à l'échelle locale et na.onale diminue la ﬂexibilité opéra.onnelle et
+contraint les propriétaires à ajuster leurs projec.ons ﬁnancières. L'accroissement de l'imposi.on réelle,
+associé à la réduc.on des déduc.ons ﬁscales, risque d'annuler une par.e des bénéﬁces associés à la
+LCD compara.vement à la loca.on sur le long terme, surtout pour les biens qui connaissent une
+saisonnalité marquée.
+Réorienta,ons stratégiques face aux contraintes.
+Devant ces restric.ons, les proﬁls interviewers meRent en œuvre diﬀérentes stratégies. Certains
+optent pour une diversiﬁca.on géographique de leurs loca.ons, vers des régions moins réglementées
+et changent de régime ﬁscal. D’autres préfèrent basculer dans des formats moins exposés, tels que la
+loca.on à moyen ou long terme. Chris.an est un bon exemple de ce changement de stratégie : bien
+qu’il ait dis.ngué son oﬀre avec des gîtes théma.ques et des services haut de gamme, il a opté pour
+un changement en meRant ses gîtes en loca.on à longue durée.
+Pour Emmanuel, la clé pour maintenir une compé..vité dans le secteur de la LCD dans les zones
+tendues passe par une professionnalisa.on poussée de la ges.on : « Ceux qui veulent rester en LCD
+dans les zones tendues devront professionnaliser à l’extrême leur ges'on pour compenser les
+contraintes », en men.onnant par exemple l’automa.sa.on des check-in et check-out, la tariﬁca.on
+dynamique ou encore la mise en place d’un Chanel Manager. Il ajoute cependant : « les règles changent
+tellement souvent qu’il est diﬃcile de se projeter. Ce qu’on planiﬁe aujourd’hui peut devenir obsolète
+demain avec une nouvelle loi. »
+Enﬁn, madame x, illustre une autre adapta.on : « Ayant été assujewe à l’Impôt sur la Fortune
+Immobilière (IFI), j’ai fait le choix de changer de régime, passant du statut de LMNP à celui de LMP, aﬁn
+de ne pas payer d’IFI sur ces biens, ce qui compense en par.e la hausse de la ﬁscalité sur les revenus
+loca.fs.»
+
+Synthèse :
+L’examen des entre.ens appuie l’hypothèse : Un modèle aﬀaibli par l’augmenta.on des règles strictes
+dans les zones tendues. En eﬀet, la réduc.on des abaRements, l’augmenta.on de la ﬁscalité et la
+restric.on des nombres de nuits compliquent la ges.on et diminuent le poten.el loca.f. Tandis que
+certains inves.sseurs optent pour un retrait ou une réorienta.on de leur ac.vité vers des zones moins
+réglementées, d’autres misent sur une professionnalisa.on renforcée aﬁn de gérer ces contraintes.
+
+C) Hypothèses 3 : Le processus de professionnalisa'on représente un facteur clé pour assurer la
+viabilité à long terme.
+Dans un secteur de loca.on à court terme où la concurrence se renforce et où le cadre réglementaire
+est rigoureux, gérer son entreprise de manière professionnelle n'est plus simplement un atout
+compé..f, mais s'impose désormais comme une obliga.on. CeRe professionnalisa.on ne se limite pas
+à la simple acquisi.on de compétences techniques ou procédurales ; elle englobe également la ges.on
+opéra.onnelle courante, le perfec.onnement des tarifs, l'enrichissement de l'expérience client et la
+
+40
+
+capacité à répondre promptement aux circonstances imprévues. Les entre.ens menés montrent que
+ceRe compétence a une inﬂuence directe sur la proﬁtabilité et la durabilité de ce modèle.
+Un pilotage op,misé pour maximiser les performances.
+Tous les témoignages s’accordent à dire que la ges.on structurée est un atout majeur pour augmenter
+le taux d’occupa.on et le revenu par nuitée. Parmi l’ensemble des personnes interviewées, quelquesuns ont recours à des ou.ls de yield management permeRant d’op.miser les tarifs de la nuitée de
+manière autonome. Les conciergeries et propriétaires ayant plus de 5 lots u.lisent des Chanel Manager,
+une formule plus adaptée quand la ges.on devient trop importante. Ce disposi.f leur oﬀre la possibilité
+d'eﬀectuer une actualisa.on automa.que des calendriers, de coordonner chaque annonce et d’avoir
+des indicateurs de performance. Concernant les pe.ts propriétaires, ils choisissent de gérer en interne,
+ce qui leur donne la possibilité de s'adapter rapidement aux varia.ons de la demande en ajustant les
+prix ou en organisant des promo.ons spéciﬁques.
+Par exemple, Sophie et Julien précisent qu’ils examinent souvent leurs réserva.ons et celles de la
+concurrence pour modiﬁer leurs prix « parfois même d’une semaine à l’autre », aﬁn de maintenir leur
+compé..vité, surtout pendant la basse saison. A l’inverse Madame X u.lise un Chanel Manager, car la
+ges.on de ces 5 logements lui demande du temps. Pour elle, cet ou.l lui fait gagner un temps
+considérable et d’avoir une ges.on eﬃcace.
+L’importance de l’expérience client.
+La professionnalisa.on va au-delà de la technique, elle nécessite une considéra.on con.nue de
+l'expérience vécue par le client. Certains inves.sseurs soulignent l'importance d'une présenta.on
+soignée du logement dès l’arrivée. Sophie et Julien expliquent que leur conciergerie fait aRen.on à ces
+détails : « La conciergerie veille à laisser un panier de bienvenue avec des produits locaux comme des
+conﬁtures et des jus de fruits. » Selon ses propos cela lui permet de susciter un grand nombre de
+commentaires posi.fs.
+Certains inves.sseurs, notamment les par.culiers, privilégient des guides de bienvenue comprenant
+les ac.vités phares de la région, les commerces de qualité et toutes les informa.ons à savoir sur le
+logement : le code wiﬁ, la no.ce de la télé et celle de certains électroménagers. Ces gestes souvent
+appréciés par les voyageurs font la diﬀérence et permeRent d’éviter certaines ques.ons. Madame X
+dit que « depuis la mise en place de mon livret d’accueil, les voyageurs sont plus sa'sfaits et ne me
+posent moins de ques'ons car le livret comporte toutes les informa'ons essen'elles. »
+Enﬁn, chaque inves.sseur explique avoir programmé des messages automa.ques la veille de l’arrivée
+des voyageurs. Cela leur permet de donner des instruc.ons d’accès et de répondre aux ques.ons avant
+l’arrivée des voyageurs. Ces exemples montrent l’importance d’un service de qualité aﬁn de garan.r le
+bon déroulement du séjour et la sa.sfac.on du voyageur.
+Une adapta,on nécessaire face aux imprévus et aux contraintes.
+Les entre.ens meRent en évidence qu’une ges.on structurée permet également de faire des
+problèmes éventuels, qu’ils soient techniques ou liés à la demande
+Emmanuel explique : « Que ce soit en haute ou en basse saison, l'improvisa'on n'est pas une op'on
+que nous pouvons nous permemre. » Également, il dit avoir établi un système de check-in autonome
+pour la plupart de ses clients hôtes et d’avoir un réseau de prestataires de neRoyage disponibles à tout
+moment en cas d’urgence.
+
+41
+
+CeRe agilité opéra.onnelle garan.t non seulement la pérennité de l’ac.vité en cas d’imprévus, mais
+aussi à dis.nguer l’oﬀre par rapport à ses concurrents.
+Synthèse :
+L'examen des entre.ens révèle que la professionnalisa.on n'est pas simplement un choix, mais une
+exigence pour exceller en LCD. Les inves.sseurs qui meRent en œuvre une stratégie organisée, alliant
+technologie, personnalisa.on et réac.on rapide, réussissent à op.miser leurs bénéﬁces tout en
+minimisant les eﬀets des imprévus. En revanche, une ges.on négligente peut entraîner une diminu.on
+rapide de la compé..vité, ou même l'obliga.on de se re.rer du marché.
+
+D) Hypothèses 4 : Une exposi'on ampliﬁée aux chocs externes (sanitaires, clima'ques,
+économiques)
+La loca.on de courte durée est par.culièrement exposée à des éléments externes qui sont hors du
+contrôle direct des inves.sseurs. Contrairement à la loca.on de tradi.onnelle, plus stable, la LCD
+repose sur un ﬂux con.nu de nouveaux voyageurs chaque semaine, ce qui les rend plus vulnérables
+aux crises sanitaires, changements clima.ques ou à des varia.ons économiques. Ces chocs peuvent
+inﬂuencer la rentabilité par une diminu.on du taux d'occupa.on et de la RevPar, forçant les
+intervenants du domaine à adapter rapidement leur plan d'ac.on.
+Les crises sanitaires : une interrup,on soudaine de l'ac,vité.
+Ce modèle a souvent été cité comme étant précaire et instable, notamment avec la pandémie de Covid19. Mme X décrit que « tout a cessé du jour au lendemain » et « nous avions des réserva.ons
+complètes pour trois mois, et en l’espace de 48 heures, tout a été annulé. » CeRe baisse brusque du
+tourisme a forcé plusieurs propriétaires à proposer des loca.ons de moyenne durée, voire à s’orienter
+vers de la longue durée pour compenser ceRe baisse de revenus. Marc, agent immobilier spécialisé
+dans l’inves.ssement et la loca.on saisonnière, raconte que plus de la moi.é de ses clients ont souﬀert
+d’un manque à gagner important. À travers un exemple marquant, il m’explique qu’un inves.sseur de
+plusieurs ac.fs immobiliers sur la côte atlan.que a subi une chute de près de 60 % de son chiﬀre
+d'aﬀaires annuel en 2020, même avec une reprise es.vale. Certains d’entre eux ont même dû vendre
+un logement pour faire face aux charges telles que le crédit immobilier, les taxes et les impôts.
+L'impact grandissant des aléas clima,ques sur la demande.
+Les condi.ons météorologiques, qu’elles soient extrêmes ou simplement défavorables, ont un impact
+direct sur l’aRrac.vité des lieux touris.ques. Chris.an, qui possède des gîtes en milieu rural, met en
+évidence que « un été pluvieux entraîne immédiatement une baisse de demandes, par'culièrement
+pour les courts séjours. » Pour Sophie et Julien, propriétaires d’un bien immobilier en montagne à
+proximité d’un domaine skiable, la réduc.on de l’enneigement due aux fortes chaleurs limite la
+période touris.que l’hiver. Par conséquent, ils expliquent avoir été obligés de « memre en valeur les
+ac'vités hors-ski » pour compenser la diminu.on des réserva.ons en hiver.
+Les varia,ons économiques : un impact direct sur le pouvoir d’achat et la demande
+Les segments touris.ques de luxe peuvent être rapidement touchés par les crises économiques ou
+l'inﬂa.on, ce qui impacte la fréquenta.on. Marc, un professionnel de l'immobilier, observe que «
+chaque fois que le prix du carburant augmente ou que les 'ckets d'avion deviennent trop onéreux, on
+constate une baisse des réserva'ons de dernière minute. » Par ailleurs, la hausse du coût de la vie
+inﬂuence le comportement des voyageurs. Les dépenses allouées pour les vacances sont les premières
+
+42
+
+à être réduites, voire reportées, lorsque le budget des ménages diminue. CeRe tendance se traduit par
+des voyages moins onéreux et plus courts. Emmanuelle note que « lors de périodes économiques
+diﬃciles, les clients sont plus regardants sur les budgets et cherchent des logements avec un bon
+rapport qualité-prix. »
+Synthèse :
+Les entre.ens révèlent que la loca.on de courte durée est plus vulnérable que la loca.on longue durée
+face aux aléas sanitaires, clima.ques et économiques. Cet événement incertain traduit une ﬂuctua.on
+des revenus et une nécessité constante d’adapta.on. Ceux qui sont les plus résilients parmi les
+inves.sseurs sont ceux qui prévoient ces perturba.ons, diversiﬁent leurs oﬀres et incorporent une
+souplesse contractuelle et tarifaire dans leur ges.on. Sans ces modiﬁca.ons, un choc externe peut vite
+compromeRre l’équilibre ﬁnancier de l’ac.vité de la LCD.
+
+E) Hypothèses 5 : Une approche patrimoniale à long terme comme condi'on de rentabilité réelle
+La rentabilité réelle d’un inves.ssement immobilier ne se concentre pas uniquement sur la
+performance instantanée, souvent désignée par le cash-ﬂow généré. Les commentaires des entre.ens
+soulignent qu’une performance durable découle davantage d’une stratégie patrimoniale, conçue sur le
+long terme. CeRe approche implique de traiter le bien comme un ac.f à valoriser sur le long terme :
+un choix stratégique du lieu, prévision des changements ﬁscaux, contrôle des dépenses d’entre.en.
+Grâce à ceRe hypothèse, il s’agit de comprendre si les inves.sseurs concernés considèrent ceRe
+perspec.ve à long terme comme un aspect fondamental. Il convient également d’analyser comment
+elle oriente leurs décisions, qu’il s’agisse du choix du statut juridique, du mode de ﬁnancement ou de
+la réversibilité d’u.lisa.on du bien.
+Horizon d’inves,ssement et créa,on de valeur dans le temps
+Une stratégie patrimoniale suppose d’arbitrer entre le revenu loca.f immédiat et la valorisa.on future
+du bien. Les interviewers meRent en avant qu’une propriétaire bien localisée, bien construite a
+tendance à s’apprécier dans le temps, ce qui contribue grandement à la rentabilité globale sur la
+période de déten.on.
+Dans ceRe logique, Marc illustre ceRe stratégie en indiquant : « Je cherche un minimum un rendement
+net de 6 %, et une localisa'on prime, pour que ce soit intéressant. » Selon lui, ce rendement cons.tue
+un niveau de revenu annuel convenable pour ﬁnancer l’entre.en et les travaux récurrents.
+En plus de ceRe performance loca.ve, il existe un poten.el d’apprécia.on à long terme lors de la
+revente, ce qui contribue à l’améliora.on du taux de rendement interne, appelé TRI. Cet indicateur
+permet d’évaluer la rentabilité globale en tenant compte des revenus générés par les loyers, les charges
+et la revente. Emmanuel souligne ce paramètre dans l’inves.ssement en ajoutant : « Je ne me centre
+pas uniquement sur les revenus mensuels, je prends également en compte la plus-value poten'elle lors
+de la revente, car c'est souvent elle qui inﬂuence signiﬁca'vement la rentabilité globale. »
+Les cadres juridiques et ﬁscaux au sein d’un projet patrimonial
+Adopter une perspec.ve patrimoniale plutôt qu’une recherche de gains immédiats suppose de meRre
+en place une structure juridique et un régime ﬁscal en cohérence avec des objec.fs d’inves.ssement
+et de rentabilité sur plusieurs années.
+
+43
+
+Mme X explique avoir choisi le statut de loueur en meublé professionnel (LMP) dans le but d’équilibrer
+son ac.vité de loca.on, ses co.sa.ons sociales et la prépara.on de sa retraite : « j’ai opté pour le statut
+de LMP car je changeais de profession et il était important pour moi de pouvoir co'ser jusqu’à ma
+retraite. » Elle précise aussi que l'immeuble hérité avait besoin de rénova.ons progressives, et que la
+LCD, plus lucra.ve que la loca.on à long terme, lui oﬀrait la possibilité de ﬁnancer ces travaux au fur
+et à mesure tout en préservant la propriété dans une op.que patrimoniale.
+Sophie et Julien ont quant à eux choisi de structurer une SARL familiale dans le but de regrouper la
+ges.on et d’améliorer l’aspect ﬁscal à l’échelle de leur portefeuille : « Nous avons fondé une SARL
+familiale pour améliorer la ﬁscalité et centraliser la ges.on. » CeRe op.on leur oﬀre la possibilité de
+centraliser l’ensemble de leurs ac.fs dans une unique en.té, de faciliter la ges.on administra.ve et
+ﬁnancière, de regrouper certaines dépenses telles que les assurances, les travaux et les prestataires et
+d’équilibrer ﬁscalement les résultats sur plusieurs propriétés. Ce type de société accorde également
+une plus grande ﬂexibilité pour réinves.r les proﬁts directement dans de nouveaux projets et en
+organisant la future transmission de l'héritage dans un environnement ﬁscal avantageux.
+Ces décisions démontrent que la rentabilité ne se limite pas uniquement au coût de la nuitée, c’est-àdire à celle des bénéﬁces immédiats mais se construit aussi dans un cadre et régime ﬁscal adapté.
+Capex, maintenance et valorisa,on progressive
+L’approche patrimoniale intègre une planiﬁca.on des dépenses d’inves.ssement, communément
+appelées CAPEX. Ces dépenses allouées se concentrent sur des travaux lourds (toiture, façade,
+isola.on), l’installa.on d’équipements majeurs (chauﬀage central, pompe à chaleur, clima.sa.on) ou
+encore la mise aux normes techniques (électricité, plomberie, accessibilité PMR).
+Mme X souligne précisément l'importance d'aller « étape par étape », en améliorant la valeur du bien
+grâce à la mise aux normes et à la rénova.on énergé.que. Elle cite : « cela permeRait d'avancer
+progressivement sur la valorisa.on de mon patrimoine […] et d'éviter la vacance que connaissait cet
+immeuble.
+»
+L’avantage de ces rénova.ons et de cet entre.en est qu’ils permeRent aux inves.sseurs de valoriser
+leur patrimoine à long terme tout en proﬁtant à court terme des revenus supplémentaires dus à la
+meilleure qualité du bâ.ment et des logements.
+
+Adapter son modèle pour protéger la rentabilité
+Dans le cadre d'un inves.ssement à long terme de dix à quinze ans, la possibilité de réversibilité
+d'usage est un élément crucial d'une stratégie patrimoniale. Elle fait référence à l'ap.tude à modiﬁer
+la manière d'exploiter un bien en réponse aux changements du marché, du cadre législa.f ou des
+tendances locales. L'idée est de faciliter la transi.on depuis des loca.ons à court terme vers des op.ons
+plus durables telles que les loca.ons à moyen terme (récep.on de professionnels en mission,
+d'étudiants, bail mobilité) ou les loca.ons tradi.onnelles à long terme.
+CeRe souplesse est un atout majeur permeRant aux inves.sseurs de se retourner face à des facteurs
+qui leur échappent : renforcement des lois locales, diminu.on de l’intérêt touris.que. Marc donne un
+exemple concret :
+« Bien que la loca'on à court terme soit plus rentable, je me suis préparé à passer en loca'on longue
+durée et assurer la couverture de mes coûts si jamais les règles de la ville changent. »
+
+44
+
+En eﬀectuant ce reposi.onnement à tout moment, l’inves.sseur se protège au maximum face à une
+baisse de revenus. CeRe capacité d’adapta.on est très valorisée par les établissements bancaires, car
+elle leur oﬀre une garan.e contre le risque d’un arrêt de la LCD.
+D’autres candidats interrogés ont men.onné avoir pris en compte ceRe réversibilité de leur ac.f face
+aux changements de réglementa.ons locales. Certains aﬃrment que la modiﬁca.on de la méthode
+de loca.on n'est pas un échec du projet, mais s'inscrit dans une stratégie visant à protéger le capital,
+à op.miser la ﬁscalité et à garan.r un équilibre opéra.onnel sur le long terme.
+
+Diversiﬁca,on géographique et typologique
+Dans sa stratégie patrimoniale, notamment en loca.on de courte durée, il est primordial d’élaborer un
+plan d’ac.on pour les diﬀérents cycles saisonniers en mixant des biens « toutes saisons », souvent
+situés dans les centres-villes, et des propriétés adaptées à diﬀérentes périodes de l’année, comme à la
+montagne ou à la mer. Par ailleurs, il est nécessaire d’avoir une variété d’ac.fs aﬁn de s’adapter à
+plusieurs segments de clientèle et de limiter le risque de vacance loca.ve. Sophie et Julien démontrent
+ceRe approche en louant diﬀérents logements ayant des localisa.ons très diverses (bord de mer, au
+pied des pistes et dans le centre-ville) et des catégories variées (T1/T2 ainsi que quelques T3 familiaux),
+ce qui aRénue les ﬂuctua.ons et favorise l'occupa.on annuelle.
+Arbitrage d’inves,ssement face à un environnement ﬁscal changeant
+À long terme, l'inves.sseur patrimonial réalise des arbitrages ﬁnanciers en considérant la ﬁscalité
+eﬀec.ve, après déduc.ons ﬁscales et prélèvements sociaux. Il examine les eﬀets de la récente
+diminu.on des abaRements micro-BIC et des plafonds étroits, puis met en perspec.ve la proﬁtabilité
+de la loca.on à court terme par rapport à d'autres formes d'exploita.on telles que la loca.on à long
+terme ou à moyenne durée. Comme le résume Chris.an, « j’ai préféré repasser en loca'on longue
+durée. Avec les nouvelles taxes et les contraintes, le calcul n’était plus le même, et sur plusieurs années
+ça devenait moins intéressant en courte durée. »
+L'inten.on n'est pas de maximiser un mois de revenus, mais d'assurer une rentabilité neRe constante
+et durable, permeRant de couvrir les dépenses, les inves.ssements (CAPEX) et de gérer les ﬂuctua.ons
+réglementaires, tout en conservant la valeur patrimoniale de l'ac.f.
+Synthèse :
+Les entre.ens conﬁrment que le succès durable de la LCD réside sur une stratégie à long terme plutôt
+que sur des bénéﬁces immédiats. CeRe durabilité s’appuie sur des critères de performance bien établis,
+à l’image des 6 % net ﬁxés par Marc. Cela inclut aussi le choix d’une en.té juridique et d’un statut ﬁscal
+fonc.on de la direc.on d’inves.ssement, à l’instar du LMP pour madame x ou de la SARL pour Sophie
+et Julien.
+De plus, la stratégie d'inves.ssements durables est fondée sur une améliora.on progressive de la
+qualité du bien, par exemple via des travaux de rénova.on, de mise aux normes ou l'intégra.on
+d'équipements haut de gamme. Enﬁn, la no.on de réversibilité est une composante à prendre en
+compte si les condi.ons du marché viennent à changer. CeRe souplesse oﬀre une meilleure résistance
+face aux ﬂuctua.ons de la demande et aux modiﬁca.ons des réglementa.ons.
+
+45
+
+II. Discussion
+La confronta.on des constats .rés de l'examen de la liRérature et de l'étude des entre.ens oﬀre une
+perspec.ve cri.que et équilibrée sur le problème central de ce mémoire : La loca.on de courte durée
+est-elle un inves.ssement rentable sur le long terme ? Le but de ceRe discussion est d’examiner dans
+quelle mesure les hypothèses ini.alement posées sont corroborées ou nuancées à travers la
+comparaison entre le cadre théorique et la réalité du terrain.
+À par.r de ceRe analyse croisée, nous pouvons maintenant iden.ﬁer plusieurs direc.ons prospec.ves
+concernant l'évolu.on du modèle LCD, ainsi que ses limites et ses possibilités.
+S’agissant de l’hypothèse 1, les résultats conﬁrment par.ellement que la loca.on de courte durée est
+plus rentable que la longue durée, à condi.on d’une ges.on professionnelle et d’une localisa.on
+stratégique. L’importance de la localisa.on est conﬁrmée lors des entre.ens, plusieurs proﬁls
+d’inves.sseurs soulignant que la zone géographique cons.tue le principal facteur de diﬀérencia.on,
+par.culièrement pour les loca.ons de courte durée. La hausse des prix par nuitée, constatée lorsque
+l’accessibilité et la centralité sont élevées, corrobore les propos des interviewés sur la prime aRachée
+à des emplacements tels que Paris. CeRe percep.on rejoint les observa.ons de Monsieur Deboosere,
+dont l’ar.cle traite de la localisa.on, qui montre que l’accessibilité en transport vers les pôles d’emplois
+et la proximité du centre accroissent à la fois le prix moyen et le revenu mensuel par annonce. Cela
+renforce l’idée d’une rentabilité supérieure de la LCD dans les localisa.ons « tendues » et bien
+connectées.
+Cependant, la localisa.on ne suﬃt pas. Emmanuel insiste sur le fait « qu’il ne faut pas se contenter
+uniquement de la localisa'on, car si la ges'on ne suit pas, les réserva'ons ne viendront pas. » Ces
+propos font écho aux travaux de Göppinger et al. qui expliquent que l’u.lisa.on de supports techniques
+tels que l’u.lisa.on d’ou.ls d’intelligence de marché, de pilotage comme des tableaux de bord et de
+yield management permet d’op.miser le remplissage et d’accroître les revenus loca.fs, même si la
+nuitée doit être revue à la baisse.
+Par ailleurs, l’aspect professionnel se reﬂète aussi dans la qualité de l’annonce et ses presta.ons.
+D’après Deboosere, le statut de SuperHost, l’op.on de réserva.on immédiate, la qualité de l’annonce
+et l’oﬀre d’un logement en.er sont liés à des augmenta.ons notables de revenus. Selon lui, les hôtes
+ayant le statut SuperHost peuvent bénéﬁcier de plus de 15 % de revenus supplémentaires et de plus
+de 51 % pour les logements en.ers par rapport aux chambres privées.
+Même si la loca.on de courte durée génère des revenus bruts plus importants, les cinq proﬁls
+interrogés soulignent que ces revenus peuvent être fortement diminués. En eﬀet, la prise en compte
+des coûts annexes tels que la conciergerie avec environ 20-25 % de commissions, les frais de ménage
+et les commissions des plateformes peuvent fortement réduire les revenus nets. L'étude menée par
+Jover et Cocola-Gant, publiée en 2022 corrobore ceRe observa.on : bien que la LCD puisse mul.plier
+par deux ou trois les receRes à long terme dans certaines zones centrales, les bénéﬁces réels sont
+grandement inﬂuencés par les frais de fonc.onnement, la saisonnalité et le niveau de concurrence.
+Pour résumer, les études et entre.ens conﬁrment l'hypothèse que la LCD peut s'avérer plus bénéﬁque
+que la longue durée lorsque la localisa.on et le professionnalisme sont combinés. L'emplacement de
+choix sert de mul.plicateur de valeur, mais c'est la capacité à exploiter pleinement ce poten.el grâce
+à une ges.on minu.euse, incluant l'op.misa.on des tarifs, la qualité du service et le contrôle des
+coûts, qui transforme ce poten.el en performance économique durable.
+En ce qui concerne l’hypothèse 2 (un modèle aﬀaibli par l’augmenta.on des règles strictes dans les
+zones tendues), les résultats indiquent que l’intensiﬁca.on des réglementa.ons et des taxes dans les
+
+46
+
+zones tendues impacte néga.vement le modèle économique de la loca.on de courte durée. Les
+entrevues jus.ﬁent que les exigences administra.ves telles que la déclara.on préalable, l’acquisi.on
+d’un numéro d’enregistrement et le plafond de nombre de nuitées apportent une complexité qui
+dissuade certains inves.sseurs. Marc met bien en évidence ceRe situa.on en notant que ces processus
+peuvent décourager les hôtes les plus novices à travers des démarches administra.ves complexes. Ces
+observa.ons rejoignent le rapport de Priol publié en 2023, qui explique que l’accroissement des
+procédures administra.ves et la diminu.on des droits de loca.on réduisent l’aRrac.vité de la LCD. Par
+ailleurs, Nieuwland et van Melik soulignent que la régula.on locale peut être un obstacle considérable,
+mais qu'elle a aussi pour but de réduire les eﬀets externes indésirables associés à l'engorgement
+touris.que et à la pression sur le logement.
+Ces réformes ﬁscales récentes ampliﬁent ceRe pression. En eﬀet, la diminu.on des abaRements et des
+plafonds du régime micro-BIC incite de nombreux inves.sseurs à renoncer à ceRe op.on en faveur du
+régime réel. L’entre.en de madame X explique avoir changé de statut : « En étant soumise à l’impôt
+sur la fortune immobilière, opter pour le passage de LMNP à LMP m’éviterait de payer l’IFI sur ces
+propriétés. Cela compense en par.e la hausse de la ﬁscalité liée aux revenus loca.fs. » Ces approches
+meRent en évidence la no.on proposée par Gurran & Phibbs (2017) aﬃrmant que les intervenants du
+marché modiﬁent leurs méthodes pour esquiver ou aRénuer l'impact des nouvelles régula.ons.
+Selon Chris.an, ceRe évolu.on ne fera que se renforcer : « À mon avis, au moins sur les endroits
+tendus, comme en bord de mer ou à la montagne, la ﬁscalité va se corser encore plus les années à
+venir. Je fais conﬁance à nos gouvernements, quels qu’ils soient, ils vont bien nous trouver des taxes
+supplémentaires. ». Ce sen.ment de l’augmenta.on de la pression ﬁscale notamment en zone tendue,
+rejoint l’analyse de Priol publiée en 2023. L’auteur explique que les autorités ciblent par.culièrement
+les zones où la demande loca.ve est forte pour durcir les règles ﬁscales et réglementaires. Enﬁn,
+Emmanuel pointe un autre problème : « Les réglementa.ons changent tellement souvent qu’il est
+diﬃcile de se projeter », ce qui conforte l’idée que l’instabilité du cadre légal freine la planiﬁca.on
+stratégique des inves.sseurs.
+Face à ces changements de réglementa.on. Certains inves.sseurs m’ont expliqué avoir fait des choix
+diﬀérents pour adapter leur stratégie. C’est le cas de Chris.an qui est passé de la loca.on à long terme
+pour garan.r et avoir une ges.on plus passive. D’autres acteurs du secteur comme Emmanuel, pensent
+que « ceux qui veulent rester en LCD dans les zones tendues devront professionnaliser à l’extrême. »
+Selon lui, pour rester compé..f cela passera par des tariﬁca.ons dynamiques, l’automa.sa.on des
+entrées et des sor.es ainsi que la ges.on mul.canale. Ces réac.ons stratégiques font suite à la logique
+exposée par Gurran & Phibbs due en par.e au changement de la réglementa.on et de ﬁscalité.
+Les études et les données du terrain conﬁrment l’hypothèse 2. Les stratégies iden.ﬁées, comme le
+changement du statut ﬁscal, la diversiﬁca.on géographique et la professionnalisa.on de la ges.on, se
+révèlent être des solu.ons de choix face à un renforcement des contraintes réglementaires et ﬁscales.
+Au sujet de l’hypothèse 3, les revues scien.ﬁques et les résultats obtenus conﬁrment que la
+professionnalisa.on de la ges.on est un facteur clé de réussite. De nombreux par.cipants notent que
+le simple fait d’oﬀrir un hébergement ne suﬃt plus. Selon eux, il est indispensable d’u.liser des logiciels
+numériques comme des Chanel Manager permeRant de centraliser les annonces, les calendriers aﬁn
+d’avoir une ges.on plus professionnelle, d’u.liser la tariﬁca.on dynamique pour ajuster les prix et de
+meRre en place une annonce de qualité. CeRe observa.on est en accord avec les recherches de
+Göppinger et al. (2024), qui démontrent que l'implémenta.on de technologies de ges.on immobilière
+peut accroître le taux d'occupa.on et améliorer les revenus.
+
+47
+
+Par ailleurs, la qualité de la rela.on client et de l’expérience proposée semble également une
+composante de ce professionnalisme. Comme Chris.an, et de nombreux interviewés soulignent
+l'importance d'une communica.on rapide et claire, d'un service addi.onnel (Spa & hammam) et de
+l'oﬀre de services complémentaires pour assurer la ﬁdélité des clients et maintenir un haut niveau
+d'occupa.on. Ces constata.ons corroborent l'étude de Legohérel & Pou.er publiée en 2017. CeRe
+étude appuie l'idée que la professionnalisa.on exige une démarche globale intégrant le marke.ng, la
+ges.on opéra.onnelle et le contrôle de la qualité.
+Les données suites aux entre.ens indiquent également que la professionnalisa.on n’est pas seulement
+un choix stratégique, mais souvent une nécessité pour pallier les contraintes externes. Dans les régions
+sous tension, la hausse de l’imposi.on et le renforcement des règles diminuent la marge bénéﬁciaire,
+forçant ainsi les propriétaires à maximiser chaque levier disponible. CeRe no.on s’harmonise avec les
+résultats de Gurran & Phibbs publiés en 2017 qui indiquent que dans les marchés régulés, la pérennité
+des acteurs dépend de l’op.misa.on constante de l’eﬃcacité opéra.onnelle et de la proposi.on de
+valeur.
+Enﬁn, la professionnalisa.on semble aussi avoir une incidence sur la ges.on des risques et de l'incer.
+tude. Emanuel précise que savoir prévoir les moments creux, ajuster les séjours pour minimiser les
+coûts de neRoyage et réagir rapidement aux situa.ons inaRendues est crucial pour maintenir une
+proﬁtabilité. CeRe approche préven.ve de la ges.on est en accord avec les conseils de Deboosere et
+al., qui soulignent que la rapidité de réac.on, la qualité des annonces et le .tre SuperHost cons.tuent
+des éléments qui augmentent considérablement les revenus
+CeRe étude conﬁrme l’hypothèse 3 : la professionnalisa.on est un facteur clé de viabilité à long terme
+dans la LCD. En eﬀet, qu’il s’agisse de technologies de ges.on, de stratégies de diﬀérencia.on ou de
+méthodes inspirées par l’hôtellerie, la revue de liRérature, combinée à l’analyse des données des
+interviewés, montre que les hôtes qui ob.ennent les meilleurs résultats sont ceux qui gèrent leur
+ac.vité comme une véritable entreprise.
+Pour ce qui est de l’hypothèse 4, les résultats soulignent la sensibilité accrue du modèle de loca.on à
+court terme (LCD) aux perturba.ons externes, qu'elles soient d'ordre sanitaire, clima.que ou
+économique. Les déclara.ons des personnes interviewées montrent que la crise de la COVID-19 a
+provoqué une baisse signiﬁca.ve des réserva.ons, notamment dans les régions touris.ques qui sont
+tributaires de la clientèle interna.onale. CeRe observa.on renforce les résultats de Zervas et al. (2017),
+qui meRent l'accent sur le fait que l'ac.vité des plateformes telles qu'Airbnb est par.culièrement
+exposée aux ﬂuctua.ons brusques de la demande et à la vola.lité des marchés.
+En plus de la crise sanitaire, les candidats interrogés ont souligné l'eﬀet des événements clima.ques
+extrêmes sur la saisonnalité et l'aRrait touris.que des des.na.ons. Parfois, les vagues de chaleur ou
+les tempêtes entraînent des annula.ons à la dernière minute et nécessitent des dépenses imprévues
+(comme l'ajout de clima.seurs ou de répara.ons), ce qui nuit à la rentabilité. Ces observa.ons
+rejoignent les conclusions de l’étude menée par Anaba et al., publiée en 2014, selon laquelle la capacité
+d’un établissement à préserver une expérience de qualité malgré des condi.ons environnementales
+adverses cons.tue un élément crucial de la résilience.
+Par ailleurs, des événements économiques comme l'inﬂa.on ou l'augmenta.on des taux d'intérêt sont
+aussi considérés comme des dangers directs. Plusieurs propriétaires constatent que la hausse des coûts
+(énergie, entre.en, services) aﬀecte leurs marges bénéﬁciaires. Également, le pouvoir d’achat des
+ménages diminue ce qui selon eux pourrait les pousser à opter pour des logements plus abordables ou
+à diminuer la durée de leur séjour. Ces observa.ons se recoupent avec les recherches de Jover &
+
+48
+
+Cocola-Gant publiées en 2022 qui soulignent que, dans un contexte économique ardu, la compé..on
+s'intensiﬁe et peut conduire à une bataille tarifaire.
+Devant ces dangers, les stratégies men.onnées par les par.cipants meRent l'accent sur la
+diversiﬁca.on et la capacité d'adapta.on. Emmanuel, par exemple, détaille qu'il modiﬁe ses vacances
+aﬁn de minimiser les coûts ﬁxes et op.mise l'occupa.on durant les moments creux. D'autres, en
+revanche, privilégient une diversiﬁca.on géographique ou typologique de leurs propriétés pour
+disperser le risque. D’autres stratégies s’inscrivent dans ceRe logique, comme celle décrite par
+Legohérel & Pou.er en 2017, qui soulignent que le recours à des techniques issues du revenu
+management hôtelier cons.tue une approche eﬃcace pour op.miser les performances dans un
+contexte marqué par l’incer.tude sanitaire, clima.que ou économique.
+Les résultats obtenus semblent soutenir l'hypothèse 4, tout en meRant en évidence que le niveau de
+vulnérabilité de la LCD aux aléas sanitaires, clima.ques et économiques diﬀère selon l'emplacement,
+le proﬁl des hôtes et leur capacité à s'adapter. L'adaptabilité, la diversiﬁca.on et la prévoyance se
+présentent comme des éléments clés de la résilience, en accord avec les recherches de Zervas et al.
+(2017), Anaba et al. (2014), Jover & Cocola-Gant (2022) ainsi que Legohérel & Pou.er (2017).
+
+Pour ﬁnir, les résultats de l’hypothèse 5 suggèrent que, si certains inves.sseurs interrogés envisagent
+la loca.on courte durée uniquement sous l’angle de la rentabilité immédiate, d’autres l’inscrivent dans
+une stratégie patrimoniale de long terme. Pour eux, les varia.ons conjoncturelles, qu’elles soient
+associées à la demande, aux régula.ons ou à la ﬁscalité, ont un impact sur la rentabilité à court terme.
+Cependant, sur le long terme, les gains de capital immobiliers et l'amor.ssement des inves.ssements
+peuvent neutraliser ces ﬂuctua.ons. Marc exempliﬁe ceRe stratégie en évoquant sa tendance à
+acheter des biens immobiliers dans des régions où la valeur du terrain a historiquement augmenté,
+même si le rendement loca.f immédiat est un peu moins favorable. CeRe vision long terme s’inscrit
+dans l'inten.on de sécuriser son patrimoine.
+CeRe vision est conforme aux observa.ons de Jover & Cocola-Gant, qui meRent l'accent sur le fait que
+les inves.sseurs prenant en compte un cycle étendu incluent non seulement les bénéﬁces loca.fs, mais
+aussi l'augmenta.on de la valeur du capital immobilisé. Par conséquent, les décisions ne se
+concentrent pas uniquement sur l'accroissement du bénéﬁce à court terme, mais incluent la
+sécurisa.on de l’ac.f et l'op.misa.on ﬁscale.
+Plusieurs personnes interrogées expliquent aussi qu’une telle approche patrimoniale va souvent de
+pair avec une ges.on prudente de l’endeRement et une réﬂexion stratégique sur les futurs achats.
+Quelques propriétaires optent pour des propriétés situées dans des zones à fort poten.el
+d'apprécia.on. Ce point de vue s'aligne avec la pensée de Deboosere et al., selon laquelle
+l'emplacement demeure un élément déterminant, non seulement pour le rendement loca.f, mais
+également pour la valeur du patrimoine à long terme.
+Enﬁn, lorsque l’on raisonne sur plusieurs années, il est plus simple d’encaisser les périodes
+compliquées. Une baisse de fréquenta.on ou un durcissement des règles ne pousse pas forcément à
+revendre. Les propriétaires qui s’inscrivent dans ceRe logique préfèrent souvent ajuster leur ac.vité,
+par exemple en louant plus longtemps hors saison ou en modiﬁant certains services, plutôt que de
+quiRer le marché. C’est une awtude que Nieuwland & van Melik (2018) associent à la volonté de
+préserver la valeur du bien sur la durée, quiRe à accepter, pendant un temps, des revenus plus
+modestes.
+
+49
+
+En résumé, les résultats conﬁrment en par.e l’hypothèse 5. La loca.on courte durée gagne à être
+pensée sur plusieurs années. Il faut tenir compte de la valeur future du bien, de la ﬁscalité et de la
+capacité à s’adapter. Cependant, tous les hôtes ne procèdent pas ainsi. Certains cherchent surtout à
+obtenir des gains rapides et ne se préoccupent pas toujours de la revente. Pourtant, de nombreuses
+recherches montrent qu’une vision à long terme aide à traverser les périodes diﬃciles et à maintenir
+son patrimoine (Jover & Cocola-Gant, 2022 ; Deboosere et al., 2019 ; Nieuwland & van Melik, 2018).
+
+Conclusion :
+Ce mémoire a exploré les spéciﬁcités de la loca.on de courte durée et sa viabilité à long terme. Il en
+ressort plusieurs avantages tels qu’une meilleure rentabilité, une ﬂexibilité plus souple et des cashﬂows importants pouvant être réinves.s. Toutefois, ce modèle économique comporte de nombreux
+désavantages comme l’accès au ﬁnancement, les dépenses importantes de ceRe ac.vité, la restric.on
+des réglementa.ons, un environnement ﬁscal de plus en plus strict et la sensibilité due aux chocs
+externes (économiques, environnementaux, sanitaires). La ques.on pour ce mémoire est
+naturellement orientée sur : La loca,on de courte durée est-elle un inves,ssement rentable sur le
+long terme ?
+L’analyse que j’ai menée repose sur une approche qualita.ve et l’examen de cinq entre.ens semidirec.fs avec divers acteurs du mé.er : un ancien responsable d’une conciergerie, un couple
+d’inves.sseurs, un inves.sseur plus conﬁrmé avec plusieurs lots et un ges.onnaire spécialisé. Ces
+entre.ens associés aux diﬀérentes revues scien.ﬁques m’ont permis de dégager plusieurs
+enseignements.
+•
+
+Premièrement, il ressort que la loca.on de courte durée est bien plus rentable que celle à long
+terme, à condi.on de respecter deux composantes essen.elles, celle de l’emplacement et
+d’une ges.on professionnelle. Il a été conﬁrmé qu’un emplacement bien situé ne perdra pas
+de valeur dans le temps et permet de générer des revenus supplémentaires en LCD par rapport
+à un emplacement secondaire. En ce qui concerne la ges.on professionnelle, elle s’appuie sur
+des instruments numériques eﬃcaces comme des Chanel manager ou des ou.ls de tariﬁca.on
+dynamique ainsi qu’une expérience client de qualité. Sans ces facteurs, la loca.on de courte
+durée serait à peine plus rentable que la loca.on de longue durée.
+
+•
+
+Ensuite, les nouvelles règles réglementaires et ﬁscales telles que la Loi Le Meur et la loi de
+ﬁnances 2025, nous permeRent de montrer la montée en puissance des réglementa.ons.
+Chris.an a fait le choix de changer de mode de loca.on en passant de la courte durée à la
+longue durée. Ce changement traduit donc une fragilité de la pérennité de ce modèle.
+
+•
+
+Également, l’analyse souligne aussi que le professionnalisme est primordial pour que l’ac.vité
+soit viable à long terme. Ce professionnalisme est caractérisé par l’essor de presta.ons
+addi.onnelles telles que la conciergerie, de plus en plus présente sur le marché de la LCD, les
+logiciels de ges.on et les ou.ls numériques. De plus, il est à noter que face à un marché de
+plus en plus concurren.el, les hôtes proposent des biens de plus en plus qualita.fs avec des
+théma.ques, ou des infrastructures haut de gamme pour répondre aux exigences des
+voyageurs. Dans ceRe nouvelle approche, seuls les acteurs les plus organisés proposant des
+biens de qualité et ayant une ges.on proche de celle d’une entreprise pourront s’assurer d’une
+pérennité.
+
+50
+
+•
+
+Par ailleurs, il est clair que la loca.on de courte durée dépend d’une vulnérabilité importante
+des chocs externes, qu’ils soient de nature économique, environnementale ou sanitaire. CeRe
+dépendance à des facteurs extérieurs a été mise en évidence par la Covid-19, qui a stoppé
+l’arrêt de ceRe ac.vité. Lors de mes entre.ens des inves.sseurs ont ressen. une baisse
+importante de leur chiﬀre d’aﬀaires, ce qui a amené à un manque à gagner important. D’autre
+part, l’instabilité économique à l’échelle mondiale a un impact sur les réserva.ons, les voyages
+étant l’un des postes de dépense réduits en cas de diﬃcultés pour les ménages. Enﬁn, les
+contextes clima.ques, période de canicule et pluvieuses sur la longue durée, peuvent amener
+à des annula.ons de dernières minutes.
+
+•
+
+Enﬁn, les résultats indiquent que la rentabilité durable de la LCD repose sur une vision
+patrimoniale à long terme. Toutefois certains inves.sseurs ont plus une approche sur une
+rentabilité immédiate et ne prennent pas toujours en compte le poten.el de la plus-value lors
+de la revente. En eﬀet, c’est en combinant rendement loca.f et valorisa.on de l’ac.f que les
+inves.sseurs peuvent sécuriser leurs patrimoines. Certains acteurs expliquent avoir choisi des
+emplacements de premier choix et engagé des travaux importants aﬁn d’augmenter les
+revenus loca.fs, tout en ayant en perspec.ve une plus-value à long terme.
+
+Néanmoins, ceRe recherche présente certaines limites. L'approche qualita.ve, basée sur un pe.t
+nombre d'entre.ens, ne permet pas de formuler des conclusions applicables à tout le marché. Par
+ailleurs, le domaine analysé est en perpétuelle muta.on, soumis à des transforma.ons ﬁscales et
+réglementaires fréquentes qui ont la capacité de changer les équilibres actuellement constatés.
+Il est important de noter que, même si la France applique des restric.ons importantes, ceRe tendance
+se retrouve également en Europe, et s’étend même jusqu’aux États-Unis, où la loca.on de courte durée
+est même interdite dans certaines zones. Cependant, les restric.ons restent encore assez souples dans
+les plus pe.tes villes françaises de moins de 200 000 habitants et certains pays émergents tels que le
+Brésil ou l’Afrique du Sud.
+En conclusion, ce mémoire souligne une vérité nuancée : l’inves.ssement de courte durée peut
+s’avérer plus rentable que la loca.on plus tradi.onnelle, mais seulement si les condi.ons expliquées
+sont remplies. Toutefois, ce modèle économique tend à devenir de plus en plus exigeant. D’une part
+avec l’augmenta.on de la concurrence et une réglementa.on qui s’intensiﬁe. D’autre part, une ac.vité
+de plus en plus exigeante, nécessitant des compétences et un professionnalisme comparable à ceux
+d’une entreprise.
+Pour ﬁnir, l'enjeu va au-delà d'une simple mise en comparaison entre deux méthodes de loca.on. Il
+s'agit d'examiner comment la loca.on de courte durée peut favoriser une ges.on équilibrée du
+patrimoine, en prenant en compte les incer.tudes économiques, réglementaires et sociales qui
+caractérisent ce domaine. La plupart des inves.sseurs l’ont bien compris en diversiﬁant leurs modes de
+loca.on (longue et courte durée) et en faisant certains arbitrages sur leurs loca.ons.
+
+51
+
+Bibliographie :
+•
+
+•
+
+•
+
+•
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+
+•
+
+Aguilera, T., Ar.oli, F., & Colomb, C. (2019). Les villes contre Airbnb ? Loca.ons meublées de
+courte durée, plateformes numériques et gouvernance urbaine. In A. Courmont & P. Le Galès
+(dir.), Gouverner les villes numériques (pp. 27–45). Paris : Presses Universitaires de France.
+Anaba, V., Bodet, G., & Bouchet, P. (2014). L’écotourisme à l’épreuve du diver.ssement
+sensoriel : le cas des hébergements atypiques. RIMHE – Revue Interdisciplinaire
+Management, Homme(s) & Entreprise, 10(2), 58–72.
+Deboosere, R., Derudder, B., & van Holm, E. J. (2023). Loca.on, loca.on and
+professionaliza.on: A mul.level hedonic analysis of Airbnb lis.ng prices and revenue. Urban
+Studies, 60(11), 2174–2194.
+Faye, B. (2023). Le temps et la valeur hédonique des hébergements loca.fs entre pairs :
+l’exemple d’Airbnb. Revue d’Économie Régionale & Urbaine, 2023(2), 209–245.
+Göppinger, S., Luque, J., & Marcato, G. (2024). Property management technology adop.on in
+the short-term housing rental market. Real Estate Economics, 52(5), 1197–1225.
+Grondeau, A., & Dourthe, G. (2023). Territorialisa.on de la plateforme Airbnb. Netcom :
+Réseaux, communica'on et territoires, 37(3/4). hRps://doi.org/10.4000/netcom.11o9d
+Jover, J., & Cocola-Gant, A. (2022). The poli.cal economy of housing investment in the shortterm rental market: Insights from urban Portugal. Environment and Planning A: Economy and
+Space, 54(8), 1432–1449.
+Kerrigan, D., & Wachsmuth, D. (2020). Airbnb, le partage du logement et le droit au logement
+à Montréal. Jus'ce Spa'ale / Spa'al Jus'ce, 13. hRps://www.jssj.org
+Nieuwland, S., & van Melik, R. (2018). Regula.ng Airbnb: How ci.es deal with perceived
+nega.ve externali.es of short-term rentals. Current Issues in Tourism, 21(9), 1035–1052.
+Priol, R. (2023). Impact économique et réglementa.on des meublés de tourisme : l’exemple
+d’Airbnb en France. Revue d’Économie Régionale & Urbaine, 2023(4), 627–653.
+Thiétart, R.-A. (coord.). (2007). La démarche du revenue manager. In Méthodes de recherche
+en management (pp. 111–132). Paris : Dunod.
+Zervas, G., Proserpio, D., & Byers, J. W. (2017). The rise of the sharing economy: Es.ma.ng
+the impact of Airbnb on the hotel industry. Journal of Marke'ng Research, 54(5), 687–705.
+Zúñiga-Vicente, J. A., Alonso-Borrego, C., & Forcadell, F. J. (2019). The irrup.on of Airbnb and
+its eﬀects on hotel proﬁtability: An analysis of Barcelona’s hotel sector. Tourism Economics,
+25(3), 448–474.
+Gurran, N., & Phibbs, P. (2017). When tourists move in: How should urban planners respond
+to Airbnb? Journal of the American Planning Associa'on, 83(1), 80–92.
+
+52
+
+Annexes :
+
+53
+
+54
+
+

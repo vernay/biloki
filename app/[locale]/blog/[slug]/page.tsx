@@ -44,6 +44,9 @@ export async function generateMetadata({
     };
   }
 
+  const absoluteImageUrl = `https://www.biloki.fr${article.image}`;
+  const absoluteUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
+
   return {
     title: article.title,
     description: optimizeDescription(article.excerpt),
@@ -56,6 +59,33 @@ export async function generateMetadata({
         pt: `/pt/blog/${slug}`,
         "x-default": `/fr/blog/${slug}`,
       },
+    },
+    openGraph: {
+      title: article.title,
+      description: optimizeDescription(article.excerpt),
+      url: absoluteUrl,
+      siteName: 'Biloki',
+      images: [
+        {
+          url: absoluteImageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+      locale: locale,
+      type: 'article',
+      publishedTime: article.date,
+      modifiedTime: article.updatedDate || article.date,
+      authors: article.author ? [article.author.name] : ['Biloki'],
+      tags: article.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: optimizeDescription(article.excerpt),
+      images: [absoluteImageUrl],
+      creator: article.author?.linkedin ? '@biloki' : undefined,
     },
   };
 }
@@ -151,6 +181,75 @@ export default async function BlogArticlePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      
+      {/* FAQ Schema for featured snippets on rental profitability queries */}
+      {slug === 'rentabilite-location-courte-duree-2026' && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "La location courte durée est-elle rentable ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui, la location courte durée peut être très rentable, avec des rendements nets de 8-15% annuels selon les stratégies d'optimisation. Cependant, cela dépend fortement des frais d'exploitation, du taux d'occupation, et des configurations fiscales (LMNP vs BIC)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelle est la différence de rentabilité entre location courte durée et location longue durée ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La LCD offre des rendements 50-200% supérieurs à la location traditionnelle, avec un yield locatif de 10-15% vs 3-5% en LT. Mais les charges d'exploitation (ménage, linge, maintenance) sont proportionnellement plus élevées."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quel impact ont les réformes fiscales 2025-2026 sur la rentabilité ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Les réformes 2025-2026 réduisent les avantages fiscaux antérieurs, augmentent les charges sociales en BIC, et imposent des plafonds de revenus. Cela diminue la rentabilité de 2-4 points mais reste intéressant en LMNP ou via des stratégies de diversification."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelles sont les meilleures stratégies pour maximiser la rentabilité en LCD ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Les meilleures stratégies incluent : optimiser le taux d'occupation (85%+ minimal), automatiser la gestion avec des outils, réduire les charges (mutualisation, services externalisés), diversifier les canaux de distribution, et adapter la tarification dynamiquement."
+              }
+            }
+          ]
+        }) }} />
+      )}
+      
+      {/* BreadcrumbList Schema for Google SERP breadcrumbs */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": breadcrumbLabels.home,
+            "item": `https://www.biloki.fr/${locale}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": breadcrumbLabels.blog,
+            "item": `https://www.biloki.fr/${locale}/blog`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": article.title,
+            "item": `https://www.biloki.fr/${locale}/blog/${slug}`
+          }
+        ]
+      }) }} />
+      
       <ReadingProgressBar />
       <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

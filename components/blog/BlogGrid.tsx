@@ -122,7 +122,7 @@ export default function BlogGrid({ articles, locale, readMoreLabel }: BlogGridPr
                 <div className="h-48 relative overflow-hidden bg-gradient-to-br from-primary to-blue-600">
                   <Image
                     src={article.image}
-                    alt={article.title}
+                    alt={`${article.title} - ${translateCategory(article.category, locale)}`}
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
