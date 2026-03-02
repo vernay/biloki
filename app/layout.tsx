@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.biloki.fr/icon-512.png?v=20260302",
+        url: "https://www.biloki.fr/icon-512-og-blue.png",
         width: 512,
         height: 512,
         alt: "Biloki - Gestion de séjours",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Biloki — Gestion de séjours sans effort",
     description:
       "Biloki centralise, automatise et orchestre le cycle de vie des séjours pour conciergeries, propriétaires, prestataires et locataires.",
-    images: ["https://www.biloki.fr/icon-512.png?v=20260302"],
+    images: ["https://www.biloki.fr/icon-512-og-blue.png"],
   },
   robots: {
     index: true,

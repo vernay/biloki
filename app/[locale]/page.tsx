@@ -28,7 +28,7 @@ export async function generateMetadata({
       siteName: "Biloki",
       images: [
         {
-          url: "/icon-512.png?v=20260302",
+          url: "/icon-512-og-blue.png",
           width: 512,
           height: 512,
           alt: "Biloki - Gestion de séjours",
@@ -42,7 +42,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/icon-512.png?v=20260302"],
+      images: ["/icon-512-og-blue.png"],
     },
   };
 }
