@@ -24,7 +24,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: "https://www.biloki.fr",
+      url: `https://www.biloki.fr/${locale}`,
       siteName: "Biloki",
       images: [
         {
