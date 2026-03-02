@@ -132,7 +132,7 @@ export default async function BlogArticlePage({
   const defaultAuthor = defaultAuthorByLocale[locale] || defaultAuthorByLocale.fr;
 
   const author = article.author || defaultAuthor;
-  const currentUrl = `https://biloki.com/${locale}/blog/${slug}`;
+  const currentUrl = `https://www.biloki.fr/${locale}/blog/${slug}`;
 
   const formatDate = (dateStr: string) =>
     new Date(dateStr).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
