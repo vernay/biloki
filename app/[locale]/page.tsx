@@ -21,6 +21,29 @@ export async function generateMetadata({
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      url: "https://www.biloki.fr",
+      siteName: "Biloki",
+      images: [
+        {
+          url: "/logos/logo-biloki.png",
+          width: 1000,
+          height: 1000,
+          alt: "Biloki - Gestion de séjours",
+          type: "image/png",
+        },
+      ],
+      locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/logos/logo-biloki.png"],
+    },
   };
 }
 
