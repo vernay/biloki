@@ -2376,11 +2376,12 @@ export const articles: BlogArticles = [
         `,
       },
       en: {
-        title: "Short-Term Rental Profitability: Real Returns in 2026 - Research Summary",
-        excerpt: "Summary of Alexandre Fardin's research thesis (Master 2 GESIIC, Sorbonne): complete analysis of short-term rental profitability, comparisons, impact of 2025-2026 reforms.",
+        title: "Short-Term Rentals: What Is the Real Profitability in 2026?",
+        excerpt: "Is short-term rental still profitable? Full analysis with figures vs long-term rental, impact of 2025-2026 tax and regulatory reforms, and optimization strategies to maximize returns.",
         tags: ["profitability", "investment", "airbnb", "STR", "taxation"],
         content: `
           <div class="space-y-8">
+            <!-- Credits -->
             <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
               <p class="text-sm text-gray-600 mb-3">
                 <strong>Source:</strong> Research thesis by <a href="https://www.linkedin.com/in/alexandre-fardin/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-semibold">Alexandre Fardin</a>
@@ -2391,26 +2392,276 @@ export const articles: BlogArticles = [
               <p class="text-sm text-gray-600 mb-2">
                 <strong>Institution:</strong> Université Paris 1 Panthéon-Sorbonne
               </p>
+              <p class="text-sm text-gray-600">
+                <strong>Research question:</strong> Is short-term rental a profitable long-term investment?
+              </p>
             </div>
+
+            <!-- Introduction -->
             <p class="text-xl text-gray-700 leading-relaxed mb-6">
-              This article summarizes Alexandre Fardin's academic research on the long-term profitability of short-term rentals, including market analysis, regulatory impacts, and success strategies.
+              Short-term rentals (STR) attract more and more investors because they promise higher profitability than traditional long-term rental. This article provides a detailed synthesis of an academic thesis focused on the economic viability of STR in 2025-2026, after major tax and regulatory reforms.
             </p>
-            <div class="bg-gradient-to-br from-primary to-blue-600 text-white rounded-2xl p-10 text-center mt-12">
-              <h2 class="text-3xl font-bold mb-4">Optimize Your Rental Returns with Biloki</h2>
-              <p class="text-xl mb-6">Professional tools for property managers.</p>
-              <a href="/en/book-demo" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all">
-                Book a Demo
+
+            <div class="bg-gray-50 border-l-4 border-gray-400 p-6 rounded-r-lg mb-6">
+              <p class="text-gray-700 font-semibold mb-3">Key market figures (2023-2024):</p>
+              <ul class="space-y-2 text-gray-700">
+                <li>• <strong>176 million overnight stays</strong> in France in 2023 (Eurostat)</li>
+                <li>• STR demand up strongly compared with most traditional segments</li>
+                <li>• Professional operators target a <strong>minimum 6% gross yield</strong></li>
+                <li>• Global STR market estimated around <strong>$448B</strong> in 2023</li>
+                <li>• Around <strong>960,000 active listings</strong> in France (+60% vs 2019)</li>
+              </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section id="context">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">1. Market context and evolution</h2>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Airbnb and market transformation</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Since 2008, Airbnb has deeply transformed the accommodation industry. In France alone, listings grew from roughly 600,000 in 2019 to around 960,000 in 2024. STR growth is connected to the broader expansion of French tourism and the demand for more flexible, home-like stays.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Main stakeholders</h3>
+              <ul class="space-y-3 text-gray-700 ml-6 mb-6">
+                <li><strong>Hosts:</strong> private owners and professional investors targeting at least 6% gross returns</li>
+                <li><strong>Platforms:</strong> Airbnb, Booking, Abritel, charging commissions from 3% to 18%</li>
+                <li><strong>Guests:</strong> tourists, business travelers, temporary residents</li>
+                <li><strong>Service ecosystem:</strong> concierge services, cleaning, staging, and channel managers</li>
+              </ul>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">COVID-19 shock and rebound</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                STR bookings fell sharply during COVID, then recovered rapidly. This demonstrates both the fragility and the resilience of the model, especially for well-managed assets in high-demand urban and leisure locations.
+              </p>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="success-factors">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">2. Key success factors for STR investment</h2>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Strategic location</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Academic and market data consistently show that centrality, transport access, and neighborhood attractiveness directly impact occupancy and pricing power.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Professional operations</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Fast response times, standardized processes, and strong guest communication are essential to maintain high occupancy and strong review scores over time.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Dynamic pricing and yield management</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Revenue tools (PriceLabs, Beyond, etc.) can optimize rates based on seasonality, local events, and demand curves. In many markets, this drives significant uplift versus static pricing.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Automation and channel management</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Tools such as <a href="/en/blog/channel-manager-guide-complet-conciergeries" class="text-primary hover:underline">channel managers</a> and automated messaging reduce manual workload and listing errors while improving booking conversion and consistency.
+              </p>
+            </section>
+
+            <!-- CTA 1 -->
+            <div class="bg-blue-50 border-l-4 border-primary rounded-r-lg p-8 my-10">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                The most stable long-term results usually come from professionalized operations, automation, and data-driven decision-making.
+              </p>
+              <a href="/en/commencer-gratuitement" class="inline-block bg-primary text-white hover:shadow-lg hover:scale-105 font-bold px-8 py-3 rounded-lg transition-all">
+                Start free trial
               </a>
             </div>
+
+            <!-- Section 3 -->
+            <section id="comparison">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">3. STR vs long-term rental: practical comparison</h2>
+
+              <p class="text-gray-700 leading-relaxed mb-4">
+                In many French cities, a studio can generate significantly higher gross revenue in STR than in long-term rental if occupancy stays above break-even levels.
+              </p>
+              <ul class="space-y-2 text-gray-700 ml-6 mb-6">
+                <li><strong>Long-term rental:</strong> stable cash flow, lower operational intensity</li>
+                <li><strong>Short-term rental:</strong> higher upside, higher volatility, higher operating costs</li>
+                <li><strong>Break-even logic:</strong> profitability depends on occupancy, ADR, and variable cost control</li>
+              </ul>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                International studies also show STR can outperform long-term rental by a wide margin in high-demand neighborhoods, though with stronger exposure to regulation and seasonality.
+              </p>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="advantages">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">4. Main advantages of the STR model</h2>
+              <ul class="space-y-3 text-gray-700 ml-6 mb-6">
+                <li><strong>Higher gross yield potential</strong> than conventional rental</li>
+                <li><strong>Cash-flow acceleration</strong> when operations are optimized</li>
+                <li><strong>Flexibility of use</strong> for owners (especially second homes)</li>
+                <li><strong>Asset usage optimization</strong> for properties that would otherwise stay vacant for long periods</li>
+              </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section id="risks">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">5. Limits and risks</h2>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Financing constraints</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Banks often perceive STR cash flows as less predictable than long-term rental income, which can increase financing requirements.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">High operating costs</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Cleaning, platform commissions, maintenance, consumables, and optional concierge fees can absorb a significant share of gross revenue.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Regulatory pressure</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Registration obligations, local quotas, and usage limits can materially reduce annual revenue potential in regulated markets.
+              </p>
+            </section>
+
+            <!-- Section 6 -->
+            <section id="regulation">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">6. 2024-2026 regulatory and tax impact</h2>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Le Meur law</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                The law strengthens municipal oversight and can reduce annual rental capacity for primary residences in constrained areas.
+              </p>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">Finance law changes</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Tax regime adjustments reduce attractiveness for some non-classified furnished rentals and increase the importance of legal/tax structuring.
+              </p>
+            </section>
+
+            <!-- Section 7 -->
+            <section id="research-findings">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">7. Research hypotheses and findings</h2>
+
+              <div class="space-y-6">
+                <div class="border-l-4 border-gray-400 bg-gray-50 p-6 rounded-r-lg">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Hypothesis 1: STR outperforms under clear conditions</h3>
+                  <p class="text-gray-700">
+                    STR can generate materially higher gross returns than long-term rental when location, occupancy, and operating discipline are under control.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-gray-400 bg-gray-50 p-6 rounded-r-lg">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Hypothesis 2: Tight regulation weakens margins</h3>
+                  <p class="text-gray-700">
+                    New constraints disproportionately affect unstructured operations and primary-residence strategies.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-gray-400 bg-gray-50 p-6 rounded-r-lg">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Hypothesis 3: Professionalization is non-negotiable</h3>
+                  <p class="text-gray-700">
+                    Data, automation, response-time discipline, and KPI tracking are key to long-term viability.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-gray-400 bg-gray-50 p-6 rounded-r-lg">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Hypothesis 4: External shocks matter</h3>
+                  <p class="text-gray-700">
+                    STR is exposed to macro shocks (health crises, regulation, tourism cycles), but resilient operators recover faster.
+                  </p>
+                </div>
+
+                <div class="border-l-4 border-gray-400 bg-gray-50 p-6 rounded-r-lg">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Hypothesis 5: Long-term wealth logic is decisive</h3>
+                  <p class="text-gray-700">
+                    The best investors combine cash flow, tax optimization, and capital appreciation over a 10-15 year horizon.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">8. Frequently asked questions</h2>
+
+              <div class="space-y-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">What is a realistic STR yield in 2026?</h3>
+                  <p class="text-gray-700">Gross yield can range from around 6% to double-digit levels depending on location, operations, and regulation. Net yield is lower after operating costs and taxes.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">What occupancy should I target?</h3>
+                  <p class="text-gray-700">In many urban markets, 60-65% is a minimum target; professional operators often push beyond that through pricing and distribution optimization.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Do I need a concierge service?</h3>
+                  <p class="text-gray-700">For larger portfolios or owners with limited time, professional management usually improves operational consistency and occupancy.
+                  </p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">Is STR still viable for 10+ years?</h3>
+                  <p class="text-gray-700">Yes, if approached as a professional business with risk management, compliance, and long-term asset strategy.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- CTA 2 -->
+            <div class="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-10 my-10 text-center">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">Ready to improve your profitability?</h3>
+              <p class="text-gray-700 text-lg mb-6">
+                Professional operators who use automation, unified channel management, and structured reporting tend to preserve margins over the long run.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/en/commencer-gratuitement" class="inline-block bg-primary text-white hover:shadow-lg hover:scale-105 font-bold px-8 py-3 rounded-lg transition-all">
+                  Free trial - 1 month
+                </a>
+                <a href="/en/reserver-demo" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold px-8 py-3 rounded-lg border border-primary transition-all">
+                  Book a demo
+                </a>
+              </div>
+            </div>
+
+            <!-- Conclusion -->
+            <section class="bg-gray-50 border border-gray-200 rounded-xl p-8 mt-12">
+              <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusion</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Short-term rental can still be profitable in 2026, but easy margins are gone. Tax and regulatory changes have raised the entry bar and rewarded operators with disciplined execution.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                The strongest long-term profiles combine strategic location, professional management, dynamic pricing, and continuous adaptation to local regulation.
+              </p>
+            </section>
+
+            <!-- Full thesis -->
             <div class="bg-gray-100 border-2 border-gray-300 rounded-2xl p-8 mt-12">
-              <h2 class="text-2xl font-bold text-gray-900 mb-4">📖 Access Full Thesis</h2>
+              <h2 class="text-2xl font-bold text-gray-900 mb-4">📖 Access the full thesis</h2>
               <p class="text-gray-700 mb-4">
                 <strong>Author:</strong> <a href="https://www.linkedin.com/in/alexandre-fardin/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Alexandre Fardin</a>
+              </p>
+              <p class="text-gray-700 mb-4">
+                <strong>Program:</strong> Master 2 GESIIC (Real Estate Investment Management and Strategy)
+              </p>
+              <p class="text-gray-700 mb-6">
+                <strong>Institution:</strong> Université Paris 1 Panthéon-Sorbonne | <strong>Date:</strong> April 2025 | <strong>Length:</strong> 66 pages
               </p>
               <a href="/blog/memoire-alexandre-fardin-lcd-rentabilite.pdf" target="_blank" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold px-8 py-4 rounded-xl transition-all">
                 📄 Download Full Thesis (PDF)
               </a>
             </div>
+
+            <!-- References -->
+            <section class="mt-12 bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">📚 Selected bibliography</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li>• Fardin, A. (2025). <em>Is short-term rental a profitable long-term investment?</em> Master thesis, Université Paris 1 Panthéon-Sorbonne.</li>
+                <li>• Jover, J., & Cocola-Gant, A. (2022). <em>Short-term rentals and the housing market in Lisbon and Porto.</em></li>
+                <li>• Faye, B. (2023). <em>Time and hedonic value in peer-to-peer accommodations.</em></li>
+                <li>• Ali Avan, A., Baytok, A., Zorlu, Ö., & Toker, M. (2023). <em>Management of Online Sales Channels at Hotels: Channel Manager System.</em></li>
+                <li>• Zervas, G., Proserpio, D., & Byers, J. W. (2017). <em>The Rise of the Sharing Economy: Airbnb impact on hotels.</em></li>
+                <li>• Eurostat (2023). Tourism overnight stay statistics in France.</li>
+                <li>• French Law n° 2024-1039 (Le Meur law).</li>
+                <li>• French Finance Law n° 2025-127.</li>
+              </ul>
+            </section>
           </div>
         `,
       },
