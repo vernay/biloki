@@ -35,12 +35,6 @@ export const categoryTranslations: Record<string, Record<string, string>> = {
     es: 'Normativa',
     pt: 'Regulamentação',
   },
-  investissement: {
-    fr: 'Investissement',
-    en: 'Investment',
-    es: 'Inversión',
-    pt: 'Investimento',
-  },
 };
 
 export function translateCategory(category: string, locale: string): string {

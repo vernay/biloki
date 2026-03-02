@@ -5,7 +5,6 @@ export interface BlogAuthor {
   role: string;
   avatar: string;
   bio?: string;
-  linkedin?: string;
 }
 
 export interface BlogArticleTranslation {
