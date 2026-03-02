@@ -38,6 +38,11 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://www.biloki.fr"),
+    openGraph: {
+      url: canonicalPath,
+      siteName: "Biloki",
+      locale,
+    },
     alternates: {
       canonical: canonicalPath,
       languages: {
