@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 
 interface Heading {
   id: string;
@@ -24,8 +24,11 @@ export default function BlogTableOfContents({
   const [isOpen, setIsOpen] = useState(false);
   const activeItemRef = useRef<HTMLButtonElement>(null);
   const placeholderRef = useRef<HTMLDivElement>(null);
+  const tocContainerRef = useRef<HTMLDivElement>(null);
   const [fixedPos, setFixedPos] = useState<{ top: number; right: number; width: number } | null>(null);
   const placeholderNaturalTop = useRef<number>(0);
+  const tocScrollRef = useRef<number>(0);
+  const isClickingRef = useRef<boolean>(false);
 
   const title = {
     fr: 'Sommaire',
@@ -80,14 +83,46 @@ export default function BlogTableOfContents({
     };
   }, [headings]);
 
+  // Persister et restaurer le scroll du TOC
+  useLayoutEffect(() => {
+    const container = tocContainerRef.current;
+    if (!container || isClickingRef.current) return;
+    
+    container.scrollTop = tocScrollRef.current;
+  });
+
+  // Tracker le scroll manuel du TOC
+  const handleTocScroll = () => {
+    if (tocContainerRef.current) {
+      tocScrollRef.current = tocContainerRef.current.scrollTop;
+    }
+  };
+
   const handleClick = (id: string) => {
+    isClickingRef.current = true;
+    
     const element = document.getElementById(id);
     if (element) {
-      const yOffset = -100;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'auto' }); // Défilement instantané
-      setIsOpen(false); // Fermer l'accordion sur mobile après le clic
+      // Utiliser scrollIntoView avec un offset approprié
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      
+      // Créer un élément temporaire avec du padding pour obtenir le bon offset
+      const offset = headerHeight + 30;
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      
+      window.scrollTo({ top, behavior: 'auto' });
+      setIsOpen(false);
     }
+    
+    // Restaurer le scroll du TOC et réinitialiser le flag après 100ms
+    setTimeout(() => {
+      const container = tocContainerRef.current;
+      if (container) {
+        container.scrollTop = tocScrollRef.current;
+      }
+      isClickingRef.current = false;
+    }, 100);
   };
 
   useEffect(() => {
@@ -108,11 +143,29 @@ export default function BlogTableOfContents({
 
     const onScroll = () => {
       if (!placeholderRef.current) return;
+      
+      // Détecter le footer pour arrêter le scroll fixe
+      const footer = document.querySelector('footer');
+      const tocHeight = 400; // Hauteur approximative du TOC
+      
+      if (footer) {
+        const footerTop = footer.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight;
+        
+        // Si le footer est visible et proche, on arrête le fixed
+        if (footerTop < viewportHeight - 100) {
+          setFixedPos(null);
+          return;
+        }
+      }
+      
+      // Sinon, on réactive ou on met à jour le fixed pos
       const rect = placeholderRef.current.getBoundingClientRect();
-      setFixedPos(prev => prev ? {
-        ...prev,
+      setFixedPos({
         top: Math.max(80, placeholderNaturalTop.current - window.scrollY),
-      } : null);
+        right: window.innerWidth - rect.right,
+        width: rect.width,
+      });
     };
 
     const timer = setTimeout(compute, 150);
@@ -176,7 +229,7 @@ export default function BlogTableOfContents({
           <h2 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4 flex-shrink-0 pl-3">
             {title}
           </h2>
-          <div className="pl-3 pr-2">
+          <div ref={tocContainerRef} onScroll={handleTocScroll} className="pl-3 pr-2 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 150px)' }}>
             <ul className="space-y-2">
               {headings.map((heading) => (
                 <li key={heading.id}>
