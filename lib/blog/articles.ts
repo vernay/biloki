@@ -1973,8 +1973,8 @@ export const articles: BlogArticles = [
     relatedSlugs: ["loi-le-meur-2026-location-saisonniere", "channel-manager-guide-complet-conciergeries", "automatiser-gestion-locations-saisonnieres"],
     translations: {
       fr: {
-        title: "Location Courte Durée : Quelle Rentabilité Réelle en 2026 ?",
-        excerpt: "La location courte durée est-elle rentable ? Analyse complète avec comparaisons chiffrées vs location traditionnelle, impact des réformes fiscales 2025-2026, et stratégies d'optimisation pour maximiser vos revenus.",
+        title: "La location courte durée est-elle encore rentable en 2026 ?",
+        excerpt: "Découvrez la rentabilité réelle de la location courte durée en 2026 avec des chiffres concrets : comparaison avec la location longue durée, effets des réformes fiscales 2025-2026 et leviers pour améliorer vos revenus.",
         tags: ["rentabilité", "investissement", "airbnb", "LCD", "fiscalité", "LMNP"],
         content: `
           <div class="space-y-8">
@@ -2376,8 +2376,8 @@ export const articles: BlogArticles = [
         `,
       },
       en: {
-        title: "Short-Term Rentals: What Is the Real Profitability in 2026?",
-        excerpt: "Is short-term rental still profitable? Full analysis with figures vs long-term rental, impact of 2025-2026 tax and regulatory reforms, and optimization strategies to maximize returns.",
+        title: "Is Short-Term Rental Still Profitable in 2026?",
+        excerpt: "Discover real short-term rental profitability in 2026 with concrete figures: STR vs long-term rental, the impact of 2025-2026 tax reforms, and practical levers to improve returns.",
         tags: ["profitability", "investment", "airbnb", "STR", "taxation"],
         content: `
           <div class="space-y-8">
