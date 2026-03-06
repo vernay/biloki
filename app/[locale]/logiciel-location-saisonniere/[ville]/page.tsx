@@ -312,6 +312,30 @@ const CITY_PERSONALIZATION: Record<
   },
 };
 
+const CITY_SEO_SNIPPETS: Record<
+  string,
+  {
+    title: string;
+    description: string;
+  }
+> = {
+  paris: {
+    title: 'Logiciel location saisonnière Paris: + de réservations, - de charge opérationnelle',
+    description:
+      'Pilotez votre activité courte durée à Paris avec Biloki: channel manager, PMS et automatisation pour réduire les erreurs et augmenter la rentabilité.',
+  },
+  marseille: {
+    title: 'Logiciel location saisonnière Marseille: centralisez opérations et réservations',
+    description:
+      'Gérez vos locations courte durée à Marseille depuis une seule plateforme: synchronisation OTA, workflow terrain et suivi KPI pour mieux convertir.',
+  },
+  nice: {
+    title: 'Logiciel location saisonnière Nice: plus de contrôle, plus de revenus nets',
+    description:
+      'Optimisez votre gestion à Nice avec Biloki: calendrier unifié, messages automatisés et pilotage local pour améliorer occupation, ADR et exécution.',
+  },
+};
+
 function ComparisonBar({
   label,
   cityLabel,
@@ -478,8 +502,11 @@ export async function generateMetadata({
   }
 
   const canonicalPath = `/${locale}/logiciel-location-saisonniere/${cityPage.slug}`;
-  const title = `${accentizeFrenchText(cityPage.heroTitle)} | PMS et Channel Manager`;
-  const description = `Découvrez comment mieux gérer vos locations courte durée à ${cityPage.city} avec Biloki: channel manager, PMS, automatisation et suivi opérationnel.`;
+  const customSnippet = CITY_SEO_SNIPPETS[cityPage.slug];
+  const title = customSnippet?.title ?? `${accentizeFrenchText(cityPage.heroTitle)} | PMS et Channel Manager`;
+  const description =
+    customSnippet?.description ??
+    `Découvrez comment mieux gérer vos locations courte durée à ${cityPage.city} avec Biloki: channel manager, PMS, automatisation et suivi opérationnel.`;
 
   return {
     title,
