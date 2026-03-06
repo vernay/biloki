@@ -6,13 +6,14 @@ export interface BlogAuthor {
   avatar: string;
   bio?: string;
   linkedin?: string;
+  profileUrl?: string;
 }
 
 export interface BlogArticleTranslation {
   title: string;
   excerpt: string;
   content: string;
-  tags?: string[];
+  tags: string[];
 }
 
 export interface BlogArticle {

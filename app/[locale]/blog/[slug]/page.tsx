@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { getArticleBySlug, getAllArticleSlugs, getArticlesForLocale } from "@/lib/blog";
 import { Locale } from "@/lib/blog/types";
+import { resolveAuthor } from "@/lib/blog/authors";
 import BlogTableOfContents from "@/components/blog/BlogTableOfContents";
 import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
@@ -47,6 +48,7 @@ export async function generateMetadata({
 
   const absoluteImageUrl = new URL(article.image, SITE_BASE_URL).toString();
   const absoluteUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
+  const author = resolveAuthor(article.author, locale);
 
   return {
     title: article.title,
@@ -78,7 +80,7 @@ export async function generateMetadata({
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.updatedDate || article.date,
-      authors: article.author ? [article.author.name] : ['Biloki'],
+      authors: [author.name],
       tags: article.tags,
     },
     twitter: {
@@ -86,7 +88,7 @@ export async function generateMetadata({
       title: article.title,
       description: optimizeDescription(article.excerpt),
       images: [absoluteImageUrl],
-      creator: article.author?.linkedin ? '@biloki' : undefined,
+      creator: author.linkedin ? '@biloki' : undefined,
     },
   };
 }
@@ -102,37 +104,7 @@ export default async function BlogArticlePage({
     notFound();
   }
 
-  // Default author if not specified
-  const defaultAuthorByLocale: Record<string, { name: string; role: string; avatar: string; bio: string }> = {
-    fr: {
-      name: "Équipe Biloki",
-      role: "Expert en location saisonnière",
-      avatar: "/images/equipe/Sebastien.png",
-      bio: "L'équipe Biloki partage ses connaissances pour aider les conciergeries à optimiser leur gestion."
-    },
-    en: {
-      name: "Biloki Team",
-      role: "Short-term rental expert",
-      avatar: "/images/equipe/Sebastien.png",
-      bio: "The Biloki team shares its knowledge to help concierge services optimize their management."
-    },
-    es: {
-      name: "Equipo Biloki",
-      role: "Experto en alquiler vacacional",
-      avatar: "/images/equipe/Sebastien.png",
-      bio: "El equipo de Biloki comparte su conocimiento para ayudar a las consejerías a optimizar su gestión."
-    },
-    pt: {
-      name: "Equipa Biloki",
-      role: "Especialista em arrendamento de curta duração",
-      avatar: "/images/equipe/Sebastien.png",
-      bio: "A equipa Biloki partilha o seu conhecimento para ajudar as conciergeries a otimizar a sua gestão."
-    },
-  };
-
-  const defaultAuthor = defaultAuthorByLocale[locale] || defaultAuthorByLocale.fr;
-
-  const author = article.author || defaultAuthor;
+  const author = resolveAuthor(article.author, locale);
   const currentUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
 
   const formatDate = (dateStr: string) =>
@@ -163,7 +135,9 @@ export default async function BlogArticlePage({
     author: {
       "@type": "Person",
       name: author.name,
-      url: `${SITE_BASE_URL}/${locale}`
+      url: author.profileUrl
+        ? new URL(author.profileUrl, SITE_BASE_URL).toString()
+        : `${SITE_BASE_URL}/${locale}`
     },
     publisher: {
       "@type": "Organization",
