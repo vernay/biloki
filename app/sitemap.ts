@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getArticlesForLocale } from '../lib/blog/index'
 import { Locale } from '../lib/blog/types'
+import { getProgrammaticCitySlugsFr } from '../lib/seo/programmatic-cities'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -19,6 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Ajouter les articles de blog
     const articles = getArticlesForLocale(locale)
     pages.push(...articles.map(article => `/blog/${article.slug}`))
+
+    // Ajouter les pages programmatic SEO (phase 1 FR)
+    if (locale === 'fr') {
+      pages.push(
+        ...getProgrammaticCitySlugsFr().map(
+          (slug) => `/logiciel-location-saisonniere/${slug}`
+        )
+      )
+    }
 
     pages.forEach(pagePath => {
       // Priorités basées sur l'importance
