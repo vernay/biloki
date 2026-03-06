@@ -5,6 +5,7 @@ import { Locale } from "@/lib/blog/types";
 import RelatedPages from "@/components/ui/RelatedPages";
 import BlogGrid from "@/components/blog/BlogGrid";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("blogPage");
@@ -53,11 +54,20 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
                 href={`/${locale}/blog/${article.slug}`}
                 className="group"
               >
-                <div className="bg-primary rounded-lg p-5 text-white hover:shadow-lg hover:shadow-primary/50 transition-all min-h-40">
+                <div className="bg-primary rounded-lg p-5 text-white hover:shadow-lg hover:shadow-primary/50 transition-all min-h-40 flex flex-col">
                   <h4 className="font-bold text-base line-clamp-3 group-hover:underline mb-2">
                     {article.title}
                   </h4>
-                  <p className="text-sm text-white/80">{article.readTime}</p>
+                  <p className="text-sm text-white/80 mb-4">{article.readTime}</p>
+                  <div className="mt-auto rounded-md overflow-hidden border border-white/20">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      width={640}
+                      height={360}
+                      className="w-full h-32 object-cover"
+                    />
+                  </div>
                 </div>
               </Link>
             ))}
