@@ -169,11 +169,17 @@ export default function FeaturesSection() {
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
                 >
-                  <div className="relative rounded-3xl bg-white p-4">
+                  <div
+                    className={
+                      feature.id === 'interfaces' || feature.id === 'guide-digital'
+                        ? 'relative'
+                        : 'relative rounded-3xl bg-white p-4'
+                    }
+                  >
                     {feature.id === 'channel-manager' ? (
-                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                      <div className="aspect-[16/9] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/pms/Calendrier.png"
+                          src="/images/pms/PMS-1.png"
                           alt={`${t('items.channelManager.title')} - Calendrier`}
                           width={1200}
                           height={900}
@@ -184,7 +190,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'serrures' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/serrures/ouverture-porte.png"
+                          src="/images/pms/serrure%20iphone.svg"
                           alt={`${t('items.serrures.title')} - Ouverture de porte`}
                           width={1200}
                           height={900}
@@ -194,7 +200,7 @@ export default function FeaturesSection() {
                     ) : feature.id === 'pms' ? (
                       <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                         <Image
-                          src="/images/pms/PMS.png"
+                          src="/images/pms/PMS-2.png"
                           alt={`${t('items.pms.title')} - PMS`}
                           width={1200}
                           height={900}
@@ -202,9 +208,9 @@ export default function FeaturesSection() {
                         />
                       </div>
                     ) : feature.id === 'interfaces' ? (
-                      <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                      <div className="aspect-[4/3] overflow-visible">
                         <Image
-                          src="/images/interfaces/4-interfaces.png"
+                          src="/images/interfaces/mobile-ordi.svg"
                           alt={`${t('items.interfaces.title')} - 4 interfaces`}
                           width={1200}
                           height={900}
