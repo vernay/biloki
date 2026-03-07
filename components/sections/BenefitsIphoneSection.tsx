@@ -10,12 +10,21 @@ type CardRef = HTMLDivElement | null;
 export default function BenefitsIphoneSection() {
   const tBenefits = useTranslations("benefits");
 
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const phoneRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const finalTitleRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<CardRef[]>([]);
+  const rootRef = useRef<HTMLElement>(null);
+
+  const desktopWrapperRef = useRef<HTMLDivElement>(null);
+  const desktopSectionRef = useRef<HTMLDivElement>(null);
+  const desktopPhoneRef = useRef<HTMLDivElement>(null);
+  const desktopTitleRef = useRef<HTMLDivElement>(null);
+  const desktopFinalTitleRef = useRef<HTMLDivElement>(null);
+  const desktopCardsRef = useRef<CardRef[]>([]);
+
+  const mobileWrapperRef = useRef<HTMLDivElement>(null);
+  const mobileSectionRef = useRef<HTMLDivElement>(null);
+  const mobilePhoneRef = useRef<HTMLDivElement>(null);
+  const mobileTitleRef = useRef<HTMLDivElement>(null);
+  const mobileFinalTitleRef = useRef<HTMLDivElement>(null);
+  const mobileCardsRef = useRef<CardRef[]>([]);
 
   const benefitKeys = useMemo(() => ["time", "revenue", "star", "money"] as const, []);
 
@@ -55,7 +64,7 @@ export default function BenefitsIphoneSection() {
     "rounded-br-[2.8rem] rounded-tl-lg rounded-tr-lg rounded-bl-lg"
   ];
 
-  // Taille des cartes
+  // Desktop sizing
   const CARD_W = 158;
   const CARD_H = 248;
   const GAP = 6;
@@ -72,31 +81,46 @@ export default function BenefitsIphoneSection() {
     { start: { x: 350, y:  220 }, end: { x:  (CARD_W / 2 + GAP / 2), y:  (CARD_H / 2 + GAP / 2) } }
   ];
 
+  // Mobile sizing
+  const MOBILE_CARD_W = 132;
+  const MOBILE_CARD_H = 198;
+  const MOBILE_GAP = 6;
+  const MOBILE_PHONE_W = MOBILE_CARD_W * 2 + MOBILE_GAP;
+  const MOBILE_PHONE_H = MOBILE_CARD_H * 2 + MOBILE_GAP;
+
+  const mobileCardPositions = [
+    { start: { x: -150, y: -155 }, end: { x: -(MOBILE_CARD_W / 2 + MOBILE_GAP / 2), y: -(MOBILE_CARD_H / 2 + MOBILE_GAP / 2) } },
+    { start: { x: 150, y: -155 }, end: { x:  (MOBILE_CARD_W / 2 + MOBILE_GAP / 2), y: -(MOBILE_CARD_H / 2 + MOBILE_GAP / 2) } },
+    { start: { x: -150, y:  155 }, end: { x: -(MOBILE_CARD_W / 2 + MOBILE_GAP / 2), y:  (MOBILE_CARD_H / 2 + MOBILE_GAP / 2) } },
+    { start: { x: 150, y:  155 }, end: { x:  (MOBILE_CARD_W / 2 + MOBILE_GAP / 2), y:  (MOBILE_CARD_H / 2 + MOBILE_GAP / 2) } }
+  ];
+
   useEffect(() => {
-    if (!wrapperRef.current) return;
+    if (!rootRef.current) return;
 
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+        const cards = desktopCardsRef.current.filter(Boolean) as HTMLDivElement[];
+        if (!cards.length || !desktopWrapperRef.current || !desktopSectionRef.current) return;
 
         // État initial
         cards.forEach((card, i) => {
           gsap.set(card, { x: cardPositions[i].start.x, y: cardPositions[i].start.y, opacity: 1, scale: 1 });
         });
-        gsap.set(phoneRef.current, { opacity: 0, scale: 0.5 });
-        gsap.set(titleRef.current, { opacity: 1, y: 0 });
-        gsap.set(finalTitleRef.current, { opacity: 0, y: 20 });
+        gsap.set(desktopPhoneRef.current, { opacity: 0, scale: 0.5 });
+        gsap.set(desktopTitleRef.current, { opacity: 1, y: 0 });
+        gsap.set(desktopFinalTitleRef.current, { opacity: 0, y: 20 });
 
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: wrapperRef.current,
+            trigger: desktopWrapperRef.current,
             start: "top top",
             end: "+=170%",
             scrub: 0.8,
-            pin: sectionRef.current,
+            pin: desktopSectionRef.current,
             pinSpacing: true,
             anticipatePin: 1
           }
@@ -113,7 +137,7 @@ export default function BenefitsIphoneSection() {
         });
 
         // 0.35→0.5 : titre disparait
-        tl.to(titleRef.current, {
+        tl.to(desktopTitleRef.current, {
           opacity: 0,
           y: -20,
           ease: "power2.out",
@@ -131,7 +155,7 @@ export default function BenefitsIphoneSection() {
         });
 
         // 0.45→0.75 : iPhone apparait petit puis zoome
-        tl.to(phoneRef.current, {
+        tl.to(desktopPhoneRef.current, {
           opacity: 1,
           scale: 3.2,
           ease: "power2.out",
@@ -139,7 +163,75 @@ export default function BenefitsIphoneSection() {
         }, 0.45);
 
         // 0.5→0.7 : titre final apparait
-        tl.to(finalTitleRef.current, {
+        tl.to(desktopFinalTitleRef.current, {
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          duration: 0.2
+        }, 0.5);
+
+        return () => {
+          tl.scrollTrigger?.kill();
+          tl.kill();
+        };
+      });
+
+      mm.add("(max-width: 767px)", () => {
+        const cards = mobileCardsRef.current.filter(Boolean) as HTMLDivElement[];
+        if (!cards.length || !mobileWrapperRef.current || !mobileSectionRef.current) return;
+
+        cards.forEach((card, i) => {
+          gsap.set(card, { x: mobileCardPositions[i].start.x, y: mobileCardPositions[i].start.y, opacity: 1, scale: 1 });
+        });
+        gsap.set(mobilePhoneRef.current, { opacity: 0, scale: 0.65 });
+        gsap.set(mobileTitleRef.current, { opacity: 1, y: 0 });
+        gsap.set(mobileFinalTitleRef.current, { opacity: 0, y: 20 });
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mobileWrapperRef.current,
+            start: "top top",
+            end: "+=150%",
+            scrub: 0.8,
+            pin: mobileSectionRef.current,
+            pinSpacing: true,
+            anticipatePin: 1
+          }
+        });
+
+        cards.forEach((card, i) => {
+          tl.to(card, {
+            x: mobileCardPositions[i].end.x,
+            y: mobileCardPositions[i].end.y,
+            ease: "power2.inOut",
+            duration: 0.35
+          }, 0);
+        });
+
+        tl.to(mobileTitleRef.current, {
+          opacity: 0,
+          y: -20,
+          ease: "power2.out",
+          duration: 0.15
+        }, 0.35);
+
+        cards.forEach((card) => {
+          tl.to(card, {
+            opacity: 0,
+            scale: 0.95,
+            ease: "power2.inOut",
+            duration: 0.1
+          }, 0.45);
+        });
+
+        tl.to(mobilePhoneRef.current, {
+          opacity: 1,
+          scale: 2.2,
+          ease: "power2.out",
+          duration: 0.35
+        }, 0.45);
+
+        tl.to(mobileFinalTitleRef.current, {
           opacity: 1,
           y: 0,
           ease: "power2.out",
@@ -153,62 +245,80 @@ export default function BenefitsIphoneSection() {
       });
 
       return () => mm.revert();
-    }, wrapperRef);
+    }, rootRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="w-full bg-white">
-      {/* Version mobile - statique, en dehors du wrapper GSAP */}
-      <div className="block md:hidden py-12 px-6">
-        <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-              {tBenefits("title")} <span className="text-primary">{tBenefits("titleHighlight")}</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-3 mb-8">
-            {benefitKeys.map((key, index) => (
+    <section ref={rootRef} className="w-full bg-white">
+      {/* Version mobile - animation GSAP */}
+      <div ref={mobileWrapperRef} className="block md:hidden">
+        <div ref={mobileSectionRef} className="h-[100svh] flex items-center justify-center overflow-hidden">
+          <div className="w-full px-4">
+            <div className="relative h-[620px] max-w-sm mx-auto">
               <div
-                key={key}
-                className={`bg-primary p-5 flex flex-col justify-center items-center ${cardRounding[index]}`}
+                ref={mobileTitleRef}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center pointer-events-none"
               >
-                <div className="text-white/80 mb-2">
-                  {iconMap[key]}
-                </div>
-                <h3 className="text-sm font-bold text-white text-center leading-tight">
-                  {tBenefits(`items.${key}.title`)}
-                </h3>
+                <h2 className="text-2xl font-bold text-gray-900 leading-tight">
+                  {tBenefits("title")} <span className="text-primary">{tBenefits("titleHighlight")}</span>
+                </h2>
               </div>
-            ))}
-          </div>
-          <div className="flex justify-center mb-4">
-            <div className="w-[220px]">
-              <img
-                src="/images/interfaces/Animation-iphone.svg"
-                alt="Biloki app"
-                className="w-full h-auto drop-shadow-2xl"
-                loading="lazy"
-                decoding="async"
-              />
+
+              {benefitKeys.map((key, index) => (
+                <div
+                  key={key}
+                  ref={(el) => { mobileCardsRef.current[index] = el; }}
+                  className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary p-4 flex flex-col justify-center items-center ${cardRounding[index]}`}
+                  style={{ width: `${MOBILE_CARD_W}px`, height: `${MOBILE_CARD_H}px` }}
+                >
+                  <div className="text-white/80 mb-2">
+                    {iconMap[key]}
+                  </div>
+                  <h3 className="text-sm font-bold text-white text-center leading-tight">
+                    {tBenefits(`items.${key}.title`)}
+                  </h3>
+                </div>
+              ))}
+
+              <div
+                ref={mobileFinalTitleRef}
+                className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none z-10"
+                style={{ top: "86%" }}
+              >
+                <h2 className="text-xl font-bold text-primary whitespace-nowrap">
+                  {tBenefits("finalTitle")}
+                </h2>
+              </div>
+
+              <div
+                ref={mobilePhoneRef}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                style={{ width: `${MOBILE_PHONE_W}px`, height: `${MOBILE_PHONE_H}px` }}
+              >
+                <img
+                  src="/images/interfaces/Animation-iphone.svg"
+                  alt="Biloki app"
+                  className="h-full w-full object-contain drop-shadow-2xl"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
-          <p className="text-center text-xl font-bold text-primary">
-            {tBenefits("finalTitle")}
-          </p>
         </div>
       </div>
 
       {/* Version desktop - animation GSAP */}
-      <div ref={wrapperRef} className="hidden md:block">
-        <div ref={sectionRef} className="h-screen flex items-center justify-center overflow-hidden">
+      <div ref={desktopWrapperRef} className="hidden md:block">
+        <div ref={desktopSectionRef} className="h-screen flex items-center justify-center overflow-hidden">
           <div className="w-full max-w-7xl mx-auto px-6">
             <div className="relative h-[700px]">
 
               {/* Titre au centre des 4 cartes */}
               <div
-                ref={titleRef}
+                ref={desktopTitleRef}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-center pointer-events-none whitespace-nowrap"
               >
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
@@ -220,7 +330,7 @@ export default function BenefitsIphoneSection() {
               {benefitKeys.map((key, index) => (
                 <div
                   key={key}
-                  ref={(el) => { cardsRef.current[index] = el; }}
+                  ref={(el) => { desktopCardsRef.current[index] = el; }}
                   className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary p-6 flex flex-col justify-center items-center ${cardRounding[index]}`}
                   style={{ width: `${CARD_W}px`, height: `${CARD_H}px` }}
                 >
@@ -235,9 +345,9 @@ export default function BenefitsIphoneSection() {
 
               {/* Titre final avec l'iPhone */}
               <div
-                ref={finalTitleRef}
+                ref={desktopFinalTitleRef}
                 className="absolute left-1/2 -translate-x-1/2 text-center pointer-events-none z-10"
-                style={{ top: "0%" }}
+                style={{ top: "88%" }}
               >
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary whitespace-nowrap">
                   {tBenefits("finalTitle")}
@@ -246,7 +356,7 @@ export default function BenefitsIphoneSection() {
 
               {/* iPhone SVG */}
               <div
-                ref={phoneRef}
+                ref={desktopPhoneRef}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{ width: `${PHONE_W}px`, height: `${PHONE_H}px` }}
               >
