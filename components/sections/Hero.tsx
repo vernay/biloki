@@ -66,9 +66,9 @@ export default function Hero() {
                 </span>
               </motion.h1>
 
-              <div className="lg:hidden w-full max-w-[330px] mx-auto sm:mx-0 sm:w-[42%] sm:min-w-[220px] sm:mt-2">
+              <div className="lg:hidden w-full max-w-[380px] mx-auto sm:mx-0 sm:w-[42%] sm:min-w-[220px] sm:mt-2">
                 <img
-                  src="/images/interfaces/Photo-acceuil.svg"
+                  src="/images/interfaces/4-interfaces.png"
                   alt="Interface Biloki"
                   className="w-full h-auto"
                   width={900}
@@ -159,7 +159,7 @@ export default function Hero() {
               animate="show"
             >
               <img
-                src="/images/interfaces/Photo-acceuil.svg"
+                src="/images/interfaces/4-interfaces.png"
                 alt="Interface Biloki"
                 className="w-full h-auto lg:scale-[2]"
                 width={900}
