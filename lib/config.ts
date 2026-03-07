@@ -6,7 +6,7 @@ export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.b
 
 // Webapp URLs
 export const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://beta.biloki.fr';
-export const WEBAPP_LOGIN_URL = `${WEBAPP_BASE_URL}/login`;
+export const WEBAPP_LOGIN_URL = process.env.NEXT_PUBLIC_WEBAPP_LOGIN_URL ?? 'https://app.biloki.fr/login';
 export const WEBAPP_REGISTER_URL = `${WEBAPP_BASE_URL}/register`;
 export const WEBAPP_SUBSCRIPTION_URL = `${WEBAPP_BASE_URL}/register/subscription`;
 
