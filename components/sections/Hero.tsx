@@ -32,7 +32,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-x-auto">
+    <section className="pt-20 pb-24 px-6 bg-gradient-to-b from-gray-50 to-white overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Colonne gauche - Contenu */}
@@ -42,37 +42,39 @@ export default function Hero() {
             initial="hidden"
             animate="show"
           >
-            <motion.h1 
-              className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed"
-              variants={itemVariants}
-            >
-              <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} {titleHighlight}</span>
-              <span className="block">
-                <motion.span 
-                  className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
-                  style={{ color: roleColors[roleKeys[currentRole]] }}
-                  key={currentRole}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
-                  {t(`roles.${roleKeys[currentRole]}`)}
-                </motion.span>
-              </span>
-            </motion.h1>
-
             <motion.div
-              className="lg:hidden"
+              className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-5 lg:block"
               variants={itemVariants}
             >
-              <img
-                src="/images/interfaces/Photo-acceuil.svg"
-                alt="Interface Biloki"
-                className="w-full scale-[2] origin-top"
-                width={900}
-                height={700}
-              />
+              <motion.h1 
+                className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 hero-title-shine text-left max-w-5xl leading-relaxed flex-1"
+                variants={itemVariants}
+              >
+                <span className="block text-3xl md:text-4xl lg:text-5xl">{titleLine} {titleHighlight}</span>
+                <span className="block">
+                  <motion.span 
+                    className="inline whitespace-nowrap font-extrabold text-3xl md:text-4xl lg:text-5xl"
+                    style={{ color: roleColors[roleKeys[currentRole]] }}
+                    key={currentRole}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -40 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                  >
+                    {t(`roles.${roleKeys[currentRole]}`)}
+                  </motion.span>
+                </span>
+              </motion.h1>
+
+              <div className="lg:hidden w-full max-w-[330px] mx-auto sm:mx-0 sm:w-[42%] sm:min-w-[220px] sm:mt-2">
+                <img
+                  src="/images/interfaces/Photo-acceuil.svg"
+                  alt="Interface Biloki"
+                  className="w-full h-auto"
+                  width={900}
+                  height={700}
+                />
+              </div>
             </motion.div>
 
             <motion.div
