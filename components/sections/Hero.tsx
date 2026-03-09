@@ -68,9 +68,9 @@ export default function Hero() {
 
               <div className="lg:hidden w-full max-w-[680px] mx-auto sm:mx-0 sm:w-[42%] sm:min-w-[220px] sm:mt-2">
                 <img
-                  src="/images/interfaces/Photo-acceuil.svg"
+                  src="/images/interfaces/Conciergerie%20(4).png"
                   alt="Interface Biloki"
-                  className="w-full h-auto object-contain"
+                  className="w-[122%] max-w-none -ml-[11%] h-auto object-contain sm:w-full sm:ml-0"
                   width={900}
                   height={700}
                 />
@@ -159,7 +159,7 @@ export default function Hero() {
               animate="show"
             >
               <img
-                src="/images/interfaces/Photo-acceuil.svg"
+                src="/images/interfaces/Conciergerie%20(4).png"
                 alt="Interface Biloki"
                 className="w-full h-auto lg:scale-[1.65]"
                 width={900}
