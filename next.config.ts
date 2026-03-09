@@ -22,6 +22,34 @@ const nextConfig: NextConfig = {
         destination: 'https://www.biloki.fr/:path*',
         permanent: true,
       },
+      // Canonicaliser la home vers la locale FR (évite les 307 middleware pour SEO)
+      {
+        source: '/',
+        destination: '/fr',
+        permanent: true,
+      },
+      // Canonicaliser les pages programmatic non préfixées vers /fr
+      {
+        source: '/logiciel-location-saisonniere/:ville',
+        destination: '/fr/logiciel-location-saisonniere/:ville',
+        permanent: true,
+      },
+      // Les pages programmatic ne sont disponibles qu'en FR
+      {
+        source: '/en/logiciel-location-saisonniere/:ville',
+        destination: '/fr/logiciel-location-saisonniere/:ville',
+        permanent: true,
+      },
+      {
+        source: '/es/logiciel-location-saisonniere/:ville',
+        destination: '/fr/logiciel-location-saisonniere/:ville',
+        permanent: true,
+      },
+      {
+        source: '/pt/logiciel-location-saisonniere/:ville',
+        destination: '/fr/logiciel-location-saisonniere/:ville',
+        permanent: true,
+      },
           {
             source: '/wp-login.php',
             destination: '/fr',
