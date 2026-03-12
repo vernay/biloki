@@ -9,6 +9,7 @@ import article07 from "./articles-data/07-ia-location-courte-duree-conciergeries
 import article08 from "./articles-data/08-messagerie-automatisee-conciergerie";
 import article09 from "./articles-data/09-nice-quotas-airbnb-reglementation-2025";
 import article10 from "./articles-data/10-rentabilite-location-courte-duree-2026";
+import article11 from "./articles-data/11-channel-manager-conciergerie-choisir-logiciel-2026";
 
 export const articles: BlogArticles = [
   article01,
@@ -21,4 +22,5 @@ export const articles: BlogArticles = [
   article08,
   article09,
   article10,
+  article11,
 ];

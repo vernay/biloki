@@ -52,38 +52,38 @@ export default function BlogRelatedArticles({
   }[locale] || 'Voir tous les articles';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-      <h2 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-4">
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-3.5">
+      <h2 className="text-[11px] font-bold text-gray-900 uppercase tracking-wider mb-3">
         {title}
       </h2>
-      <div className="space-y-5">
+      <div className="space-y-3.5">
         {relatedArticles.map((article) => (
           <Link
             key={article.slug}
             href={`/${locale}/blog/${article.slug}`}
             className="block group"
           >
-            <div className="overflow-hidden rounded-lg mb-2">
+            <div className="overflow-hidden rounded-md mb-1.5">
               <Image
                 src={article.image}
                 alt={article.title}
                 width={280}
                 height={157}
-                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-24 object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-xs text-primary font-semibold">
+            <div className="flex items-center gap-1.5 mb-1">
+              <span className="text-[11px] text-primary font-semibold">
                 {translateCategory(article.category, locale)}
               </span>
-              <span className="text-xs text-gray-500">
+              <span className="text-[11px] text-gray-500">
                 • {article.readTime}
               </span>
             </div>
-            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors line-clamp-2 mb-1 leading-tight">
+            <h3 className="text-xs font-semibold text-gray-900 group-hover:text-primary transition-colors line-clamp-2 mb-0.5 leading-snug">
               {article.title}
               </h3>
-              <p className="text-xs text-gray-600 line-clamp-2 leading-relaxed">
+              <p className="text-[11px] text-gray-600 line-clamp-1 leading-snug">
                 {article.excerpt}
               </p>
             </Link>
@@ -92,11 +92,11 @@ export default function BlogRelatedArticles({
         
         <Link
           href={`/${locale}/blog`}
-          className="mt-5 flex items-center justify-center gap-2 text-xs font-semibold text-primary hover:gap-3 transition-all"
+          className="mt-3.5 flex items-center justify-center gap-1.5 text-[11px] font-semibold text-primary hover:gap-2 transition-all"
         >
           {seeAllText}
           <svg
-            className="w-3.5 h-3.5"
+            className="w-3 h-3"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

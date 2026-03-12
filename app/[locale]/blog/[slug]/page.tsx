@@ -198,6 +198,56 @@ export default async function BlogArticlePage({
           ]
         }) }} />
       )}
+
+      {/* FAQ Schema for channel manager guide queries */}
+      {slug === 'channel-manager-conciergerie-choisir-logiciel-2026' && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qu'est-ce qu'un Channel Manager ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un channel manager est un logiciel qui synchronise les calendriers et les réservations d'un logement sur plusieurs plateformes de location saisonnière."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Un Channel Manager est-il obligatoire pour une conciergerie ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Il n'est pas obligatoire légalement, mais il devient fortement recommandé dès que plusieurs logements sont diffusés sur plusieurs plateformes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quelle est la différence entre un Channel Manager et un PMS ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le channel manager gère la distribution des annonces et la synchronisation des calendriers. Le PMS pilote l'ensemble des opérations quotidiennes d'une conciergerie."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Combien coûte un Channel Manager ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le prix varie selon le nombre de logements, les fonctionnalités incluses et les éventuelles commissions sur paiements ou réservations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quel est le meilleur Channel Manager ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pour une conciergerie qui cherche à centraliser ses opérations simplement, Biloki est aujourd'hui l'une des meilleures options avec channel manager, PMS et automatisations dans une seule plateforme."
+              }
+            }
+          ]
+        }) }} />
+      )}
       
       {/* BreadcrumbList Schema for Google SERP breadcrumbs */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

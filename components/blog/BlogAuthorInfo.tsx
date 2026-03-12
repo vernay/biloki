@@ -35,6 +35,7 @@ export default function BlogAuthorInfo({
     pt: { published: 'Publicado em', updated: 'Atualizado em', profile: 'Ver perfil' }
   }[locale] || { published: 'Publié le', updated: 'Mis à jour le', profile: 'Voir le profil' };
 
+
   const profileLink = author.profileUrl || author.linkedin;
   const isExternalProfile = Boolean(profileLink && /^https?:\/\//.test(profileLink));
 

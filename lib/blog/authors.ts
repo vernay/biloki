@@ -6,28 +6,32 @@ const defaultAuthors: Record<Locale, BlogAuthor> = {
     role: "Expert en location saisonnière",
     avatar: "/images/equipe/Sebastien.png",
     bio: "L'équipe Biloki partage ses connaissances pour aider les conciergeries à optimiser leur gestion.",
-    profileUrl: "/fr/equipe",
+    linkedin: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
+    profileUrl: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
   },
   en: {
     name: "Biloki Team",
     role: "Short-term rental expert",
     avatar: "/images/equipe/Sebastien.png",
     bio: "The Biloki team shares its knowledge to help concierge services optimize their management.",
-    profileUrl: "/en/equipe",
+    linkedin: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
+    profileUrl: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
   },
   es: {
     name: "Equipo Biloki",
     role: "Experto en alquiler vacacional",
     avatar: "/images/equipe/Sebastien.png",
     bio: "El equipo de Biloki comparte su conocimiento para ayudar a las conserjerías a optimizar su gestión.",
-    profileUrl: "/es/equipe",
+    linkedin: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
+    profileUrl: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
   },
   pt: {
     name: "Equipa Biloki",
     role: "Especialista em arrendamento de curta duração",
     avatar: "/images/equipe/Sebastien.png",
     bio: "A equipa Biloki partilha o seu conhecimento para ajudar as conciergeries a otimizar a sua gestão.",
-    profileUrl: "/pt/equipe",
+    linkedin: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
+    profileUrl: "https://www.linkedin.com/in/s%C3%A9bastien-vernay-71a27374/",
   },
 };
 
@@ -40,6 +44,6 @@ export function resolveAuthor(articleAuthor: BlogAuthor | undefined, locale: Loc
   return {
     ...fallback,
     ...articleAuthor,
-    profileUrl: articleAuthor?.profileUrl || articleAuthor?.linkedin || fallback.profileUrl,
+    profileUrl: articleAuthor?.linkedin || articleAuthor?.profileUrl || fallback.linkedin || fallback.profileUrl,
   };
 }
