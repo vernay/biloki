@@ -8,6 +8,7 @@ export const SITE_BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.b
 export const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://beta.biloki.fr';
 export const WEBAPP_LOGIN_URL = process.env.NEXT_PUBLIC_WEBAPP_LOGIN_URL ?? 'https://app.biloki.fr/login';
 export const WEBAPP_REGISTER_URL = `${WEBAPP_BASE_URL}/register`;
+export const WEBAPP_TRIAL_URL = 'https://app.biloki.fr/register/trial?access=f6c0189e31f1fd7f09d7b3b348fc7836';
 export const WEBAPP_SUBSCRIPTION_URL = `${WEBAPP_BASE_URL}/register/subscription`;
 
 // Server-side only

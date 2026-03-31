@@ -58,7 +58,7 @@ const nextConfig: NextConfig = {
       // Redirections vers webapp
       {
         source: '/:locale/commencer-gratuitement',
-        destination: `${WEBAPP_REGISTER_URL}?lang=:locale`,
+        destination: 'https://app.biloki.fr/register/trial?access=f6c0189e31f1fd7f09d7b3b348fc7836&lang=:locale',
         permanent: false,
       },
       {
@@ -101,6 +101,32 @@ const nextConfig: NextConfig = {
       {
         source: '/es/',
         destination: '/es',
+        permanent: true,
+      },
+      // Redirections URLs sans préfixe de locale → FR
+      {
+        source: '/cgv',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      {
+        source: '/cgv/',
+        destination: '/fr/cgv',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/pms',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/pms/',
+        destination: '/fr/fonctionnalites/pms',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/fr/blog/:slug',
         permanent: true,
       },
       {

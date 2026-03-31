@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { locales, type Locale } from '@/lib/i18n/config';
-import { WEBAPP_LOGIN_URL, WEBAPP_REGISTER_URL, WEBAPP_SUBSCRIPTION_URL } from '@/lib/config';
+import { WEBAPP_LOGIN_URL, WEBAPP_TRIAL_URL, WEBAPP_SUBSCRIPTION_URL } from '@/lib/config';
 
 interface WebappLinkProps {
   type?: 'login' | 'register' | 'subscription';
@@ -21,8 +21,9 @@ export default function WebappLink({
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
   
-  const baseUrl = type === 'login' ? WEBAPP_LOGIN_URL : WEBAPP_REGISTER_URL;
-  const href = `${baseUrl}?lang=${locale}`;
+  const baseUrl = type === 'login' ? WEBAPP_LOGIN_URL : WEBAPP_TRIAL_URL;
+  const separator = baseUrl.includes('?') ? '&' : '?';
+  const href = `${baseUrl}${separator}lang=${locale}`;
   
   return (
     <a 
