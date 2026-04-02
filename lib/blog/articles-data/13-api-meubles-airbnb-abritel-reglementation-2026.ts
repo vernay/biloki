@@ -5,7 +5,7 @@ const article: BlogArticle = {
   category: "regulation",
   date: "2026-03-25",
   readTime: "8 min",
-  image: "/images/blog/Marteau justice.jpg",
+  image: "/images/blog/Marteau-justice.jpg",
   ogImage: "/images/blog/Marteau-og.jpg",
   featured: true,
   relatedSlugs: [
