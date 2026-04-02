@@ -46,7 +46,7 @@ export async function generateMetadata({
     };
   }
 
-  const absoluteImageUrl = new URL(article.image, SITE_BASE_URL).toString();
+  const absoluteImageUrl = new URL(article.ogImage ?? article.image, SITE_BASE_URL).toString();
   const absoluteUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
   const author = resolveAuthor(article.author, locale);
 

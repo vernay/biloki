@@ -6,6 +6,7 @@ const article: BlogArticle = {
   date: "2026-03-25",
   readTime: "8 min",
   image: "/images/blog/Marteau.png",
+  ogImage: "/images/blog/Marteau-og.jpg",
   featured: true,
   relatedSlugs: [
     "loi-le-meur-2026-location-saisonniere",

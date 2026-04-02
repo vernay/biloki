@@ -23,6 +23,7 @@ export interface BlogArticle {
   updatedDate?: string; // YYYY-MM-DD
   readTime: string; // "4 min", "8 min", etc.
   image: string;
+  ogImage?: string; // Optional override for social sharing (must be JPEG/PNG, min 1200x630)
   author?: BlogAuthor;
   featured?: boolean;
   relatedSlugs?: string[]; // Related article slugs for internal linking (max 3)

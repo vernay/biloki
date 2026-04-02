@@ -66,11 +66,11 @@ export default function Hero() {
                 </span>
               </motion.h1>
 
-              <div className="lg:hidden w-full max-w-[680px] mx-auto sm:mx-0 sm:w-[42%] sm:min-w-[220px] sm:mt-2">
+              <div className="lg:hidden w-full max-w-[680px] mx-auto sm:mx-0 sm:w-[52%] sm:min-w-[280px] sm:mt-2">
                 <img
                   src="/images/interfaces/Conciergerie%20(4).png"
                   alt="Interface Biloki"
-                  className="w-[136%] max-w-none -ml-[18%] h-auto object-contain sm:w-full sm:ml-0"
+                  className="w-[160%] max-w-none -ml-[30%] h-auto object-contain sm:w-[115%] sm:-ml-[7%]"
                   width={900}
                   height={700}
                 />
