@@ -70,7 +70,7 @@ export default function Hero() {
                 <img
                   src="/images/interfaces/Conciergerie%20(4).png"
                   alt="Interface Biloki"
-                  className="w-[160%] max-w-none -ml-[40%] h-auto object-contain sm:w-[115%] sm:-ml-[7%]"
+                  className="w-[160%] max-w-none -ml-[30%] h-auto object-contain sm:w-[115%] sm:-ml-[7%]"
                   width={900}
                   height={700}
                 />
