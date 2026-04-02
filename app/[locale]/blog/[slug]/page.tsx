@@ -328,6 +328,15 @@ export default async function BlogArticlePage({
                   {article.excerpt}
                 </p>
 
+                {/* Featured image */}
+                <div className="mb-8 rounded-2xl overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+
                 {/* Author Info */}
                 <BlogAuthorInfo
                   author={author}
@@ -339,15 +348,6 @@ export default async function BlogArticlePage({
               </header>
 
               {/* Article Content */}
-              {/* Featured image */}
-              <div className="mb-8 rounded-2xl overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-
               <div
                 className="prose prose-lg prose-blue max-w-none 
                   prose-headings:scroll-mt-24 
