@@ -78,7 +78,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-              className="flex flex-col gap-3 text-sm text-gray-800"
+              className="flex flex-col gap-3 text-sm text-gray-800 -mt-4 lg:mt-0"
               variants={itemVariants}
             >
               <span className="inline-flex items-center gap-2">
