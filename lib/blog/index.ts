@@ -8,6 +8,7 @@ export interface BlogArticleForLocale {
   updatedDate?: string;
   readTime: string;
   image: string;
+  ogImage?: string;
   author?: BlogAuthor;
   featured?: boolean;
   relatedSlugs?: string[];
@@ -29,6 +30,7 @@ export function getArticlesForLocale(locale: Locale): BlogArticleForLocale[] {
       updatedDate: article.updatedDate,
       readTime: article.readTime,
       image: article.image,
+      ogImage: article.ogImage,
       author: article.author,
       featured: article.featured,
       relatedSlugs: article.relatedSlugs,
@@ -54,6 +56,7 @@ export function getArticleBySlug(
     updatedDate: article.updatedDate,
     readTime: article.readTime,
     image: article.image,
+    ogImage: article.ogImage,
     author: article.author,
     featured: article.featured,
     relatedSlugs: article.relatedSlugs,
