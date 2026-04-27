@@ -46,7 +46,7 @@ export default function ChatBotAI() {
   // Charger l'état sauvegardé au montage du composant
   useEffect(() => {
     const savedState = sessionStorage.getItem('biloki-chatbot-state');
-    if (savedState) {
+    if (savedState && savedState.trim()) {
       try {
         const parsed = JSON.parse(savedState);
         setMessages(parsed.messages || []);
@@ -75,6 +75,7 @@ export default function ChatBotAI() {
           messagesEndRef.current?.scrollIntoView({ behavior: 'instant' });
         }, 100);
       } catch (error) {
+        sessionStorage.removeItem('biloki-chatbot-state');
         console.error('Erreur lors du chargement de l\'état du chatbot:', error);
       }
     }
@@ -200,7 +201,7 @@ export default function ChatBotAI() {
 
       if (!reader) throw new Error('Pas de reader');
 
-      let assistantMessage: Message = {
+      const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
         content: '',

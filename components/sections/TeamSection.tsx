@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function TeamSection() {
@@ -18,15 +19,13 @@ export default function TeamSection() {
                 Actualité
               </span>
               <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200 w-full">
-              <img 
-                src="/images/blog/salon-marseille.jpg" 
-                alt="Équipe Biloki au salon de Marseille" 
-                className="w-full h-auto object-cover"
-                width={1200}
-                height={800}
-                loading="lazy"
-                decoding="async"
-              />
+                <Image
+                  src="/images/pms/J'affiche complet.jpg"
+                  alt="Biloki au salon de Paris"
+                  className="w-full h-auto object-cover"
+                  width={1200}
+                  height={800}
+                />
               </div>
             </div>
           </div>
@@ -51,7 +50,7 @@ export default function TeamSection() {
                 </svg>
               </Link>
               <a
-                href="https://www.linkedin.com/posts/salon-conciergerie-locative_d%C3%A9couvrez-biloki-exposant-activity-7416751054299729920-jfEn"
+                href="https://www.linkedin.com/posts/s%C3%A9bastien-vernay-71a27374_rdvdesprosdelalocationsaisonniaeyre-locationsaisonniere-share-7452976064642928641-Lb-_?utm_source=share&utm_medium=member_desktop&rcm=ACoAACIjrgkBCab2Qq4sd3YgaN4goMCfmzDY0io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-all duration-300"
