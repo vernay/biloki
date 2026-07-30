@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { getMessages } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import PartnersScroll from "@/components/sections/PartnersScroll";
-import FeaturesSection from "@/components/sections/FeaturesSection";
 import IntegrationsSection from "@/components/sections/IntegrationsSection";
-import AISection from "@/components/sections/AISection";
+import { defaultLocale, locales } from "@/lib/i18n/config";
 
 export async function generateMetadata({
   params,
@@ -13,14 +12,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const messages = await getMessages({ locale });
-  const seoMetadata = (messages as any).seoMetadata;
+  const seoMetadata = (
+    messages as { seoMetadata?: { home?: { title?: string; description?: string } } }
+  ).seoMetadata;
 
   const title = seoMetadata?.home?.title || "Biloki";
   const description = seoMetadata?.home?.description || "";
+  const languages = Object.fromEntries(
+    locales.map((loc) => [loc, `/${loc}`])
+  );
 
   return {
     title,
     description,
+    metadataBase: new URL("https://www.biloki.fr"),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        ...languages,
+        "x-default": `/${defaultLocale}`,
+      },
+    },
     openGraph: {
       title,
       description,
@@ -47,15 +59,14 @@ export async function generateMetadata({
   };
 }
 
-import TeamSection from "@/components/sections/TeamSection";
-import BenefitsIphoneSection from "@/components/sections/BenefitsIphoneSection";
-import AppBanner from "@/components/sections/AppBanner";
-import PricingCalculator from "@/components/sections/PricingCalculator";
+import InteractiveModulesShowcase from "@/components/sections/InteractiveModulesShowcase";
+import ConnectivityPASection from "@/components/sections/ConnectivityPASection";
+import ModuleNavBar from "@/components/sections/ModuleNavBar";
 import CTASection from "@/components/sections/CTASection";
+import { AnimatedTestimonialsDemo } from "@/components/sections/AnimatedTestimonialsDemo";
+import BentoDemo from "@/components/sections/BentoDemo";
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
+export default function HomePage() {
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -98,15 +109,40 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
       />
-      <Hero />
-      <PartnersScroll />
-      <FeaturesSection />
-      <IntegrationsSection />
-      <AISection />
-      <TeamSection />
-      <BenefitsIphoneSection />
-      <AppBanner />
-      <PricingCalculator />
+      <div className="mx-2 md:mx-3 lg:mx-4">
+        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('/images/1%C3%A8re%20page%20photos/Es%20vedra.jpg')",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(6, 19, 33, 0.74) 0%, rgba(6, 19, 33, 0.68) 100%)",
+            }}
+          />
+          <div className="relative z-10">
+            <Hero />
+            <ModuleNavBar />
+            <PartnersScroll inHero />
+          </div>
+        </div>
+      </div>
+      <section className="bg-white px-4 py-16 md:px-8 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <BentoDemo />
+        </div>
+      </section>
+      <InteractiveModulesShowcase />
+      <ConnectivityPASection />
+      <AnimatedTestimonialsDemo showNote={false} />
+      <div className="mx-2 md:mx-4 lg:mx-6 mt-3 md:mt-4 overflow-hidden">
+        <IntegrationsSection />
+      </div>
       <CTASection />
     </main>
   );

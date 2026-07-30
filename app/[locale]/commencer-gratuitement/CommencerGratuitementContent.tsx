@@ -290,7 +290,7 @@ export default function CommencerGratuitementContent() {
               description: relatedT('pricing.description')
             },
             {
-              href: `/${locale}/fonctionnalites/pms`,
+              href: `/${locale}/fonctionnalites/reservations`,
               title: relatedT('pms.title'),
               description: relatedT('pms.description')
             },

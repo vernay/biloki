@@ -19,7 +19,7 @@ export const FEATURES: Feature[] = [
   {
     id: 'pms',
     label: 'PMS',
-    href: '/fonctionnalites/pms',
+    href: '/fonctionnalites/reservations',
     description: 'Gestion complète des propriétés',
     icon: '🏠',
   },
@@ -30,9 +30,9 @@ export const FEATURES: Feature[] = [
     description: 'Synchronisation sur 120+ plateformes',
     icon: '🔄',
     subItems: [
-      { label: 'Synchronisation des calendriers', href: '/fonctionnalites/channel-manager/calendriers' },
-      { label: 'Connexion Airbnb', href: '/fonctionnalites/channel-manager/airbnb' },
-      { label: 'Connexion Booking', href: '/fonctionnalites/channel-manager/booking' },
+      { label: 'Synchronisation des calendriers', href: '/fonctionnalites/reservations' },
+      { label: 'Connexion Airbnb', href: '/fonctionnalites/reservations' },
+      { label: 'Connexion Booking', href: '/fonctionnalites/reservations' },
     ],
   },
   {
@@ -45,7 +45,7 @@ export const FEATURES: Feature[] = [
   {
     id: '4-interfaces',
     label: 'Les 4 interfaces',
-    href: '/fonctionnalites/4-interfaces',
+    href: '/fonctionnalites/interface-proprietaires',
     description: 'Outils adaptés à chaque rôle',
     icon: '👥',
   },

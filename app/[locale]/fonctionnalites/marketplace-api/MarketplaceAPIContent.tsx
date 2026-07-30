@@ -20,25 +20,14 @@ const integrations: Integration[] = [
   { name: "Expedia", logo: "/images/logo-partenaires/Expedia.png", category: ["all", "ota"], url: "https://www.expedia.fr" },
   { name: "Stripe", logo: "/images/logo-partenaires/Stripe.png", category: ["all", "payments"], url: "https://stripe.com" },
   { name: "PayPal", logo: "/images/logo-partenaires/paypal.png", category: ["all", "payments"], url: "https://www.paypal.com" },
-  { name: "QuickBooks", logo: "/images/logo-partenaires/QuickBooks.png", category: ["all", "accounting"], url: "https://quickbooks.intuit.com" },
-  { name: "Xero", logo: "/images/logo-partenaires/xero.svg", category: ["all", "accounting"], url: "https://www.xero.com" },
-  { name: "Pennylane", logo: "/images/logo-partenaires/logo-pennylane.png", category: ["all", "accounting"], url: "https://www.pennylane.com" },
+  { name: "QuickBooks (arrive bientôt)", logo: "/images/logo-partenaires/QuickBooks.png", category: ["all", "accounting"] },
+  { name: "Pennylane (arrive bientôt)", logo: "/images/logo-partenaires/logo-pennylane.png", category: ["all", "accounting"] },
   { name: "Nuki", logo: "/images/logo-partenaires/nuki.png", category: ["all", "locks"], url: "https://nuki.io/fr-fr" },
-  { name: "Yale", logo: "/images/logo-partenaires/YaleJPG.jpg", category: ["all", "locks"], url: "https://www.yalehome.com" },
-  { name: "August", logo: "/images/logo-partenaires/August.webp", category: ["all", "locks"], url: "https://august.com" },
   { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png", category: ["all", "locks"], url: "https://www.igloohome.co" },
-  { name: "Turno", logo: "/images/logo-partenaires/turno.svg", category: ["all", "cleaning"], url: "https://www.turno.com" },
-  { name: "Properly", logo: "/images/logo-partenaires/properly.svg", category: ["all", "cleaning"], url: "https://www.getproperly.com" },
-  { name: "WhatsApp", logo: "/images/logo-partenaires/whatsapp.svg", category: ["all", "communication"], url: "https://www.whatsapp.com" },
-  { name: "Twilio", logo: "/images/logo-partenaires/twilio.svg", category: ["all", "communication"], url: "https://www.twilio.com" },
+  { name: "Swikly", logo: "/images/logo-partenaires/logo-swikly.png", category: ["all", "payments"], url: "https://www.swikly.com" },
+  { name: "WhatsApp", logo: "/images/logo-partenaires/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.webp", category: ["all", "communication"], url: "https://www.whatsapp.com" },
   { name: "PriceLabs", logo: "/images/logo-partenaires/pricelabs.png", category: ["all", "pricing"], url: "https://www.pricelabs.co" },
-  { name: "Beyond Pricing", logo: "/images/logo-partenaires/beyond-pricing.svg", category: ["all", "pricing"], url: "https://beyondpricing.com" },
-  { name: "Zapier", logo: "/images/logo-partenaires/zapier.svg", category: ["all"], url: "https://zapier.com" },
-  { name: "Make", logo: "/images/logo-partenaires/make.svg", category: ["all"], url: "https://www.make.com" },
-  { name: "Slack", logo: "/images/logo-partenaires/slack.svg", category: ["all", "communication"], url: "https://slack.com" },
-  { name: "Google Calendar", logo: "/images/logo-partenaires/google-calendar.svg", category: ["all"], url: "https://calendar.google.com" },
-  { name: "Mailchimp", logo: "/images/logo-partenaires/mailchimp.svg", category: ["all", "communication"], url: "https://mailchimp.com" },
-  { name: "HubSpot", logo: "/images/logo-partenaires/HubSpot.png", category: ["all"], url: "https://www.hubspot.com" },
+  { name: "Beyond", logo: "/images/logo-partenaires/beyond-logo-wormark-color-325.png", category: ["all", "pricing"], url: "https://beyondpricing.com" },
 ];
 
 export default function MarketplaceAPIContent() {
@@ -53,7 +42,7 @@ export default function MarketplaceAPIContent() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-6 pt-44 md:pt-52 pb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
           {t('title')} <span className="text-primary">{t('titleHighlight')}</span>
         </h1>
@@ -117,41 +106,19 @@ export default function MarketplaceAPIContent() {
               {t('apiSection.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/api-docs"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:opacity-90 transition"
-              >
-                {t('apiSection.viewDocs')}
-              </a>
               <Link
                 href="/connexions-api"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-blue-50 transition"
               >
                 {t('apiSection.requestIntegration')}
               </Link>
+              <Link
+                href="/reserver-demo"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-primary text-primary font-semibold hover:bg-blue-50 transition"
+              >
+                Réserver une démo
+              </Link>
             </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 bg-primary rounded-[48px] p-12 md:p-16 text-white text-center shadow-xl">
-          <h2 className="text-3xl font-bold mb-4">{t('ctaTitle')}</h2>
-          <p className="text-lg mb-8 opacity-90">
-            {t('ctaDescription')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/connexions-api"
-              className="inline-block bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition"
-            >
-              {t('apiSection.requestIntegration')}
-            </Link>
-            <Link
-              href="/commencer-gratuitement"
-              className="inline-block bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition shadow-md"
-            >
-              {t('tryFree')}
-            </Link>
           </div>
         </div>
       </div>

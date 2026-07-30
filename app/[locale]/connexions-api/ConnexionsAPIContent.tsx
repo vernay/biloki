@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 
 export default function ConnexionsAPIContent() {
   const t = useTranslations('apiPage');
   const common = useTranslations('common');
+  const locale = useLocale();
   
   const [formData, setFormData] = useState({
     prenom: '',
@@ -33,17 +35,22 @@ export default function ConnexionsAPIContent() {
     setLoading(true);
 
     try {
+      const objectiveLabel = formData.objectif ? t(`form.objectives.${formData.objectif}`) : '';
+
       const payload = {
         firstName: formData.prenom,
         lastName: formData.nom,
         email: formData.email,
         phone: formData.telephone,
         company: formData.entreprise,
-        integrationObjective: formData.objectif,
-        conversation: `Demande de connexion API\n\nObjectif: ${formData.objectif}\n\nMessage:\n${formData.message}`,
+        integrationObjective: objectiveLabel,
+        conversation: t('form.conversationTemplate', {
+          objective: objectiveLabel,
+          message: formData.message,
+        }),
         source: 'formulaire_connexions_api',
-        locale: 'fr',
-        requestType: 'Demande de partenariat API',
+        locale,
+        requestType: t('form.requestType'),
       };
 
       console.log('📤 Envoi demande connexion API:', payload);
@@ -74,11 +81,11 @@ export default function ConnexionsAPIContent() {
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         console.error('❌ Erreur lors de l\'envoi:', result);
-        alert('Erreur lors de l\'envoi du formulaire');
+        alert(t('form.sendError'));
       }
     } catch (error) {
       console.error('❌ Erreur:', error);
-      alert('Erreur lors de l\'envoi du formulaire');
+      alert(t('form.sendError'));
     } finally {
       setLoading(false);
     }
@@ -93,7 +100,7 @@ export default function ConnexionsAPIContent() {
         </div>
 
         {/* Back button */}
-        <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
+        <Link href={`/${locale}`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -162,11 +169,11 @@ export default function ConnexionsAPIContent() {
 
           {/* Right Side - Form */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Demander une connexion API</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('form.title')}</h3>
             
             {submitted && (
               <div className="mb-6 p-4 bg-green-100 border border-green-400 rounded-lg">
-                <p className="text-green-800 font-semibold">✓ Votre demande a été envoyée avec succès ! Notre équipe vous contactera rapidement.</p>
+                <p className="text-green-800 font-semibold">✓ {t('form.success')}</p>
               </div>
             )}
 
@@ -174,7 +181,7 @@ export default function ConnexionsAPIContent() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="prenom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    Prénom *
+                    {t('form.firstName')} *
                   </label>
                   <input
                     type="text"
@@ -189,7 +196,7 @@ export default function ConnexionsAPIContent() {
 
                 <div>
                   <label htmlFor="nom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    Nom *
+                    {t('form.lastName')} *
                   </label>
                   <input
                     type="text"
@@ -205,7 +212,7 @@ export default function ConnexionsAPIContent() {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Email *
+                  {t('form.email')} *
                 </label>
                 <input
                   type="email"
@@ -220,7 +227,7 @@ export default function ConnexionsAPIContent() {
 
               <div>
                 <label htmlFor="telephone" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Téléphone
+                  {t('form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -234,7 +241,7 @@ export default function ConnexionsAPIContent() {
 
               <div>
                 <label htmlFor="entreprise" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Entreprise
+                  {t('form.company')}
                 </label>
                 <input
                   type="text"
@@ -248,7 +255,7 @@ export default function ConnexionsAPIContent() {
 
               <div>
                 <label htmlFor="objectif" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Objectif de la demande *
+                  {t('form.objective')} *
                 </label>
                 <select
                   id="objectif"
@@ -258,21 +265,21 @@ export default function ConnexionsAPIContent() {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
                   required
                 >
-                  <option value="">Sélectionnez un objectif...</option>
-                  <option value="Intégration Channel manager">Intégration Channel manager</option>
-                  <option value="Intégration PMS">Intégration PMS</option>
-                  <option value="Intégration OTA's">Intégration OTA's</option>
-                  <option value="Intégration comptabilité">Intégration comptabilité</option>
-                  <option value="Intégration paiement">Intégration paiement</option>
-                  <option value="Intégration serrures connectées">Intégration serrures connectées</option>
-                  <option value="Autre intégration">Autre type d'intégration</option>
-                  <option value="Devenir partenaire API">Devenir partenaire API</option>
+                  <option value="">{t('form.selectObjective')}</option>
+                  <option value="channelManager">{t('form.objectives.channelManager')}</option>
+                  <option value="pms">{t('form.objectives.pms')}</option>
+                  <option value="ota">{t('form.objectives.ota')}</option>
+                  <option value="accounting">{t('form.objectives.accounting')}</option>
+                  <option value="payment">{t('form.objectives.payment')}</option>
+                  <option value="smartLocks">{t('form.objectives.smartLocks')}</option>
+                  <option value="other">{t('form.objectives.other')}</option>
+                  <option value="partner">{t('form.objectives.partner')}</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Message *
+                  {t('form.message')} *
                 </label>
                 <textarea
                   id="message"
@@ -281,7 +288,7 @@ export default function ConnexionsAPIContent() {
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                  placeholder="Décrivez votre projet d'intégration..."
+                  placeholder={t('form.messagePlaceholder')}
                   required
                 ></textarea>
               </div>
@@ -291,7 +298,7 @@ export default function ConnexionsAPIContent() {
                 disabled={loading}
                 className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Envoi en cours...' : 'Envoyer la demande'}
+                {loading ? t('form.sending') : t('form.submit')}
               </button>
             </form>
           </div>

@@ -2,8 +2,11 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function CompleterContent() {
+  const t = useTranslations('subscribeCompletePage');
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     prenom: '',
     nom: '',
@@ -35,50 +38,50 @@ export default function CompleterContent() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
-        <Link href="/s-abonner" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-8 font-semibold">
+        <Link href={`/${locale}/s-abonner`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-8 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Retour au configurateur
+          {t('back')}
         </Link>
 
         <div className="bg-white rounded-3xl shadow-lg p-6 md:p-8">
           <div className="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full mb-6 text-sm font-semibold">
-            Completer mon inscription
+            {t('badge')}
           </div>
 
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">Finalisez votre inscription</h1>
-          <p className="text-gray-600 mb-8">Renseignez vos informations pour proceder au paiement securise.</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-6">{t('title')}</h1>
+          <p className="text-gray-600 mb-8">{t('description')}</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Prenom *</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.firstName')} *</label>
                 <input
                   name="prenom"
                   value={formData.prenom}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Jean"
+                  placeholder={t('form.firstNamePlaceholder')}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Nom *</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.lastName')} *</label>
                 <input
                   name="nom"
                   value={formData.nom}
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Dupont"
+                  placeholder={t('form.lastNamePlaceholder')}
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.email')} *</label>
                 <input
                   type="email"
                   name="email"
@@ -86,36 +89,36 @@ export default function CompleterContent() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="jean@example.com"
+                  placeholder={t('form.emailPlaceholder')}
                 />
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Telephone</label>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.phone')}</label>
                 <input
                   type="tel"
                   name="telephone"
                   value={formData.telephone}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="+33 6 12 34 56 78"
+                  placeholder={t('form.phonePlaceholder')}
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Entreprise/Agence *</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.company')} *</label>
               <input
                 name="entreprise"
                 value={formData.entreprise}
                 onChange={handleChange}
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="Ma Conciergerie"
+                placeholder={t('form.companyPlaceholder')}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Role *</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.role')} *</label>
               <select
                 name="role"
                 value={formData.role}
@@ -123,22 +126,22 @@ export default function CompleterContent() {
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
               >
-                <option value="">Selectionner votre role</option>
-                <option value="gestionnaire">Gestionnaire</option>
-                <option value="proprietaire-particulier">Proprietaire particulier</option>
-                <option value="autre">Autre</option>
+                <option value="">{t('form.selectRole')}</option>
+                <option value="gestionnaire">{t('form.roles.manager')}</option>
+                <option value="proprietaire-particulier">{t('form.roles.owner')}</option>
+                <option value="autre">{t('form.roles.other')}</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Message (optionnel)</label>
+              <label className="block text-sm font-semibold text-gray-900 mb-2">{t('form.message')}</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                placeholder="Parlez-nous de votre projet..."
+                placeholder={t('form.messagePlaceholder')}
               />
             </div>
 
@@ -153,27 +156,27 @@ export default function CompleterContent() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Traitement en cours...
+                  {t('form.processing')}
                 </>
               ) : (
                 <>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                  Proceder au paiement
+                  {t('form.submit')}
                 </>
               )}
             </button>
 
             {submitted && (
               <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center font-semibold">
-                ✓ Inscription enregistree ! Un email de confirmation vous a ete envoye.
+                ✓ {t('success')}
               </div>
             )}
           </form>
 
           <p className="text-center text-gray-600 text-sm mt-8">
-            Vos donnees sont securisees. Nous ne partagerons jamais vos informations.
+            {t('privacy')}
           </p>
         </div>
       </div>

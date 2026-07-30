@@ -78,12 +78,24 @@ function buildProperties(payload: DemoPayload) {
     es: 'Es',
     pt: 'Pt',
   };
+  const roleMap: Record<string, string> = {
+    gestionnaire: 'gestionnaire',
+    manager: 'gestionnaire',
+    proprietaire: 'propriétaire',
+    propriétaire: 'propriétaire',
+    owner: 'propriétaire',
+    autre: 'autre',
+    other: 'autre',
+  };
 
   if (payload.email) properties.email = payload.email;
   if (payload.language) {
     properties.langue = languageMap[payload.language] ?? payload.language;
   }
-  if (payload.role) properties.role = payload.role;
+  if (payload.role) {
+    const normalizedRole = payload.role.trim().toLowerCase();
+    properties.role = roleMap[normalizedRole] ?? payload.role;
+  }
   if (typeof payload.propertyCount === 'number') {
     properties.biloki_property_count = payload.propertyCount;
   }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="90" viewBox="0 0 260 90" role="img" aria-label="Swikly">
+  <rect x="2" y="2" width="256" height="86" rx="16" fill="#ffffff" stroke="#d8e6f5" stroke-width="2"/>
+  <circle cx="45" cy="45" r="18" fill="#0095ff"/>
+  <path d="M36 45c0-5 4-9 9-9h5" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M54 45c0 5-4 9-9 9h-5" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <text x="76" y="56" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1a2b49">Swikly</text>
+</svg>

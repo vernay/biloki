@@ -283,21 +283,21 @@ export default function ChannelManagerContent() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href={withLocale('/fonctionnalites/channel-manager/airbnb')}
+              href={withLocale('/fonctionnalites/reservations')}
               className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
             >
               Connexion Airbnb
               <span aria-hidden="true">{'>'}</span>
             </Link>
             <Link
-              href={withLocale('/fonctionnalites/channel-manager/booking')}
+              href={withLocale('/fonctionnalites/reservations')}
               className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
             >
               Connexion Booking
               <span aria-hidden="true">{'>'}</span>
             </Link>
             <Link
-              href={withLocale('/fonctionnalites/channel-manager/calendriers')}
+              href={withLocale('/fonctionnalites/reservations')}
               className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2 text-primary font-semibold shadow-sm transition hover:bg-primary/10 hover:-translate-y-0.5"
             >
               Synchroniser vos calendriers
@@ -313,7 +313,7 @@ export default function ChannelManagerContent() {
           title={common('relatedPages')}
           links={[
             {
-              href: `/${locale}/fonctionnalites/pms`,
+              href: `/${locale}/fonctionnalites/reservations`,
               title: relatedT('pms.title'),
               description: relatedT('pms.description')
             },

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
@@ -71,53 +71,46 @@ export default function ContactContent() {
         });
         setTimeout(() => setSubmitted(false), 3000);
       } else {
-        alert('Error: ' + (data.error || 'Unable to send message'));
+        alert(t('errors.sendWithReason', { reason: data.error || t('errors.unableToSend') }));
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Error sending message. Please try again.');
+      alert(t('errors.sendFailed'));
     } finally {
       setLoading(false);
     }
   };
 
-  const faqItems = [
+  const faqItems = useMemo(() => [
     { q: t('faq.q1'), a: t('faq.a1') },
     { q: t('faq.q2'), a: t('faq.a2') },
     { q: t('faq.q3'), a: t('faq.a3') },
     { q: t('faq.q4'), a: t('faq.a4') },
-  ];
+  ], [t]);
 
-  // JSON-LD pour SEO FAQ
-  useEffect(() => {
-    const faqJsonLd = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqItems.map(item => ({
-        "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.a
-        }
-      }))
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(faqJsonLd);
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [faqItems]);
+  const faqJsonLd = useMemo(() => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  }), [faqItems]);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* Back button */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
-        <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
+        <Link href={`/${locale}`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -289,7 +282,7 @@ export default function ContactContent() {
 
               <div>
                 <label htmlFor="raison" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Raison du contact *
+                  {t('reasonLabel')} *
                 </label>
                 <select
                   id="raison"
@@ -299,12 +292,12 @@ export default function ContactContent() {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white"
                   required
                 >
-                  <option value="">Sélectionnez une option...</option>
-                  <option value="Demande de démo">Demande de démo</option>
-                  <option value="Support technique">Support technique</option>
-                  <option value="Question générale">Question générale</option>
-                  <option value="Demande de partenariat API">Demande de partenariat API</option>
-                  <option value="Autre">Autre</option>
+                  <option value="">{t('reasonSelect')}</option>
+                  <option value="demo_request">{t('reasons.demoRequest')}</option>
+                  <option value="technical_support">{t('reasons.technicalSupport')}</option>
+                  <option value="general_question">{t('reasons.generalQuestion')}</option>
+                  <option value="api_partnership">{t('reasons.apiPartnership')}</option>
+                  <option value="other">{t('reasons.other')}</option>
                 </select>
               </div>
 
@@ -380,7 +373,7 @@ export default function ContactContent() {
               description: relatedT('trial.description')
             },
             {
-              href: `/${locale}/fonctionnalites/pms`,
+              href: `/${locale}/fonctionnalites/reservations`,
               title: relatedT('pms.title'),
               description: relatedT('pms.description')
             },
@@ -391,8 +384,8 @@ export default function ContactContent() {
             },
             {
               href: `/${locale}/equipe`,
-              title: 'Notre équipe',
-              description: 'Découvrez les personnes derrière Biloki'
+              title: relatedT('team.title'),
+              description: relatedT('team.description')
             }
           ]}
         />

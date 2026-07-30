@@ -2,19 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "@/components/ui/Logo";
-import { FEATURES } from "@/lib/features-config";
-import { getPrimaryColor } from "@/lib/design-config";
 import { useTranslations } from "next-intl";
 import { locales, type Locale } from "@/lib/i18n/config";
+import { FOOTER_FEATURE_ITEMS } from "@/lib/header-footer-config";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const tHeader = useTranslations("header");
+  const tHeader = useTranslations("header"); // Pour les descriptions détaillées des features
   const year = new Date().getFullYear();
   const pathname = usePathname();
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
+
+  const footerFeatureItems = FOOTER_FEATURE_ITEMS;
+
+  const localeBadge: Record<Locale, string> = {
+    fr: '🇫🇷',
+    en: '🇬🇧',
+    es: '🇪🇸',
+    pt: '🇵🇹',
+  };
 
   const withLocale = (href: string) => {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -29,27 +36,27 @@ export default function Footer() {
     return `/${locale}${href}`;
   };
 
-  // Mapping des IDs vers les clés de traduction (comme dans le Header)
-  const getFeatureLabel = (id: string): string => {
-    const labelMap: Record<string, string> = {
-      'pms': tHeader('featuresMenu.pms'),
-      'channel-manager': tHeader('featuresMenu.channelManager'),
-      'serrures-connectees': tHeader('featuresMenu.smartLocks'),
-      '4-interfaces': tHeader('featuresMenu.fourInterfaces'),
-      'marketplace-api': tHeader('featuresMenu.marketplaceApi'),
-    };
-    return labelMap[id] || id;
-  };
-
   return (
-    <footer style={{ backgroundColor: getPrimaryColor() }} className="text-white">
+    <footer className="relative overflow-hidden rounded-t-[2rem] bg-black text-white md:rounded-t-[2.6rem]">
+
       {/* Contenu principal */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-8 items-start">
           {/* Logo et présentation à gauche */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <Logo className="h-32 w-auto" alt="Biloki" />
+              <div className="relative inline-block">
+                <img
+                  src="/logos/logo-icon-white.svg"
+                  alt="Biloki"
+                  className="h-36 w-36"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="absolute -right-1 -bottom-1 rounded-full bg-white/95 px-2 py-1 text-xs font-semibold text-[#002654]">
+                  {localeBadge[locale]}
+                </span>
+              </div>
             </div>
 
             {/* Réseaux sociaux */}
@@ -105,10 +112,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-base mb-3">{t('features')}</h3>
             <ul className="space-y-2 text-sm text-white/80">
-              {FEATURES.slice(0, 5).map((feature) => (
-                <li key={feature.id}>
+              {footerFeatureItems.map((feature) => (
+                <li key={feature.href}>
                   <Link href={withLocale(feature.href)} className="hover:text-white transition-colors">
-                    {getFeatureLabel(feature.id)}
+                    {tHeader(`megaMenu.items.${feature.key}.hook`)}
                   </Link>
                 </li>
               ))}

@@ -116,12 +116,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/fonctionnalites/pms',
-        destination: '/fr/fonctionnalites/pms',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
         source: '/fonctionnalites/pms/',
-        destination: '/fr/fonctionnalites/pms',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
@@ -181,22 +181,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/fonctionnalites/channel-manager/ota',
-        destination: '/fr/fonctionnalites/channel-manager',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
         source: '/fonctionnalites/channel-manager/ota/',
-        destination: '/fr/fonctionnalites/channel-manager',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
         source: '/appli-biloki',
-        destination: '/fr/fonctionnalites/pms',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
         source: '/appli-biloki/',
-        destination: '/fr/fonctionnalites/pms',
+        destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
       {
@@ -316,22 +316,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/en/interface-prestataire',
-        destination: '/en/fonctionnalites/4-interfaces',
+        destination: '/en/fonctionnalites/interface-proprietaires',
         permanent: true,
       },
       {
         source: '/fr/interface-prestataire',
-        destination: '/fr/fonctionnalites/4-interfaces',
+        destination: '/fr/fonctionnalites/interface-proprietaires',
         permanent: true,
       },
       {
         source: '/interface-prestataire',
-        destination: '/fr/fonctionnalites/4-interfaces',
+        destination: '/fr/fonctionnalites/interface-proprietaires',
         permanent: true,
       },
       {
         source: '/interface-prestataire/',
-        destination: '/fr/fonctionnalites/4-interfaces',
+        destination: '/fr/fonctionnalites/interface-proprietaires',
         permanent: true,
       },
       
@@ -359,13 +359,53 @@ const nextConfig: NextConfig = {
       
       // Sous-paths qui n'existent pas
       {
+        source: '/:locale/fonctionnalites/channel-manager',
+        destination: '/:locale',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/',
+        destination: '/:locale',
+        permanent: true,
+      },
+      {
         source: '/:locale/fonctionnalites/pms/sejours',
-        destination: '/:locale/fonctionnalites/pms',
+        destination: '/:locale/fonctionnalites/reservations',
         permanent: true,
       },
       {
         source: '/:locale/fonctionnalites/pms/sejours/',
-        destination: '/:locale/fonctionnalites/pms',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/airbnb',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/airbnb/',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/booking',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/booking/',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/calendriers',
+        destination: '/:locale/fonctionnalites/reservations',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/calendriers/',
+        destination: '/:locale/fonctionnalites/reservations',
         permanent: true,
       },
       {

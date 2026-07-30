@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="bgC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+    <linearGradient id="barC" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#6d28d9"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="36" fill="url(#bgC)"/>
+
+  <rect x="140" y="130" width="920" height="440" rx="30" fill="#ffffff" opacity="0.94"/>
+
+  <rect x="220" y="430" width="120" height="90" rx="14" fill="url(#barC)" opacity="0.45"/>
+  <rect x="380" y="370" width="120" height="150" rx="14" fill="url(#barC)" opacity="0.58"/>
+  <rect x="540" y="320" width="120" height="200" rx="14" fill="url(#barC)" opacity="0.72"/>
+  <rect x="700" y="250" width="120" height="270" rx="14" fill="url(#barC)" opacity="0.86"/>
+
+  <path d="M220 320C300 250 410 250 500 220C590 190 680 170 820 170" stroke="#7e22ce" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="820" cy="170" r="16" fill="#7e22ce"/>
+
+  <text x="166" y="106" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#6d28d9">+20%</text>
+
+  <text x="600" y="622" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#4c1d95">Vision claire des marges</text>
+</svg>

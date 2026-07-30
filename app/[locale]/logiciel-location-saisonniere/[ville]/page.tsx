@@ -884,7 +884,7 @@ export default async function ProgrammaticCityPage({
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900">PMS opérationnel</h3>
                   <p className="mt-2 text-sm text-gray-700">Pilotez vos logements, tâches et équipes depuis une interface unique.</p>
-                  <Link href={`/${locale}/fonctionnalites/pms`} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
+                  <Link href={`/${locale}/fonctionnalites/reservations`} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
                     Voir PMS
                   </Link>
                 </div>
@@ -899,8 +899,8 @@ export default async function ProgrammaticCityPage({
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900">Messages automatisés</h3>
                   <p className="mt-2 text-sm text-gray-700">Envoyez les bons messages au bon moment pour fluidifier le parcours voyageur.</p>
-                  <Link href={`/${locale}/fonctionnalites/4-interfaces`} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
-                    Voir les 4 interfaces
+                  <Link href={`/${locale}/fonctionnalites/interface-proprietaires`} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
+                    Voir l'interface propriétaire
                   </Link>
                 </div>
               </article>
@@ -932,7 +932,7 @@ export default async function ProgrammaticCityPage({
               <Link href={`/${locale}/fonctionnalites/channel-manager`} className="rounded-lg border border-blue-100 p-3 text-sm font-semibold text-primary hover:bg-blue-50">
                 Channel Manager
               </Link>
-              <Link href={`/${locale}/fonctionnalites/pms`} className="rounded-lg border border-blue-100 p-3 text-sm font-semibold text-primary hover:bg-blue-50">
+              <Link href={`/${locale}/fonctionnalites/reservations`} className="rounded-lg border border-blue-100 p-3 text-sm font-semibold text-primary hover:bg-blue-50">
                 PMS
               </Link>
               <Link href={`/${locale}/tarifs`} className="rounded-lg border border-blue-100 p-3 text-sm font-semibold text-primary hover:bg-blue-50">

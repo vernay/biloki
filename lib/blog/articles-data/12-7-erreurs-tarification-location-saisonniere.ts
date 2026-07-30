@@ -112,7 +112,7 @@ const article: BlogArticle = {
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Structurer les séjours en haute saison :</strong> privilégier les séjours hebdomadaires (7 nuits) du samedi au samedi</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Fixer des jours d'arrivée et de départ standards :</strong> cela améliore la lisibilité du calendrier et réduit les "trous"</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Imposer une durée minimale appropriée :</strong> 3 nuits minimum en basse saison, 7 nuits minimum en haute saison</li>
-                <li><span class="font-bold text-gray-900">✓</span> <strong>Appliquer des tarifs dégressifs :</strong> réduisez le prix nuit pour les séjours longs et pilotez l'impact dans <a href="/fr/fonctionnalites/pms" class="text-primary hover:underline">vos rapports Biloki</a></li>
+                <li><span class="font-bold text-gray-900">✓</span> <strong>Appliquer des tarifs dégressifs :</strong> réduisez le prix nuit pour les séjours longs et pilotez l'impact dans <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">vos rapports Biloki</a></li>
               </ul>
             </section>
 
@@ -200,7 +200,7 @@ const article: BlogArticle = {
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Analyser les tarifs locaux :</strong> vérifier les prix pratiqués pour le ménage dans votre quartier/ville</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Calculer le coût réel :</strong> ménage + inspection + fournitures + gestion = coût total</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Ajouter une marge appropriée :</strong> +20-30% pour couvrir les frais indirects</li>
-                <li><span class="font-bold text-gray-900">✓</span> <strong>Tester progressivement :</strong> ajustez et suivez l'impact sur la conversion avec <a href="/fr/fonctionnalites/pms" class="text-primary hover:underline">les données Biloki</a></li>
+                <li><span class="font-bold text-gray-900">✓</span> <strong>Tester progressivement :</strong> ajustez et suivez l'impact sur la conversion avec <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">les données Biloki</a></li>
               </ul>
             </section>
 

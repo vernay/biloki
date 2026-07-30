@@ -50,13 +50,13 @@ const iconKeys: Record<string, JSX.Element> = {
 };
 
 const itemKeys = [
-  { key: 'channelManager', link: '/fonctionnalites/channel-manager/calendriers' },
-  { key: 'pms', link: '/fonctionnalites/pms' },
-  { key: 'serrures', link: '/fonctionnalites/serrures-connectees' },
-  { key: 'interfaces', link: '/fonctionnalites/4-interfaces' },
+  { key: 'channelManager', link: '/fonctionnalites/reservations' },
+  { key: 'pms', link: '/fonctionnalites/reservations' },
+  { key: 'serrures', link: '/fonctionnalites/interface-proprietaires' },
+  { key: 'interfaces', link: '/fonctionnalites/interface-proprietaires' },
   { key: 'guideDigital', link: '/fonctionnalites/ia-automatisation' },
-  { key: 'comptabilite', link: '/fonctionnalites/pms#facturation-commissions' },
-  { key: 'ventesExtras', link: '/fonctionnalites/pms#ventes-extras' },
+  { key: 'comptabilite', link: '/fonctionnalites/reservations#facturation-commissions' },
+  { key: 'ventesExtras', link: '/fonctionnalites/reservations#ventes-extras' },
   { key: 'marketplace', link: '/fonctionnalites/marketplace-api' },
 ];
 

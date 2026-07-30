@@ -35,6 +35,86 @@
     "annual": "Annuel",
     "relatedPages": "Voir aussi"
   },
+  "bento": {
+    "files": {
+      "1": {
+        "name": "reservations.pdf",
+        "body": "Récapitulatif quotidien des réservations, annulations et modifications sur tous vos canaux."
+      },
+      "2": {
+        "name": "finances.xlsx",
+        "body": "Tableau de suivi des revenus, commissions et encaissements pour piloter votre rentabilité."
+      },
+      "3": {
+        "name": "guide-voyageur.doc",
+        "body": "Document prêt à envoyer avec les informations clés du séjour et les consignes d'arrivée."
+      },
+      "4": {
+        "name": "acces-securises.gpg",
+        "body": "Fichier chiffré pour sécuriser les accès sensibles et les données opérationnelles."
+      },
+      "5": {
+        "name": "checklist.txt",
+        "body": "Liste de contrôle ménage, maintenance et check-in pour garantir une qualité constante."
+      }
+    },
+    "notifications": {
+      "1": "Nouvelle réservation synchronisée",
+      "2": "Paiement reçu",
+      "3": "Message voyageur reçu",
+      "4": "Check-in confirmé"
+    },
+    "ownerNotifications": {
+      "1": "Nouveau mois comptabilisé",
+      "2": "Revenu net mis à jour",
+      "3": "Occupation hebdo synchronisée",
+      "4": "Rapport propriétaire disponible"
+    },
+    "calendar": {
+      "monthLabel": "Mai 2022",
+      "days": {
+        "1": "L",
+        "2": "M",
+        "3": "M",
+        "4": "J",
+        "5": "V",
+        "6": "S",
+        "7": "D"
+      }
+    },
+    "cards": {
+      "guideDigital": {
+        "title": "Interface Voyageur",
+        "description": "Guide digital, check-in fluide et ventes additionnelles. Vos voyageurs ont tout dans Biloki.",
+        "cta": "Découvrir"
+      },
+      "statistics": {
+        "title": "Fini le surbooking",
+        "description": "Airbnb, Booking et Vrbo synchronisés en temps réel. Zéro surbooking, zéro ressaisie.",
+        "cta": "Découvrir"
+      },
+      "additionalSales": {
+        "title": "Ventes additionnelles",
+        "description": "Proposez des ventes additionnelles directement à vos voyageurs et boostez votre revenu par séjour.",
+        "cta": "Découvrir"
+      },
+      "notificationCenter": {
+        "title": "Équipe et prestataires",
+        "description": "Assignez les missions, suivez l'avancement en direct et gérez les accès depuis un seul outil.",
+        "cta": "Découvrir"
+      },
+      "connectedLocks": {
+        "title": "Interface Propriétaire",
+        "description": "Revenus, calendrier et performance: vos propriétaires suivent tout en autonomie.",
+        "cta": "Découvrir"
+      },
+      "missionPlanning": {
+        "title": "Marketplace et intégrations",
+        "description": "Connectez serrures, compta et services tiers pour centraliser tout votre ecosystème.",
+        "cta": "Découvrir"
+      }
+    }
+  },
   "relatedPages": {
     "pricing": {
       "title": "Voir nos tarifs",
@@ -75,6 +155,10 @@
     "blog": {
       "title": "Lire le blog Biloki",
       "description": "Guides et conseils pour conciergeries"
+    },
+    "team": {
+      "title": "Notre équipe",
+      "description": "Découvrez les personnes derrière Biloki"
     }
   },
   "header": {
@@ -87,6 +171,11 @@
     "trial": "Essai gratuit",
     "language": "Langue",
     "switcherLabel": "Changer de langue",
+    "promo": {
+      "annualDiscount": "🎉 Bénéficiez de -20% de réduction si vous prenez un abonnement annuel",
+      "onboardingSupport": "📱 Onboarding gratuit et support 24h/24",
+      "freeTrial": "✨ Essai gratuit 1 mois sans carte bancaire"
+    },
     "featuresMenu": {
       "pms": "Gestion des propriétés (PMS)",
       "channelManager": "Channel Manager",
@@ -97,6 +186,63 @@
       "smartLocks": "Serrures connectées",
       "fourInterfaces": "Les 4 interfaces",
       "marketplaceApi": "Marketplace API"
+    },
+    "megaMenu": {
+      "tagline": "La solution pour conciergeries et propriétaires multi-biens.",
+      "viewAllFeatures": "Voir toutes nos fonctionnalités",
+      "viewIntegrations": "Voir nos intégrations",
+      "items": {
+        "reservations": {
+          "label": "Réservations & synchronisation",
+          "hook": "Évitez les doubles réservations",
+          "subtitle": "Airbnb, Booking et toutes vos plateformes dans un seul calendrier, zéro double réservation"
+        },
+        "planningMissions": {
+          "label": "Planning missions",
+          "hook": "Déléguez à vos prestataires en un clic",
+          "subtitle": "Vos équipes terrain reçoivent, acceptent et suivent leurs missions"
+        },
+        "unifiedMessaging": {
+          "label": "Messagerie unifiée",
+          "hook": "Ne changez plus jamais d'outil pour communiquer",
+          "subtitle": "Messagerie voyageurs (Airbnb, Booking…) et échanges internes avec vos équipes, prestataires et proprios"
+        },
+        "travelerInterface": {
+          "label": "Interface voyageurs",
+          "hook": "Accueillez vos voyageurs automatiquement",
+          "subtitle": "À chaque résa, un livret digital se crée et s'envoie tout seul"
+        },
+        "ownerInterface": {
+          "label": "Interface propriétaires",
+          "hook": "Donnez de la visibilité à vos propriétaires",
+          "subtitle": "Chaque proprio consulte le détail de ses logements en autonomie"
+        },
+        "additionalSales": {
+          "label": "Ventes additionnelles",
+          "hook": "Générez des revenus additionnels",
+          "subtitle": "Boutique intégrée à l'interface voyageurs, encaissement Stripe"
+        },
+        "statistics": {
+          "label": "Statistiques",
+          "hook": "Pilotez votre performance",
+          "subtitle": "TO, ADR, RevPAR suivis en temps réel"
+        },
+        "reviews": {
+          "label": "Avis",
+          "hook": "Gérez vos avis",
+          "subtitle": "Collecte et réponse aux avis automatisées"
+        },
+        "smartLocks": {
+          "label": "Serrures connectées",
+          "hook": "Automatisez les accès",
+          "subtitle": "Codes générés automatiquement (Nuki, igloohome)"
+        },
+        "marketplaceApi": {
+          "label": "Marketplace API",
+          "hook": "Reliez Biloki à tous vos outils",
+          "subtitle": "Tarification, serrures, paiement… vos logiciels du marché connectés en quelques clics"
+        }
+      }
     }
   },
   "cta": {
@@ -105,11 +251,21 @@
     "badges": {
       "support": "Support dédié inclus",
       "migration": "Migration assistée"
+    },
+    "hero": {
+      "kicker": "Commencez dès aujourd'hui !",
+      "title": "Simplifiez votre",
+      "titleHighlight": "gestion",
+      "description": "Rejoignez les centaines de conciergeries qui font confiance à Biloki pour automatiser leur gestion et satisfaire leurs clients.",
+      "bookDemo": "Réserver une démo",
+      "startTrial": "Commencer l'essai gratuit",
+      "bullet1": "Essai gratuit 1 mois",
+      "bullet2": "Onboarding offert"
     }
   },
   "hero": {
-    "title": "La location saisonnière n'aura jamais été aussi",
-    "titleHighlight": "simple pour vous :",
+    "title": "Toute votre conciergerie, une seule plateforme.",
+    "titleHighlight": "Pas mal non ? c'est Français 🇫🇷",
     "roles": {
       "concierges": "Conciergeries",
       "owners": "Propriétaires",
@@ -117,6 +273,8 @@
       "providers": "Prestataires"
     },
     "trialNote": "1 mois d'essai gratuit sans carte bancaire",
+    "onboardingNote": "Onboarding offert",
+    "hostingNote": "🇫🇷 Logiciel édité en France · Hébergé en France chez Scaleway",
     "description": "Gérez vos locations courte durée depuis une seule plateforme : réservations, voyageurs, équipes et automatisations. Moins d’opérationnel, plus de développement.",
     "check1": "Moins de messages et d’appels au quotidien",
     "check2": "Une organisation claire pour vos équipes terrain",
@@ -296,10 +454,79 @@
     "appStore": "Télécharger sur l'App Store"
   },
   "partners": {
-    "subtitle": "En connexion avec",
+    "subtitle": "Adopté par les leaders du secteur",
     "title": "Plus de",
-    "titleHighlight": "120 OTA's",
+    "titleHighlight": "120 OTAs",
     "titleSuffix": "et partenaires"
+  },
+  "testimonialsHome": {
+    "kicker": "Témoignages clients",
+    "title": "Ils sont passés au logiciel Biloki",
+    "note": "Exemples fictifs illustratifs",
+    "quotes": {
+      "1": {
+        "text": "Je suis passée de Hostaway à Biloki, je ne reviendrai pas en arrière. Hostaway était trop complexe par rapport à Biloki, et en 2 semaines on a supprimé les doubles saisies.",
+        "designation": "Fondatrice, conciergerie de 42 logements (Lyon, janvier 2026)"
+      },
+      "2": {
+        "text": "On était sur un autre PMS avant Biloki. Entre la messagerie centralisée et le suivi des missions, notre équipe a enfin arrêté de jongler entre 5 outils.",
+        "designation": "Responsable opérations, conciergerie urbaine (Bordeaux, février 2026)"
+      },
+      "3": {
+        "text": "Je suis passé de Hostaway à Biloki, je ne reviendrai pas en arrière. Hostaway était trop complexe pour nos équipes, Biloki est plus clair et plus rapide au quotidien.",
+        "designation": "Co-gérant, 60+ biens en location courte durée (Marseille, mars 2026)"
+      },
+      "4": {
+        "text": "Après migration vers Biloki, nos check-ins sont devenus fluides avec les serrures connectées et le guide voyageur. On a gagné du temps dès le premier mois.",
+        "designation": "Directrice, agence de gestion locative saisonnière (Nice, avril 2026)"
+      },
+      "5": {
+        "text": "Biloki nous a permis de standardiser nos process sur tous les logements. Clairement au-dessus de ce qu'on avait avant en termes de lisibilité et d'automatisation.",
+        "designation": "CEO, conciergerie multi-villes (Paris, mai 2026)"
+      }
+    }
+  },
+  "testimonialsAdditionalSales": {
+    "kicker": "Retours clients",
+    "title": "Ils augmentent leurs revenus additionnels avec Biloki",
+    "note": "",
+    "quotes": {
+      "1": {
+        "text": "En un mois, on a lancé 8 services additionnels sans complexifier l'opérationnel. Le panier moyen par séjour a clairement progressé.",
+        "designation": "(Fondatrice, conciergerie de 38 logements, Lyon, 2026)"
+      },
+      "2": {
+        "text": "Le fait que les voyageurs commandent et paient directement dans leur espace nous a fait gagner un temps énorme côté équipe.",
+        "designation": "(Responsable opérations, conciergerie urbaine, Bordeaux, 2026)"
+      },
+      "3": {
+        "text": "On voit enfin la marge nette service par service. Ça nous a permis d'arrêter ce qui n'était pas rentable et de pousser les meilleures offres.",
+        "designation": "(Co-gérant, 55 biens en location courte durée, Marseille, 2026)"
+      },
+      "4": {
+        "text": "Le guide voyageur et les propositions automatiques ont augmenté nos ventes sans augmenter les échanges manuels avec les voyageurs.",
+        "designation": "(Directrice, agence saisonnière, Nice, 2026)"
+      },
+      "5": {
+        "text": "Biloki a structuré toute notre stratégie d'upsell: catalogue clair, paiement Stripe et suivi en temps réel dans un seul outil.",
+        "designation": "(CEO, conciergerie multi-villes, Paris, 2026)"
+      }
+    }
+  },
+  "connectivity": {
+    "title": "Reconnu par les OTAs leaders",
+    "description": "Ces agréments OTA sont obtenus grâce à notre partenaire de connectivité Channex, pour garantir une synchronisation fiable et rapide sur les canaux majeurs.",
+    "cards": {
+      "airbnb": "Partenaire logiciel privilégié Airbnb 2026",
+      "vrbo": "Partenaire Elite Vrbo 2026",
+      "booking": "Partenaire de connectivité privilégié de Booking.com 2026",
+      "expedia": "Solutions partenaires du groupe Expedia"
+    }
+  },
+  "evervaultCardDemo": {
+    "logoAlt": "Logo Biloki",
+    "description": "Survolez cette carte pour révéler un effet lumineux.",
+    "badge": "Survoler la carte"
   },
   "footer": {
     "features": "Fonctionnalités",
@@ -319,7 +546,17 @@
     "legalNotice": "Mentions légales",
     "terms": "CGV",
     "cookies": "Cookies",
-    "copyright": "Tous droits réservés."
+    "copyright": "Tous droits réservés.",
+    "featuresItems": {
+      "reservations": "Réservations",
+      "planningMissions": "Planning missions",
+      "unifiedMessaging": "Messagerie unifiée",
+      "statistics": "Statistiques",
+      "reviews": "Avis",
+      "smartLocks": "Serrures connectées",
+      "channelManager": "Channel Manager",
+      "marketplaceApi": "Marketplace API"
+    }
   },
   "roles": {
     "title": "Une application,",
@@ -373,36 +610,101 @@
       ]
     }
   },
+  "modules": {
+    "title": "Explorez les modules Biloki",
+    "subtitle": "Découvrez chaque fonctionnalité en détail et voyez comment elles transforment votre gestion de conciergerie",
+    "reservations": {
+      "label": "Réservations & Calendrier",
+      "short": "Évitez les doubles réservations",
+      "description": "Synchronisez automatiquement vos calendriers Airbnb, Booking, Vrbo et Expedia dans un planning unifié. Vos disponibilités se mettent à jour en temps réel partout - fini les doubles réservations.",
+      "bullet1": "Synchronisation temps réel Airbnb, Booking, Vrbo, Expedia",
+      "bullet2": "Zéro risque de double réservation",
+      "bullet3": "Gestion multi-hébergements dans un calendrier unique"
+    },
+    "messaging": {
+      "label": "Messagerie unifiée",
+      "short": "Centralisez vos conversations",
+      "description": "Recevez et répondez aux messages de vos voyageurs depuis Airbnb, Booking, Vrbo et les autres OTA dans une seule boîte de réception. Échangez aussi directement avec vos prestataires, vos propriétaires et vos collaborateurs.",
+      "bullet1": "Une seule boîte de réception pour tous les canaux",
+      "bullet2": "Discussions directes avec prestataires et collaborateurs",
+      "bullet3": "Réponses automatiques et templates personnalisables"
+    },
+    "missions": {
+      "label": "Gestion des missions",
+      "short": "Pilotez vos missions",
+      "description": "Générez et assignez automatiquement les missions à chaque réservation. Vos prestataires reçoivent leurs missions directement sur leur propre interface et vous suivez leur réalisation en temps réel.",
+      "bullet1": "Assignation automatique après chaque réservation",
+      "bullet2": "Interface dédiée aux prestataires",
+      "bullet3": "Suivi en temps réel avec photos et validation"
+    },
+    "statistics": {
+      "label": "Statistiques",
+      "short": "Suivez vos performances",
+      "description": "Taux d'occupation, ADR, RevPAR, durée moyenne de séjour - tous vos KPIs réunis pour décider plus vite. Les statistiques peuvent aussi être mises à disposition de vos propriétaires sur leur interface dédiée.",
+      "bullet1": "Tableau de bord complet avec tous vos KPIs",
+      "bullet2": "Rapports détaillés par période et par logement",
+      "bullet3": "Partage des données avec vos propriétaires"
+    },
+    "reviews": {
+      "label": "Avis voyageurs",
+      "short": "Soignez votre e-réputation",
+      "description": "Centralisez vos avis Airbnb, Booking et Expedia au même endroit. Laissez vos avis voyageurs, répondez aux commentaires reçus et créez des templates automatiques pour rendre la gestion des avis autonome.",
+      "bullet1": "Centralisez tous vos avis en un seul endroit",
+      "bullet2": "Réponses automatiques avec templates personnalisables",
+      "bullet3": "Suivi de vos notes sur toutes les plateformes"
+    },
+    "locks": {
+      "label": "Serrures connectées",
+      "short": "Automatisez vos accès",
+      "description": "Créez des codes permanents ou temporaires pour vos propriétaires et votre conciergerie. À chaque mission assignée, un code aléatoire est généré pour le prestataire ; à chaque réservation, un code est créé et transmis au voyageur dans son guide pour entrer en toute autonomie. Compatible Nuki et Igloohome.",
+      "bullet1": "Codes automatiques à chaque réservation et mission",
+      "bullet2": "Compatible Nuki, August, Igloohome et plus",
+      "bullet3": "Historique d'accès complet et sécurisé"
+    },
+    "addons": {
+      "label": "Ventes additionnelles",
+      "short": "Augmentez vos revenus",
+      "description": "Proposez des prestations et services en option à vos voyageurs - check-in anticipé, ménage supplémentaire, paniers de bienvenue, location d'équipements. Les paiements sont gérés en toute sécurité via Stripe et viennent gonfler vos revenus à chaque réservation.",
+      "bullet1": "Créez des services optionnels à vendre",
+      "bullet2": "Paiements sécurisés via Stripe",
+      "bullet3": "Augmentez vos revenus à chaque réservation"
+    },
+    "team": {
+      "label": "Gestion d'équipe",
+      "short": "Travaillez en équipe",
+      "description": "Invitez vos collaborateurs et vos associés sur Biloki avec leur propre interface. Chacun accède aux logements, réservations et missions qui le concernent, selon le rôle que vous lui attribuez - vous gardez le contrôle sur qui voit et fait quoi.",
+      "bullet1": "Invitez collaborateurs et associés avec rôles définis",
+      "bullet2": "Contrôle granulaire des permissions par utilisateur",
+      "bullet3": "Chacun n'accède qu'aux données pertinentes"
+    }
+  },
   "benefits": {
-    "title": "Les bénéfices pour votre",
-    "titleHighlight": "activité",
-    "finalTitle": "Biloki, l'app qui n'attend que vous !",
-    "description": "Biloki transforme votre manière de gérer vos locations courte durée et vous permet de vous concentrer sur l'essentiel : développer votre activité.",
-    "items": {
-      "time": {
-        "title": "Gagnez jusqu'à 20h / semaine",
-        "description": "Automatisez l'essentiel.\nConcentrez-vous sur l'essentiel."
-      },
-      "revenue": {
-        "title": "Augmentez votre chiffre d'affaires",
-        "description": "Gérez plus de logements,\nsans agrandir votre équipe."
-      },
-      "star": {
-        "title": "Améliorez vos avis clients",
-        "description": "Une communication fluide,\ndes voyageurs plus satisfaits."
-      },
-      "money": {
-        "title": "Réduisez vos coûts opérationnels",
-        "description": "Moins d'erreurs,\nmoins d'interventions manuelles."
-      },
-      "target": {
-        "title": "Centralisez toute votre gestion",
-        "description": "Tout votre business,\ndans un seul outil."
-      },
-      "chart": {
-        "title": "Pilotez votre activité en temps réel",
-        "description": "Vos performances,\nclaires et accessibles partout."
-      }
+    "title": "Les 6 raisons de choisir",
+    "subtitle": "Biloki, l'app qui n'attend que vous",
+    "cta": "Commencer gratuitement",
+    "item1": {
+      "title": "Une seule plateforme, zéro jonglage",
+      "description": "Réservations, messagerie, missions, statistiques, avis et serrures connectées : tout est centralisé. Plus besoin de multiplier les outils et les fichiers Excel."
+    },
+    "item2": {
+      "title": "Connecté à plus de 120 OTA's",
+      "description": "Airbnb, Booking, Abritel... Vos calendriers, tarifs et réservations se synchronisent automatiquement, sans risque de double réservation."
+    },
+    "item3": {
+      "title": "La gestion des missions, simplifiée",
+      "description": "Planification automatique du ménage et de la maintenance, suivi en direct, notifications pour vos prestataires. Fini les appels et les groupes WhatsApp pour s'organiser."
+    },
+    "item4": {
+      "title": "Augmentez votre chiffre d'affaires par réservation",
+      "description": "Proposez des ventes additionnelles (early check-in, ménage en cours de séjour, options sur-mesure) directement à vos voyageurs et boostez votre revenu par séjour."
+    },
+    "item5": {
+      "title": "Des voyageurs autonomes, des avis positifs",
+      "description": "Guide d'arrivée digital et serrures connectées pour un check-in fluide, à toute heure, sans intervention manuelle."
+    },
+    "item6": {
+      "title": "Pilotez votre performance, pas seulement vos réservations",
+      "description": "Taux d'occupation, RevPAR, ADR, taux de réalisation... Suivez vos indicateurs clés en un coup d'œil et prenez des décisions basées sur la donnée."
     }
   },
   "pricingCalculator": {
@@ -435,7 +737,10 @@
     "responsiveSupport": "Support réactif",
     "teamAvailable": "Équipe disponible 24/7",
     "excludingVat": "HT",
-    "includingVat": "TTC"
+    "includingVat": "TTC",
+    "illustrationAlt": "Illustration du configurateur Biloki",
+    "min": "Min",
+    "max": "Max"
   },
   "contactPage": {
     "title": "Nous contacter",
@@ -455,8 +760,22 @@
     "phoneLabel": "Téléphone",
     "company": "Entreprise",
     "emailLabel": "Email",
+    "reasonLabel": "Raison du contact",
+    "reasonSelect": "Sélectionnez une option...",
+    "reasons": {
+      "demoRequest": "Demande de démo",
+      "technicalSupport": "Support technique",
+      "generalQuestion": "Question générale",
+      "apiPartnership": "Demande de partenariat API",
+      "other": "Autre"
+    },
     "message": "Message",
     "messageSent": "Message envoyé avec succès !",
+    "errors": {
+      "sendWithReason": "Erreur: {reason}",
+      "unableToSend": "Impossible d'envoyer le message",
+      "sendFailed": "Erreur lors de l'envoi du message. Veuillez réessayer."
+    },
     "faqTitle": "Questions fréquentes",
     "faqDescription": "Retrouvez les réponses aux questions les plus courantes",
     "faq": {
@@ -497,7 +816,47 @@
       "range11_50": "11 à 50",
       "range51_100": "51 à 100",
       "range100plus": "100+",
-      "continue": "Continuer"
+      "continue": "Continuer",
+      "languages": {
+        "fr": "Français",
+        "en": "Anglais",
+        "es": "Espagnol",
+        "pt": "Portugais"
+      }
+    },
+    "errors": {
+      "hubspot": "Erreur HubSpot:"
+    }
+  },
+  "subscribeCompletePage": {
+    "back": "Retour au configurateur",
+    "badge": "Compléter mon inscription",
+    "title": "Finalisez votre inscription",
+    "description": "Renseignez vos informations pour procéder au paiement sécurisé.",
+    "success": "Inscription enregistrée ! Un email de confirmation vous a été envoyé.",
+    "privacy": "Vos données sont sécurisées. Nous ne partagerons jamais vos informations.",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "company": "Entreprise/Agence",
+      "role": "Rôle",
+      "message": "Message (optionnel)",
+      "firstNamePlaceholder": "Jean",
+      "lastNamePlaceholder": "Dupont",
+      "emailPlaceholder": "jean@example.com",
+      "phonePlaceholder": "+33 6 12 34 56 78",
+      "companyPlaceholder": "Ma Conciergerie",
+      "messagePlaceholder": "Parlez-nous de votre projet...",
+      "selectRole": "Sélectionnez votre rôle",
+      "roles": {
+        "manager": "Gestionnaire",
+        "owner": "Propriétaire particulier",
+        "other": "Autre"
+      },
+      "processing": "Traitement en cours...",
+      "submit": "Procéder au paiement"
     }
   },
   "trialPage": {
@@ -612,24 +971,64 @@
     "trendingArticles": "Articles tendance"
   },
   "subscribePage": {
-    "title": "Configuration flexible",
-    "subtitle": "Configurez votre abonnement",
-    "description": "Choisissez les options qui correspondent à vos besoins. Passez à un plan supérieur ou inférieur à tout moment.",
+    "badge": "Configuration flexible",
+    "title": "Configurez votre",
+    "titleHighlight": "abonnement",
+    "description": "Payez selon vos besoins. Ajoutez les modules qui vous conviennent.",
+    "priceConfigurator": "Configurateur de prix",
+    "numberOfProperties": "Nombre de logements",
+    "enterDirectly": "Ou entrez le nombre directement",
+    "billing": "Facturation",
+    "monthly": "Mensuel",
+    "annual": "Annuel",
+    "annualSavings": "-10% économies",
+    "clientType": "Type de client",
+    "professional": "Professionnel (HT)",
+    "individual": "Particulier (TTC)",
     "includedFeatures": "Fonctionnalités incluses",
     "features": {
-      "channelManager": "Channel Manager (120+ OTA)",
-      "pms": "Property Management System complet",
-      "messaging": "Messagerie unifiée (Airbnb, Booking, WhatsApp...)",
-      "smartLocks": "Intégration serrures connectées",
-      "ai": "Assistant IA intégré",
-      "interfaces": "4 interfaces dédiées",
-      "support": "Support prioritaire"
-    }
+      "pms": "PMS complet avec gestion des séjours",
+      "channelManager": "Channel Manager (synchronisation des calendriers)",
+      "pricing": "Tarifs & disponibilités",
+      "ota": "Connexions OTA (Airbnb, Booking, etc.)",
+      "messaging": "Messagerie intelligente avec IA",
+      "locks": "Serrures connectées",
+      "reporting": "Reporting & performance",
+      "interfaces": "4 interfaces (propriétaire, conciergerie, prestataire, voyageur)",
+      "api": "API Marketplace",
+      "support": "Support par email"
+    },
+    "additionalOptions": "Options supplémentaires",
+    "accountingModule": "Module Comptabilité",
+    "accountingDesc": "Pré-facturation automatique pour tous vos logements",
+    "salesModule": "Module Ventes additionnelles",
+    "salesDesc": "Proposez des services et produits supplémentaires",
+    "propertiesWithModule": "Logements avec ce module",
+    "of": "sur",
+    "applyToAll": "Appliquer à tous vos {count} logements",
+    "applyTo": "Appliquer à {count} logement(s)",
+    "orderSummary": "Résumé de votre commande",
+    "propertiesCount": "{count} logements",
+    "module": "Module",
+    "accountingLabel": "Comptabilité",
+    "salesLabel": "Ventes add.",
+    "propertiesLabel": "log.",
+    "total": "Total",
+    "perMonthLabel": "/mois",
+    "perYearLabel": "/an",
+    "firstMonthFree": "1er mois offert",
+    "payFromSecondMonth": "Vous ne payez qu'à partir du 2ᵉ mois.",
+    "payFromSecondMonthAnnual": "Vous ne payez qu'à partir du 2ᵉ mois de la première année.",
+    "noCardRequired": "✓ Aucune carte bancaire requise",
+    "securePayment": "Paiement sécurisé lors de la validation",
+    "completeRegistration": "Compléter mon inscription",
+    "ht": "HT",
+    "ttc": "TTC"
   },
   "pricingPage": {
     "title": "Transparence des tarifs",
-    "subtitle": "Des tarifs justes et simples",
-    "description": "Choisissez le plan qui correspond à votre activité. Pas de surprise, pas de frais cachés.",
+    "subtitle": "Une offre unique, claire et dégressive",
+    "description": "Un seul forfait Biloki qui s’adapte au nombre de logements. Pas de surprise, pas de frais cachés.",
     "lastUpdate": "Mise à jour le",
     "readyToStart": "Prêt à commencer ?",
     "startFreeToday": "Démarrez gratuitement aujourd'hui et découvrez toutes les fonctionnalités de Biloki pendant 14 jours.",
@@ -645,6 +1044,41 @@
     "monthly": "Mensuel",
     "annual": "Annuel",
     "annualDiscount": "-20 % facturé annuellement",
+    "discountBadge": "-20%",
+    "heroTitleLine1": "Un prix juste.",
+    "heroTitleLine2": "Une offre complète.",
+    "heroDescription": "Une seule offre Biloki, pensée pour suivre la croissance de votre activité sans complexité.",
+    "reduce": "Réduire",
+    "increase": "Augmenter",
+    "propertyInputAriaLabel": "Nombre de logements",
+    "summaryTitle": "Tout pour gérer votre conciergerie, sans jongler entre 5 outils",
+    "summaryDescription": "Une seule offre, tout inclus : réservations, messagerie, missions, propriétaires, voyageurs et statistiques.",
+    "zeroCommission": "0% de commission sur vos réservations",
+    "buttonProfessional": "Pro",
+    "buttonIndividual": "Particulier",
+    "schemaName": "Biloki - Offre unique",
+    "schemaDescription": "Tarification dégressive Biloki selon le nombre de logements, avec une offre unique tout inclus.",
+    "featureReservationsTitle": "Réservations & Channel Manager",
+    "featureReservationsItem1": "Channel manager intégré : synchronisation automatique de vos calendriers, prix et disponibilités sur Airbnb, Booking, Vrbo et Expedia",
+    "featureReservationsItem2": "Widget de réservation à intégrer sur votre site internet (réservations directes, 0% commission)",
+    "featureReservationsItem3": "Connexion calendriers externes (iCal)",
+    "featureCommunicationTitle": "Communication",
+    "featureCommunicationItem1": "Messagerie unifiée, tous canaux centralisés",
+    "featureGuideTitle": "Guide voyageur",
+    "featureGuideItem1": "Interface dédiée et personnalisable par logement",
+    "featureGuideItem2": "Bons plans, infos pratiques, accès hébergement & transport",
+    "featureGuideItem3": "Vos voyageurs autonomes, moins de sollicitations pour vous",
+    "featureSalesTitle": "Ventes additionnelles",
+    "featureSalesItem1": "Créez et vendez vos propres services directement depuis l’interface voyageur",
+    "featureSalesItem2": "Paiement sécurisé Stripe, commission Biloki de seulement 1,25%",
+    "featureSalesItem3": "Nouvelle source de revenus sans effort supplémentaire",
+    "featureOperationsTitle": "Opérations",
+    "featureOperationsItem1": "Planification & automatisation des missions prestataires",
+    "featurePilotageTitle": "Pilotage",
+    "featurePilotageItem1": "Avis voyageurs automatisés",
+    "featurePilotageItem2": "Statistiques & reporting (aussi côté propriétaire)",
+    "featureSoonTitle": "Bientôt disponible",
+    "featureSoonItem1": "Pré-facturation automatisée",
     "clientType": "Type de client",
     "professional": "Professionnel (HT)",
     "individual": "Particulier (TTC)",
@@ -741,61 +1175,6 @@
       "tenant": "Locataire"
     }
   },
-  "subscribePage": {
-    "badge": "Configuration flexible",
-    "title": "Configurez votre",
-    "titleHighlight": "abonnement",
-    "description": "Payez selon vos besoins. Ajoutez les modules qui vous conviennent.",
-    "priceConfigurator": "Configurateur de prix",
-    "numberOfProperties": "Nombre de logements",
-    "enterDirectly": "Ou entrez le nombre directement",
-    "billing": "Facturation",
-    "monthly": "Mensuel",
-    "annual": "Annuel",
-    "annualSavings": "-10% économies",
-    "clientType": "Type de client",
-    "professional": "Professionnel (HT)",
-    "individual": "Particulier (TTC)",
-    "includedFeatures": "Fonctionnalités incluses",
-    "features": {
-      "pms": "PMS complet avec gestion des séjours",
-      "channelManager": "Channel Manager (synchronisation des calendriers)",
-      "pricing": "Tarifs & disponibilités",
-      "ota": "Connexions OTA (Airbnb, Booking, etc.)",
-      "messaging": "Messagerie intelligente avec IA",
-      "locks": "Serrures connectées",
-      "reporting": "Reporting & performance",
-      "interfaces": "4 interfaces (propriétaire, conciergerie, prestataire, voyageur)",
-      "api": "API Marketplace",
-      "support": "Support par email"
-    },
-    "additionalOptions": "Options supplémentaires",
-    "accountingModule": "Module Comptabilité",
-    "accountingDesc": "Pré-facturation automatique pour tous vos logements",
-    "salesModule": "Module Ventes additionnelles",
-    "salesDesc": "Proposez des services et produits supplémentaires",
-    "propertiesWithModule": "Logements avec ce module",
-    "of": "sur",
-    "applyToAll": "Appliquer à tous vos {count} logements",
-    "applyTo": "Appliquer à {count} logement(s)",
-    "orderSummary": "Résumé de votre commande",
-    "propertiesCount": "{count} logements",
-    "module": "Module",
-    "accountingLabel": "Comptabilité",
-    "salesLabel": "Ventes add.",
-    "propertiesLabel": "log.",
-    "total": "Total",
-    "perMonthLabel": "/mois",
-    "perYearLabel": "/an",
-    "firstMonthFree": "1er mois offert",
-    "payFromSecondMonth": "Vous ne payez qu'à partir du 2ᵉ mois.",
-    "payFromSecondMonthAnnual": "Vous ne payez qu'à partir du 2ᵉ mois de la première année.",
-    "noCardRequired": "✓ Aucune carte bancaire requise",
-    "securePayment": "Paiement sécurisé lors de la validation",
-    "completeRegistration": "Compléter mon inscription",
-    "ht": "HT",
-    "ttc": "TTC"
-  },
   "loginPage": {
     "title": "Se connecter",
     "description": "Accédez à votre espace Biloki",
@@ -859,7 +1238,35 @@
     "integrationDesc": "Connectons ensemble votre outil à Biloki. Nous analyserons vos besoins d'intégration et vous guiderons à travers chaque étape de la configuration.",
     "feature1": "Vérification de la compatibilité technique",
     "feature2": "Configuration de la synchronisation",
-    "feature3": "Support technique personnalisé"
+    "feature3": "Support technique personnalisé",
+    "form": {
+      "title": "Demander une connexion API",
+      "success": "Votre demande a été envoyée avec succès ! Notre équipe vous contactera rapidement.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "company": "Entreprise",
+      "objective": "Objectif de la demande",
+      "selectObjective": "Sélectionnez un objectif...",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre projet d'intégration...",
+      "sending": "Envoi en cours...",
+      "submit": "Envoyer la demande",
+      "sendError": "Erreur lors de l'envoi du formulaire",
+      "requestType": "Demande de partenariat API",
+      "conversationTemplate": "Demande de connexion API\n\nObjectif: {objective}\n\nMessage:\n{message}",
+      "objectives": {
+        "channelManager": "Intégration Channel manager",
+        "pms": "Intégration PMS",
+        "ota": "Intégration OTA's",
+        "accounting": "Intégration comptabilité",
+        "payment": "Intégration paiement",
+        "smartLocks": "Intégration serrures connectées",
+        "other": "Autre type d'intégration",
+        "partner": "Devenir partenaire API"
+      }
+    }
   },
   "legalPages": {
     "cgv": {
@@ -997,7 +1404,11 @@
     "heroTitleSuffix": "pour la conciergerie",
     "heroDescription": "Sécurisez vos propriétés et automatisez l'accès de vos voyageurs. Ouvrez les portes à distance en un clic depuis votre interface.",
     "heroSecondaryCta": "Voir la démo",
-    "heroBullets": ["Sécurisé", "Installation rapide", "+500 conciergeries"],
+    "heroBullets": [
+      "Sécurisé",
+      "Installation rapide",
+      "+500 conciergeries"
+    ],
     "heroImagePlaceholder": "Emplacement image principale",
     "heroImageAlt": "Serrure connectée",
     "needs": {
@@ -1183,25 +1594,54 @@
         "badge": "Interface Gestionnaire",
         "title": "Pilotez toute votre activité",
         "description": "Gérez l'ensemble de vos propriétés, locataires, prestataires et propriétaires depuis un tableau de bord intuitif. Tout est centralisé pour une vision 360° de votre activité.",
-        "features": ["Tous vos biens sous contrôle depuis un seul tableau de bord", "Communication unifiée : messages, emails, SMS synchronisés", "Planning intelligent qui anticipe et optimise vos ressources", "Exploitation simplifiée avec automatisations avancées", "Biloki AI : un copilot qui agit pour vous", "Statistiques en temps réel pour piloter votre performance"]
+        "features": [
+          "Tous vos biens sous contrôle depuis un seul tableau de bord",
+          "Communication unifiée : messages, emails, SMS synchronisés",
+          "Planning intelligent qui anticipe et optimise vos ressources",
+          "Exploitation simplifiée avec automatisations avancées",
+          "Biloki AI : un copilot qui agit pour vous",
+          "Statistiques en temps réel pour piloter votre performance"
+        ]
       },
       "owner": {
         "badge": "Interface Propriétaire",
         "title": "Transparence totale pour vos propriétaires",
         "description": "Offrez à vos propriétaires une vue d'ensemble claire sur leur logement avec accès en temps réel aux performances, revenus et opérations.",
-        "features": ["Vue d'ensemble du logement avec calendrier des réservations", "Chiffres clés & performances : taux d'occupation, revenus nets", "Avis voyageurs centralisés depuis toutes les plateformes", "Transparence complète sur toutes les opérations", "Relation simplifiée avec la conciergerie via messagerie dédiée", "Pilotage serein de l'investissement avec rapports détaillés"]
+        "features": [
+          "Vue d'ensemble du logement avec calendrier des réservations",
+          "Chiffres clés & performances : taux d'occupation, revenus nets",
+          "Avis voyageurs centralisés depuis toutes les plateformes",
+          "Transparence complète sur toutes les opérations",
+          "Relation simplifiée avec la conciergerie via messagerie dédiée",
+          "Pilotage serein de l'investissement avec rapports détaillés"
+        ]
       },
       "provider": {
         "badge": "Interface Prestataire",
         "title": "Simplifiez le travail de vos prestataires internes ou externes",
         "description": "Offrez à vos prestataires une interface mobile-first simple et efficace. Disponible en app mobile et web app (pas besoin de télécharger l'application). Chaque prestataire reçoit les bonnes informations au bon moment, sans intervention manuelle.",
-        "features": ["Planning clair et centralisé accessible sur mobile", "Notifications en temps réel pour chaque nouvelle mission", "Instructions précises par mission : adresse, accès, consignes", "Validation des tâches avec photos pour traçabilité", "Communication directe avec la conciergerie", "Historique complet des interventions effectuées"]
+        "features": [
+          "Planning clair et centralisé accessible sur mobile",
+          "Notifications en temps réel pour chaque nouvelle mission",
+          "Instructions précises par mission : adresse, accès, consignes",
+          "Validation des tâches avec photos pour traçabilité",
+          "Communication directe avec la conciergerie",
+          "Historique complet des interventions effectuées"
+        ]
       },
       "guest": {
         "badge": "Interface Voyageur",
         "title": "Une expérience voyageur premium",
         "description": "Offrez à vos locataires une expérience autonome et premium. Guide personnalisé par logement avec assistant IA disponible 24/7.",
-        "features": ["Accès simplifié : codes, wifi, parking en un clic", "Parcours autonome avec guide digital personnalisé", "Communication directe avec l'hôte via messagerie", "Informations clés instantanées : check-in, check-out, règles", "Biloki AI : assistant intelligent disponible 24/7", "Les bons plans : recommandations locales personnalisées", "Ventes additionnelles : commandez services et produits (champagne, petit-déjeuner...)"]
+        "features": [
+          "Accès simplifié : codes, wifi, parking en un clic",
+          "Parcours autonome avec guide digital personnalisé",
+          "Communication directe avec l'hôte via messagerie",
+          "Informations clés instantanées : check-in, check-out, règles",
+          "Biloki AI : assistant intelligent disponible 24/7",
+          "Les bons plans : recommandations locales personnalisées",
+          "Ventes additionnelles : commandez services et produits (champagne, petit-déjeuner...)"
+        ]
       },
       "ctaTitle": "Prêt à découvrir ces 4 interfaces ?",
       "ctaDescription": "Réservez une démo personnalisée et voyez comment chaque interface transforme l'expérience utilisateur."
@@ -1232,10 +1672,22 @@
           "Fini les doubles réservations et les mises à jour manuelles"
         ],
         "stats": [
-          { "value": "120+", "label": "OTA connectées" },
-          { "value": "0", "label": "Double booking" },
-          { "value": "24/7", "label": "Support voyageurs" },
-          { "value": "10 min", "label": "Mise en place" }
+          {
+            "value": "120+",
+            "label": "OTA connectées"
+          },
+          {
+            "value": "0",
+            "label": "Double booking"
+          },
+          {
+            "value": "24/7",
+            "label": "Support voyageurs"
+          },
+          {
+            "value": "10 min",
+            "label": "Mise en place"
+          }
         ]
       },
       "sections": {
@@ -1282,7 +1734,7 @@
           "items": [
             {
               "title": "Synchronisation multi-plateformes",
-              "description": "Airbnb, Booking, Vrbo, Expedia et plus de 120 canaux." 
+              "description": "Airbnb, Booking, Vrbo, Expedia et plus de 120 canaux."
             },
             {
               "title": "Règles et restrictions unifiées",
@@ -1363,42 +1815,84 @@
         "reservations": {
           "title": "Gérez toutes vos réservations sur un seul tableau de bord",
           "description": "Centralisez toutes vos réservations (Airbnb, Booking, site direct, etc.) dans un calendrier unique et synchronisé.",
-          "features": ["Synchronisation automatique des calendriers multi-plateformes", "Éviter les doubles réservations", "Vue claire par logement, par jour et par canal", "Gestion des arrivées et départs en temps réel"]
+          "features": [
+            "Synchronisation automatique des calendriers multi-plateformes",
+            "Éviter les doubles réservations",
+            "Vue claire par logement, par jour et par canal",
+            "Gestion des arrivées et départs en temps réel"
+          ]
         },
         "channelManager": {
           "title": "Diffusez vos annonces sur toutes les OTA depuis un seul endroit",
           "description": "Connectez vous aux plateformes de réservation et importez l'ensemble de vos hébergements sur la plateforme en un clic",
-          "features": ["Publication multi-plateformes depuis un seul outil", "Mise à jour automatique des prix et disponibilités", "Fermeture/ouverture de dates en un clic", "Gestion des restrictions (minimum de nuits, check-in/out)"]
+          "features": [
+            "Publication multi-plateformes depuis un seul outil",
+            "Mise à jour automatique des prix et disponibilités",
+            "Fermeture/ouverture de dates en un clic",
+            "Gestion des restrictions (minimum de nuits, check-in/out)"
+          ]
         },
         "operations": {
           "title": "Orchestrez vos opérations sans effort",
           "description": "Créez automatiquement les missions de ménage, planifiez les interventions et affectez les prestataires. Vos salariés bénéficient d'un accès utilisateur dédié.",
-          "features": ["Création automatique des missions de ménage", "Missions envoyées directement sur l'interface prestataire en temps réel", "Planification du linge, états des lieux, maintenance", "Affectation automatique des prestataires", "Checklists de nettoyage par logement"]
+          "features": [
+            "Création automatique des missions de ménage",
+            "Missions envoyées directement sur l'interface prestataire en temps réel",
+            "Planification du linge, états des lieux, maintenance",
+            "Affectation automatique des prestataires",
+            "Checklists de nettoyage par logement"
+          ]
         },
         "communication": {
           "title": "Discutez avec tous vos interlocuteurs au même endroit",
           "description": "Une messagerie centralisée pour discuter avec les locataires, les prestataires, les propriétaires via les canaux OTA's, WhatsApp, SMS et bien plus.",
-          "features": ["Centralisez tous les messages depuis Airbnb, Booking, WhatsApp, SMS et canaux OTA", "Messagerie unifiée avec locataires, prestataires et propriétaires", "Messages automatiques avant l'arrivée (codes, infos essentielles)", "Support IA 24/7 disponible pour les questions des voyageurs"]
+          "features": [
+            "Centralisez tous les messages depuis Airbnb, Booking, WhatsApp, SMS et canaux OTA",
+            "Messagerie unifiée avec locataires, prestataires et propriétaires",
+            "Messages automatiques avant l'arrivée (codes, infos essentielles)",
+            "Support IA 24/7 disponible pour les questions des voyageurs"
+          ]
         },
         "access": {
           "title": "Automatisez l'accès à vos logements en toute sérénité",
           "description": "Générez des codes temporaires et gérez automatiquement l'accès aux serrures connectées.",
-          "features": ["Connecter vos serrures connectées à l'application", "Génération automatique de codes d'accès temporaires pour vos locataires et prestataires", "Activation/désactivation des accès selon les dates de réservation ou de prestations", "Historique complet des accès"]
+          "features": [
+            "Connecter vos serrures connectées à l'application",
+            "Génération automatique de codes d'accès temporaires pour vos locataires et prestataires",
+            "Activation/désactivation des accès selon les dates de réservation ou de prestations",
+            "Historique complet des accès"
+          ]
         },
         "billing": {
           "title": "Facturation, commissions & propriétaires",
           "description": "Automatisez la facturation, le calcul des commissions et la gestion des revenus par propriétaire. (Module optionnel payant : +2€/logement/mois)",
-          "features": ["Calcul automatique des commissions", "Facturation propriétaires et pré-facturation", "Ventilation revenus, frais, ménages", "Tableaux de bord détaillés par propriétaire ou par bien"]
+          "features": [
+            "Calcul automatique des commissions",
+            "Facturation propriétaires et pré-facturation",
+            "Ventilation revenus, frais, ménages",
+            "Tableaux de bord détaillés par propriétaire ou par bien"
+          ]
         },
         "reporting": {
           "title": "Analysez vos performances en un coup d'œil",
           "description": "Obtenez une vision claire de vos performances pour prendre les bonnes décisions.",
-          "features": ["Taux d'occupation en temps réel", "Revenu par logement et par plateforme", "Suivi des coûts opérationnels", "Les propriétaires peuvent consulter les performances de leurs logements sur leur interface", "Analyse de performance pour justifier la valeur ajoutée"]
+          "features": [
+            "Taux d'occupation en temps réel",
+            "Revenu par logement et par plateforme",
+            "Suivi des coûts opérationnels",
+            "Les propriétaires peuvent consulter les performances de leurs logements sur leur interface",
+            "Analyse de performance pour justifier la valeur ajoutée"
+          ]
         },
         "marketplaceApi": {
           "title": "Connectez vos outils préférés à Biloki",
           "description": "Intégrez facilement Biloki avec vos applications existantes grâce à notre marketplace de partenaires et notre API ouverte.",
-          "features": ["Connectez-vous à plus de 120 OTA et plateformes", "Connectez vos serrures connectées avec nos partenaires", "Intégrez vos outils comptables, paiement et communication", "Synchronisez vos données via une API ouverte"]
+          "features": [
+            "Connectez-vous à plus de 120 OTA et plateformes",
+            "Connectez vos serrures connectées avec nos partenaires",
+            "Intégrez vos outils comptables, paiement et communication",
+            "Synchronisez vos données via une API ouverte"
+          ]
         }
       },
       "ctaTitle": "Prêt à transformer votre conciergerie ?",
@@ -1651,9 +2145,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Mise en place" },
-          "updates": { "value": "Instant", "label": "Mise à jour" },
-          "channels": { "value": "120+", "label": "Canaux liés" }
+          "setup": {
+            "value": "5 min",
+            "label": "Mise en place"
+          },
+          "updates": {
+            "value": "Instant",
+            "label": "Mise à jour"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Canaux liés"
+          }
         }
       },
       "faq": {
@@ -1757,9 +2260,18 @@
       },
       "stats": {
         "items": {
-          "setup": { "value": "5 min", "label": "Mise en place" },
-          "updates": { "value": "Instant", "label": "Mise à jour" },
-          "channels": { "value": "120+", "label": "Canaux liés" }
+          "setup": {
+            "value": "5 min",
+            "label": "Mise en place"
+          },
+          "updates": {
+            "value": "Instant",
+            "label": "Mise à jour"
+          },
+          "channels": {
+            "value": "120+",
+            "label": "Canaux liés"
+          }
         }
       },
       "faq": {
@@ -1909,11 +2421,77 @@
     "trialCta": "Essai gratuit {days} jours 🚀",
     "trialCtaRocket": "🚀 Essai gratuit {days} jours",
     "initialGreeting": "Bonjour ! 👋 Je suis l'assistant Biloki.\n\nComment puis-je vous aider ?\n• Découvrir nos fonctionnalités\n• Comprendre les tarifs\n• Répondre à vos questions",
+    "ui": {
+      "title": "Assistant Biloki",
+      "online": "En ligne",
+      "bubble": "💬 Parlez à notre chatbot Biloki",
+      "emptyGreeting": "👋 Bonjour ! Comment puis-je vous aider ?",
+      "aria": {
+        "openChat": "Ouvrir le chat"
+      },
+      "errors": {
+        "retry": "Désolé, une erreur s'est produite. Veuillez réessayer."
+      },
+      "messages": {
+        "noProblem": "Pas de problème ! Comment puis-je vous aider autrement ?",
+        "perfect": "Parfait ! Comment puis-je vous aider autrement ?"
+      },
+      "leadForm": {
+        "title": "👋 Bonjour ! Pour mieux vous aider, puis-je avoir quelques informations ?",
+        "firstName": "Prénom *",
+        "lastName": "Nom *",
+        "email": "Email *",
+        "phone": "Téléphone (optionnel)",
+        "properties": "Nombre de logements",
+        "rolePlaceholder": "Vous êtes... (optionnel)",
+        "continue": "Continuer",
+        "roles": {
+          "manager": "Gestionnaire",
+          "individual": "Particulier",
+          "other": "Autre"
+        }
+      },
+      "choices": {
+        "demo": "Demander une démo",
+        "support": "Problème technique",
+        "question": "Poser une question"
+      },
+      "support": {
+        "title": "🛠 Décrivez votre problème",
+        "placeholder": "Décrivez votre problème technique (optionnel mais recommandé)...",
+        "send": "Envoyer",
+        "cancel": "Annuler"
+      },
+      "input": {
+        "placeholder": "Écrivez votre message...",
+        "backToOptions": "← Retour aux options (Démo, Support technique)"
+      }
+    },
     "profileDetection": {
       "keywords": {
-        "owner": ["propriétaire", "proprietaire", "mon logement", "mon appartement", "ma maison", "mes logements"],
-        "concierge": ["conciergerie", "agence", "gestion locative", "gérant", "gerant", "société", "entreprise"],
-        "manager": ["gestionnaire", "property manager", "gère", "gestion"]
+        "owner": [
+          "propriétaire",
+          "proprietaire",
+          "mon logement",
+          "mon appartement",
+          "ma maison",
+          "mes logements"
+        ],
+        "concierge": [
+          "conciergerie",
+          "agence",
+          "gestion locative",
+          "gérant",
+          "gerant",
+          "société",
+          "entreprise"
+        ],
+        "manager": [
+          "gestionnaire",
+          "property manager",
+          "gère",
+          "gestion"
+        ]
       },
       "responses": {
         "owner": "Parfait ! En tant que propriétaire, Biloki peut vous aider à :\n\n✅ Synchroniser vos calendriers sur toutes les plateformes\n✅ Automatiser la communication avec vos voyageurs\n✅ Gérer les codes d'accès des serrures connectées\n✅ Suivre vos revenus en temps réel\n\nCombien de logements gérez-vous ?",
@@ -2287,6 +2865,1196 @@
     "blog-nice": {
       "title": "Nice : Quotas par quartier pour les locations Airbnb - Ce que les conciergeries doivent savoir | Biloki",
       "description": "Réglementation Airbnb à Nice : quotas par quartier, 90 jours max, autorisations 3 ans. Guide complet pour conciergeries et stratégies d'adaptation 2026."
+    }
+  },
+  "featureMasterPages": {
+    "common": {
+      "primaryCtaLabel": "Réserver une démo",
+      "secondaryCtaLabel": "Essai gratuit",
+      "kpis": [
+        {
+          "value": "120+",
+          "label": "Canaux connectés"
+        },
+        {
+          "value": "0",
+          "label": "Double réservation"
+        },
+        {
+          "value": "< 10 min",
+          "label": "Connexion initiale"
+        },
+        {
+          "value": "24/7",
+          "label": "Synchronisation active"
+        }
+      ],
+      "painTitle": "Ce qui te ralentit aujourd'hui",
+      "painDescription": "Quand chaque plateforme vit sa vie, ton équipe perd du temps et le risque d'erreur explose.",
+      "painPoints": [
+        "Mises à jour manuelles Airbnb/Booking chaque jour",
+        "Risque de double booking en haute saison",
+        "Vision partielle des arrivées/départs",
+        "Prix et restrictions incohérents selon les canaux"
+      ],
+      "benefitsTitle": "Ce que Biloki change concrètement",
+      "benefits": [
+        {
+          "title": "Calendrier unique multi-canaux",
+          "description": "Toutes les réservations remontent dans une seule vue claire pour l'équipe."
+        },
+        {
+          "title": "Disponibilités synchronisées en temps réel",
+          "description": "Chaque nouvelle réservation bloque automatiquement les autres plateformes."
+        },
+        {
+          "title": "Pilotage opérationnel simplifié",
+          "description": "Arrivées, départs et turnovers deviennent prévisibles et faciles à organiser."
+        }
+      ],
+      "stepsTitle": "Comment ça fonctionne",
+      "steps": [
+        {
+          "title": "Connecte tes plateformes",
+          "description": "Airbnb, Booking et tes autres canaux se branchent en quelques clics."
+        },
+        {
+          "title": "Centralise tarifs et disponibilités",
+          "description": "Tu ajustes depuis Biloki, puis la mise à jour est propagée partout."
+        },
+        {
+          "title": "Automatise ton quotidien",
+          "description": "Les réservations se synchronisent seules et ton équipe reste alignée."
+        }
+      ],
+      "finalCtaTitle": "Pilote toutes tes réservations sans friction",
+      "finalCtaDescription": "Réserve une démo personnalisée et vois comment Biloki remplace tes allers-retours manuels par un flux centralisé et fiable.",
+      "faqTitle": "Vous avez encore des questions ?",
+      "faqItems": [
+        {
+          "question": "Un gestionnaire de réservations, est-ce que ça vaut vraiment le coup ?",
+          "answer": "Oui, surtout dès que vous diffusez sur plusieurs plateformes. Vous centralisez vos calendriers, réduisez les erreurs de disponibilité et supprimez les doubles réservations. Votre équipe gagne du temps au quotidien et peut se concentrer sur la qualité de service."
+        },
+        {
+          "question": "Quelles plateformes puis-je synchroniser avec Biloki ?",
+          "answer": "Biloki se connecte à Airbnb, Booking et de nombreux autres canaux. Les réservations, disponibilités et informations essentielles sont mises à jour automatiquement dans un calendrier unique."
+        },
+        {
+          "question": "Combien de temps faut-il pour connecter mes canaux ?",
+          "answer": "La connexion initiale peut être mise en place rapidement. Dans la plupart des cas, vous pouvez démarrer en quelques minutes et être opérationnel sans migration complexe."
+        },
+        {
+          "question": "Comment Biloki évite les doubles réservations ?",
+          "answer": "Chaque nouvelle réservation met à jour instantanément les disponibilités sur vos autres canaux connectés. Cette synchronisation en temps réel limite les conflits de calendrier."
+        },
+        {
+          "question": "Puis-je gérer les arrivées et départs depuis le même outil ?",
+          "answer": "Oui. Biloki centralise votre planning de séjour pour garder une vue opérationnelle claire sur les check-ins, check-outs et actions associées."
+        },
+        {
+          "question": "Biloki convient-il à une petite conciergerie ?",
+          "answer": "Oui, la plateforme s adapte aussi bien aux petites structures qu aux équipes plus grandes. Vous pouvez démarrer simplement puis monter en charge selon votre volume de biens."
+        },
+        {
+          "question": "Est-ce que mes équipes peuvent collaborer facilement ?",
+          "answer": "Oui. Toutes les informations clés sont centralisées, ce qui évite les doublons de communication et aide chaque membre de l équipe à travailler sur la même base en temps réel."
+        }
+      ]
+    },
+    "pages": {
+      "reservations": {
+        "metadataTitle": "Réservations | Biloki",
+        "metadataDescription": "Centralisez toutes vos réservations Airbnb, Booking et vos autres canaux dans un seul calendrier Biloki.",
+        "badge": "Réservations",
+        "title": "Centralisez toutes vos",
+        "highlight": "réservations",
+        "description": "Airbnb, Booking et vos autres canaux pilotés depuis un calendrier unique, sans double réservation.",
+        "painPoints": [
+          "Synchronisation automatique et en temps réel sur toutes vos plateformes",
+          "Zéro double réservation, même en pleine saison",
+          "Vue complète sur toutes vos arrivées, départs et disponibilités"
+        ],
+        "heroImageAlt": "Calendrier de réservation Biloki"
+      },
+      "planningMissions": {
+        "metadataTitle": "Planning missions | Biloki",
+        "metadataDescription": "Déléguez vos missions terrain à vos prestataires en un clic, avec suivi en temps réel.",
+        "badge": "Missions",
+        "title": "Pilotez vos missions",
+        "highlight": "sans y passer vos journées",
+        "description": "Attribution automatique, checklist photo horodatée, rapport de mission, toute la preuve d'exécution centralisée.",
+        "painPoints": [
+          "Fini les appels pour vérifier qu'une mission est faite",
+          "Preuve photo horodatée à chaque étape de la checklist",
+          "Rapport de mission disponible instantanément après validation"
+        ],
+        "heroImageAlt": "Planning des missions Biloki",
+        "finalCtaTitle": "Coordonnez vos missions terrain sans friction",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki automatise l'assignation, le suivi et la preuve d'exécution de chaque mission.",
+        "faqTitle": "Vous avez encore des questions ?",
+        "faqItems": [
+          {
+            "question": "Comment Biloki évite les oublis de ménage ?",
+            "answer": "Chaque réservation peut déclencher automatiquement la création de mission. Votre équipe visualise immédiatement ce qu'il faut faire, où et quand, sans ressaisie manuelle."
+          },
+          {
+            "question": "Les prestataires reçoivent-ils leurs missions en direct ?",
+            "answer": "Oui. Les missions sont envoyées sur leur espace dédié avec les détails utiles (logement, horaire, consignes), pour éviter les allers-retours par message."
+          },
+          {
+            "question": "Puis-je suivre l'avancement des missions en temps réel ?",
+            "answer": "Oui. Vous voyez les statuts à faire, en cours, terminé ou en retard depuis un tableau unique pour prioriser rapidement."
+          },
+          {
+            "question": "Y a-t-il une preuve qu'une mission a bien été réalisée ?",
+            "answer": "Oui. Chaque intervention laisse une trace dans un rapport de mission consultable à tout moment pour sécuriser le suivi qualité."
+          },
+          {
+            "question": "Biloki fonctionne-t-il avec une petite équipe ?",
+            "answer": "Oui. Le planning missions s'adapte aussi bien à une petite conciergerie qu'à une structure plus grande, avec la même logique simple de coordination."
+          },
+          {
+            "question": "Peut-on organiser autre chose que le ménage ?",
+            "answer": "Oui. Vous pouvez aussi planifier d'autres interventions terrain comme le linge, les états des lieux ou la maintenance."
+          },
+          {
+            "question": "Le planning missions est-il lié aux réservations ?",
+            "answer": "Oui. Les données de réservation alimentent le planning pour garder les équipes alignées sur les arrivées, départs et turnovers."
+          }
+        ]
+      },
+      "unifiedMessaging": {
+        "metadataTitle": "Messagerie unifiée | Biloki",
+        "metadataDescription": "Airbnb, Booking, Vrbo, Expedia, voyageurs et prestataires : centralisez tous vos échanges dans une seule boîte de réception.",
+        "badge": "Messagerie unifiée",
+        "title": "Une seule messagerie",
+        "highlight": "pour toutes vos conversations",
+        "description": "Airbnb, Booking, Vrbo, Expedia, voyageurs, prestataires - centralisez tous vos échanges dans une seule boîte de réception, sans jongler entre les plateformes.",
+        "heroImageAlt": "Messagerie unifiée Biloki",
+        "painPoints": [
+          "Tous les messages Airbnb, Booking, Vrbo et Expedia dans une seule boîte",
+          "Réponses automatiques au bon moment selon le séjour et le canal",
+          "Conversations internes séparées pour coordonner équipe et prestataires",
+          "Contexte séjour affiché pendant la réponse (dates, logement, voyageurs)"
+        ],
+        "finalCtaTitle": "Une messagerie unique pour piloter toutes vos conversations",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki centralise les échanges voyageurs, les automatisations et la coordination interne dans un seul outil.",
+        "unifiedMessagingSplitSections": [
+          {
+            "title": "Tout centralisé",
+            "description": "Fini les allers-retours entre les extranets Airbnb, Booking et vos emails. Voyageurs, propriétaires, prestataires : chaque conversation arrive au même endroit, avec toutes les infos utiles juste à côté.",
+            "imageSrc": "/images/Messagerie unifiée/Tout centralisé.svg",
+            "imageAlt": "Boîte de réception centralisée avec tous les interlocuteurs"
+          },
+          {
+            "title": "Un fil par interlocuteur",
+            "description": "Voyageur, propriétaire ou prestataire : chaque conversation est identifiée par son rôle, filtrable en un clic. Vous savez toujours qui écrit, sur quel logement, et pourquoi.",
+            "imageSrc": "/images/Messagerie unifiée/Fil par interlocuteur.jpg",
+            "imageAlt": "Fil de conversation segmenté par type d'interlocuteur"
+          }
+        ],
+        "faqTitle": "Questions fréquentes",
+        "faqItems": [
+          {
+            "question": "Puis-je répondre aux messages Airbnb et Booking depuis Biloki ?",
+            "answer": "Oui, toutes vos conversations voyageurs remontent dans une interface unique, quelle que soit la plateforme d'origine."
+          },
+          {
+            "question": "Comment fonctionnent les templates de message ?",
+            "answer": "Vous créez des modèles réutilisables (confirmation, check-out, demande d'avis) avec des variables automatiques - nom du voyageur, dates, code WiFi - qui se remplissent toutes seules à l'envoi."
+          },
+          {
+            "question": "Puis-je automatiser l'envoi de certains messages ?",
+            "answer": "Oui, vous définissez des règles déclenchées par un événement (check-in, check-out, réservation confirmée), avec le canal d'envoi de votre choix et les logements concernés."
+          },
+          {
+            "question": "Puis-je échanger avec mes prestataires depuis la même messagerie ?",
+            "answer": "Oui, une conversation dédiée existe pour chaque intervenant (prestataire, gestionnaire), séparée du fil voyageur, pour coordonner le terrain sans mélanger les échanges."
+          },
+          {
+            "question": "Est-ce que je vois les infos du séjour pendant que je réponds ?",
+            "answer": "Oui, la fiche logement et les infos de séjour (dates, nombre de voyageurs, référence de réservation) s'affichent à côté de la conversation, sans avoir à les chercher ailleurs."
+          },
+          {
+            "question": "Puis-je gérer plusieurs logements avec les mêmes templates ?",
+            "answer": "Oui, chaque template ou règle peut être appliqué à un logement précis ou à l'ensemble de votre parc."
+          }
+        ]
+      },
+      "ownerInterface": {
+        "metadataTitle": "Interface propriétaires | Biloki",
+        "metadataDescription": "Chaque propriétaire consulte le détail de ses logements en autonomie.",
+        "badge": "Interface propriétaires",
+        "title": "Donnez de la visibilité",
+        "highlight": "à vos propriétaires",
+        "description": "Chaque proprio consulte le détail de ses logements en autonomie.",
+        "painPoints": [
+          "Accès en temps réel aux réservations, messages et statistiques de son logement",
+          "Le propriétaire peut modifier lui-même les prix et disponibilités, si vous le souhaitez",
+          "Zéro appel pour demander où en est son bien"
+        ],
+        "heroImageAlt": "Interface propriétaires Biloki",
+        "finalCtaTitle": "Une relation propriétaire plus fluide, sans charge opérationnelle en plus",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment offrir à chaque propriétaire une visibilité claire, tout en gardant la main sur votre organisation.",
+        "faqTitle": "Questions fréquentes",
+        "faqItems": [
+          {
+            "question": "Qu'est-ce que l'espace propriétaire Biloki ?",
+            "answer": "C'est un accès dédié où le propriétaire suit en temps réel les réservations, les revenus et l'activité de son bien, sans avoir à solliciter la conciergerie pour chaque information."
+          },
+          {
+            "question": "Le propriétaire peut-il voir ses réservations en direct ?",
+            "answer": "Oui. Le calendrier de son bien se met à jour automatiquement dès qu'une réservation arrive, quelle que soit la plateforme (Airbnb, Booking, Vrbo, Expedia)."
+          },
+          {
+            "question": "Comment le propriétaire suit-il ses revenus ?",
+            "answer": "Il retrouve un relevé clair de ses revenus, des commissions et des frais, avec un historique consultable à tout moment - fini les tableurs envoyés par email."
+          },
+          {
+            "question": "Un propriétaire avec plusieurs biens peut-il tout centraliser ?",
+            "answer": "Oui, tous ses biens sont regroupés dans un seul espace, avec une vue consolidée ou détaillée bien par bien."
+          },
+          {
+            "question": "Le propriétaire peut-il échanger avec la conciergerie directement ?",
+            "answer": "Oui, une messagerie intégrée permet de communiquer avec la conciergerie sans passer par email ou téléphone, avec un historique conservé."
+          },
+          {
+            "question": "L'accès propriétaire fonctionne-t-il sur mobile ?",
+            "answer": "Oui, l'espace propriétaire est accessible depuis un smartphone comme depuis un ordinateur, sans application à installer."
+          },
+          {
+            "question": "Que voit exactement le propriétaire vs la conciergerie ?",
+            "answer": "Le propriétaire a une vue en lecture sur les données qui le concernent (réservations, revenus, statistiques) ; la gestion opérationnelle (missions, accès, tarifs) reste du côté conciergerie."
+          },
+          {
+            "question": "Est-ce que ça demande une configuration compliquée pour la conciergerie ?",
+            "answer": "Non, l'accès propriétaire est activé automatiquement dès que le bien est ajouté sur Biloki - aucune manipulation supplémentaire."
+          }
+        ],
+        "ownerSplitTitle": "Donnez à vos propriétaires la visibilité qu'ils attendent.",
+        "ownerSplitDescription": "Un espace dédié où chaque propriétaire suit ses revenus, ses réservations et la gestion de son bien, sans vous solliciter à chaque question.",
+        "ownerSplitImageAlt": "Vue propriétaire des revenus, réservations et gestion du bien",
+        "ownerSplitCtaLabel": "Voir l'espace propriétaire →",
+        "ownerSplitPoints": [
+          {
+            "title": "Des revenus clairs, à jour en permanence",
+            "description": "Chaque propriétaire visualise ses revenus par réservation, ses commissions et le détail de chaque prestation, sans attendre un rapport mensuel."
+          },
+          {
+            "title": "Le planning de son bien, en direct",
+            "description": "Réservations à venir, taux d'occupation, disponibilités, messages et avis voyageurs : le propriétaire garde un œil sur son bien sans passer par vous. Il peut aussi consulter son calendrier de réservation et gérer lui-même ses tarifs et disponibilités, à votre place, si vous le souhaitez."
+          },
+          {
+            "title": "Une conciergerie plus efficace, un propriétaire plus serein",
+            "description": "Moins d'appels et de questions récurrentes pour vous, plus d'autonomie et de confiance pour lui."
+          }
+        ]
+      },
+      "additionalSales": {
+        "metadataTitle": "Ventes additionnelles | Biloki",
+        "metadataDescription": "Augmentez vos revenus avec une boutique intégrée à l’interface voyageurs et des paiements Stripe.",
+        "badge": "Ventes additionnelles",
+        "title": "Générez des revenus",
+        "highlight": "additionnels",
+          "description": "Boutique intégrée au guide voyageur, encaissement Stripe et suivi de marge en temps réel.",
+          "painPoints": [
+            "Catalogue de services prêt à l'emploi et personnalisable",
+            "Commande et paiement en ligne directement depuis le guide voyageur",
+            "Suivi clair des coûts, revenus et marges pour chaque service"
+          ],
+        "heroImageAlt": "Ventes additionnelles Biloki",
+        "finalCtaTitle": "Transformez chaque réservation en chiffre d'affaires additionnel",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki vous aide à proposer, encaisser et suivre vos ventes additionnelles depuis un seul outil.",
+        "faqTitle": "Questions fréquentes",
+        "faqItems": [
+          {
+            "question": "Qu’est-ce qu’une vente additionnelle exactement ?",
+            "answer": "C’est tout service proposé en complément de la nuitée : arrivée anticipée, départ tardif, ménage, transfert, petit-déjeuner, bien-être… Chaque service ajoute de la valeur au séjour et du revenu à votre structure."
+          },
+          {
+            "question": "Mes voyageurs paient-ils directement en ligne ?",
+            "answer": "Oui. Le voyageur commande et règle dans son espace dédié. Vous suivez les encaissements en temps réel, sans passer par des échanges manuels."
+          },
+          {
+            "question": "Comment sont calculés mes coûts et ma marge ?",
+            "answer": "Pour chaque service, vous enregistrez un prix TTC et un coût HT. Biloki calcule automatiquement la marge nette avant validation, afin que vous ne proposiez que des services rentables."
+          },
+          {
+            "question": "Puis-je créer mes propres services ?",
+            "answer": "Oui. Au-delà du catalogue prêt à l’emploi, vous pouvez créer des services sur mesure avec leur nom, description, tarif, catégorie et conditions."
+          },
+          {
+            "question": "Cela fonctionne-t-il avec toutes les réservations ?",
+            "answer": "Oui. Chaque réservation génère un guide voyageur, et vos voyageurs peuvent directement commander les services depuis leur espace dédié dans l'app."
+          },
+          {
+            "question": "Quand les services sont-ils proposés aux voyageurs ?",
+            "answer": "À chaque étape clé du parcours : confirmation, avant l’arrivée, pendant le séjour. Vous choisissez lesquels sont automatiques et lesquels restent manuels."
+          },
+          {
+            "question": "Cela ne va-t-il pas alourdir ma gestion quotidienne ?",
+            "answer": "Non, l’objectif est l’inverse. Les services clés en main, les commandes centralisées et les statuts automatiques limitent le travail opérationnel."
+          }
+        ]
+      },
+      "statistics": {
+        "metadataTitle": "Statistiques | Biloki",
+        "metadataDescription": "TO, ADR, RevPAR et KPI conciergerie suivis en temps réel.",
+        "badge": "Statistiques",
+        "title": "Toute la performance de votre activité, en un coup d'œil",
+        "highlight": "",
+        "description": "Revenus, taux d'occupation, réservations, annulations : pilotez votre conciergerie avec des chiffres fiables et à jour, sans tableur ni calcul manuel.",
+        "painPoints": [
+          "Revenus, occupation, réservations et annulations, en un seul endroit",
+          "Comparaison simple entre logements et plateformes",
+          "Historique complet, disponible à tout moment"
+        ],
+        "heroImageAlt": "Statistiques Biloki",
+        "splitTitle": "Visualisez la performance de chaque logement",
+        "splitDescription": "Comparez rapidement vos hébergements, vos revenus et vos réservations pour décider plus vite et mieux prioriser vos actions.",
+        "splitImageAlt": "Aperçu de la vue statistiques Biloki",
+        "splitCtaLabel": "Réserver une démo",
+        "splitPoints": [
+          {
+            "title": "Suivi en temps réel",
+            "description": "Vos indicateurs remontent automatiquement pour vous donner une lecture à jour de vos résultats."
+          },
+          {
+            "title": "Gestion centralisée des logements",
+            "description": "Tous vos hébergements sont regroupés dans un seul espace pour comparer leur performance."
+          }
+        ],
+        "split2Title": "Repérez rapidement ce qui mérite votre attention",
+        "split2Description": "Visualisez vos écarts de performance pour savoir où agir en priorité, sans parcourir des tableaux interminables.",
+        "split2ImageAlt": "Analyse détaillée des statistiques Biloki",
+        "split2CtaLabel": "Voir la démonstration",
+        "split2Points": [
+          {
+            "title": "Écarts de performance",
+            "description": "Identifiez en un coup d'œil les logements qui tirent vos résultats vers le haut ou vers le bas."
+          },
+          {
+            "title": "Décisions plus rapides",
+            "description": "Concentrez-vous immédiatement sur les actions les plus utiles pour votre parc."
+          }
+        ],
+        "finalCtaTitle": "Pilotez vos résultats avec une vision claire",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki vous aide à suivre vos revenus, vos logements et vos performances sans tableur ni approximation.",
+        "faqTitle": "Questions fréquentes sur les statistiques",
+        "faqItems": [
+          {
+            "question": "Quels indicateurs sont disponibles ?",
+            "answer": "Taux d'occupation, ADR, RevPAR, chiffre d'affaires réalisé, nombre de réservations, taux d'annulation, durée moyenne de séjour, nuits occupées, et répartition des nuits par plateforme - le tout consultable par logement, par propriétaire ou par plateforme."
+          },
+          {
+            "question": "Les données sont-elles mises à jour en temps réel ?",
+            "answer": "Oui, les statistiques reflètent automatiquement chaque nouvelle réservation, modification ou annulation, sans délai ni synchronisation manuelle."
+          },
+          {
+            "question": "Puis-je filtrer par logement ?",
+            "answer": "Oui, chaque indicateur peut être filtré par logement, par propriétaire, par plateforme ou par période."
+          },
+          {
+            "question": "Sur quelle période puis-je consulter mes statistiques ?",
+            "answer": "Vous pouvez choisir une période prédéfinie (12 derniers mois) ou personnaliser une plage de dates selon vos besoins d'analyse."
+          },
+          {
+            "question": "Comment savoir quel logement performe le mieux ?",
+            "answer": "Les statistiques affichent directement le logement le plus réservé et le meilleur taux d'occupation, avec un détail par bien pour comparer facilement leurs performances."
+          },
+          {
+            "question": "Puis-je exporter les données ?",
+            "answer": "Oui, vous pouvez exporter vos statistiques pour vos reportings internes ou vos échanges avec les propriétaires."
+          },
+          {
+            "question": "La conciergerie et le propriétaire voient-ils les mêmes chiffres ?",
+            "answer": "Le propriétaire retrouve les mêmes indicateurs, mais limités à son ou ses propres logements - il ne voit pas les données des autres biens gérés par la conciergerie."
+          }
+        ]
+      },
+      "reviews": {
+        "metadataTitle": "Avis | Biloki",
+        "metadataDescription": "Collecte et réponse aux avis automatisées pour piloter votre e-réputation.",
+        "badge": "Avis voyageurs",
+        "title": "Gérez vos",
+        "highlight": "avis",
+        "description": "Collecte et réponse aux avis automatisées.",
+        "heroImageAlt": "Gestion des avis Biloki"
+      },
+      "smartLocks": {
+        "metadataTitle": "Accès automatisés & serrures connectées | Biloki",
+        "metadataDescription": "Configurez le parcours d'accès de chaque logement et automatisez les codes voyageurs, prestataires et propriétaires avec Biloki.",
+        "badge": "Accès & serrures connectées",
+        "title": "Un parcours d'accès sur-mesure,",
+        "highlight": "pour chaque logement",
+        "description": "Digicode, boîte à clés, serrure connectée : configurez précisément comment chaque voyageur accède à son logement, et laissez Biloki gérer l'accès automatiquement.",
+        "painPoints": [
+          "Parcours d'accès étape par étape, configuré par logement",
+          "Serrures connectées Nuki et Igloohome intégrées",
+          "Codes automatiques pour voyageurs, prestataires et propriétaires"
+        ],
+        "heroImageAlt": "Interface accès et serrures connectées Biloki",
+        "finalCtaTitle": "Un parcours d'accès clair, pour chaque logement et chaque rôle",
+        "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki gère automatiquement tous les accès de vos logements.",
+        "locksSplitTitle": "Chaque accès, géré à sa juste mesure.",
+        "locksSplitDescription": "Du parcours d'arrivée aux codes prestataires, tout est configuré une fois et géré automatiquement ensuite.",
+        "locksSplitImageAlt": "Interface accès et serrures connectées Biloki",
+        "locksSplitCtaLabel": "Voir les intégrations →",
+        "locksSplitPoints": [
+          {
+            "title": "Chaque étape d'arrivée, expliquée clairement au voyageur",
+            "description": "Code du portail, emplacement de la boîte à clés, étage, digicode de l'immeuble : vous configurez chaque étape du parcours d'accès, avec photos ou vidéos à l'appui. Le voyageur les retrouve dans l'ordre, directement dans son guide.",
+            "bullets": [
+              "Étapes personnalisables par logement (portail, immeuble, porte...)",
+              "Photos et vidéos à l'appui pour chaque étape",
+              "Visible directement dans le guide voyageur"
+            ]
+          },
+          {
+            "title": "Vos prestataires, autonomes sur le terrain",
+            "description": "Ménage, maintenance, check-in : chaque mission assignée génère automatiquement le code d'accès nécessaire à la serrure connectée, valable uniquement pendant la durée de l'intervention.",
+            "bullets": [
+              "Code lié à la mission assignée",
+              "Accès limité à la période de l'intervention",
+              "Fini les échanges de clés ou les codes transmis à la main"
+            ]
+          },
+          {
+            "title": "Un accès permanent pour vous et vos propriétaires",
+            "description": "Pour les gestionnaires de la conciergerie et les propriétaires, un code permanent peut être créé pour un accès simple au logement à tout moment.",
+            "bullets": [
+              "Codes permanents pour les rôles de confiance",
+              "Gestion centralisée depuis un seul espace",
+              "Traçabilité de chaque code créé et de son bénéficiaire"
+            ]
+          }
+        ],
+        "faqTitle": "Questions fréquentes sur les accès et serrures connectées",
+        "faqItems": [
+          {
+            "question": "Comment fonctionne le parcours d'accès pour le voyageur ?",
+            "answer": "Vous configurez chaque étape (portail, immeuble, étage, porte) avec photos ou vidéos, et le voyageur les retrouve dans l'ordre directement dans son guide voyageur."
+          },
+          {
+            "question": "Le parcours d'accès nécessite-t-il une serrure connectée ?",
+            "answer": "Non, vous pouvez créer un parcours d'accès même sans serrure connectée (digicode, boîte à clés). La serrure connectée permet simplement d'automatiser la dernière étape."
+          },
+          {
+            "question": "Quelles serrures sont compatibles avec Biloki ?",
+            "answer": "Biloki se connecte directement aux serrures Nuki et Igloohome via leurs API officielles."
+          },
+          {
+            "question": "Le voyageur doit-il faire une demande pour recevoir son accès ?",
+            "answer": "Non, que ce soit un code affiché dans le parcours ou un accès via serrure connectée, tout est généré et transmis automatiquement dans son guide voyageur dès la réservation confirmée."
+          },
+          {
+            "question": "Que se passe-t-il si un prestataire n'a plus besoin d'accéder au logement ?",
+            "answer": "Le code lié à sa mission expire automatiquement à la fin de la période d'intervention prévue."
+          },
+          {
+            "question": "Puis-je donner un accès permanent à un propriétaire ?",
+            "answer": "Oui, un code permanent peut être créé pour un propriétaire ou un gestionnaire, selon les permissions que vous définissez."
+          },
+          {
+            "question": "Que se passe-t-il si la serrure se déconnecte ?",
+            "answer": "Le statut de connexion et le niveau de batterie sont visibles en temps réel, avec une option de synchronisation manuelle en cas de besoin."
+          }
+        ]
+      }
+    }
+  },
+  "featureSections": {
+    "additionalSalesBento": {
+      "badge": "Revenus additionnels",
+      "title": "Développer considérablement votre chiffre d'affaires",
+      "highlight": "",
+      "description": "Proposez des options utiles au bon moment et encaissez-les directement dans l'expérience voyageur.",
+      "cards": {
+        "shop": {
+          "title": "Un revenu qui s'ajoute à chaque réservation",
+          "value": "+18€",
+          "description": "de revenu additionnel en moyenne, par service vendu.",
+          "cta": "Voir le parcours →",
+          "pills": {
+            "1": {
+              "label": "Petit-déjeuner",
+              "amount": "+18 €"
+            },
+            "2": {
+              "label": "Arrivée anticipée",
+              "amount": "+25 €"
+            },
+            "3": {
+              "label": "Parking",
+              "amount": "+12 €"
+            }
+          }
+        },
+        "stripe": {
+          "title": "Paiement intégré",
+          "value": "100%",
+          "description": "des paiements encaissés automatiquement, sans relance.",
+          "cta": "Réserver une démo →",
+          "panel": {
+            "label": "Encaissements récents",
+            "status": "Payé",
+            "rows": {
+              "1": "Option linge premium",
+              "2": "Pack late check-out",
+              "3": "Accès spa privatif"
+            }
+          }
+        },
+        "automation": {
+          "title": "Un catalogue accessible en un clic",
+          "value": "1 onglet",
+          "description": "où le voyageur retrouve tous les services disponibles, triés par catégorie.",
+          "cta": "Activer les offres →",
+          "steps": {
+            "1": "Réservation confirmée",
+            "2": "Proposition adaptée au séjour",
+            "3": "Paiement et ajout automatiques"
+          }
+        },
+        "tracking": {
+          "title": "Une rentabilité lisible",
+          "value": "+450 €",
+          "description": "de revenu supplémentaire en moyenne, sur la base de 20 logements en gestion.",
+          "cta": "Voir les gains →",
+          "panel": {
+            "label": "Performances des ventes",
+            "metric": "+24 %",
+            "kpis": {
+              "1": {
+                "label": "Taux de conversion",
+                "value": "38 %"
+              },
+              "2": {
+                "label": "Panier moyen",
+                "value": "46 €"
+              },
+              "3": {
+                "label": "Revenu mensuel",
+                "value": "2,4 k€"
+              }
+            }
+          }
+        }
+      }
+    },
+    "additionalSalesScrollStory": {
+      "stepPrefix": "Étape",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel des ventes additionnelles",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Choisissez vos services",
+          "title": "Choisissez vos services",
+          "description": "Sélectionnez des modèles Biloki prêts à l'emploi (transfert, ménage, petit-déjeuner, massage...) ou créez vos propres offres sur mesure.",
+          "imageSrc": "/images/Section ventes additionnelles/Etape 1.png",
+          "imageAlt": "Configuration du catalogue de services"
+        },
+        {
+          "number": 2,
+          "label": "Fixez vos prix et conditions",
+          "title": "Fixez vos prix et conditions",
+          "description": "Définissez le tarif (par séjour, personne, jour ou unité), les règles de validation, les créneaux et les conditions de réservation.",
+          "imageSrc": "/images/Section ventes additionnelles/Etape 2.png",
+          "imageAlt": "Découverte et commande des services côté voyageur"
+        },
+        {
+          "number": 3,
+          "label": "Activez l'affichage voyageur",
+          "title": "Activez l'affichage voyageur",
+          "description": "Vos services apparaissent automatiquement dans le guide voyageur de chaque logement, au moment où le voyageur en a le plus besoin.",
+          "imageSrc": "/images/Section ventes additionnelles/Etape 4.png",
+          "imageAlt": "Suivi des commandes côté conciergerie"
+        },
+        {
+          "number": 4,
+          "label": "Vos voyageurs se réservent en ligne",
+          "title": "Vos voyageurs réservent en ligne",
+          "description": "Le voyageur consulte, choisit et paye directement depuis son guide. Vous êtes notifié en temps réel de chaque nouvelle commande.",
+          "imageSrc": "/images/Section ventes additionnelles/Etape 3.png",
+          "imageAlt": "Paiement en ligne sécurisé des ventes additionnelles"
+        },
+        {
+          "number": 5,
+          "label": "Validez et délivrez la prestation",
+          "title": "Validez et délivrez la prestation",
+          "description": "Validez manuellement ou automatiquement, assignez un prestataire si besoin, et suivez la marge générée dans votre tableau de bord.",
+          "imageSrc": "/images/Section ventes additionnelles/Etape 5.png",
+          "imageAlt": "Suivi financier des ventes additionnelles"
+        }
+      ]
+    },
+    "reservationsScrollStory": {
+      "stepPrefix": "Étape",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel des réservations",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Connexion",
+          "title": "Connectez vos canaux en quelques clics",
+          "description": "Airbnb, Booking, Vrbo, Expedia : une configuration guidée relie vos annonces à Biloki en quelques minutes, sans manipulation technique.",
+          "imageSrc": "/images/Page réservation/1.png",
+          "imageAlt": "Connexion des plateformes de réservation"
+        },
+        {
+          "number": 2,
+          "label": "Synchronisation",
+          "title": "Un calendrier toujours à jour, partout",
+          "description": "Disponibilités, arrivées et départs se synchronisent automatiquement sur toutes vos plateformes, en temps réel.",
+          "imageSrc": "/images/Page réservation/2.png",
+          "imageAlt": "Synchronisation automatique des disponibilités"
+        },
+        {
+          "number": 3,
+          "label": "Tarification",
+          "title": "Gérez vos tarifs et vos frais au même endroit",
+          "description": "Prix de base, prix week-end, frais de ménage, voyageurs supplémentaires : configurez tout une seule fois dans Biloki, ça se répercute automatiquement sur chaque plateforme connectée.",
+          "imageSrc": "/images/Page réservation/3.png",
+          "imageAlt": "Mise à jour des tarifs sur toutes les plateformes"
+        },
+        {
+          "number": 4,
+          "label": "Anti-doublon",
+          "title": "Zéro double réservation",
+          "description": "Dès qu'une résa est prise sur un canal, toutes les autres plateformes se bloquent instantanément. Vos calendriers restent fiables en permanence.",
+          "imageSrc": "/images/Page réservation/4.png",
+          "imageAlt": "Sécurisation du planning contre les doubles réservations"
+        },
+        {
+          "number": 5,
+          "label": "Extension",
+          "title": "Ajoutez de nouveaux canaux quand vous voulez",
+          "description": "Connectez de nouvelles plateformes à tout moment pour gagner en visibilité, avec la possibilité d'utiliser une connexion iCal pour les canaux plus spécifiques.",
+          "imageSrc": "/images/Page réservation/1.png",
+          "imageAlt": "Élargissement de la présence sur de nouveaux canaux"
+        }
+      ]
+    },
+    "unifiedMessagingScrollStory": {
+      "stepPrefix": "Étape",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel de la messagerie unifiée",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Messagerie unifiée",
+          "title": "Un seul fil, tous vos interlocuteurs",
+          "description": "Voyageurs, propriétaires, prestataires : chaque conversation est identifiée par son rôle, filtrable en un clic. Plus besoin de chercher qui a écrit quoi et depuis où.",
+          "imageSrc": "/images/modules/messaging.png",
+          "imageAlt": "Vue conciergerie avec toutes les conversations centralisées"
+        },
+        {
+          "number": 2,
+          "label": "Contexte instantané",
+          "title": "Le contexte, toujours sous les yeux",
+          "description": "Séjour, réservation, serrures connectées, ventes additionnelles, automatisations envoyées : toute l'information utile s'affiche à côté de la conversation, sans changer d'écran.",
+          "imageSrc": "/images/modules/channel-manager.png",
+          "imageAlt": "Configuration des règles d'automatisation des messages"
+        },
+        {
+          "number": 3,
+          "label": "Automatisations",
+          "title": "Configuration automatique des messages",
+          "description": "Confirmations, instructions WiFi, rappels de check-out : configurez une fois vos règles d'envoi, et les bons messages partent tout seuls au bon moment, sur le bon canal.",
+          "imageSrc": "/images/modules/Planning mission.png",
+          "imageAlt": "Informations essentielles envoyées automatiquement au voyageur"
+        },
+        {
+          "number": 4,
+          "label": "Coordination d'équipe",
+          "title": "Toute l'équipe connectée",
+          "description": "Conciergerie, prestataires, gestionnaires : chacun a sa conversation, personne ne se marche dessus, et l'information circule sans copier-coller.",
+          "imageSrc": "/images/Interface propriétaire/Tableau de bord.png",
+          "imageAlt": "Conversation attachée à la bonne réservation"
+        },
+        {
+          "number": 5,
+          "label": "Recherche rapide",
+          "title": "Retrouvez tout, en secondes",
+          "description": "Recherchez par voyageur, logement ou réservation, et filtrez vos échanges selon ce qui compte pour vous. Aucune conversation ne se perd.",
+          "imageSrc": "/images/modules/statistics.png",
+          "imageAlt": "Coordination des équipes internes après le séjour"
+        }
+      ]
+    },
+    "ownerInterfaceScrollStory": {
+      "title": "Un espace propriétaire clair, sans surcharger votre équipe.",
+      "description": "Réservations, missions, avis, messages : chaque propriétaire suit son bien en toute autonomie, avec exactement ce que vous choisissez de lui montrer.",
+      "showStepMetaPrefix": false,
+      "stepPrefix": "Section",
+      "ctaPrimary": "Découvrir l'espace propriétaire",
+      "backgroundAlt": "Fond visuel de l'espace propriétaire",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Un tableau de bord complet",
+          "title": "Tout son bien, en un coup d'œil",
+          "description": "Réservations, missions en cours, avis reçus, messages : le propriétaire retrouve l'essentiel de son activité depuis un tableau de bord unique.",
+          "imageSrc": "/images/Interface propriétaire/Tableau de bord.png",
+          "imageAlt": "Tableau de bord propriétaire centralisé"
+        },
+        {
+          "number": 2,
+          "label": "Des permissions sur-mesure",
+          "title": "Vous décidez ce qu'il voit",
+          "description": "Rôles et permissions configurables : vous choisissez les informations et actions accessibles à chaque propriétaire, selon votre relation avec lui.",
+          "imageSrc": "/images/Interface propriétaire/Rôles et permissions propriétaire.png",
+          "imageAlt": "Gestion des permissions propriétaires"
+        },
+        {
+          "number": 3,
+          "label": "Une tarification flexible",
+          "title": "La main sur ses prix, si vous le permettez",
+          "description": "En modèle hybride, le propriétaire peut ajuster lui-même ses tarifs, dans le cadre que vous définissez.",
+          "imageSrc": "/images/Interface propriétaire/Gestion des prix.png",
+          "imageAlt": "Ajustement des tarifs avec validation de la conciergerie"
+        },
+        {
+          "number": 4,
+          "label": "Connexion directe aux plateformes",
+          "title": "Il connecte, vous pilotez",
+          "description": "Le propriétaire relie lui-même ses comptes Airbnb, Booking et autres plateformes. Les données remontent automatiquement de votre côté pour une gestion centralisée.",
+          "imageSrc": "/images/Interface propriétaire/Connexion propriétaire.png",
+          "imageAlt": "Connexion propriétaire aux plateformes OTA"
+        },
+        {
+          "number": 5,
+          "label": "Onboarding sans friction",
+          "title": "Un compte créé sans démarche pour lui",
+          "description": "Dès qu'un hébergement est ajouté et associé à son propriétaire, son accès est prêt : aucune inscription manuelle de sa part.",
+          "imageSrc": "/images/Interface propriétaire/Compte proprio crée.png",
+          "imageAlt": "Création automatique du compte propriétaire"
+        }
+      ]
+    },
+    "smartLocksScrollStory": {
+      "stepPrefix": "Étape",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel des serrures connectées",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Connexion",
+          "title": "Connectez vos serrures",
+          "description": "Ajoutez vos serrures Nuki ou Igloohome depuis la Marketplace, en suivant la configuration guidée.",
+          "imageSrc": "/images/serrures/serrure-connectee.png",
+          "imageAlt": "Connexion serrure connectée à Biloki"
+        },
+        {
+          "number": 2,
+          "label": "Configuration",
+          "title": "Associez la serrure au logement",
+          "description": "Reliez chaque serrure connectée à son logement, pour que Biloki sache quel accès gérer où.",
+          "imageSrc": "/images/modules/locks.png",
+          "imageAlt": "Génération automatique du code d'accès"
+        },
+        {
+          "number": 3,
+          "label": "Parcours d'accès",
+          "title": "Créez votre parcours d'accès",
+          "description": "Définissez chaque étape d'arrivée et associez-y vos serrures : le parcours est visible dans le guide voyageur et prêt à être transmis automatiquement.",
+          "imageSrc": "/images/serrures/ouverture-porte.png",
+          "imageAlt": "Parcours d'accès du voyageur"
+        },
+        {
+          "number": 4,
+          "label": "Code voyageur",
+          "title": "Chaque voyageur reçoit son code dans son guide",
+          "description": "Le code est créé automatiquement à chaque réservation, puis envoyé dans le guide voyageur avant l'arrivée.",
+          "imageSrc": "/images/serrures/Distance.png",
+          "imageAlt": "Code d'accès du voyageur dans le guide"
+        },
+        {
+          "number": 5,
+          "label": "Historique",
+          "title": "Une vue d'ensemble de tous vos accès",
+          "description": "Retrouvez dans vos paramètres l'historique complet des codes générés, par logement et par bénéficiaire.",
+          "imageSrc": "/images/serrures/Distance BC.png",
+          "imageAlt": "Historique des accès par logement"
+        }
+      ]
+    },
+    "scrollStory": {
+      "stepPrefix": "Étape",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel de la narration",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Configuration",
+          "title": "Paramétrez vos missions une seule fois",
+          "description": "Définissez vos types de missions, vos checklists et vos prestataires attitrés par logement. Biloki s'appuie ensuite dessus pour tout automatiser.",
+          "imageSrc": "/images/Page prestataire/Capture d’écran 2026-07-15 à 18.47.57.png",
+          "imageAlt": "Configuration initiale des missions"
+        },
+        {
+          "number": 2,
+          "label": "Déclenchement automatique",
+          "title": "Chaque réservation crée ses missions",
+          "description": "CI, CO, M et B indiquent simplement check-in, check-out, ménage et blanchisserie. Les couleurs montrent en un coup d'œil si la mission est en attente, acceptée, validée, terminée ou annulée.",
+          "imageSrc": "/images/Page prestataire/Capture d’écran 2026-07-15 à 18.51.03.png",
+          "imageAlt": "Création automatique des missions"
+        },
+        {
+          "number": 3,
+          "label": "Assignation",
+          "title": "La bonne mission au bon prestataire",
+          "description": "Chaque tâche part automatiquement vers l'intervenant attitré. Chacun reçoit ce qui le concerne, sans coup de fil ni relance.",
+          "imageSrc": "/images/Page prestataire/Capture d’écran 2026-07-16 à 09.39.31.png",
+          "imageAlt": "Assignation automatique des missions",
+          "imageClassName": "object-contain bg-white"
+        },
+        {
+          "number": 4,
+          "label": "Exécution terrain",
+          "title": "Vos équipes savent quoi faire, où et quand",
+          "description": "Le prestataire reçoit sa mission sur son espace mobile : adresse, horaire, checklist, consignes d'accès. Il coche au fur et à mesure.",
+          "imageSrc": "/images/Page prestataire/Capture d’écran 2026-07-15 à 19.02.01.png",
+          "imageAlt": "Exécution des missions sur le terrain"
+        },
+        {
+          "number": 5,
+          "label": "Suivi & rapport",
+          "title": "Suivez tout et gardez une trace",
+          "description": "À faire, en cours, terminé, en retard : vous pilotez toute l'exploitation depuis un seul écran. Chaque intervention est consignée dans un rapport de mission consultable à tout moment.",
+          "imageSrc": "/images/Page prestataire/Capture d’écran 2026-07-15 à 19.25.19.png",
+          "imageAlt": "Suivi et rapport des missions",
+          "imageClassName": "object-contain bg-white"
+        }
+      ]
+    },
+    "statisticsScrollStory": {
+      "title": "Pilotez la performance de votre parc locatif",
+        "description": "Des indicateurs clairs et actionnables pour comprendre vos revenus, votre occupation et la satisfaction de vos voyageurs, sans tableur, sans approximation.",
+        "showStepMetaPrefix": false,
+      "stepPrefix": "Bloc",
+      "ctaPrimary": "Essayer gratuitement",
+      "backgroundAlt": "Fond visuel des statistiques",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Vue d'ensemble",
+          "title": "Tous vos indicateurs clés, réunis au même endroit",
+          "description": "Taux d'occupation, ADR, RevPAR, chiffre d'affaires, réservations et annulations : tout votre parc en un coup d'œil, filtrable par période, logement, propriétaire ou plateforme.",
+          "imageSrc": "/images/Page statistiques/Vue d'ensemble.png",
+          "imageAlt": "Tableau de bord des performances Biloki"
+        },
+        {
+          "number": 2,
+          "label": "Revenus",
+          "title": "Vos revenus, détaillés jusqu'au logement",
+          "description": "Suivez le chiffre d'affaires réservé, son évolution mois par mois, et sa répartition par logement — pour identifier immédiatement vos biens les plus performants.",
+          "imageSrc": "/images/Page statistiques/Revenu.png",
+          "imageAlt": "Données consolidées par logement"
+        },
+        {
+          "number": 3,
+          "label": "Taux d'occupation",
+          "title": "Sachez exactement où sont vos marges de progression",
+          "description": "Taux d'occupation global, meilleur logement, évolution dans le temps et détail nuits vendues/disponibles par bien : de quoi ajuster votre stratégie tarifaire en connaissance de cause.",
+          "imageSrc": "/images/Page statistiques/Taux d'occupation.png",
+          "imageAlt": "Analyse temporelle des statistiques"
+        },
+        {
+          "number": 4,
+          "label": "Réservations & annulations",
+          "title": "Anticipez votre activité, plateforme par plateforme",
+          "description": "Nombre de réservations créées, logement le plus réservé, taux et volume d'annulation par plateforme et par logement — pour repérer les tendances avant qu'elles ne deviennent des problèmes.",
+          "imageSrc": "/images/Page statistiques/Antiicper votre activité.png",
+          "imageAlt": "Répartition des sources de réservation"
+        },
+        {
+          "number": 5,
+          "label": "Répartition par plateforme",
+          "title": "Airbnb, Booking.com : sachez d'où vient votre activité",
+          "description": "Visualisez la répartition de vos nuits réservées par plateforme, pour orienter vos efforts commerciaux et votre stratégie de distribution.",
+          "imageSrc": "/images/Page statistiques/Nuitée par plateforme.png",
+          "imageAlt": "Satisfaction voyageur et avis"
+        }
+      ]
+    },
+    "statisticsPointerHighlight": {
+      "centralize": {
+        "imageAlt": "Tableau de bord des performances locatives",
+        "titleBefore": "Centralisez",
+        "highlighted": "vos KPI clés",
+        "titleAfter": "dans une seule vue.",
+        "description": "Occupation, ADR, RevPAR, revenus et notes voyageurs remontent dans un tableau de bord clair pour décider plus vite."
+      },
+      "automate": {
+        "imageAlt": "Comparaison de la rentabilité par logement",
+        "titleBefore": "Comparez",
+        "highlighted": "chaque logement",
+        "titleAfter": "sans effort.",
+        "description": "Vous repérez immédiatement les hébergements les plus performants et ceux qui demandent une attention particulière."
+      },
+      "visibility": {
+        "imageAlt": "Suivi temporel des statistiques",
+        "titleBefore": "Suivez",
+        "highlighted": "les tendances",
+        "titleAfter": "dans le temps.",
+        "description": "Analyse mensuelle, annuelle ou personnalisée : vos résultats évoluent de façon lisible pour ajuster votre stratégie."
+      }
+    },
+    "pointerHighlight": {
+      "centralize": {
+        "imageAlt": "Voyageur accompagné dans son guide",
+        "titleBefore": "Une mission créée, assignée,",
+        "highlighted": "prête",
+        "titleAfter": "sans que vous leviez le doigt.",
+        "description": "À chaque réservation, les missions de ménage et de check-in se génèrent automatiquement et sont assignées au bon prestataire. Vous ne planifiez plus rien à la main."
+      },
+      "automate": {
+        "imageAlt": "Coordination fluide des équipes terrain",
+        "titleBefore": "Vos missions s'exécutent,",
+        "highlighted": "vous n'avez plus à courir derrière.",
+        "titleAfter": "",
+        "description": "Chaque prestataire voit ses missions du jour sur son espace dédié. Vous coordonnez une conciergerie entière sans y passer vos journées au téléphone."
+      },
+      "visibility": {
+        "imageAlt": "Preuve d'exécution et suivi des missions",
+        "titleBefore": "La preuve de chaque mission",
+        "highlighted": "arrive directement chez vous.",
+        "titleAfter": "",
+        "description": "Checklist validée, photos horodatées : chaque mission terminée vous arrive sous forme de rapport clair. Vous n'avez plus à demander confirmation, la preuve est déjà là."
+      }
+    },
+    "reservationsPointerHighlight": {
+      "centralize": {
+        "imageAlt": "Connexion Airbnb et Booking.com à Biloki",
+        "titleBefore": "Reliez Airbnb, Booking.com et vos autres",
+        "highlighted": "plateformes",
+        "titleAfter": " en quelques minutes.",
+        "description": "Via une configuration guidée, tous vos canaux de distribution se connectent à Biloki rapidement, sans compétence technique requise."
+      },
+      "automate": {
+        "imageAlt": "Zéro risque de double réservation",
+        "titleBefore": "Dès qu'une réservation arrive,",
+        "highlighted": "tous vos canaux",
+        "titleAfter": " sont bloqués instantanément.",
+        "description": "Disponibilités, tarifs et réservations se synchronisent en temps réel sur toutes vos plateformes. Zéro risque de chevauchement."
+      },
+      "visibility": {
+        "imageAlt": "Mise à jour des tarifs sur toutes les plateformes",
+        "titleBefore": "Modifiez un prix à un seul endroit,",
+        "highlighted": "il se met à jour",
+        "titleAfter": " partout.",
+        "description": "Ajustez vos tarifs depuis Biloki et la mise à jour se propage instantanément sur tous vos canaux, sans repasser par chaque plateforme."
+      }
+    },
+    "additionalSalesPointerHighlight": {
+      "centralize": {
+        "imageAlt": "Services additionnels proposés au bon moment",
+        "titleBefore": "Proposez les",
+        "highlighted": "bons services",
+        "titleAfter": "à chaque séjour.",
+        "description": "Petit-déjeuner, arrivée anticipée, parking ou ménage: vos offres apparaissent au bon moment dans l'espace voyageur."
+      },
+      "automate": {
+        "imageAlt": "Paiement en ligne sans friction",
+        "titleBefore": "Encaissez",
+        "highlighted": "sans friction",
+        "titleAfter": ".",
+        "description": "Le voyageur règle en ligne via Stripe et la commande remonte automatiquement dans votre gestion, sans relance manuelle."
+      },
+      "visibility": {
+        "imageAlt": "Suivi de marge par service vendu",
+        "titleBefore": "Gardez une",
+        "highlighted": "vision claire",
+        "titleAfter": "de votre marge.",
+        "description": "Prix TTC, coût HT, statut de commande et revenu généré: vous suivez la performance de chaque service en un coup d'œil."
+      }
+    },
+    "smartLocksPointerHighlight": {
+      "centralize": {
+        "imageAlt": "Configuration du parcours d'accès",
+        "titleBefore": "Configurez chaque",
+        "highlighted": "accès",
+        "titleAfter": "une seule fois.",
+        "description": "Digicode, boîte à clés ou serrure connectée : vous définissez le parcours d'entrée par logement, puis Biloki le réutilise automatiquement."
+      },
+      "automate": {
+        "imageAlt": "Génération automatique des codes d'accès",
+        "titleBefore": "Les codes se",
+        "highlighted": "génèrent automatiquement",
+        "titleAfter": "au bon moment.",
+        "description": "Voyageurs, prestataires ou propriétaires reçoivent le bon accès selon leur rôle et la période prévue, sans intervention manuelle."
+      },
+      "visibility": {
+        "imageAlt": "Historique des accès générés",
+        "titleBefore": "Gardez un",
+        "highlighted": "historique clair",
+        "titleAfter": "de chaque accès.",
+        "description": "Vous retrouvez chaque code créé, son bénéficiaire et sa période de validité depuis un seul espace."
+      }
+    },
+    "ownerInterfacePointerHighlight": {
+      "centralize": {
+        "imageAlt": "Transparence des revenus propriétaire",
+        "titleBefore": "Offrez des",
+        "highlighted": "revenus lisibles",
+        "titleAfter": "en temps réel.",
+        "description": "Chaque propriétaire suit ses revenus, commissions et détails par réservation sans attendre vos reportings manuels."
+      },
+      "automate": {
+        "imageAlt": "Calendrier propriétaire à jour",
+        "titleBefore": "Son",
+        "highlighted": "calendrier",
+        "titleAfter": "toujours à jour.",
+        "description": "Disponibilités, réservations à venir et occupation sont visibles en direct, sans passer par votre équipe."
+      },
+      "visibility": {
+        "imageAlt": "Moins de sollicitations côté conciergerie",
+        "titleBefore": "Moins de",
+        "highlighted": "sollicitations",
+        "titleAfter": ", plus de confiance.",
+        "description": "Moins d'appels récurrents pour vous, plus d'autonomie pour le propriétaire et une relation plus sereine au quotidien."
+      }
+    }
+  },
+  "travelerInterfacePage": {
+    "metadataTitle": "Interface voyageurs | Biloki",
+    "metadataDescription": "Accueillez vos voyageurs automatiquement avec une interface premium, autonome et disponible 24/7.",
+    "title": "Accueillez vos voyageurs,",
+    "highlight": "sans y penser",
+    "description": "Une interface unique pour le guide digital, les accès connectés et les ventes additionnelles, automatisée à chaque réservation.",
+    "heroImageAlt": "Aperçu iPhone de la page voyageur",
+    "primaryCtaLabel": "Réserver une démo",
+    "secondaryCtaLabel": "Essai gratuit",
+    "kpis": [
+      {
+        "value": "24/7",
+        "label": "Assistant disponible"
+      },
+      {
+        "value": "1 clic",
+        "label": "Accès aux infos clés"
+      },
+      {
+        "value": "0",
+        "label": "Envoi manuel de livret"
+      },
+      {
+        "value": "+",
+        "label": "Revenus additionnels"
+      }
+    ],
+    "painTitle": "Ce qui te ralentit aujourd'hui",
+    "painDescription": "Quand l'accueil voyageur repose sur des messages manuels, l'expérience devient inégale et chronophage pour l'équipe.",
+    "painPoints": [
+      "Guide voyageur envoyé automatiquement à chaque réservation",
+      "Accès aux serrures connectées généré sans action manuelle",
+      "Informations centralisées, fini le WhatsApp et les PDF éparpillés"
+    ],
+    "benefitsTitle": "Ce que Biloki change concrètement",
+    "benefits": [
+      {
+        "title": "Guide digital envoyé automatiquement",
+        "description": "Chaque réservation déclenche un parcours voyageur clair, sans action manuelle."
+      },
+      {
+        "title": "Informations utiles accessibles à tout moment",
+        "description": "Wifi, accès, règles, recommandations et contacts sont centralisés au bon endroit."
+      },
+      {
+        "title": "Expérience plus fluide, plus premium",
+        "description": "Le voyageur gagne en autonomie pendant que votre équipe réduit les sollicitations."
+      }
+    ],
+    "stepsTitle": "Comment ça fonctionne",
+    "steps": [
+      {
+        "title": "Une réservation déclenche le parcours",
+        "description": "Les bonnes informations sont préparées automatiquement selon le logement et le séjour."
+      },
+      {
+        "title": "Le voyageur accède à son interface",
+        "description": "Il retrouve ses accès, consignes, recommandations et messages sans changer d'outil."
+      },
+      {
+        "title": "L'expérience reste fluide jusqu'au départ",
+        "description": "Moins de questions répétitives, plus d'autonomie, et davantage d'opportunités de satisfaction."
+      }
+    ],
+    "finalCtaTitle": "Offrez une expérience voyageur sans friction",
+    "finalCtaDescription": "Réservez une démo personnalisée et découvrez comment Biloki automatise l'accueil, les informations clés et l'expérience sur place.",
+    "faqTitle": "Vous avez encore des questions ?",
+    "faqItems": [
+      {
+        "question": "Le voyageur doit-il télécharger une application ?",
+        "answer": "Non. Le voyageur accède à son guide directement depuis un lien web, sans téléchargement ni création de compte."
+      },
+      {
+        "question": "Comment le voyageur reçoit-il son guide ?",
+        "answer": "Le lien est envoyé automatiquement via la messagerie unifiée, directement sur la plateforme de réservation du voyageur (Airbnb, Booking, Vrbo, Expedia). Il lui suffit de cliquer sur le lien reçu dans sa conversation OTA pour accéder immédiatement à son guide voyageur."
+      },
+      {
+        "question": "Le guide fonctionne-t-il sans connexion internet ?",
+        "answer": "Les informations essentielles (code d'accès, adresse, contact) restent consultables même avec une connexion limitée."
+      },
+      {
+        "question": "Comment le voyageur accède-t-il au logement avec une serrure connectée ?",
+        "answer": "Pour les serrures Nuki et Igloohome, un code d'accès est généré automatiquement à partir de la réservation et transmis directement dans le guide voyageur."
+      },
+      {
+        "question": "Que se passe-t-il si le voyageur perd son code ?",
+        "answer": "Le code reste disponible à tout moment dans son espace voyageur, sans avoir à recontacter la conciergerie."
+      },
+      {
+        "question": "Le guide voyageur est-il disponible en plusieurs langues ?",
+        "answer": "Oui, l'interface s'adapte automatiquement à la langue du voyageur, quelle que soit la plateforme de réservation (Airbnb, Booking, Vrbo, Expedia)."
+      },
+      {
+        "question": "Comment le voyageur règle-t-il les ventes additionnelles ?",
+        "answer": "Le paiement se fait en ligne via Stripe, de façon sécurisée, directement depuis le guide."
+      },
+      {
+        "question": "Le voyageur peut-il contacter quelqu'un en cas de problème ?",
+        "answer": "Oui, il peut joindre la conciergerie ou le prestataire concerné directement depuis l'interface."
+      }
+    ],
+    "appleCarousel": {
+      "heading": "L'expérience voyageur, pas à pas.",
+      "description": "Faites glisser les cartes pour visualiser comment Biloki automatise l'accueil, simplifie le séjour et renforce la satisfaction des voyageurs.",
+      "cards": {
+        "beforeArrival": {
+          "category": "Avant l'arrivée",
+          "title": "Un livret digital envoyé automatiquement",
+          "lead": "Dès la réservation confirmée, le voyageur reçoit ses informations utiles sans action manuelle.",
+          "body": "Check-in, accès, règles du logement et recommandations locales sont centralisés dans une interface claire."
+        },
+        "duringStay": {
+          "category": "Pendant le séjour",
+          "title": "Toutes les infos clés au bon moment",
+          "lead": "Wifi, horaires, contacts et consignes restent accessibles en continu.",
+          "body": "Le voyageur trouve les réponses sans devoir relancer l'équipe et l'expérience devient plus fluide."
+        },
+        "additionalSales": {
+          "category": "Revenus additionnels",
+          "title": "Mettez en avant vos services complémentaires",
+          "lead": "Proposez au bon moment des services utiles comme un check-in anticipé, un accueil premium ou des attentions locales.",
+          "body": "L'interface devient un vrai levier de satisfaction et de revenus supplémentaires."
+        },
+        "satisfaction": {
+          "category": "Satisfaction",
+          "title": "Une expérience plus premium et autonome",
+          "lead": "Moins de demandes répétitives, plus d'autonomie pour le voyageur.",
+          "body": "Votre équipe se concentre sur les situations à forte valeur pendant que l'accueil tourne de façon fluide."
+        }
+      }
+    },
+    "heroScroll": {
+      "eyebrow": "Interface voyageurs",
+      "title": "Une expérience voyageur",
+      "highlight": "autonome de l'arrivée au départ",
+      "description": "Faites défiler pour découvrir comment Biloki centralise les informations utiles, fluidifie le séjour et réduit les sollicitations de votre équipe.",
+      "imageAlt": "Interface voyageur Biloki"
     }
   }
 }

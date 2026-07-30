@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import RelatedPages from '@/components/ui/RelatedPages';
 import { trackDemoClick } from '@/lib/tracking';
 
@@ -35,7 +36,7 @@ export default function ReserverDemoContent() {
   };
 
   useEffect(() => {
-    // Charger le script Calendly seulement si le formulaire est soumis
+    // Load Calendly script only after form submission.
     if (showCalendly) {
       const script = document.createElement('script');
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
@@ -72,7 +73,7 @@ export default function ReserverDemoContent() {
       // Track demo booking submission
       trackDemoClick('demo_page');
     } catch (error) {
-      console.error('Erreur HubSpot:', error);
+      console.error(t('errors.hubspot'), error);
     }
     setShowCalendly(true);
   };
@@ -80,18 +81,13 @@ export default function ReserverDemoContent() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Logo */}
-        <div className="flex justify-center mb-8">
-          <img src="/logos/biloki-logo-full.svg" alt="Biloki" className="h-16 md:h-20" />
-        </div>
-
         {/* Back button */}
-        <a href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
+        <Link href={`/${locale}`} className="mt-24 flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold md:mt-24 lg:mt-28">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
           {common('back')}
-        </a>
+        </Link>
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -159,7 +155,7 @@ export default function ReserverDemoContent() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">{t('yourInfo')}</h3>
                 
-                {/* Email + Langue */}
+                {/* Email + language */}
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -189,10 +185,10 @@ export default function ReserverDemoContent() {
                       className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
                     >
                       <option value="">{t('form.select')}</option>
-                      <option value="fr">Francais</option>
-                      <option value="en">English</option>
-                      <option value="es">Espanol</option>
-                      <option value="pt">Portugues</option>
+                      <option value="fr">{t('form.languages.fr')}</option>
+                      <option value="en">{t('form.languages.en')}</option>
+                      <option value="es">{t('form.languages.es')}</option>
+                      <option value="pt">{t('form.languages.pt')}</option>
                     </select>
                   </div>
                 </div>
@@ -213,7 +209,7 @@ export default function ReserverDemoContent() {
                     >
                       <option value="">{t('form.select')}</option>
                       <option value="gestionnaire">{t('form.manager')}</option>
-                      <option value="proprietaire">{t('form.owner')}</option>
+                      <option value="propriétaire">{t('form.owner')}</option>
                       <option value="autre">{t('form.other')}</option>
                     </select>
                   </div>
@@ -272,7 +268,7 @@ export default function ReserverDemoContent() {
               description: relatedT('trial.description')
             },
             {
-              href: `/${locale}/fonctionnalites/pms`,
+              href: `/${locale}/fonctionnalites/reservations`,
               title: relatedT('pms.title'),
               description: relatedT('pms.description')
             },
@@ -288,8 +284,8 @@ export default function ReserverDemoContent() {
             },
             {
               href: `/${locale}/equipe`,
-              title: "Notre équipe",
-              description: "Découvrez les personnes derrière Biloki"
+              title: relatedT('team.title'),
+              description: relatedT('team.description')
             }
           ]}
           className="mt-16"

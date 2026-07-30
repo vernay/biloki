@@ -12,7 +12,7 @@ interface DemoButtonProps {
 export default function DemoButton({
   href,
   children,
-  className = 'bg-primary hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all',
+  className = 'canva-glass-cta text-primary font-bold py-3 px-6 rounded-lg transition-all',
   location = 'unknown',
   onClick
 }: DemoButtonProps) {

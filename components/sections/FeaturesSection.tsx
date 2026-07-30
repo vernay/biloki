@@ -65,10 +65,10 @@ const iconMap: { [key: string]: ReactNode } = {
 
 const featureLinks: Record<string, string> = {
   'channel-manager': '/fonctionnalites/channel-manager',
-  pms: '/fonctionnalites/pms',
-  serrures: '/fonctionnalites/serrures-connectees',
-  interfaces: '/fonctionnalites/4-interfaces',
-  'guide-digital': '/fonctionnalites/4-interfaces#locataire',
+  pms: '/fonctionnalites/reservations',
+  serrures: '/fonctionnalites/interface-proprietaires',
+  interfaces: '/fonctionnalites/interface-proprietaires',
+  'guide-digital': '/fonctionnalites/interface-voyageurs',
 };
 
 export default function FeaturesSection() {

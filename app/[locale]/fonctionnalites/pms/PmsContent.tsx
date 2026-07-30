@@ -33,11 +33,11 @@ export default function PmsContent() {
   
   // CTA links pour chaque section
   const sectionLinks: Record<string, { href: string; label: string }> = {
-    reservations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.reservations') },
+    reservations: { href: `/${locale}/fonctionnalites/interface-proprietaires`, label: t('ctaLabels.reservations') },
     channelManager: { href: `/${locale}/fonctionnalites/channel-manager`, label: t('ctaLabels.channelManager') },
-    operations: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.operations') },
-    communication: { href: `/${locale}/fonctionnalites/4-interfaces`, label: t('ctaLabels.communication') },
-    access: { href: `/${locale}/fonctionnalites/serrures-connectees`, label: t('ctaLabels.access') },
+    operations: { href: `/${locale}/fonctionnalites/interface-proprietaires`, label: t('ctaLabels.operations') },
+    communication: { href: `/${locale}/fonctionnalites/interface-proprietaires`, label: t('ctaLabels.communication') },
+    access: { href: `/${locale}/fonctionnalites/interface-proprietaires`, label: t('ctaLabels.access') },
     reporting: { href: `/${locale}/tarifs`, label: t('ctaLabels.reporting') },
     marketplaceApi: { href: `/${locale}/fonctionnalites/marketplace-api`, label: t('ctaLabels.marketplaceApi') }
   };

@@ -11,9 +11,9 @@ import { trackCalculatorUse } from "@/lib/tracking";
 export default function PricingCalculator() {
   const tCommon = useTranslations("common");
   const t = useTranslations("pricingCalculator");
-  const [dwellings, setDwellings] = useState(5);
-  const [dwellingsInput, setDwellingsInput] = useState("5");
-  const [billingCycle, setBillingCycle] = useState<BillingPeriod>("monthly");
+  const [dwellings, setDwellings] = useState(1);
+  const [dwellingsInput, setDwellingsInput] = useState("1");
+  const [billingCycle, setBillingCycle] = useState<BillingPeriod>("annual");
   const [isParticulier, setIsParticulier] = useState(false);
   const [hasTrackedInitialLoad, setHasTrackedInitialLoad] = useState(false);
 
@@ -86,22 +86,32 @@ export default function PricingCalculator() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-biloki-blue/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative max-w-4xl mx-auto w-full px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 bg-biloki-blue text-white font-semibold text-sm rounded-full mb-4">
-            {t("title")}
-          </span>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4 leading-tight">
-            {t("subtitle")}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t("description")}
-          </p>
-        </div>
+      <div className="relative max-w-7xl mx-auto w-full px-6">
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-10 items-start">
+          <div className="rounded-3xl border border-gray-200/60 bg-white/90 p-8 md:p-10 shadow-xl lg:sticky lg:top-24">
+            <span className="inline-block px-4 py-1.5 bg-biloki-blue text-white font-semibold text-sm rounded-full mb-4">
+              {t("title")}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              {t("subtitle")}
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              {t("description")}
+            </p>
 
-        {/* Calculateur principal */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50">
+            <div className="rounded-2xl border border-gray-200/70 bg-white/80 p-2 shadow-sm">
+              <img
+                src="/images/Pricing%20calculator/jakub-zerdzicki-4rTXOMv28VA-unsplash.jpg"
+                alt={t('illustrationAlt')}
+                className="h-56 w-full rounded-xl object-cover md:h-72"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+
+          {/* Calculateur principal */}
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50">
           {/* Toggle Mensuel/Annuel */}
           <div className="px-8 md:px-12 py-8 border-b border-gray-200/50 bg-primary">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -179,7 +189,7 @@ export default function PricingCalculator() {
               {/* Input + labels */}
               <div className="grid grid-cols-3 gap-3 mb-4">
                 <div className="text-center">
-                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Min</p>
+                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">{t('min')}</p>
                   <p className="text-xl font-bold text-gray-900">1</p>
                 </div>
                 <div className="flex justify-center">
@@ -197,7 +207,7 @@ export default function PricingCalculator() {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Max</p>
+                  <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">{t('max')}</p>
                   <p className="text-xl font-bold text-gray-900">200+</p>
                 </div>
               </div>
@@ -245,59 +255,29 @@ export default function PricingCalculator() {
               <div className="h-0.5 bg-gradient-to-r from-transparent via-gray-200 to-transparent my-12"></div>
 
               {/* Affichage des prix */}
-              <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-                {/* Total mensuel */}
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t("totalPerMonth")} ({isParticulier ? t("includingVat") : t("excludingVat")})
-                  </p>
-                  <div className="space-y-2">
-                    {isCustomPricing ? (
-                      <>
-                        <p className="text-4xl md:text-5xl font-black text-primary">
-                          {t("customQuote")}
-                        </p>
-                        <p className="text-sm text-gray-600">{t("customPricing")}</p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-4xl md:text-5xl font-black text-primary">
-                          {totalMonthlyDisplay?.toFixed(2)}€
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}
-                        </p>
-                        <p className="text-xs text-gray-500 pt-2">{t("monthlyBilling")}</p>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                {/* Total annuel */}
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t("annualTotal")} ({isParticulier ? t("includingVat") : t("excludingVat")})
-                  </p>
-                  <div className="space-y-2">
-                    {isCustomPricing ? (
-                      <>
-                        <p className="text-4xl md:text-5xl font-black text-primary">
-                          {t("customQuote")}
-                        </p>
-                        <p className="text-sm text-gray-600">{dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}</p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-4xl md:text-5xl font-black text-primary">
-                          {totalAnnualDisplay?.toFixed(2)}€
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}
-                        </p>
-                        <p className="text-xs text-gray-500 pt-2">{t("annualBilling", { percent: ANNUAL_DISCOUNT * 100 })}</p>
-                      </>
-                    )}
-                  </div>
+              <div className="text-center">
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
+                  {billingCycle === "annual" ? t("totalPerMonth") + " (facturé annuellement)" : t("totalPerMonth")} ({isParticulier ? t("includingVat") : t("excludingVat")})
+                </p>
+                <div className="space-y-2">
+                  {isCustomPricing ? (
+                    <>
+                      <p className="text-4xl md:text-5xl font-black text-primary">
+                        {t("customQuote")}
+                      </p>
+                      <p className="text-sm text-gray-600">{t("customPricing")}</p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-4xl md:text-5xl font-black text-primary">
+                        {totalMonthlyDisplay?.toFixed(2)}€
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {dwellings} {dwellings > 1 ? tCommon("properties") : tCommon("property")}
+                      </p>
+                      <p className="text-xs text-gray-500 pt-2">{billingCycle === "annual" ? t("annualBilling", { percent: ANNUAL_DISCOUNT * 100 }) : t("monthlyBilling")}</p>
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -307,7 +287,7 @@ export default function PricingCalculator() {
                 <p className="text-gray-600 mb-6 text-lg">
                   {tCommon("customQuoteMessage")}
                 </p>
-                <button className="bg-primary hover:opacity-90 text-white font-semibold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg">
+                <button className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#04a4ff] to-[#0284d1] px-10 py-4 text-lg font-semibold text-white shadow-[0_12px_28px_rgba(4,164,255,0.35)] transition-all duration-300 hover:translate-y-[-1px] hover:shadow-[0_16px_32px_rgba(4,164,255,0.45)]">
                   {tCommon("requestCustomQuote")}
                 </button>
               </div>
@@ -316,7 +296,10 @@ export default function PricingCalculator() {
             {/* CTA */}
               {!isCustomPricing && dwellings <= 200 && (
               <div className="mt-12 text-center">
-                <WebappLink type="register" className="inline-block bg-primary text-white font-semibold py-4 px-12 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg">
+                <WebappLink
+                  type="register"
+                  className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#04a4ff] to-[#0284d1] px-12 py-4 text-lg font-semibold text-white shadow-[0_12px_28px_rgba(4,164,255,0.35)] transition-all duration-300 hover:translate-y-[-1px] hover:shadow-[0_16px_32px_rgba(4,164,255,0.45)]"
+                >
                   {tCommon("tryFree")}
                 </WebappLink>
                 <p className="text-sm text-gray-600 mt-4">
@@ -328,6 +311,7 @@ export default function PricingCalculator() {
 
           {/* Grille de paliers */}
           
+          </div>
         </div>
 
         {/* Informations supplémentaires */}

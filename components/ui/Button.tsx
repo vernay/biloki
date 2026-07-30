@@ -20,7 +20,7 @@ export default function Button({
 
   // Variants
   const variants = {
-    primary: "bg-primary text-white hover:shadow-lg hover:scale-105",
+    primary: "canva-glass-cta text-primary hover:scale-105",
     secondary: "bg-white text-primary hover:bg-gray-100",
     ghost: "text-white hover:opacity-80",
   };

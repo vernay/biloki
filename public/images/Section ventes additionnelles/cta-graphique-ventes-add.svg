@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" fill="none">
+  <defs>
+    <linearGradient id="ctaBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2e4a"/>
+      <stop offset="50%" stop-color="#124a76"/>
+      <stop offset="100%" stop-color="#11639a"/>
+    </linearGradient>
+    <linearGradient id="barBlue" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="barOrange" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c2410c"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="720" rx="36" fill="url(#ctaBg)"/>
+
+  <circle cx="280" cy="120" r="180" fill="#ffffff" opacity="0.05"/>
+  <circle cx="1320" cy="640" r="240" fill="#ffffff" opacity="0.04"/>
+
+  <rect x="980" y="180" width="500" height="340" rx="28" fill="#ffffff" opacity="0.1"/>
+  <rect x="1040" y="390" width="80" height="90" rx="14" fill="url(#barBlue)" opacity="0.95"/>
+  <rect x="1140" y="340" width="80" height="140" rx="14" fill="url(#barBlue)" opacity="0.95"/>
+  <rect x="1240" y="280" width="80" height="200" rx="14" fill="url(#barBlue)" opacity="0.95"/>
+  <rect x="1340" y="230" width="80" height="250" rx="14" fill="url(#barBlue)" opacity="0.95"/>
+
+  <path d="M1040 320C1110 270 1180 280 1230 240C1280 200 1330 190 1420 200" stroke="#f8fafc" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+  <circle cx="1420" cy="200" r="10" fill="#f8fafc"/>
+
+  <circle cx="1080" cy="150" r="70" fill="url(#barOrange)" opacity="0.95"/>
+  <circle cx="1165" cy="120" r="52" fill="url(#barOrange)" opacity="0.88"/>
+  <text x="1080" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#ffffff">+20%</text>
+
+  <rect x="120" y="520" width="460" height="90" rx="20" fill="#ffffff" opacity="0.08"/>
+  <text x="150" y="580" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#e2e8f0">Ventes additionnelles pilotees en temps reel</text>
+</svg>

@@ -1,100 +1,118 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "@/lib/animations-config";
 import WebappLink from "@/components/ui/WebappLink";
+import CanvaGlassFrame from "@/components/ui/CanvaGlassFrame";
 
 export default function BenefitsSection() {
-  const t = useTranslations("common");
-  const tBenefits = useTranslations("benefits");
-  
-  const iconMap: { [key: string]: React.ReactNode } = {
-    time: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-        <polyline points="12 6 12 12 16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    revenue: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <polyline points="17 6 23 6 23 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-    star: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-      </svg>
-    ),
-    money: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="4" width="22" height="16" rx="2" ry="2" stroke="currentColor" strokeWidth="2"/>
-        <path d="M12 9v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    ),
-    target: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    ),
-    chart: (
-      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="12" width="4" height="8" stroke="currentColor" strokeWidth="2"/>
-        <rect x="10" y="6" width="4" height="14" stroke="currentColor" strokeWidth="2"/>
-        <rect x="17" y="2" width="4" height="18" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    )
-  };
+  const t = useTranslations("benefits");
 
-  const benefitKeys = ["time", "revenue", "star", "money"];
+  const benefits = [
+    { id: 1, icon: "📦" },
+    { id: 2, icon: "🌐" },
+    { id: 3, icon: "👥" },
+    { id: 4, icon: "💰" },
+    { id: 5, icon: "⭐" },
+    { id: 6, icon: "📊" },
+  ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-20 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {tBenefits("title")} <span className="text-primary">{tBenefits("titleHighlight")}</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {tBenefits("description")}
-          </p>
-        </div>
+    <section className="w-full bg-gradient-to-b from-white via-white to-gray-50 py-16 md:py-24 lg:py-32">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Title */}
+        <motion.div
+          className="text-center mb-16 md:mb-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            variants={itemVariants}
+          >
+            {t("title")}
+          </motion.h2>
+          <motion.p
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            variants={itemVariants}
+          >
+            {t("subtitle")}
+          </motion.p>
+        </motion.div>
 
-        {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {benefitKeys.map((key, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-primary hover:shadow-lg transition-all duration-300 group"
+        {/* Benefits Grid - Alternating Layout */}
+        <div className="space-y-12 md:space-y-16">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={benefit.id}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              } gap-8 md:gap-12 lg:gap-16 items-center`}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
             >
-              <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
-                {iconMap[key]}
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {tBenefits(`items.${key}.title`)}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {tBenefits(`items.${key}.description`)}
-              </p>
-            </div>
+              {/* Left Content */}
+              <motion.div
+                className="flex-1"
+                variants={itemVariants}
+              >
+                <div className="mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-4xl mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                    {t(`item${benefit.id}.title`)}
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {t(`item${benefit.id}.description`)}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Right Visual */}
+              <motion.div
+                className="flex-1 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 p-8 md:p-12 min-h-[300px] md:min-h-[400px] flex items-center justify-center"
+                variants={itemVariants}
+              >
+                <div className="text-center">
+                  <div className="text-8xl mb-4">{benefit.icon}</div>
+                  <p className="text-gray-400 text-sm">
+                    Illustration {benefit.id}
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <WebappLink
-            type="register"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:opacity-90 transition"
+        {/* CTA Section */}
+        <motion.div
+          className="mt-20 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div
+            variants={itemVariants}
+            className="inline-block"
           >
-            {t("discoverBenefits")}
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </WebappLink>
-        </div>
+            <CanvaGlassFrame className="rounded-xl">
+              <WebappLink
+                type="register"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                {t("cta")} →
+              </WebappLink>
+            </CanvaGlassFrame>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

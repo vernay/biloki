@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import CanvaGlassFrame from "@/components/ui/CanvaGlassFrame";
 
 export default function TeamSection() {
   const t = useTranslations("team");
@@ -40,15 +41,17 @@ export default function TeamSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/reserver-demo"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                {tCommon("bookDemo")}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
+              <CanvaGlassFrame className="rounded-xl">
+                <Link
+                  href="/reserver-demo"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  {tCommon("bookDemo")}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Link>
+              </CanvaGlassFrame>
               <a
                 href="https://www.linkedin.com/posts/s%C3%A9bastien-vernay-71a27374_rdvdesprosdelalocationsaisonniaeyre-locationsaisonniere-share-7452976064642928641-Lb-_?utm_source=share&utm_medium=member_desktop&rcm=ACoAACIjrgkBCab2Qq4sd3YgaN4goMCfmzDY0io"
                 target="_blank"

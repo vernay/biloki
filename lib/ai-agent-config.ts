@@ -231,7 +231,7 @@ export const PRODUCT_KNOWLEDGE = {
       name: 'PMS (Property Management System)',
       description: 'Gestion complète des logements, séjours, voyageurs et revenus',
       benefits: ['Centralisation des données', 'Historique complet', 'Multi-propriétaires'],
-      url: '/fonctionnalites/pms',
+      url: '/fonctionnalites/reservations',
     },
     channelManager: {
       name: 'Channel Manager',
@@ -257,7 +257,7 @@ export const PRODUCT_KNOWLEDGE = {
       description: 'Génération automatique des codes d\'accès',
       partners: ['Nuki', 'TTLock', 'Igloohome', 'August'],
       benefits: ['Codes uniques par séjour', 'Accès sans clé', 'Historique des accès'],
-      url: '/fonctionnalites/serrures-connectees',
+      url: '/fonctionnalites/interface-proprietaires',
     },
     ai: {
       name: 'IA intégrée',
@@ -275,7 +275,7 @@ export const PRODUCT_KNOWLEDGE = {
       name: '4 interfaces dédiées',
       description: 'Une interface adaptée à chaque rôle',
       roles: ['Conciergerie', 'Propriétaire', 'Prestataire', 'Voyageur'],
-      url: '/fonctionnalites/4-interfaces',
+      url: '/fonctionnalites/interface-proprietaires',
     },
     marketplace: {
       name: 'Marketplace API',

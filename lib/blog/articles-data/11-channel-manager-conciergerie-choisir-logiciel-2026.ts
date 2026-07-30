@@ -202,7 +202,7 @@ const article: BlogArticle = {
             </p>
             <ul class="space-y-2 text-gray-700 ml-6">
               <li>• <a href="/fr/fonctionnalites/channel-manager" class="text-primary hover:underline">Logiciel channel manager conciergerie</a></li>
-              <li>• <a href="/fr/fonctionnalites/pms" class="text-primary hover:underline">PMS conciergerie</a></li>
+              <li>• <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">PMS conciergerie</a></li>
               <li>• <a href="/fr/blog/messagerie-automatisee-conciergerie" class="text-primary hover:underline">Automatisation des messages voyageurs</a></li>
               <li>• Reporting et pilotage de la performance</li>
             </ul>
@@ -210,7 +210,7 @@ const article: BlogArticle = {
               Le bon choix dépend surtout du nombre de logements, de la complexité opérationnelle et du niveau d'automatisation recherché.
             </p>
             <p class="text-gray-700 leading-relaxed mt-3">
-              Pour comparer une approche orientée distribution et une approche plus globale, vous pouvez consulter notre page <a href="/fr/fonctionnalites/channel-manager" class="text-primary hover:underline">channel manager pour conciergerie</a> et notre page <a href="/fr/fonctionnalites/pms" class="text-primary hover:underline">PMS pour conciergerie</a>.
+              Pour comparer une approche orientée distribution et une approche plus globale, vous pouvez consulter notre page <a href="/fr/fonctionnalites/channel-manager" class="text-primary hover:underline">channel manager pour conciergerie</a> et notre page <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">PMS pour conciergerie</a>.
             </p>
           </section>
 
@@ -260,7 +260,7 @@ const article: BlogArticle = {
               Biloki a été pensé pour répondre aux besoins spécifiques des conciergeries, avec une approche centrée sur la clarté opérationnelle.
             </p>
 
-            <h3 class="text-2xl font-semibold text-gray-800 mb-3"><a href="https://www.biloki.fr/fr/fonctionnalites/4-interfaces" class="text-primary hover:underline">1) Les quatre interfaces essentielles</a></h3>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-3"><a href="https://www.biloki.fr/fr/fonctionnalites/interface-proprietaires" class="text-primary hover:underline">1) Les quatre interfaces essentielles</a></h3>
             <div class="grid md:grid-cols-2 gap-4">
               <div class="border border-primary/30 rounded-xl p-5 bg-blue-50">
                 <h4 class="text-lg font-bold text-primary mb-2">Interface conciergerie</h4>

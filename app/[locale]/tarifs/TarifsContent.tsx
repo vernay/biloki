@@ -1,454 +1,359 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { calculatePrice, getTierRange, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE } from '@/lib/pricing-config';
+import { useState } from 'react';
+import Link from 'next/link';
+import { useLocale, useTranslations } from 'next-intl';
+import {
+  BillingPeriod,
+  CUSTOM_PRICING_THRESHOLD,
+  VAT_RATE,
+  calculatePrice,
+  getTierRange,
+} from '@/lib/pricing-config';
 import { COLORS } from '@/lib/design-config';
 import WebappLink from '@/components/ui/WebappLink';
-import RelatedPages from '@/components/ui/RelatedPages';
+
+function formatEuro(value: number, locale: string) {
+  return new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : locale, {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+}
 
 export default function TarifsContent() {
   const t = useTranslations('pricingPage');
   const common = useTranslations('common');
-  const trialT = useTranslations('trialPage');
-  const relatedT = useTranslations('relatedPages');
   const locale = useLocale();
-  
-  const [logements, setLogements] = useState(5);
-  const [logementsInput, setLogementsInput] = useState('5');
-  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('monthly');
+
+  const [logements, setLogements] = useState(1);
+  const [logementsInput, setLogementsInput] = useState('1');
+  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>('annual');
   const [isParticulier, setIsParticulier] = useState(false);
 
-  const monthlyData = calculatePrice(logements, 'monthly', {
-    isParticulier
-  });
-  const annualData = calculatePrice(logements, 'annual', {
-    isParticulier
-  });
+  const clampLogements = (value: number) => Math.min(250, Math.max(1, value));
+
+  const updateLogements = (value: number) => {
+    const nextValue = clampLogements(value);
+    setLogements(nextValue);
+    setLogementsInput(String(nextValue));
+  };
+
+  const handleLogementsInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawValue = e.target.value;
+
+    if (rawValue === '') {
+      setLogementsInput('');
+      return;
+    }
+
+    const parsedValue = Number.parseInt(rawValue, 10);
+    if (!Number.isNaN(parsedValue)) {
+      setLogementsInput(rawValue);
+      updateLogements(parsedValue);
+    }
+  };
+
+  const handleLogementsInputBlur = () => {
+    if (!logementsInput || Number.isNaN(Number.parseInt(logementsInput, 10))) {
+      updateLogements(1);
+      return;
+    }
+
+    updateLogements(Number.parseInt(logementsInput, 10));
+  };
+
+  const monthlyData = calculatePrice(logements, 'monthly', { isParticulier });
+  const annualData = calculatePrice(logements, 'annual', { isParticulier });
   const isCustomPricing = logements > CUSTOM_PRICING_THRESHOLD || !monthlyData || !annualData;
+
   const factor = isParticulier ? 1 + VAT_RATE : 1;
-  
-  // Utiliser les données de la config centralisée
-  const totalMonthly = monthlyData?.totalMonth ?? 0;
-  const totalAnnualDiscounted = (annualData?.totalMonth ?? 0) * 12;
-  const totalAnnualFull = totalMonthly * 12;
-  const totalMonthlyForDisplay = billingPeriod === 'annual' ? (annualData?.totalMonth ?? 0) : totalMonthly;
-  
-  const totalMonthlyDisplay = isCustomPricing ? null : totalMonthlyForDisplay * factor;
-  const totalAnnualDisplay = isCustomPricing
-    ? null
-    : (billingPeriod === 'annual' ? totalAnnualDiscounted : totalAnnualFull) * factor;
-  const lastUpdate = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-US', {
-    day: 'numeric', month: 'long', year: 'numeric'
-  }).format(new Date());
+  const currentMonthlyTotal =
+    billingPeriod === 'annual' ? (annualData?.totalMonth ?? 0) * factor : (monthlyData?.totalMonth ?? 0) * factor;
+  const referenceMonthlyTotal = (monthlyData?.totalMonth ?? 0) * factor;
+  const yearlySaving = Math.max(0, referenceMonthlyTotal * 12 - currentMonthlyTotal * 12);
 
-  // JSON-LD pour SEO avec grille tarifaire dégressive
-  useEffect(() => {
-    const productJsonLd = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Biloki - PMS et Channel Manager",
-      "description": "Logiciel de gestion de locations saisonnières avec tarification dégressive selon le nombre de logements",
-      "brand": {
-        "@type": "Brand",
-        "name": "Biloki"
-      },
-      "offers": {
-        "@type": "AggregateOffer",
-        "lowPrice": "16.99",
-        "highPrice": "1598.00",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "minPrice": "7.99",
-          "maxPrice": "16.99",
-          "priceCurrency": "EUR",
-          "unitText": "par logement et par mois"
-        },
-        "description": "Tarification dégressive : de 16,99€/logement (1-3 logements) à 7,99€/logement (100-200 logements)",
-        "availability": "https://schema.org/InStock"
-      }
-    };
+  const heroTitleLine1 = t('heroTitleLine1');
+  const heroTitleLine2 = t('heroTitleLine2');
+  const heroDescription = t('heroDescription');
+  const reduceLabel = t('reduce');
+  const increaseLabel = t('increase');
+  const propertyInputAriaLabel = t('propertyInputAriaLabel');
+  const summaryTitle = t('summaryTitle');
+  const summaryDescription = t('summaryDescription');
+  const zeroCommissionLabel = t('zeroCommission');
+  const professionalLabel = t('buttonProfessional');
+  const individualLabel = t('buttonIndividual');
+  const discountBadgeLabel = t('discountBadge');
 
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(productJsonLd);
-    document.head.appendChild(script);
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: t('schemaName'),
+    description: t('schemaDescription'),
+    brand: {
+      '@type': 'Brand',
+      name: 'Biloki',
+    },
+  };
 
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+  const includedFeatures = [
+    {
+      title: t('featureReservationsTitle'),
+      items: [
+        t('featureReservationsItem1'),
+        t('featureReservationsItem2'),
+        t('featureReservationsItem3'),
+      ],
+    },
+    {
+      title: t('featureCommunicationTitle'),
+      items: [t('featureCommunicationItem1')],
+    },
+    {
+      title: t('featureGuideTitle'),
+      items: [
+        t('featureGuideItem1'),
+        t('featureGuideItem2'),
+        t('featureGuideItem3'),
+      ],
+    },
+    {
+      title: t('featureSalesTitle'),
+      items: [
+        t('featureSalesItem1'),
+        t('featureSalesItem2'),
+        t('featureSalesItem3'),
+      ],
+    },
+    {
+      title: t('featureOperationsTitle'),
+      items: [t('featureOperationsItem1')],
+    },
+    {
+      title: t('featurePilotageTitle'),
+      items: [t('featurePilotageItem1'), t('featurePilotageItem2')],
+    },
+    {
+      title: t('featureSoonTitle'),
+      items: [t('featureSoonItem1')],
+    },
+  ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Back button */}
-        <a href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          {common('back')}
-        </a>
+    <main className="bg-white py-2 text-white md:py-3">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-primary px-4 py-2 rounded-full mb-6 font-semibold text-sm">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {t('title')}
+      <section
+        className="relative mx-auto min-h-[calc(100vh-1rem)] w-[calc(100%-0.75rem)] overflow-hidden rounded-[36px] border border-black/10 md:min-h-[calc(100vh-1.5rem)] md:w-[calc(100%-1.5rem)]"
+        style={{
+          backgroundImage:
+            "linear-gradient(110deg, rgba(2,6,23,0.62) 0%, rgba(2,6,23,0.5) 36%, rgba(2,6,23,0.35) 62%, rgba(2,6,23,0.2) 100%), url('/images/Tarifs/jason-leung-7UuSEPW2LrM-unsplash%20(1).jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="relative px-5 pb-8 pt-32 sm:px-8 md:px-10 md:pb-12 md:pt-36 lg:pt-40">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="mt-5 text-4xl font-black uppercase leading-[0.95] text-white sm:text-5xl md:text-7xl">
+              {heroTitleLine1}
+              <br />
+              {heroTitleLine2}
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/88 md:text-lg">
+              {heroDescription}
+            </p>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-            {t('subtitle')}
-          </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            {t('description')}
-          </p>
-          <p className="mt-3 text-sm text-gray-500">{t('lastUpdate')} {lastUpdate}</p>
-        </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Left Side - Pricing Calculator */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            {/* Header */}
-            <div className="mb-8 pb-6 border-b">
-              <div className="flex items-center gap-2 mb-2">
-                <h2 className="text-2xl font-bold text-primary">{t('whatIsMyPrice')}</h2>
-              </div>
-              <p className="text-sm text-gray-600">{t('priceExclVat')}</p>
-            </div>
-
-            {/* Number of Logements */}
-            <div className="mb-8">
-              <label htmlFor="logements" className="block text-sm font-semibold text-gray-700 mb-4">
-                {t('numberOfProperties')}
-              </label>
-              <div className="flex items-center gap-4 mb-4">
-                <input
-                  type="range"
-                  id="logements"
-                  min="1"
-                  max="250"
-                  value={logements}
-                  onChange={(e) => {
-                    const next = Math.max(1, Number(e.target.value));
-                    setLogements(next);
-                    setLogementsInput(String(next));
-                  }}
-                  className="flex-1 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                  style={{
-                    background: `linear-gradient(to right, ${COLORS.primary} 0%, ${COLORS.primary} ${((logements - 1) / 249) * 100}%, #e5e7eb ${((logements - 1) / 249) * 100}%, #e5e7eb 100%)`
-                  }}
-                />
+          <div className="mx-auto mt-10 grid w-full max-w-[1120px] gap-3 rounded-2xl border border-white/65 bg-white/8 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_8px_24px_rgba(15,23,42,0.08)] backdrop-blur-sm md:grid-cols-3 md:items-start md:justify-items-center md:gap-4 md:p-4">
+            <div className="text-center">
+              <p className="mb-2 text-xs font-normal uppercase tracking-[0.1em] text-white">{t('numberOfProperties')}</p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <button
+                  type="button"
+                  onClick={() => updateLogements(logements - 1)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/55 bg-white/28 text-lg font-bold shadow-[0_4px_12px_rgba(15,23,42,0.12)] hover:bg-white/38"
+                  aria-label={reduceLabel}
+                >
+                  -
+                </button>
                 <input
                   type="number"
-                  id="logements-input"
+                  inputMode="numeric"
                   min="1"
+                  max="250"
                   value={logementsInput}
-                  onChange={(e) => {
-                    const raw = e.target.value;
-                    if (raw === '') {
-                      setLogementsInput('');
-                      return;
-                    }
-                    const val = Number(raw);
-                    if (!isNaN(val)) {
-                      setLogementsInput(raw);
-                      setLogements(Math.max(1, val));
-                    }
-                  }}
-                  onBlur={() => {
-                    const val = Number(logementsInput);
-                    if (!logementsInput || isNaN(val)) {
-                      setLogements(1);
-                      setLogementsInput('1');
-                      return;
-                    }
-                    const clamped = Math.max(1, val);
-                    setLogements(clamped);
-                    setLogementsInput(String(clamped));
-                  }}
-                  aria-label={t('numberOfProperties')}
-                  className="w-20 px-3 py-2 border border-gray-300 rounded-lg text-center font-semibold"
+                  onChange={handleLogementsInputChange}
+                  onBlur={handleLogementsInputBlur}
+                  className="w-20 rounded-full border border-white/55 bg-white/28 px-3 py-2 text-center text-lg font-black text-white outline-none placeholder:text-white/70"
+                  aria-label={propertyInputAriaLabel}
                 />
+                <button
+                  type="button"
+                  onClick={() => updateLogements(logements + 1)}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/55 bg-white/28 text-lg font-bold shadow-[0_4px_12px_rgba(15,23,42,0.12)] hover:bg-white/38"
+                  aria-label={increaseLabel}
+                >
+                  +
+                </button>
               </div>
-              <p className="text-sm text-gray-600">
-                {getTierRange(logements)}
-              </p>
+              <p className="mt-2 text-xs text-white/75">{getTierRange(logements, locale)}</p>
             </div>
 
-            {/* Billing Period */}
-            <div className="mb-8">
-              <label className="block text-sm font-semibold text-gray-700 mb-4">
-                {t('billingPeriod')}
-              </label>
-              <div className="space-y-2">
+            <div className="text-center">
+              <p className="mb-2 text-xs font-normal uppercase tracking-[0.1em] text-white">{t('billingPeriod')}</p>
+              <div className="inline-flex rounded-full border border-white/55 bg-white/22 p-1 shadow-[0_4px_14px_rgba(15,23,42,0.12)]">
                 <button
+                  type="button"
                   onClick={() => setBillingPeriod('monthly')}
-                  className={`w-full p-4 rounded-lg border-2 transition text-left ${
-                    billingPeriod === 'monthly'
-                      ? 'border-primary bg-blue-50'
-                      : 'border-gray-200 hover:border-primary'
+                  className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+                    billingPeriod === 'monthly' ? 'bg-white text-slate-900' : 'text-white/92 hover:bg-white/28'
                   }`}
                 >
-                    <div className="flex items-center justify-between">
-                      <span className="font-semibold text-gray-900">{t('monthly')}</span>
-                    {billingPeriod === 'monthly' && (
-                      <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )}
-                  </div>
+                  {t('monthly')}
                 </button>
                 <button
+                  type="button"
                   onClick={() => setBillingPeriod('annual')}
-                  className={`w-full p-4 rounded-lg border-2 transition text-left ${
+                  className={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${
                     billingPeriod === 'annual'
-                      ? 'border-primary bg-blue-50'
-                      : 'border-gray-200 hover:border-primary'
+                      ? 'bg-white text-slate-900'
+                      : 'text-white/92 hover:bg-white/28'
                   }`}
                 >
-                    <div className="flex items-center justify-between">
-                    <div>
-                      <span className="font-semibold text-gray-900 block">{t('annual')}</span>
-                      <span className="text-xs text-green-600 font-semibold">{t('annualDiscount')}</span>
-                    </div>
-                    {billingPeriod === 'annual' && (
-                      <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )}
-                  </div>
+                  <span className="inline-flex items-center gap-2">
+                    <span>{t('annual')}</span>
+                    {billingPeriod === 'annual' ? (
+                      <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-bold leading-none text-emerald-700">
+                        {discountBadgeLabel}
+                      </span>
+                    ) : null}
+                  </span>
                 </button>
               </div>
             </div>
 
-            {/* Type de client */}
-            <div className="mb-8">
-              <label className="block text-sm font-semibold text-gray-700 mb-3">
-                {t('clientType')}
-              </label>
-              <div className="inline-flex rounded-lg border border-gray-200 overflow-hidden">
+            <div className="text-center">
+              <p className="mb-2 text-xs font-normal uppercase tracking-[0.1em] text-white">{t('clientType')}</p>
+              <div className="inline-flex rounded-full border border-white/55 bg-white/22 p-1 shadow-[0_4px_14px_rgba(15,23,42,0.12)]">
                 <button
                   type="button"
                   onClick={() => setIsParticulier(false)}
-                  className={`px-4 py-2 text-sm font-semibold transition ${
-                    !isParticulier ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
+                  className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+                    !isParticulier ? 'bg-white text-slate-900' : 'text-white/92 hover:bg-white/28'
                   }`}
                 >
-                  {t('professional')}
+                  {professionalLabel}
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsParticulier(true)}
-                  className={`px-4 py-2 text-sm font-semibold transition border-l ${
-                    isParticulier ? 'bg-primary text-white' : 'bg-white text-gray-700 hover:bg-gray-50'
+                  className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+                    isParticulier ? 'bg-white text-slate-900' : 'text-white/92 hover:bg-white/28'
                   }`}
                 >
-                  {t('individual')}
+                  {individualLabel}
                 </button>
               </div>
             </div>
-
-            {/* Price Display */}
-            <div className="bg-white rounded-lg p-6 border-2 border-primary">
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Total mensuel */}
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t('totalEstimated')} ({t('perMonth')})
-                  </p>
-                  <div className="space-y-2">
-                    {isCustomPricing ? (
-                      <>
-                        <p className="text-3xl md:text-4xl font-black text-primary">
-                          {t('customQuote')}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {t('customPricing')}
-                        </p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-3xl md:text-4xl font-black text-primary">
-                          {totalMonthlyDisplay?.toFixed(2)}€
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                {/* Total annuel */}
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-3">
-                    {t('totalEstimated')} ({t('annualPayment')})
-                  </p>
-                  <div className="space-y-2">
-                    {isCustomPricing ? (
-                      <>
-                        <p className="text-3xl md:text-4xl font-black text-primary">
-                          {t('customQuote')}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          {t('customPricing')}
-                        </p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-3xl md:text-4xl font-black text-primary">
-                          {totalAnnualDisplay?.toFixed(2)}€
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              {isCustomPricing && (
-                <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-                  <p className="text-sm text-gray-600 mb-4">{t('customQuoteMessage')}</p>
-                  <a
-                    href="/commencer-gratuitement"
-                    className="inline-block bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition"
-                  >
-                    {t('requestQuote')}
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* Info */}
-            <div className="mt-6 text-xs text-gray-600 space-y-2">
-              <p>✓ {t('infoVat')}</p>
-              <p>✓ {t('infoDegressive')}</p>
-              <p>✓ {t('infoNoCommitment')}</p>
-              <p>✓ {t('infoAnnualPayment')}</p>
-            </div>
-
-            {/* Fonctionnalites incluses */}
-            <div className="mt-10 pt-10 border-t border-gray-200">
-              <h3 className="text-lg font-bold text-gray-900 mb-6">{t('includedFeatures')}</h3>
-
-              <ul className="space-y-3">
-                {(t.raw('keyFeatures') as string[]).map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                      <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-                <li className="flex items-start gap-3">
-                  <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                    <svg className="h-4 w-4 text-green-600" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <span className="text-gray-700 font-semibold">+{t('moreFeatures')}</span>
-                </li>
-              </ul>
-            </div>
           </div>
 
-          {/* Right Side - CTA */}
-          <div className="w-full bg-primary rounded-2xl shadow-2xl p-8 md:p-12 text-center sticky top-8">
-            <div className="mb-8">
-              <div className="inline-block p-4 bg-white/20 rounded-full mb-6">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-3xl font-bold mb-4 text-white">
-                {t('readyToStart') || 'Prêt à commencer ?'}
-              </h3>
-              <p className="text-lg text-white/95 mb-8">
-                {t('startFreeToday') || 'Démarrez gratuitement aujourd\'hui et découvrez toutes les fonctionnalités de Biloki pendant 14 jours.'}
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <WebappLink
-                type="register"
-                className="block w-full bg-white text-primary font-bold py-4 px-8 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 text-lg"
-              >
-                {common('startFreeTrial')}
-              </WebappLink>
-              
-              <div className="flex items-center justify-center gap-6 text-sm text-white/90 pt-4">
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {t('noCreditCard') || 'Sans carte bancaire'}
-                </div>
-                <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                  {t('cancelAnytime') || 'Annulation libre'}
-                </div>
+          <div className="mx-auto mt-8 w-full max-w-[1120px] rounded-[32px] border border-white/35 bg-white/12 p-2 shadow-[0_24px_65px_rgba(2,6,23,0.35),inset_0_1px_0_rgba(255,255,255,0.28)] backdrop-blur-md">
+          <div className="rounded-[28px] border border-white/25 bg-white/95 p-5 text-slate-900 md:p-7">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-black md:text-4xl">{summaryTitle}</h2>
+                <p className="mt-2 max-w-2xl text-slate-600">{summaryDescription}</p>
               </div>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-white/20">
-              <p className="text-sm text-white/80 mb-4">
-                {t('needHelp') || 'Besoin d\'aide pour choisir ?'}
-              </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors text-sm font-semibold"
-              >
-                {common('contactUs')}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
+            <div className="mt-3 grid gap-4 lg:grid-cols-[1fr_auto] lg:items-start">
+              <div>
+                {isCustomPricing ? (
+                  <div className="mt-1">
+                    <p className="text-4xl font-black text-slate-900">{t('customQuote')}</p>
+                    <p className="mt-1 text-slate-600">{t('customPricing')}</p>
+                  </div>
+                ) : (
+                  <div className="mt-1 flex flex-wrap items-end gap-3">
+                    <p className="text-4xl font-black text-slate-900">{formatEuro(currentMonthlyTotal, locale)}</p>
+                    <p className="pb-1 text-base font-normal text-slate-500">/ {t('perMonth')}</p>
+                  </div>
+                )}
+                {!isCustomPricing && billingPeriod === 'annual' ? (
+                  <p className="mt-1 text-sm font-semibold text-emerald-700">
+                    {formatEuro(yearlySaving, locale)} {t('savedAnnually')}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-[260px]">
+                <WebappLink
+                  type="register"
+                  className="inline-flex items-center justify-center rounded-full bg-[#04a4ff] px-7 py-3.5 text-base font-bold text-white transition hover:bg-[#0292e6]"
+                >
+                  {common('startFreeTrial')}
+                </WebappLink>
+                <Link
+                  href={`/${locale}/reserver-demo`}
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 px-7 py-3.5 text-base font-bold text-slate-900 transition hover:bg-slate-100"
+                >
+                  {common('bookDemo')}
+                </Link>
+              </div>
             </div>
+
+            <div className="mt-0 flex flex-col gap-2 text-sm text-slate-700">
+              <p>✓ {t('infoNoCommitment')}</p>
+              <p>✓ {zeroCommissionLabel}</p>
+            </div>
+
+            <div className="mt-7 border-t border-slate-200 pt-6">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.12em] text-slate-600">{t('includedFeatures')}</p>
+              <div className="grid gap-3 md:grid-cols-2">
+                {includedFeatures.map((section) => (
+                  <div key={section.title} className="rounded-2xl border border-slate-200 bg-slate-50/80 p-4">
+                    <h3 className="mb-3 text-base font-black text-slate-900 md:text-[1.08rem]">{section.title}</h3>
+                    <ul className="space-y-2 text-sm text-slate-700">
+                      {section.items.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5">
+                          <span className="pricing-feature-check mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#04a4ff] text-[11px] font-bold text-white">
+                            ✓
+                          </span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div className="mx-auto mt-6 flex w-full max-w-[1120px] flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/45 bg-white/6 px-4 py-3 text-sm text-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] backdrop-blur-sm">
+            <p>{t('readyToStart')}</p>
+            <p>
+              {t('noCreditCard')} • {t('cancelAnytime')}
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* Pages connexes pour SEO */}
-        <RelatedPages
-          title={common('relatedPages')}
-          links={[
-            {
-              href: `/${locale}/fonctionnalites/channel-manager`,
-              title: relatedT('channelManager.title'),
-              description: relatedT('channelManager.description')
-            },
-            {
-              href: `/${locale}/fonctionnalites/pms`,
-              title: relatedT('pms.title'),
-              description: relatedT('pms.description')
-            },
-            {
-              href: `/${locale}/commencer-gratuitement`,
-              title: relatedT('trial.title'),
-              description: relatedT('trial.description')
-            },
-            {
-              href: `/${locale}/reserver-demo`,
-              title: relatedT('demo.title'),
-              description: relatedT('demo.description')
-            },
-            {
-              href: `/${locale}/contact`,
-              title: relatedT('contact.title'),
-              description: relatedT('contact.description')
-            },
-            {
-              href: `/${locale}/connexions-api`,
-              title: relatedT('apiConnections.title'),
-              description: relatedT('apiConnections.description')
-            }
-          ]}
-          className="mt-16"
-        />
-      </div>
+      <style jsx>{`
+        input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 9999px;
+          background: ${COLORS.primary};
+          border: 2px solid #fff;
+          box-shadow: 0 6px 18px rgba(4, 164, 255, 0.35);
+          cursor: pointer;
+        }
+      `}</style>
     </main>
   );
 }

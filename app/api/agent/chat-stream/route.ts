@@ -70,28 +70,28 @@ Pages principales:
 Fonctionnalités générales:
 - Serrures connectées : /serrures-connectees
 - Intégrations API : /connexions-api
-- 4 interfaces : /fonctionnalites/4-interfaces
+- 4 interfaces : /fonctionnalites/interface-proprietaires
 - IA et automatisation : /fonctionnalites/ia-automatisation
 - Messagerie : /fonctionnalites/messagerie
 - Multi-langues : /fonctionnalites/multi-langues
 - Marketplace API : /fonctionnalites/marketplace-api
 - Prestataires : /fonctionnalites/prestataires
 - Reporting : /fonctionnalites/reporting
-- Serrures (fonctionnalité) : /fonctionnalites/serrures-connectees
+- Serrures (fonctionnalité) : /fonctionnalites/interface-proprietaires
 
 PMS - Gestion de propriété:
-- PMS principal : /fonctionnalites/pms
-- Tableau de bord : /fonctionnalites/pms/tableau-bord
-- Gestion logements : /fonctionnalites/pms/logements
-- Gestion séjours : /fonctionnalites/pms/sejours
-- Gestion voyageurs : /fonctionnalites/pms/voyageurs
-- Reporting PMS : /fonctionnalites/pms/reporting
+- PMS principal : /fonctionnalites/reservations
+- Tableau de bord : /fonctionnalites/reservations/tableau-bord
+- Gestion logements : /fonctionnalites/reservations/logements
+- Gestion séjours : /fonctionnalites/reservations/sejours
+- Gestion voyageurs : /fonctionnalites/reservations/voyageurs
+- Reporting PMS : /fonctionnalites/reservations/reporting
 
 Channel Manager:
 - Channel Manager : /fonctionnalites/channel-manager
-- Airbnb : /fonctionnalites/channel-manager/airbnb
-- Booking.com : /fonctionnalites/channel-manager/booking
-- Calendriers : /fonctionnalites/channel-manager/calendriers
+- Airbnb : /fonctionnalites/reservations
+- Booking.com : /fonctionnalites/reservations
+- Calendriers : /fonctionnalites/reservations
 - Gestion tarifs : /fonctionnalites/channel-manager/tarifs
 
 FORMAT DES LIENS ET BOUTONS :
@@ -99,7 +99,7 @@ FORMAT DES LIENS ET BOUTONS :
 ✅ OBLIGATOIRE : Utilise UNIQUEMENT le format bouton : [BUTTON:Texte du bouton|/url]
 
 Exemples CORRECTS :
-- Pour parler des 4 interfaces : [BUTTON:Découvrir les 4 interfaces|/fonctionnalites/4-interfaces]
+- Pour parler des 4 interfaces : [BUTTON:Découvrir les 4 interfaces|/fonctionnalites/interface-proprietaires]
 - Pour les tarifs : [BUTTON:Voir les tarifs|/tarifs]
 - Pour une démo : [BUTTON:Réserver une démo|/reserver-demo]
 

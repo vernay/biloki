@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState, useRef, useEffect } from 'react';
 
 interface Message {
@@ -24,6 +24,7 @@ interface LeadFormData {
  */
 export default function ChatBotAI() {
   const locale = useLocale();
+  const t = useTranslations('chatbot.ui');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -232,7 +233,7 @@ export default function ChatBotAI() {
       const errorAssistantMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
+        content: t('errors.retry'),
       };
 
       setMessages((prev) => [
@@ -455,7 +456,7 @@ export default function ChatBotAI() {
       {
         id: Date.now().toString(),
         role: 'assistant',
-        content: `Pas de problème ! Comment puis-je vous aider autrement ?`,
+        content: t('messages.noProblem'),
       },
     ]);
   };
@@ -471,7 +472,7 @@ export default function ChatBotAI() {
         {/* Bulle de texte à côté du bouton (visible uniquement si le chat est fermé) */}
         {!isOpen && (
           <div className="hidden md:block bg-primary text-white px-4 py-2 rounded-full shadow-lg text-sm font-medium whitespace-nowrap animate-[fadeIn_0.3s_ease-in-out]">
-            💬 Parlez à notre chatbot Biloki
+            {t('bubble')}
           </div>
         )}
         
@@ -479,7 +480,7 @@ export default function ChatBotAI() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="h-14 w-14 rounded-full bg-white text-primary shadow-lg hover:scale-110 transition-transform flex items-center justify-center text-2xl border-2 border-primary"
-          aria-label="Ouvrir le chat"
+          aria-label={t('aria.openChat')}
         >
           💬
         </button>
@@ -493,8 +494,8 @@ export default function ChatBotAI() {
             <div className="flex items-center gap-3">
               <img src="/logos/logo-icon-white.svg" alt="Biloki" className="h-7 w-7" />
               <div>
-                <h3 className="font-bold text-sm md:text-base">Assistant Biloki</h3>
-                <p className="text-xs opacity-90">En ligne</p>
+                <h3 className="font-bold text-sm md:text-base">{t('title')}</h3>
+                <p className="text-xs opacity-90">{t('online')}</p>
               </div>
             </div>
             <button
@@ -509,7 +510,7 @@ export default function ChatBotAI() {
           <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4">
             {messages.length === 0 && !showLeadForm && (
               <div className="text-center text-gray-500 mt-8">
-                <p className="text-sm md:text-base">👋 Bonjour ! Comment puis-je vous aider ?</p>
+                <p className="text-sm md:text-base">{t('emptyGreeting')}</p>
               </div>
             )}
             
@@ -563,13 +564,13 @@ export default function ChatBotAI() {
               <div className="flex justify-center">
                 <div className="w-full max-w-md bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 shadow-md border border-blue-100">
                   <h4 className="font-semibold text-sm md:text-base text-gray-900 mb-2 text-center">
-                    👋 Bonjour ! Pour mieux vous aider, puis-je avoir quelques informations ?
+                    {t('leadForm.title')}
                   </h4>
                   <form onSubmit={handleLeadSubmit} className="space-y-3 mt-3">
                     <div className="grid grid-cols-2 gap-2">
                       <input
                         type="text"
-                        placeholder="Prénom *"
+                        placeholder={t('leadForm.firstName')}
                         value={leadFormData.firstName}
                         onChange={(e) => setLeadFormData({ ...leadFormData, firstName: e.target.value })}
                         className="px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff]"
@@ -577,7 +578,7 @@ export default function ChatBotAI() {
                       />
                       <input
                         type="text"
-                        placeholder="Nom *"
+                        placeholder={t('leadForm.lastName')}
                         value={leadFormData.lastName}
                         onChange={(e) => setLeadFormData({ ...leadFormData, lastName: e.target.value })}
                         className="px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff]"
@@ -586,7 +587,7 @@ export default function ChatBotAI() {
                     </div>
                     <input
                       type="email"
-                      placeholder="Email *"
+                      placeholder={t('leadForm.email')}
                       value={leadFormData.email}
                       onChange={(e) => setLeadFormData({ ...leadFormData, email: e.target.value })}
                       className="w-full px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff]"
@@ -594,14 +595,14 @@ export default function ChatBotAI() {
                     />
                     <input
                       type="tel"
-                      placeholder="Téléphone (optionnel)"
+                      placeholder={t('leadForm.phone')}
                       value={leadFormData.phone}
                       onChange={(e) => setLeadFormData({ ...leadFormData, phone: e.target.value })}
                       className="w-full px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff]"
                     />
                     <input
                       type="number"
-                      placeholder="Nombre de logements"
+                      placeholder={t('leadForm.properties')}
                       value={leadFormData.propertyCount}
                       onChange={(e) => setLeadFormData({ ...leadFormData, propertyCount: e.target.value })}
                       className="w-full px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff]"
@@ -611,16 +612,16 @@ export default function ChatBotAI() {
                       onChange={(e) => setLeadFormData({ ...leadFormData, role: e.target.value })}
                       className="w-full px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-[#01a4ff] bg-white"
                     >
-                      <option value="">Vous êtes... (optionnel)</option>
-                      <option value="Gestionnaire">Gestionnaire</option>
-                      <option value="Particulier">Particulier</option>
-                      <option value="Autre">Autre</option>
+                      <option value="">{t('leadForm.rolePlaceholder')}</option>
+                      <option value="manager">{t('leadForm.roles.manager')}</option>
+                      <option value="individual">{t('leadForm.roles.individual')}</option>
+                      <option value="other">{t('leadForm.roles.other')}</option>
                     </select>
                     <button
                       type="submit"
                       className="w-full bg-[#01a4ff] hover:bg-[#0190e0] text-white text-xs md:text-sm font-medium px-4 py-2.5 rounded-lg transition-colors"
                     >
-                      Continuer
+                      {t('leadForm.continue')}
                     </button>
                   </form>
                 </div>
@@ -637,7 +638,7 @@ export default function ChatBotAI() {
                     className="w-full bg-[#01a4ff] hover:bg-[#0190e0] text-white text-sm font-medium px-4 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <span>📅</span>
-                    <span>Demander une démo</span>
+                    <span>{t('choices.demo')}</span>
                   </button>
                   <button
                     onClick={() => handleChoice('support')}
@@ -645,7 +646,7 @@ export default function ChatBotAI() {
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-4 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <span>🛠</span>
-                    <span>Problème technique</span>
+                    <span>{t('choices.support')}</span>
                   </button>
                   <button
                     onClick={() => handleChoice('question')}
@@ -653,7 +654,7 @@ export default function ChatBotAI() {
                     className="w-full bg-green-500 hover:bg-green-600 text-white text-sm font-medium px-4 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     <span>❓</span>
-                    <span>Poser une question</span>
+                    <span>{t('choices.question')}</span>
                   </button>
                 </div>
               </div>
@@ -664,12 +665,12 @@ export default function ChatBotAI() {
               <div className="flex justify-center">
                 <div className="w-full max-w-md bg-orange-50 rounded-2xl p-4 shadow-md border border-orange-200">
                   <h4 className="font-semibold text-sm md:text-base text-gray-900 mb-3">
-                    🛠 Décrivez votre problème
+                    {t('support.title')}
                   </h4>
                   <textarea
                     value={technicalDescription}
                     onChange={(e) => setTechnicalDescription(e.target.value)}
-                    placeholder="Décrivez votre problème technique (optionnel mais recommandé)..."
+                    placeholder={t('support.placeholder')}
                     className="w-full px-3 py-2 text-xs md:text-sm border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 min-h-[100px] resize-none"
                   />
                   <div className="flex gap-2 mt-3">
@@ -677,13 +678,13 @@ export default function ChatBotAI() {
                       onClick={handleTechnicalSupportSubmit}
                       className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-medium px-4 py-2 rounded-lg transition-colors"
                     >
-                      Envoyer
+                      {t('support.send')}
                     </button>
                     <button
                       onClick={handleCancel}
                       className="px-4 py-2 text-xs md:text-sm text-gray-600 hover:text-gray-800 transition-colors"
                     >
-                      Annuler
+                      {t('support.cancel')}
                     </button>
                   </div>
                 </div>
@@ -710,7 +711,7 @@ export default function ChatBotAI() {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Écrivez votre message..."
+                    placeholder={t('input.placeholder')}
                     className="flex-1 rounded-full border border-gray-300 px-3 md:px-4 py-2 text-xs md:text-sm focus:outline-none focus:border-primary"
                     disabled={isLoading}
                     autoComplete="off"
@@ -734,13 +735,13 @@ export default function ChatBotAI() {
                       {
                         id: Date.now().toString(),
                         role: 'assistant',
-                        content: 'Parfait ! Comment puis-je vous aider autrement ?',
+                        content: t('messages.perfect'),
                       },
                     ]);
                   }}
                   className="text-xs text-gray-500 hover:text-primary transition-colors underline"
                 >
-                  ← Retour aux options (Démo, Support technique)
+                  {t('input.backToOptions')}
                 </button>
               </div>
             </div>

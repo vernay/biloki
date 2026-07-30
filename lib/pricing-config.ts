@@ -108,11 +108,18 @@ export function calculatePrice(
 /**
  * Récupère la plage de tarif pour affichage
  */
-export function getTierRange(logementCount: number): string {
+export function getTierRange(logementCount: number, locale: string = 'fr'): string {
   const tier = PRICING_TIERS.find(t => logementCount >= t.min && logementCount <= t.max);
   if (!tier) return '';
-  if (tier.max === Infinity) return `+${CUSTOM_PRICING_THRESHOLD} logements`;
-  return `${tier.min}-${tier.max} logements`;
+
+  const unit = locale === 'fr'
+    ? 'logements'
+    : locale === 'es' || locale === 'pt'
+      ? 'propiedades'
+      : 'properties';
+
+  if (tier.max === Infinity) return `+${CUSTOM_PRICING_THRESHOLD} ${unit}`;
+  return `${tier.min}-${tier.max} ${unit}`;
 }
 
 /**

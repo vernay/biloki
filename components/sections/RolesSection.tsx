@@ -18,7 +18,7 @@ const ROLES_CONFIG: RoleConfig[] = [
     icon: '📋',
     image: '/images/interfaces/gestionnaire.png',
     color: '#0284c7',
-    link: '/fonctionnalites/4-interfaces#gestionnaire'
+    link: '/fonctionnalites/interface-proprietaires#gestionnaire'
   },
   {
     id: 'locataire',
@@ -26,7 +26,7 @@ const ROLES_CONFIG: RoleConfig[] = [
     icon: '🏠',
     image: '/images/interfaces/locataire.png',
     color: '#ff8c42',
-    link: '/fonctionnalites/4-interfaces#locataire'
+    link: '/fonctionnalites/interface-voyageurs'
   },
   {
     id: 'proprietaire',
@@ -34,7 +34,7 @@ const ROLES_CONFIG: RoleConfig[] = [
     icon: '💼',
     image: '/images/interfaces/proprietaire.png',
     color: '#38bdf8',
-    link: '/fonctionnalites/4-interfaces#proprietaire'
+    link: '/fonctionnalites/interface-proprietaires'
   },
   {
     id: 'prestataire',
@@ -42,7 +42,7 @@ const ROLES_CONFIG: RoleConfig[] = [
     icon: '🔧',
     image: '/images/interfaces/prestataire.png',
     color: '#22c55e',
-    link: '/fonctionnalites/4-interfaces#prestataire'
+    link: '/fonctionnalites/interface-proprietaires#prestataire'
   }
 ];
 

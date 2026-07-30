@@ -2,61 +2,87 @@ import { MetadataRoute } from 'next'
 import { getArticlesForLocale } from '../lib/blog/index'
 import { Locale } from '../lib/blog/types'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-import fs from 'fs'
-import path from 'path'
+const baseUrl = 'https://www.biloki.fr'
+const locales: Locale[] = ['fr', 'en', 'es', 'pt']
+
+// Liste blanche SEO : uniquement les pages marketing/produit réellement souhaitées.
+// Les routes de redirection (connexion, abonnement, etc.) sont volontairement exclues.
+const STATIC_MARKETING_ROUTES: string[] = [
+  '',
+  '/blog',
+  '/carriere',
+  '/cgv',
+  '/connexions-api',
+  '/contact',
+  '/cookies',
+  '/equipe',
+  '/fonctionnalites',
+  '/fonctionnalites/avis',
+  '/fonctionnalites/interface-proprietaires',
+  '/fonctionnalites/interface-voyageurs',
+  '/fonctionnalites/marketplace-api',
+  '/fonctionnalites/messagerie-unifiee',
+  '/fonctionnalites/planning-missions',
+  '/fonctionnalites/reservations',
+  '/fonctionnalites/statistiques',
+  '/fonctionnalites/ventes-additionnelles',
+  '/logiciel-location-saisonniere',
+  '/mentions-legales',
+  '/programme-parrainage',
+  '/reserver-demo',
+  '/tarifs',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.biloki.fr'
-  const locales: Locale[] = ['fr', 'en', 'es', 'pt']
-
   const sitemapEntries: MetadataRoute.Sitemap = []
+  const buildDate = new Date().toISOString()
 
   locales.forEach(locale => {
-    const pages = getPagesForLocale()
+    const pages = [...STATIC_MARKETING_ROUTES]
 
-    // Ajouter les articles de blog
+    // Ajouter les articles de blog par locale
     const articles = getArticlesForLocale(locale)
-    pages.push(...articles.map(article => `/blog/${article.slug}`))
 
     pages.forEach(pagePath => {
-      // Priorités basées sur l'importance
-      let priority = 0.6
-      if (pagePath === '') priority = 1.0
-      else if (pagePath === '/tarifs') priority = 0.95
-      else if (pagePath === '/contact' || pagePath === '/reserver-demo') priority = 0.9
-      else if (pagePath.startsWith('/fonctionnalites/channel-manager/airbnb')) priority = 0.85
-      else if (pagePath.startsWith('/fonctionnalites/channel-manager/booking')) priority = 0.85
-      else if (pagePath.startsWith('/fonctionnalites/channel-manager')) priority = 0.85
-      else if (pagePath.startsWith('/fonctionnalites')) priority = 0.8
-      else if (pagePath.startsWith('/blog/')) priority = 0.7
-      else if (pagePath.startsWith('/commencer-gratuitement')) priority = 0.85
-      else if (pagePath === '/equipe' || pagePath === '/carriere') priority = 0.65
-
-      // Fréquence de changement
-      let changeFrequency: 'never' | 'yearly' | 'monthly' | 'weekly' | 'daily' = 'monthly'
-      if (pagePath === '') changeFrequency = 'daily'
-      else if (pagePath.startsWith('/blog/')) changeFrequency = 'weekly'
-      else if (pagePath.startsWith('/fonctionnalites')) changeFrequency = 'monthly'
-      else if (pagePath === '/tarifs' || pagePath === '/reserver-demo' || pagePath === '/commencer-gratuitement') changeFrequency = 'weekly'
-      else if (pagePath === '/cgv' || pagePath === '/mentions-legales' || pagePath === '/cookies') changeFrequency = 'yearly'
-
-      // Créer les alternates multilingues
-      const alternates: Record<string, string> = {}
-      locales.forEach(l => {
-        if (l !== locale) {
-          alternates[`${l}-${l.toUpperCase()}`] = `${baseUrl}/${l}${pagePath}`
-        }
-      })
-      alternates['x-default'] = `${baseUrl}/${locale}${pagePath}`
+      const languages: Record<string, string> = {
+        fr: `${baseUrl}/fr${pagePath}`,
+        en: `${baseUrl}/en${pagePath}`,
+        es: `${baseUrl}/es${pagePath}`,
+        pt: `${baseUrl}/pt${pagePath}`,
+        'x-default': `${baseUrl}/fr${pagePath}`,
+      }
 
       sitemapEntries.push({
         url: `${baseUrl}/${locale}${pagePath}`,
-        lastModified: new Date().toISOString().split('T')[0],
-        changeFrequency,
-        priority,
-        alternates: alternates as any,
+        lastModified: buildDate,
+        changeFrequency: getChangeFrequency(pagePath),
+        priority: getPriority(pagePath),
+        alternates: {
+          languages,
+        },
+      })
+    })
+
+    articles.forEach(article => {
+      const articlePath = `/blog/${article.slug}`
+      const articleLastMod = article.updatedDate ?? article.date
+
+      const languages: Record<string, string> = {
+        fr: `${baseUrl}/fr${articlePath}`,
+        en: `${baseUrl}/en${articlePath}`,
+        es: `${baseUrl}/es${articlePath}`,
+        pt: `${baseUrl}/pt${articlePath}`,
+        'x-default': `${baseUrl}/fr${articlePath}`,
+      }
+
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}${articlePath}`,
+        lastModified: articleLastMod,
+        changeFrequency: 'weekly',
+        priority: 0.7,
+        alternates: {
+          languages,
+        },
       })
     })
   })
@@ -64,52 +90,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return sitemapEntries
 }
 
-function getPagesForLocale(): string[] {
-  const appDir = path.join(process.cwd(), 'app')
-  const localeDir = path.join(appDir, '[locale]')
+function getPriority(pagePath: string): number {
+  if (pagePath === '') return 1
+  if (pagePath === '/tarifs') return 0.95
+  if (pagePath === '/contact' || pagePath === '/reserver-demo') return 0.9
+  if (pagePath.startsWith('/fonctionnalites/channel-manager')) return 0.85
+  if (pagePath.startsWith('/fonctionnalites')) return 0.8
+  if (pagePath === '/equipe' || pagePath === '/carriere') return 0.65
+  return 0.6
+}
 
-  if (!fs.existsSync(localeDir)) {
-    return []
+function getChangeFrequency(
+  pagePath: string
+): 'never' | 'yearly' | 'monthly' | 'weekly' | 'daily' {
+  if (pagePath === '') return 'daily'
+  if (pagePath.startsWith('/fonctionnalites')) return 'monthly'
+  if (pagePath === '/tarifs' || pagePath === '/reserver-demo') return 'weekly'
+  if (pagePath === '/cgv' || pagePath === '/mentions-legales' || pagePath === '/cookies') {
+    return 'yearly'
   }
-
-  const pages: string[] = []
-
-  const walk = (currentDir: string, currentRoute: string) => {
-    const entries = fs.readdirSync(currentDir, { withFileTypes: true })
-
-    // Vérifier si ce dossier contient un fichier page.tsx ou page.ts
-    const hasPage = entries.some(
-      entry => entry.isFile() && (entry.name === 'page.tsx' || entry.name === 'page.ts')
-    )
-
-    if (hasPage) {
-      pages.push(currentRoute)
-    }
-
-    // Parcourir récursivement les sous-dossiers
-    entries
-      .filter(entry => entry.isDirectory())
-      .forEach(dir => {
-        // Exclure les dossiers spéciaux :
-        // - Groupes de routes Next.js : (group-name)
-        // - Dossiers privés : _private
-        // - Routes API
-        // - Routes dynamiques avec paramètres : [id], [slug], etc.
-        if (
-          dir.name.startsWith('(') || 
-          dir.name.startsWith('_') || 
-          dir.name === 'api' ||
-          dir.name.startsWith('[')
-        ) {
-          return
-        }
-
-        const nextRoute = currentRoute === '' ? `/${dir.name}` : `${currentRoute}/${dir.name}`
-        walk(path.join(currentDir, dir.name), nextRoute)
-      })
-  }
-
-  walk(localeDir, '')
-
-  return pages
+  return 'monthly'
 }

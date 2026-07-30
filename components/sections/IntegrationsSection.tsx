@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import CanvaGlassFrame from '@/components/ui/CanvaGlassFrame';
 
 export default function IntegrationsSection() {
   const t = useTranslations('integrations');
@@ -29,13 +30,8 @@ export default function IntegrationsSection() {
   const featureKeys = ['sync', 'realtime', 'payments', 'locks'] as const;
 
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section className="w-full pt-4 pb-16 md:pt-8 md:pb-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-8">
-          <span className="inline-block text-xs font-semibold tracking-wide text-primary bg-[#e9f5ff] px-3 py-1 rounded-full">
-            {t('badge')}
-          </span>
-        </div>
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -55,15 +51,28 @@ export default function IntegrationsSection() {
               ))}
             </ul>
             <div className="mt-6">
-              <a href="/fonctionnalites/marketplace-api" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-white font-semibold shadow-sm hover:shadow-md hover:bg-[#0293e6] transition-colors">
-                {tCommon('seeMarketplace')}
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
+              <CanvaGlassFrame className="rounded-xl">
+                <a
+                  href="/fonctionnalites/marketplace-api"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#01A4FF] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#0194e6] hover:shadow-md"
+                >
+                  {tCommon('seeMarketplace')}
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+              </CanvaGlassFrame>
             </div>
           </div>
-          <div className="space-y-4">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/30 p-4 md:self-stretch md:p-6 flex flex-col justify-center">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: "url('/images/connexions-ota/milan-malfait-ivTKnx8rLII-unsplash.jpg')",
+              }}
+            />
+
+            <div className="relative z-10 space-y-4 pb-1">
             {/* Mobile: grid statique */}
             <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:hidden">
               {logos.map((logo) => (
@@ -164,6 +173,7 @@ export default function IntegrationsSection() {
                   </div>
                 ))}
               </div>
+            </div>
             </div>
           </div>
         </div>

@@ -123,7 +123,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
                     placeholder="your@email.com"
                     className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-primary focus:outline-none text-sm"
                   />
-                  <button className="w-full px-3 py-2 bg-primary text-white font-semibold rounded-lg hover:shadow-lg transition-all text-sm">
+                  <button className="w-full px-3 py-2 canva-glass-cta text-primary font-semibold rounded-lg transition-all text-sm">
                     {t("sidebarNewsletterButton")}
                   </button>
                 </div>
@@ -146,7 +146,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
               placeholder="your@email.com"
               className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-primary focus:outline-none"
             />
-            <button className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <button className="px-8 py-3 canva-glass-cta text-primary font-semibold rounded-lg hover:scale-105 transition-all duration-300">
               {t("subscribeNewsletter")}
             </button>
           </div>
@@ -162,7 +162,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: L
               description: relatedT('channelManager.description')
             },
             {
-              href: `/${locale}/fonctionnalites/pms`,
+              href: `/${locale}/fonctionnalites/reservations`,
               title: relatedT('pms.title'),
               description: relatedT('pms.description')
             },
