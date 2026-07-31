@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 interface LiquidGlassProps {
   children: ReactNode;
@@ -20,13 +21,13 @@ export default function LiquidGlass({
       ].join(" ")}
     >
       {useCanvaTexture ? (
-        <img
-          src="/images/Gros%20CTA/fujiphilm-ntW8m26em5E-unsplash.jpg"
+        <Image
+          src="/images/Gros%20CTA/fujiphilm-ntW8m26em5E-unsplash.webp"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
-          loading="lazy"
-          decoding="async"
+          fill
+          className="pointer-events-none object-cover opacity-60"
+          sizes="(min-width: 1280px) 560px, (min-width: 768px) 70vw, 100vw"
         />
       ) : null}
       <div className="pointer-events-none absolute left-2 right-2 top-1 h-8 rounded-full bg-white/45 blur-md" />

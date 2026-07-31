@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import CanvaGlassFrame from '@/components/ui/CanvaGlassFrame';
 
@@ -65,12 +66,16 @@ export default function IntegrationsSection() {
             </div>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/30 p-4 md:self-stretch md:p-6 flex flex-col justify-center">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('/images/connexions-ota/milan-malfait-ivTKnx8rLII-unsplash.jpg')",
-              }}
-            />
+            <div className="absolute inset-0">
+              <Image
+                src="/images/connexions-ota/milan-malfait-ivTKnx8rLII-unsplash.webp"
+                alt=""
+                aria-hidden="true"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+              />
+            </div>
 
             <div className="relative z-10 space-y-4 pb-1">
             {/* Mobile: grid statique */}

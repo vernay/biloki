@@ -63,7 +63,6 @@ export function AnimatedBeam({
 
     const onViewportUpdate = () => updatePath();
     window.addEventListener("resize", onViewportUpdate);
-    window.addEventListener("scroll", onViewportUpdate, { passive: true });
 
     const ro = new ResizeObserver(() => updatePath());
     if (containerRef.current) ro.observe(containerRef.current);
@@ -72,7 +71,6 @@ export function AnimatedBeam({
 
     return () => {
       window.removeEventListener("resize", onViewportUpdate);
-      window.removeEventListener("scroll", onViewportUpdate);
       ro.disconnect();
     };
   }, [containerRef, fromRef, toRef, updatePath]);

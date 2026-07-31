@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getMessages } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import PartnersScroll from "@/components/sections/PartnersScroll";
@@ -111,12 +112,14 @@ export default function HomePage() {
       />
       <div className="mx-2 md:mx-3 lg:mx-4">
         <div className="relative overflow-hidden rounded-2xl md:rounded-3xl">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('/images/1%C3%A8re%20page%20photos/Es%20vedra.jpg')",
-            }}
+          <Image
+            src="/images/1%C3%A8re%20page%20photos/Es%20vedra.webp"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
           />
           <div
             className="absolute inset-0"

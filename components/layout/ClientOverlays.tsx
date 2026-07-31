@@ -1,15 +1,16 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { useEffect } from "react";
-
-const ChatBot = dynamic(() => import("@/components/ChatBotAI"), { ssr: false });
-const CookieBanner = dynamic(() => import("@/components/CookieBanner"), { ssr: false });
+import ChatBotAI from "@/components/ChatBotAI";
+import CookieBanner from "@/components/CookieBanner";
 
 export default function ClientOverlays() {
   const isBilokiChatbotEnabled = process.env.NEXT_PUBLIC_ENABLE_BILOKI_CHATBOT === "true";
+  const enableRemoveChildGuard = process.env.NEXT_PUBLIC_ENABLE_REMOVECHILD_GUARD === "true";
 
   useEffect(() => {
+    if (!enableRemoveChildGuard) return;
+
     const w = window as Window & {
       __bilokiRemoveChildGuard?: boolean;
       __bilokiOriginalRemoveChild?: typeof Node.prototype.removeChild;
@@ -30,12 +31,12 @@ export default function ClientOverlays() {
     };
 
     w.__bilokiRemoveChildGuard = true;
-  }, []);
+  }, [enableRemoveChildGuard]);
 
   return (
     <>
       <CookieBanner />
-      {isBilokiChatbotEnabled ? <ChatBot /> : null}
+      {isBilokiChatbotEnabled ? <ChatBotAI /> : null}
     </>
   );
 }

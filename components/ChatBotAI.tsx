@@ -43,6 +43,7 @@ export default function ChatBotAI() {
     role: '',
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   // Charger l'état sauvegardé au montage du composant
   useEffect(() => {
@@ -71,10 +72,7 @@ export default function ChatBotAI() {
           setSelectedChoice(parsed.selectedChoice || null);
         }
         
-        // Scroll en bas après chargement des messages
-        setTimeout(() => {
-          messagesEndRef.current?.scrollIntoView({ behavior: 'instant' });
-        }, 100);
+        // Le scroll est géré dans le conteneur interne quand la fenêtre est ouverte.
       } catch (error) {
         sessionStorage.removeItem('biloki-chatbot-state');
         console.error('Erreur lors du chargement de l\'état du chatbot:', error);
@@ -97,21 +95,26 @@ export default function ChatBotAI() {
   }, [messages, leadFormData, leadSubmitted, showChoiceButtons, selectedChoice]);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (!isOpen) return;
+    const container = messagesContainerRef.current;
+    if (!container) return;
+    container.scrollTop = container.scrollHeight;
   };
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages, showLeadForm]);
+  }, [messages, showLeadForm, isOpen]);
 
   // Scroll en bas quand le chatbot s'ouvre
   useEffect(() => {
     if (isOpen && messages.length > 0) {
       setTimeout(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'instant' });
+        const container = messagesContainerRef.current;
+        if (!container) return;
+        container.scrollTop = container.scrollHeight;
       }, 100);
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   const buildConversationTranscript = (conversationMessages: Message[]) => {
     return conversationMessages
@@ -507,7 +510,7 @@ export default function ChatBotAI() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4">
+            <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4">
             {messages.length === 0 && !showLeadForm && (
               <div className="text-center text-gray-500 mt-8">
                 <p className="text-sm md:text-base">{t('emptyGreeting')}</p>

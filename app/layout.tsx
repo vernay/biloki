@@ -5,6 +5,19 @@ import { getLocale } from "next-intl/server";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+const disableManifest = `
+  if (typeof window !== 'undefined') {
+    try {
+      const links = Array.from(document.querySelectorAll('link[rel="manifest"]'));
+      links.forEach((link) => link.remove());
+      const existing = document.querySelector('link[rel="manifest"]');
+      if (existing) existing.remove();
+    } catch (error) {
+      console.debug('Manifest cleanup skipped', error);
+    }
+  }
+`;
+
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
@@ -69,6 +82,9 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={cn("font-sans", geist.variable)}>
       <head>
+        <Script id="manifest-cleanup" strategy="afterInteractive">
+          {disableManifest}
+        </Script>
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

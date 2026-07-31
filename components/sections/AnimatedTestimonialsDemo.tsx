@@ -16,25 +16,25 @@ export function AnimatedTestimonialsDemo({
       quote: t("quotes.1.text"),
       name: "Claire D.",
       designation: t("quotes.1.designation"),
-      src: "/images/Témoignage/Claire.jpg",
+      src: "/images/T%C3%A9moignage/Claire.jpg",
     },
     {
       quote: t("quotes.2.text"),
       name: "Julien R.",
       designation: t("quotes.2.designation"),
-      src: "/images/Témoignage/Julien.jpg",
+      src: "/images/T%C3%A9moignage/Julien.jpg",
     },
     {
       quote: t("quotes.4.text"),
       name: "Jean.L",
       designation: t("quotes.4.designation"),
-      src: "/images/Témoignage/Jean.jpg",
+      src: "/images/T%C3%A9moignage/Jean.jpg",
     },
     {
       quote: t("quotes.5.text"),
       name: "Karim B.",
       designation: t("quotes.5.designation"),
-      src: "/images/Témoignage/Karim.jpg",
+      src: "/images/T%C3%A9moignage/Karim.jpg",
     },
   ];
 

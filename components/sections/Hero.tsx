@@ -22,17 +22,12 @@ export default function Hero() {
           {/* Colonne gauche - Contenu */}
           <motion.div 
             className="space-y-8 text-center lg:text-left"
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
           >
             <motion.div
               className="flex flex-col gap-6 lg:block"
-              variants={itemVariants}
             >
             <motion.h1 
                 className="flex-1 max-w-5xl text-center text-2xl font-semibold leading-tight tracking-tight md:text-3xl md:leading-relaxed lg:text-left lg:text-4xl"
-                variants={itemVariants}
               >
                 <span className="block text-[2rem] md:text-4xl lg:text-5xl font-semibold break-words text-white">
                   {titleLine}
@@ -60,7 +55,6 @@ export default function Hero() {
 
             <motion.div
               className="mt-2 flex flex-col gap-3 text-sm text-white/90"
-              variants={itemVariants}
             >
               <span className="inline-flex items-center justify-center gap-2 lg:justify-start">
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/80 text-white">
@@ -80,7 +74,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
+            <motion.div>
               <a 
                 href="https://www.google.com/search?sca_esv=0ccad900ef2a9a41&sxsrf=ANbL-n6YfqBDfznGLjZ0nDaSP_EzhT30Dg:1771407903783&q=Biloki+Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NTQ2MDA2MzGxMLQ0MDEyNjA028DI-IqR2ykzJz87U8GxLLN4ESsyDwCdZzewNgAAAA&rldimm=5130036448190423016&tbm=lcl&hl=fr-FR&sa=X&ved=2ahUKEwifzO3W4OKSAxVBoScCHUYdLwoQ9fQKegQILRAG&biw=1558&bih=807&dpr=1#lkt=LocalPoiReviews"
                 target="_blank"
@@ -109,9 +103,8 @@ export default function Hero() {
             {/* CTA Buttons */}
             <motion.div 
               className="flex flex-col items-center gap-3 pt-4 sm:flex-row sm:justify-center lg:justify-start"
-              variants={containerVariants}
             >
-              <motion.div variants={itemVariants}>
+              <motion.div>
                 <WebappLink
                   type="register"
                   className="inline-block w-full rounded-full focus-visible:outline-none sm:w-auto"
@@ -120,7 +113,7 @@ export default function Hero() {
                 </WebappLink>
               </motion.div>
 
-              <motion.div variants={itemVariants}>
+              <motion.div>
                 <Link
                   href={`/${locale}/reserver-demo`}
                   className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-xl border border-white/35 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-white/55 hover:bg-white/18 hover:shadow-[0_10px_30px_rgba(255,255,255,0.14)] sm:w-auto"
@@ -132,7 +125,6 @@ export default function Hero() {
 
             <motion.div
               className="flex items-center justify-center gap-2 text-center text-[11px] leading-tight text-white/70 sm:text-xs lg:justify-start lg:text-left"
-              variants={itemVariants}
             >
               <span>{t("hostingNote")}</span>
               <span className="inline-flex items-center rounded px-1.5 py-0.5 border border-white/30 bg-white/5" aria-label="Logo Scaleway">
@@ -147,9 +139,6 @@ export default function Hero() {
           <div className="relative hidden lg:flex lg:h-[800px] items-center justify-end lg:pl-24 lg:-mr-8">
             <motion.div
               className="w-full max-w-[1500px] lg:translate-x-4 lg:scale-[1.5] origin-center"
-              variants={itemVariants}
-              initial="hidden"
-              animate="show"
             >
               <img
                 src="/images/1%C3%A8re%20page%20photos/Photo%20principale.svg"

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 interface CanvaGlassFrameProps {
   children: ReactNode;
@@ -21,13 +22,13 @@ export default function CanvaGlassFrame({
         className,
       ].join(" ")}
     >
-      <img
-        src="/images/Gros%20CTA/fujiphilm-ntW8m26em5E-unsplash.jpg"
+      <Image
+        src="/images/Gros%20CTA/fujiphilm-ntW8m26em5E-unsplash.webp"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-8"
-        loading="lazy"
-        decoding="async"
+        fill
+        className="pointer-events-none object-cover opacity-8"
+        sizes="(min-width: 1280px) 560px, (min-width: 768px) 70vw, 100vw"
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/2 via-transparent to-sky-200/2" />
       <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/50" />

@@ -72,7 +72,7 @@ const ShoppingBagIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
     <path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
     <path d="M9 7v0m6 0v0"/>
-    <line x1="9" y1="7" x2="9" y2="5a3 3 0 0 1 6 0v2"/>
+    <path d="M9 7V3h6v4"/>
   </svg>
 );
 
@@ -216,11 +216,16 @@ export default function InteractiveModulesShowcase() {
       <div className="relative mx-3 mb-8 min-h-[760px] overflow-hidden rounded-2xl sm:mx-4 sm:min-h-[780px] md:mx-6 md:h-[56rem] md:min-h-0 md:rounded-3xl lg:mx-8 lg:h-[980px] xl:mx-12 xl:h-[1040px]">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url('/images/1%C3%A8re%20page%20photos/pexels-sumeyye-ali-253090551-15790995.jpg')",
-          }}
-        />
+        >
+          <Image
+            src="/images/1%C3%A8re%20page%20photos/pexels-sumeyye-ali-253090551-15790995.webp"
+            alt=""
+            aria-hidden="true"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
 
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/58 via-black/22 to-black/58" />
 
@@ -354,7 +359,8 @@ export default function InteractiveModulesShowcase() {
                         alt={getDisplayLabel(currentModule)}
                         fill
                         className="object-contain object-center"
-                        priority
+                        unoptimized
+                        sizes="(min-width: 1280px) 36vw, (min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
                       />
                     </div>
                   </div>

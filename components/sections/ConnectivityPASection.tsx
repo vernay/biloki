@@ -34,9 +34,10 @@ export default function ConnectivityPASection() {
         <CanvaGlassFrame inline={false} className="rounded-2xl md:rounded-3xl">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/Page réservation/franco-debartolo-kUd6KkVfbCY-unsplash.jpg"
+              src="/images/Page%20r%C3%A9servation/franco-debartolo-kUd6KkVfbCY-unsplash.jpg"
               alt=""
               fill
+              unoptimized
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gray-900/72" />

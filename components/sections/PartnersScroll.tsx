@@ -114,6 +114,13 @@ export default function PartnersScroll({ inHero = false }: PartnersScrollProps) 
             animation-duration: 12s;
           }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-scroll {
+            animation: none;
+            transform: translateX(0);
+          }
+        }
       `}</style>
     </section>
   );

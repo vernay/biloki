@@ -14,7 +14,6 @@ export default function Header() {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [mobileFeaturesOpen, setMobileFeaturesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const [, startTransition] = useTransition();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -29,70 +28,7 @@ export default function Header() {
   // Extraire la locale depuis le pathname (ex: /fr/tarifs -> fr)
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
-  const normalizedPathname = pathname.length > 1 && pathname.endsWith('/')
-    ? pathname.slice(0, -1)
-    : pathname;
-  const isHomePage = normalizedPathname === '/' || normalizedPathname === `/${locale}`;
-  const useSolidHeader = !isHomePage || scrolled;
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!isHomePage) {
-      setScrolled(false);
-      return;
-    }
-
-    let observer: IntersectionObserver | null = null;
-    let resizeTimer: number | null = null;
-
-    const fallback = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    const attachObserver = () => {
-      observer?.disconnect();
-
-      const heroSection = document.getElementById('hero-section');
-      if (!heroSection || typeof IntersectionObserver === 'undefined') {
-        fallback();
-        return;
-      }
-
-      const headerOffset = window.innerWidth >= 768 ? 110 : 72;
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          setScrolled(!entry.isIntersecting);
-        },
-        {
-          root: null,
-          threshold: 0,
-          rootMargin: `-${headerOffset}px 0px 0px 0px`,
-        }
-      );
-
-      observer.observe(heroSection);
-    };
-
-    const handleResize = () => {
-      if (resizeTimer !== null) {
-        window.clearTimeout(resizeTimer);
-      }
-      resizeTimer = window.setTimeout(() => {
-        attachObserver();
-      }, 120);
-    };
-
-    attachObserver();
-    window.addEventListener('resize', handleResize, { passive: true });
-
-    return () => {
-      observer?.disconnect();
-      if (resizeTimer !== null) {
-        window.clearTimeout(resizeTimer);
-      }
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [isHomePage]);
+  const useSolidHeader = true;
 
   const withLocale = (href: string) => {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -223,6 +159,7 @@ export default function Header() {
           animation: scroll-text 12s linear infinite;
           display: flex;
           width: fit-content;
+          will-change: transform;
         }
         .scrolling-text span {
           white-space: nowrap;
@@ -230,6 +167,15 @@ export default function Header() {
           color: white;
           font-weight: 500;
           font-size: 0.875rem;
+        }
+        .scrolling-text:hover {
+          animation-play-state: paused;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .scrolling-text {
+            animation: none;
+            transform: translateX(0);
+          }
         }
       `}</style>
       <div className="hidden md:flex relative w-full bg-green-600 items-center justify-center px-4 py-3">
@@ -255,15 +201,14 @@ export default function Header() {
 
       {/* Header pill centré */}
       <div className="flex justify-center px-3 pt-3 pb-2 md:px-4">
-        <header className={`relative rounded-2xl w-full max-w-[320px] md:max-w-none md:w-auto transition-colors duration-300 ${useSolidHeader ? 'bg-primary text-white shadow-lg' : 'bg-white/12 text-white backdrop-blur-xl backdrop-saturate-150 border border-white/35 shadow-[0_14px_34px_rgba(2,10,28,0.28)]'}`}>
+          <header className={`relative rounded-2xl w-full max-w-[320px] md:max-w-none md:w-auto transition-colors duration-300 ${useSolidHeader ? 'bg-primary text-white shadow-lg' : 'bg-white/12 text-white backdrop-blur-xl backdrop-saturate-150 border border-white/35 shadow-[0_14px_34px_rgba(2,10,28,0.28)]'}`}>
         <nav className="h-[64px] md:h-[72px] px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href={withLocale("/")} className="-ml-0.5 shrink-0">
           <img
-            src={isHomePage && !scrolled ? "/logos/biloki-logo-full.svg" : "/logos/logo-biloki.png"}
+            src="/logos/logo-biloki.png"
             alt="Biloki"
-            className={isHomePage && !scrolled ? "h-[40px] md:h-[40px] w-auto" : "h-auto w-[116px] md:w-[132px]"}
-            style={isHomePage && !scrolled ? { filter: 'brightness(0) invert(1)' } : {}}
+            className="h-auto w-[116px] md:w-[132px]"
             width={240}
             height={120}
             decoding="async"
@@ -271,7 +216,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className={`hidden md:flex items-center gap-6 lg:gap-8 text-sm ${scrolled ? 'text-white' : 'text-white'}`}>
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-white">
           <Link href={withLocale("/")} className="hover:opacity-80 transition">
             {t("home")}
           </Link>
@@ -455,11 +400,11 @@ export default function Header() {
             )}
           </div>
 
-          <Link href={withLocale("/reserver-demo")} className={`hover:opacity-80 font-semibold text-sm ${scrolled ? 'text-white' : 'text-white'}`}>
+          <Link href={withLocale("/reserver-demo")} className="hover:opacity-80 font-semibold text-sm text-white">
             {t("demo")}
           </Link>
           <CanvaGlassFrame className="rounded-full">
-            <WebappLink type="register" className={`font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm whitespace-nowrap ${scrolled ? 'text-white hover:text-white/85' : 'text-white hover:text-white/85'}`}>
+            <WebappLink type="register" className="font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm whitespace-nowrap text-white hover:text-white/85">
               {t("trial")}
             </WebappLink>
           </CanvaGlassFrame>
@@ -468,7 +413,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/35 bg-white/10 transition hover:opacity-90 ${scrolled ? 'text-white' : 'text-white'}`}
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/35 bg-white/10 text-white transition hover:opacity-90"
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={isOpen}
         >

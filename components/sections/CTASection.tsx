@@ -16,10 +16,9 @@ export default function CTASection() {
       <div className="mx-2 md:mx-4 lg:mx-6">
         <div className="relative mx-auto max-w-[1540px] overflow-hidden rounded-[2rem] min-h-[470px] shadow-[0_35px_90px_rgba(2,12,27,0.55)] md:min-h-[620px] md:rounded-[2.6rem]">
           <Image
-            src="/images/Gros CTA/nahide-erol-na_sPDkhveI-unsplash.jpg"
+            src="/images/Gros CTA/nahide-erol-na_sPDkhveI-unsplash.webp"
             alt="Salon moderne"
             fill
-            unoptimized
             className="object-cover"
             sizes="100vw"
           />
