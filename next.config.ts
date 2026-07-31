@@ -396,6 +396,42 @@ const nextConfig: NextConfig = {
         destination: '/:locale/fonctionnalites',
         permanent: true,
       },
+      {
+        source: '/fonctionnalites/4-interfaces',
+        destination: '/fr/fonctionnalites/interface-proprietaires',
+        permanent: true,
+      },
+      {
+        source: '/fonctionnalites/4-interfaces/',
+        destination: '/fr/fonctionnalites/interface-proprietaires',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/4-interfaces',
+        destination: '/:locale/fonctionnalites/interface-proprietaires',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/4-interfaces/',
+        destination: '/:locale/fonctionnalites/interface-proprietaires',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/messagerie',
+        destination: '/:locale/fonctionnalites/messagerie-unifiee',
+        permanent: true,
+      },
+      {
+        source: '/:locale/fonctionnalites/messagerie/',
+        destination: '/:locale/fonctionnalites/messagerie-unifiee',
+        permanent: true,
+      },
+      // Redirections des anciens chemins ville programmatiques supprimés
+      {
+        source: '/:locale/logiciel-location-saisonniere/:ville',
+        destination: '/:locale/logiciel-location-saisonniere',
+        permanent: true,
+      },
     ];
   },
 };
