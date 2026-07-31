@@ -40,9 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   locales.forEach(locale => {
     const pages = [...STATIC_MARKETING_ROUTES]
 
-    // Ajouter les articles de blog par locale
-    const articles = getArticlesForLocale(locale)
-
     pages.forEach(pagePath => {
       const languages: Record<string, string> = {
         fr: `${baseUrl}/fr${pagePath}`,
@@ -62,28 +59,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       })
     })
+  })
 
-    articles.forEach(article => {
-      const articlePath = `/blog/${article.slug}`
-      const articleLastMod = article.updatedDate ?? article.date
+  // Articles de blog : uniquement FR (contenu EN/ES/PT trop court pour être indexé)
+  const frArticles = getArticlesForLocale('fr')
+  frArticles.forEach(article => {
+    const articlePath = `/blog/${article.slug}`
+    const articleLastMod = article.updatedDate ?? article.date
 
-      const languages: Record<string, string> = {
-        fr: `${baseUrl}/fr${articlePath}`,
-        en: `${baseUrl}/en${articlePath}`,
-        es: `${baseUrl}/es${articlePath}`,
-        pt: `${baseUrl}/pt${articlePath}`,
-        'x-default': `${baseUrl}/fr${articlePath}`,
-      }
-
-      sitemapEntries.push({
-        url: `${baseUrl}/${locale}${articlePath}`,
-        lastModified: articleLastMod,
-        changeFrequency: 'weekly',
-        priority: 0.7,
-        alternates: {
-          languages,
+    sitemapEntries.push({
+      url: `${baseUrl}/fr${articlePath}`,
+      lastModified: articleLastMod,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          fr: `${baseUrl}/fr${articlePath}`,
+          'x-default': `${baseUrl}/fr${articlePath}`,
         },
-      })
+      },
     })
   })
 

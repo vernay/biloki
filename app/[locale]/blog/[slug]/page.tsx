@@ -50,17 +50,18 @@ export async function generateMetadata({
   const absoluteUrl = `${SITE_BASE_URL}/${locale}/blog/${slug}`;
   const author = resolveAuthor(article.author, locale);
 
+  // Articles non-FR : canonical vers FR pour éviter le thin content
+  const isNonFr = locale !== 'fr'
+
   return {
     title: article.title,
     description: optimizeDescription(article.excerpt),
+    robots: isNonFr ? { index: false, follow: false } : undefined,
     alternates: {
-      canonical: `/${locale}/blog/${slug}`,
+      canonical: isNonFr ? `/fr/blog/${slug}` : `/${locale}/blog/${slug}`,
       languages: {
         fr: `/fr/blog/${slug}`,
-        en: `/en/blog/${slug}`,
-        es: `/es/blog/${slug}`,
-        pt: `/pt/blog/${slug}`,
-        "x-default": `/fr/blog/${slug}`,
+        'x-default': `/fr/blog/${slug}`,
       },
     },
     openGraph: {
