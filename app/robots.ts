@@ -25,7 +25,6 @@ export default function robots(): MetadataRoute.Robots {
     ],
     sitemap: [
       'https://www.biloki.fr/sitemap.xml',
-      'https://www.biloki.fr/sitemap-programmatic.xml',
     ],
   }
 }

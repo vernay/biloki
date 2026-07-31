@@ -28,33 +28,11 @@ const nextConfig: NextConfig = {
         destination: '/fr',
         permanent: true,
       },
-      // Canonicaliser les pages programmatic non préfixées vers /fr
       {
-        source: '/logiciel-location-saisonniere/:ville',
-        destination: '/fr/logiciel-location-saisonniere/:ville',
+        source: '/wp-login.php',
+        destination: '/fr',
         permanent: true,
       },
-      // Les pages programmatic ne sont disponibles qu'en FR
-      {
-        source: '/en/logiciel-location-saisonniere/:ville',
-        destination: '/fr/logiciel-location-saisonniere/:ville',
-        permanent: true,
-      },
-      {
-        source: '/es/logiciel-location-saisonniere/:ville',
-        destination: '/fr/logiciel-location-saisonniere/:ville',
-        permanent: true,
-      },
-      {
-        source: '/pt/logiciel-location-saisonniere/:ville',
-        destination: '/fr/logiciel-location-saisonniere/:ville',
-        permanent: true,
-      },
-          {
-            source: '/wp-login.php',
-            destination: '/fr',
-            permanent: true,
-          },
       // Redirections vers webapp
       {
         source: '/:locale/commencer-gratuitement',
