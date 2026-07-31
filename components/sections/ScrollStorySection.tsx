@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import {
   AnimatePresence,
@@ -123,6 +124,7 @@ type ScrollStorySectionProps = {
 export default function ScrollStorySection({ namespace = 'featureSections.scrollStory', backdropVariant }: ScrollStorySectionProps) {
   const t = useTranslations(namespace);
   const locale = useLocale();
+  const pathname = usePathname();
   const shouldContainStepImages =
     namespace === 'featureSections.additionalSalesScrollStory' ||
     namespace === 'featureSections.reservationsScrollStory' ||
@@ -134,7 +136,6 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
     namespace === 'featureSections.smartLocksScrollStory';
   const sectionRef = useRef<HTMLElement | null>(null);
   const articleRefs = useRef<Array<HTMLElement | null>>([]);
-  const rafSyncRef = useRef<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isDesktopViewport, setIsDesktopViewport] = useState(false);
@@ -176,7 +177,15 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
     if (!isDesktopViewport) return;
     if (steps.length === 0) return;
 
-    let candidate = 0;
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const sectionRect = section.getBoundingClientRect();
+    if (sectionRect.bottom < 0 || sectionRect.top > window.innerHeight) {
+      return;
+    }
+
+    let candidate = activeIndex;
     let bestDistance = Number.POSITIVE_INFINITY;
     const targetLine = window.innerHeight * 0.42;
 
@@ -192,19 +201,9 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
       }
     });
 
-    setActiveIndex(clampIndex(candidate, steps.length - 1));
-  }, [isDesktopViewport, steps.length]);
-
-  const scheduleSyncActiveStep = useCallback(() => {
-    if (typeof window === "undefined") return;
-    if (!isDesktopViewport) return;
-    if (rafSyncRef.current !== null) return;
-
-    rafSyncRef.current = window.requestAnimationFrame(() => {
-      rafSyncRef.current = null;
-      syncActiveStepFromViewport();
-    });
-  }, [isDesktopViewport, syncActiveStepFromViewport]);
+    const nextIndex = clampIndex(candidate, steps.length - 1);
+    setActiveIndex((prev) => (prev === nextIndex ? prev : nextIndex));
+  }, [activeIndex, isDesktopViewport, steps.length]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -218,58 +217,83 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (prefersReducedMotion) return;
     if (!isDesktopViewport) return;
 
-    const onScrollOrResize = () => {
-      scheduleSyncActiveStep();
-    };
+    let frameId: number | null = null;
 
-    const onPageShow = () => {
-      scheduleSyncActiveStep();
+    const scheduleSync = () => {
+      if (frameId !== null) return;
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        syncActiveStepFromViewport();
+      });
     };
 
     const onVisibilityChange = () => {
       if (document.visibilityState === "visible") {
-        scheduleSyncActiveStep();
+        scheduleSync();
       }
     };
 
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
-    window.addEventListener("resize", onScrollOrResize);
-    window.addEventListener("pageshow", onPageShow);
+    scheduleSync();
+    window.addEventListener("scroll", scheduleSync, { passive: true });
+    window.addEventListener("resize", scheduleSync, { passive: true });
+    window.addEventListener("pageshow", scheduleSync);
     document.addEventListener("visibilitychange", onVisibilityChange);
 
-    scheduleSyncActiveStep();
-
     return () => {
-      window.removeEventListener("scroll", onScrollOrResize);
-      window.removeEventListener("resize", onScrollOrResize);
-      window.removeEventListener("pageshow", onPageShow);
+      window.removeEventListener("scroll", scheduleSync);
+      window.removeEventListener("resize", scheduleSync);
+      window.removeEventListener("pageshow", scheduleSync);
       document.removeEventListener("visibilitychange", onVisibilityChange);
-      if (rafSyncRef.current !== null) {
-        window.cancelAnimationFrame(rafSyncRef.current);
-        rafSyncRef.current = null;
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
       }
     };
-  }, [isDesktopViewport, prefersReducedMotion, scheduleSyncActiveStep]);
+  }, [isDesktopViewport, pathname, prefersReducedMotion, syncActiveStepFromViewport]);
 
   useEffect(() => {
     if (prefersReducedMotion) return;
     if (!isDesktopViewport) return;
-    if (typeof ResizeObserver === "undefined") return;
-    if (!sectionRef.current) return;
+    if (typeof IntersectionObserver === "undefined") return;
 
-    const observer = new ResizeObserver(() => {
-      scheduleSyncActiveStep();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length === 0) return;
+
+        const nextIndex = Number(visibleEntries[0].target.getAttribute("data-step-index"));
+        if (!Number.isNaN(nextIndex)) {
+          setActiveIndex(clampIndex(nextIndex, steps.length - 1));
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.35, 0.5, 0.65],
+        rootMargin: "-18% 0px -38% 0px",
+      }
+    );
+
+    articleRefs.current.forEach((article) => {
+      if (article) {
+        observer.observe(article);
+      }
     });
-
-    observer.observe(sectionRef.current);
 
     return () => {
       observer.disconnect();
     };
-  }, [isDesktopViewport, prefersReducedMotion, scheduleSyncActiveStep]);
+  }, [isDesktopViewport, pathname, prefersReducedMotion, steps.length]);
+
+  useEffect(() => {
+    if (isDesktopViewport) return;
+    setActiveIndex(0);
+  }, [isDesktopViewport]);
   const hasSteps = steps.length > 0;
   if (!hasSteps) {
     return null;
@@ -288,8 +312,8 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
         ? UNIFIED_MESSAGING_BACKDROP_IMAGES[safeActiveIndex] ?? UNIFIED_MESSAGING_BACKDROP_IMAGES[0]
       : "/images/Page réservation/Image de fond .jpg";
   const backdropFrameHeightClassName = "lg:h-[calc(100vh-23rem)] lg:min-h-[350px]";
-  const insetCardWrapperClassName = "w-full max-w-[620px] rounded-[28px] border border-white/50 bg-white/22 p-2 shadow-[0_25px_55px_rgba(15,23,42,0.25)] backdrop-blur-xl md:max-w-[640px] md:p-3";
-  const insetCardImageHeightClassName = "h-72 w-full md:h-[22rem] lg:h-[470px]";
+  const insetCardWrapperClassName = "w-full max-w-[520px] rounded-[28px] border border-white/50 bg-white/22 p-2 shadow-[0_25px_55px_rgba(15,23,42,0.25)] backdrop-blur-xl md:max-w-[560px] md:p-3 lg:max-w-[500px] xl:max-w-[540px]";
+  const insetCardImageHeightClassName = "h-72 w-full md:h-[20rem] lg:h-[390px] xl:h-[420px]";
 
   const handleStepClick = (idx: number) => {
     setActiveIndex(idx);

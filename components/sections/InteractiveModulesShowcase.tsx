@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import CanvaGlassFrame from "@/components/ui/CanvaGlassFrame";
@@ -92,122 +91,122 @@ const CheckIcon = () => (
   </svg>
 );
 
+const MODULES: Module[] = [
+  {
+    id: 1,
+    icon: <CalendarIcon />,
+    labelKey: "reservations.label",
+    headerHookKey: "reservations.hook",
+    descriptionKey: "reservations.description",
+    shortDescKey: "reservations.short",
+    bullet1Key: "reservations.bullet1",
+    bullet2Key: "reservations.bullet2",
+    bullet3Key: "reservations.bullet3",
+    imagePath: "/images/Page réservation/2.png",
+    mediaType: "image",
+    ctaHref: "/fonctionnalites/reservations",
+  },
+  {
+    id: 2,
+    icon: <MessageIcon />,
+    labelKey: "messaging.label",
+    headerHookKey: "unifiedMessaging.hook",
+    descriptionKey: "messaging.description",
+    shortDescKey: "messaging.short",
+    bullet1Key: "messaging.bullet1",
+    bullet2Key: "messaging.bullet2",
+    bullet3Key: "messaging.bullet3",
+    imagePath: "/images/Messagerie unifiée/Tout centralisé.svg",
+    mediaType: "image",
+    ctaHref: "/fonctionnalites/messagerie-unifiee",
+  },
+  {
+    id: 3,
+    icon: <ClipboardIcon />,
+    labelKey: "missions.label",
+    headerHookKey: "planningMissions.hook",
+    descriptionKey: "missions.description",
+    shortDescKey: "missions.short",
+    bullet1Key: "missions.bullet1",
+    bullet2Key: "missions.bullet2",
+    bullet3Key: "missions.bullet3",
+    imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 18.44.15.png",
+    ctaHref: "/fonctionnalites/planning-missions",
+  },
+  {
+    id: 4,
+    icon: <ChartIcon />,
+    labelKey: "statistics.label",
+    headerHookKey: "statistics.hook",
+    descriptionKey: "statistics.description",
+    shortDescKey: "statistics.short",
+    bullet1Key: "statistics.bullet1",
+    bullet2Key: "statistics.bullet2",
+    bullet3Key: "statistics.bullet3",
+    imagePath: "/images/modules/Statistiques.MOV",
+    mediaType: "video",
+    ctaHref: "/fonctionnalites/statistiques",
+  },
+  {
+    id: 5,
+    icon: <StarIcon />,
+    labelKey: "reviews.label",
+    headerHookKey: "reviews.hook",
+    descriptionKey: "reviews.description",
+    shortDescKey: "reviews.short",
+    bullet1Key: "reviews.bullet1",
+    bullet2Key: "reviews.bullet2",
+    bullet3Key: "reviews.bullet3",
+    imagePath: "/images/modules/reviews.mov",
+    mediaType: "video",
+    ctaHref: "/reserver-demo",
+  },
+  {
+    id: 6,
+    icon: <LockIcon />,
+    labelKey: "locks.label",
+    headerHookKey: "smartLocks.hook",
+    descriptionKey: "locks.description",
+    shortDescKey: "locks.short",
+    bullet1Key: "locks.bullet1",
+    bullet2Key: "locks.bullet2",
+    bullet3Key: "locks.bullet3",
+    imagePath: "/images/serrures/Etape 2.svg",
+    ctaHref: "/fonctionnalites/serrures-connectees",
+  },
+  {
+    id: 7,
+    icon: <ShoppingBagIcon />,
+    labelKey: "addons.label",
+    headerHookKey: "additionalSales.hook",
+    descriptionKey: "addons.description",
+    shortDescKey: "addons.short",
+    bullet1Key: "addons.bullet1",
+    bullet2Key: "addons.bullet2",
+    bullet3Key: "addons.bullet3",
+    imagePath: "/images/Section ventes additionnelles/Etape 4.png",
+    ctaHref: "/fonctionnalites/ventes-additionnelles",
+  },
+  {
+    id: 8,
+    icon: <UsersIcon />,
+    labelKey: "team.label",
+    descriptionKey: "team.description",
+    shortDescKey: "team.short",
+    bullet1Key: "team.bullet1",
+    bullet2Key: "team.bullet2",
+    bullet3Key: "team.bullet3",
+    imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 19.02.19.png",
+    ctaHref: "/fonctionnalites/planning-missions",
+  },
+];
+
 export default function InteractiveModulesShowcase() {
   const t = useTranslations("modules");
   const tHeaderItems = useTranslations("header.megaMenu.items");
   const [activeModule, setActiveModule] = useState(0);
 
-  const modules: Module[] = [
-    {
-      id: 1,
-      icon: <CalendarIcon />,
-      labelKey: "reservations.label",
-      headerHookKey: "reservations.hook",
-      descriptionKey: "reservations.description",
-      shortDescKey: "reservations.short",
-      bullet1Key: "reservations.bullet1",
-      bullet2Key: "reservations.bullet2",
-      bullet3Key: "reservations.bullet3",
-      imagePath: "/images/Page réservation/2.png",
-      mediaType: "image",
-      ctaHref: "/fonctionnalites/reservations",
-    },
-    {
-      id: 2,
-      icon: <MessageIcon />,
-      labelKey: "messaging.label",
-      headerHookKey: "unifiedMessaging.hook",
-      descriptionKey: "messaging.description",
-      shortDescKey: "messaging.short",
-      bullet1Key: "messaging.bullet1",
-      bullet2Key: "messaging.bullet2",
-      bullet3Key: "messaging.bullet3",
-      imagePath: "/images/Messagerie unifiée/Tout centralisé.svg",
-      mediaType: "image",
-      ctaHref: "/fonctionnalites/messagerie-unifiee",
-    },
-    {
-      id: 3,
-      icon: <ClipboardIcon />,
-      labelKey: "missions.label",
-      headerHookKey: "planningMissions.hook",
-      descriptionKey: "missions.description",
-      shortDescKey: "missions.short",
-      bullet1Key: "missions.bullet1",
-      bullet2Key: "missions.bullet2",
-      bullet3Key: "missions.bullet3",
-      imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 18.44.15.png",
-      ctaHref: "/fonctionnalites/planning-missions",
-    },
-    {
-      id: 4,
-      icon: <ChartIcon />,
-      labelKey: "statistics.label",
-      headerHookKey: "statistics.hook",
-      descriptionKey: "statistics.description",
-      shortDescKey: "statistics.short",
-      bullet1Key: "statistics.bullet1",
-      bullet2Key: "statistics.bullet2",
-      bullet3Key: "statistics.bullet3",
-      imagePath: "/images/modules/Statistiques.MOV",
-      mediaType: "video",
-      ctaHref: "/fonctionnalites/statistiques",
-    },
-    {
-      id: 5,
-      icon: <StarIcon />,
-      labelKey: "reviews.label",
-      headerHookKey: "reviews.hook",
-      descriptionKey: "reviews.description",
-      shortDescKey: "reviews.short",
-      bullet1Key: "reviews.bullet1",
-      bullet2Key: "reviews.bullet2",
-      bullet3Key: "reviews.bullet3",
-      imagePath: "/images/modules/reviews.mov",
-      mediaType: "video",
-      ctaHref: "/reserver-demo",
-    },
-    {
-      id: 6,
-      icon: <LockIcon />,
-      labelKey: "locks.label",
-      headerHookKey: "smartLocks.hook",
-      descriptionKey: "locks.description",
-      shortDescKey: "locks.short",
-      bullet1Key: "locks.bullet1",
-      bullet2Key: "locks.bullet2",
-      bullet3Key: "locks.bullet3",
-      imagePath: "/images/serrures/Etape 2.svg",
-      ctaHref: "/fonctionnalites/serrures-connectees",
-    },
-    {
-      id: 7,
-      icon: <ShoppingBagIcon />,
-      labelKey: "addons.label",
-      headerHookKey: "additionalSales.hook",
-      descriptionKey: "addons.description",
-      shortDescKey: "addons.short",
-      bullet1Key: "addons.bullet1",
-      bullet2Key: "addons.bullet2",
-      bullet3Key: "addons.bullet3",
-      imagePath: "/images/Section ventes additionnelles/Etape 4.png",
-      ctaHref: "/fonctionnalites/ventes-additionnelles",
-    },
-    {
-      id: 8,
-      icon: <UsersIcon />,
-      labelKey: "team.label",
-      descriptionKey: "team.description",
-      shortDescKey: "team.short",
-      bullet1Key: "team.bullet1",
-      bullet2Key: "team.bullet2",
-      bullet3Key: "team.bullet3",
-      imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 19.02.19.png",
-      ctaHref: "/fonctionnalites/planning-missions",
-    },
-  ];
-
-  const currentModule = modules[activeModule];
+  const currentModule = MODULES[activeModule];
   const getDisplayLabel = (module: Module) =>
     module.headerHookKey ? tHeaderItems(module.headerHookKey) : t(module.labelKey);
 
@@ -216,7 +215,7 @@ export default function InteractiveModulesShowcase() {
       {/* Hero-style section: fixed background + scrolling foreground content */}
       <div className="relative mx-3 mb-8 min-h-[760px] overflow-hidden rounded-2xl sm:mx-4 sm:min-h-[780px] md:mx-6 md:h-[56rem] md:min-h-0 md:rounded-3xl lg:mx-8 lg:h-[980px] xl:mx-12 xl:h-[1040px]">
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
               "url('/images/1%C3%A8re%20page%20photos/pexels-sumeyye-ali-253090551-15790995.jpg')",
@@ -240,7 +239,7 @@ export default function InteractiveModulesShowcase() {
 
             {/* Mobile tabs: vertical menu */}
             <div className="mx-auto mb-5 flex w-full flex-col gap-3 md:hidden">
-              {modules.map((module) => {
+              {MODULES.map((module) => {
                 return (
                   <Link
                     key={module.id}
@@ -265,12 +264,14 @@ export default function InteractiveModulesShowcase() {
 
             {/* Desktop tabs */}
             <div className="mx-auto mb-8 hidden max-w-5xl grid-cols-2 gap-3 md:grid lg:mb-10 lg:grid-cols-4">
-              {modules.map((module, index) => {
+              {MODULES.map((module, index) => {
                 const isActive = activeModule === index;
                 return (
                   <button
                     key={module.id}
                     onClick={() => setActiveModule(index)}
+                    onMouseEnter={() => setActiveModule(index)}
+                    onFocus={() => setActiveModule(index)}
                     className={`w-full min-h-[56px] flex items-center justify-center gap-2 rounded-full border px-3 py-3 text-sm font-semibold transition-all duration-200 ${
                       isActive
                         ? "bg-white text-gray-900 border-white shadow-[0_10px_24px_rgba(255,255,255,0.22)]"
@@ -286,31 +287,8 @@ export default function InteractiveModulesShowcase() {
 
         {/* Content: left text + right screenshot */}
         <div className="hidden md:block">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeModule}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.15,
-                  delayChildren: 0.1,
-                },
-              },
-            }}
-            className="grid grid-cols-1 items-stretch gap-4 md:gap-6 lg:grid-cols-2 lg:gap-10"
-          >
+        <div className="grid grid-cols-1 items-stretch gap-4 md:gap-6 lg:grid-cols-2 lg:gap-10">
             {/* Left: text */}
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-              }}
-            >
             <CanvaGlassFrame inline={false} className="flex h-full flex-col rounded-[2rem] p-2.5 backdrop-blur sm:rounded-[2.2rem] sm:p-4 lg:rounded-[2.5rem] lg:p-6">
               {/* Inner white panel with padding to show liquid glass border */}
               <div className="flex h-full flex-col rounded-[1.4rem] bg-white p-4 sm:rounded-[1.8rem] sm:p-6 lg:rounded-[2rem] lg:p-8">
@@ -353,16 +331,8 @@ export default function InteractiveModulesShowcase() {
                 </div>
               </div>
             </CanvaGlassFrame>
-            </motion.div>
-
             {/* Right: screenshot card */}
-            <motion.div
-              className="relative h-[300px] sm:h-[360px] md:h-[420px] lg:h-full"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-              }}
-            >
+            <div className="relative h-[300px] sm:h-[360px] md:h-[420px] lg:h-full">
               <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/55 bg-transparent p-3 backdrop-blur sm:rounded-[2.2rem] sm:p-4 lg:rounded-[2.5rem] lg:p-6">
                 {currentModule.mediaType === "video" ? (
                   <div className="flex-1 overflow-hidden rounded-[1.6rem] bg-black sm:rounded-[1.8rem] lg:rounded-[2rem]">
@@ -370,9 +340,10 @@ export default function InteractiveModulesShowcase() {
                       src={currentModule.imagePath}
                       className="w-full h-full object-contain object-center"
                       controls
-                      autoPlay
+                      preload="metadata"
                       muted
                       loop
+                      playsInline
                     />
                   </div>
                 ) : (
@@ -389,9 +360,8 @@ export default function InteractiveModulesShowcase() {
                   </div>
                 )}
               </div>
-            </motion.div>
-          </motion.div>
-        </AnimatePresence>
+            </div>
+          </div>
         </div>
           </div>
         </div>

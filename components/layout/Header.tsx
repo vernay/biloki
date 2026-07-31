@@ -15,39 +15,6 @@ export default function Header() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [mobileFeaturesOpen, setMobileFeaturesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const updateHeaderState = () => {
-      const partnersHeading = document.getElementById('partners-heading');
-
-      if (partnersHeading) {
-        const triggerTop = partnersHeading.getBoundingClientRect().top;
-        const headerOffset = window.innerWidth >= 768 ? 120 : 84;
-        setScrolled(triggerTop <= headerOffset);
-        return;
-      }
-
-      const heroSection = document.getElementById('hero-section');
-
-      if (!heroSection) {
-        setScrolled(window.scrollY > 40);
-        return;
-      }
-
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      const headerOffset = window.innerWidth >= 768 ? 110 : 72;
-      setScrolled(heroBottom <= headerOffset);
-    };
-
-    updateHeaderState();
-    window.addEventListener('scroll', updateHeaderState, { passive: true });
-    window.addEventListener('resize', updateHeaderState);
-
-    return () => {
-      window.removeEventListener('scroll', updateHeaderState);
-      window.removeEventListener('resize', updateHeaderState);
-    };
-  }, []);
   const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
   const [, startTransition] = useTransition();
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -67,6 +34,65 @@ export default function Header() {
     : pathname;
   const isHomePage = normalizedPathname === '/' || normalizedPathname === `/${locale}`;
   const useSolidHeader = !isHomePage || scrolled;
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!isHomePage) {
+      setScrolled(false);
+      return;
+    }
+
+    let observer: IntersectionObserver | null = null;
+    let resizeTimer: number | null = null;
+
+    const fallback = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    const attachObserver = () => {
+      observer?.disconnect();
+
+      const heroSection = document.getElementById('hero-section');
+      if (!heroSection || typeof IntersectionObserver === 'undefined') {
+        fallback();
+        return;
+      }
+
+      const headerOffset = window.innerWidth >= 768 ? 110 : 72;
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setScrolled(!entry.isIntersecting);
+        },
+        {
+          root: null,
+          threshold: 0,
+          rootMargin: `-${headerOffset}px 0px 0px 0px`,
+        }
+      );
+
+      observer.observe(heroSection);
+    };
+
+    const handleResize = () => {
+      if (resizeTimer !== null) {
+        window.clearTimeout(resizeTimer);
+      }
+      resizeTimer = window.setTimeout(() => {
+        attachObserver();
+      }, 120);
+    };
+
+    attachObserver();
+    window.addEventListener('resize', handleResize, { passive: true });
+
+    return () => {
+      observer?.disconnect();
+      if (resizeTimer !== null) {
+        window.clearTimeout(resizeTimer);
+      }
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isHomePage]);
 
   const withLocale = (href: string) => {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
