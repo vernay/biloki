@@ -4,7 +4,8 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://beta.biloki.fr';
-const WEBAPP_REGISTER_URL = `${WEBAPP_BASE_URL}/register`;
+// Essai gratuit : toujours vers le domaine app.biloki.fr, indépendamment de NEXT_PUBLIC_WEBAPP_URL
+const WEBAPP_REGISTER_URL = 'https://app.biloki.fr/register';
 const WEBAPP_SUBSCRIPTION_URL = `${WEBAPP_BASE_URL}/register/subscription`;
 
 const nextConfig: NextConfig = {
@@ -36,7 +37,7 @@ const nextConfig: NextConfig = {
       // Redirections vers webapp
       {
         source: '/:locale/commencer-gratuitement',
-        destination: 'https://app.biloki.fr/register/trial?access=f6c0189e31f1fd7f09d7b3b348fc7836&lang=:locale',
+        destination: `${WEBAPP_REGISTER_URL}?lang=:locale`,
         permanent: false,
       },
       {
@@ -102,11 +103,28 @@ const nextConfig: NextConfig = {
         destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
-      {
-        source: '/blog/:slug',
-        destination: '/fr/blog/:slug',
-        permanent: true,
-      },
+      // Ancien blog Next.js -> nouveau blog Webflow (blog.biloki.fr), on garde le SEO en conservant les slugs
+      // TEMPORAIREMENT DÉSACTIVÉ : Webflow n'est pas encore prêt, on garde le blog Next.js en attendant
+      // {
+      //   source: '/blog',
+      //   destination: 'https://blog.biloki.fr',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/blog/:slug',
+      //   destination: 'https://blog.biloki.fr/:slug',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/:locale/blog',
+      //   destination: 'https://blog.biloki.fr',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/:locale/blog/:slug',
+      //   destination: 'https://blog.biloki.fr/:slug',
+      //   permanent: true,
+      // },
       {
         source: '/nous-contacter',
         destination: '/fr/contact',

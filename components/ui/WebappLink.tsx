@@ -21,18 +21,6 @@ export default function WebappLink({
   const pathLocale = pathname.split('/')[1] as Locale;
   const locale = locales.includes(pathLocale) ? pathLocale : 'fr';
 
-  if (type === 'register') {
-    return (
-      <a
-        href={`/${locale}/reserver-demo`}
-        className={className}
-        onClick={onClick}
-      >
-        {children}
-      </a>
-    );
-  }
-  
   const baseUrl = type === 'login' ? WEBAPP_LOGIN_URL : WEBAPP_TRIAL_URL;
   const separator = baseUrl.includes('?') ? '&' : '?';
   const href = `${baseUrl}${separator}lang=${locale}`;

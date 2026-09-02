@@ -7,5 +7,5 @@ export default async function CommencerGratuitementPage({
 }) {
   const { locale } = await params;
 
-  permanentRedirect(`/${locale}/reserver-demo`);
+  permanentRedirect(`https://app.biloki.fr/register?lang=${locale}`);
 }

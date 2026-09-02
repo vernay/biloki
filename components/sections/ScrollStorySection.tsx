@@ -9,6 +9,7 @@ import {
   motion,
   useReducedMotion,
 } from "framer-motion";
+import { IconChevronRight } from "@tabler/icons-react";
 
 type StoryStep = {
   number: number;
@@ -138,6 +139,7 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
   const articleRefs = useRef<Array<HTMLElement | null>>([]);
   const prefersReducedMotion = useReducedMotion();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(null);
   const [isDesktopViewport, setIsDesktopViewport] = useState(false);
   const rawSteps = t.raw('steps') as StoryStep[];
   const canonicalImages = CANONICAL_SCROLL_IMAGES_BY_NAMESPACE[namespace];
@@ -412,83 +414,78 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
         ) : null}
 
         <div className="md:hidden">
-          <div className="-mx-1 mb-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2">
+          <div className="space-y-3">
             {steps.map((step, idx) => {
-              const isActive = idx === safeActiveIndex;
+              const isOpen = mobileOpenIndex === idx;
               return (
-                <button
+                <div
                   key={`mobile-step-${step.number}`}
-                  type="button"
-                  onClick={() => setActiveIndex(idx)}
-                  aria-current={isActive ? "step" : undefined}
-                  className={[
-                    "shrink-0 snap-start rounded-2xl border px-3.5 py-2.5 text-left transition-colors duration-200 min-w-[220px]",
-                    isActive
-                      ? "border-primary/35 bg-primary/10 shadow-[0_8px_20px_rgba(1,164,255,0.14)]"
-                      : "border-slate-200 bg-white",
-                  ].join(" ")}
+                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
                 >
-                  <span className="flex items-center gap-2">
-                    <span
-                      className={[
-                        "inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold",
-                        isActive ? "bg-primary text-white" : "bg-slate-100 text-slate-700",
-                      ].join(" ")}
+                  <button
+                    type="button"
+                    onClick={() => setMobileOpenIndex(isOpen ? null : idx)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left"
+                  >
+                    <span className="text-base font-semibold text-slate-900">
+                      {step.number}. {step.label}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 90 : 0 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="flex h-6 w-6 shrink-0 items-center justify-center text-slate-500"
                     >
-                      {step.number}
-                    </span>
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500">
-                            {showStepMetaPrefix ? `${t('stepPrefix')} ${step.number}` : step.label}
-                    </span>
-                  </span>
-                  <span className="mt-2 block text-lg font-semibold leading-tight text-slate-900">
-                    {step.label}
-                  </span>
-                </button>
+                      <IconChevronRight className="h-5 w-5" />
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen ? (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="border-t border-slate-100 px-4 pb-5 pt-4">
+                          <div className="overflow-hidden rounded-2xl bg-slate-100">
+                            <img
+                              src={step.imageSrc}
+                              alt={step.imageAlt}
+                              className={[
+                                "h-48 w-full",
+                                shouldContainStepImages ? "object-contain bg-white" : "object-cover",
+                                step.imageClassName ?? "",
+                              ].join(" ")}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          <p className="mt-4 text-base leading-relaxed text-slate-600">
+                            {step.description}
+                          </p>
+                          <div className="mt-5">
+                            <Link
+                              href={withLocale(locale, '/commencer-gratuitement')}
+                              className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-5 py-3.5 text-base font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.22)]"
+                            >
+                              <span>{t('ctaPrimary')}</span>
+                              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/14 text-lg leading-none text-white">
+                                →
+                              </span>
+                            </Link>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
-
-          <article className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_14px_34px_rgba(15,23,42,0.08)]">
-            <div className="relative overflow-hidden bg-slate-100">
-              <img
-                src={activeStep.imageSrc}
-                alt={activeStep.imageAlt}
-                className={[
-                  "h-56 w-full",
-                  shouldContainStepImages ? "object-contain bg-white" : "object-cover",
-                  activeStep.imageClassName ?? "",
-                ].join(" ")}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div className="p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
-                {renderStepMeta(activeStep)}
-              </p>
-              <h3 className="mt-2 text-3xl font-black leading-tight text-slate-950">
-                {activeStep.title}
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">
-                {activeStep.description}
-              </p>
-
-              <div className="mt-6">
-                <Link
-                  href={withLocale(locale, '/commencer-gratuitement')}
-                  className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-5 py-3.5 text-base font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.22)]"
-                >
-                  <span>
-                    {t('ctaPrimary')}
-                  </span>
-                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/14 text-lg leading-none text-white">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </article>
         </div>
 
         <div className="hidden md:block">

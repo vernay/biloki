@@ -29,7 +29,7 @@ export function ContainerScroll({
   const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0.5, 1, 1]);
 
   return (
-    <section ref={containerRef} className={cn("relative h-[120vh]", className)}>
+    <section ref={containerRef} className={cn("relative h-[70vh] md:h-[120vh]", className)}>
       <div className="sticky top-20 overflow-hidden py-10 md:top-24 md:py-16">
         <div className="mx-auto max-w-5xl px-4 text-center md:px-6">
           {titleComponent}

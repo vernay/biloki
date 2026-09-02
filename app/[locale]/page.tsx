@@ -135,12 +135,14 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <div className="mt-8 md:mt-12">
+        <InteractiveModulesShowcase />
+      </div>
       <section className="bg-white px-4 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
           <BentoDemo />
         </div>
       </section>
-      <InteractiveModulesShowcase />
       <ConnectivityPASection />
       <AnimatedTestimonialsDemo showNote={false} />
       <div className="mx-2 md:mx-4 lg:mx-6 mt-3 md:mt-4 overflow-hidden">

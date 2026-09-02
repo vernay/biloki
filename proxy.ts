@@ -9,7 +9,7 @@ const intlMiddleware = createMiddleware({
   localePrefix,
 });
 
-const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://beta.biloki.fr';
+const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://app.biloki.fr';
 const WEBAPP_REGISTER_URL = `${WEBAPP_BASE_URL}/register`;
 
 export default function middleware(request: NextRequest) {

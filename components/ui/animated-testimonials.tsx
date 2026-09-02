@@ -1,9 +1,11 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type PanInfo } from "framer-motion";
 
 import { useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 type Testimonial = {
   quote: string;
@@ -36,6 +38,15 @@ export const AnimatedTestimonials = ({
     return ((index + 1) * 7) % 21 - 10;
   };
 
+  // Swipe tactile (mobile) : seuil de 50px pour déclencher le slide suivant/précédent
+  const handleDragEnd = (_event: PointerEvent | MouseEvent | TouchEvent, info: PanInfo) => {
+    if (info.offset.x < -50) {
+      handleNext();
+    } else if (info.offset.x > 50) {
+      handlePrev();
+    }
+  };
+
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
@@ -45,10 +56,18 @@ export const AnimatedTestimonials = ({
 
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
+      <motion.div
+        className="relative grid grid-cols-1 gap-20 md:grid-cols-2"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.15}
+        onDragEnd={handleDragEnd}
+        style={{ touchAction: "pan-y" }}
+      >
         <div>
           <div className="relative h-80 w-full">
-            <AnimatePresence>
+            {/* initial=false : évite que les 4 photos jouent leur animation d'entrée au montage (effet de défilement au scroll) */}
+            <AnimatePresence initial={false}>
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.src}
@@ -66,7 +85,6 @@ export const AnimatedTestimonials = ({
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
                     opacity: 0,
@@ -147,22 +165,37 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="mt-12 flex items-center justify-center gap-4 md:mt-0 md:justify-start">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              aria-label="Témoignage précédent"
+              className="group/button flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-black/80 dark:bg-white"
             >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              <IconArrowLeft className="h-5 w-5 text-white transition-transform duration-300 group-hover/button:-translate-x-0.5 dark:text-black" />
             </button>
+            <div className="flex items-center gap-2">
+              {testimonials.map((testimonial, index) => (
+                <button
+                  key={testimonial.src}
+                  onClick={() => setActive(index)}
+                  aria-label={`Voir le témoignage de ${testimonial.name}`}
+                  className={cn(
+                    "h-2.5 rounded-full transition-all duration-300",
+                    isActive(index) ? "w-6 bg-black dark:bg-white" : "w-2.5 bg-gray-300 dark:bg-neutral-700",
+                  )}
+                />
+              ))}
+            </div>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              aria-label="Témoignage suivant"
+              className="group/button flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black transition-colors hover:bg-black/80 dark:bg-white"
             >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              <IconArrowRight className="h-5 w-5 text-white transition-transform duration-300 group-hover/button:translate-x-0.5 dark:text-black" />
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

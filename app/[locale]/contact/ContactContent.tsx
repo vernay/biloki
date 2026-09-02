@@ -102,14 +102,14 @@ export default function ContactContent() {
   }), [faqItems]);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white to-blue-50">
+    <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* Back button */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <Link href={`/${locale}`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

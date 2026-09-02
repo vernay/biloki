@@ -10,7 +10,6 @@ import Breadcrumbs from "@/components/blog/Breadcrumbs";
 import BlogAuthorInfo from "@/components/blog/BlogAuthorInfo";
 import BlogTags from "@/components/blog/BlogTags";
 import ShareButtons from "@/components/blog/ShareButtons";
-import ReadingProgressBar from "@/components/blog/ReadingProgressBar";
 import { translateCategory } from "@/lib/blog/categories";
 import { SITE_BASE_URL } from "@/lib/config";
 
@@ -276,8 +275,10 @@ export default async function BlogArticlePage({
         ]
       }) }} />
       
-      <ReadingProgressBar />
-      <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
+      <main
+        className="min-h-screen bg-gradient-to-br from-white to-blue-50 pb-12 md:pb-20"
+        style={{ paddingTop: 'calc(var(--header-height, 84px) + 2rem)' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Breadcrumbs */}
           <Breadcrumbs

@@ -20,6 +20,7 @@ export default function Header() {
   const featuresRef = useRef<HTMLDivElement | null>(null);
   const languageRef = useRef<HTMLDivElement | null>(null);
   const mobileLanguageRef = useRef<HTMLDivElement | null>(null);
+  const headerRootRef = useRef<HTMLDivElement | null>(null);
 
   const t = useTranslations("header");
   const router = useRouter();
@@ -143,8 +144,23 @@ export default function Header() {
     return undefined;
   }, [isOpen]);
 
+  // Expose la hauteur réelle du header (variable selon breakpoint/promo bar) pour aligner le contenu des pages
+  useEffect(() => {
+    const node = headerRootRef.current;
+    if (!node || typeof ResizeObserver === 'undefined') return;
+
+    const updateHeaderHeight = () => {
+      document.documentElement.style.setProperty('--header-height', `${node.offsetHeight}px`);
+    };
+
+    updateHeaderHeight();
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+    <div ref={headerRootRef} className="fixed top-0 left-0 right-0 z-[100] flex flex-col">
       {/* Barre Se connecter avec défilement promo */}
       <style>{`
         @keyframes scroll-text {

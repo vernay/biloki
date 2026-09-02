@@ -26,7 +26,7 @@ export function HeroScrollDemo() {
           </div>
         }
       >
-        <div className="px-2 md:px-4">
+        <div className="-mx-4 md:mx-0 md:px-4">
           <Image
             src="/images/Page interface voyageur/Iphone V2.svg"
             alt={t("imageAlt")}
