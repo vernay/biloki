@@ -546,6 +546,7 @@
     "legalNotice": "Legal notice",
     "terms": "Terms",
     "cookies": "Cookies",
+    "companyDetails": "Company name: SAS Biloki\nLegal form: Simplified joint-stock company\nShare capital: €400,000.00\nRegistered office: 4 rue Voltaire - 44000 Nantes, France\nRegistration: RCS Nantes no. 932 678 493\nIntra-community VAT: FR69932678493",
     "copyright": "All rights reserved.",
     "featuresItems": {
       "reservations": "Reservations",
@@ -636,6 +637,9 @@
       "bullet1": "Automatic assignment after each reservation",
       "bullet2": "Dedicated service provider interface",
       "bullet3": "Real-time tracking with photos and validation"
+    },
+    "travelerGuide": {
+      "label": "Guest Guide"
     },
     "statistics": {
       "label": "Statistics",

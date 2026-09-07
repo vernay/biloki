@@ -106,6 +106,9 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <p className="mt-2 whitespace-pre-line text-xs leading-relaxed text-white/65">
+              {t('companyDetails')}
+            </p>
           </div>
 
           {/* Fonctionnalités */}

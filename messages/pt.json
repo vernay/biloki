@@ -546,6 +546,7 @@
     "legalNotice": "Aviso legal",
     "terms": "Termos e condições",
     "cookies": "Cookies",
+    "companyDetails": "Nome da empresa: SAS Biloki\nForma legal: Sociedade por ações simplificada\nCapital social: €400.000,00\nSede social: 4 rue Voltaire - 44000 Nantes, França\nRegistro: RCS Nantes n° 932 678 493\nIVA intracomunitário: FR69932678493",
     "copyright": "Todos os direitos reservados.",
     "featuresItems": {
       "reservations": "Reservas",
@@ -636,6 +637,9 @@
       "bullet1": "Atribuição automática após cada reserva",
       "bullet2": "Interface dedicada para prestadores",
       "bullet3": "Acompanhamento em tempo real com fotos e validação"
+    },
+    "travelerGuide": {
+      "label": "Guia do viajante"
     },
     "statistics": {
       "label": "Estatísticas",

@@ -36,12 +36,13 @@ const modules = [
     ),
   },
   {
-    id: "module-statistiques",
-    href: "/fonctionnalites/statistiques",
-    labelKey: "statistics.label",
+    id: "module-guide-voyageur",
+    href: "/fonctionnalites/interface-voyageurs?view=traveler",
+    labelKey: "travelerGuide.label",
     icon: (
       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V8m5 8V6m5 10v-4M5 20h14" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 19.5V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14.5a1.5 1.5 0 0 1-2.4 1.2L15 18.75l-2.6 1.95a1.5 1.5 0 0 1-1.8 0L8 18.75l-2.6 1.95A1.5 1.5 0 0 1 4 19.5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 8h8M8 12h5" />
       </svg>
     ),
   },
