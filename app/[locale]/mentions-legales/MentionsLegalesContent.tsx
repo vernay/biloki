@@ -7,7 +7,7 @@ export default function MentionsLegalesContent() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 text-gray-800">
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16 space-y-12">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-32 pb-16 space-y-12">
         <header className="space-y-4 text-center">
           <p className="text-sm font-semibold text-primary">{t('badge')}</p>
           <h1 className="text-4xl md:text-5xl font-bold text-primary">{t('title')}</h1>

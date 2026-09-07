@@ -50,7 +50,7 @@ export const COMPANY_INFO = {
   legal: {
     rcs: 'Nantes n° 932 678 493',
     tva: 'FR69932678493',
-    capital: '204 911,00 €',
+    capital: '400 000,00 €',
     president: 'Vernay Sébastien',
     hebergeur: 'IONOS SARL - 7 place de la gare BP 70109 / 57201 Sarreguemines',
   },
