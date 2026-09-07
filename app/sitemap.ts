@@ -1,15 +1,12 @@
 import { MetadataRoute } from 'next'
-import { getArticlesForLocale } from '../lib/blog/index'
-import { Locale } from '../lib/blog/types'
 
 const baseUrl = 'https://www.biloki.fr'
-const locales: Locale[] = ['fr', 'en', 'es', 'pt']
+const locales = ['fr', 'en', 'es', 'pt']
 
 // Liste blanche SEO : uniquement les pages marketing/produit réellement souhaitées.
 // Les routes de redirection (connexion, abonnement, etc.) sont volontairement exclues.
 const STATIC_MARKETING_ROUTES: string[] = [
   '',
-  '/blog',
   '/carriere',
   '/cgv',
   '/connexions-api',
@@ -58,26 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages,
         },
       })
-    })
-  })
-
-  // Articles de blog : uniquement FR (contenu EN/ES/PT trop court pour être indexé)
-  const frArticles = getArticlesForLocale('fr')
-  frArticles.forEach(article => {
-    const articlePath = `/blog/${article.slug}`
-    const articleLastMod = article.updatedDate ?? article.date
-
-    sitemapEntries.push({
-      url: `${baseUrl}/fr${articlePath}`,
-      lastModified: articleLastMod,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-      alternates: {
-        languages: {
-          fr: `${baseUrl}/fr${articlePath}`,
-          'x-default': `${baseUrl}/fr${articlePath}`,
-        },
-      },
     })
   })
 
