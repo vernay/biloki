@@ -23,7 +23,6 @@ const STATIC_MARKETING_ROUTES: string[] = [
   '/fonctionnalites/reservations',
   '/fonctionnalites/statistiques',
   '/fonctionnalites/ventes-additionnelles',
-  '/logiciel-location-saisonniere',
   '/mentions-legales',
   '/programme-parrainage',
   '/reserver-demo',

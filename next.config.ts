@@ -562,8 +562,8 @@ const nextConfig: NextConfig = {
       // Redirections des anciens chemins ville programmatiques supprimés
       {
         source: '/:locale/logiciel-location-saisonniere/:ville',
-        destination: '/:locale/logiciel-location-saisonniere',
-        permanent: true,
+        destination: '/:locale/fonctionnalites/reservations',
+        statusCode: 301,
       },
     ];
   },

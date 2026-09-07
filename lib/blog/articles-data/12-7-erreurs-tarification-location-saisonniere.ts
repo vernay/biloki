@@ -166,7 +166,7 @@ const article: BlogArticle = {
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Raisonner en revenu net, pas en CA :</strong> intégrer systématiquement l'ensemble des charges</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Calculer les coûts réels d'une réservation :</strong> ménage, plateforme, assurance, gestion</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Définir un prix plancher :</strong> identifier le prix minimum pour être rentable après tous les coûts</li>
-                <li><span class="font-bold text-gray-900">✓</span> <strong>Utiliser un tableau de suivi :</strong> suivez CA et rentabilité nette dans <a href="/fr/logiciel-location-saisonniere" class="text-primary hover:underline">les analytics Biloki</a></li>
+                <li><span class="font-bold text-gray-900">✓</span> <strong>Utiliser un tableau de suivi :</strong> suivez CA et rentabilité nette dans <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">les analytics Biloki</a></li>
               </ul>
             </section>
 
@@ -233,7 +233,7 @@ const article: BlogArticle = {
               <h3 class="text-2xl font-semibold text-gray-800 mb-4">Comment corriger cette erreur ?</h3>
               <ul class="space-y-3 text-gray-700 ml-6 mb-6">
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Centraliser les données :</strong> utilisez <a href="/fr/fonctionnalites/channel-manager" class="text-primary hover:underline">le channel manager Biloki</a> pour une vision à 360° de vos réservations</li>
-                <li><span class="font-bold text-gray-900">✓</span> <strong>Suivre les indicateurs clés :</strong> ADR, RevPAR, taux d'occupation mois par mois dans <a href="/fr/logiciel-location-saisonniere" class="text-primary hover:underline">votre interface Biloki</a></li>
+                <li><span class="font-bold text-gray-900">✓</span> <strong>Suivre les indicateurs clés :</strong> ADR, RevPAR, taux d'occupation mois par mois dans <a href="/fr/fonctionnalites/reservations" class="text-primary hover:underline">votre interface Biloki</a></li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Comparer avec le marché :</strong> benchmarkez vos performances et ajustez vos prix depuis vos tableaux de pilotage</li>
                 <li><span class="font-bold text-gray-900">✓</span> <strong>Automatiser l'optimisation tarifaire :</strong> standardisez vos règles tarifaires et accélérez vos décisions avec <a href="/fr/commencer-gratuitement" class="text-primary hover:underline">Biloki</a></li>
               </ul>
