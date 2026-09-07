@@ -97,6 +97,19 @@ const blogRedirects = ['fr', 'en', 'es', 'pt'].flatMap((locale) => [
   })),
 ]);
 
+const legacyFrenchBlogRedirects = [
+  {
+    source: '/blog',
+    destination: `${BLOG_BASE_URL}/fr`,
+    statusCode: 301,
+  },
+  ...blogArticleRedirects.map(({ source, destination }) => ({
+    source: `/blog/${source}`,
+    destination: `${BLOG_BASE_URL}/fr/blog/${typeof destination === 'string' ? destination : destination.fr}`,
+    statusCode: 301,
+  })),
+];
+
 const nextConfig: NextConfig = {
   redirects: async () => {
     return [
@@ -194,6 +207,7 @@ const nextConfig: NextConfig = {
       },
       // Ancien blog Next.js -> nouveau blog Webflow
       ...blogRedirects,
+      ...legacyFrenchBlogRedirects,
       // Anciennes URLs de fonctionnalites traduites
       {
         source: '/en/features/marketplace-api',
