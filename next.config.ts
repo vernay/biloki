@@ -88,12 +88,12 @@ const blogRedirects = ['fr', 'en', 'es', 'pt'].flatMap((locale) => [
   {
     source: `/${locale}/blog`,
     destination: `${BLOG_BASE_URL}/${locale}`,
-    permanent: true,
+    statusCode: 301,
   },
   ...blogArticleRedirects.map(({ source, destination }) => ({
     source: `/${locale}/blog/${source}`,
     destination: `${BLOG_BASE_URL}/${locale}/blog/${typeof destination === 'string' ? destination : destination[locale as keyof typeof destination]}`,
-    permanent: true,
+    statusCode: 301,
   })),
 ]);
 
