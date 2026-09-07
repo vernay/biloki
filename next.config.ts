@@ -7,6 +7,95 @@ const WEBAPP_BASE_URL = process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'https://beta.bilo
 // Essai gratuit : toujours vers le domaine app.biloki.fr, indépendamment de NEXT_PUBLIC_WEBAPP_URL
 const WEBAPP_REGISTER_URL = 'https://app.biloki.fr/register';
 const WEBAPP_SUBSCRIPTION_URL = `${WEBAPP_BASE_URL}/register/subscription`;
+const BLOG_BASE_URL = 'https://blog.biloki.fr';
+
+const blogArticleRedirects = [
+  {
+    source: 'api-meubles-airbnb-abritel-reglementation-2026',
+    destination: 'api-meubles-proprietaire-airbnb-abritel-guide-2026',
+  },
+  {
+    source: '7-erreurs-tarification-location-saisonniere',
+    destination: {
+      fr: '7-erreurs-tarification-penalisent-rentabilite-conciergeries',
+      en: '7-erreurs-tarification-penalisent-rentabilite-conciergeries',
+      es: '7-errores-tarificacion-penalizan-rentabilidad-conciergeries',
+      pt: '7-erreurs-tarification-penalisent-rentabilite-conciergeries',
+    },
+  },
+  {
+    source: 'channel-manager-conciergerie-choisir-logiciel-2026',
+    destination: 'channel-manager-conciergerie-choisir-bon-logiciel-2026-guide',
+  },
+  {
+    source: 'numero-enregistrement-obligatoire-meubles-tourisme',
+    destination: 'numero-enregistrement-obligatoire-meubles-de-tourisme-guide',
+  },
+  {
+    source: 'rentabilite-location-courte-duree-2026',
+    destination: 'location-courte-duree-rentable-2026-analyse-rentabilite',
+  },
+  {
+    source: 'loi-le-meur-2026-location-saisonniere',
+    destination: 'loi-le-meur-2026-obligations-amendes-checklist-conformite',
+  },
+  {
+    source: 'france-102-millions-touristes-opportunite',
+    destination: '102-millions-touristes-5-strategies-capter-demande-location-courte-duree',
+  },
+  {
+    source: 'salon-marseille-2026',
+    destination: 'salon-marseille-2026-demo-biloki-conciergeries',
+  },
+  {
+    source: 'nice-quotas-airbnb-reglementation-2025',
+    destination: {
+      fr: 'nice-2025-quotas-airbnb-limite-90-jours-plan-conformite',
+      en: 'nice-2025-quotas-airbnb-limite-90-jours-plan-conformite',
+      es: 'nice-2025-quotas-airbnb-limite-90-jours-plan-conformite',
+      pt: 'nice-2025-quotas-airbnb-limite-90-dias-plano-conformidade',
+    },
+  },
+  {
+    source: 'automatiser-gestion-locations-saisonnieres',
+    destination: {
+      fr: 'automatiser-conciergerie-5-workflows-gagner-du-temps',
+      en: 'automatiser-conciergerie-5-workflows-gagner-du-temps',
+      es: 'automatizar-conserjeria-5-workflows-ahorrar-tiempo',
+      pt: 'automatiser-conciergerie-5-workflows-gagner-du-temps',
+    },
+  },
+  {
+    source: 'channel-manager-guide-complet-conciergeries',
+    destination: 'channel-manager-guide-complet-eviter-doubles-reservations',
+  },
+  {
+    source: 'messagerie-automatisee-conciergerie',
+    destination: 'messagerie-automatisee-7-messages-essentiels-voyageurs',
+  },
+  {
+    source: 'ia-location-courte-duree-conciergeries',
+    destination: {
+      fr: 'ia-pour-conciergeries-4-cas-usage-concrets',
+      en: 'ia-pour-conciergeries-4-cas-usage-concrets',
+      es: 'ia-para-conciergeries-4-cas-usage-concrets',
+      pt: 'ia-para-conciergeries-4-cas-usage-concrets',
+    },
+  },
+] as const;
+
+const blogRedirects = ['fr', 'en', 'es', 'pt'].flatMap((locale) => [
+  {
+    source: `/${locale}/blog`,
+    destination: `${BLOG_BASE_URL}/${locale}`,
+    permanent: true,
+  },
+  ...blogArticleRedirects.map(({ source, destination }) => ({
+    source: `/${locale}/blog/${source}`,
+    destination: `${BLOG_BASE_URL}/${locale}/blog/${typeof destination === 'string' ? destination : destination[locale as keyof typeof destination]}`,
+    permanent: true,
+  })),
+]);
 
 const nextConfig: NextConfig = {
   redirects: async () => {
@@ -103,28 +192,8 @@ const nextConfig: NextConfig = {
         destination: '/fr/fonctionnalites/reservations',
         permanent: true,
       },
-      // Ancien blog Next.js -> nouveau blog Webflow (blog.biloki.fr), on garde le SEO en conservant les slugs
-      // TEMPORAIREMENT DÉSACTIVÉ : Webflow n'est pas encore prêt, on garde le blog Next.js en attendant
-      // {
-      //   source: '/blog',
-      //   destination: 'https://blog.biloki.fr',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/blog/:slug',
-      //   destination: 'https://blog.biloki.fr/:slug',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/:locale/blog',
-      //   destination: 'https://blog.biloki.fr',
-      //   permanent: true,
-      // },
-      // {
-      //   source: '/:locale/blog/:slug',
-      //   destination: 'https://blog.biloki.fr/:slug',
-      //   permanent: true,
-      // },
+      // Ancien blog Next.js -> nouveau blog Webflow
+      ...blogRedirects,
       {
         source: '/nous-contacter',
         destination: '/fr/contact',
