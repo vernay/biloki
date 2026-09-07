@@ -194,6 +194,38 @@ const nextConfig: NextConfig = {
       },
       // Ancien blog Next.js -> nouveau blog Webflow
       ...blogRedirects,
+      // Anciennes URLs de fonctionnalites traduites
+      {
+        source: '/en/features/marketplace-api',
+        destination: '/en/fonctionnalites/marketplace-api',
+        statusCode: 301,
+      },
+      {
+        source: '/es/caracteristicas/marketplace-api',
+        destination: '/es/fonctionnalites/marketplace-api',
+        statusCode: 301,
+      },
+      {
+        source: '/:locale/fonctionnalites/channel-manager/ota',
+        destination: '/:locale/fonctionnalites/reservations',
+        statusCode: 301,
+      },
+      // Anciennes pages d'offres
+      {
+        source: '/abonnement-pro-biloki',
+        destination: '/fr/tarifs',
+        statusCode: 301,
+      },
+      {
+        source: '/abonnements-particuliers',
+        destination: '/fr/tarifs',
+        statusCode: 301,
+      },
+      {
+        source: '/fonctionnalites-gestion-locative-ia',
+        destination: '/fr/fonctionnalites/reservations',
+        statusCode: 301,
+      },
       {
         source: '/nous-contacter',
         destination: '/fr/contact',
