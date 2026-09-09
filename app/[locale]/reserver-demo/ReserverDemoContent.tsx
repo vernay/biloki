@@ -14,6 +14,7 @@ export default function ReserverDemoContent() {
   
   const [formData, setFormData] = useState({
     email: '',
+    phone: '',
     language: '',
     role: '',
     logements: ''
@@ -63,6 +64,7 @@ export default function ReserverDemoContent() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: formData.email,
+          phone: formData.phone,
           language: formData.language,
           role: formData.role,
           propertyCount,
@@ -170,6 +172,21 @@ export default function ReserverDemoContent() {
                       required
                       className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
                       placeholder="name@example.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                      {t('form.phone')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white text-sm"
+                      placeholder="+33 6 12 34 56 78"
                     />
                   </div>
                   <div>

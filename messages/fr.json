@@ -808,6 +808,7 @@
     },
     "form": {
       "email": "Email",
+      "phone": "Téléphone",
       "language": "Langue",
       "youAre": "Vous êtes",
       "select": "Sélectionnez",

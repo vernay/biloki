@@ -6,6 +6,7 @@ const HUBSPOT_BASE_URL = 'https://api.hubapi.com';
 
 type DemoPayload = {
   email?: string;
+  phone?: string;
   language?: string;
   role?: string;
   propertyCount?: number;
@@ -89,6 +90,7 @@ function buildProperties(payload: DemoPayload) {
   };
 
   if (payload.email) properties.email = payload.email;
+  if (payload.phone) properties.phone = payload.phone;
   if (payload.language) {
     properties.langue = languageMap[payload.language] ?? payload.language;
   }
@@ -113,6 +115,9 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as DemoPayload;
     if (!body?.email) {
       return NextResponse.json({ error: 'Email manquant' }, { status: 400 });
+    }
+    if (!body?.phone) {
+      return NextResponse.json({ error: 'Téléphone manquant' }, { status: 400 });
     }
 
     const properties = buildProperties(body);
