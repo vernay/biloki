@@ -37,10 +37,10 @@ export default function ReserverDemoContent() {
   };
 
   useEffect(() => {
-    // Load Calendly script only after form submission.
+    // Load HubSpot meetings embed script only after form submission.
     if (showCalendly) {
       const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
       script.async = true;
       document.body.appendChild(script);
     }
@@ -261,10 +261,9 @@ export default function ReserverDemoContent() {
                 </button>
               </form>
             ) : (
-              <div 
-                className="calendly-inline-widget"
-                data-url={`https://calendly.com/g-vernay-biloki/demonstration-biloki?hide_event_type_details=1&email=${encodeURIComponent(formData.email)}&a1=${encodeURIComponent(formData.language)}`}
-                style={{ minWidth: '100%', height: '650px' }}
+              <div
+                className="meetings-iframe-container"
+                data-src={`https://meetings-eu1.hubspot.com/gregoire-vernay?embed=true&email=${encodeURIComponent(formData.email)}`}
               />
             )}
           </div>
