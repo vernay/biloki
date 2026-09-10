@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
 import RelatedPages from '@/components/ui/RelatedPages';
 import { useLocale } from 'next-intl';
-import { trackContactFormSubmit } from '@/lib/tracking';
 
 export default function ContactContent() {
   const t = useTranslations('contactPage');
@@ -20,66 +19,15 @@ export default function ContactContent() {
     return withLeadingZero.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
   })();
 
-  const [formData, setFormData] = useState({
-    prenom: '',
-    nom: '',
-    email: '',
-    telephone: '',
-    entreprise: '',
-    raison: '',
-    message: ''
-  });
-  const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // Track contact form submission
-        trackContactFormSubmit(formData.raison || 'general', 'contact_page');
-        
-        setSubmitted(true);
-        setFormData({
-          prenom: '',
-          nom: '',
-          email: '',
-          telephone: '',
-          entreprise: '',
-          raison: '',
-          message: ''
-        });
-        setTimeout(() => setSubmitted(false), 3000);
-      } else {
-        alert(t('errors.sendWithReason', { reason: data.error || t('errors.unableToSend') }));
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert(t('errors.sendFailed'));
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const faqItems = useMemo(() => [
     { q: t('faq.q1'), a: t('faq.a1') },
@@ -195,135 +143,10 @@ export default function ContactContent() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('formTitle')}</h2>
             <p className="text-gray-600 mb-8">{t('formDescription')}</p>
 
-            {submitted && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-400 rounded-lg">
-                <p className="text-green-800 font-semibold">✓ {t('messageSent')}</p>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="prenom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('firstName')} *
-                  </label>
-                  <input
-                    type="text"
-                    id="prenom"
-                    name="prenom"
-                    value={formData.prenom}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="nom" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('lastName')} *
-                  </label>
-                  <input
-                    type="text"
-                    id="nom"
-                    name="nom"
-                    value={formData.nom}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('emailLabel')} *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="telephone" className="block text-sm font-semibold text-gray-900 mb-2">
-                    {t('phoneLabel')} *
-                  </label>
-                  <input
-                    type="tel"
-                    id="telephone"
-                    name="telephone"
-                    value={formData.telephone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="entreprise" className="block text-sm font-semibold text-gray-900 mb-2">
-                  {t('company')}
-                </label>
-                <input
-                  type="text"
-                  id="entreprise"
-                  name="entreprise"
-                  value={formData.entreprise}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="raison" className="block text-sm font-semibold text-gray-900 mb-2">
-                  {t('reasonLabel')} *
-                </label>
-                <select
-                  id="raison"
-                  name="raison"
-                  value={formData.raison}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white"
-                  required
-                >
-                  <option value="">{t('reasonSelect')}</option>
-                  <option value="demo_request">{t('reasons.demoRequest')}</option>
-                  <option value="technical_support">{t('reasons.technicalSupport')}</option>
-                  <option value="general_question">{t('reasons.generalQuestion')}</option>
-                  <option value="api_partnership">{t('reasons.apiPartnership')}</option>
-                  <option value="other">{t('reasons.other')}</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                  {t('message')} *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? tCommon('sending') : tCommon('sendMessage')}
-              </button>
-            </form>
+            <div
+              className="meetings-iframe-container"
+              data-src="https://meetings-eu1.hubspot.com/gregoire-vernay?embed=true"
+            />
           </div>
         </div>
       </section>
