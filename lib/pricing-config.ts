@@ -41,11 +41,29 @@ export const CUSTOM_PRICING_THRESHOLD = 200; // Au-delà = sur devis
 export type BillingPeriod = 'monthly' | 'annual';
 
 /**
- * Récupère le prix par logement pour un nombre de logements donnés
+ * Récupère le prix par logement pour un nombre de logements donnés (taux marginal du palier)
  */
 export function getPricePerLogement(logementCount: number): number | null {
   const tier = PRICING_TIERS.find(t => logementCount >= t.min && logementCount <= t.max);
   return tier?.pricePerMonth ?? null;
+}
+
+/**
+ * Calcule le coût mensuel de base en cumulant chaque palier (pricing progressif),
+ * pour éviter qu'ajouter un logement fasse baisser le total (effet de seuil).
+ */
+function calculateCumulativeBase(logementCount: number): number | null {
+  let total = 0;
+  for (const tier of PRICING_TIERS) {
+    if (tier.pricePerMonth === null) {
+      return logementCount >= tier.min ? null : total;
+    }
+    if (logementCount < tier.min) break;
+    const countInTier = Math.min(logementCount, tier.max) - tier.min + 1;
+    total += countInTier * tier.pricePerMonth;
+    if (logementCount <= tier.max) break;
+  }
+  return total;
 }
 
 /**
@@ -69,15 +87,15 @@ export function calculatePrice(
   totalBeforeTVA?: number;
   totalWithTVA?: number;
 } | null {
-  const basePrice = getPricePerLogement(logementCount);
+  const cumulativeBase = calculateCumulativeBase(logementCount);
 
-  if (basePrice === null) {
+  if (cumulativeBase === null) {
     return null;
   }
 
-  // Appliquer la remise annuelle au prix de base
-  const displayPrice = billingPeriod === 'annual' ? basePrice * (1 - ANNUAL_DISCOUNT) : basePrice;
-  const totalMonth = displayPrice * logementCount;
+  // Appliquer la remise annuelle au total cumulé
+  const totalMonth = billingPeriod === 'annual' ? cumulativeBase * (1 - ANNUAL_DISCOUNT) : cumulativeBase;
+  const displayPrice = totalMonth / logementCount;
 
   // Modules optionnels
   let totalComptabilite = 0;
