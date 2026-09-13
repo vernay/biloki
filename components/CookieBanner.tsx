@@ -6,6 +6,27 @@ import { useTranslations } from 'next-intl';
 
 const CONSENT_KEY = 'biloki_cookie_consent';
 
+declare global {
+  interface Window {
+    dataLayer?: Array<Record<string, unknown>>;
+  }
+}
+
+function updateGtagConsent(granted: boolean) {
+  if (typeof window === 'undefined') return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push([
+    'consent',
+    'update',
+    {
+      ad_storage: granted ? 'granted' : 'denied',
+      ad_user_data: granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied',
+      analytics_storage: granted ? 'granted' : 'denied',
+    },
+  ]);
+}
+
 export default function CookieBanner() {
   const t = useTranslations('cookieBanner');
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +43,7 @@ export default function CookieBanner() {
     if (typeof window === 'undefined') return;
     window.localStorage.setItem(CONSENT_KEY, value);
     document.cookie = `${CONSENT_KEY}=${value}; Max-Age=31536000; Path=/; SameSite=Lax`;
+    updateGtagConsent(value === 'accepted');
     setIsVisible(false);
   };
 

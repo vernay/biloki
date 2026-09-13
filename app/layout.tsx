@@ -85,6 +85,28 @@ export default async function RootLayout({
         <Script id="manifest-cleanup" strategy="afterInteractive">
           {disableManifest}
         </Script>
+        {/* Consent Mode v2: refuse par défaut tant que l'utilisateur n'a pas choisi */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+try {
+  var stored = localStorage.getItem('biloki_cookie_consent');
+  if (stored === 'accepted') {
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted'
+    });
+  }
+} catch (e) {}`}
+        </Script>
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
