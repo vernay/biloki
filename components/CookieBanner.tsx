@@ -8,7 +8,7 @@ const CONSENT_KEY = 'biloki_cookie_consent';
 
 declare global {
   interface Window {
-    dataLayer?: Array<Record<string, unknown>>;
+    dataLayer?: Array<Record<string, any>>;
   }
 }
 
