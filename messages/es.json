@@ -546,6 +546,7 @@
     "legalNotice": "Aviso legal",
     "terms": "Términos y condiciones",
     "cookies": "Cookies",
+    "manageCookies": "Gestionar mis cookies",
     "companyDetails": "Nombre de la empresa: SAS Biloki\nForma legal: Sociedad por acciones simplificada\nCapital social: €400.000,00\nDomicilio social: 4 rue Voltaire - 44000 Nantes, Francia\nRegistro: RCS Nantes n° 932 678 493\nIVA intracomunitario: FR69932678493",
     "copyright": "Todos los derechos reservados.",
     "featuresItems": {
@@ -1400,7 +1401,13 @@
     "cookieDeclaration": "Declaración de cookies",
     "choose": "Yo elijo",
     "refuse": "Yo rechazo",
-    "acceptAll": "Acepto todas las cookies"
+    "acceptAll": "Acepto todas las cookies",
+    "analyticsLabel": "Medición de audiencia",
+    "analyticsDescription": "Google Analytics: nos ayuda a entender el tráfico y el uso del sitio.",
+    "adsLabel": "Publicidad",
+    "adsDescription": "Google Ads: mide la eficacia de nuestras campañas publicitarias.",
+    "back": "Volver",
+    "savePreferences": "Guardar mis preferencias"
   },
   "smartLocksPage": {
     "title": "Cerraduras",

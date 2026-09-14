@@ -546,6 +546,7 @@
     "legalNotice": "Mentions légales",
     "terms": "CGV",
     "cookies": "Cookies",
+    "manageCookies": "Gérer mes cookies",
     "companyDetails": "Dénomination sociale : SAS Biloki\nForme juridique : Société par actions simplifiée\nCapital social : 400 000,00 €\nSiège social : 4 rue Voltaire - 44000 Nantes\nImmatriculation : RCS de Nantes n° 932 678 493\nTVA intracommunautaire : FR69932678493",
     "copyright": "Tous droits réservés.",
     "featuresItems": {
@@ -1400,7 +1401,13 @@
     "cookieDeclaration": "Déclaration de cookies",
     "choose": "Je choisis",
     "refuse": "Je refuse",
-    "acceptAll": "J'accepte tous les cookies"
+    "acceptAll": "J'accepte tous les cookies",
+    "analyticsLabel": "Mesure d'audience",
+    "analyticsDescription": "Google Analytics : nous aide à comprendre la fréquentation et l'usage du site.",
+    "adsLabel": "Publicité",
+    "adsDescription": "Google Ads : mesure l'efficacité de nos campagnes publicitaires.",
+    "back": "Retour",
+    "savePreferences": "Enregistrer mes préférences"
   },
   "smartLocksPage": {
     "title": "Serrures",

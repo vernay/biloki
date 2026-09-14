@@ -193,6 +193,15 @@ export default function Footer() {
                   {t('cookies')}
                 </Link>
               </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new Event('biloki:open-cookie-banner'))}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  {t('manageCookies')}
+                </button>
+              </li>
             </ul>
           </div>
         </div>
