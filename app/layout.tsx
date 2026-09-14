@@ -96,13 +96,13 @@ gtag('consent', 'default', {
   'analytics_storage': 'denied'
 });
 try {
-  var stored = localStorage.getItem('biloki_cookie_consent');
-  if (stored === 'accepted') {
+  var stored = JSON.parse(localStorage.getItem('biloki_cookie_consent') || 'null');
+  if (stored && typeof stored === 'object') {
     gtag('consent', 'update', {
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'analytics_storage': 'granted'
+      'analytics_storage': stored.analytics ? 'granted' : 'denied',
+      'ad_storage': stored.ads ? 'granted' : 'denied',
+      'ad_user_data': stored.ads ? 'granted' : 'denied',
+      'ad_personalization': stored.ads ? 'granted' : 'denied'
     });
   }
 } catch (e) {}`}
