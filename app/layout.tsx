@@ -119,14 +119,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </head>
       <body>
         {children}
-        {/* Script HubSpot temporairement commenté pour tester le nouveau chatbot AI
+        {/* Chatbot HubSpot */}
         <Script
           id="hs-script-loader"
           async
           defer
           src="//js-eu1.hs-scripts.com/145156681.js"
         />
-        */}
       </body>
     </html>
   );

@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import ChatBotAI from "@/components/ChatBotAI";
 import CookieBanner from "@/components/CookieBanner";
 
 export default function ClientOverlays() {
-  const isBilokiChatbotEnabled = process.env.NEXT_PUBLIC_ENABLE_BILOKI_CHATBOT === "true";
   const enableRemoveChildGuard = process.env.NEXT_PUBLIC_ENABLE_REMOVECHILD_GUARD === "true";
 
   useEffect(() => {
@@ -36,7 +34,6 @@ export default function ClientOverlays() {
   return (
     <>
       <CookieBanner />
-      {isBilokiChatbotEnabled ? <ChatBotAI /> : null}
     </>
   );
 }
