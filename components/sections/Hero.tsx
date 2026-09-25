@@ -12,7 +12,7 @@ export default function Hero() {
   const titleHighlight = t("titleHighlight").trim();
   
   return (
-    <section id="hero-section" className="overflow-x-hidden px-4 pb-10 pt-52 sm:px-6 md:pt-48">
+    <section id="hero-section" className="overflow-x-hidden px-4 pb-10 pt-36 sm:px-6 md:pt-48">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-8">
           {/* Colonne gauche - Contenu */}
@@ -101,7 +101,7 @@ export default function Hero() {
           {/* Colonne droite - Visuel */}
           <motion.div className="relative mx-auto w-full max-w-[480px] lg:max-w-none lg:scale-105 lg:origin-center">
             <img
-              src="/images/Page%20r%C3%A9servation/Page%20d%27acceuil%20V2.svg"
+              src="/images/Page%20r%C3%A9servation/Page%20d%27accueil%20V3.png"
               alt="Interface Biloki"
               className="w-full h-auto object-contain"
               width={900}
