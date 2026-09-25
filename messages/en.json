@@ -168,7 +168,7 @@
     "contact": "Contact",
     "demo": "Book a demo",
     "login": "Log in",
-    "trial": "Free trial",
+    "trial": "Free trial 30 days",
     "language": "Language",
     "switcherLabel": "Change language",
     "promo": {
@@ -264,15 +264,15 @@
     }
   },
   "hero": {
-    "title": "All your concierge business, one single platform.",
-    "titleHighlight": "Not bad, right? That's Biloki 🚀",
+    "title": "Maximize your concierge business revenue",
+    "titleHighlight": "One software to manage your short-term rentals: bookings, teams, access, and revenue, all in one place, at the best price on the market.",
     "roles": {
       "concierges": "Concierges",
       "owners": "Owners",
       "tenants": "Tenants",
       "providers": "Service providers"
     },
-    "trialNote": "1 month free trial, no credit card required",
+    "trialNote": "30-day free trial, no credit card required",
     "onboardingNote": "Free onboarding",
     "hostingNote": "🇫🇷 Software built in France · Hosted in France on Scaleway",
     "description": "Manage your short-term rentals from one platform: bookings, guests, teams, and automations. Less operations, more growth.",
@@ -413,6 +413,24 @@
     },
     "cta": "View API marketplace"
   },
+  "propertyTypes": {
+    "title": "Adapted to every type of property",
+    "categories": {
+      "seasonal": "Vacation rentals",
+      "guestHouses": "Guest houses",
+      "gites": "Cottages",
+      "camping": "Camping and glamping",
+      "agritourism": "Agritourism"
+    },
+    "descriptions": {
+      "seasonal": "Manage all your rentals, from individual apartments to your whole portfolio, with centralized bookings and performance tracking.",
+      "guestHouses": "Simplify managing your guest houses with a single calendar and centralized messaging.",
+      "gites": "Sync your cottages across every platform and automate your administrative tasks.",
+      "camping": "Manage your pitches and unique stays with the same tool as your standard rentals.",
+      "agritourism": "Manage your agritourism activities and farm stays from a single interface."
+    },
+    "cta": "Learn more"
+  },
   "ai": {
     "badge": "Artificial Intelligence",
     "title": "An intelligent assistant",
@@ -458,6 +476,32 @@
     "title": "More than",
     "titleHighlight": "120 OTAs",
     "titleSuffix": "and partners"
+  },
+  "testimonialsGrid": {
+    "title": "They switched to the Biloki software",
+    "subtitle": "Concierge businesses that simplified their day-to-day management.",
+    "items": {
+      "1": {
+        "quote": "I switched from Hostaway to Biloki, and I'm not going back. Hostaway was too complex compared to Biloki, and in 2 weeks we removed the double bookings.",
+        "name": "Claire Lemarie",
+        "role": "Founder of Claire & sa conciergerie, 42-unit concierge (Lyon, January 2026)"
+      },
+      "2": {
+        "quote": "I left Smoobu for Biloki and now manage my 34 units more simply, all in one place.",
+        "name": "Kevin Glaize",
+        "role": "Founder of Lokernest, 34-unit concierge (Nantes, February 2024)"
+      },
+      "3": {
+        "quote": "Before Biloki, I had no software for my business. Today I manage my 44 units in the same place.",
+        "name": "Siane Thiebault",
+        "role": "Founder of Sublime Touch, 44-unit concierge (Yonne, March 2025)"
+      },
+      "4": {
+        "quote": "I had no channel manager and I manage my 11 units much more simply with Biloki.",
+        "name": "Amélie Prevost",
+        "role": "Founder of EG Conciergerie 24, 11-unit concierge (Dordogne, December 2024)"
+      }
+    }
   },
   "testimonialsHome": {
     "kicker": "Customer testimonials",
@@ -512,6 +556,10 @@
         "designation": "(CEO, multi-city concierge business, Paris, 2026)"
       }
     }
+  },
+  "securityTrust": {
+    "title": "Software certified by Cybercare, cybersecurity experts",
+    "description": "Your data and your guests' data are protected according to the best security standards on the market. Tests performed following ANSSI and OWASP methodologies."
   },
   "connectivity": {
     "title": "Trusted by leading OTAs",
@@ -640,7 +688,12 @@
       "bullet3": "Real-time tracking with photos and validation"
     },
     "travelerGuide": {
-      "label": "Guest Guide"
+      "label": "Guest Guide",
+      "short": "A digital guide for your guests",
+      "description": "Give your guests a personalized digital guide with all the useful information: property access, wifi, local recommendations and practical instructions. Everything in one place, without them needing to contact you.",
+      "bullet1": "Personalized digital guide per property",
+      "bullet2": "Practical info, wifi and local recommendations",
+      "bullet3": "Fewer repetitive questions from your guests"
     },
     "statistics": {
       "label": "Statistics",

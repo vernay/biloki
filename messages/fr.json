@@ -168,7 +168,7 @@
     "contact": "Contact",
     "demo": "Réserver une démo",
     "login": "Se connecter",
-    "trial": "Essai gratuit",
+    "trial": "Essai gratuit 30 jours",
     "language": "Langue",
     "switcherLabel": "Changer de langue",
     "promo": {
@@ -264,15 +264,15 @@
     }
   },
   "hero": {
-    "title": "Toute votre conciergerie, une seule plateforme.",
-    "titleHighlight": "Pas mal non ? c'est Français 🇫🇷",
+    "title": "Maximisez les revenus de votre conciergerie",
+    "titleHighlight": "Un seul logiciel pour piloter vos locations courte durée : réservations, équipes, accès et revenus, tout au même endroit, au meilleur prix du marché.",
     "roles": {
       "concierges": "Conciergeries",
       "owners": "Propriétaires",
       "tenants": "Locataires",
       "providers": "Prestataires"
     },
-    "trialNote": "1 mois d'essai gratuit sans carte bancaire",
+    "trialNote": "30 jours d'essai gratuit sans carte bancaire",
     "onboardingNote": "Onboarding offert",
     "hostingNote": "🇫🇷 Logiciel édité en France · Hébergé en France chez Scaleway",
     "description": "Gérez vos locations courte durée depuis une seule plateforme : réservations, voyageurs, équipes et automatisations. Moins d’opérationnel, plus de développement.",
@@ -413,6 +413,24 @@
     },
     "cta": "Voir la marketplace API"
   },
+  "propertyTypes": {
+    "title": "Adapté à chaque type de propriété",
+    "categories": {
+      "seasonal": "Locations saisonnières",
+      "guestHouses": "Chambres d'hôtes",
+      "gites": "Gîtes",
+      "camping": "Camping et glamping",
+      "agritourism": "Agrotourisme"
+    },
+    "descriptions": {
+      "seasonal": "Gérez toutes vos locations, des appartements individuels à votre portfolio, avec réservations centralisées et suivi de performance.",
+      "guestHouses": "Simplifiez la gestion de vos chambres d'hôtes avec un calendrier unique et une messagerie centralisée.",
+      "gites": "Synchronisez vos gîtes sur toutes les plateformes et automatisez vos tâches administratives.",
+      "camping": "Pilotez vos emplacements et hébergements insolites avec le même outil que vos locations classiques.",
+      "agritourism": "Gérez vos activités d'agrotourisme et vos hébergements à la ferme depuis une seule interface."
+    },
+    "cta": "En savoir plus"
+  },
   "ai": {
     "badge": "Intelligence Artificielle",
     "title": "Un assistant intelligent",
@@ -458,6 +476,32 @@
     "title": "Plus de",
     "titleHighlight": "120 OTAs",
     "titleSuffix": "et partenaires"
+  },
+  "testimonialsGrid": {
+    "title": "Ils sont passés au logiciel Biloki",
+    "subtitle": "Des conciergeries qui ont simplifié leur gestion au quotidien.",
+    "items": {
+      "1": {
+        "quote": "Je suis passée de Hostaway à Biloki, je ne reviendrai pas en arrière. Hostaway était trop complexe par rapport à Biloki, et en 2 semaines on a supprimé les doubles saisies.",
+        "name": "Claire Lemarie",
+        "role": "Fondatrice de Claire & sa conciergerie, conciergerie de 42 logements (Lyon, janvier 2026)"
+      },
+      "2": {
+        "quote": "J'ai quitté Smoobu pour Biloki et je gère mes 34 logements plus simplement, avec tout au même endroit.",
+        "name": "Kevin Glaize",
+        "role": "Fondateur de Lokernest, conciergerie de 34 logements (Nantes, février 2024)"
+      },
+      "3": {
+        "quote": "Avant Biloki, je n'avais aucun logiciel pour mon activité. Aujourd'hui, je gère mes 44 logements au même endroit.",
+        "name": "Siane Thiebault",
+        "role": "Fondatrice de Sublime Touch, conciergerie de 44 logements (Yonne, mars 2025)"
+      },
+      "4": {
+        "quote": "Je n'avais pas de channel manager et je gère mes 11 logements beaucoup plus simplement avec Biloki.",
+        "name": "Amélie Prevost",
+        "role": "Fondatrice de EG Conciergerie 24, conciergerie de 11 logements (Dordogne, décembre 2024)"
+      }
+    }
   },
   "testimonialsHome": {
     "kicker": "Témoignages clients",
@@ -512,6 +556,10 @@
         "designation": "(CEO, conciergerie multi-villes, Paris, 2026)"
       }
     }
+  },
+  "securityTrust": {
+    "title": "Un logiciel certifié par Cybercare, expert en cybersécurité",
+    "description": "Vos données et celles de vos voyageurs sont protégées selon les meilleurs standards de sécurité du marché. Tests réalisés selon les méthodologies de l'ANSSI et de l'OWASP."
   },
   "connectivity": {
     "title": "Reconnu par les OTAs leaders",
@@ -640,7 +688,12 @@
       "bullet3": "Suivi en temps réel avec photos et validation"
     },
     "travelerGuide": {
-      "label": "Guide voyageur"
+      "label": "Guide voyageur",
+      "short": "Un guide digital pour vos voyageurs",
+      "description": "Offrez à vos voyageurs un guide digital personnalisé avec toutes les informations utiles : accès au logement, wifi, recommandations locales et consignes pratiques. Ils y retrouvent tout au même endroit, sans avoir à vous solliciter.",
+      "bullet1": "Guide digital personnalisé par logement",
+      "bullet2": "Infos pratiques, wifi et recommandations locales",
+      "bullet3": "Moins de questions répétitives de vos voyageurs"
     },
     "statistics": {
       "label": "Statistiques",

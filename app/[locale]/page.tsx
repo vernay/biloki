@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getMessages } from "next-intl/server";
 import Hero from "@/components/sections/Hero";
 import PartnersScroll from "@/components/sections/PartnersScroll";
@@ -64,8 +63,11 @@ import InteractiveModulesShowcase from "@/components/sections/InteractiveModules
 import ConnectivityPASection from "@/components/sections/ConnectivityPASection";
 import ModuleNavBar from "@/components/sections/ModuleNavBar";
 import CTASection from "@/components/sections/CTASection";
-import { AnimatedTestimonialsDemo } from "@/components/sections/AnimatedTestimonialsDemo";
+import TestimonialsGrid from "@/components/sections/TestimonialsGrid";
+import SecurityTrustSection from "@/components/sections/SecurityTrustSection";
+import PropertyTypesSection from "@/components/sections/PropertyTypesSection";
 import BentoDemo from "@/components/sections/BentoDemo";
+import FinalCtaAndFaq from "@/components/sections/FinalCtaAndFaq";
 
 export default function HomePage() {
   const softwareAppJsonLd = {
@@ -110,45 +112,33 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
       />
-      <div className="mx-2 md:mx-3 lg:mx-4">
-        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl">
-          <Image
-            src="/images/1%C3%A8re%20page%20photos/Es%20vedra.webp"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(6, 19, 33, 0.74) 0%, rgba(6, 19, 33, 0.68) 100%)",
-            }}
-          />
-          <div className="relative z-10">
-            <Hero />
-            <ModuleNavBar />
-            <PartnersScroll inHero />
-          </div>
+      <div className="relative overflow-hidden bg-white">
+        <div className="relative z-10">
+          <Hero />
+          {/* Barre masquée temporairement à la demande du client */}
+          {/* <ModuleNavBar /> */}
+          {/* <PartnersScroll inHero /> */}
         </div>
       </div>
+      <TestimonialsGrid />
       <div className="mt-8 md:mt-12">
         <InteractiveModulesShowcase />
       </div>
-      <section className="bg-white px-4 py-16 md:px-8 md:py-20">
+      {/* Section masquée temporairement à la demande du client */}
+      {/* <section className="bg-white px-4 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
           <BentoDemo />
         </div>
-      </section>
+      </section> */}
+      <SecurityTrustSection />
       <ConnectivityPASection />
-      <AnimatedTestimonialsDemo showNote={false} />
       <div className="mx-2 md:mx-4 lg:mx-6 mt-3 md:mt-4 overflow-hidden">
         <IntegrationsSection />
       </div>
-      <CTASection />
+      <PropertyTypesSection />
+      <FinalCtaAndFaq />
+      {/* Section masquée temporairement à la demande du client */}
+      {/* <CTASection /> */}
     </main>
   );
 }

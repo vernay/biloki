@@ -4,8 +4,8 @@
  */
 
 export const COLORS = {
-  primary: '#04a4ff',      // Bleu Biloki
-  primaryDark: '#0284c7',  // Bleu foncé (pour dégradés)
+  primary: '#01A4FF',      // Bleu Biloki
+  primaryDark: '#0194E6',  // Bleu foncé (pour dégradés)
   white: '#ffffff',
   black: '#000000',
   gray: {

@@ -1,63 +1,46 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
 import WebappLink from "@/components/ui/WebappLink";
-import HandDrawnUnderline from "@/components/ui/HandDrawnUnderline";
-import { LiquidButton } from "@/components/ui/LiquidButton";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
-  const locale = useLocale();
   const titleLine = t("title").trim();
   const titleHighlight = t("titleHighlight").trim();
   
   return (
-    <section id="hero-section" className="overflow-x-hidden px-4 pb-4 pt-20 sm:px-6 md:pt-12">
+    <section id="hero-section" className="overflow-x-hidden px-4 pb-10 pt-52 sm:px-6 md:pt-48">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-4 items-center">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-8">
           {/* Colonne gauche - Contenu */}
           <motion.div 
             className="space-y-8 text-center lg:text-left"
           >
             <motion.div
-              className="flex flex-col gap-6 lg:block"
+              className="flex flex-col gap-6"
             >
             <motion.h1 
-                className="flex-1 max-w-5xl text-center text-2xl font-semibold leading-tight tracking-tight md:text-3xl md:leading-relaxed lg:text-left lg:text-4xl"
+                className="flex-1 max-w-5xl text-center font-sans text-2xl leading-tight md:text-3xl md:leading-relaxed lg:text-left lg:text-4xl"
               >
-                <span className="block text-[2rem] md:text-4xl lg:text-5xl font-semibold break-words text-white">
+                  <span className="block break-words text-[2rem] font-black text-slate-900 md:text-4xl lg:text-5xl">
                   {titleLine}
                 </span>
                 <div className="relative inline-block mt-3">
-                  <span className="block text-lg md:text-xl lg:text-2xl font-medium text-primary">
+                  <span className="block text-base md:text-lg lg:text-xl font-normal text-gray-500">
                     {titleHighlight}
                   </span>
-                  <div className="absolute -bottom-2 left-0 w-full">
-                    <HandDrawnUnderline color="#01a4ff" className="w-full" width={200} height={16} />
-                  </div>
                 </div>
               </motion.h1>
-
-              <div className="mx-auto w-full max-w-[340px] lg:hidden sm:w-[70%] sm:min-w-[220px] sm:mt-2">
-                <img
-                  src="/images/1%C3%A8re%20page%20photos/Photo%20principale.svg"
-                  alt="Interface Biloki"
-                  className="w-full h-auto object-contain"
-                  width={900}
-                  height={700}
-                />
-              </div>
             </motion.div>
 
             <motion.div
-              className="mt-2 flex flex-col gap-3 text-sm text-white/90"
+              className="mt-2 flex flex-col gap-3 text-sm text-slate-700"
             >
               <span className="inline-flex items-center justify-center gap-2 lg:justify-start">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/80 text-white">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-white">
                   <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
@@ -65,7 +48,7 @@ export default function Hero() {
                 {t("trialNote")}
               </span>
               <span className="inline-flex items-center justify-center gap-2 lg:justify-start">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/80 text-white">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-500 text-white">
                   <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
@@ -94,7 +77,7 @@ export default function Hero() {
                   <span aria-hidden="true">★</span>
                   <span aria-hidden="true">★</span>
                   <span aria-hidden="true">★</span>
-                  <span className="text-sm text-white ml-2">5/5</span>
+                  <span className="text-sm text-slate-900 ml-2">5/5</span>
                 </div>
               </a>
             </motion.div>
@@ -107,48 +90,24 @@ export default function Hero() {
               <motion.div>
                 <WebappLink
                   type="register"
-                  className="inline-block w-full rounded-full focus-visible:outline-none sm:w-auto"
+                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[#01A4FF] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#0194e6] sm:w-auto"
                 >
-                  <LiquidButton size="xl" className="w-full justify-center whitespace-nowrap">{tCommon("startFree")} →</LiquidButton>
+                  {tCommon("startFree")} →
                 </WebappLink>
               </motion.div>
-
-              <motion.div>
-                <Link
-                  href={`/${locale}/reserver-demo`}
-                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-xl border border-white/35 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-white/55 hover:bg-white/18 hover:shadow-[0_10px_30px_rgba(255,255,255,0.14)] sm:w-auto"
-                >
-                  {tCommon("bookYourDemo")}
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center justify-center gap-2 text-center text-[11px] leading-tight text-white/70 sm:text-xs lg:justify-start lg:text-left"
-            >
-              <span>{t("hostingNote")}</span>
-              <span className="inline-flex items-center rounded px-1.5 py-0.5 border border-white/30 bg-white/5" aria-label="Logo Scaleway">
-                <svg className="h-3.5 w-3.5 text-white/65" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M1 1H6V6H1V1ZM1 8H6V13H1V8ZM8 1H13V6H8V1Z" fill="currentColor"/>
-                </svg>
-              </span>
             </motion.div>
           </motion.div>
 
-          {/* Colonne droite - Mockup principal */}
-          <div className="relative hidden lg:flex lg:h-[800px] items-center justify-end lg:pl-24 lg:-mr-8">
-            <motion.div
-              className="w-full max-w-[1500px] lg:translate-x-4 lg:scale-[1.5] origin-center"
-            >
-              <img
-                src="/images/1%C3%A8re%20page%20photos/Photo%20principale.svg"
-                alt="Interface Biloki"
-                className="w-full h-auto"
-                width={900}
-                height={700}
-              />
-            </motion.div>
-          </div>
+          {/* Colonne droite - Visuel */}
+          <motion.div className="relative mx-auto w-full max-w-[480px] lg:max-w-none lg:scale-105 lg:origin-center">
+            <img
+              src="/images/Page%20r%C3%A9servation/Page%20d%27acceuil%20V2.svg"
+              alt="Interface Biloki"
+              className="w-full h-auto object-contain"
+              width={900}
+              height={700}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

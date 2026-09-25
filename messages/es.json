@@ -168,7 +168,7 @@
     "contact": "Contacto",
     "demo": "Reservar una demo",
     "login": "Iniciar sesión",
-    "trial": "Prueba gratuita",
+    "trial": "Prueba gratuita 30 días",
     "language": "Idioma",
     "switcherLabel": "Cambiar idioma",
     "promo": {
@@ -264,15 +264,15 @@
     }
   },
   "hero": {
-    "title": "Toda tu conserjería, una sola plataforma.",
-    "titleHighlight": "Nada mal, ¿verdad? Eso es Biloki 🚀",
+    "title": "Maximiza los ingresos de tu empresa de gestión",
+    "titleHighlight": "Un solo software para gestionar tus alquileres de corta duración: reservas, equipos, accesos e ingresos, todo en un mismo lugar, al mejor precio del mercado.",
     "roles": {
       "concierges": "Conserjerías",
       "owners": "Propietarios",
       "tenants": "Inquilinos",
       "providers": "Proveedores"
     },
-    "trialNote": "1 mes de prueba gratis sin tarjeta bancaria",
+    "trialNote": "30 días de prueba gratis sin tarjeta bancaria",
     "onboardingNote": "Onboarding incluido",
     "hostingNote": "🇫🇷 Software creado en Francia · Alojado en Francia con Scaleway",
     "description": "Gestiona tus alquileres de corta duración desde una sola plataforma: reservas, huéspedes, equipos y automatizaciones. Menos operación, más crecimiento.",
@@ -413,6 +413,24 @@
     },
     "cta": "Ver marketplace API"
   },
+  "propertyTypes": {
+    "title": "Adaptado a cada tipo de propiedad",
+    "categories": {
+      "seasonal": "Alquileres de temporada",
+      "guestHouses": "Casas de huéspedes",
+      "gites": "Casas rurales",
+      "camping": "Camping y glamping",
+      "agritourism": "Agroturismo"
+    },
+    "descriptions": {
+      "seasonal": "Gestiona todos tus alquileres, desde apartamentos individuales hasta toda tu cartera, con reservas centralizadas y seguimiento del rendimiento.",
+      "guestHouses": "Simplifica la gestión de tus casas de huéspedes con un calendario único y mensajería centralizada.",
+      "gites": "Sincroniza tus casas rurales en todas las plataformas y automatiza tus tareas administrativas.",
+      "camping": "Gestiona tus parcelas y alojamientos singulares con la misma herramienta que tus alquileres clásicos.",
+      "agritourism": "Gestiona tus actividades de agroturismo y alojamientos rurales desde una sola interfaz."
+    },
+    "cta": "Saber más"
+  },
   "ai": {
     "badge": "Inteligencia Artificial",
     "title": "Un asistente inteligente",
@@ -458,6 +476,32 @@
     "title": "Más de",
     "titleHighlight": "120 OTAs",
     "titleSuffix": "y socios"
+  },
+  "testimonialsGrid": {
+    "title": "Se han pasado al software Biloki",
+    "subtitle": "Conserjerías que han simplificado su gestión diaria.",
+    "items": {
+      "1": {
+        "quote": "Pasé de Hostaway a Biloki, no vuelvo atrás. Hostaway era demasiado complejo comparado con Biloki, y en 2 semanas eliminamos las dobles reservas.",
+        "name": "Claire Lemarie",
+        "role": "Fundadora de Claire & sa conciergerie, conserjería de 42 alojamientos (Lyon, enero 2026)"
+      },
+      "2": {
+        "quote": "Dejé Smoobu por Biloki y ahora gestiono mis 34 alojamientos de forma más sencilla, todo en un mismo lugar.",
+        "name": "Kevin Glaize",
+        "role": "Fundador de Lokernest, conserjería de 34 alojamientos (Nantes, febrero 2024)"
+      },
+      "3": {
+        "quote": "Antes de Biloki no tenía ningún software para mi actividad. Hoy gestiono mis 44 alojamientos en el mismo lugar.",
+        "name": "Siane Thiebault",
+        "role": "Fundadora de Sublime Touch, conserjería de 44 alojamientos (Yonne, marzo 2025)"
+      },
+      "4": {
+        "quote": "No tenía channel manager y gestiono mis 11 alojamientos mucho más fácilmente con Biloki.",
+        "name": "Amélie Prevost",
+        "role": "Fundadora de EG Conciergerie 24, conserjería de 11 alojamientos (Dordoña, diciembre 2024)"
+      }
+    }
   },
   "testimonialsHome": {
     "kicker": "Testimonios de clientes",
@@ -512,6 +556,10 @@
         "designation": "(CEO, conserjería multi-ciudad, París, 2026)"
       }
     }
+  },
+  "securityTrust": {
+    "title": "Un software certificado por Cybercare, expertos en ciberseguridad",
+    "description": "Tus datos y los de tus huéspedes están protegidos según los mejores estándares de seguridad del mercado. Pruebas realizadas según las metodologías de ANSSI y OWASP."
   },
   "connectivity": {
     "title": "Reconocido por las OTAs líderes",
@@ -640,7 +688,12 @@
       "bullet3": "Seguimiento en tiempo real con fotos y validación"
     },
     "travelerGuide": {
-      "label": "Guía del viajero"
+      "label": "Guía del viajero",
+      "short": "Una guía digital para tus huéspedes",
+      "description": "Ofrece a tus huéspedes una guía digital personalizada con toda la información útil: acceso al alojamiento, wifi, recomendaciones locales e instrucciones prácticas. Todo en un solo lugar, sin necesidad de contactarte.",
+      "bullet1": "Guía digital personalizada por alojamiento",
+      "bullet2": "Información práctica, wifi y recomendaciones locales",
+      "bullet3": "Menos preguntas repetitivas de tus huéspedes"
     },
     "statistics": {
       "label": "Estadísticas",

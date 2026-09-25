@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import WebappLink from "@/components/ui/WebappLink";
-import CanvaGlassFrame from "@/components/ui/CanvaGlassFrame";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { MEGA_FEATURE_ITEMS } from "@/lib/header-footer-config";
 
@@ -159,8 +158,31 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
+  // Cache le header au scroll vers le bas, le réaffiche dès qu'on remonte
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrolledDown = currentScrollY > lastScrollY;
+      const pastThreshold = currentScrollY > 120;
+
+      setIsHeaderHidden(scrolledDown && pastThreshold && !isOpen);
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isOpen]);
+
   return (
-    <div ref={headerRootRef} className="fixed top-0 left-0 right-0 z-[100] flex flex-col">
+    <div
+      ref={headerRootRef}
+      className={`fixed top-0 left-0 right-0 z-[100] flex flex-col transition-transform duration-300 ${
+        isHeaderHidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       {/* Barre Se connecter avec défilement promo */}
       <style>{`
         @keyframes scroll-text {
@@ -419,11 +441,13 @@ export default function Header() {
           <Link href={withLocale("/reserver-demo")} className="hover:opacity-80 font-semibold text-sm text-white">
             {t("demo")}
           </Link>
-          <CanvaGlassFrame className="rounded-full">
-            <WebappLink type="register" className="font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm whitespace-nowrap text-white hover:text-white/85">
-              {t("trial")}
-            </WebappLink>
-          </CanvaGlassFrame>
+          <WebappLink
+            type="register"
+            className="font-semibold py-2 px-4 lg:px-6 rounded-full transition-all inline-block text-sm whitespace-nowrap text-white hover:opacity-90"
+            style={{ backgroundColor: '#01A4FF' }}
+          >
+            {t("trial")}
+          </WebappLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -589,11 +613,14 @@ export default function Header() {
           <WebappLink type="login" className="block text-white hover:opacity-80 py-2 font-semibold" onClick={() => setIsOpen(false)}>
             {t("login")}
           </WebappLink>
-          <CanvaGlassFrame inline={false} className="rounded-full">
-            <WebappLink type="register" className="block w-full text-center text-white font-semibold py-3 rounded-full transition-all" onClick={() => setIsOpen(false)}>
-              {t("trial")}
-            </WebappLink>
-          </CanvaGlassFrame>
+          <WebappLink
+            type="register"
+            className="block w-full text-center text-white font-semibold py-3 rounded-full transition-all"
+            style={{ backgroundColor: '#01A4FF' }}
+            onClick={() => setIsOpen(false)}
+          >
+            {t("trial")}
+          </WebappLink>
           </div>
           </div>
         )}

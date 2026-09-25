@@ -8,6 +8,7 @@ interface WebappLinkProps {
   type?: 'login' | 'register' | 'subscription';
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
 }
 
@@ -15,6 +16,7 @@ export default function WebappLink({
   type = 'register', 
   children, 
   className = '',
+  style,
   onClick 
 }: WebappLinkProps) {
   const pathname = usePathname();
@@ -29,6 +31,7 @@ export default function WebappLink({
     <a 
       href={href} 
       className={className}
+      style={style}
       onClick={onClick}
     >
       {children}

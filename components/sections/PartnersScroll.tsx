@@ -36,10 +36,10 @@ export default function PartnersScroll({ inHero = false }: PartnersScrollProps) 
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className={`text-center ${inHero ? 'mb-6 mt-1' : 'mb-8 mt-8'}`}>
+        <div className={`text-center ${inHero ? 'mb-6 mt-0' : 'mb-8 mt-8'}`}>
           <p
             className={`text-xl md:text-2xl font-semibold uppercase tracking-wide mb-2 ${
-              inHero ? 'text-white/90' : 'text-[var(--biloki-blue)]'
+              inHero ? 'text-slate-700' : 'text-[var(--biloki-blue)]'
             }`}
           >
             {t('subtitle')}

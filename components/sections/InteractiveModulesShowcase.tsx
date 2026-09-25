@@ -19,6 +19,7 @@ interface Module {
   bullet3Key: string;
   imagePath: string;
   mediaType?: "image" | "video";
+  imageScale?: number;
   ctaHref: string;
 }
 
@@ -76,12 +77,10 @@ const ShoppingBagIcon = () => (
   </svg>
 );
 
-const UsersIcon = () => (
+const GuideIcon = () => (
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.8}>
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-    <circle cx="9" cy="7" r="4"/>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
   </svg>
 );
 
@@ -102,7 +101,7 @@ const MODULES: Module[] = [
     bullet1Key: "reservations.bullet1",
     bullet2Key: "reservations.bullet2",
     bullet3Key: "reservations.bullet3",
-    imagePath: "/images/Page réservation/2.png",
+    imagePath: "/images/Page réservation/Réservation .svg",
     mediaType: "image",
     ctaHref: "/fonctionnalites/reservations",
   },
@@ -116,8 +115,9 @@ const MODULES: Module[] = [
     bullet1Key: "messaging.bullet1",
     bullet2Key: "messaging.bullet2",
     bullet3Key: "messaging.bullet3",
-    imagePath: "/images/Messagerie unifiée/Tout centralisé.svg",
+    imagePath: "/images/Page réservation/Messagerie unifiée.svg",
     mediaType: "image",
+    imageScale: 1.15,
     ctaHref: "/fonctionnalites/messagerie-unifiee",
   },
   {
@@ -130,7 +130,7 @@ const MODULES: Module[] = [
     bullet1Key: "missions.bullet1",
     bullet2Key: "missions.bullet2",
     bullet3Key: "missions.bullet3",
-    imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 18.44.15.png",
+    imagePath: "/images/Page réservation/Planning mission.png",
     ctaHref: "/fonctionnalites/planning-missions",
   },
   {
@@ -143,8 +143,8 @@ const MODULES: Module[] = [
     bullet1Key: "statistics.bullet1",
     bullet2Key: "statistics.bullet2",
     bullet3Key: "statistics.bullet3",
-    imagePath: "/images/modules/Statistiques.MOV",
-    mediaType: "video",
+    imagePath: "/images/Page réservation/Performance stats.png",
+    mediaType: "image",
     ctaHref: "/fonctionnalites/statistiques",
   },
   {
@@ -184,20 +184,20 @@ const MODULES: Module[] = [
     bullet1Key: "addons.bullet1",
     bullet2Key: "addons.bullet2",
     bullet3Key: "addons.bullet3",
-    imagePath: "/images/Section ventes additionnelles/Etape 4.png",
+    imagePath: "/images/Page réservation/Ventes additionnelles.svg",
     ctaHref: "/fonctionnalites/ventes-additionnelles",
   },
   {
     id: 8,
-    icon: <UsersIcon />,
-    labelKey: "team.label",
-    descriptionKey: "team.description",
-    shortDescKey: "team.short",
-    bullet1Key: "team.bullet1",
-    bullet2Key: "team.bullet2",
-    bullet3Key: "team.bullet3",
-    imagePath: "/images/Page prestataire/Capture d’écran 2026-07-15 à 19.02.19.png",
-    ctaHref: "/fonctionnalites/planning-missions",
+    icon: <GuideIcon />,
+    labelKey: "travelerGuide.label",
+    descriptionKey: "travelerGuide.description",
+    shortDescKey: "travelerGuide.short",
+    bullet1Key: "travelerGuide.bullet1",
+    bullet2Key: "travelerGuide.bullet2",
+    bullet3Key: "travelerGuide.bullet3",
+    imagePath: "/images/Page réservation/Guide voyageur.png",
+    ctaHref: "/fonctionnalites/interface-voyageurs",
   },
 ];
 
@@ -213,7 +213,7 @@ export default function InteractiveModulesShowcase() {
   return (
     <section className="relative w-full">
       {/* Hero-style section: fixed background + scrolling foreground content */}
-      <div className="relative mx-3 mb-8 min-h-[760px] overflow-hidden rounded-2xl sm:mx-4 sm:min-h-[780px] md:mx-6 md:h-[56rem] md:min-h-0 md:rounded-3xl lg:mx-8 lg:h-[980px] xl:mx-12 xl:h-[1040px]">
+      <div className="relative mx-3 mb-8 min-h-[700px] overflow-hidden rounded-2xl sm:mx-4 sm:min-h-[720px] md:mx-6 md:min-h-[660px] md:rounded-3xl lg:mx-8 lg:min-h-[600px] xl:mx-12 xl:min-h-[620px]">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         >
@@ -231,13 +231,13 @@ export default function InteractiveModulesShowcase() {
 
         {/* Foreground content scrolls normally over the fixed background */}
         <div className="relative z-20 flex flex-col justify-start">
-          <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-5 md:px-6 md:py-12 lg:pt-20 lg:pb-14">
+          <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-5 md:px-6 md:py-8 lg:pt-10 lg:pb-8">
             {/* Section Header */}
-            <div className="mb-6 text-center md:mb-8 lg:mb-10">
-              <h2 className="mb-3 text-2xl font-bold text-white sm:text-3xl md:mb-4 md:text-4xl lg:text-5xl">
+            <div className="mb-4 text-center md:mb-5 lg:mb-6">
+              <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-3 md:text-3xl lg:text-4xl">
                 {t("title")}
               </h2>
-              <p className="mx-auto max-w-2xl text-base text-white/75 md:text-lg">
+              <p className="mx-auto max-w-2xl text-sm text-white/75 md:text-base">
                 {t("subtitle")}
               </p>
             </div>
@@ -268,16 +268,14 @@ export default function InteractiveModulesShowcase() {
             </div>
 
             {/* Desktop tabs */}
-            <div className="mx-auto mb-8 hidden max-w-5xl grid-cols-2 gap-3 md:grid lg:mb-10 lg:grid-cols-4">
+            <div className="mx-auto mb-5 hidden max-w-5xl grid-cols-2 gap-2.5 md:grid lg:mb-6 lg:grid-cols-4">
               {MODULES.map((module, index) => {
                 const isActive = activeModule === index;
                 return (
                   <button
                     key={module.id}
                     onClick={() => setActiveModule(index)}
-                    onMouseEnter={() => setActiveModule(index)}
-                    onFocus={() => setActiveModule(index)}
-                    className={`w-full min-h-[56px] flex items-center justify-center gap-2 rounded-full border px-3 py-3 text-sm font-semibold transition-all duration-200 ${
+                    className={`w-full min-h-[48px] flex items-center justify-center gap-2 rounded-full border px-3 py-2.5 text-sm font-semibold transition-all duration-200 ${
                       isActive
                         ? "bg-white text-gray-900 border-white shadow-[0_10px_24px_rgba(255,255,255,0.22)]"
                         : "bg-white/8 text-white border-white/45 hover:bg-white/14"
@@ -296,9 +294,9 @@ export default function InteractiveModulesShowcase() {
             {/* Left: text */}
             <CanvaGlassFrame inline={false} className="flex h-full flex-col rounded-[2rem] p-2.5 backdrop-blur sm:rounded-[2.2rem] sm:p-4 lg:rounded-[2.5rem] lg:p-6">
               {/* Inner white panel with padding to show liquid glass border */}
-              <div className="flex h-full flex-col rounded-[1.4rem] bg-white p-4 sm:rounded-[1.8rem] sm:p-6 lg:rounded-[2rem] lg:p-8">
-                <div className="relative mb-3 inline-block sm:mb-4">
-                  <h3 className="text-2xl font-bold leading-tight text-black sm:text-3xl lg:text-4xl">
+              <div className="flex h-full flex-col rounded-[1.4rem] bg-white p-4 sm:rounded-[1.6rem] sm:p-5 lg:rounded-[1.8rem] lg:p-6">
+                <div className="relative mb-2 inline-block sm:mb-3">
+                  <h3 className="text-xl font-bold leading-tight text-black sm:text-2xl lg:text-3xl">
                     {getDisplayLabel(currentModule)}
                   </h3>
                   <div className="absolute -bottom-3 left-0 w-full">
@@ -314,7 +312,7 @@ export default function InteractiveModulesShowcase() {
                 <ul className="mb-7 space-y-2.5 sm:mb-8 sm:space-y-3">
                   {[currentModule.bullet1Key, currentModule.bullet2Key, currentModule.bullet3Key].map((key, index) => (
                     <li key={key} className={index === 2 ? "hidden items-start gap-3 sm:flex" : "flex items-start gap-3"}>
-                      <span className="mt-0.5 flex items-center justify-center w-5 h-5 rounded-full bg-primary/30 text-primary border border-primary/50 flex-shrink-0">
+                      <span className="mt-0.5 flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white border border-primary flex-shrink-0">
                         <CheckIcon />
                       </span>
                       <span className="text-sm leading-relaxed text-black/85">{t(key)}</span>
@@ -338,7 +336,7 @@ export default function InteractiveModulesShowcase() {
             </CanvaGlassFrame>
             {/* Right: screenshot card */}
             <div className="relative h-[300px] sm:h-[360px] md:h-[420px] lg:h-full">
-              <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/55 bg-transparent p-3 backdrop-blur sm:rounded-[2.2rem] sm:p-4 lg:rounded-[2.5rem] lg:p-6">
+              <div className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/55 bg-transparent p-1.5 backdrop-blur sm:rounded-[2.2rem] sm:p-2 lg:rounded-[2.5rem] lg:p-2.5">
                 {currentModule.mediaType === "video" ? (
                   <div className="flex-1 overflow-hidden rounded-[1.6rem] bg-black sm:rounded-[1.8rem] lg:rounded-[2rem]">
                     <video
@@ -352,12 +350,13 @@ export default function InteractiveModulesShowcase() {
                     />
                   </div>
                 ) : (
-                  <div className="flex-1 overflow-hidden rounded-[1.6rem] bg-white p-2 sm:rounded-[1.8rem] sm:p-3 lg:rounded-[2rem]">
-                    <div className="relative w-full h-full">
+                  <div className="flex-1 overflow-hidden rounded-[1.6rem] bg-white p-0.5 sm:rounded-[1.8rem] sm:p-1 lg:rounded-[2rem]">
+                    <div className="relative w-full h-full overflow-hidden">
                       <Image
                         src={currentModule.imagePath}
                         alt={getDisplayLabel(currentModule)}
                         fill
+                        style={currentModule.imageScale ? { transform: `scale(${currentModule.imageScale})` } : undefined}
                         className="object-contain object-center"
                         unoptimized
                         sizes="(min-width: 1280px) 36vw, (min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"

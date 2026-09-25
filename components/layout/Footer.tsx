@@ -62,7 +62,7 @@ export default function Footer() {
             {/* Réseaux sociaux */}
             <div className="flex gap-4 items-center overflow-visible py-4">
               <a 
-                href="https://www.instagram.com/bilokiofficial/" 
+                href="https://www.instagram.com/biloki.fr/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity block py-2 px-1"

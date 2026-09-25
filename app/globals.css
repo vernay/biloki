@@ -6,8 +6,8 @@
 
 :root {
   /* Variable héritée pour les composants qui utilisent encore var(--biloki-blue) */
-  --biloki-blue: #04a4ff;
-  --biloki-blue-dark: #0391dd;
+  --biloki-blue: #01A4FF;
+  --biloki-blue-dark: #0194E6;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
