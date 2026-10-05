@@ -278,7 +278,9 @@ export default function TarifsContent() {
                 ) : (
                   <div className="mt-1 flex flex-wrap items-end gap-3">
                     <p className="text-4xl font-black text-slate-900">{formatEuro(currentMonthlyTotal, locale)}</p>
-                    <p className="pb-1 text-base font-normal text-slate-500">/ {t('perMonth')}</p>
+                    <p className="pb-1 text-base font-normal text-slate-500">
+                      / {t('perMonth')} {isParticulier ? t('incl') : t('excl')}
+                    </p>
                   </div>
                 )}
                 {!isCustomPricing && billingPeriod === 'annual' ? (
