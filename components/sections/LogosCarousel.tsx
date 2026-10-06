@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 interface Logo {
   src: string;
   alt: string;
@@ -26,14 +28,12 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
             key={logo.alt}
             className="logo-card logo-card--grid rounded-2xl bg-white/50 p-3 flex items-center justify-center"
           >
-            <img
+            <Image
               src={logo.src}
               alt={logo.alt}
               className="h-9 object-contain"
               width={120}
               height={36}
-              loading="lazy"
-              decoding="async"
             />
           </div>
         ))}
@@ -47,14 +47,12 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
               key={`${logo.alt}-top-${index}`}
               className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 object-contain"
                 width={120}
                 height={40}
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}
@@ -68,14 +66,12 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
               key={`${logo.alt}-second-${index}`}
               className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 object-contain"
                 width={120}
                 height={40}
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}
@@ -89,14 +85,12 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
               key={`${logo.alt}-third-${index}`}
               className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 object-contain"
                 width={120}
                 height={40}
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}
@@ -110,14 +104,12 @@ export default function LogosCarousel({ logos }: LogosCarouselProps) {
               key={`${logo.alt}-bottom-${index}`}
               className="logo-card logo-card--marquee rounded-2xl bg-white/50 p-4 flex items-center justify-center"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
                 className="h-10 object-contain"
                 width={120}
                 height={40}
-                loading="lazy"
-                decoding="async"
               />
             </div>
           ))}

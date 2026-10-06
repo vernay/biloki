@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -297,12 +298,12 @@ export default function BenefitsIphoneSection() {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{ width: `${MOBILE_PHONE_W}px`, height: `${MOBILE_PHONE_H}px` }}
               >
-                <img
+                <Image
                   src="/images/interfaces/Animation-iphone.svg"
                   alt="Biloki app"
-                  className="h-full w-full object-contain drop-shadow-2xl"
-                  loading="lazy"
-                  decoding="async"
+                  fill
+                  sizes="(max-width: 768px) 60vw, 400px"
+                  className="object-contain drop-shadow-2xl"
                 />
               </div>
             </div>
@@ -360,12 +361,12 @@ export default function BenefitsIphoneSection() {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{ width: `${PHONE_W}px`, height: `${PHONE_H}px` }}
               >
-                <img
+                <Image
                   src="/images/interfaces/Animation-iphone.svg"
                   alt="Biloki app"
-                  className="h-full w-full object-contain drop-shadow-2xl"
-                  loading="lazy"
-                  decoding="async"
+                  fill
+                  sizes="(max-width: 768px) 60vw, 400px"
+                  className="object-contain drop-shadow-2xl"
                 />
               </div>
             </div>

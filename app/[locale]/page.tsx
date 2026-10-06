@@ -64,6 +64,8 @@ import ConnectivityPASection from "@/components/sections/ConnectivityPASection";
 import ModuleNavBar from "@/components/sections/ModuleNavBar";
 import CTASection from "@/components/sections/CTASection";
 import TestimonialsGrid from "@/components/sections/TestimonialsGrid";
+import PressMentions from "@/components/sections/PressMentions";
+import DemoVideoSection from "@/components/sections/DemoVideoSection";
 import SecurityTrustSection from "@/components/sections/SecurityTrustSection";
 import PropertyTypesSection from "@/components/sections/PropertyTypesSection";
 import BentoDemo from "@/components/sections/BentoDemo";
@@ -120,6 +122,7 @@ export default function HomePage() {
           {/* <PartnersScroll inHero /> */}
         </div>
       </div>
+      <DemoVideoSection />
       <TestimonialsGrid />
       <div className="mt-8 md:mt-12">
         <InteractiveModulesShowcase />
@@ -135,6 +138,7 @@ export default function HomePage() {
       <div className="mx-2 md:mx-4 lg:mx-6 mt-3 md:mt-4 overflow-hidden">
         <IntegrationsSection />
       </div>
+      <PressMentions />
       <PropertyTypesSection />
       <FinalCtaAndFaq />
       {/* Section masquée temporairement à la demande du client */}

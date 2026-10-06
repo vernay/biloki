@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import {
@@ -10,6 +11,8 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { IconChevronRight } from "@tabler/icons-react";
+
+const MotionImage = motion.create(Image);
 
 type StoryStep = {
   number: number;
@@ -367,17 +370,18 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
                 key={step.number}
                 className="overflow-hidden rounded-3xl border border-slate-200 bg-white"
               >
-                <img
-                  src={step.imageSrc}
-                  alt={step.imageAlt}
-                  className={[
-                    "h-56 w-full md:h-72",
-                    shouldContainStepImages ? "object-contain bg-white" : "object-cover",
-                    step.imageClassName ?? "",
-                  ].join(" ")}
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div className="relative h-56 w-full md:h-72">
+                  <Image
+                    src={step.imageSrc}
+                    alt={step.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className={[
+                      shouldContainStepImages ? "object-contain bg-white" : "object-cover",
+                      step.imageClassName ?? "",
+                    ].join(" ")}
+                  />
+                </div>
                 <div className="p-6 md:p-8">
                   <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
                       {renderStepMeta(step)}
@@ -451,17 +455,16 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
                         className="overflow-hidden"
                       >
                         <div className="border-t border-slate-100 px-4 pb-5 pt-4">
-                          <div className="overflow-hidden rounded-2xl bg-slate-100">
-                            <img
+                          <div className="relative h-48 w-full overflow-hidden rounded-2xl bg-slate-100">
+                            <Image
                               src={step.imageSrc}
                               alt={step.imageAlt}
+                              fill
+                              sizes="100vw"
                               className={[
-                                "h-48 w-full",
                                 shouldContainStepImages ? "object-contain bg-white" : "object-cover",
                                 step.imageClassName ?? "",
                               ].join(" ")}
-                              loading="lazy"
-                              decoding="async"
                             />
                           </div>
                           <p className="mt-4 text-base leading-relaxed text-slate-600">
@@ -542,26 +545,32 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
                   backdropFrameHeightClassName,
                 ].join(" ")}
               >
-                <img
+                <Image
                   src={visualBackdropSrc}
                   alt={t('backgroundAlt')}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-black/15" />
 
                 <div className="absolute inset-0 flex items-center justify-center p-6 md:p-10">
                   <div className={insetCardWrapperClassName}>
-                    <div className="overflow-hidden rounded-[22px] border border-white/60 bg-white/90">
+                    <div
+                      className={[
+                        "relative overflow-hidden rounded-[22px] border border-white/60 bg-white/90",
+                        insetCardImageHeightClassName,
+                      ].join(" ")}
+                    >
                       <AnimatePresence mode="wait">
-                        <motion.img
+                        <MotionImage
                           key={activeStep.imageSrc}
                           src={activeStep.imageSrc}
                           alt={activeStep.imageAlt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 540px"
                           className={[
-                            insetCardImageHeightClassName,
                             shouldContainStepImages ? "object-contain bg-white" : "object-cover",
                             activeStep.imageClassName ?? "",
                           ].join(" ")}
@@ -569,8 +578,6 @@ export default function ScrollStorySection({ namespace = 'featureSections.scroll
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.985 }}
                           transition={{ duration: 0.38, ease: "easeOut" }}
-                          loading="lazy"
-                          decoding="async"
                         />
                       </AnimatePresence>
                     </div>

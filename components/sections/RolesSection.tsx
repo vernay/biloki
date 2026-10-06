@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 interface RoleConfig {
   id: string;
@@ -75,11 +76,13 @@ export default function RolesSection() {
                 className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[var(--biloki-blue)] hover:shadow-lg transition-all duration-200 flex flex-col h-full cursor-pointer group"
               >
                 {/* Image */}
-                <div className="mb-4 -mx-6 -mt-6 bg-gray-50">
-                  <img 
-                    src={role.image} 
+                <div className="relative mb-4 -mx-6 -mt-6 h-48 bg-gray-50">
+                  <Image
+                    src={role.image}
                     alt={t(`${role.translationKey}.label`)}
-                    className="w-full h-48 object-contain rounded-t-2xl group-hover:scale-105 transition-transform duration-200"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain rounded-t-2xl group-hover:scale-105 transition-transform duration-200"
                   />
                 </div>
 

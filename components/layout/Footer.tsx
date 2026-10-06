@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { locales, type Locale } from "@/lib/i18n/config";
@@ -46,12 +47,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <div className="relative inline-block">
-                <img
+                <Image
                   src="/logos/logo-icon-white.svg"
                   alt="Biloki"
+                  width={144}
+                  height={144}
                   className="h-36 w-36"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <span className="absolute -right-1 -bottom-1 rounded-full bg-white/95 px-2 py-1 text-xs font-semibold text-[#002654]">
                   {localeBadge[locale]}

@@ -477,6 +477,10 @@
     "titleHighlight": "120 OTAs",
     "titleSuffix": "et partenaires"
   },
+  "demoVideo": {
+    "title": "Vos locations saisonnières simplifiées",
+    "subtitle": "Un aperçu concret de votre futur outil de gestion, bienvenue chez Biloki"
+  },
   "testimonialsGrid": {
     "title": "Ils sont passés au logiciel Biloki",
     "subtitle": "Des conciergeries qui ont simplifié leur gestion au quotidien.",
@@ -500,6 +504,23 @@
         "quote": "Je n'avais pas de channel manager et je gère mes 11 logements beaucoup plus simplement avec Biloki.",
         "name": "Amélie Prevost",
         "role": "Fondatrice de EG Conciergerie 24, conciergerie de 11 logements (Dordogne, décembre 2024)"
+      }
+    }
+  },
+  "pressMentions": {
+    "title": "Ils parlent de nous",
+    "items": {
+      "1": {
+        "source": "BFM Business",
+        "headline": "Biloki, le logiciel tout-en-un qui simplifie le quotidien des conciergeries"
+      },
+      "2": {
+        "source": "Scale Connect",
+        "headline": "Biloki référencé par Scale Connect comme plateforme de conciergerie pour la location courte durée"
+      },
+      "3": {
+        "source": "Ouest-France",
+        "headline": "Biloki lance sa plateforme dédiée aux conciergeries"
       }
     }
   },

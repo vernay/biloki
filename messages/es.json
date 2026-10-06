@@ -477,6 +477,10 @@
     "titleHighlight": "120 OTAs",
     "titleSuffix": "y socios"
   },
+  "demoVideo": {
+    "title": "Tus alquileres de corta duración, simplificados",
+    "subtitle": "Un vistazo concreto a tu futura herramienta de gestión, bienvenido a Biloki"
+  },
   "testimonialsGrid": {
     "title": "Se han pasado al software Biloki",
     "subtitle": "Conserjerías que han simplificado su gestión diaria.",
@@ -500,6 +504,23 @@
         "quote": "No tenía channel manager y gestiono mis 11 alojamientos mucho más fácilmente con Biloki.",
         "name": "Amélie Prevost",
         "role": "Fundadora de EG Conciergerie 24, conserjería de 11 alojamientos (Dordoña, diciembre 2024)"
+      }
+    }
+  },
+  "pressMentions": {
+    "title": "Hablan de nosotros",
+    "items": {
+      "1": {
+        "source": "BFM Business",
+        "headline": "Biloki, el software todo en uno que simplifica el día a día de las conserjerías"
+      },
+      "2": {
+        "source": "Scale Connect",
+        "headline": "Biloki referenciado por Scale Connect como plataforma de conserjería para alquileres de corta duración"
+      },
+      "3": {
+        "source": "Ouest-France",
+        "headline": "Biloki lanza su plataforma dedicada a las conserjerías"
       }
     }
   },

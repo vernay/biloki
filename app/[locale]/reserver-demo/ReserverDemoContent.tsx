@@ -93,7 +93,7 @@ export default function ReserverDemoContent() {
           </div>
 
           {/* Right Side - HubSpot Meetings */}
-          <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="overflow-hidden rounded-xl">
             <div
               className="meetings-iframe-container"
               data-src="https://meetings-eu1.hubspot.com/gregoire-vernay?embed=true"

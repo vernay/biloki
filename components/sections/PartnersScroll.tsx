@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 type PartnersScrollProps = {
   inHero?: boolean;
@@ -65,14 +66,12 @@ export default function PartnersScroll({ inHero = false }: PartnersScrollProps) 
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-8 w-40 h-24 flex items-center justify-center transition-all duration-300"
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
                 className={`${partner.sizeClassName ?? 'h-12 w-32'} object-contain ${inHero ? 'opacity-95 logo-white' : ''}`}
-                loading="lazy"
                 width={128}
                 height={48}
-                decoding="async"
               />
             </div>
           ))}

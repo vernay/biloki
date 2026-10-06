@@ -477,6 +477,10 @@
     "titleHighlight": "120 OTAs",
     "titleSuffix": "and partners"
   },
+  "demoVideo": {
+    "title": "Your short-term rentals, simplified",
+    "subtitle": "A concrete look at your future management tool, welcome to Biloki"
+  },
   "testimonialsGrid": {
     "title": "They switched to the Biloki software",
     "subtitle": "Concierge businesses that simplified their day-to-day management.",
@@ -500,6 +504,23 @@
         "quote": "I had no channel manager and I manage my 11 units much more simply with Biloki.",
         "name": "Amélie Prevost",
         "role": "Founder of EG Conciergerie 24, 11-unit concierge (Dordogne, December 2024)"
+      }
+    }
+  },
+  "pressMentions": {
+    "title": "As featured in",
+    "items": {
+      "1": {
+        "source": "BFM Business",
+        "headline": "Biloki, the all-in-one software that simplifies concierge businesses' daily life"
+      },
+      "2": {
+        "source": "Scale Connect",
+        "headline": "Biloki featured by Scale Connect as a concierge platform for short-term rentals"
+      },
+      "3": {
+        "source": "Ouest-France",
+        "headline": "Biloki launches its platform dedicated to concierge businesses"
       }
     }
   },

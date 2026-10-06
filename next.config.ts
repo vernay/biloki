@@ -111,6 +111,12 @@ const legacyFrenchBlogRedirects = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    // Autorise next/image à optimiser nos propres SVG locaux (logos, icônes).
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
   redirects: async () => {
     return [
       // Forcer le domaine canonique avec www

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { forwardRef, useRef } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
@@ -46,42 +47,42 @@ export function AnimatedBeamMultipleOutputDemo({
       <div className="flex size-full max-w-3xl flex-row items-start justify-between gap-4 pt-2">
         <div className="flex flex-col justify-center pt-16">
           <Circle ref={hubRef} className="size-16 overflow-hidden border-primary/35 bg-[#01A4FF] p-3 text-white">
-            <img
+            <Image
               src="/logos/logo-icon-white.svg"
               alt="Biloki"
+              width={64}
+              height={64}
               className="h-full w-full object-contain"
-              loading="lazy"
-              decoding="async"
             />
           </Circle>
         </div>
 
         <div className="flex flex-col justify-start gap-2 md:gap-3">
           <Circle ref={airbnbRef} className="size-14 overflow-hidden bg-[#ff5a5f]/10 border-[#ff5a5f]/35 p-0">
-            <img
-              src="/images/Logo OTAS/airbnb-logo.png"
+            <Image
+              src="/images/Logo%20OTAS/airbnb-logo.png"
               alt="Airbnb"
+              width={56}
+              height={56}
               className="h-[74%] w-[74%] object-contain translate-y-[1px]"
-              loading="lazy"
-              decoding="async"
             />
           </Circle>
           <Circle ref={bookingRef} className="size-14 overflow-hidden bg-[#003580]/10 border-[#003580]/35 p-0">
-            <img
+            <Image
               src="/images/Logo%20OTAS/Booking%20logo.webp"
               alt="Booking.com"
+              width={56}
+              height={56}
               className="h-[82%] w-[82%] object-contain"
-              loading="lazy"
-              decoding="async"
             />
           </Circle>
           <Circle ref={vrboRef} className="size-14 overflow-hidden bg-[#0a3f8a]/10 border-[#0a3f8a]/35 p-0">
-            <img
+            <Image
               src="/images/Logo%20OTAS/VRBO%20logo.png"
               alt="VRBO"
+              width={56}
+              height={56}
               className="h-[71%] w-[71%] object-contain -translate-y-[1px]"
-              loading="lazy"
-              decoding="async"
             />
           </Circle>
         </div>

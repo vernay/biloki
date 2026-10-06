@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function AnimatedInterfacesSection() {
   const t = useTranslations("animatedInterfaces");
@@ -22,7 +23,13 @@ export default function AnimatedInterfacesSection() {
 
         <div className="flex justify-center items-center">
           <div className="relative w-full max-w-md mx-auto">
-            <img src="/images/interfaces/gestionnaire.png" alt={t("labels.concierge")} className="w-full h-auto rounded-2xl shadow-2xl" loading="lazy" />
+            <Image
+              src="/images/interfaces/gestionnaire.png"
+              alt={t("labels.concierge")}
+              width={235}
+              height={480}
+              className="w-full h-auto rounded-2xl shadow-2xl"
+            />
           </div>
         </div>
       </div>

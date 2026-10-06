@@ -1,13 +1,15 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 import { containerVariants, itemVariants } from "@/lib/animations-config";
-import WebappLink from "@/components/ui/WebappLink";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const tCommon = useTranslations("common");
+  const locale = useLocale();
   const titleLine = t("title").trim();
   const titleHighlight = t("titleHighlight").trim();
   
@@ -64,12 +66,12 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="mx-auto flex w-fit items-center gap-3 cursor-pointer transition-opacity hover:opacity-80 lg:mx-0"
               >
-                <img
+                <Image
                   src="/images/logo-partenaires/Google.svg.png"
                   alt="Google"
+                  width={64}
+                  height={64}
                   className="h-4 w-auto"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <div className="flex items-center gap-1 text-yellow-300">
                   <span aria-hidden="true">★</span>
@@ -88,24 +90,26 @@ export default function Hero() {
               className="flex flex-col items-center gap-3 pt-4 sm:flex-row sm:justify-center lg:justify-start"
             >
               <motion.div>
-                <WebappLink
-                  type="register"
-                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[#01A4FF] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#0194e6] sm:w-auto"
+                <Link
+                  href={`/${locale}/reserver-demo`}
+                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[#01A4FF] px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-[#0194e6] sm:w-auto md:px-10 md:py-5 md:text-lg"
                 >
-                  {tCommon("startFree")} →
-                </WebappLink>
+                  {tCommon("bookYourDemo")} →
+                </Link>
               </motion.div>
             </motion.div>
           </motion.div>
 
           {/* Colonne droite - Visuel */}
           <motion.div className="relative mx-auto w-full max-w-[480px] lg:max-w-none lg:scale-105 lg:origin-center">
-            <img
+            <Image
               src="/images/Page%20r%C3%A9servation/Page%20d%27accueil%20V3.png"
               alt="Interface Biloki"
               className="w-full h-auto object-contain"
               width={900}
               height={700}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
         </div>

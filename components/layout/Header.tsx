@@ -2,6 +2,7 @@
 
 import { useRef, useState, useTransition, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import WebappLink from "@/components/ui/WebappLink";
@@ -243,13 +244,13 @@ export default function Header() {
         <nav className="h-[64px] md:h-[72px] px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href={withLocale("/")} className="-ml-0.5 shrink-0">
-          <img
+          <Image
             src="/logos/logo-biloki.png"
             alt="Biloki"
             className="h-auto w-[116px] md:w-[132px]"
             width={240}
             height={120}
-            decoding="async"
+            priority
           />
         </Link>
 
@@ -314,23 +315,23 @@ export default function Header() {
                     {t('megaMenu.tagline')}
                   </p>
 
-                  <div className="mt-2">
-                    <img
+                  <div className="relative mt-2 h-48 w-full">
+                    <Image
                       src="/images/Dropdown/Dropdown.jpg"
                       alt="Aperçu Biloki"
-                      className="w-full h-48 rounded-xl object-cover object-center shadow-xl ring-1 ring-white/25"
-                      loading="lazy"
-                      decoding="async"
+                      fill
+                      sizes="(max-width: 768px) 90vw, 320px"
+                      className="rounded-xl object-cover object-center shadow-xl ring-1 ring-white/25"
                     />
                   </div>
 
                   <div className="mt-auto pt-5 flex justify-center">
-                    <img
+                    <Image
                       src="/logos/logo-icon-white.svg"
                       alt="Biloki"
+                      width={96}
+                      height={96}
                       className="h-24 w-24 opacity-80"
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
                 </div>

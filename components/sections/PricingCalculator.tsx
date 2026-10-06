@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { calculatePrice, BillingPeriod, CUSTOM_PRICING_THRESHOLD, VAT_RATE, FREE_TRIAL_DAYS, ANNUAL_DISCOUNT } from "@/lib/pricing-config";
@@ -100,13 +101,15 @@ export default function PricingCalculator() {
             </p>
 
             <div className="rounded-2xl border border-gray-200/70 bg-white/80 p-2 shadow-sm">
-              <img
-                src="/images/Pricing%20calculator/jakub-zerdzicki-4rTXOMv28VA-unsplash.jpg"
-                alt={t('illustrationAlt')}
-                className="h-56 w-full rounded-xl object-cover md:h-72"
-                loading="lazy"
-                decoding="async"
-              />
+              <div className="relative h-56 w-full md:h-72">
+                <Image
+                  src="/images/Pricing%20calculator/jakub-zerdzicki-4rTXOMv28VA-unsplash.jpg"
+                  alt={t('illustrationAlt')}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 480px"
+                  className="rounded-xl object-cover"
+                />
+              </div>
             </div>
           </div>
 
