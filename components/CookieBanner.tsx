@@ -96,8 +96,12 @@ export default function CookieBanner() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const stored = readStoredConsent();
+    let timer: ReturnType<typeof setTimeout> | undefined;
     if (!stored) {
-      setIsVisible(true);
+      // Léger délai avant la première apparition : laisse le contenu réel de
+      // la page (Hero) définir le Largest Contentful Paint plutôt que la
+      // bannière, sans impact perceptible pour l'utilisateur.
+      timer = setTimeout(() => setIsVisible(true), 1200);
     } else {
       setPreferences(stored);
     }
@@ -108,7 +112,10 @@ export default function CookieBanner() {
       setIsVisible(true);
     };
     window.addEventListener(OPEN_EVENT, handleReopen);
-    return () => window.removeEventListener(OPEN_EVENT, handleReopen);
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener(OPEN_EVENT, handleReopen);
+    };
   }, []);
 
   const closeWith = (consent: CookieConsent) => {

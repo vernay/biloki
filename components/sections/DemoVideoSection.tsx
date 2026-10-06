@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -9,16 +9,45 @@ export default function DemoVideoSection() {
   const tCommon = useTranslations('common');
   const locale = useLocale();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  // Ne télécharge la vidéo (2,8 Mo) que lorsque la section approche du
+  // viewport, pour éviter de pénaliser le chargement initial de la page.
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!shouldLoad) return;
     const video = videoRef.current;
     if (!video) return;
     // Forcer l'attribut muted en JS : requis par les navigateurs pour autoriser l'autoplay.
     video.muted = true;
+    video.load();
     video.play().catch(() => {
       // Autoplay bloqué par le navigateur : l'utilisateur pourra lancer la lecture manuellement.
     });
-  }, []);
+  }, [shouldLoad]);
 
   return (
     <section className="px-4 pb-10 sm:px-6 md:pb-16">
@@ -31,7 +60,10 @@ export default function DemoVideoSection() {
             {t('subtitle')}
           </p>
 
-          <div className="mx-auto mt-8 w-full max-w-xs overflow-hidden rounded-[2rem] bg-black shadow-xl md:max-w-sm">
+          <div
+            ref={containerRef}
+            className="mx-auto mt-8 w-full max-w-xs overflow-hidden rounded-[2rem] bg-black shadow-xl md:max-w-sm"
+          >
             <video
               ref={videoRef}
               controls
@@ -39,11 +71,11 @@ export default function DemoVideoSection() {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="none"
               poster="/videos/biloki-demo-poster.jpg"
               className="h-auto w-full"
             >
-              <source src="/videos/biloki-demo.mp4" type="video/mp4" />
+              {shouldLoad ? <source src="/videos/biloki-demo.mp4" type="video/mp4" /> : null}
             </video>
           </div>
 

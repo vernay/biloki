@@ -4,6 +4,7 @@ import Script from "next/script";
 import { getLocale } from "next-intl/server";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import DeferredThirdPartyScripts from "@/components/analytics/DeferredThirdPartyScripts";
 
 const disableManifest = `
   if (typeof window !== 'undefined') {
@@ -107,25 +108,13 @@ try {
   }
 } catch (e) {}`}
         </Script>
-        {/* Google Tag Manager */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K8Z2WL7B');`}
-        </Script>
-        {/* End Google Tag Manager */}
+        {/* Google Tag Manager et widget de chat HubSpot : chargés de façon
+            différée par DeferredThirdPartyScripts (voir body) pour ne pas
+            bloquer le thread principal au premier rendu mobile. */}
       </head>
       <body>
         {children}
-        {/* Chatbot HubSpot */}
-        <Script
-          id="hs-script-loader"
-          async
-          defer
-          src="//js-eu1.hs-scripts.com/145156681.js"
-        />
+        <DeferredThirdPartyScripts />
       </body>
     </html>
   );
