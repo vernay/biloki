@@ -1,0 +1,9 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Biloki",
+    "documentationUrl": "https://www.biloki.fr",
+    "logoUrl": "https://www.biloki.fr/icon-512.png"
+  },
+  "entries": []
+}

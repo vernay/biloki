@@ -1,0 +1,30 @@
+# Biloki
+
+> Biloki est le logiciel tout-en-un (PMS + Channel Manager) pour les conciergeries et gestionnaires de locations saisonnières. Il centralise réservations, planning des équipes, messagerie voyageurs, serrures connectées et facturation au même endroit.
+
+Biloki synchronise les calendriers et tarifs sur plus de 120 plateformes (Airbnb, Booking.com, Vrbo, Expedia...), automatise la messagerie voyageurs avec une IA disponible 24/7, et propose 4 interfaces dédiées : gestionnaire, propriétaire, prestataire et voyageur. Fondée en 2024 à Nantes (France), la société sert des centaines de conciergeries de location courte durée.
+
+## Fonctionnalités
+
+- [Réservations et Channel Manager](https://www.biloki.fr/fr/fonctionnalites/reservations): Synchronisation des calendriers et tarifs sur 120+ OTA, zéro double réservation
+- [PMS](https://www.biloki.fr/fr/fonctionnalites/pms): Système de gestion immobilière complet pour locations courte durée
+- [Messagerie unifiée](https://www.biloki.fr/fr/fonctionnalites/messagerie-unifiee): Messagerie voyageurs centralisée (Airbnb, Booking...) avec assistant IA 24/7
+- [Planning des missions](https://www.biloki.fr/fr/fonctionnalites/planning-missions): Attribution et suivi des missions de ménage et maintenance pour les équipes terrain
+- [Serrures connectées](https://www.biloki.fr/fr/fonctionnalites/serrures-connectees): Génération automatique de codes temporaires et accès autonome
+- [Interface propriétaires](https://www.biloki.fr/fr/fonctionnalites/interface-proprietaires): Suivi des revenus et performances en temps réel pour les propriétaires
+- [Interface voyageurs](https://www.biloki.fr/fr/fonctionnalites/interface-voyageurs): Guide digital par logement avec accès, règles et recommandations locales
+- [Ventes additionnelles](https://www.biloki.fr/fr/fonctionnalites/ventes-additionnelles): Catalogue de services et prestations vendus directement aux voyageurs
+- [Statistiques](https://www.biloki.fr/fr/fonctionnalites/statistiques): Analyse de performance et de revenus par logement
+- [Marketplace API](https://www.biloki.fr/fr/fonctionnalites/marketplace-api): API ouverte et marketplace de prestataires partenaires
+
+## Pages clés
+
+- [Tarifs](https://www.biloki.fr/fr/tarifs): Grille tarifaire dégressive, essai gratuit sans carte bancaire
+- [Réserver une démo](https://www.biloki.fr/fr/reserver-demo): Prise de rendez-vous pour une démonstration personnalisée
+- [Commencer gratuitement](https://www.biloki.fr/fr/commencer-gratuitement): Inscription à l'essai gratuit
+- [Blog](https://blog.biloki.fr): Guides et conseils pour les conciergeries et gestionnaires de locations courte durée
+
+## Optional
+
+- [Contact](https://www.biloki.fr/fr/contact): Formulaire de contact et support
+- [Mentions légales](https://www.biloki.fr/fr/mentions-legales)
