@@ -871,6 +871,8 @@
   "demoPage": {
     "title": "Book your Biloki demo",
     "description": "Whether you're a manager or owner, discover how Biloki can simplify your daily operations.",
+    "skipPrefix": "Or skip this step and",
+    "skipLinkText": "create a free trial account",
     "salesTeam": "Biloki Sales Team",
     "demoName": "Biloki Demo",
     "duration": "30 min",

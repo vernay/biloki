@@ -871,6 +871,8 @@
   "demoPage": {
     "title": "Réservez votre démo Biloki",
     "description": "Que vous soyez gestionnaire ou propriétaire, découvrez comment Biloki peut simplifier votre quotidien.",
+    "skipPrefix": "Ou passez cette étape et",
+    "skipLinkText": "créez un compte d'essai gratuit",
     "salesTeam": "Biloki Sales Team",
     "demoName": "Démo Biloki",
     "duration": "30 min",

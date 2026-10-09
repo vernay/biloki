@@ -871,6 +871,8 @@
   "demoPage": {
     "title": "Agende sua demo Biloki",
     "description": "Seja você gestor ou proprietário, descubra como Biloki pode simplificar suas operações diárias.",
+    "skipPrefix": "Ou pule esta etapa e",
+    "skipLinkText": "crie uma conta de teste gratuita",
     "salesTeam": "Equipe comercial Biloki",
     "demoName": "Demo Biloki",
     "duration": "30 min",
