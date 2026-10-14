@@ -83,24 +83,24 @@ export default function EquipePage() {
       linkedin: 'https://www.linkedin.com/in/gregoirevernay/'
     },
     {
-      name: 'Eddy Tredan',
-      role: t('roles.devExpert'),
-      initials: 'ET',
-      photo: '/images/equipe/Eddy.png',
-      linkedin: 'https://www.linkedin.com/in/eddy-tr%C3%A9dan-7b2238239/'
-    },
-    {
       name: 'Bryan Montassier',
       role: t('roles.fullStackSenior'),
       initials: 'BM',
       photo: '/images/equipe/Bryan.png',
       linkedin: 'https://www.linkedin.com/in/bryanmtr/'
     },
+    {
+      name: 'Hamza Kahil',
+      role: t('roles.fullStackJunior'),
+      initials: 'HK',
+      photo: '/images/equipe/Hamza.jpg',
+      linkedin: 'https://www.linkedin.com/in/hamza-kahil/'
+    },
   ];
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-white to-blue-50 py-12 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-8 md:mt-12">
         {/* Back button */}
         <a href="/" className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
