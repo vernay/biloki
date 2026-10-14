@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CONTACT_EMAIL, SUPPORT_PHONE } from '@/lib/config';
 import RelatedPages from '@/components/ui/RelatedPages';
@@ -56,16 +55,6 @@ export default function ContactContent() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Back button */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <Link href={`/${locale}`} className="flex items-center gap-2 text-gray-600 hover:text-primary mb-12 font-semibold">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          {tCommon('back')}
-        </Link>
-      </div>
-
       {/* Hero Section */}
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -76,6 +65,17 @@ export default function ContactContent() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {t('description')}
             </p>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 p-8 md:p-12 mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('formTitle')}</h2>
+            <p className="text-gray-600 mb-8">{t('formDescription')}</p>
+
+            <div
+              className="meetings-iframe-container"
+              data-src="https://meetings-eu1.hubspot.com/gregoire-vernay/equipe-commerciale-biloki?embed=true"
+            />
           </div>
 
           {/* Contact Info Cards */}
@@ -138,16 +138,6 @@ export default function ContactContent() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('formTitle')}</h2>
-            <p className="text-gray-600 mb-8">{t('formDescription')}</p>
-
-            <div
-              className="meetings-iframe-container"
-              data-src="https://meetings-eu1.hubspot.com/gregoire-vernay?embed=true"
-            />
-          </div>
         </div>
       </section>
 
