@@ -4144,5 +4144,90 @@
       "description": "Desplázate para descubrir cómo Biloki centraliza la información útil, fluidifica la estancia y reduce las solicitudes a tu equipo.",
       "imageAlt": "Interfaz de viajero Biloki"
     }
+  },
+  "integrationPages": {
+    "common": {
+      "marketplaceLabel": "Marketplace",
+      "tryFree": "Probar gratis",
+      "bookDemo": "Reservar una demo",
+      "beforeTitle": "Antes de la integración",
+      "afterTitle": "Después de la integración",
+      "howItWorksTitle": "¿Cómo funciona?",
+      "benefitsTitle": "Ventajas clave",
+      "supportTitle": "Soporte",
+      "midCta": "¿Quieres ver la integración de {name} en acción en Biloki?",
+      "finalCtaTitle": "¿Listo para conectar {name} a Biloki?",
+      "finalCtaDescription": "Empieza gratis o habla con nuestro equipo para una demo personalizada."
+    },
+    "igloohome": {
+      "name": "Igloohome",
+      "categoryLabel": "Cerraduras inteligentes",
+      "metaTitle": "Integración Igloohome | Acceso sin llave | Biloki",
+      "metaDescription": "Conecta Igloohome a Biloki: códigos PIN automáticos, gestión centralizada de cerraduras y check-in sin contacto para tus alquileres vacacionales.",
+      "tagline": "Automatiza tus check-in en Biloki gracias a Igloohome",
+      "heroDescription": "Igloohome se integra con Biloki para automatizar la gestión de accesos de tus alojamientos. Se acabaron los intercambios manuales de llaves: el código de acceso se integra directamente en la guía del viajero de Biloki, para un check-in rápido, seguro y sin contacto.",
+      "benefits": [
+        {
+          "title": "Códigos PIN automáticos",
+          "description": "En cuanto se confirma una reserva en Biloki, se genera un código PIN único y temporal que se envía automáticamente al huésped."
+        },
+        {
+          "title": "Gestión centralizada",
+          "description": "Controla todas tus cerraduras Igloohome, en todos tus alojamientos, directamente desde tu panel de Biloki."
+        },
+        {
+          "title": "Funciona sin conexión",
+          "description": "Gracias a la tecnología algoPIN™ de Igloohome, los códigos se generan sin necesidad de conexión a internet en la cerradura."
+        },
+        {
+          "title": "Alertas en tiempo real",
+          "description": "Recibe notificaciones sobre la actividad de las cerraduras y ajusta los accesos a distancia, estés donde estés."
+        }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Reserva confirmada",
+          "description": "Se valida una reserva en uno de tus canales y se sincroniza automáticamente con Biloki."
+        },
+        {
+          "title": "2. Código PIN generado",
+          "description": "Biloki activa la generación de un código de acceso único a través del puente Igloohome, propio de la estancia del huésped."
+        },
+        {
+          "title": "3. Acceso a través de la guía del viajero",
+          "description": "El huésped recibe su guía del viajero antes de su llegada y puede abrir la puerta directamente desde ella, con total autonomía y sin intercambio de llaves."
+        }
+      ],
+      "beforeAfter": {
+        "before": [
+          "Entrega de llaves en mano o caja de llaves que gestionar para cada huésped",
+          "Desplazamientos o estrés en caso de llegada tardía o retraso",
+          "Ninguna visibilidad sobre el acceso real a tus alojamientos"
+        ],
+        "after": [
+          "Códigos de acceso generados y enviados automáticamente en la guía del viajero desde el momento de la reserva",
+          "Check-in autónomo y sin contacto, a cualquier hora del día o de la noche",
+          "Todas tus cerraduras Igloohome supervisadas desde Biloki"
+        ]
+      },
+      "testimonial": {
+        "quote": "Desde que equipé mis alojamientos con cerraduras Igloohome, mis códigos de acceso se generan y se envían automáticamente en la guía del viajero gracias a Biloki. Un verdadero ahorro de tiempo en mis 11 alojamientos.",
+        "name": "Amélie Prevost",
+        "role": "Fundadora de EG Conciergerie 24, empresa de conserjería con 11 alojamientos (Dordoña, Francia)"
+      },
+      "support": {
+        "description": "¿Necesitas ayuda con tu integración de Igloohome?",
+        "items": [
+          {
+            "label": "Soporte de Igloohome",
+            "value": "Asistencia dedicada en el sitio web de Igloohome"
+          },
+          {
+            "label": "Soporte de Biloki",
+            "value": "Nuestro equipo está disponible para cualquier consulta"
+          }
+        ]
+      }
+    }
   }
 }

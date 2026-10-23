@@ -11,6 +11,9 @@ interface Integration {
   logo: string;
   category: CategoryKey[];
   url?: string;
+  // Quand renseigné, le clic ouvre la landing page interne dédiée (/fonctionnalites/marketplace-api/[slug])
+  // au lieu du lien externe `url`.
+  slug?: string;
 }
 
 const integrations: Integration[] = [
@@ -23,7 +26,7 @@ const integrations: Integration[] = [
   { name: "QuickBooks (arrive bientôt)", logo: "/images/logo-partenaires/QuickBooks.png", category: ["all", "accounting"] },
   { name: "Pennylane (arrive bientôt)", logo: "/images/logo-partenaires/logo-pennylane.png", category: ["all", "accounting"] },
   { name: "Nuki", logo: "/images/logo-partenaires/nuki.png", category: ["all", "locks"], url: "https://nuki.io/fr-fr" },
-  { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png", category: ["all", "locks"], url: "https://www.igloohome.co" },
+  { name: "Igloohome", logo: "/images/logo-partenaires/Igloohome.png", category: ["all", "locks"], slug: "igloohome" },
   { name: "Swikly", logo: "/images/logo-partenaires/logo-swikly.png", category: ["all", "payments"], url: "https://www.swikly.com" },
   { name: "WhatsApp", logo: "/images/logo-partenaires/whatsapp-logo-whatsapp-logo-transparent-whatsapp-icon-transparent-free-free-png.webp", category: ["all", "communication"], url: "https://www.whatsapp.com" },
   { name: "PriceLabs", logo: "/images/logo-partenaires/pricelabs.png", category: ["all", "pricing"], url: "https://www.pricelabs.co" },
@@ -70,17 +73,10 @@ export default function MarketplaceAPIContent() {
         {/* Integrations Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
           {filteredIntegrations.map((integration) => {
-            const Component = integration.url ? "a" : "div";
-            const linkProps = integration.url
-              ? { href: integration.url, target: "_blank", rel: "noopener noreferrer" }
-              : {};
-
-            return (
-              <Component
-                key={integration.name}
-                {...linkProps}
-                className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center hover:shadow-lg transition-shadow cursor-pointer"
-              >
+            const cardClassName =
+              "bg-white border border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center hover:shadow-lg transition-shadow cursor-pointer";
+            const cardContent = (
+              <>
                 <div className="h-20 flex items-center justify-center mb-4">
                   <img 
                     src={integration.logo} 
@@ -91,7 +87,39 @@ export default function MarketplaceAPIContent() {
                 <h3 className="text-center font-semibold text-gray-900">
                   {integration.name}
                 </h3>
-              </Component>
+              </>
+            );
+
+            if (integration.slug) {
+              return (
+                <Link
+                  key={integration.name}
+                  href={`/fonctionnalites/marketplace-api/${integration.slug}`}
+                  className={cardClassName}
+                >
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            if (integration.url) {
+              return (
+                <a
+                  key={integration.name}
+                  href={integration.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClassName}
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+
+            return (
+              <div key={integration.name} className={cardClassName}>
+                {cardContent}
+              </div>
             );
           })}
         </div>

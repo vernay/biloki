@@ -4144,5 +4144,90 @@
       "description": "Faites défiler pour découvrir comment Biloki centralise les informations utiles, fluidifie le séjour et réduit les sollicitations de votre équipe.",
       "imageAlt": "Interface voyageur Biloki"
     }
+  },
+  "integrationPages": {
+    "common": {
+      "marketplaceLabel": "Marketplace",
+      "tryFree": "Essayer gratuitement",
+      "bookDemo": "Réserver une démo",
+      "beforeTitle": "Avant l'intégration",
+      "afterTitle": "Après l'intégration",
+      "howItWorksTitle": "Comment ça marche ?",
+      "benefitsTitle": "Avantages clés",
+      "supportTitle": "Support",
+      "midCta": "Envie de voir l'intégration {name} en action sur Biloki ?",
+      "finalCtaTitle": "Prêt à connecter {name} à Biloki ?",
+      "finalCtaDescription": "Démarrez gratuitement ou échangez avec notre équipe pour une démonstration personnalisée."
+    },
+    "igloohome": {
+      "name": "Igloohome",
+      "categoryLabel": "Serrures connectées",
+      "metaTitle": "Intégration Igloohome | Accès sans clé | Biloki",
+      "metaDescription": "Connectez Igloohome à Biloki : codes PIN automatiques, gestion centralisée des serrures et check-in sans contact pour vos locations saisonnières.",
+      "tagline": "Automatisez vos check-in sur Biloki grâce à Igloohome",
+      "heroDescription": "Igloohome s'intègre à Biloki pour automatiser la gestion des accès de vos logements. Fini les échanges manuels de clés : le code d'accès est directement intégré au guide voyageur Biloki, pour un check-in rapide, sécurisé et sans contact.",
+      "benefits": [
+        {
+          "title": "Codes PIN automatiques",
+          "description": "Dès qu'une réservation est confirmée dans Biloki, un code PIN unique et temporaire est généré et envoyé automatiquement au voyageur."
+        },
+        {
+          "title": "Gestion centralisée",
+          "description": "Pilotez l'ensemble de vos serrures Igloohome, sur tous vos logements, directement depuis votre tableau de bord Biloki."
+        },
+        {
+          "title": "Fonctionne hors ligne",
+          "description": "Grâce à la technologie algoPIN™ d'Igloohome, les codes sont générés sans connexion internet requise sur la serrure."
+        },
+        {
+          "title": "Alertes en temps réel",
+          "description": "Recevez des notifications sur l'activité des serrures et ajustez les accès à distance, où que vous soyez."
+        }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Réservation confirmée",
+          "description": "Une réservation est validée sur l'un de vos canaux et synchronisée automatiquement dans Biloki."
+        },
+        {
+          "title": "2. Code PIN généré",
+          "description": "Biloki déclenche la génération d'un code d'accès unique via le pont Igloohome, propre au séjour du voyageur."
+        },
+        {
+          "title": "3. Accès via le guide voyageur",
+          "description": "Le voyageur reçoit son guide voyageur avant son arrivée et peut ouvrir la porte directement depuis celui-ci, en toute autonomie et sans échange de clés."
+        }
+      ],
+      "beforeAfter": {
+        "before": [
+          "Remise des clés en main propre ou boîte à clés à gérer pour chaque voyageur",
+          "Déplacements ou stress en cas d'arrivée tardive ou de retard",
+          "Aucune visibilité sur l'accès réel à vos logements"
+        ],
+        "after": [
+          "Codes d'accès générés et envoyés automatiquement dans le guide voyageur dès la réservation",
+          "Check-in autonome et sans contact, à toute heure du jour ou de la nuit",
+          "Toutes vos serrures Igloohome supervisées depuis Biloki"
+        ]
+      },
+      "testimonial": {
+        "quote": "Depuis que j'ai équipé mes logements de serrures Igloohome, mes codes d'accès sont générés et envoyés automatiquement dans le guide voyageur grâce à Biloki. Un vrai gain de temps sur mes 11 logements.",
+        "name": "Amélie Prevost",
+        "role": "Fondatrice de EG Conciergerie 24, conciergerie de 11 logements (Dordogne)"
+      },
+      "support": {
+        "description": "Besoin d'aide avec votre intégration Igloohome ?",
+        "items": [
+          {
+            "label": "Support Igloohome",
+            "value": "Assistance dédiée sur le site Igloohome"
+          },
+          {
+            "label": "Support Biloki",
+            "value": "Notre équipe reste disponible pour toute question"
+          }
+        ]
+      }
+    }
   }
 }

@@ -4144,5 +4144,90 @@
       "description": "Scroll to discover how Biloki centralizes useful information, streamlines the stay, and reduces requests to your team.",
       "imageAlt": "Biloki guest interface"
     }
+  },
+  "integrationPages": {
+    "common": {
+      "marketplaceLabel": "Marketplace",
+      "tryFree": "Try for free",
+      "bookDemo": "Book a demo",
+      "beforeTitle": "Before the integration",
+      "afterTitle": "After the integration",
+      "howItWorksTitle": "How does it work?",
+      "benefitsTitle": "Key benefits",
+      "supportTitle": "Support",
+      "midCta": "Want to see the {name} integration in action on Biloki?",
+      "finalCtaTitle": "Ready to connect {name} to Biloki?",
+      "finalCtaDescription": "Get started for free or talk to our team for a personalized demo."
+    },
+    "igloohome": {
+      "name": "Igloohome",
+      "categoryLabel": "Smart locks",
+      "metaTitle": "Igloohome Integration | Keyless Access | Biloki",
+      "metaDescription": "Connect Igloohome to Biloki: automatic PIN codes, centralized lock management, and contactless check-in for your vacation rentals.",
+      "tagline": "Automate your check-ins on Biloki with Igloohome",
+      "heroDescription": "Igloohome integrates with Biloki to automate access management for your properties. No more manual key handovers: the access code is directly included in the Biloki Guest Guide, for a fast, secure, and contactless check-in.",
+      "benefits": [
+        {
+          "title": "Automatic PIN codes",
+          "description": "As soon as a booking is confirmed in Biloki, a unique, temporary PIN code is generated and automatically sent to the guest."
+        },
+        {
+          "title": "Centralized management",
+          "description": "Manage all your Igloohome locks, across every property, directly from your Biloki dashboard."
+        },
+        {
+          "title": "Works offline",
+          "description": "Thanks to Igloohome's algoPIN™ technology, codes are generated without requiring an internet connection on the lock."
+        },
+        {
+          "title": "Real-time alerts",
+          "description": "Get notified about lock activity and adjust access remotely, wherever you are."
+        }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Booking confirmed",
+          "description": "A booking is validated on one of your channels and automatically synced with Biloki."
+        },
+        {
+          "title": "2. PIN code generated",
+          "description": "Biloki triggers the generation of a unique access code via the Igloohome bridge, specific to the guest's stay."
+        },
+        {
+          "title": "3. Access via the Guest Guide",
+          "description": "The guest receives their Guest Guide before arrival and can unlock the door directly from it, fully independently and without exchanging keys."
+        }
+      ],
+      "beforeAfter": {
+        "before": [
+          "In-person key handover or a key box to manage for every guest",
+          "Trips back and forth or stress in case of late or delayed arrivals",
+          "No visibility into actual access to your properties"
+        ],
+        "after": [
+          "Access codes generated and automatically sent in the Guest Guide as soon as the booking is made",
+          "Independent, contactless check-in, any time of day or night",
+          "All your Igloohome locks monitored from Biloki"
+        ]
+      },
+      "testimonial": {
+        "quote": "Since I equipped my properties with Igloohome locks, my access codes are generated and automatically sent in the Guest Guide thanks to Biloki. A real time-saver across my 11 properties.",
+        "name": "Amélie Prevost",
+        "role": "Founder of EG Conciergerie 24, a concierge company managing 11 properties (Dordogne, France)"
+      },
+      "support": {
+        "description": "Need help with your Igloohome integration?",
+        "items": [
+          {
+            "label": "Igloohome Support",
+            "value": "Dedicated support on the Igloohome website"
+          },
+          {
+            "label": "Biloki Support",
+            "value": "Our team is available for any questions"
+          }
+        ]
+      }
+    }
   }
 }

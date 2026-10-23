@@ -4144,5 +4144,90 @@
       "description": "Role para descobrir como a Biloki centraliza informações úteis, torna a estadia mais fluida e reduz solicitações para sua equipe.",
       "imageAlt": "Interface do viajante Biloki"
     }
+  },
+  "integrationPages": {
+    "common": {
+      "marketplaceLabel": "Marketplace",
+      "tryFree": "Experimentar grátis",
+      "bookDemo": "Agendar uma demo",
+      "beforeTitle": "Antes da integração",
+      "afterTitle": "Depois da integração",
+      "howItWorksTitle": "Como funciona?",
+      "benefitsTitle": "Vantagens principais",
+      "supportTitle": "Suporte",
+      "midCta": "Quer ver a integração {name} em ação no Biloki?",
+      "finalCtaTitle": "Pronto para conectar {name} ao Biloki?",
+      "finalCtaDescription": "Comece gratuitamente ou fale com nossa equipe para uma demo personalizada."
+    },
+    "igloohome": {
+      "name": "Igloohome",
+      "categoryLabel": "Fechaduras inteligentes",
+      "metaTitle": "Integração Igloohome | Acesso sem chave | Biloki",
+      "metaDescription": "Conecte o Igloohome ao Biloki: códigos PIN automáticos, gestão centralizada das fechaduras e check-in sem contato para seus aluguéis de temporada.",
+      "tagline": "Automatize seus check-ins no Biloki com o Igloohome",
+      "heroDescription": "O Igloohome se integra ao Biloki para automatizar a gestão de acessos dos seus imóveis. Chega de troca manual de chaves: o código de acesso é integrado diretamente ao guia do viajante do Biloki, para um check-in rápido, seguro e sem contato.",
+      "benefits": [
+        {
+          "title": "Códigos PIN automáticos",
+          "description": "Assim que uma reserva é confirmada no Biloki, um código PIN único e temporário é gerado e enviado automaticamente ao hóspede."
+        },
+        {
+          "title": "Gestão centralizada",
+          "description": "Controle todas as suas fechaduras Igloohome, em todos os seus imóveis, diretamente pelo painel do Biloki."
+        },
+        {
+          "title": "Funciona offline",
+          "description": "Graças à tecnologia algoPIN™ da Igloohome, os códigos são gerados sem a necessidade de conexão com a internet na fechadura."
+        },
+        {
+          "title": "Alertas em tempo real",
+          "description": "Receba notificações sobre a atividade das fechaduras e ajuste os acessos remotamente, onde quer que você esteja."
+        }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Reserva confirmada",
+          "description": "Uma reserva é validada em um dos seus canais e sincronizada automaticamente com o Biloki."
+        },
+        {
+          "title": "2. Código PIN gerado",
+          "description": "O Biloki aciona a geração de um código de acesso único por meio da ponte Igloohome, específico para a estadia do hóspede."
+        },
+        {
+          "title": "3. Acesso pelo guia do viajante",
+          "description": "O hóspede recebe o guia do viajante antes da chegada e pode abrir a porta diretamente por ele, com total autonomia e sem troca de chaves."
+        }
+      ],
+      "beforeAfter": {
+        "before": [
+          "Entrega de chaves em mãos ou caixa de chaves para gerenciar a cada hóspede",
+          "Deslocamentos ou estresse em caso de chegada tardia ou atraso",
+          "Nenhuma visibilidade sobre o acesso real aos seus imóveis"
+        ],
+        "after": [
+          "Códigos de acesso gerados e enviados automaticamente no guia do viajante assim que a reserva é feita",
+          "Check-in autônomo e sem contato, a qualquer hora do dia ou da noite",
+          "Todas as suas fechaduras Igloohome supervisionadas pelo Biloki"
+        ]
+      },
+      "testimonial": {
+        "quote": "Desde que equipei meus imóveis com fechaduras Igloohome, meus códigos de acesso são gerados e enviados automaticamente no guia do viajante graças ao Biloki. Uma verdadeira economia de tempo nos meus 11 imóveis.",
+        "name": "Amélie Prevost",
+        "role": "Fundadora da EG Conciergerie 24, empresa de concierge com 11 imóveis (Dordonha, França)"
+      },
+      "support": {
+        "description": "Precisa de ajuda com sua integração Igloohome?",
+        "items": [
+          {
+            "label": "Suporte Igloohome",
+            "value": "Assistência dedicada no site da Igloohome"
+          },
+          {
+            "label": "Suporte Biloki",
+            "value": "Nossa equipe está disponível para qualquer dúvida"
+          }
+        ]
+      }
+    }
   }
 }
