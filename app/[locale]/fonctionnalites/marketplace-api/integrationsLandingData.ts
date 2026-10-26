@@ -21,7 +21,7 @@ export const integrationsAssets: Record<string, IntegrationAssets> = {
     slug: "igloohome",
     logo: "/images/logo-partenaires/Igloohome.png",
     heroImage: "/images/logo-partenaires/Igloohome.png",
-    benefitsImage: "/images/serrures/igloohome-smart-mortise-1-igm1-2048x1903.jpg",
+    benefitsImage: "/images/serrures/igloohome-smart-mortise-2.jpg",
     howItWorksImages: [
       "/images/serrures/Channel manager.png",
       "/images/serrures/Génération des codes.png",
