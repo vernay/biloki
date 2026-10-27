@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllIntegrationSlugs } from './[locale]/fonctionnalites/marketplace-api/integrationsLandingData'
 
 const baseUrl = 'https://www.biloki.fr'
 const locales = ['fr', 'en', 'es', 'pt']
@@ -21,6 +22,7 @@ const STATIC_MARKETING_ROUTES: string[] = [
   '/fonctionnalites/messagerie-unifiee',
   '/fonctionnalites/planning-missions',
   '/fonctionnalites/reservations',
+  '/fonctionnalites/serrures-connectees',
   '/fonctionnalites/statistiques',
   '/fonctionnalites/ventes-additionnelles',
   '/mentions-legales',
@@ -34,7 +36,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const buildDate = new Date().toISOString()
 
   locales.forEach(locale => {
-    const pages = [...STATIC_MARKETING_ROUTES]
+    const pages = [
+      ...STATIC_MARKETING_ROUTES,
+      ...getAllIntegrationSlugs().map(slug => `/fonctionnalites/marketplace-api/${slug}`),
+    ]
 
     pages.forEach(pagePath => {
       const languages: Record<string, string> = {
