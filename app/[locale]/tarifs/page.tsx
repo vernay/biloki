@@ -8,7 +8,10 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'pricingPage' });
+  const t = await getTranslations({
+    locale,
+    namespace: locale === 'fr' ? 'seoMetadata.pricing' : 'pricingPage',
+  });
 
   return {
     title: t('title'),

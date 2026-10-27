@@ -2851,12 +2851,12 @@
   },
   "seoMetadata": {
     "home": {
-      "title": "Biloki - Gagnez du temps dans la gestion de vos locations saisonnières",
-      "description": "Centralisez, automatisez et orchestrez le cycle de vie de vos séjours. PMS, Channel Manager, Messagerie IA pour conciergeries et gestionnaires."
+      "title": "Logiciel pour conciergerie de location saisonnière",
+      "description": "Gérez votre conciergerie de location saisonnière avec Biloki : réservations Airbnb et Booking, planning ménage, accès voyageurs et suivi des propriétaires."
     },
     "pricing": {
-      "title": "Tarifs Biloki - Plans flexibles pour conciergeries et propriétaires",
-      "description": "Tarifs dégressifs de 16,99€ à 7,99€ par logement. Essai gratuit 14 jours sans carte bancaire. Calculez votre prix selon votre nombre de propriétés."
+      "title": "Tarifs du logiciel de conciergerie par nombre de logements",
+      "description": "Estimez le coût de Biloki pour votre parc de locations saisonnières : nombre de logements, facturation mensuelle ou annuelle, prix HT et fonctionnalités incluses."
     },
     "contact": {
       "title": "Contactez Biloki - Support et demandes commerciales",
@@ -3051,8 +3051,8 @@
     },
     "pages": {
       "reservations": {
-        "metadataTitle": "Réservations | Biloki",
-        "metadataDescription": "Centralisez toutes vos réservations Airbnb, Booking et vos autres canaux dans un seul calendrier Biloki.",
+        "metadataTitle": "Channel manager Airbnb et Booking pour conciergerie",
+        "metadataDescription": "Synchronisez les calendriers, tarifs et disponibilités Airbnb et Booking de votre conciergerie. Centralisez vos réservations et réduisez les doubles réservations.",
         "badge": "Réservations",
         "title": "Centralisez toutes vos",
         "highlight": "réservations",
@@ -3065,8 +3065,8 @@
         "heroImageAlt": "Calendrier de réservation Biloki"
       },
       "planningMissions": {
-        "metadataTitle": "Planning missions | Biloki",
-        "metadataDescription": "Déléguez vos missions terrain à vos prestataires en un clic, avec suivi en temps réel.",
+        "metadataTitle": "Planning ménage entre séjours pour conciergerie",
+        "metadataDescription": "Planifiez les ménages entre départs et arrivées, attribuez les missions aux prestataires et suivez leur réalisation avec checklists photo et rapports dans Biloki.",
         "badge": "Missions",
         "title": "Pilotez vos missions",
         "highlight": "sans y passer vos journées",
@@ -3112,8 +3112,8 @@
         ]
       },
       "unifiedMessaging": {
-        "metadataTitle": "Messagerie unifiée | Biloki",
-        "metadataDescription": "Airbnb, Booking, Vrbo, Expedia, voyageurs et prestataires : centralisez tous vos échanges dans une seule boîte de réception.",
+        "metadataTitle": "Messagerie Airbnb et Booking : réponses et automatisation",
+        "metadataDescription": "Répondez aux voyageurs Airbnb et Booking depuis une boîte unique. Automatisez les messages liés au séjour et coordonnez vos prestataires dans des fils séparés.",
         "badge": "Messagerie unifiée",
         "title": "Une seule messagerie",
         "highlight": "pour toutes vos conversations",
@@ -3170,8 +3170,8 @@
         ]
       },
       "ownerInterface": {
-        "metadataTitle": "Interface propriétaires | Biloki",
-        "metadataDescription": "Chaque propriétaire consulte le détail de ses logements en autonomie.",
+        "metadataTitle": "Portail propriétaire : réservations et revenus locatifs",
+        "metadataDescription": "Donnez aux propriétaires des logements gérés par votre conciergerie un accès à leurs réservations, revenus et statistiques, avec une messagerie dédiée dans Biloki.",
         "badge": "Interface propriétaires",
         "title": "Donnez de la visibilité",
         "highlight": "à vos propriétaires",
@@ -3239,8 +3239,8 @@
         ]
       },
       "additionalSales": {
-        "metadataTitle": "Ventes additionnelles | Biloki",
-        "metadataDescription": "Augmentez vos revenus avec une boutique intégrée à l’interface voyageurs et des paiements Stripe.",
+        "metadataTitle": "Ventes additionnelles en location saisonnière : services",
+        "metadataDescription": "Vendez des services aux voyageurs depuis leur guide de séjour : arrivée anticipée, départ tardif ou prestations. Encaissez avec Stripe et suivez vos marges.",
         "badge": "Ventes additionnelles",
         "title": "Générez des revenus",
         "highlight": "additionnels",
@@ -3286,8 +3286,8 @@
         ]
       },
       "statistics": {
-        "metadataTitle": "Statistiques | Biloki",
-        "metadataDescription": "TO, ADR, RevPAR et KPI conciergerie suivis en temps réel.",
+        "metadataTitle": "Statistiques conciergerie : revenus et taux d'occupation",
+        "metadataDescription": "Suivez les revenus, taux d'occupation, réservations et annulations de vos locations saisonnières. Comparez les performances par logement et plateforme avec Biloki.",
         "badge": "Statistiques",
         "title": "Toute la performance de votre activité, en un coup d'œil",
         "highlight": "",
@@ -3361,8 +3361,8 @@
         ]
       },
       "reviews": {
-        "metadataTitle": "Avis | Biloki",
-        "metadataDescription": "Collecte et réponse aux avis automatisées pour piloter votre e-réputation.",
+        "metadataTitle": "Avis voyageurs : collecte et réponses pour conciergerie",
+        "metadataDescription": "Automatisez la collecte et les réponses aux avis voyageurs avec Biloki pour gérer l'e-réputation des locations saisonnières de votre conciergerie.",
         "badge": "Avis voyageurs",
         "title": "Gérez vos",
         "highlight": "avis",
@@ -3370,8 +3370,8 @@
         "heroImageAlt": "Gestion des avis Biloki"
       },
       "smartLocks": {
-        "metadataTitle": "Accès automatisés & serrures connectées | Biloki",
-        "metadataDescription": "Configurez le parcours d'accès de chaque logement et automatisez les codes voyageurs, prestataires et propriétaires avec Biloki.",
+        "metadataTitle": "Serrures connectées : codes d'accès et arrivée autonome",
+        "metadataDescription": "Organisez l'arrivée autonome dans vos locations saisonnières : parcours d'accès et codes Nuki ou Igloohome pour les voyageurs, prestataires et propriétaires.",
         "badge": "Accès & serrures connectées",
         "title": "Un parcours d'accès sur-mesure,",
         "highlight": "pour chaque logement",
@@ -4007,8 +4007,8 @@
     }
   },
   "travelerInterfacePage": {
-    "metadataTitle": "Interface voyageurs | Biloki",
-    "metadataDescription": "Accueillez vos voyageurs automatiquement avec une interface premium, autonome et disponible 24/7.",
+    "metadataTitle": "Guide voyageur digital : accès et informations du séjour",
+    "metadataDescription": "Centralisez Wi-Fi, consignes d'arrivée, accès au logement et recommandations dans un guide voyageur digital, préparé automatiquement pour chaque réservation.",
     "title": "Accueillez vos voyageurs,",
     "highlight": "sans y penser",
     "description": "Une interface unique pour le guide digital, les accès connectés et les ventes additionnelles, automatisée à chaque réservation.",
@@ -4162,8 +4162,8 @@
     "igloohome": {
       "name": "Igloohome",
       "categoryLabel": "Serrures connectées",
-      "metaTitle": "Intégration Igloohome | Accès sans clé | Biloki",
-      "metaDescription": "Connectez Igloohome à Biloki : codes PIN automatiques, gestion centralisée des serrures et check-in sans contact pour vos locations saisonnières.",
+      "metaTitle": "Igloohome et Biloki : codes PIN et accès voyageurs",
+      "metaDescription": "Automatisez les codes PIN de vos serrures Igloohome avec Biloki pour l'accès des voyageurs à vos locations saisonnières et un check-in sans contact.",
       "tagline": "Automatisez vos check-in sur Biloki grâce à Igloohome",
       "heroDescription": "Igloohome s'intègre à Biloki pour automatiser la gestion des accès de vos logements. Fini les échanges manuels de clés : le code d'accès est directement intégré au guide voyageur Biloki, pour un check-in rapide, sécurisé et sans contact.",
       "benefits": [
