@@ -23,6 +23,12 @@ export default function Footer() {
     es: '🇪🇸',
     pt: '🇵🇹',
   };
+  const helpCenterPaths: Record<Locale, string> = {
+    fr: '/fr/base-de-connaissances',
+    en: '/en/knowledge-base',
+    es: '/es/base-de-conocimiento',
+    pt: '/pt-pt/central-de-ajuda',
+  };
 
   const withLocale = (href: string) => {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -171,6 +177,14 @@ export default function Footer() {
                 <Link href={withLocale("/contact")} className="hover:text-white transition-colors">
                   {t('contact')}
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={`https://landing.biloki.fr${helpCenterPaths[locale]}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {t('helpCenter')}
+                </a>
               </li>
             </ul>
           </div>
